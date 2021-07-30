@@ -1,0 +1,20 @@
+local uis = game:GetService("UserInputService")
+local target = game.Workspace.target
+local focusing = false
+uis.InputBegan:Connect(function(input)
+	if (input.KeyCode == Enum.KeyCode.C) then
+		focusing = not focusing		
+		if (not focusing) then
+			game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+		else
+			game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+		end
+	end
+end)
+while game:GetService("RunService").RenderStepped:Wait() do
+	if (focusing) then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,Vector3.new(target.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,target.Position.Z))
+		game.Workspace.CurrentCamera.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(Vector3.new(7.5,2.5,10))
+	end
+end
+--press C on player I guess

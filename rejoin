@@ -1,0 +1,6 @@
+local TeleportService = game:GetService("TeleportService")
+
+local Player = Player
+local reserveCode = TeleportService:ReserveServer(game.4669040)
+
+TeleportService:TeleportToPrivateServer(game.4669040, reserveCode, { Player })

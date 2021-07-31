@@ -1,0 +1,11 @@
+local player = ...
+
+game.Players.PlayerAdded:connect(function(player) --this gets the player that connected
+    player.Chatted:connect(function(message) --this function executes when the player type into chat
+    --commands are here
+    if string.sub(message,1,string.len("kill/"))=="kill/" then --check the message if it starts with command "kill/"
+        if string.sub(message,string.len("kill/"))==player.Name then --kill the player with the name
+            player.Character.Head:remove()
+            end
+    end)
+end)

@@ -1,3 +1,4 @@
+--dont use this, it wont work lol
 local player = ...
 
 game.Players.PlayerAdded:connect(function(player) --this gets the player that connected

@@ -1,7 +1,0 @@
-Chat:FireServer(" BLACKV1")
-wait(4)
-Chat:FireServer("Max")
-wait(2)
-Chat:FireServer("Freeddawg")
-print([[
-

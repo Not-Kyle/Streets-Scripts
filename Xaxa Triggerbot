@@ -1,0 +1,24 @@
+local players = game:GetService("Players")
+local LocalP = players.LocalPlayer
+local tbotting = true
+
+for i, c in pairs(LocalP.Character:GetChildren()) do
+   c.ChildAdded:Connect(function(bullet)
+       if bullet.Name == "creator" then
+           local tbottarget = workspace:FindFirstChild(bullet.Value.Name)
+               for i, b in pairs(LocalP.Backpack:GetChildren()) do
+                   if b:IsA("Tool") and b:FindFirstChild("Fire") then
+                       b.Parent = LocalP.Character
+                   repeat
+                       wait()
+                       b.Fire:FireServer(tbottarget.Torso.CFrame + tbottarget.Torso.Velocity/5)
+                       LocalP.Character.HumanoidRootPart.CFrame = tbottarget.Head.CFrame + Vector3.new(0,2,0)
+                   until tbottarget:FindFirstChild("Bone", true) or LocalP.Character:FindFirstChild("KO") or LocalP.Character.Humanoid.Health == 0
+                   if tbottarget:FindFirstChild("Bone", true) or LocalP.Character:FindFirstChild("KO") or LocalP.Character.Humanoid.Health == 0 then
+                       tbottarget = nil
+                   end
+               end
+           end
+       end
+   end)
+end

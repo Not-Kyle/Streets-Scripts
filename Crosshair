@@ -1,0 +1,66 @@
+local function API_Check()
+    if Drawing == nil then
+        return "No"
+    else
+        return "Yes"
+    end
+end
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Camera = workspace.CurrentCamera
+
+local Typing = false
+
+local ViewportSize_ = Camera.ViewportSize / 2
+local Axis_X, Axis_Y = ViewportSize_.X, ViewportSize_.Y
+
+local HorizontalLine = Drawing.new("Line")
+local VerticalLine = Drawing.new("Line")
+
+_G.SendNotifications = true   
+_G.DefaultSettings = false
+_G.ToMouse = false
+
+_G.CrosshairVisible = true   
+_G.CrosshairSize = 20   
+_G.CrosshairThickness = 1   
+_G.CrosshairColor = Color3.fromRGB(255, 0, 0) 
+_G.CrosshairTransparency = 1   
+
+RunService.RenderStepped:Connect(function()
+    local Real_Size = _G.CrosshairSize / 2
+
+    HorizontalLine.Color = _G.CrosshairColor
+    HorizontalLine.Thickness = _G.CrosshairThickness
+    HorizontalLine.Visible = _G.CrosshairVisible
+    HorizontalLine.Transparency = _G.CrosshairTransparency
+    
+    VerticalLine.Color = _G.CrosshairColor
+    VerticalLine.Thickness = _G.CrosshairThickness
+    VerticalLine.Visible = _G.CrosshairVisible
+    VerticalLine.Transparency = _G.CrosshairTransparency
+    
+    if _G.ToMouse == true then
+        HorizontalLine.From = Vector2.new(UserInputService:GetMouseLocation().X - Real_Size, UserInputService:GetMouseLocation().Y)
+        HorizontalLine.To = Vector2.new(UserInputService:GetMouseLocation().X + Real_Size, UserInputService:GetMouseLocation().Y)
+        
+        VerticalLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y - Real_Size)
+        VerticalLine.To = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y + Real_Size)
+    elseif _G.ToMouse == false then
+        HorizontalLine.From = Vector2.new(Axis_X - Real_Size, Axis_Y)
+        HorizontalLine.To = Vector2.new(Axis_X + Real_Size, Axis_Y)
+    
+        VerticalLine.From = Vector2.new(Axis_X, Axis_Y - Real_Size)
+        VerticalLine.To = Vector2.new(Axis_X, Axis_Y + Real_Size)
+    end
+end)
+
+if _G.DefaultSettings == true then
+    _G.CrosshairVisible = true
+    _G.CrosshairSize = 25
+    _G.CrosshairThickness = 2
+    _G.CrosshairColor = Color3.fromRGB(40, 90, 255)
+    _G.CrosshairTransparency = 0.15
+end

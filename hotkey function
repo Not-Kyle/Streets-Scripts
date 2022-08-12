@@ -1,3 +1,0 @@
-InputBegan:Connect(function(input)
-	if (input.KeyCode == Enum.KeyCode.?) then
-  --put anything in ?

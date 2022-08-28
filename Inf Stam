@@ -1,0 +1,14 @@
+if game.PlaceId == 455366377 then
+local LocalP = game.Players.LocalPlayer
+
+LocalP.Character.Stamina.Changed:Connect(function()
+    LocalP.Character:WaitForChild"Stamina"
+    LocalP.Character.Stamina.Value = 100 
+end)
+LocalP.CharacterAdded:Connect(function()
+    LocalP.Character:WaitForChild"Stamina"
+    LocalP.Character.Stamina.Changed:Connect(function()
+        LocalP.Character.Stamina.Value = 100 
+end)
+end)
+end

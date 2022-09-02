@@ -1,0 +1,1 @@
+game:GetService("Players").LocalPlayer.PlayerGui.HUD.Cash.Position = UDim2.new(0, 0.1, 0.3, 0)

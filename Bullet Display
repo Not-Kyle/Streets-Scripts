@@ -25,6 +25,7 @@ BulletsTxt.Text = "Bullets:"
 BulletsTxt.TextColor3 = Color3.fromRGB(255,170,255)
 BulletsTxt.TextSize = 24.000
 BulletsTxt.Visible = false
+game.Players.LocalPlayer.PlayerGui.HUD:FindFirstChild("Ammo"):Destroy()
 
 function CustomAmmoUI()
 local gunequipped = false

@@ -1,0 +1,10 @@
+game:GetService("RunService").RenderStepped:Connect(function()
+local LService = game:GetService("Lighting")
+LService.ClockTime = 14
+end)
+
+for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
+    if v.Parent == game:GetService("Lighting") then
+        v:Destroy()
+    end
+end

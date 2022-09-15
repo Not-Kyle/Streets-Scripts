@@ -1,0 +1,51 @@
+--some random group esp from xaxa
+
+local function esp(part)
+    local bgui = Instance.new('BillboardGui', part)
+    local tlab = Instance.new('TextLabel', bgui)
+
+    bgui.Name = "enemeyesp"
+    bgui.Adornee = part
+    bgui.AlwaysOnTop = true
+    bgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    bgui.Size = UDim2.new(0, 5, 0, 5)
+    
+    tlab.Name = "tlab"
+    tlab.BackgroundColor3 = Color3.new(255,0, 0)
+    tlab.BackgroundTransparency = 1
+    tlab.BorderSizePixel = 0
+    tlab.Position = UDim2.new(0, 0, 0, -40)
+    tlab.Size = UDim2.new(1, 0, 10, 0)
+    tlab.Visible = true
+    tlab.ZIndex = 10
+    tlab.Font = "ArialBold"
+    tlab.FontSize = "Size14"
+    tlab.Text = ""    --This is the text is will say above their head for exmaple  YOULOSE (KOS)
+    tlab.TextColor3 = Color3.fromRGB(255, 0, 0)
+    tlab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    tlab.TextStrokeTransparency = 0.6
+end
+
+game.Players.PlayerAdded:Connect(function(opp)
+    if opp:IsInGroup(139)then    --change the 139 to their group id
+        opp.CharacterAdded:Connect(function(char)
+            repeat wait() 
+            until char:FindFirstChild("Humanoid")
+            repeat wait() 
+            until char:FindFirstChild("Head")
+            esp(char:FindFirstChild("Head"))
+        end)
+    end
+end)
+
+for i, opp in pairs(game.Players:GetPlayers()) do
+    if opp:IsInGroup(139) then    --change the 139 to their group id
+        opp.CharacterAdded:Connect(function(char)
+            repeat wait() 
+            until char:FindFirstChild("Humanoid")
+            repeat wait() 
+            until char:FindFirstChild("Head")
+            esp(char:FindFirstChild("Head"))
+        end)
+    end
+end

@@ -1,0 +1,24 @@
+--this is the X on the GUI that makes the gui disappear 
+
+
+local Exit = Instance.new("TextButton")
+
+Exit.Name = "Exit"
+Exit.Parent = Frame
+Exit.BackgroundColor3 = Color3.new(0, 0, 0)
+Exit.BackgroundTransparency = 1
+Exit.BorderColor3 = Color3.new(0.392157, 0, 0)
+Exit.Position = UDim2.new(0.001, 0, 0.011, 0.01)
+Exit.Size = UDim2.new(0, 29, 0, 26)
+Exit.Font = Enum.Font.SourceSansBold
+Exit.Text = "X"
+Exit.TextColor3 = Color3.new(255, 0, 0)
+Exit.TextScaled = true
+Exit.TextSize = 14
+Exit.TextStrokeColor3 = Color3.new(0, 0, 0)
+Exit.TextWrapped = true
+Exit.Visible = true
+
+Exit.MouseButton1Down:Connect(function()
+Frame:Destroy()
+end)

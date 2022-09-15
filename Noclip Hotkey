@@ -1,0 +1,18 @@
+local Players, RService = game:GetService("Players"), game:GetService("RunService");
+local LocalP, Mouse = Players.LocalPlayer, Players.LocalPlayer:GetMouse();
+local NoClip, NoClipKey = false, "x" -- change 'x' to whatever you want
+
+RService.Stepped:Connect(function()
+    if NoClip == true and LocalP and LocalP.Character and LocalP.Character:FindFirstChild("Humanoid") then 
+        pcall(function() -- fuck errors
+            LocalP.Character.Head.CanCollide = false 
+            LocalP.Character.Torso.CanCollide = false
+        end)
+    end
+end)
+
+Mouse.KeyDown:Connect(function(Key)
+    if Key == NoClipKey then 
+        NoClip = not NoClip
+    end
+end)

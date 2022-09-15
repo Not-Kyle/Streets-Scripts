@@ -1,0 +1,53 @@
+--for operation anthrax
+
+
+
+local function esp(part)
+    local billboardgui = Instance.new('BillboardGui', part)
+    local tablab = Instance.new('TextLabel', billboardgui)
+
+    billboardgui.Name = "billboardgui"
+    billboardgui.Adornee = part
+    billboardgui.AlwaysOnTop = true
+    billboardgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billboardgui.Size = UDim2.new(0, 5, 0, 5)
+
+    tablab.Name = "tlab"
+    tablab.BackgroundColor3 = Color3.new(0,0,0)
+    tablab.BackgroundTransparency = 1
+    tablab.BorderSizePixel = 0
+    tablab.Position = UDim2.new(0, 0, 0, -40)
+    tablab.Size = UDim2.new(1, 0, 10, 0)
+    tablab.Visible = true
+    tablab.ZIndex = 10
+    tablab.Font = "ArialBold"
+    tablab.FontSize = "Size14"
+    tablab.Text = "KILL"
+    tablab.TextColor3 = Color3.fromRGB(255,0,0)
+    tablab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    tablab.TextStrokeTransparency = 0.6
+end
+
+game.Players.PlayerAdded:Connect(function(opp)
+    if opp:IsInGroup(10490649) or opp:IsInGroup(10490649) then
+        opp.CharacterAdded:Connect(function(char)
+            repeat wait() 
+            until char:FindFirstChild("Humanoid")
+            repeat wait() 
+            until char:FindFirstChild("Head")
+            esp(char:FindFirstChild("Head"))
+        end)
+    end
+end)
+
+for i, opp in pairs(game.Players:GetPlayers()) do
+    if opp:IsInGroup(10490649) or opp:IsInGroup(10490649) then
+        opp.CharacterAdded:Connect(function(char)
+            repeat wait() 
+            until char:FindFirstChild("Humanoid")
+            repeat wait() 
+            until char:FindFirstChild("Head")
+            esp(char:FindFirstChild("Head"))
+        end)
+    end
+end

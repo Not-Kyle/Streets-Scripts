@@ -1,0 +1,23 @@
+  local RunService = game:GetService("RunService")
+
+RunService.RenderStepped:Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid then
+        
+        if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet") then
+            
+            if game.Players.LocalPlayer.Character.Humanoid.Bullet:findFirstChild("Trail") then
+                
+                if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name == "BulletDone" then
+                    
+                end
+                if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet"):findFirstChild("Trail").Lifetime < 0.21 then
+                    
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Lifetime = 0.21
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Transparency = NumberSequence.new(0)
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(255,0,0),Color3.fromRGB(173,216,230))Color3.fromRGB(255,0,0)Color3.fromRGB(173,216,230)Color3.fromRGB(255,0,0)Color3.fromRGB(173,216,230)
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name = "BulletDone"
+                end
+            end
+        end
+    end
+end)

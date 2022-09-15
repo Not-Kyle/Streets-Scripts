@@ -1,0 +1,949 @@
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+ 
+local mouse = plr:GetMouse()
+ 
+mouse.KeyDown:Connect(function(key)
+    if key:lower() == "e" then
+	for i = 1,math.huge do
+		wait()
+		game.Players.LocalPlayer.Backpack.ServerTraits.Finish:FireServer(game.Players.LocalPlayer.Character.Punch)
+	end
+end
+end) 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == ",kill") then
+	local mouse  = game.Players.LocalPlayer:GetMouse()
+game.Players.LocalPlayer.Backpack.Glock.Grip = CFrame.Angles(math.rad(110),math.rad(-45),math.rad(90)) * CFrame.new(-0,-.5,-.7)
+game.Players.LocalPlayer.Backpack.Glock.Parent = game.Players.LocalPlayer.Character
+wait(.6)
+ game.Players.LocalPlayer.Character.Glock:Activate()
+game.Players.LocalPlayer.Character.Head:Destroy()
+	
+end
+end)
+ 
+
+local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	 
+	mouse.KeyDown:connect(function(key)
+	    if key:lower() == "c"   then
+	        local anim = Instance.new("Animation")
+anim.AnimationId = 'rbxassetid://3121033021'
+local playanim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+playanim:Play()
+	    end
+	end)
+local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
+     
+    mouse.KeyDown:connect(function(key)
+        if key:lower() == "x"   then
+	 local part = Instance.new("Part",game.Players.LocalPlayer.Character.Torso)
+part.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame * CFrame.new(0,-3,0)
+part.Size = Vector3.new(500,1,500)
+part.Transparency = 1
+part.Anchored = true
+
+end
+end)
+
+
+local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
+     
+    mouse.KeyDown:connect(function(k)
+	if k:lower() == "z" then
+		for i,v in pairs (game.Players.LocalPlayer.Character.Torso:GetChildren()) do
+			if v:IsA("Part") then
+				v:Destroy()
+			end
+		end
+	end
+end)
+ 
+ 
+
+  
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == ",kvis") then
+	
+for i = 1,math.huge do
+local anim = Instance.new("Animation")
+anim.AnimationId = 'rbxassetid://2104892382'
+local playanim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+playanim:Play()
+ 
+	wait(.1)
+ wait(.1)
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.Angles(math.rad(45),math.rad(45),math.rad(45)) * CFrame.new(-4,-2,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+ game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+wait(.1)
+
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(1,6,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(8,3,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(3,-7,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(-6,-3,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(-3,-3,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+ 
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(1,6,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+
+end
+
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == ",idle") then
+	while true do
+		wait()
+	 
+local anim = Instance.new("Animation")
+anim.AnimationId = 'rbxassetid://2104892382'
+local playanim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+playanim:Play()
+end
+end
+end)
+	
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == ",nodoors") then
+	local doors = game.Workspace:GetChildren()
+for i,v in pairs (doors)do 
+	if v.Name == "Door" then
+		v:Destroy()
+		
+	 
+	end	
+	end
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == ",prison") then
+local Tp = game:GetService("TeleportService")
+local placeID = 4669040
+
+Tp:Teleport(placeID,game.Players.LocalPlayer)
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+	if (string.lower(msg) == ",streets") then
+		local Tp = game:GetService("TeleportService")
+local placeID = 455366377
+
+Tp:Teleport(placeID,game.Players.LocalPlayer)
+	end
+end)
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+	if (string.lower(msg) == ",aerialbot") then
+		local ScreenGui = Instance.new("ScreenGui")
+local TargetFrame = Instance.new("Frame")
+local Tp = Instance.new("TextBox")
+ScreenGui.Parent = game.CoreGui
+
+TargetFrame.Name = "TargetFrame"
+TargetFrame.Parent = ScreenGui
+TargetFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+TargetFrame.Position = UDim2.new(0, 0, 0.309148252, 0)
+TargetFrame.Size = UDim2.new(0, 140, 0, 32)
+
+Tp.Name = "Tp"
+Tp.Parent = TargetFrame
+Tp.BackgroundColor3 = Color3.new(0, 0, 0)
+Tp.BorderColor3 = Color3.new(0.666667, 0, 0)
+Tp.Position = UDim2.new(0.0928571448, 0, 0.216198981, 0)
+Tp.Size = UDim2.new(0, 114, 0, 17)
+Tp.Font = Enum.Font.SciFi
+Tp.Text = "Target's name"
+Tp.TextColor3 = Color3.new(0.666667, 0, 0)
+Tp.TextSize = 17
+local GetPlayer = function(String)
+	local Found = {}
+	for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v.Name:lower():sub(1, #String) == String:lower() then
+			table.insert(Found,v)
+		end
+	end    
+	if #Found == 1 then
+		for i,v in pairs(Found) do
+			return v
+		end
+	else
+		return nil
+	end
+end
+Tp.FocusLost:Connect(function()
+	if GetPlayer(Tp.Text) then
+		local c = GetPlayer(Tp.Text)
+		local d = game:service'Players'.LocalPlayer
+		if not c.Character and not d.Character then return end
+		repeat
+local camera = workspace.CurrentCamera
+local hum = game.Players.LocalPlayer.Character.Humanoid
+hum.HipHeight = 30
+
+local target = game.Players[Tp.Text].Character.Torso -- CHANGE THE USERNAME TO WHAT U WANT 
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-16,30,0)
+wait()
+camera.CameraSubject = game.Players[Tp.Text].Character
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,35,-13)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(33,30,3)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-13,30,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,5,-13)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-15,5,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,5,-14)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-13,30,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(13,30,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,30,13)
+wait()
+until hum.Health == 0
+	end
+end)
+	end
+end)
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == ",xray") then
+	local getc = game.Workspace:GetChildren()
+for i,v in pairs (getc)do
+	if v:IsA("Part")  then
+		v.Transparency = 1
+	end
+end
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == ",noxray") then
+	local getc = game.Workspace:GetChildren()
+for i,v in pairs (getc)do
+	if v:IsA("Part")  then
+		v.Transparency = 0
+	end
+end
+end
+end)
+	
+	-- uzi aimbot
+	 game.Players.LocalPlayer.Chatted:Connect(function(c)
+    if string.find(c,",aim ") then -- finds ,s typed
+        local name = string.gsub(c,",aim ", "") -- removes ,s and focuses on name of plr 
+        for i,v in pairs (game.Players:GetChildren()) do -- gets all player names
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then -- shortens the length of name
+		if game.Players.LocalPlayer.Character.Uzi then
+			while true do
+				wait()
+			 game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(v.Character.Head.CFrame)
+			end
+		 
+end
+end
+end
+end
+end)
+	  
+	   -- glock aimbot
+	 game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",aim ") then -- finds ,s typed
+        local name = string.gsub(msg,",aim ", "") -- removes ,s and focuses on name of plr 
+        for i,v in pairs (game.Players:GetChildren()) do -- gets all player names
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then -- shortens the length of name
+		if game.Players.LocalPlayer.Character.Glock then
+			while true do 
+				wait()
+			 game.Players.LocalPlayer.Character.Glock.Fire:FireServer(v.Character.Head.CFrame)
+			end
+		 
+end
+end
+end
+end
+end)
+	
+
+-- shotty aimbot
+	 game.Players.LocalPlayer.Chatted:Connect(function(m)
+    if string.find(m,",aim ") then -- finds ,s typed
+        local name = string.gsub(m,",aim ", "") -- removes ,s and focuses on name of plr 
+        for i,v in pairs (game.Players:GetChildren()) do -- gets all player names
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then -- shortens the length of name
+		if game.Players.LocalPlayer.Character.Shotty then
+			while true do
+				wait()
+			 game.Players.LocalPlayer.Character.Shotty.Fire:FireServer(v.Character.Head.CFrame)
+			end
+		 
+end
+end
+end
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == ",noturfriend") then
+	
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.BoomBox.Remote:FireServer("PlaySong", 3203653460)
+wait(.3)
+game.Players.LocalPlayer.Character.BoomBox:Destroy()
+game.Players.LocalPlayer.Character.BoomBox:Destroy()
+end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",s ") then -- finds ,s typed
+        local name = string.gsub(msg,",s ", "") -- removes ,s and focuses on name of plr 
+        for i,v in pairs (game.Players:GetChildren()) do -- gets all player names
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then -- shortens the length of name
+                game.Players.LocalPlayer.Backpack.Shotty.Parent = game.Players.LocalPlayer.Character
+                for i = 1,450 do
+                    while true do
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.Torso.CFrame + Vector3.new(0,0,7)
+wait()
+ 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.Torso.CFrame + Vector3.new(0,0,-7)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  v.Character.Torso.CFrame + Vector3.new(-7,0, 0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  v.Character.Torso.CFrame + Vector3.new(7,0,0)
+wait()
+
+        game.Players.LocalPlayer.Character.Shotty.Fire:FireServer(v.Character.Head.CFrame)
+end
+                end
+            end
+        end
+        
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",g ") then -- finds ,s typed
+        local name = string.gsub(msg,",g ", "") -- removes ,s and focuses on name of plr 
+        for i,v in pairs (game.Players:GetChildren()) do -- gets all player names
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then -- shortens the length of name
+                game.Players.LocalPlayer.Backpack.Glock.Parent = game.Players.LocalPlayer.Character
+                for i = 1,450 do
+                    while true do
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.Torso.CFrame + Vector3.new(0,0,7)
+wait()
+ 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.Torso.CFrame + Vector3.new(0,0,-7)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  v.Character.Torso.CFrame + Vector3.new(-7,0, 0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  v.Character.Torso.CFrame + Vector3.new(7,0,0)
+wait()
+
+
+        game.Players.LocalPlayer.Character.Glock.Fire:FireServer(v.Character.Head.CFrame)
+end
+                end
+            end
+        end
+        
+    end
+end)
+
+
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == ",logs") then
+	for i,v in pairs(game.Players:GetChildren()) do
+	v.Chatted:Connect(function(msgs)
+		print(v, msgs)
+	end)
+end
+end
+end)
+
+
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == ",cancel") then
+	game.Players.LocalPlayer.Character.Knife:Destroy()
+
+end
+end)
+ 
+
+  
+--STALK
+
+--
+--gravity boost ----
+local plrs = game:GetService("Players")
+local grav = Instance.new("RocketPropulsion")
+grav.ThrustP = 5
+--vars
+grav.MaxSpeed = 20000
+grav.MaxThrust = 18000
+grav:fire()
+------ 
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",stalk") then  
+        local name = string.gsub(msg,",stalk ", "")  
+        for i,v in pairs (game.Players:GetChildren()) do  
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then  
+---
+grav.Parent = plrs.LocalPlayer.Character.Torso
+grav.Target = v.Character.Torso
+wait()
+game.Players.LocalPlayer.Backpack.Shotty.Parent = game.Players.LocalPlayer.Character
+for i = 1,350 do
+	wait()
+game.Players.LocalPlayer.Character.Shotty.Fire:FireServer(v.Character.Head.CFrame)
+end
+end
+end
+end
+end)
+
+--view player
+local c = Instance.new("Camera")
+local camera = workspace.CurrentCamera
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",eye") then  
+        local name = string.gsub(msg,",eye ", "")  
+        for i,v in pairs (game.Players:GetChildren()) do  
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then 
+camera.CameraSubject = v.Character
+end
+end
+end
+end)
+
+local c = Instance.new("Camera")
+local camera = workspace.CurrentCamera
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",uneye") then  
+        local name = string.gsub(msg,",uneye ", "")  
+        for i,v in pairs (game.Players:GetChildren()) do  
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then 
+camera.CameraSubject = game.Players.LocalPlayer.Character
+end
+end
+end
+end)
+
+ game.Players.LocalPlayer.Chatted:Connect(function(msg)
+ if string.find(msg,",trace") then  
+ local name = string.gsub(msg,",trace ", "")  
+ for i,v in pairs (game.Players:GetChildren()) do  
+ if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then 
+------------- see all players
+v.Character.Humanoid.HealthDisplayDistance = 200
+v.Character.Humanoid.NameDisplayDistance = 200
+------------
+local BillboardGui = Instance.new("BillboardGui")
+local TextLabel = Instance.new("TextLabel")
+BillboardGui.Parent = v.Character.Head
+BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BillboardGui.Active = true
+BillboardGui.Adornee = v.Character.Head
+BillboardGui.AlwaysOnTop = true
+BillboardGui.ExtentsOffset = Vector3.new(0, 1.29999995, 0)
+BillboardGui.LightInfluence = 1.000
+BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Parent = BillboardGui
+TextLabel.Active = true
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextLabel.TextSize = 37.000
+TextLabel.Text = v.Name
+-------------------------------------------------------- esp box
+local spark = Instance.new("Sparkles",v.Character.Torso)
+ spark.SparkleColor = Color3.fromRGB(0,255,0)
+local i = Instance.new("SelectionBox",workspace)
+i.Adornee = v.Character.Torso
+i.LineThickness = 0
+i.SurfaceTransparency = .8
+i.Transparency = 1
+i.Color3 = Color3.fromRGB(0,0,0)
+i.SurfaceColor3 = Color3.fromRGB(0,255,0) 
+local c = Instance.new("SelectionBox",workspace)
+c.Adornee =  v.Character["Left Leg"]
+c.LineThickness = 0
+c.SurfaceTransparency = .8
+c.Color3 = Color3.fromRGB(0,0,0)
+c.SurfaceColor3 = Color3.fromRGB(0,255,0)
+c.Transparency = 1
+local d = Instance.new("SelectionBox",workspace)
+d.Adornee = v.Character["Right Leg"]
+d.LineThickness = 0
+d.SurfaceTransparency = .8
+d.Color3 = Color3.fromRGB(0,0,0)
+d.SurfaceColor3 = Color3.fromRGB(0,255,0)
+d.Transparency = 1
+local e = Instance.new("SelectionBox",workspace)
+e.Adornee = v.Character["Right Arm"]
+e.LineThickness = 0
+e.SurfaceTransparency = .8
+e.Color3 = Color3.fromRGB(0,0,0)
+e.SurfaceColor3 = Color3.fromRGB(0,255,0)
+e.Transparency = 1
+local f = Instance.new("SelectionBox",workspace)
+f.Adornee = v.Character["Left Arm"]
+f.LineThickness = 0
+f.SurfaceTransparency = .8
+f.Color3 = Color3.fromRGB(0,0,0)
+f.SurfaceColor3 = Color3.fromRGB(0,255,0)
+f.Transparency = 1
+local h = Instance.new("SelectionBox",workspace)
+h.Adornee = v.Character["Head"]
+h.LineThickness = 0
+h.SurfaceTransparency = .8
+h.Color3 = Color3.fromRGB(0,0,0)
+h.SurfaceColor3 = Color3.fromRGB(0,255,0)
+h.Transparency = 1
+-----------------------------------------------
+end
+end
+end
+end)
+
+local Cmds = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local close = Instance.new("TextButton")
+local KeyBinds = Instance.new("TextLabel")
+local _1 = Instance.new("TextLabel")
+local _2 = Instance.new("TextLabel")
+local _3 = Instance.new("TextLabel")
+local Prefix = Instance.new("TextLabel")
+local _1_2 = Instance.new("TextLabel")
+local _2_2 = Instance.new("TextLabel")
+local _3_2 = Instance.new("TextLabel")
+local _4 = Instance.new("TextLabel")
+local _5 = Instance.new("TextLabel")
+local _6 = Instance.new("TextLabel")
+local _7 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+--
+Cmds.Enabled = false
+--
+Cmds.Name = "Cmds"
+Cmds.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Cmds.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.Name = "Main"
+Main.Parent = Cmds
+Main.Active = true
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.Position = UDim2.new(0.241515398, 0, 0.124078624, 0)
+Main.Size = UDim2.new(0, 354, 0, 432)
+Main.Style = Enum.FrameStyle.RobloxRound
+close.Name = "close"
+close.Parent = Main
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.914733171, 0, -0.0150891542, 0)
+close.Size = UDim2.new(0, 50, 0, 36)
+close.Font = Enum.Font.SourceSans
+close.Text = "0"
+close.TextColor3 = Color3.fromRGB(170, 0, 0)
+close.TextSize = 50.000
+KeyBinds.Name = "KeyBinds"
+KeyBinds.Parent = Main
+KeyBinds.Active = true
+KeyBinds.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+KeyBinds.BackgroundTransparency = 1.000
+KeyBinds.Position = UDim2.new(0.0347187817, 0, 0.656645298, 0)
+KeyBinds.Size = UDim2.new(0, 320, 0, 37)
+KeyBinds.Font = Enum.Font.Fantasy
+KeyBinds.Text = "KeyBinds"
+KeyBinds.TextColor3 = Color3.fromRGB(170, 0, 0)
+KeyBinds.TextSize = 21.000
+_1.Name = "1"
+_1.Parent = KeyBinds
+_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_1.BackgroundTransparency = 1.000
+_1.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_1.Position = UDim2.new(0.140856445, 0, 0.594594419, 0)
+_1.Size = UDim2.new(0, 228, 0, 43)
+_1.Font = Enum.Font.SourceSans
+_1.Text = "\"c\"    -   roll "
+_1.TextColor3 = Color3.fromRGB(255, 0, 0)
+_1.TextSize = 23.000
+_2.Name = "2"
+_2.Parent = KeyBinds
+_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_2.BackgroundTransparency = 1.000
+_2.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_2.Position = UDim2.new(0.158333302, 0, 1.29729724, 0)
+_2.Size = UDim2.new(0, 251, 0, 43)
+_2.Font = Enum.Font.SourceSans
+_2.Text = "\"x\"    -   airwalk "
+_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+_2.TextSize = 23.000
+_3.Name = "3"
+_3.Parent = KeyBinds
+_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_3.BackgroundTransparency = 1.000
+_3.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_3.Position = UDim2.new(0.306481451, 0, 2.05405378, 0)
+_3.Size = UDim2.new(0, 228, 0, 43)
+_3.Font = Enum.Font.SourceSans
+_3.Text = "\"z\"    -   removes airwalk "
+_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+_3.TextSize = 23.000
+Prefix.Name = "Prefix"
+Prefix.Parent = Cmds
+Prefix.Active = true
+Prefix.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Prefix.BackgroundTransparency = 1.000
+Prefix.Position = UDim2.new(0.268350422, 0, 0.122850135, 0)
+Prefix.Size = UDim2.new(0, 320, 0, 37)
+Prefix.Font = Enum.Font.Fantasy
+Prefix.Text = "Prefix is , Enjoy!"
+Prefix.TextColor3 = Color3.fromRGB(170, 0, 0)
+Prefix.TextSize = 21.000
+_1_2.Name = "1"
+_1_2.Parent = Prefix
+_1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_1_2.BackgroundTransparency = 1.000
+_1_2.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_1_2.Position = UDim2.new(-0.0747685432, 0, 0.999999821, 0)
+_1_2.Size = UDim2.new(0, 228, 0, 43)
+_1_2.Font = Enum.Font.SourceSans
+_1_2.Text = ",trace plr           --         traces plr"
+_1_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+_1_2.TextSize = 25.000
+_2_2.Name = "2"
+_2_2.Parent = Prefix
+_2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_2_2.BackgroundTransparency = 1.000
+_2_2.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_2_2.Position = UDim2.new(0.0833333358, 0, 1.89189172, 0)
+_2_2.Size = UDim2.new(0, 201, 0, 43)
+_2_2.Font = Enum.Font.SourceSans
+_2_2.Text = ",aerialbot         --         flying combat bot"
+_2_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+_2_2.TextSize = 25.000
+_3_2.Name = "3"
+_3_2.Parent = Prefix
+_3_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_3_2.BackgroundTransparency = 1.000
+_3_2.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_3_2.Position = UDim2.new(-0.120370373, 0, 2.78378367, 0)
+_3_2.Size = UDim2.new(0, 301, 0, 43)
+_3_2.Font = Enum.Font.SourceSans
+_3_2.Text = ",s plr                   --         shotty trigbot"
+_3_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+_3_2.TextSize = 25.000
+_4.Name = "4"
+_4.Parent = Prefix
+_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_4.BackgroundTransparency = 1.000
+_4.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_4.Position = UDim2.new(-0.0185185187, 0, 3.72972965, 0)
+_4.Size = UDim2.new(0, 257, 0, 42)
+_4.Font = Enum.Font.SourceSans
+_4.Text = ",stalk plr            --     anti gravity trigbot"
+_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+_4.TextSize = 25.000
+_5.Name = "5"
+_5.Parent = Prefix
+_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_5.BackgroundTransparency = 1.000
+_5.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_5.Position = UDim2.new(-0.120370388, 0, 4.64864874, 0)
+_5.Size = UDim2.new(0, 274, 0, 43)
+_5.Font = Enum.Font.SourceSans
+_5.Text = ",g plr                  --     glock trigbot"
+_5.TextColor3 = Color3.fromRGB(255, 0, 0)
+_5.TextSize = 25.000
+_6.Name = "6"
+_6.Parent = Prefix
+_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_6.BackgroundTransparency = 1.000
+_6.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_6.Position = UDim2.new(-0.339120388, 0, 5.62162161, 0)
+_6.Size = UDim2.new(0, 348, 0, 43)
+_6.Font = Enum.Font.SourceSans
+_6.Text = ",xray                  --     Xray "
+_6.TextColor3 = Color3.fromRGB(255, 0, 0)
+_6.TextSize = 25.000
+_7.Name = "7"
+_7.Parent = Prefix
+_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_7.BackgroundTransparency = 1.000
+_7.BorderColor3 = Color3.fromRGB(203, 0, 0)
+_7.Position = UDim2.new(-0.248495385, 0, 6.56756735, 0)
+_7.Size = UDim2.new(0, 365, 0, 43)
+_7.Font = Enum.Font.SourceSans
+_7.Text = ",noxray             --     disables xray "
+_7.TextColor3 = Color3.fromRGB(255, 0, 0)
+_7.TextSize = 25.000
+ImageLabel.Parent = Prefix
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(-0.171868712, 0, 7.14500618, 0)
+ImageLabel.Size = UDim2.new(0, 158, 0, 158)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=4710171507"
+close.MouseButton1Click:Connect(function()
+	Cmds.Enabled = false
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == ",cmds") then
+	Cmds.Enabled = true
+end
+end)
+
+--anchors torso
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",anchor") then  
+	game.Players.LocalPlayer.Character.Torso.Anchored = true 
+end
+end)
+--unanchors torso
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",unanchor") then  
+	game.Players.LocalPlayer.Character.Torso.Anchored = false 
+end
+end)
+-- prevents items from being looped in your inventory
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",anti") then
+	for i,v in pairs (game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if v:IsA("Tool") then
+			for i = 1,200 do
+			wait(2)
+			v:Remove()
+			end
+		end
+	end
+end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+ if string.find(msg,",copy") then  
+ local name = string.gsub(msg,",copy ", "")  
+ for i,v in pairs (game.Players:GetChildren()) do  
+ if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then 
+--
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Copy = Instance.new("TextButton")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+TextLabel.BackgroundTransparency = 0.500
+TextLabel.Position = UDim2.new(0.359905303, 0, 0.352272719, 0)
+TextLabel.Size = UDim2.new(0, 187, 0, 42)
+TextLabel.SizeConstraint = Enum.SizeConstraint.RelativeYY
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "0"
+TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.TextSize = 25.000
+Close.Name = "Close"
+Close.Parent = ScreenGui
+Close.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(77, 77, 77)
+Close.Position = UDim2.new(0.352801919, 0, 0.351351351, 0)
+Close.Size = UDim2.new(0, 37, 0, 17)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 14.000
+Copy.Name = "Copy"
+Copy.Parent = ScreenGui
+Copy.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+Copy.BackgroundTransparency = 1.000
+Copy.BorderColor3 = Color3.fromRGB(77, 77, 77)
+Copy.Position = UDim2.new(0.436464131, 0, 0.343980342, 0)
+Copy.Size = UDim2.new(0, 67, 0, 42)
+Copy.Font = Enum.Font.Fantasy
+Copy.Text = "C"
+Copy.TextColor3 = Color3.fromRGB(0, 0, 0)
+Copy.TextSize = 25.000
+--
+
+local s = v.Backpack.BoomBox.Handle.SoundX.SoundId
+
+TextLabel.Text = (string.sub(s,14,35))
+ Close.MouseButton1Click:Connect(function(exit)
+	ScreenGui:Destroy()
+end)
+Copy.MouseButton1Click:Connect(function(copyclipboard)
+	syn.write_clipboard((string.sub(s,14,35)))
+end)
+end
+end
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == ",fix") then
+game.Lighting.ColorCorrection.Enabled = false 
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == ",juicewrld") then
+game.Lighting.ColorCorrection.Enabled = true 
+game.Lighting.COlorCorrection.Saturation = 35
+end
+end)
+
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+ 
+mouse.KeyDown:Connect(function(v)
+    if v:lower() == "v" then
+local part = game.Workspace:FindFirstChild("Part")
+game.Players.LocalPlayer.Character.Head.Touched:Connect(function(part)
+part.CanCollide = false
+wait(3)
+part.CanCollide = true 
+end)
+end
+end)
+ 
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",u ") then 
+        local name = string.gsub(msg,",u ", "") 
+        for i,v in pairs (game.Players:GetChildren()) do
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then 
+                game.Players.LocalPlayer.Backpack.Uzi.Parent = game.Players.LocalPlayer.Character
+                for i = 1,450 do
+                    while true do
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.Torso.CFrame + Vector3.new(0,0,10)
+wait()
+ 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.Torso.CFrame + Vector3.new(0,0,-10)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  v.Character.Torso.CFrame + Vector3.new(-10,0, 0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  v.Character.Torso.CFrame + Vector3.new(10,0,0)
+wait()
+
+        game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(v.Character.Head.CFrame)
+end
+                end
+            end
+        end
+        
+    end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == ",uzi") then
+	repeat
+		while true do
+			wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["Uzi | $150"].Head.CFrame * CFrame.new(-2,0,0)
+		end
+	until game.Players.LocalPlayer.Backpack.Uzi
+end
+end)
+ 
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == ",stam") then
+	for i = 1,75 do
+		wait()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["Greenbull | $12"].Head.CFrame * CFrame.new(0,0,-2)
+	end
+end
+end)
+
+ game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.find(msg,",smite") then  
+        local name = string.gsub(msg,",smite ", "")  
+        for i,v in pairs (game.Players:GetChildren()) do  
+            if string.sub(string.lower(v.Name) , 1, string.len(name)) == string.lower(name) then 
+
+game.Players.LocalPlayer.Backpack.Shotty.Parent = game.Players.LocalPlayer.Character
+ 	
+		repeat
+local camera = workspace.CurrentCamera
+local hum = game.Players.LocalPlayer.Character.Humanoid
+hum.HipHeight = 20
+ 
+local target = v.Character.Torso  
+
+game.Players.LocalPlayer.Character.Shotty.Fire:FireServer(v.Character.Head.CFrame)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-16,30,0)
+wait()
+camera.CameraSubject = v.Character
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,35,-13)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(33,30,3)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-13,30,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,5,-13)
+wait()
+hum.HipHeight = 0
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-15,5,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,5,-14)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(-13,30,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(13,30,0)
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.CFrame + Vector3.new(0,30,13)
+wait()
+		until hum.Health == 0
+		
+end
+end
+end
+
+end)

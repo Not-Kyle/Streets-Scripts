@@ -1,0 +1,19 @@
+if not game:IsLoaded() then game.Loaded:Wait() end
+local RunReplacementAnimation = Instance.new("Animation")
+RunReplacementAnimation.AnimationId = "rbxassetid://1357408709"
+
+local NameCall
+function OnNameCall(self, ...)
+    local Arguments = {...}
+    local Caller, Method = checkcaller(), getnamecallmethod()
+    if not Caller then
+        if Method == "LoadAnimation" then
+            local A = Arguments[1]
+            if tostring(A) == "Run" then
+                Arguments[1] = RunReplacementAnimation
+            end
+        end
+    end
+    return NameCall(self, unpack(Arguments))
+end
+NameCall = hookmetamethod(game, "__namecall", OnNameCall)

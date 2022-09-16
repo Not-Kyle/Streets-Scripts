@@ -1,0 +1,49 @@
+local function Esp(part)
+    local billboardgui = Instance.new('BillboardGui', part)
+    local coryutextlabel = Instance.new('TextLabel', billboardgui)
+
+    billboardgui.Name = "billboardgui"
+    billboardgui.Adornee = part
+    billboardgui.AlwaysOnTop = true
+    billboardgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billboardgui.Size = UDim2.new(0, 5, 0, 5)
+
+    coryutextlabel.Name = "aurora"
+    coryutextlabel.BackgroundColor3 = Color3.new(0,0,0)
+    coryutextlabel.BackgroundTransparency = 1
+    coryutextlabel.BorderSizePixel = 0
+    coryutextlabel.Position = UDim2.new(0, 0, 0, -40)
+    coryutextlabel.Size = UDim2.new(1, 0, 10, 0)
+    coryutextlabel.Visible = true
+    coryutextlabel.ZIndex = 2
+    coryutextlabel.Font = "ArialBold"
+    coryutextlabel.FontSize = "Size12"
+    coryutextlabel.Text = "Anthrax"
+    coryutextlabel.TextColor3 = Color3.fromRGB(0,255,0)
+end
+
+game.Players.PlayerAdded:Connect(function(kos)
+    if kos:IsInGroup(15873872) then
+        kos.CharacterAdded:Connect(function(char)
+            repeat wait(nil) 
+            until char:FindFirstChild("Humanoid")
+            repeat wait(nil) 
+            until char:FindFirstChild("Head")
+            Esp(char:FindFirstChild("Head"))
+        end)
+    end
+end)
+
+for i, kos in pairs(game.Players:GetPlayers()) do
+    if kos:IsInGroup(15873872) then
+        kos.CharacterAdded:Connect(function(char)
+            repeat wait(nil) 
+            until char:FindFirstChild("Humanoid")
+            repeat wait(nil) 
+            until char:FindFirstChild("Head")
+            Esp(char:FindFirstChild("Head"))
+        end)
+    end
+end
+
+warn("this esp is to idenify anthrax members")

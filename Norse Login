@@ -1,0 +1,178 @@
+local KIC = game:GetService("Players").LocalPlayer
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("ImageLabel")--login Image
+local Frame = Instance.new("Frame")
+local PassImage = Instance.new("ImageLabel")
+local UserImage = Instance.new("ImageLabel")
+local Username = Instance.new("TextBox")
+local UsernameLabel = Instance.new("TextLabel")
+local KaliImage = Instance.new("ImageLabel")
+local KaliImageLabel = Instance.new('ImageLabel', Frame)
+local NorseIImage = Instance.new("ImageLabel")
+local NorseIImageLabel = Instance.new('ImageLabel', Frame)
+local PasswordLabel = Instance.new("TextLabel")
+local Password = Instance.new("TextBox")
+local Login = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.450, 0, 0.350, 0)
+Frame.Size = UDim2.new(0, 200, 0, 300)
+Frame.BackgroundTransparency = 0
+Frame.ZIndex = 0
+
+Main.Name = "Main"  --login Image
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1
+Main.Position = UDim2.new(0.465, 0, 0.573, 0)
+Main.Size = UDim2.new(0, 141, 0, 24)
+Main.Visible = true
+Main.Image = "rbxassetid://3570695787"
+Main.ImageColor3 = Color3.fromRGB(45, 45, 45)
+Main.ScaleType = Enum.ScaleType.Slice
+Main.SliceCenter = Rect.new(100, 100, 100, 100)
+Main.SliceScale = 0.120
+Main.ZIndex = 2
+
+PassImage.Name = "PassImage"
+PassImage.Parent = ScreenGui
+PassImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PassImage.BackgroundTransparency = 1
+PassImage.Position = UDim2.new(0.465, 0, 0.490, 0)
+PassImage.Size = UDim2.new(0, 141, 0, 24)
+PassImage.Visible = true
+PassImage.Image = "rbxassetid://3570695787"
+PassImage.ImageColor3 = Color3.fromRGB(45, 45, 45)
+PassImage.ScaleType = Enum.ScaleType.Slice
+PassImage.SliceCenter = Rect.new(100, 100, 100, 100)
+PassImage.SliceScale = 0.120
+PassImage.ZIndex = 2
+
+UserImage.Name = "UserImage"
+UserImage.Parent = ScreenGui
+UserImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UserImage.BackgroundTransparency = 1
+UserImage.Position = UDim2.new(0.465, 0, 0.410, 0)
+UserImage.Size = UDim2.new(0, 141, 0, 24)
+UserImage.Visible = true
+UserImage.Image = "rbxassetid://3570695787"
+UserImage.ImageColor3 = Color3.fromRGB(45, 45, 45)
+UserImage.ScaleType = Enum.ScaleType.Slice
+UserImage.SliceCenter = Rect.new(100, 100, 100, 100)
+UserImage.SliceScale = 0.120
+UserImage.ZIndex = 2
+
+Username.Name = "Username"
+Username.Parent = ScreenGui
+Username.BackgroundTransparency = 1
+Username.BackgroundColor3 = Color3.new(0, 0, 0)
+Username.BorderColor3 = Color3.new(0, 0, 0)
+Username.BorderSizePixel = 0
+Username.Position = UDim2.new(0.465, 0, 0.410, 0)
+Username.Size = UDim2.new(0, 141, 0, 24)
+Username.Font = Enum.Font.Ubuntu
+Username.Text = "" 
+Username.TextColor3 = Color3.new(200, 200, 200)
+Username.TextSize = 14
+Username.ZIndex = 3
+
+UsernameLabel.Name = "UsernameLabel"
+UsernameLabel.Parent = ScreenGui
+UsernameLabel.BackgroundTransparency = 1
+UsernameLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+UsernameLabel.BorderColor3 = Color3.new(0, 0, 0)
+UsernameLabel.BorderSizePixel = 0
+UsernameLabel.Position = UDim2.new(0.443, 0, 0.390, 0)
+UsernameLabel.Size = UDim2.new(0, 141, 0, 24)
+UsernameLabel.Font = Enum.Font.Ubuntu
+UsernameLabel.Text = "Username" 
+UsernameLabel.TextColor3 = Color3.new(200, 200, 200)
+UsernameLabel.TextSize = 13
+UsernameLabel.ZIndex = 2
+
+
+KaliImage = "http://www.roblox.com/asset/?id=9290290399"
+
+KaliImageLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
+KaliImageLabel.Size = UDim2.new(0, 200, 0, 300)
+KaliImageLabel.Image = KaliImage
+
+NorseIImage = "http://www.roblox.com/asset/?id=9267106338"
+
+NorseIImageLabel.BackgroundColor3 = Color3.fromRGB(1,1,1)
+NorseIImageLabel.Size = UDim2.new(0, 200, 0, 80)
+NorseIImageLabel.Image = NorseIImage
+NorseIImageLabel.BackgroundTransparency = 1
+
+PasswordLabel.Name = "PasswordLabel"
+PasswordLabel.Parent = ScreenGui
+PasswordLabel.BackgroundTransparency = 1
+PasswordLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+PasswordLabel.BorderColor3 = Color3.new(0, 0, 0)
+PasswordLabel.BorderSizePixel = 0
+PasswordLabel.Position = UDim2.new(0.443, 0, 0.470, 0)
+PasswordLabel.Size = UDim2.new(0, 141, 0, 24)
+PasswordLabel.Font = Enum.Font.Ubuntu
+PasswordLabel.Text = "Password" 
+PasswordLabel.TextColor3 = Color3.new(200, 200, 200)
+PasswordLabel.TextSize = 13
+PasswordLabel.ZIndex = 2
+
+Password.Name = "Password"
+Password.Parent = ScreenGui
+Password.BackgroundColor3 = Color3.new(0, 0, 0)
+Password.BorderColor3 = Color3.new(0, 0, 0)
+Password.BorderSizePixel = 0
+Password.BackgroundTransparency = 1
+Password.Position = UDim2.new(0.465, 0, 0.490, 0)
+Password.Size = UDim2.new(0, 141, 0, 24)
+Password.Font = Enum.Font.Ubuntu
+Password.Text = "" 
+Password.TextColor3 = Color3.new(200, 200, 200)
+Password.TextSize = 13
+Password.ZIndex = 3
+
+Login.Name = "Login"
+Login.Parent = ScreenGui
+Login.BackgroundColor3 = Color3.new(0, 0, 0)
+Login.BorderColor3 = Color3.new(0, 0, 0)
+Login.BorderSizePixel = 0
+Login.BackgroundTransparency = 1
+Login.Position = UDim2.new(0.465, 0, 0.573, 0)
+Login.Size = UDim2.new(0, 141, 0, 24)
+Login.Font = Enum.Font.Ubuntu
+Login.Text = "Log in"
+Login.ZIndex = 3
+Login.TextColor3 = Color3.new(200, 200, 200)
+Login.TextSize = 13
+Login.MouseButton1Down:connect(function()
+if Username.Text == "no_a1mbot" then
+if Password.Text == "0p96y/#X~q%p807Kwp$&1pLa]n1HF!cS'Jr~C8rQ" then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/msi-da-feds/msi/main/msi"))()
+PasswordLabel.Visible = false 
+Password.Visible = false
+Login.Visible = false
+Main.Visible = false
+Frame.Visible = false
+PassImage.Visible = false
+UserImage.Visible = false
+Username.Visible = false
+UsernameLabel.Visible = false
+KaliImage.Visible = false
+KaliImageLabel.Visible = false
+NorseIImage.Visible = false
+NorseIImageLabel.Visible = false
+
+
+else
+KIC:Kick("you are not allowed monkey")
+end
+else
+    KIC:Kick("get cory to list you")
+end
+end)

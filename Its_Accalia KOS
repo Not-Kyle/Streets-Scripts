@@ -1,0 +1,56 @@
+--[[reason for kos
+
+seeks attention from legits with a wooden plank script like aidez]]--
+
+local neutral = {
+
+[156077402] = {
+        ['Name'] = "Attention Seeker \n KILL";
+        ['Colour'] = Color3.fromRGB(255, 0, 0)
+    };
+}
+local function neutralfunction(Plr)
+    local B = Instance.new('BillboardGui',Plr.Character.Head)
+    B.Adornee = Plr.Character.Head
+    B.Size = UDim2.new(0,100,0,100)
+    B.StudsOffset = Vector3.new(0,1,0)
+    B.AlwaysOnTop = true 
+    local C = Instance.new('TextLabel',B)
+    C.BackgroundTransparency = 1
+    C.Position = UDim2.new(0,0,0,0)
+    C.Size = UDim2.new(1,0,0,40)
+    C.Font = Enum.Font.Ubuntu
+    C.TextSize = 15
+    C.TextColor3 = neutral[Plr.UserId].Colour
+    C.Text = neutral[Plr.UserId].Name
+end
+
+local PlayersC = game:GetService'Players':GetPlayers()
+for i = 1,#PlayersC do 
+    local Plr = PlayersC[i]
+    if neutral[Plr.UserId] then
+        local Head = Plr.Character:WaitForChild('Head',10)
+        if Head then 
+            neutralfunction(Plr)
+        end 
+        Plr.CharacterAdded:Connect(function()
+            Plr.Character:WaitForChild('Head',10)
+            neutralfunction(Plr)
+        end)
+    end
+end 
+
+game:GetService'Players'.PlayerAdded:Connect(function(Plr)
+    if neutral[Plr.UserId] then 
+        Plr.CharacterAdded:Connect(function()
+            neutralfunction(Plr)
+        end)
+    end
+end)
+game:GetService'Players'.ChildAdded:Connect(function(Plr)
+    if neutral[Plr.UserId] then 
+        Plr.CharacterAdded:Connect(function()
+           neutralfunction(Plr)
+        end)
+    end
+end)

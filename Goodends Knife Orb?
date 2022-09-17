@@ -1,0 +1,50 @@
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+if (string.lower(msg) == "-knifo") then
+	
+for i = 1,math.huge do
+local anim = Instance.new("Animation")
+anim.AnimationId = 'rbxassetid://2104892382'
+local playanim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+playanim:Play()
+ 
+	wait(.1)
+ wait(.1)
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.Angles(math.rad(45),math.rad(45),math.rad(45)) * CFrame.new(-4,-2,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+ game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+wait(.1)
+
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(1,6,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(8,3,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(3,-7,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(-6,-3,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(-3,-3,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+ 
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+  wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+game.Players.LocalPlayer.Backpack.Knife.Grip = CFrame.new(1,6,-2)
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(.1)
+game.Players.LocalPlayer.Character.Knife.Parent = game.Players.LocalPlayer.Backpack
+
+end
+
+end
+end)

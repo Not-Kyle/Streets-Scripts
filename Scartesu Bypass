@@ -1,0 +1,23 @@
+if game.PlaceId == 10046946702  then -- bypass for yevs especially skidded "remake"
+function getchar() 
+    return game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:wait()
+    end
+    
+    -- disable shit
+    for _, v in next, getconnections(game:GetService("ScriptContext").Error) do 
+        v:Disable();
+    end
+    function loopdisable()
+    for _,v in next, getconnections(getchar():WaitForChild("Humanoid").ChildRemoved) do
+      v:Disable()  
+    end
+    for _,v in next, getconnections(getchar().ChildAdded) do
+    v:Disable()
+    end
+    for _,v in next, getconnections(game.Players.LocalPlayer.DescendantAdded) do
+    v:Disable()
+    end
+    for _,v in next, getconnections(game.ReplicatedStorage.Changed) do
+        v:Disable()
+    end
+end

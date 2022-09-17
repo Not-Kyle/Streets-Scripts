@@ -45,7 +45,7 @@ Commands["Blink"] = {
     ["Description"] = "Turns Blinking Abilities off and on [Toggle]";
     ["Function"] = function()
         Blink = not Blink 
-        Notify("We<3Lexi", "Blink -  "..tostring(Blink), "", 3)
+        Notify("Citizen", "Blink -  "..tostring(Blink), "", 3)
     end
 }
 Commands["BlinkSpeed"] = {
@@ -57,7 +57,7 @@ Commands["BlinkSpeed"] = {
         else 
             return Notify("We<3Lexi", "Type a number goober!", "", 3)
         end
-        Notify("We<3Lexi", "BlinkSpeed -  "..tonumber(BlinkSpeed), "", 3)
+        Notify("Citizen", "BlinkSpeed -  "..tonumber(BlinkSpeed), "", 3)
     end
 }
 

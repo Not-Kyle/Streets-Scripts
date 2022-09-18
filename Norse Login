@@ -153,7 +153,7 @@ Login.TextSize = 13
 Login.MouseButton1Down:connect(function()
 if Username.Text == "no_a1mbot" then
 if Password.Text == "0p96y/#X~q%p807Kwp$&1pLa]n1HF!cS'Jr~C8rQ" then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/msi-da-feds/msi/main/msi"))()
+loadstring(game:HttpGet("---SCRIPT HERE---"))()
 PasswordLabel.Visible = false 
 Password.Visible = false
 Login.Visible = false

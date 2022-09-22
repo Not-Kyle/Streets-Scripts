@@ -10,7 +10,7 @@ local RD = false
 anim.AnimationId = 'rbxassetid://3121033021'
 local roll = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
        roll:Play(0)
-        roll:AdjustSpeed(2)
+        roll:AdjustSpeed(1)
 	           roll.Stopped:Connect(function()
             if game.Workspace.Terrain:FindFirstChild("Left Leg") and game.Workspace.Terrain:FindFirstChild("Right Leg") and LocalPlays.Character ~= nil then
                 game.Workspace.Terrain:FindFirstChild("Left Leg").Parent = LocalPlays.Character

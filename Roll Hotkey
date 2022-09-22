@@ -1,0 +1,26 @@
+local LocalPlays = game.Players.LocalPlayer
+local RD = false    
+    
+    local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	 
+	mouse.KeyDown:connect(function(key)
+	    if key:lower() == "r"   then
+	        local anim = Instance.new("Animation")
+anim.AnimationId = 'rbxassetid://3121033021'
+local roll = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+       roll:Play(0)
+        roll:AdjustSpeed(2)
+	           roll.Stopped:Connect(function()
+            if game.Workspace.Terrain:FindFirstChild("Left Leg") and game.Workspace.Terrain:FindFirstChild("Right Leg") and LocalPlays.Character ~= nil then
+                game.Workspace.Terrain:FindFirstChild("Left Leg").Parent = LocalPlays.Character
+                game.Workspace.Terrain:FindFirstChild("Right Leg").Parent = LocalPlays.Character
+            end
+            RD = false
+        end)
+        repeat 
+            LocalPlays.Character.HumanoidRootPart.CFrame = LocalPlays.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-5)
+            wait(nil)
+        until RD == false or LocalPlays.Character.Humanoid.Health < 1
+	    end
+end)

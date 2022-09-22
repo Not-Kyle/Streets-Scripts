@@ -296,6 +296,10 @@ local neutral = {   --THIS IS FOR THE MOST WANTED TARGETS
         ['Name'] = "board script skid";      --//Biggest Target        
         ['Colour'] = Color3.fromRGB(255, 0, 0)
     };
+[412442376] = {
+        ['Name'] = "boolean? lol?";      --//nasty female exploiter    
+        ['Colour'] = Color3.fromRGB(255, 0, 0)
+    };
 }
 
 local function neutralfunction(Plr)

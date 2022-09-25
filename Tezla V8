@@ -1,0 +1,858 @@
+--Key For Login: tezlauser
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Notification",
+                Text = "Tezla V8 was loaded!",
+                Duration = 15,
+            })	
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TezlaV8Text = Instance.new("TextButton")
+local Login = Instance.new("TextButton")
+local CreditsText = Instance.new("TextButton")
+local Password = Instance.new("TextBox")
+local IgnoreText1 = Instance.new("TextLabel")
+local TextBox = Instance.new("TextButton")
+local TextBox_2 = Instance.new("TextButton")
+local TextBox_3 = Instance.new("TextButton")
+local TextBox_4 = Instance.new("TextButton")
+local IgnoreText2 = Instance.new("TextLabel")
+local IgnoreText3 = Instance.new("TextLabel")
+local TextBox_5 = Instance.new("TextButton")
+local TextBox_6 = Instance.new("TextButton")
+local TextBox_7 = Instance.new("TextButton")
+local TextBox_8 = Instance.new("TextButton")
+local TextBox_9 = Instance.new("TextButton")
+local TextBox_10 = Instance.new("TextButton")
+local TextBox_11 = Instance.new("TextButton")
+local TextBox_12 = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
+local Changespeedtextbox = Instance.new("TextBox")
+local Speedkeybindtextbox = Instance.new("TextBox")
+local TextBox_13 = Instance.new("TextButton")
+local TextBox_14 = Instance.new("TextButton")
+local TextBox_15 = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.00567644276, 0, 0.409867167, 0)
+Frame.Size = UDim2.new(0, 423, 0, 298)
+
+TezlaV8Text.Name = "TezlaV8Text"
+TezlaV8Text.Parent = Frame
+TezlaV8Text.Active = false
+TezlaV8Text.BackgroundColor3 = Color3.new(1, 1, 1)
+TezlaV8Text.Position = UDim2.new(0.136540592, 0, 0.0240489263, 0)
+TezlaV8Text.Size = UDim2.new(0, 306, 0, 46)
+TezlaV8Text.AutoButtonColor = false
+TezlaV8Text.Style = Enum.ButtonStyle.RobloxRoundButton
+TezlaV8Text.Font = Enum.Font.Code
+TezlaV8Text.Text = "Tezla V8"
+TezlaV8Text.TextColor3 = Color3.new(0, 0, 0)
+TezlaV8Text.TextSize = 21
+
+Login.Name = "Login"
+Login.Parent = Frame
+Login.BackgroundColor3 = Color3.new(0.541176, 0.541176, 0.541176)
+Login.BorderColor3 = Color3.new(0, 0, 0)
+Login.BorderSizePixel = 3
+Login.Position = UDim2.new(0.238770694, 0, 0.530201316, 0)
+Login.Size = UDim2.new(0, 218, 0, 50)
+Login.Font = Enum.Font.Code
+Login.Text = "Login"
+Login.TextColor3 = Color3.new(0, 0, 0)
+Login.TextSize = 18
+Login.MouseButton1Down:connect(function()
+if Password.Text == "tezlauser" then
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Welcome to Tezla Press Y to open/close the GUI.","All")
+Login.Visible = false
+Password.Visible = false
+Speed.Visible = true
+TextBox.Visible = true
+TextBox_2.Visible = true
+TextBox_3.Visible = true
+TextBox_4.Visible = true
+TextBox_5.Visible = true
+TextBox_6.Visible = true
+TextBox_7.Visible = true
+TextBox_8.Visible = true
+TextBox_9.Visible = true
+TextBox_10.Visible = true
+TextBox_11.Visible = true
+TextBox_12.Visible = true
+TextBox_13.Visible = true
+TextBox_14.Visible = true
+TextBox_15.Visible = true
+IgnoreText1.Visible = true
+IgnoreText2.Visible = true 
+IgnoreText3.Visible = true
+end	
+end)
+
+CreditsText.Name = "CreditsText"
+CreditsText.Parent = Frame
+CreditsText.Active = false
+CreditsText.BackgroundColor3 = Color3.new(1, 1, 1)
+CreditsText.Position = UDim2.new(0.0183372777, 0, 0.84284085, 0)
+CreditsText.Size = UDim2.new(0, 408, 0, 46)
+CreditsText.AutoButtonColor = false
+CreditsText.Style = Enum.ButtonStyle.RobloxRoundButton
+CreditsText.Font = Enum.Font.Code
+CreditsText.Text = "Made By T_SK#5799 & oskar#8412"
+CreditsText.TextColor3 = Color3.new(0, 0, 0)
+CreditsText.TextSize = 21
+
+Password.Name = "Password"
+Password.Parent = Frame
+Password.BackgroundColor3 = Color3.new(0.541176, 0.541176, 0.541176)
+Password.BorderColor3 = Color3.new(0, 0, 0)
+Password.BorderSizePixel = 3
+Password.Position = UDim2.new(0.278959811, 0, 0.322147667, 0)
+Password.Size = UDim2.new(0, 186, 0, 32)
+Password.Font = Enum.Font.Code
+Password.Text = "[password]"
+Password.TextColor3 = Color3.new(0, 0, 0)
+Password.TextSize = 14
+
+IgnoreText1.Name = "IgnoreText1"
+IgnoreText1.Parent = Frame
+IgnoreText1.BackgroundColor3 = Color3.new(1, 1, 1)
+IgnoreText1.BackgroundTransparency = 1
+IgnoreText1.Position = UDim2.new(0.0330969281, 0, 0.130872488, 0)
+IgnoreText1.Size = UDim2.new(0, 105, 0, 50)
+IgnoreText1.Visible = false
+IgnoreText1.Font = Enum.Font.Code
+IgnoreText1.Text = "Animations"
+IgnoreText1.TextColor3 = Color3.new(0, 0, 0)
+IgnoreText1.TextSize = 18
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox.Position = UDim2.new(0.0236406624, 0, 0.278523505, 0)
+TextBox.Size = UDim2.new(0, 112, 0, 34)
+TextBox.Visible = false
+TextBox.Font = Enum.Font.Code
+TextBox.Text = "Chill Animation"
+TextBox.TextColor3 = Color3.new(0, 0, 0)
+TextBox.TextSize = 14
+TextBox.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://259363289'
+end				
+end)
+
+TextBox_2.Parent = Frame
+TextBox_2.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_2.Position = UDim2.new(0.0236406624, 0, 0.416107416, 0)
+TextBox_2.Size = UDim2.new(0, 112, 0, 34)
+TextBox_2.Visible = false
+TextBox_2.Font = Enum.Font.Code
+TextBox_2.Text = "Dog Animation"
+TextBox_2.TextColor3 = Color3.new(0, 0, 0)
+TextBox_2.TextSize = 14
+TextBox_2.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Backpack.Punch.Punch1.AnimationId="rbxassetid://950134726"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch2.AnimationId="rbxassetid://950134726"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch3.AnimationId="rbxassetid://950134726"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch4.AnimationId="rbxassetid://950134726"
+
+game.Players.LocalPlayer.Backpack.Punch.Running.AnimationId="rbxassetid://950134726"
+
+  game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId="rbxassetid://948444869"
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.jump:GetChildren()) do
+   v.AnimationId = 'rbxassetid://948442744'
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+   v.AnimationId = 'rbxassetid://948442744'
+end
+end	
+end)
+
+TextBox_3.Parent = Frame
+TextBox_3.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_3.Position = UDim2.new(0.0236406624, 0, 0.557047009, 0)
+TextBox_3.Size = UDim2.new(0, 112, 0, 34)
+TextBox_3.Visible = false
+TextBox_3.Font = Enum.Font.Code
+TextBox_3.Text = "Viewfinder Animation"
+TextBox_3.TextColor3 = Color3.new(0, 0, 0)
+TextBox_3.TextSize = 14
+TextBox_3.TextWrapped = true
+TextBox_3.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.jump:GetChildren()) do
+    v.AnimationId = 'rbxassetid://341273975'
+end
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://400832309'
+end
+end)
+
+TextBox_4.Parent = Frame
+TextBox_4.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_4.Position = UDim2.new(0.0236406624, 0, 0.701342344, 0)
+TextBox_4.Size = UDim2.new(0, 112, 0, 34)
+TextBox_4.Visible = false
+TextBox_4.Font = Enum.Font.Code
+TextBox_4.Text = "Murder Animation"
+TextBox_4.TextColor3 = Color3.new(0, 0, 0)
+TextBox_4.TextSize = 14
+TextBox_4.TextWrapped = true
+TextBox_4.MouseButton1Down:connect(function()
+      game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId="rbxassetid://1316478145"
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.jump:GetChildren()) do
+   v.AnimationId = 'rbxassetid://451686028'
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+   v.AnimationId = 'rbxassetid://448026591'
+end
+end		
+end)
+
+IgnoreText2.Name = "IgnoreText2"
+IgnoreText2.Parent = Frame
+IgnoreText2.BackgroundColor3 = Color3.new(1, 1, 1)
+IgnoreText2.BackgroundTransparency = 1
+IgnoreText2.Position = UDim2.new(0.71631211, 0, 0.130872488, 0)
+IgnoreText2.Size = UDim2.new(0, 105, 0, 50)
+IgnoreText2.Visible = false
+IgnoreText2.Font = Enum.Font.Code
+IgnoreText2.Text = "Misc"
+IgnoreText2.TextColor3 = Color3.new(0, 0, 0)
+IgnoreText2.TextSize = 18
+
+IgnoreText3.Name = "IgnoreText3"
+IgnoreText3.Parent = Frame
+IgnoreText3.BackgroundColor3 = Color3.new(1, 1, 1)
+IgnoreText3.BackgroundTransparency = 1
+IgnoreText3.Position = UDim2.new(0.3758865, 0, 0.130872488, 0)
+IgnoreText3.Size = UDim2.new(0, 105, 0, 50)
+IgnoreText3.Visible = false
+IgnoreText3.Font = Enum.Font.Code
+IgnoreText3.Text = "Fight"
+IgnoreText3.TextColor3 = Color3.new(0, 0, 0)
+IgnoreText3.TextSize = 18
+
+
+TextBox_5.Parent = Frame
+TextBox_5.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_5.Position = UDim2.new(0.359338075, 0, 0.278523505, 0)
+TextBox_5.Size = UDim2.new(0, 112, 0, 34)
+TextBox_5.Visible = false
+TextBox_5.Font = Enum.Font.Code
+TextBox_5.Text = "Fight Pack [Punch]"
+TextBox_5.TextColor3 = Color3.new(0, 0, 0)
+TextBox_5.TextSize = 14
+TextBox_5.TextWrapped = true
+TextBox_5.MouseButton1Down:connect(function()
+
+game.Players.LocalPlayer.Backpack.Punch.Idle.AnimationId="rbxassetid://"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch1.AnimationId="rbxassetid://242021844" 
+
+game.Players.LocalPlayer.Backpack.Punch.Punch2.AnimationId="rbxassetid://255797581" 
+
+game.Players.LocalPlayer.Backpack.Punch.Punch3.AnimationId="rbxassetid://2287944964" 
+
+game.Players.LocalPlayer.Backpack.Punch.Punch4.AnimationId="rbxassetid://526812070" 
+
+game.Players.LocalPlayer.Backpack.Punch.Running.AnimationId="rbxassetid://242021477" 
+
+game.Players.LocalPlayer.Backpack.Punch.Info.AnimSpeed.Value = "1.5"		
+end)
+
+TextBox_6.Parent = Frame
+TextBox_6.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_6.Position = UDim2.new(0.359338045, 0, 0.416107416, 0)
+TextBox_6.Size = UDim2.new(0, 112, 0, 34)
+TextBox_6.Visible = false
+TextBox_6.Font = Enum.Font.Code
+TextBox_6.Text = "Hits [Punch,Knife]"
+TextBox_6.TextColor3 = Color3.new(0, 0, 0)
+TextBox_6.TextSize = 14
+TextBox_6.TextWrapped = true
+TextBox_6.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Backpack.Knife.GripUp =  Vector3.new(0,0,1)
+
+game.Players.LocalPlayer.Backpack.Knife.GripRight =  Vector3.new(0,0,1)
+
+game.Players.LocalPlayer.Backpack.Knife.Idle.AnimationId="rbxassetid://1320171223"
+
+game.Players.LocalPlayer.Backpack.Knife.Punch1.AnimationId="rbxassetid://186934753"
+
+game.Players.LocalPlayer.Backpack.Knife.Punch2.AnimationId="rbxassetid://186934658"
+
+game.Players.LocalPlayer.Backpack.Knife.Running.AnimationId="rbxassetid://341273975"	
+
+game.Players.LocalPlayer.Backpack.Knife.Info.AnimSpeed.Value = "1.39"
+
+game.Players.LocalPlayer.Backpack.Knife.Info.Cooldown.Value = "0.58"	
+
+game.Players.LocalPlayer.Backpack.Punch.Punch1.AnimationId="rbxassetid://452457498"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch2.AnimationId="rbxassetid://501022727"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch3.AnimationId="rbxassetid://400424276"
+
+game.Players.LocalPlayer.Backpack.Punch.Punch4.AnimationId="rbxassetid://501014044"
+
+game.Players.LocalPlayer.Backpack.Punch.Running.AnimationId="rbxassetid://501022727"
+
+game.Players.LocalPlayer.Backpack.Punch.Info.AnimSpeed.Value = "1.5"
+
+game.Players.LocalPlayer.Backpack.Punch.Info.Cooldown.Value = "0.20"	
+end)
+
+TextBox_7.Parent = Frame
+TextBox_7.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_7.Position = UDim2.new(0.359338075, 0, 0.701342344, 0)
+TextBox_7.Size = UDim2.new(0, 112, 0, 34)
+TextBox_7.Visible = false
+TextBox_7.Font = Enum.Font.Code
+TextBox_7.Text = "Double Machete"
+TextBox_7.TextColor3 = Color3.new(0, 0, 0)
+TextBox_7.TextSize = 14
+TextBox_7.TextWrapped = true
+TextBox_7.MouseButton1Down:connect(function()
+game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Notification",
+                Text = "Double Machete KeyBind [B]!",
+                Duration = 15,
+            })	
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+
+local ReEquip = function()
+    local Tool = nil
+    for i,v in pairs(Plr.Character:GetChildren()) do
+if v:IsA("Tool") or v:IsA("HopperBin") then
+    Tool = v
+end
+    end
+    if Tool then
+Tool.Parent = Plr.Backpack
+wait("3.0")
+Tool.Parent = Plr.Character
+    end
+end
+
+local TP = function(CFRAME)
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+if v:IsA("LocalScript") then
+    v.Disabled = true
+end
+    end
+    Plr.Character.HumanoidRootPart.CFrame = CFRAME
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+if v:IsA("LocalScript") then
+    v.Disabled = false
+end
+    end
+end
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInput = game:GetService("UserInputService")
+local Core = game:GetService("CoreGui")
+
+local Plr = Players.LocalPlayer
+local Mouse = Plr:GetMouse()
+
+local ToggleKey = Enum.KeyCode.Equals
+local BlinkKey = Enum.KeyCode.Q
+local FlyKey = Enum.KeyCode.Semicolon
+local FoodKey = Enum.KeyCode.P
+
+
+local TP = function(CFRAME)
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+        if v:IsA("LocalScript") then
+            v.Disabled = true
+        end
+    end
+    Plr.Character.HumanoidRootPart.CFrame = CFRAME
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+        if v:IsA("LocalScript") then
+            v.Disabled = false
+        end
+    end
+end
+
+wait (1.0)
+
+local CurrentPos = game.Players.LocalPlayer.Character.Torso.Position
+TP(CFrame.new(-727,4,-81))
+ReEquip()
+wait(3.0)
+TP(CFrame.new(CurrentPos))
+ReEquip()
+
+wait (1.5)
+
+local CurrentPos = game.Players.LocalPlayer.Character.Torso.Position
+TP(CFrame.new(-727,4,-81))
+ReEquip()
+wait(3.0)
+TP(CFrame.new(CurrentPos))
+ReEquip()
+
+wait (2.0)
+
+game.Players.LocalPlayer.Backpack.Machete.GripUp =  Vector3.new(0,-150,1)
+
+game.Players.LocalPlayer.Backpack.Machete.Punch1.AnimationId="rbxassetid://218504594"
+
+game.Players.LocalPlayer.Backpack.Machete.Punch2.AnimationId="rbxassetid://218504594"
+
+game.Players.LocalPlayer.Backpack.Machete.Running.AnimationId="rbxassetid://341273975"
+wait (0.5)
+
+local setkey = "b"
+
+local plr = game.Players.LocalPlayer
+local h = game:GetService('RunService').Heartbeat
+local m = plr:GetMouse()
+
+local bfg = false
+
+m.KeyDown:connect(function(key)
+	if key==setkey then
+		bfg = not bfg
+	end
+end)
+
+m.Button1Down:connect(function()
+h:wait()
+ if plr.Character:FindFirstChild('Machete') then plr.Character.Machete.Fire:FireServer(m.Hit)  end
+ if plr.Character:FindFirstChild('Machete') then plr.Character.Machete.Fire:FireServer(m.Hit) end
+ if plr.Character:FindFirstChild('Machete') then plr.Character.Machete.Fire:FireServer(m.Hit)  end
+ if plr.Character:FindFirstChild('Machete') then plr.Character["Machete"].Fire:FireServer(m.Hit)  end
+end)
+
+function start()
+while true do
+h:wait()
+if bfg == true then
+ if plr.Backpack:FindFirstChild('Machete') then
+  plr.Backpack.Machete.Parent = plr.Character
+  h:wait()
+ elseif plr.Backpack:FindFirstChild('Machete') then
+  plr.Backpack.Shotty.Parent = plr.Character
+  h:wait()
+  elseif plr.Backpack:FindFirstChild("Machete") then
+  plr.Backpack.Machete.Parent = plr.Character
+  h:wait()
+   elseif plr.Backpack:FindFirstChild("Machete") then
+  plr.Backpack["Machete"].Parent = plr.Character
+  h:wait()
+end
+end
+end
+end
+start()	
+	
+end)
+
+TextBox_8.Parent = Frame
+TextBox_8.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_8.Position = UDim2.new(0.359338075, 0, 0.557047009, 0)
+TextBox_8.Size = UDim2.new(0, 112, 0, 34)
+TextBox_8.Visible = false
+TextBox_8.Font = Enum.Font.Code
+TextBox_8.Text = "Buy All Guns"
+TextBox_8.TextColor3 = Color3.new(0, 0, 0)
+TextBox_8.TextSize = 14
+TextBox_8.TextWrapped = true
+TextBox_8.MouseButton1Down:connect(function()
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+ 
+local ReEquip = function()
+    local Tool = nil
+    for i,v in pairs(Plr.Character:GetChildren()) do
+if v:IsA("Tool") or v:IsA("HopperBin") then
+    Tool = v
+end
+    end
+    if Tool then
+Tool.Parent = Plr.Backpack
+wait("3.0")
+Tool.Parent = Plr.Character
+    end
+end
+ 
+local TP = function(CFRAME)
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+if v:IsA("LocalScript") then
+    v.Disabled = true
+end
+    end
+    Plr.Character.HumanoidRootPart.CFrame = CFRAME
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+if v:IsA("LocalScript") then
+    v.Disabled = false
+end
+    end
+end
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInput = game:GetService("UserInputService")
+local Core = game:GetService("CoreGui")
+ 
+local Plr = Players.LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+local ToggleKey = Enum.KeyCode.Equals
+local BlinkKey = Enum.KeyCode.Q
+local FlyKey = Enum.KeyCode.Semicolon
+local FoodKey = Enum.KeyCode.P
+ 
+ 
+local TP = function(CFRAME)
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+        if v:IsA("LocalScript") then
+            v.Disabled = true
+        end
+    end
+    Plr.Character.HumanoidRootPart.CFrame = CFRAME
+    for i,v in pairs(Plr.PlayerGui:GetChildren()) do
+        if v:IsA("LocalScript") then
+            v.Disabled = false
+        end
+    end
+end
+
+local CurrentPos = game.Players.LocalPlayer.Character.Torso.Position
+TP(CFrame.new(-972.683289, 4.95825768, -92.2516937))
+ReEquip()
+wait(3.0)
+TP(CFrame.new(CurrentPos))
+ReEquip()
+
+wait (0.1)
+
+local CurrentPos = game.Players.LocalPlayer.Character.Torso.Position
+TP(CFrame.new(-272.830811, 3.0072546, 361.377502))
+ReEquip()
+wait(3.0)
+TP(CFrame.new(CurrentPos))
+ReEquip()
+
+wait (0.1)
+
+local CurrentPos = game.Players.LocalPlayer.Character.Torso.Position
+TP(CFrame.new(-249.576736, 5.60533333, -244.484818))
+ReEquip()
+wait(3.0)
+TP(CFrame.new(CurrentPos))
+ReEquip()
+
+
+end)
+
+TextBox_9.Parent = Frame
+TextBox_9.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_9.Position = UDim2.new(0.673758864, 0, 0.278523505, 0)
+TextBox_9.Size = UDim2.new(0, 68, 0, 34)
+TextBox_9.Visible = false
+TextBox_9.Font = Enum.Font.Code
+TextBox_9.Text = "Fast Attack"
+TextBox_9.TextColor3 = Color3.new(0, 0, 0)
+TextBox_9.TextSize = 14
+TextBox_9.TextWrapped = true
+TextBox_9.MouseButton1Down:connect(function()
+local player=game.Players.LocalPlayer
+player.Backpack:WaitForChild("Punch").Info.Cooldown.Value = 0.01
+player.Backpack.Punch.Info.AnimSpeed.Value = 5
+player.Backpack:WaitForChild("Knife").Info.Cooldown.Value = 0.01
+player.Backpack.Knife.Info.AnimSpeed.Value = 5
+if game:GetService("MarketplaceService"):PlayerOwnsAsset(player, 503266657) then
+player.Backpack:WaitForChild("Pipe").Info.Cooldown.Value = 0.01
+player.Backpack.Pipe.Info.AnimSpeed.Value = 5
+end
+player.Backpack.ChildAdded:connect(function(child)
+if child.Name == "Bat" or child.Name == "Bottle" then
+child:WaitForChild("Info").Cooldown.Value = 0.01
+child.Info.AnimSpeed.Value = 5
+end
+end)
+local player=game.Players.LocalPlayer
+player.Backpack.ServerTraits.Stam.Changed:connect(function()
+player.Backpack.ServerTraits.Stam.Value = 100
+end)	
+end)
+
+
+TextBox_10.Parent = Frame
+TextBox_10.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_10.Position = UDim2.new(0.834515452, 0, 0.278523505, 0)
+TextBox_10.Size = UDim2.new(0, 63, 0, 34)
+TextBox_10.Visible = false
+TextBox_10.Font = Enum.Font.Code
+TextBox_10.Text = "Noclip [Q]"
+TextBox_10.TextColor3 = Color3.new(0, 0, 0)
+TextBox_10.TextSize = 14
+TextBox_10.TextWrapped = true
+TextBox_10.MouseButton1Down:connect(function()
+local noclipplayer = game:GetService("Players").LocalPlayer
+	local noclipmouse = noclipplayer:GetMouse()
+	
+	local donoclip = false
+	local noclip = false
+	
+	function b_noclip(key)
+		if (key == "q") then
+			if noclip == false then
+				donoclip = true
+				
+				noclip = true
+			elseif noclip == true then
+				donoclip = false
+				
+				noclip = false
+			end
+		end
+	end
+	
+	noclipmouse.KeyDown:connect(b_noclip)
+	
+	game:GetService("Players").LocalPlayer.Character.Head.Touched:connect(function(obj)
+		if obj ~= workspace.Terrain then
+			if donoclip == true then
+				obj.CanCollide = false
+			else
+				obj.CanCollide = true
+			end
+		end
+	end)
+end)
+
+TextBox_11.Parent = Frame
+TextBox_11.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_11.Position = UDim2.new(0.673758805, 0, 0.392617464, 0)
+TextBox_11.Size = UDim2.new(0, 131, 0, 34)
+TextBox_11.Visible = false
+TextBox_11.Font = Enum.Font.Code
+TextBox_11.Text = "Bypass [Turn on before Boost!]"
+TextBox_11.TextColor3 = Color3.new(0, 0, 0)
+TextBox_11.TextSize = 14
+TextBox_11.TextWrapped = true
+TextBox_11.MouseButton1Down:connect(function()
+while true do
+game.ReplicatedStorage.Name = 'RepStorage'
+wait(0.5)
+end	
+end)
+
+TextBox_12.Parent = Frame
+TextBox_12.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_12.Position = UDim2.new(0.673758924, 0, 0.506711423, 0)
+TextBox_12.Size = UDim2.new(0, 68, 0, 34)
+TextBox_12.Visible = false
+TextBox_12.Font = Enum.Font.Code
+TextBox_12.Text = "Boost Shift"
+TextBox_12.TextColor3 = Color3.new(0, 0, 0)
+TextBox_12.TextSize = 14
+TextBox_12.TextWrapped = true
+TextBox_12.MouseButton1Down:connect(function()
+repeat wait() until game.Players.LocalPlayer
+m = game.Players.LocalPlayer:GetMouse()
+m.KeyDown:connect(function(key)
+ if key == "0" then
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+ end
+end)
+m.KeyUp:connect(function(key)
+ if key == "0" then
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+ end
+end)
+end)
+
+Speed.Name = "Speed"
+Speed.Parent = Frame
+Speed.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+Speed.Position = UDim2.new(0.834515452, 0, 0.506711423, 0)
+Speed.Size = UDim2.new(0, 63, 0, 34)
+Speed.Visible = false
+Speed.Font = Enum.Font.Code
+Speed.Text = "Synapse WalkSpeed"
+Speed.TextColor3 = Color3.new(0, 0, 0)
+Speed.TextSize = 14
+Speed.TextWrapped = true
+
+Changespeedtextbox.Name = "Changespeedtextbox"
+Changespeedtextbox.Parent = Frame
+Changespeedtextbox.BackgroundColor3 = Color3.new(1, 1, 1)
+Changespeedtextbox.Position = UDim2.new(1.47281325, 0, 0.503355682, 0)
+Changespeedtextbox.Size = UDim2.new(0, 200, 0, 50)
+Changespeedtextbox.Visible = false
+Changespeedtextbox.Font = Enum.Font.SourceSans
+Changespeedtextbox.Text = "3"
+Changespeedtextbox.TextColor3 = Color3.new(0, 0, 0)
+Changespeedtextbox.TextSize = 14
+
+Speedkeybindtextbox.Name = "Speedkeybindtextbox"
+Speedkeybindtextbox.Parent = Frame
+Speedkeybindtextbox.BackgroundColor3 = Color3.new(1, 1, 1)
+Speedkeybindtextbox.Position = UDim2.new(1.47281325, 0, 0.177852333, 0)
+Speedkeybindtextbox.Size = UDim2.new(0, 200, 0, 50)
+Speedkeybindtextbox.Visible = false
+Speedkeybindtextbox.Font = Enum.Font.SourceSans
+Speedkeybindtextbox.Text = "w"
+Speedkeybindtextbox.TextColor3 = Color3.new(0, 0, 0)
+Speedkeybindtextbox.TextSize = 14
+
+TextBox_13.Parent = Frame
+TextBox_13.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_13.Position = UDim2.new(0.673758924, 0, 0.620805383, 0)
+TextBox_13.Size = UDim2.new(0, 67, 0, 34)
+TextBox_13.Visible = false
+TextBox_13.Font = Enum.Font.Code
+TextBox_13.Text = "Items"
+TextBox_13.TextColor3 = Color3.new(0, 0, 0)
+TextBox_13.TextSize = 14
+TextBox_13.TextWrapped = true
+TextBox_13.MouseButton1Down:connect(function()
+while
+true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=(game.Workspace.RandomSpawner.CFrame)wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=(game.Workspace.RandomSpawner.CFrame)wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=(game.Workspace.RandomSpawner.CFrame)end	
+end)
+
+TextBox_14.Parent = Frame
+TextBox_14.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_14.Position = UDim2.new(0.834515393, 0, 0.620805383, 0)
+TextBox_14.Size = UDim2.new(0, 63, 0, 34)
+TextBox_14.Visible = false
+TextBox_14.Font = Enum.Font.Code
+TextBox_14.Text = "Bfg [H]"
+TextBox_14.TextColor3 = Color3.new(0, 0, 0)
+TextBox_14.TextSize = 14
+TextBox_14.TextWrapped = true
+TextBox_14.MouseButton1Down:connect(function()
+local setkey = "h"
+
+local plr = game.Players.LocalPlayer
+local h = game:GetService('RunService').Heartbeat
+local m = plr:GetMouse()
+
+local bfg = false
+
+m.KeyDown:connect(function(key)
+	if key==setkey then
+		bfg = not bfg
+	end
+end)
+
+m.Button1Down:connect(function()
+h:wait()
+ if plr.Character:FindFirstChild('Uzi') then plr.Character.Uzi.Fire:FireServer(m.Hit)  end
+ if plr.Character:FindFirstChild('Shotty') then plr.Character.Shotty.Fire:FireServer(m.Hit) end
+ if plr.Character:FindFirstChild('Glock') then plr.Character.Glock.Fire:FireServer(m.Hit)  end
+ if plr.Character:FindFirstChild('Sawed Off') then plr.Character["Sawed Off"].Fire:FireServer(m.Hit)  end
+end)
+
+function start()
+while true do
+h:wait()
+if bfg == true then
+ if plr.Backpack:FindFirstChild('Uzi') then
+  plr.Backpack.Uzi.Parent = plr.Character
+  h:wait()
+ elseif plr.Backpack:FindFirstChild('Shotty') then
+  plr.Backpack.Shotty.Parent = plr.Character
+  h:wait()
+  elseif plr.Backpack:FindFirstChild("Glock") then
+  plr.Backpack.Glock.Parent = plr.Character
+  h:wait()
+   elseif plr.Backpack:FindFirstChild("Sawed Off") then
+  plr.Backpack["Sawed Off"].Parent = plr.Character
+  h:wait()
+end
+end
+end
+end
+start()		
+end)
+
+TextBox_15.Parent = Frame
+TextBox_15.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox_15.Position = UDim2.new(0.673758924, 0, 0.734899342, 0)
+TextBox_15.Size = UDim2.new(0, 131, 0, 24)
+TextBox_15.Visible = false
+TextBox_15.Font = Enum.Font.Code
+TextBox_15.Text = "Tezla Admin"
+TextBox_15.TextColor3 = Color3.new(0, 0, 0)
+TextBox_15.TextSize = 14
+TextBox_15.TextWrapped = true
+TextBox_15.MouseButton1Down:connect(function()
+loadstring(game:GetObjects("rbxassetid://01773249472")[1].Source)()	
+end)
+
+
+local plr = game:GetService("Players").LocalPlayer
+local char = plr.Character
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local hum = char:FindFirstChild("HumanoidRootPart")
+
+Speed.MouseButton1Down:connect(function()
+local plr = game:GetService("Players").LocalPlayer
+local char = plr.Character
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local hum = char:FindFirstChild("HumanoidRootPart")
+mouse.KeyDown:connect(function(key)
+    if key == Speedkeybindtextbox.Text then
+        loop = true
+        while loop do
+            hum.CFrame = hum.CFrame + hum.CFrame.lookVector * Changespeedtextbox.Text
+            wait()
+        end
+        end
+        end)
+end)
+
+mouse.KeyUp:connect(function(key)
+    if key == Speedkeybindtextbox.Text then
+        loop = false
+    end
+end)
+
+warn ("[[[[[[[[[[Cmds Here]]]]]]]]]")
+warn ("!Invisible -- Invisible radio")
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == "!invisible") then
+game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Notification",
+                Text = "[Oskar] Play a code before using this, otherwise reset to change the code or redo this method!",
+                Duration = 15,
+            })	
+game.Players.LocalPlayer.Character.BoomBox.Server:Destroy()	
+end	
+end)
+
+Player = game.Players.LocalPlayer
+Mouse = Player:GetMouse()
+gui = ScreenGui
+box = Frame
+Open = false
+ 
+function PressY(key)
+    if (key == "y") then
+        if (Open == false) then
+        box.Visible = true
+        Open = true
+    elseif (Open == true) then
+        box.Visible = false
+        Open = false
+        end
+    end
+end
+ 
+Mouse.KeyDown:connect(PressY)

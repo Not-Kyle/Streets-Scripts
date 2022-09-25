@@ -1,0 +1,333 @@
+-- by xaxa/zxciaz/fiviefourteen
+-- dont ask me to update this but give me suggestions for it ig
+
+local ScreenGui = Instance.new("ScreenGui")
+local GuiFrame = Instance.new("Frame")
+local CitizenLogo = Instance.new("ImageButton")
+local MadeByLabel = Instance.new("TextLabel")
+local DividerFrame = Instance.new("Frame")
+local DiscordLabel = Instance.new("TextLabel")
+local DirectionsLabel = Instance.new("TextLabel")
+local FieldOfViewLabel = Instance.new("TextLabel")
+local FieldOfViewBox = Instance.new("TextBox")
+local ResetKeyLabel = Instance.new("TextLabel")
+local ResetKeyBox = Instance.new("TextBox")
+local GlockLaunchButton = Instance.new("TextButton")
+local AntiFeButton = Instance.new("TextButton")
+local BetterLightingButton = Instance.new("TextButton")
+local TrashTalkKeyLabel = Instance.new("TextLabel")
+local TrashTalkKeyBox = Instance.new("TextBox")
+
+--Properties:
+
+coroutine.resume(coroutine.create(function()
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+GuiFrame.Name = "GuiFrame"
+GuiFrame.Parent = ScreenGui
+GuiFrame.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+GuiFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GuiFrame.BorderSizePixel = 4
+GuiFrame.Position = UDim2.new(0.330854982, 0, 0.232186735, 0)
+GuiFrame.Size = UDim2.new(0, 479, 0, 315)
+GuiFrame.Draggable = true 
+GuiFrame.Selectable = true 
+GuiFrame.Active = true 
+
+CitizenLogo.Name = "CitizenLogo"
+CitizenLogo.Parent = GuiFrame
+CitizenLogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CitizenLogo.BackgroundTransparency = 1.000
+CitizenLogo.Position = UDim2.new(0.0109890103, 0, 0.01953125, 0)
+CitizenLogo.Size = UDim2.new(0, 100, 0, 100)
+CitizenLogo.Image = "http://www.roblox.com/asset/?id=5793181157"
+
+MadeByLabel.Name = "MadeByLabel"
+MadeByLabel.Parent = CitizenLogo
+MadeByLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MadeByLabel.BackgroundTransparency = 1.000
+MadeByLabel.Position = UDim2.new(2.25, 0, -0.0700000226, 0)
+MadeByLabel.Size = UDim2.new(0, 126, 0, 49)
+MadeByLabel.Font = Enum.Font.GothamBlack
+MadeByLabel.Text = "Citizen Legit Mode - by fiviefourteen/xaxa/zxciaz"
+MadeByLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+MadeByLabel.TextSize = 14.000
+
+DividerFrame.Name = "DividerFrame"
+DividerFrame.Parent = CitizenLogo
+DividerFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DividerFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+DividerFrame.BorderSizePixel = 2
+DividerFrame.Position = UDim2.new(0, 0, 1.22000003, 0)
+DividerFrame.Size = UDim2.new(0, 460, 0, 1)
+
+DiscordLabel.Name = "DiscordLabel"
+DiscordLabel.Parent = CitizenLogo
+DiscordLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DiscordLabel.BackgroundTransparency = 1.000
+DiscordLabel.Position = UDim2.new(2.25000024, 0, 0.109999999, 0)
+DiscordLabel.Size = UDim2.new(0, 126, 0, 46)
+DiscordLabel.Font = Enum.Font.GothamBlack
+DiscordLabel.Text = "Join The Discord - discord.gg/w34v8dz"
+DiscordLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+DiscordLabel.TextSize = 14.000
+
+DirectionsLabel.Name = "DirectionsLabel"
+DirectionsLabel.Parent = CitizenLogo
+DirectionsLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DirectionsLabel.BackgroundTransparency = 1.000
+DirectionsLabel.Position = UDim2.new(2.25000024, 0, 0.25, 0)
+DirectionsLabel.Size = UDim2.new(0, 126, 0, 54)
+DirectionsLabel.Font = Enum.Font.GothamBlack
+DirectionsLabel.Text = "Press F9 for directions"
+DirectionsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+DirectionsLabel.TextSize = 14.000
+
+FieldOfViewLabel.Name = "FieldOfViewLabel"
+FieldOfViewLabel.Parent = CitizenLogo
+FieldOfViewLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FieldOfViewLabel.BackgroundTransparency = 1.000
+FieldOfViewLabel.Position = UDim2.new(0.0600002483, 0, 1.22000003, 0)
+FieldOfViewLabel.Size = UDim2.new(0, 126, 0, 54)
+FieldOfViewLabel.Font = Enum.Font.GothamBlack
+FieldOfViewLabel.Text = "FOV / Field Of View"
+FieldOfViewLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+FieldOfViewLabel.TextSize = 14.000
+
+FieldOfViewBox.Name = "FieldOfViewBox"
+FieldOfViewBox.Parent = FieldOfViewLabel
+FieldOfViewBox.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+FieldOfViewBox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+FieldOfViewBox.BorderSizePixel = 2
+FieldOfViewBox.Position = UDim2.new(0, 0, 0.870370388, 0)
+FieldOfViewBox.Size = UDim2.new(0, 126, 0, 20)
+FieldOfViewBox.Font = Enum.Font.GothamBlack
+FieldOfViewBox.PlaceholderText = "70"
+FieldOfViewBox.Text = ""
+FieldOfViewBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+FieldOfViewBox.TextSize = 14.000
+
+ResetKeyLabel.Name = "ResetKeyLabel"
+ResetKeyLabel.Parent = CitizenLogo
+ResetKeyLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ResetKeyLabel.BackgroundTransparency = 1.000
+ResetKeyLabel.Position = UDim2.new(1.67000031, 0, 1.22000003, 0)
+ResetKeyLabel.Size = UDim2.new(0, 126, 0, 54)
+ResetKeyLabel.Font = Enum.Font.GothamBlack
+ResetKeyLabel.Text = "Reset Key"
+ResetKeyLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ResetKeyLabel.TextSize = 14.000
+
+ResetKeyBox.Name = "ResetKeyBox"
+ResetKeyBox.Parent = ResetKeyLabel
+ResetKeyBox.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+ResetKeyBox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ResetKeyBox.BorderSizePixel = 2
+ResetKeyBox.Position = UDim2.new(0, 0, 0.870370388, 0)
+ResetKeyBox.Size = UDim2.new(0, 126, 0, 20)
+ResetKeyBox.Font = Enum.Font.GothamBlack
+ResetKeyBox.PlaceholderText = "R"
+ResetKeyBox.Text = ""
+ResetKeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+ResetKeyBox.TextSize = 14.000
+
+GlockLaunchButton.Name = "GlockLaunchButton"
+GlockLaunchButton.Parent = CitizenLogo
+GlockLaunchButton.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+GlockLaunchButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+GlockLaunchButton.BorderSizePixel = 2
+GlockLaunchButton.Position = UDim2.new(0.0600003004, 0, 2.0999999, 0)
+GlockLaunchButton.Size = UDim2.new(0, 123, 0, 34)
+GlockLaunchButton.Font = Enum.Font.GothamBlack
+GlockLaunchButton.Text = "Glock Launch"
+GlockLaunchButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+GlockLaunchButton.TextSize = 14.000
+
+AntiFeButton.Name = "AntiFeButton"
+AntiFeButton.Parent = CitizenLogo
+AntiFeButton.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+AntiFeButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AntiFeButton.BorderSizePixel = 2
+AntiFeButton.Position = UDim2.new(1.68000031, 0, 2.0999999, 0)
+AntiFeButton.Size = UDim2.new(0, 123, 0, 34)
+AntiFeButton.Font = Enum.Font.GothamBlack
+AntiFeButton.Text = "AntiFe"
+AntiFeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiFeButton.TextSize = 14.000
+
+BetterLightingButton.Name = "BetterLightingButton"
+BetterLightingButton.Parent = CitizenLogo
+BetterLightingButton.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+BetterLightingButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+BetterLightingButton.BorderSizePixel = 2
+BetterLightingButton.Position = UDim2.new(3.34000039, 0, 2.0999999, 0)
+BetterLightingButton.Size = UDim2.new(0, 123, 0, 34)
+BetterLightingButton.Font = Enum.Font.GothamBlack
+BetterLightingButton.Text = "Better Lighting"
+BetterLightingButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+BetterLightingButton.TextSize = 14.000
+
+TrashTalkKeyLabel.Name = "TrashTalkKeyLabel"
+TrashTalkKeyLabel.Parent = CitizenLogo
+TrashTalkKeyLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrashTalkKeyLabel.BackgroundTransparency = 1.000
+TrashTalkKeyLabel.Position = UDim2.new(3.34000039, 0, 1.22000003, 0)
+TrashTalkKeyLabel.Size = UDim2.new(0, 126, 0, 54)
+TrashTalkKeyLabel.Font = Enum.Font.GothamBlack
+TrashTalkKeyLabel.Text = "Trash-Talk Key"
+TrashTalkKeyLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TrashTalkKeyLabel.TextSize = 14.000
+
+TrashTalkKeyBox.Name = "TrashTalkKeyBox"
+TrashTalkKeyBox.Parent = TrashTalkKeyLabel
+TrashTalkKeyBox.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+TrashTalkKeyBox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TrashTalkKeyBox.BorderSizePixel = 2
+TrashTalkKeyBox.Position = UDim2.new(0, 0, 0.870370388, 0)
+TrashTalkKeyBox.Size = UDim2.new(0, 126, 0, 20)
+TrashTalkKeyBox.Font = Enum.Font.GothamBlack
+TrashTalkKeyBox.PlaceholderText = "G"
+TrashTalkKeyBox.Text = ""
+TrashTalkKeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TrashTalkKeyBox.TextSize = 14.000
+end))
+
+local Players, Uis, RService, RStorage, LStorage = game:GetService("Players"), game:GetService("UserInputService"), game:GetService("RunService"), game:GetService("ReplicatedStorage"), game:GetService("Lighting")
+local Client, Mouse, Camera, INew = Players.LocalPlayer, Players.LocalPlayer:GetMouse(), workspace.CurrentCamera, Instance.new;
+local AntiFe, GLaunch, BLighting = false, true, false;
+local FOV, ResetKey, TTalkKey = 70, "R", "G";
+local TrashTalk = {"you suck LOL", "your trash", "my nan can play better than you LOL", "ur mad", "NEXT"};
+
+getgenv().Notify = function(title, text, icon, time)
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = title;
+        Text = text;
+        Icon = "rbxassetid://5793181157";
+        Duration = time;
+    }) 
+end
+getgenv().ChatWord = function(string)
+    RStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(tostring(string), "All")
+end
+local function PrintCommands()
+    if rconsoleprint then 
+        rconsolename("Citizen Legit Mode")
+        rconsoleprint([[
+        
+        Directions:
+        
+        Type in a Letter/Number for the type of box then press ENTER to confirm
+        idrgaf about this so dont ask me to update it 
+        if your going to use something from this give me credits
+        
+        ]])
+    else 
+        print([[
+        
+        Citizen Legit Mode
+        Directions:
+        
+        Type in a Letter/Number for the type of box then press ENTER to confirm
+        idrgaf about this so dont ask me to update it 
+        if your going to use something from this give me credits
+        
+        ]])
+    end
+end
+PrintCommands()
+local function ChatSpy()
+    local ChatSpyFrame = Client.PlayerGui.Chat.Frame
+    ChatSpyFrame.ChatChannelParentFrame.Visible = true
+    ChatSpyFrame.ChatBarParentFrame.Position = ChatSpyFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), ChatSpyFrame.ChatChannelParentFrame.Size.Y)
+end
+ChatSpy()
+
+Uis.InputBegan:Connect(function(Key)
+    if not Uis:GetFocusedTextBox() then 
+        if Key.KeyCode == Enum.KeyCode[ResetKey] then 
+            Client.Character:FindFirstChild("Humanoid"):ChangeState(15)
+        end
+        if Key.KeyCode == Enum.KeyCode[TTalkKey] then 
+            ChatWord(TrashTalk[math.random(1, #TrashTalk)])
+        end
+    end
+end)
+
+RService.Stepped:Connect(function()
+    if GLaunch == true then 
+        pcall(function()
+            if Client and Client.Backpack and Client.Character then 
+                Client.Character:FindFirstChild("Glock").CanCollide = true 
+            else 
+                Client.Backpack:FindFirstChild("Glock").CanCollide = true
+            end 
+        end)
+    elseif GLaunch == false then 
+        pcall(function()
+            if Client and Client.Backpack and Client.Character then
+                Client.Character:FindFirstChild("Glock").CanCollide = false 
+            else 
+                Client.Backpack:FindFirstChild("Glock").CanCollide = false
+            end
+        end)
+    end
+end)
+
+FieldOfViewBox.FocusLost:Connect(function(F1)
+    if F1 == true then 
+        FOV = FieldOfViewBox.Text 
+        Camera.FieldOfView = FOV 
+    end
+    Notify("Citizen", "FOV: "..tonumber(FOV), "", 3)
+end)
+ResetKeyBox.FocusLost:Connect(function(F2)
+    if F2 == true then 
+        ResetKeyBox.Text = string.upper(ResetKeyBox.Text)
+        ResetKey = string.upper(ResetKeyBox.Text)
+    end
+    Notify("Citizen", "Reset Key: "..tostring(ResetKey), "", 3)
+end)
+TrashTalkKeyBox.FocusLost:Connect(function(F3)
+    if F3 == true then 
+        TrashTalkKeyBox.Text = string.upper(TrashTalkKeyBox.Text)
+        TTalkKey = string.upper(TrashTalkKeyBox.Text)
+    end
+    Notify("Citizen", "Trash-Talk Key: "..tostring(TTalkKey), "", 3)
+end)
+
+BetterLightingButton.MouseButton1Click:Connect(function()
+    BLighting = not BLighting
+    if BLighting == true and LStorage:FindFirstChild("ColorCorrection") and LStorage:FindFirstChild("Sky") then 
+        LStorage["ColorCorrection"]:Destroy()
+        LStorage["Sky"]:Destroy()
+    end
+    Notify("Citizen", "Better Lighting: "..tostring(BLighting), "", 3)
+end)
+GlockLaunchButton.MouseButton1Click:Connect(function()
+    GLaunch = not GLaunch
+    Notify("Citizen", "Glock Launch: "..tostring(GLaunch), "", 3)
+end)
+AntiFeButton.MouseButton1Click:Connect(function()
+    AntiFe = not AntiFe
+    Notify("Citizen", "Anti Fe: "..tostring(AntiFe), "", 3)
+    if AntiFe == true then 
+        for _, v in next, Client.Backpack:GetChildren() do 
+            if v:IsA("Tool") then 
+                local TFolder = INew("Folder", v.Handle)
+                TFolder.Name = "TFolder"
+            end
+            Client.Character.ChildAdded:Connect(function(t1)
+                if not t1.Handle:FindFirstChild("TFolder") then 
+                    t1:Destroy()
+                end
+            end)
+            Client.Backpack.ChildAdded:Connect(function(t2)
+                if not t2.Handle:FindFirstChild("TFolder") then 
+                    t2:Destroy()
+                end
+            end)
+        end
+    elseif AntiFe == false then return end
+end)

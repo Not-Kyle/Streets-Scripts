@@ -1,0 +1,1291 @@
+
+local yas = tick()
+
+if not _G["DrPoppa"] then
+
+    _G["DrPoppa"] = true
+    local services = {
+        ["Players"] = game:GetService("Players"),
+        ["UserInputService"] = game:GetService("UserInputService"),
+        ["RunService"] = game:GetService("RunService"),
+        ["CoreGui"] = game:GetService("CoreGui"),
+        ["TeleportService"] = game:GetService("TeleportService"),
+        ["Debris"] = game:GetService("Debris"),
+        ["StarterGui"] = game:GetService("StarterGui"),
+        ["HttpService"] = game:GetService("HttpService"),
+    }
+
+    -- // VARIABLES \\ --
+
+    local variables = {
+        ["LocalPlayer"] = services["Players"].LocalPlayer,
+        ["RenderStepped"] = services["RunService"].RenderStepped,
+        ["Heartbeat"] = services["RunService"].Heartbeat,
+        ["Camera"] = workspace:WaitForChild("Camera"),
+    }
+
+    -- // KEYS \\ --
+
+    local keys = {
+        ["W"] = false,
+        ["A"] = false,
+        ["S"] = false,
+        ["D"] = false,
+    }
+
+    -- // EDITABLE VARIABLES \\ --
+
+    local var = {
+        ["Aimbot"] = false,
+        ["Flying"] = false,
+        ["NoSlow"] = false,
+        ["AutoStomp"] = false,
+        ["Stomping"] = false,
+        ["Teleporting"] = false,
+        ["GodeMode"] = false,
+        ["Airwalk"] = false,
+        ["NoClip"] = false,
+        ["LoopKilling"] = false,
+        ["Triggerbot"] = false,
+        ["Triggered"] = false,
+        ["Duplicating"] = false,
+        ["CanNotify"] = true,
+        ["Sprinting"] = false,
+        ["CamLocking"] = false,
+        ["Sprint"] = false,
+        ["Airwalk_Offset"] = 0,
+        ["CamLockTarget"] = nil,
+        ["AimbotTarget"] = nil,
+    }
+
+    local saved = {
+        ["FlySpeed"] = 5,
+        ["AimbotVelocity"] = 2,
+        ["SprintSpeed"] = 25,
+        ["FlyHotkey"] = "F",
+        ["NoClipHotkey"] = "N",
+        ["AirwalkHotkey"] = "B",
+        ["ResetHotkey"] = " ",
+    }
+
+    if writefile ~= nil and readfile ~= nil then
+        local DrPoppaSettings = nil
+        pcall(function()
+            DrPoppaSettings = readfile("DrPoppav3Settings.lua")
+        end)
+        if DrPoppaSettings ~= nil then
+            DrPoppaSettings = services["HttpService"]:JSONDecode(readfile("DrPoppav3Settings.lua"))
+            for i,v in next,saved do
+                saved[i] = DrPoppaSettings[i]
+            end
+            writefile("DrPoppav3Settings.lua",services["HttpService"]:JSONEncode(saved))
+        else
+            DrPoppaSettings = writefile("DrPoppav3Settings.lua",services["HttpService"]:JSONEncode(saved))
+        end
+    end
+
+    local DrPoppa = Instance.new("ScreenGui",services["CoreGui"])
+
+    -- // FRAMES \\ --
+
+    local MainFrame = Instance.new("Frame",DrPoppa)
+    MainFrame.Size = UDim2.new(0,100,0,250)
+    MainFrame.Position = UDim2.new(1,0,1,-260)
+    MainFrame.BackgroundColor = BrickColor.new("Salmon")
+    MainFrame.Transparency = 0.2
+    MainFrame.BorderSizePixel = 2
+    MainFrame.BorderColor = BrickColor.new("White")
+
+    local Logo = Instance.new("ImageLabel",MainFrame)
+    Logo.Size = UDim2.new(0,27.5,0,27.5)
+    Logo.Position = UDim2.new(0.5,-12.5,0,5)
+    Logo.BackgroundTransparency = 1
+    Logo.Image = "http://www.roblox.com/asset/?id=2124384310"
+
+    local FrameHolder = Instance.new("Frame",MainFrame)
+    FrameHolder.Size = UDim2.new(0,300,0,250)
+    FrameHolder.Position = UDim2.new(-3.1,0,0,0)
+    FrameHolder.Transparency = 1
+    FrameHolder.Visible = true
+
+    local CloseFrameHolder = Instance.new("TextButton",FrameHolder)
+    CloseFrameHolder.Size = UDim2.new(0,15,0,25)
+    CloseFrameHolder.Position = UDim2.new(-0.080,0,0.5,-25)
+    CloseFrameHolder.BackgroundColor = BrickColor.new("Salmon")
+    CloseFrameHolder.Transparency = 0.2
+    CloseFrameHolder.BorderSizePixel = 2
+    CloseFrameHolder.Text = ">"
+    CloseFrameHolder.TextColor = BrickColor.new("Really black")
+    CloseFrameHolder.BorderColor = BrickColor.new("White")
+    CloseFrameHolder.Visible = false
+    CloseFrameHolder.Font = "GothamBlack"
+    CloseFrameHolder.TextSize = 15
+
+    -- // SETTINGS FRAME \\ --
+
+    local SettingsHolder = Instance.new("Frame",FrameHolder)
+    SettingsHolder.Size = UDim2.new(0,300,0,250)
+    SettingsHolder.Position = UDim2.new(0,0,0,0)
+    SettingsHolder.BackgroundColor = BrickColor.new("Salmon")
+    SettingsHolder.Transparency = 0.2
+    SettingsHolder.BorderSizePixel = 2
+    SettingsHolder.BorderColor = BrickColor.new("White")
+    SettingsHolder.Visible = false
+
+    local SettingsOpen = Instance.new("TextButton",MainFrame)
+    SettingsOpen.Size = UDim2.new(0,80,0,25)
+    SettingsOpen.Position = UDim2.new(0.5,-40,0,40)
+    SettingsOpen.BackgroundColor = BrickColor.new("Light red")
+    SettingsOpen.Transparency = 0.1
+    SettingsOpen.BorderSizePixel = 0
+    SettingsOpen.Text = "Settings"
+    SettingsOpen.TextColor = BrickColor.new("Really black")
+    SettingsOpen.Font = "GothamBlack"
+    SettingsOpen.TextSize = 15
+
+    local AirwalkButton = Instance.new("TextButton",SettingsHolder)
+    AirwalkButton.Size = UDim2.new(0,80,0,20)
+    AirwalkButton.Position = UDim2.new(0,15,0,15)
+    AirwalkButton.BackgroundColor = BrickColor.new("Light red")
+    AirwalkButton.BorderSizePixel = 0
+    AirwalkButton.Text = "Airwalk"
+    AirwalkButton.TextColor = BrickColor.new("Really black")
+    AirwalkButton.Font = "GothamBlack"
+    AirwalkButton.TextSize = 15
+
+    local AirwalkButtonONOFF = Instance.new("Frame",AirwalkButton)
+    AirwalkButtonONOFF.Size = UDim2.new(0,80,0,3)
+    AirwalkButtonONOFF.Position = UDim2.new(0,0,0,18)
+    AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    AirwalkButtonONOFF.Transparency = 0.1
+    AirwalkButtonONOFF.BorderSizePixel = 0
+
+    local FlyButton = Instance.new("TextButton",SettingsHolder)
+    FlyButton.Size = UDim2.new(0,80,0,20)
+    FlyButton.Position = UDim2.new(0,15,0,50)
+    FlyButton.BackgroundColor = BrickColor.new("Light red")
+    FlyButton.BorderSizePixel = 0
+    FlyButton.Text = "Fly"
+    FlyButton.TextColor = BrickColor.new("Really black")
+    FlyButton.Font = "GothamBlack"
+    FlyButton.TextSize = 15
+
+    local FlyButtonONOFF = Instance.new("Frame",FlyButton)
+    FlyButtonONOFF.Size = UDim2.new(0,80,0,3)
+    FlyButtonONOFF.Position = UDim2.new(0,0,0,18)
+    FlyButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    FlyButtonONOFF.Transparency = 0.1
+    FlyButtonONOFF.BorderSizePixel = 0
+
+    local NoSlowButton = Instance.new("TextButton",SettingsHolder)
+    NoSlowButton.Size = UDim2.new(0,80,0,20)
+    NoSlowButton.Position = UDim2.new(0,105,0,15)
+    NoSlowButton.BackgroundColor = BrickColor.new("Light red")
+    NoSlowButton.BorderSizePixel = 0
+    NoSlowButton.Text = "No Slow"
+    NoSlowButton.TextColor = BrickColor.new("Really black")
+    NoSlowButton.Font = "GothamBlack"
+    NoSlowButton.TextSize = 15
+
+    local NoSlowButtonONOFF = Instance.new("Frame",NoSlowButton)
+    NoSlowButtonONOFF.Size = UDim2.new(0,80,0,3)
+    NoSlowButtonONOFF.Position = UDim2.new(0,0,0,18)
+    NoSlowButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    NoSlowButtonONOFF.Transparency = 0.1
+    NoSlowButtonONOFF.BorderSizePixel = 0
+
+    local AutoStompButton = Instance.new("TextButton",SettingsHolder)
+    AutoStompButton.Size = UDim2.new(0,80,0,20)
+    AutoStompButton.Position = UDim2.new(0,195,0,15)
+    AutoStompButton.BackgroundColor = BrickColor.new("Light red")
+    AutoStompButton.BorderSizePixel = 0
+    AutoStompButton.Text = "Auto Stomp"
+    AutoStompButton.TextColor = BrickColor.new("Really black")
+    AutoStompButton.Font = "GothamBlack"
+    AutoStompButton.TextSize = 13
+
+    local AutoStompButtonONOFF = Instance.new("Frame",AutoStompButton)
+    AutoStompButtonONOFF.Size = UDim2.new(0,80,0,3)
+    AutoStompButtonONOFF.Position = UDim2.new(0,0,0,18)
+    AutoStompButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    AutoStompButtonONOFF.Transparency = 0.1
+    AutoStompButtonONOFF.BorderSizePixel = 0
+
+    local NoClipButton = Instance.new("TextButton",SettingsHolder)
+    NoClipButton.Size = UDim2.new(0,80,0,20)
+    NoClipButton.Position = UDim2.new(0,105,0,50)
+    NoClipButton.BackgroundColor = BrickColor.new("Light red")
+    NoClipButton.BorderSizePixel = 0
+    NoClipButton.Text = "NoClip"
+    NoClipButton.TextColor = BrickColor.new("Really black")
+    NoClipButton.Font = "GothamBlack"
+    NoClipButton.TextSize = 15
+
+    local NoClipButtonONOFF = Instance.new("Frame",NoClipButton)
+    NoClipButtonONOFF.Size = UDim2.new(0,80,0,3)
+    NoClipButtonONOFF.Position = UDim2.new(0,0,0,18)
+    NoClipButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    NoClipButtonONOFF.Transparency = 0.1
+    NoClipButtonONOFF.BorderSizePixel = 0
+
+    local TriggerBotButton = Instance.new("TextButton",SettingsHolder)
+    TriggerBotButton.Size = UDim2.new(0,80,0,20)
+    TriggerBotButton.Position = UDim2.new(0,195,0,50)
+    TriggerBotButton.BackgroundColor = BrickColor.new("Light red")
+    TriggerBotButton.BorderSizePixel = 0
+    TriggerBotButton.Text = "TriggerBot"
+    TriggerBotButton.TextColor = BrickColor.new("Really black")
+    TriggerBotButton.Font = "GothamBlack"
+    TriggerBotButton.TextSize = 15
+
+    local TriggerBotButtonONOFF = Instance.new("Frame",TriggerBotButton)
+    TriggerBotButtonONOFF.Size = UDim2.new(0,80,0,3)
+    TriggerBotButtonONOFF.Position = UDim2.new(0,0,0,18)
+    TriggerBotButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    TriggerBotButtonONOFF.Transparency = 0.1
+    TriggerBotButtonONOFF.BorderSizePixel = 0
+
+    local AimbotButton = Instance.new("TextButton",SettingsHolder)
+    AimbotButton.Size = UDim2.new(0,80,0,20)
+    AimbotButton.Position = UDim2.new(0,15,0,85)
+    AimbotButton.BackgroundColor = BrickColor.new("Light red")
+    AimbotButton.BorderSizePixel = 0
+    AimbotButton.Text = "Aimbot"
+    AimbotButton.TextColor = BrickColor.new("Really black")
+    AimbotButton.Font = "GothamBlack"
+    AimbotButton.TextSize = 15
+
+    local AimbotButtonONOFF = Instance.new("Frame",AimbotButton)
+    AimbotButtonONOFF.Size = UDim2.new(0,80,0,3)
+    AimbotButtonONOFF.Position = UDim2.new(0,0,0,18)
+    AimbotButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    AimbotButtonONOFF.Transparency = 0.1
+    AimbotButtonONOFF.BorderSizePixel = 0
+
+    local AimbotVelocityText = Instance.new("TextBox",AimbotButton)
+    AimbotVelocityText.Size = UDim2.new(0,25,0,20)
+    AimbotVelocityText.Position = UDim2.new(0,30,0,30)
+    AimbotVelocityText.BackgroundColor = BrickColor.new("Institutional white")
+    AimbotVelocityText.BorderSizePixel = 1
+    AimbotVelocityText.Font = "GothamBlack"
+    AimbotVelocityText.BorderColor = BrickColor.new("Really black")
+    AimbotVelocityText.TextSize = 12
+    AimbotVelocityText.Text = tostring(saved["AimbotVelocity"])
+
+    local AimbotUsername = Instance.new("TextBox",AimbotButton)
+    AimbotUsername.Size = UDim2.new(0,80,0,20)
+    AimbotUsername.Position = UDim2.new(0,0,0,55)
+    AimbotUsername.BackgroundColor = BrickColor.new("Institutional white")
+    AimbotUsername.BorderSizePixel = 1
+    AimbotUsername.Font = "GothamBlack"
+    AimbotUsername.BorderColor = BrickColor.new("Really black")
+    AimbotUsername.TextSize = 12
+    AimbotUsername.Text = ""
+
+    local CamLockButton = Instance.new("TextButton",SettingsHolder)
+    CamLockButton.Size = UDim2.new(0,80,0,20)
+    CamLockButton.Position = UDim2.new(0,105,0,85)
+    CamLockButton.BackgroundColor = BrickColor.new("Light red")
+    CamLockButton.BorderSizePixel = 0
+    CamLockButton.Text = "CamLock"
+    CamLockButton.TextColor = BrickColor.new("Really black")
+    CamLockButton.Font = "GothamBlack"
+    CamLockButton.TextSize = 15
+
+
+    local CamLockButtonONOFF = Instance.new("Frame",CamLockButton)
+    CamLockButtonONOFF.Size = UDim2.new(0,80,0,3)
+    CamLockButtonONOFF.Position = UDim2.new(0,0,0,18)
+    CamLockButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    CamLockButtonONOFF.Transparency = 0.1
+    CamLockButtonONOFF.BorderSizePixel = 0
+
+    local CamLockUsername = Instance.new("TextBox",CamLockButton)
+    CamLockUsername.Size = UDim2.new(0,80,0,20)
+    CamLockUsername.Position = UDim2.new(0,0,0,30)
+    CamLockUsername.BackgroundColor = BrickColor.new("Institutional white")
+    CamLockUsername.BorderSizePixel = 1
+    CamLockUsername.Font = "GothamBlack"
+    CamLockUsername.BorderColor = BrickColor.new("Really black")
+    CamLockUsername.TextSize = 12
+    CamLockUsername.Text = ""
+
+    local SprintSpeedButton = Instance.new("TextButton",SettingsHolder)
+    SprintSpeedButton.Size = UDim2.new(0,80,0,20)
+    SprintSpeedButton.Position = UDim2.new(0,195,0,85)
+    SprintSpeedButton.BackgroundColor = BrickColor.new("Light red")
+    SprintSpeedButton.BorderSizePixel = 0
+    SprintSpeedButton.Text = "Sprint"
+    SprintSpeedButton.TextColor = BrickColor.new("Really black")
+    SprintSpeedButton.Font = "GothamBlack"
+    SprintSpeedButton.TextSize = 15
+
+    local SprintSpeedButtonONOFF = Instance.new("Frame",SprintSpeedButton)
+    SprintSpeedButtonONOFF.Size = UDim2.new(0,80,0,3)
+    SprintSpeedButtonONOFF.Position = UDim2.new(0,0,0,18)
+    SprintSpeedButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+    SprintSpeedButtonONOFF.Transparency = 0.1
+    SprintSpeedButtonONOFF.BorderSizePixel = 0
+
+    local SprintSpeedText = Instance.new("TextBox",SprintSpeedButton)
+    SprintSpeedText.Size = UDim2.new(0,25,0,20)
+    SprintSpeedText.Position = UDim2.new(0,30,0,30)
+    SprintSpeedText.BackgroundColor = BrickColor.new("Institutional white")
+    SprintSpeedText.BorderSizePixel = 1
+    SprintSpeedText.Font = "GothamBlack"
+    SprintSpeedText.BorderColor = BrickColor.new("Really black")
+    SprintSpeedText.TextSize = 12
+    SprintSpeedText.Text = tostring(saved["SprintSpeed"])
+
+    -- // TELEPORTS FRAME \\ --
+
+    local TeleportsHolder = Instance.new("Frame",FrameHolder)
+    TeleportsHolder.Size = UDim2.new(0,300,0,250)
+    TeleportsHolder.Position = UDim2.new(0,0,0)
+    TeleportsHolder.BackgroundColor = BrickColor.new("Salmon")
+    TeleportsHolder.Transparency = 0.2
+    TeleportsHolder.BorderSizePixel = 2
+    TeleportsHolder.BorderColor = BrickColor.new("White")
+    TeleportsHolder.Visible = false
+
+    local TeleportsOpen = Instance.new("TextButton",MainFrame)
+    TeleportsOpen.Size = UDim2.new(0,80,0,25)
+    TeleportsOpen.Position = UDim2.new(0.5,-40,0,70)
+    TeleportsOpen.BackgroundColor = BrickColor.new("Light red")
+    TeleportsOpen.Transparency = 0.1
+    TeleportsOpen.BorderSizePixel = 0
+    TeleportsOpen.Text = "Teleports"
+    TeleportsOpen.TextColor = BrickColor.new("Really black")
+    TeleportsOpen.Font = "GothamBlack"
+    TeleportsOpen.TextSize = 15
+
+    -- // TELEPORTS FRAME \\ --
+
+    local HotkeysHolder = Instance.new("Frame",FrameHolder)
+    HotkeysHolder.Size = UDim2.new(0,300,0,250)
+    HotkeysHolder.Position = UDim2.new(0,0,0)
+    HotkeysHolder.BackgroundColor = BrickColor.new("Salmon")
+    HotkeysHolder.Transparency = 0.2
+    HotkeysHolder.BorderSizePixel = 2
+    HotkeysHolder.BorderColor = BrickColor.new("White")
+    HotkeysHolder.Visible = false
+
+    local HotkeysOpen = Instance.new("TextButton",MainFrame)
+    HotkeysOpen.Size = UDim2.new(0,80,0,25)
+    HotkeysOpen.Position = UDim2.new(0.5,-40,0,100)
+    HotkeysOpen.BackgroundColor = BrickColor.new("Light red")
+    HotkeysOpen.Transparency = 0.1
+    HotkeysOpen.BorderSizePixel = 0
+    HotkeysOpen.Text = "Hotkeys"
+    HotkeysOpen.TextColor = BrickColor.new("Really black")
+    HotkeysOpen.Font = "GothamBlack"
+    HotkeysOpen.TextSize = 15
+
+    local FlyText = Instance.new("TextLabel",HotkeysHolder)
+    FlyText.Size = UDim2.new(0,80,0,20)
+    FlyText.Position = UDim2.new(0,15,0,15)
+    FlyText.BackgroundColor = BrickColor.new("Light red")
+    FlyText.Transparency = 0.1
+    FlyText.BorderSizePixel = 0
+    FlyText.Text = "Fly"
+    FlyText.TextColor = BrickColor.new("Really black")
+    FlyText.Font = "GothamBlack"
+    FlyText.TextSize = 15
+
+    local FlyHotkey = Instance.new("TextBox",FlyText)
+    FlyHotkey.Size = UDim2.new(0,30,0,20)
+    FlyHotkey.Position = UDim2.new(0,25,0,25)
+    FlyHotkey.BackgroundColor = BrickColor.new("Institutional white")
+    FlyHotkey.BorderSizePixel = 0
+    FlyHotkey.Text = tostring(saved["FlyHotkey"])
+    FlyHotkey.TextColor = BrickColor.new("Really black")
+    FlyHotkey.Font = "GothamBlack"
+    FlyHotkey.TextSize = 15
+
+    local ApplyFlyHotkey = Instance.new("TextButton",FlyText)
+    ApplyFlyHotkey.Size = UDim2.new(0,60,0,20)
+    ApplyFlyHotkey.Position = UDim2.new(0,10,0,50)
+    ApplyFlyHotkey.BackgroundColor = BrickColor.new("Light red")
+    ApplyFlyHotkey.Transparency = 0.1
+    ApplyFlyHotkey.BorderSizePixel = 0
+    ApplyFlyHotkey.Text = "Apply"
+    ApplyFlyHotkey.TextColor = BrickColor.new("Really black")
+    ApplyFlyHotkey.Font = "GothamBlack"
+    ApplyFlyHotkey.TextSize = 15
+
+    local NoClipText = Instance.new("TextLabel",HotkeysHolder)
+    NoClipText.Size = UDim2.new(0,80,0,20)
+    NoClipText.Position = UDim2.new(0,105,0,15)
+    NoClipText.BackgroundColor = BrickColor.new("Light red")
+    NoClipText.Transparency = 0.1
+    NoClipText.BorderSizePixel = 0
+    NoClipText.Text = "NoClip"
+    NoClipText.TextColor = BrickColor.new("Really black")
+    NoClipText.Font = "GothamBlack"
+    NoClipText.TextSize = 15
+
+    local NoClipHotkey = Instance.new("TextBox",NoClipText)
+    NoClipHotkey.Size = UDim2.new(0,30,0,20)
+    NoClipHotkey.Position = UDim2.new(0,25,0,25)
+    NoClipHotkey.BackgroundColor = BrickColor.new("Institutional white")
+    NoClipHotkey.BorderSizePixel = 0
+    NoClipHotkey.Text = tostring(saved["NoClipHotkey"])
+    NoClipHotkey.TextColor = BrickColor.new("Really black")
+    NoClipHotkey.Font = "GothamBlack"
+    NoClipHotkey.TextSize = 15
+
+    local ApplyNoClipHotkey = Instance.new("TextButton",NoClipText)
+    ApplyNoClipHotkey.Size = UDim2.new(0,60,0,20)
+    ApplyNoClipHotkey.Position = UDim2.new(0,10,0,50)
+    ApplyNoClipHotkey.BackgroundColor = BrickColor.new("Light red")
+    ApplyNoClipHotkey.Transparency = 0.1
+    ApplyNoClipHotkey.BorderSizePixel = 0
+    ApplyNoClipHotkey.Text = "Apply"
+    ApplyNoClipHotkey.TextColor = BrickColor.new("Really black")
+    ApplyNoClipHotkey.Font = "GothamBlack"
+    ApplyNoClipHotkey.TextSize = 15
+
+    local AirwalkText = Instance.new("TextLabel",HotkeysHolder)
+    AirwalkText.Size = UDim2.new(0,80,0,20)
+    AirwalkText.Position = UDim2.new(0,195,0,15)
+    AirwalkText.BackgroundColor = BrickColor.new("Light red")
+    AirwalkText.Transparency = 0.1
+    AirwalkText.BorderSizePixel = 0
+    AirwalkText.Text = "Airwalk"
+    AirwalkText.TextColor = BrickColor.new("Really black")
+    AirwalkText.Font = "GothamBlack"
+    AirwalkText.TextSize = 15
+
+    local AirwalkHotkey = Instance.new("TextBox",AirwalkText)
+    AirwalkHotkey.Size = UDim2.new(0,30,0,20)
+    AirwalkHotkey.Position = UDim2.new(0,25,0,25)
+    AirwalkHotkey.BackgroundColor = BrickColor.new("Institutional white")
+    AirwalkHotkey.BorderSizePixel = 0
+    AirwalkHotkey.Text = tostring(saved["AirwalkHotkey"])
+    AirwalkHotkey.TextColor = BrickColor.new("Really black")
+    AirwalkHotkey.Font = "GothamBlack"
+    AirwalkHotkey.TextSize = 15
+
+    local ApplyAirwalkHotkey = Instance.new("TextButton",AirwalkText)
+    ApplyAirwalkHotkey.Size = UDim2.new(0,60,0,20)
+    ApplyAirwalkHotkey.Position = UDim2.new(0,10,0,50)
+    ApplyAirwalkHotkey.BackgroundColor = BrickColor.new("Light red")
+    ApplyAirwalkHotkey.Transparency = 0.1
+    ApplyAirwalkHotkey.BorderSizePixel = 0
+    ApplyAirwalkHotkey.Text = "Apply"
+    ApplyAirwalkHotkey.TextColor = BrickColor.new("Really black")
+    ApplyAirwalkHotkey.Font = "GothamBlack"
+    ApplyAirwalkHotkey.TextSize = 15
+
+    local ResetText = Instance.new("TextLabel",HotkeysHolder)
+    ResetText.Size = UDim2.new(0,80,0,20)
+    ResetText.Position = UDim2.new(0,15,0,95)
+    ResetText.BackgroundColor = BrickColor.new("Light red")
+    ResetText.Transparency = 0.1
+    ResetText.BorderSizePixel = 0
+    ResetText.Text = "Reset"
+    ResetText.TextColor = BrickColor.new("Really black")
+    ResetText.Font = "GothamBlack"
+    ResetText.TextSize = 15
+
+    local ResetHotkey = Instance.new("TextBox",ResetText)
+    ResetHotkey.Size = UDim2.new(0,30,0,20)
+    ResetHotkey.Position = UDim2.new(0,25,0,25)
+    ResetHotkey.BackgroundColor = BrickColor.new("Institutional white")
+    ResetHotkey.BorderSizePixel = 0
+    ResetHotkey.Text = tostring(saved["ResetHotkey"])
+    ResetHotkey.TextColor = BrickColor.new("Really black")
+    ResetHotkey.Font = "GothamBlack"
+    ResetHotkey.TextSize = 15
+
+    local ApplyResetHotkey = Instance.new("TextButton",ResetText)
+    ApplyResetHotkey.Size = UDim2.new(0,60,0,20)
+    ApplyResetHotkey.Position = UDim2.new(0,10,0,50)
+    ApplyResetHotkey.BackgroundColor = BrickColor.new("Light red")
+    ApplyResetHotkey.Transparency = 0.1
+    ApplyResetHotkey.BorderSizePixel = 0
+    ApplyResetHotkey.Text = "Apply"
+    ApplyResetHotkey.TextColor = BrickColor.new("Really black")
+    ApplyResetHotkey.Font = "GothamBlack"
+    ApplyResetHotkey.TextSize = 15
+
+    -- // COMMAND BAR STUFFZ \\ --
+
+    local cmd_bar = Instance.new("TextBox",DrPoppa)
+    cmd_bar.Size = UDim2.new(0,0,0,25)
+    cmd_bar.Position = UDim2.new(1,0,1,-295)
+    cmd_bar.BackgroundColor = BrickColor.new("Salmon")
+    cmd_bar.TextColor = BrickColor.new("Really black")
+    cmd_bar.Font = "GothamBlack"
+    cmd_bar.TextSize = 15
+    cmd_bar.Transparency = 0.2
+    cmd_bar.Visible = false
+    cmd_bar.BorderSizePixel = 2
+    cmd_bar.BorderColor = BrickColor.new("Institutional white")
+
+    MainFrame:TweenPosition(UDim2.new(1,-110,1,-260), "Out", "Quad", 1, false)
+
+    -- // NOTIFICATION FRAME \\ --
+
+    local NotificationMainFrame = Instance.new("Frame",DrPoppa)
+    NotificationMainFrame.Size = UDim2.new(0,200,0,250)
+    NotificationMainFrame.Position = UDim2.new(0,0,1,-250)
+    NotificationMainFrame.BorderSizePixel = 0
+    NotificationMainFrame.Transparency = 1
+
+    -- // LOCAL FUNCTIONS \\ --
+
+    local function notify(message)
+        if var["CanNotify"] then
+            repeat
+                variables["RenderStepped"]:wait()
+            until var["CanNotify"] and #NotificationMainFrame:GetChildren() < 6
+            var["CanNotify"] = false
+            for _,v in next,NotificationMainFrame:GetChildren() do
+                v:TweenPosition(v.Position + UDim2.new(0,0,0,-40), "Out", "Quad", 0.2, false)
+                variables["RenderStepped"]:wait()
+            end
+            wait(0.2)
+            local NotifcationLabel = Instance.new("TextLabel",NotificationMainFrame)
+            NotifcationLabel.Size = UDim2.new(0,185,0,35)
+            NotifcationLabel.Position = UDim2.new(0.5,-92.5,1,-40)
+            NotifcationLabel.BackgroundColor = BrickColor.new("Salmon")
+            NotifcationLabel.TextColor = BrickColor.new("Really black")
+            NotifcationLabel.Font = "GothamBlack"
+            NotifcationLabel.TextScaled = true
+            NotifcationLabel.Transparency = 0.2
+            NotifcationLabel.BorderSizePixel = 2
+            NotifcationLabel.Text = message
+            NotifcationLabel.BorderColor = BrickColor.new("White")
+            spawn(function()
+            wait(5)
+            for i=1,16 do
+                NotifcationLabel.Transparency = NotifcationLabel.Transparency + 0.1 / 2
+                variables["RenderStepped"]:wait()
+            end
+                NotifcationLabel:Destroy()
+            end)
+            variables["RenderStepped"]:wait()
+            var["CanNotify"] = true
+        end
+    end
+
+    local function respawn()
+        variables["LocalPlayer"].Character:ClearAllChildren()
+        local prt1 = Instance.new("Model", workspace)
+        local Torso1 = Instance.new("Part", prt1)
+        Torso1.Name = "Torso1"
+        Torso1.Transparency = 1
+        local Head1 = Instance.new("Part",prt1)
+        Head1.Name = "Head1"
+        Head1.Transparency = 1
+        local Humanoid1 = Instance.new("Humanoid",prt1)
+        Humanoid1.Name = "Humanoid"
+        variables["LocalPlayer"].Character = prt1
+    end
+
+    local function get_player(str)
+        local players_send = {}
+        if str == "all" then
+            for _,player in next,services["Players"]:GetPlayers() do
+                if player ~= variables["LocalPlayer"] then
+                    table.insert(players_send,player)
+                end
+            end
+            return players_send
+        else
+            for _,player in next,services["Players"]:GetPlayers() do
+                if string.lower(tostring(str)) == string.sub(string.lower(tostring(player)),1,string.len(tostring(str))) then
+                    table.insert(players_send,player)
+                    return players_send
+                end
+            end
+        end
+    end
+
+    local function update_file()
+        if writefile ~= nil and readfile ~= nil then
+            writefile("DrPoppav3Settings.lua",services["HttpService"]:JSONEncode(saved))
+        else
+            notify("Exploit unsupportive of 'writefile' and 'readfile'")
+        end
+    end
+
+    local function get_instance(from,name)
+        if from ~= nil and name ~= nil then
+            local inst = from:FindFirstChildOfClass(name)
+            if not inst then
+                inst = from:FindFirstChild(name)
+            end
+            if inst then
+                return inst
+            end
+        end
+    end
+
+    local function kill(player)
+        if variables["LocalPlayer"].Character ~= nil and player.Character ~= nil then
+            variables["LocalPlayer"].Character:BreakJoints()
+            respawn()
+            variables["LocalPlayer"].CharacterAdded:Wait()
+            variables["RenderStepped"]:Wait()
+            if variables["LocalPlayer"].Character ~= nil and player.Character ~= nil then
+                local hum = variables["LocalPlayer"].Character:WaitForChild("Humanoid")
+                local ehumr = get_instance(player.Character,"HumanoidRootPart")
+                local ehum = get_instance(player.Character,"Humanoid")
+                if hum ~= nil and ehum ~= nil and ehum.Health ~= 0 then
+                    hum:UnequipTools()
+                    local tool = get_instance(variables["LocalPlayer"].Backpack,"Tool")
+                    if tool ~= nil then
+                        local handle = get_instance(tool,"Part")
+                        if handle ~= nil then
+                            hum.Name = ""
+                            local newhum = hum:Clone()
+                            newhum.Parent = variables["LocalPlayer"].Character
+                            newhum.Name = newhum.ClassName
+                            hum:Destroy()
+                            newhum.DisplayDistanceType = "None"
+                            variables["Camera"].CameraSubject = variables["LocalPlayer"].Character
+                            wait(0.1)
+                            if ehumr ~= nil and tool ~= nil and variables["LocalPlayer"].Character ~= nil then
+                                tool.Parent = variables["LocalPlayer"].Character
+                                repeat
+                                    ehumr.CFrame = handle.CFrame
+                                    variables["RenderStepped"]:wait()
+                                until player.Character == nil or variables["LocalPlayer"].Character == nil or ehum == nil or ehumr == nil or ehum.Health == 0 or hum.Health == 0 or tool.Parent == player.Character
+                                newhum.Health = 0
+                                variables["LocalPlayer"].Character = nil
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    local function GetNearestPlayerToMouse()
+        local PLAYERS = {}
+        local PLAYER_HOLD = {}
+        local DISTANCES = {}
+        for i, v in next,services["Players"]:GetPlayers() do
+            if v ~= variables["LocalPlayer"] then
+                table.insert(PLAYERS, v)
+            end
+        end
+        for i,v in next,PLAYERS do
+            local humr = get_instance(v.Character,"HumanoidRootPart")
+            local hum = get_instance(v.Character,"Humanoid")
+            if humr ~= nil and hum ~= nil and hum.Health ~= 0 and get_instance(v.Character,"KO") == nil then
+                local DISTANCE = (humr.Position - variables["Camera"].CoordinateFrame.p).magnitude
+                local RAY = Ray.new(variables["Camera"].CoordinateFrame.p, (variables["LocalPlayer"]:GetMouse().Hit.p - variables["Camera"].CoordinateFrame.p).unit * DISTANCE)
+                local HIT,POS = workspace:FindPartOnRay(RAY, workspace)
+                local DIFF = math.floor((POS - humr.Position).magnitude)
+                PLAYER_HOLD[v.Name .. i] = {}
+                PLAYER_HOLD[v.Name .. i].dist = DISTANCE
+                PLAYER_HOLD[v.Name .. i].plr = v
+                PLAYER_HOLD[v.Name .. i].diff = DIFF
+                table.insert(DISTANCES, DIFF)
+            end
+        end
+        if unpack(DISTANCES) == nil then
+            return nil
+        end
+        local L_DISTANCE = math.floor(math.min(unpack(DISTANCES)))
+        if L_DISTANCE > 30 then
+            return nil
+        end
+        for i, v in next,PLAYER_HOLD do
+            if v.diff == L_DISTANCE then
+                return v.plr
+            end
+        end
+        return nil
+    end
+
+    local function check_cmd(str)
+        local args = string.split(str," ")
+        for _,v in next,args do
+            v = string.lower(tostring(v))
+        end
+        if args[1] == "airwalk" then
+            if not var["Airwalk"] then
+                var["Airwalk"] = true
+                AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+            elseif var["Airwalk"] then
+                var["Airwalk"] = false
+                AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+            end
+        elseif args[1] == "rejoin" then
+            services["TeleportService"]:Teleport(game.PlaceId,variables["LocalPlayer"])
+        elseif args[1] == "fly" then
+            if not var["Flying"] then
+                var["Flying"] = true
+                FlyButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+            elseif var["Flying"] then
+                var["Flying"] = false
+                FlyButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+            end
+        elseif args[1] == "unfly" then
+            var["Flying"] = false
+        elseif args[1] == "flyspeed" then
+            saved["FlySpeed"] = args[2]
+            notify("Fly speed has been changed to " .. tostring(saved["FlySpeed"]))
+            update_file()
+        elseif args[1] == "sprintspeed" then
+            saved["SprintSpeed"] = args[2]
+            notify("Sprint speed has been changed to " .. tostring(saved["SprintSpeed"]))
+            var["Sprint"] = true
+            SprintSpeedText.Text = args[2]
+            SprintSpeedButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+            update_file()
+        elseif args[1] == "camlock" then
+            local players = get_player(args[2])
+            if players ~= nil then
+                for _,player in next,players do
+                    if player ~= variables["LocalPlayer"] then
+                        var["CamLocking"] = true
+                        var["CamLockTarget"] = player
+                        CamLockButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+                        CamLockUsername.Text = tostring(player)
+                    end
+                end
+            end
+        elseif args[1] == "uncamlock" then
+            var["CamLockTarget"] = nil
+            var["CamLocking"] = false
+            CamLockButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+            CamLockUsername.Text = ""
+        elseif args[1] == "view" then
+            local players = get_player(args[2])
+            if players ~= nil then
+                for _,player in next,players do
+                    variables["Camera"].CameraSubject = player.Character
+                end
+            end
+        elseif args[1] == "unview" then
+            if variables["LocalPlayer"].Character ~= nil then
+                variables["Camera"].CameraSubject = variables["LocalPlayer"].Character
+            end
+        elseif args[1] == "re" or args[1] == "reset" or args[1] == "respawn" then
+            respawn()
+        elseif args[1] == "kill" then
+            local players = get_player(args[2])
+            if players ~= nil then
+                for _,player in next,players do
+                    kill(player)
+                end
+            end
+        end
+    end
+
+    -- // GUI FUNCTIONS \\ --
+
+    CloseFrameHolder.MouseButton1Down:Connect(function()
+        for _,v in next,FrameHolder:GetChildren() do
+            v.Visible = false
+        end
+        CloseFrameHolder.Visible = false
+    end)
+
+    -- // SETTINGS FUNCTIONS \\ --
+
+    SettingsOpen.MouseButton1Down:Connect(function()
+        for _,v in next,FrameHolder:GetChildren() do
+            v.Visible = false
+        end
+        SettingsHolder.Visible = true
+        CloseFrameHolder.Visible = true
+    end)
+
+    AimbotButton.MouseButton1Down:Connect(function()
+        if not var["Aimbot"] then
+            var["Aimbot"] = true
+            AimbotButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["Aimbot"] then
+            var["Aimbot"] = false
+            AimbotButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    CamLockButton.MouseButton1Down:Connect(function()
+        if not var["CamLocking"] then
+            var["CamLocking"] = true
+            CamLockButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["CamLocking"] then
+            var["CamLocking"] = false
+            CamLockButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+
+    FlyButton.MouseButton1Down:Connect(function()
+        if not var["Flying"] then
+            var["Flying"] = true
+            FlyButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["Flying"] then
+            var["Flying"] = false
+            FlyButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    NoSlowButton.MouseButton1Down:Connect(function()
+        if not var["NoSlow"] then
+            var["NoSlow"] = true
+            NoSlowButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["NoSlow"] then
+            var["NoSlow"] = false
+            NoSlowButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    AutoStompButton.MouseButton1Down:Connect(function()
+        if not var["AutoStomp"] then
+            var["AutoStomp"] = true
+            AutoStompButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["AutoStomp"] then
+            var["AutoStomp"] = false
+            AutoStompButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+
+    AirwalkButton.MouseButton1Down:Connect(function()
+        if not var["Airwalk"] then
+            var["Airwalk"] = true
+            AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["Airwalk"] then
+            var["Airwalk"] = false
+            AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    NoClipButton.MouseButton1Down:Connect(function()
+        if not var["NoClip"] then
+            var["NoClip"] = true
+            NoClipButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["NoClip"] then
+            var["NoClip"] = false
+            NoClipButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    TriggerBotButton.MouseButton1Down:Connect(function()
+        if not var["Triggerbot"] then
+            var["Triggerbot"] = true
+            TriggerBotButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["Triggerbot"] then
+            var["Triggerbot"] = false
+            var["Triggered"] = false
+            TriggerBotButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    SprintSpeedButton.MouseButton1Down:Connect(function()
+        if not var["Sprint"] then
+            var["Sprint"] = true
+            SprintSpeedButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+        elseif var["Sprint"] then
+            var["Sprint"] = false
+            SprintSpeedButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+        end
+    end)
+
+    TeleportsOpen.MouseButton1Down:Connect(function()
+        for _,v in next,FrameHolder:GetChildren() do
+            v.Visible = false
+        end
+        TeleportsHolder.Visible = true
+        CloseFrameHolder.Visible = true
+    end)
+
+    HotkeysOpen.MouseButton1Down:Connect(function()
+        for _,v in next,FrameHolder:GetChildren() do
+            v.Visible = false
+        end
+        HotkeysHolder.Visible = true
+        CloseFrameHolder.Visible = true
+    end)
+
+    ApplyFlyHotkey.MouseButton1Down:Connect(function()
+        if ApplyFlyHotkey.Text ~= "Done!" then
+            ApplyFlyHotkey.Text = "Done!"
+            if string.len(FlyHotkey.Text) > 0 then
+                saved["FlyHotkey"] = string.upper(string.sub(tostring(FlyHotkey.Text),1,1))
+            else
+                saved["FlyHotkey"] = " "
+            end
+            FlyHotkey.Text = tostring(saved["FlyHotkey"])
+            notify("Fly hotkey has been changed to " .. tostring(saved["FlyHotkey"]))
+            update_file()
+            wait(0.3)
+            ApplyFlyHotkey.Text = "Apply"
+        end
+    end)
+
+    ApplyNoClipHotkey.MouseButton1Down:Connect(function()
+        if ApplyNoClipHotkey.Text ~= "Done!" then
+            ApplyNoClipHotkey.Text = "Done!"
+            if string.len(NoClipHotkey.Text) > 0 then
+                saved["NoClipHotkey"] = string.upper(string.sub(tostring(NoClipHotkey.Text),1,1))
+            else
+                saved["NoClipHotkey"] = " "
+            end
+            NoClipHotkey.Text = tostring(saved["NoClipHotkey"])
+            notify("NoClip hotkey has been changed to " .. tostring(saved["NoClipHotkey"]))
+            update_file()
+            wait(0.3)
+            ApplyNoClipHotkey.Text = "Apply"
+        end
+    end)
+
+    ApplyAirwalkHotkey.MouseButton1Down:Connect(function()
+        if ApplyAirwalkHotkey.Text ~= "Done!" then
+            ApplyAirwalkHotkey.Text = "Done!"
+            if string.len(AirwalkHotkey.Text) > 0 then
+                saved["AirwalkHotkey"] = string.upper(string.sub(tostring(AirwalkHotkey.Text),1,1))
+            else
+                saved["AirwalkHotkey"] = " "
+            end
+            AirwalkHotkey.Text = tostring(saved["AirwalkHotkey"])
+            notify("Airwalk hotkey has been changed to " .. tostring(saved["AirwalkHotkey"]))
+            update_file()
+            wait(0.3)
+            ApplyAirwalkHotkey.Text = "Apply"
+        end
+    end)
+
+    ApplyResetHotkey.MouseButton1Down:Connect(function()
+        if ApplyResetHotkey.Text ~= "Done!" then
+            ApplyResetHotkey.Text = "Done!"
+            if string.len(ResetHotkey.Text) > 0 then
+                saved["ResetHotkey"] = string.upper(string.sub(tostring(ResetHotkey.Text),1,1))
+            else
+                saved["ResetHotkey"] = " "
+            end
+            ResetHotkey.Text = tostring(saved["ResetHotkey"])
+            notify("Reset hotkey has been changed to " .. tostring(saved["ResetHotkey"]))
+            update_file()
+            wait(0.3)
+            ApplyResetHotkey.Text = "Apply"
+        end
+    end)
+
+    cmd_bar.FocusLost:Connect(function()
+        cmd_bar.Visible = false
+        check_cmd(cmd_bar.Text)
+        cmd_bar.Text = ""
+        cmd_bar.Size = UDim2.new(0,0,0,25)
+        cmd_bar.Position = UDim2.new(1,0,1,-30)
+    end)
+
+    AimbotUsername:GetPropertyChangedSignal("Text"):Connect(function()
+        if string.len(AimbotUsername.Text) > 0 then
+            local players = get_player(AimbotUsername.Text)
+            if players ~= nil then
+                for _,player in next,players do
+                    var["AimbotTarget"] = player
+                    notify("Aimbot targetting  " .. tostring(var["AimbotTarget"]))
+                end
+            end
+        else
+            var["AimbotTarget"] = nil
+            if var["Aimbot"] then
+                notify("Aimbot target has been changed to no one, will now shoot anyone closest to mouse")
+            else
+                notify("Aimbot target has been changed to no one")
+            end
+        end
+    end)
+
+    AimbotVelocityText:GetPropertyChangedSignal("Text"):Connect(function()
+        if string.len(AimbotVelocityText.Text) > 0 then
+            saved["AimbotVelocity"] = AimbotVelocityText.Text
+            notify("Aim predicition velocity has been changed to " .. tostring(saved["AimbotVelocity"]))
+            update_file()
+        end
+    end)
+
+    SprintSpeedText:GetPropertyChangedSignal("Text"):Connect(function()
+        if string.len(SprintSpeedText.Text) > 0 then
+            saved["SprintSpeed"] = SprintSpeedText.Text
+            notify("Sprint speed has been changed to " .. tostring(saved["SprintSpeed"]))
+            update_file()
+        end
+    end)
+
+
+    services["UserInputService"].InputBegan:Connect(function(yuh,yeet)
+        if yuh.KeyCode == Enum.KeyCode.LeftShift and var["Sprint"] then
+            local hum = get_instance(variables["LocalPlayer"].Character,"Humanoid")
+            if hum ~= nil then
+                hum.WalkSpeed = saved["SprintSpeed"]
+            end
+        end
+        if not yeet then
+            if yuh.KeyCode == Enum.KeyCode.Quote then
+                cmd_bar.Size = UDim2.new(0,0,0,25)
+                cmd_bar.Position = UDim2.new(1,0,1,-295)
+                cmd_bar.Visible = true
+                cmd_bar:TweenSize(UDim2.new(0,250,0,25), "Out", "Quad", 0.2, false)
+                cmd_bar:TweenPosition(UDim2.new(1,-250,1,-295), "Out", "Quad", 0.2, false)
+                cmd_bar:CaptureFocus()
+                variables["RenderStepped"]:Wait()
+                cmd_bar.Text = ""
+            elseif yuh.KeyCode == Enum.KeyCode.LeftControl and var["Airwalk"] then
+                var["Airwalk_Offset"] = -0.5
+            elseif yuh.KeyCode == Enum.KeyCode.Space and var["Airwalk"] then
+                var["Airwalk_Offset"] = 0.5
+            elseif yuh.KeyCode == Enum.KeyCode.W then
+                keys["W"] = true
+            elseif yuh.KeyCode == Enum.KeyCode.A then
+                keys["A"] = true
+            elseif yuh.KeyCode == Enum.KeyCode.S then
+                keys["S"] = true
+            elseif yuh.KeyCode == Enum.KeyCode.D then
+                keys["D"] = true
+            elseif saved["NoClipHotkey"] ~= " " and yuh.KeyCode == Enum.KeyCode[saved["NoClipHotkey"]] then
+                if not var["NoClip"] then
+                    var["NoClip"] = true
+                    NoClipButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+                elseif var["NoClip"] then
+                    var["NoClip"] = false
+                    NoClipButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+                end
+            elseif saved["FlyHotkey"] ~= " " and yuh.KeyCode == Enum.KeyCode[saved["FlyHotkey"]] then
+                if not var["Flying"] then
+                    var["Flying"] = true
+                    FlyButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+                elseif var["Flying"] then
+                    var["Flying"] = false
+                    FlyButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+                end
+            elseif saved["AirwalkHotkey"] ~= " " and yuh.KeyCode == Enum.KeyCode[saved["AirwalkHotkey"]] then
+                if not var["Airwalk"] then
+                    var["Airwalk"] = true
+                    AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Lime green")
+                elseif var["Airwalk"] then
+                    var["Airwalk"] = false
+                    AirwalkButtonONOFF.BackgroundColor = BrickColor.new("Really red")
+                end
+            elseif saved["ResetHotkey"] ~= " " and yuh.KeyCode == Enum.KeyCode[saved["ResetHotkey"]] then
+                if variables["LocalPlayer"].Character ~= nil then
+                    variables["LocalPlayer"].Character:BreakJoints()
+                end
+            end
+        end
+    end)
+
+    services["UserInputService"].InputEnded:Connect(function(yuh,yeet)
+        if yuh.KeyCode == Enum.KeyCode.LeftShift and var["Sprint"] then
+            local hum = get_instance(variables["LocalPlayer"].Character,"Humanoid")
+            if hum ~= nil then
+                hum.WalkSpeed = 16
+            end
+        elseif yuh.KeyCode == Enum.KeyCode.LeftControl then
+            var["Airwalk_Offset"] = 0
+        elseif yuh.KeyCode == Enum.KeyCode.Space then
+            var["Airwalk_Offset"] = 0
+        elseif yuh.KeyCode == Enum.KeyCode.W then
+            keys["W"] = false
+        elseif yuh.KeyCode == Enum.KeyCode.A then
+            keys["A"] = false
+        elseif yuh.KeyCode == Enum.KeyCode.S then
+            keys["S"] = false
+        elseif yuh.KeyCode == Enum.KeyCode.D then
+            keys["D"] = false
+        end
+    end)
+
+    -- // BYPASS \\ --
+
+    local meta = debug.getmetatable(game)
+    local newindex = meta.__newindex
+    local namecall = meta.__namecall
+    setreadonly(meta,false)
+
+    meta.__newindex = newcclosure(function(self,key,value)
+        if checkcaller() then 
+            return newindex(self,key,value)
+        end
+        if self and self:IsA("Humanoid") then
+            if key == "Health" and value == 0 then
+                return
+            end
+            if key == "WalkSpeed" and value == 0 and var["NoSlow"] then
+                return
+            end
+        end
+        if key == "CFrame" and tostring(self) == "Torso" or tostring(self) == "HumanoidRootPart" then 
+            return
+        end
+        return newindex(self,key,value)
+    end)
+
+    meta.__namecall = newcclosure(function(self,...)
+        local args = {...}
+        local t = getnamecallmethod()
+        if not checkcaller() then
+            if t == "BreakJoints" then 
+                return wait(9e9)
+            end
+        end
+        if t == "FireServer" then 
+            if tostring(self) == "lIII" or tostring(self.Parent) == "ReplicatedStorage" then 
+                return wait(9e9)
+            end
+            if tostring(self) == "Fire" then
+                if var["Aimbot"] then
+                    pcall(function()
+                        args[1] = var["AimbotTarget"].Character.Torso.CFrame + Vector3.new(var["AimbotTarget"].Character.Torso.Velocity.X/saved["AimbotVelocity"],0,var["AimbotTarget"].Character.Torso.Velocity.Z/saved["AimbotVelocity"])
+                    end)
+                    return namecall(self,unpack(args))
+                end
+            end
+            if args[1] == "hey" then 
+                return wait(9e9)
+            end
+        end
+        return namecall(self,...)
+    end)
+
+    coroutine.wrap(function()
+        while variables["RenderStepped"]:Wait() do
+            for _,player in next,services["Players"]:GetPlayers() do
+                player.NameDisplayDistance = 9e9
+                player.HealthDisplayDistance = 9e9
+            end
+            for _,player in next,services["Players"]:GetPlayers() do
+                player.NameDisplayDistance = 9e9 + 1
+                player.HealthDisplayDistance = 9e9 + 1
+            end
+            if var["Airwalk"] then
+                local airwalkpart = get_instance(workspace,"DrPoppaAirwalkPart")
+                local humr = get_instance(variables["LocalPlayer"].Character,"HumanoidRootPart")
+                if airwalkpart == nil then
+                    airwalkpart = Instance.new("Part",workspace)
+                    airwalkpart.Size = Vector3.new(5,1,5)
+                    airwalkpart.Anchored = true
+                    airwalkpart.Name = "DrPoppaAirwalkPart"
+                    airwalkpart.Transparency = 1
+                end
+                if humr ~= nil then
+                    airwalkpart.CFrame = CFrame.new(humr.Position) * CFrame.new(0,-3.5 + var["Airwalk_Offset"],0)
+                end
+            elseif not var["Airwalk"] then
+                local airwalkpart = get_instance(workspace,"DrPoppaAirwalkPart")
+                if airwalkpart ~= nil then
+                    airwalkpart:Destroy()
+                end
+            end
+            coroutine.wrap(function()
+                if var["Flying"] then
+                    local torso = get_instance(variables["LocalPlayer"].Character,"Torso")
+                    local hum = get_instance(variables["LocalPlayer"].Character,"Humanoid")
+                    local humr = get_instance(variables["LocalPlayer"].Character,"HumanoidRootPart")
+                    if torso ~= nil and hum ~= nil then
+                        local BodyGyro = get_instance(torso,"DrPoppaBodyGyro")
+                        local BodyVelocity = get_instance(torso,"DrPoppaBodyVelocity")
+                        if BodyGyro == nil then
+                            BodyGyro = Instance.new("BodyGyro",torso)
+                            BodyGyro.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+                            BodyGyro.Name = "DrPoppaBodyGyro"
+                        end
+                        if BodyVelocity == nil then
+                            BodyVelocity = Instance.new("BodyVelocity",torso)
+                            BodyVelocity.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+                            BodyVelocity.Name = "DrPoppaBodyVelocity"
+                        end
+                        BodyGyro.CFrame = torso.CFrame
+                        local velocity = Vector3.new(0,0,0)
+                        if keys["W"] then
+                            velocity = velocity + humr.CFrame.lookVector * saved["FlySpeed"] * 25 
+                        end
+                        if keys["S"] then
+                            velocity = velocity + humr.CFrame.lookVector * -saved["FlySpeed"] * 25
+                        end
+                        if keys["A"] then
+                            velocity = velocity + humr.CFrame.rightVector * -saved["FlySpeed"] * 25
+                        end
+                        if keys["D"] then
+                            velocity = velocity + humr.CFrame.rightVector * saved["FlySpeed"] * 25
+                        end
+                        if not keys["W"] and not keys["S"] and not keys["A"] and not keys["D"] then
+                            velocity = Vector3.new(0,0,0)
+                        end
+                        BodyVelocity.Velocity = velocity
+                        if humr ~= nil then
+                            humr.CFrame = CFrame.new(humr.Position,variables["Camera"].CoordinateFrame.lookVector * 9e9)
+                        end
+                        BodyGyro.CFrame = variables["Camera"].CoordinateFrame
+                        hum.PlatformStand = false
+                        local epic = hum.StateChanged:Connect(function(a,b)
+                            if b == Enum.HumanoidStateType.PlatformStanding then
+                                hum.PlatformStand = false
+                            end
+                        end)
+                        hum:ChangeState(3)
+                        for _,v in next,hum:GetPlayingAnimationTracks() do
+                            if v.Animation.AnimationId == "http://www.roblox.com/asset/?id=125750702" then 
+                                v:Stop()
+                            end
+                        end
+                        variables["RenderStepped"]:Wait()
+                        if hum ~= nil then
+                            hum:ChangeState(8)
+                        end
+                        if humr ~= nil then
+                            humr.CFrame = CFrame.new(humr.Position,variables["Camera"].CoordinateFrame.lookVector * 9e9)
+                        end
+                        epic:Disconnect()
+                    end
+                elseif not var["Flying"] then
+                    local torso = get_instance(variables["LocalPlayer"].Character,"Torso")
+                    local hum = get_instance(variables["LocalPlayer"].Character,"Humanoid")
+                    if torso ~= nil and hum ~= nil then
+                        local BodyGyro = get_instance(torso,"DrPoppaBodyGyro")
+                        local BodyPosition = get_instance(torso,"DrPoppaBodyVelocity")
+                        if BodyGyro ~= nil then
+                            BodyGyro:Destroy()
+                        end
+                        if BodyPosition ~= nil then
+                            BodyPosition:Destroy()
+                        end
+                    end
+                end
+            end)()
+            if var["NoClip"] then
+                local hum = get_instance(variables["LocalPlayer"].Character,"Humanoid")
+                if hum ~= nil then
+                    hum:ChangeState(11)
+                end
+            end
+            if var["Aimbot"] and AimbotUsername.Text == "" then
+                var["AimbotTarget"] = GetNearestPlayerToMouse()
+            end
+            if CamLockUsername.Text ~= "" and var["CamLocking"] then
+                local players = get_player(CamLockUsername.Text)
+                if players ~= nil then
+                    for _,player in next,players do
+                        if player ~= variables["LocalPlayer"] then
+                            local etorso = get_instance(player.Character,"Torso")
+                            if etorso ~= nil then
+                                variables["Camera"].CoordinateFrame = CFrame.new(variables["Camera"].CoordinateFrame.p,etorso.Position)
+                            end
+                        end
+                    end
+                elseif var["CamLockTarget"] ~= nil and var["CamLocking"] then
+                    local etorso = get_instance(var["CamLockTarget"].Character,"Torso")
+                    if etorso ~= nil then
+                        variables["Camera"].CoordinateFrame = CFrame.new(variables["Camera"].CoordinateFrame.p,etorso.Position)
+                    end
+                end
+            end
+        end
+    end)()
+
+    update_file()
+    notify("DrPoppa v3 Loaded")
+    notify("Took " .. tick() - yas)
+    notify("Press ' for the command bar & enter 'cmds' for the commands")
+end
+

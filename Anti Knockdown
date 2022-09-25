@@ -1,0 +1,20 @@
+game.Players.LocalPlayer.Character.Humanoid.StateChanged:Connect(function(old, new)
+    if new == Enum.HumanoidStateType.FallingDown or new == Enum.HumanoidStateType.PlatformStanding then
+        game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
+        game.Players.LocalPlayer.Character.Humanoid.Sit = false
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+    end
+end)
+ 
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+    repeat wait() until char:FindFirstChild("Humanoid")
+    char.Humanoid.StateChanged:Connect(function(old, new)
+        if new == Enum.HumanoidStateType.FallingDown or new == Enum.HumanoidStateType.PlatformStanding then
+            char.Humanoid.PlatformStand = false
+            char.Humanoid.Sit = false
+            char.Humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+            char.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+        end
+    end)
+end)

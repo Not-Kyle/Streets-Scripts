@@ -1,0 +1,2420 @@
+repeat wait() until game:IsLoaded() and game:WaitForChild"Players";
+
+for _,a in pairs(workspace:GetDescendants()) do
+    if a:IsA("Seat") then
+        a:Remove()
+    end
+end
+for i,v in pairs(game.workspace:GetDescendants()) do if v.name == "ICEPATCH" then v:Destroy() end end
+for i,v in pairs(game.workspace:GetDescendants()) do if v.name == "snow" then v:Destroy() end end
+
+
+if game.PlaceId == 455366377 then
+local LocalP = game.Players.LocalPlayer
+
+LocalP.Character.Stamina.Changed:Connect(function()
+    LocalP.Character:WaitForChild"Stamina"
+    LocalP.Character.Stamina.Value = 100 
+end)
+LocalP.CharacterAdded:Connect(function()
+    LocalP.Character:WaitForChild"Stamina"
+    LocalP.Character.Stamina.Changed:Connect(function()
+        LocalP.Character.Stamina.Value = 100 
+end)
+end)
+end
+
+function Notify(titletxt, text, time)
+    local GUI = Instance.new("ScreenGui")
+    local Main = Instance.new("Frame", GUI)
+    local title = Instance.new("TextLabel", Main)
+    local message = Instance.new("TextLabel", Main)
+    GUI.Name = "NotificationOof"
+    GUI.Parent = game.CoreGui
+    Main.Name = "MainFrame"
+    Main.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+    Main.BorderSizePixel = 0
+    Main.Position = UDim2.new(0.765346527, 0, 0.703557312, 0)
+    Main.Size = UDim2.new(0, 237, 0, 86)
+ 
+    title.BackgroundColor3 = Color3.fromRGB(66, 66, 66)
+    title.BorderColor3 = Color3.fromRGB(38, 0, 255)
+    title.BorderSizePixel = 1.7
+    title.BackgroundTransparency = 0
+    title.Size = UDim2.new(0, 237, 0, 32)
+    title.Font = Enum.Font.Code
+    title.Text = "Mikoware"
+    title.TextColor3 = Color3.new(243 , 243, 243) --- Color to liking
+    title.TextSize = 22  --- Size to liking
+    
+    function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = title
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+ 
+    message.BackgroundColor3 = Color3.fromRGB(66 , 66, 66)
+    message.BorderColor3 = Color3.fromRGB(38, 0, 255)
+    message.BorderSizePixel = 1.7
+    message.BackgroundTransparency = 0
+    message.Position = UDim2.new(0, 0, 0.418604642, 0)
+    message.Size = UDim2.new(0, 237, 0, 50)
+    message.Font = Enum.Font.Code
+    message.Text = text
+    message.TextColor3 = Color3.new(243 , 243, 243)  --- color to liking
+    message.TextSize = 14   --- Size to liking
+    
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = message
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+ 
+    wait(0.3)
+    Main:TweenPosition(UDim2.new(0.71, 0, 0.8, 0), "Out", "Sine", 0.5)
+    wait(2.5)
+    Main:TweenPosition(UDim2.new(1, 5, 0, 50), "Out", "Sine", 0.5)
+    wait(2.5)
+    GUI:Destroy()
+end
+--
+Notify("Mikoware", "Checking Whitelist..", "", 3)
+
+function esp(instance)
+    local types = ""
+    local EspText = ""
+    local EspFontSize = "Size14" -- Uzi has larger text
+    local EspColor = Color3.fromRGB(98, 37, 209) -- Temporary placeholder
+    local EspPart = instance
+    for i,v in pairs(instance:GetDescendants()) do
+        if v:IsA("MeshPart") and v.Name == "Blade" and string.find(tostring(v.MeshId), tostring(12177251)) then
+            types = "katana"
+            EspText = "Katana"
+            EspColor = Color3.fromRGB(98, 37, 209)
+            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+        elseif v:IsA("MeshPart") and v.MeshId == "rbxassetid://511726060" then
+            types = "cash"
+            EspText = "Cash"
+            EspColor = Color3.fromRGB(98, 37, 209)
+            EspPart = v
+        elseif v:IsA("Sound") and v.Name == "Fire" and string.find(tostring(v.SoundId), tostring(328964620)) then
+            types = "uzi"
+            EspText = "Uzi"
+            EspFontSize = "Size18"
+            EspColor = Color3.fromRGB(98, 37, 209)
+            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+        elseif v:IsA("Sound") and v.Name == "Fire" and string.find(tostring(v.SoundId), tostring(142383762)) then
+            types = "shotty"
+            EspText = "Shotty"
+            EspColor = Color3.fromRGB(98, 37, 209)
+            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+        end
+    end
+
+
+    local TracerPart = Instance.new("Part")
+    TracerPart.Parent = EspPart
+    TracerPart.Name = "TracerPart"
+    TracerPart.CFrame = EspPart.CFrame
+    TracerPart.Size = Vector3.new(0.2,0.2,0.2)
+    TracerPart.Anchored = true
+    TracerPart.Transparency = 1
+
+    local billgui = Instance.new('BillboardGui', TracerPart)
+    local textlab = Instance.new('TextLabel', billgui)
+
+    billgui.Name = "ESPBillboard"
+    billgui.Adornee  = TracerPart
+    billgui.AlwaysOnTop = true
+    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billgui.Size = UDim2.new(0, 5, 0, 5)
+	
+    textlab.Name = "ESPLabel"
+    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+    textlab.BackgroundTransparency = 1
+    textlab.BorderSizePixel = 0
+    textlab.Position = UDim2.new(0, 0, 0, -40)
+    textlab.Size = UDim2.new(1, 0, 10, 0)
+    textlab.Visible = true
+    textlab.ZIndex = 10
+    textlab.Font = 'ArialBold'
+    textlab.FontSize = EspFontSize
+    textlab.Text = EspText
+    textlab.TextColor3 = EspColor
+    textlab.TextTransparency = 0
+    textlab.TextStrokeColor3 = Color3.fromRGB(107,50,124)
+    textlab.TextStrokeTransparency = 0
+end
+
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "RandomSpawner" then
+        esp(v)
+    end
+end
+
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "RandomSpawner" then
+        if v:FindFirstChild("Model") then
+            v.Model.ChildAdded:Connect(function(child)
+                esp(child)
+            end)
+        end
+        v.ChildAdded:Connect(function(child)
+            esp(child)
+        end)
+    end
+end
+
+game.Workspace.ChildAdded:Connect(function(child)
+    if child.Name == "RandomSpawner" then
+        repeat wait() until child.Model
+        esp(child)
+    end
+end)
+--
+
+
+
+--
+local ScreenGui = Instance.new("ScreenGui")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.CoreGui
+
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.32650274, 0, 0.4334650937, 0)
+ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=9117743952"
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.422131121, 0, 0.446640313, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.Roboto
+TextLabel.Text = "                                Mikoware Loaded."
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextStrokeTransparency = 0.000
+
+TextLabel_2.Parent = ScreenGui
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.420765013, 0, 0.476943344, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.Roboto
+TextLabel_2.Text = "                                     U Are Whitelisted, Welcome "..game.Players.LocalPlayer.Name
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextStrokeTransparency = 0.000
+
+
+local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 3
+TextLabel_2.TextStrokeTransparency = 1
+TextLabel.TextTransparency = 1
+TextLabel_2.TextTransparency = 1
+TextLabel.TextStrokeTransparency = 1
+ImageLabel.ImageTransparency = 1
+    wait(0.1)
+    blur.Size = 6
+TextLabel_2.TextStrokeTransparency = 0.9
+TextLabel.TextTransparency = 0.9
+TextLabel_2.TextTransparency = 0.9
+TextLabel.TextStrokeTransparency = 0.9
+ImageLabel.ImageTransparency = 0.9
+    wait(0.1)
+    blur.Size = 8
+TextLabel_2.TextStrokeTransparency = 0.8
+TextLabel.TextTransparency = 0.8
+TextLabel_2.TextTransparency = 0.8
+TextLabel.TextStrokeTransparency = 0.8
+ImageLabel.ImageTransparency = 0.8
+    wait(0.1)
+    blur.Size = 10
+TextLabel_2.TextStrokeTransparency = 0.7
+TextLabel.TextTransparency = 0.7
+TextLabel_2.TextTransparency = 0.7
+TextLabel.TextStrokeTransparency = 0.7
+ImageLabel.ImageTransparency = 0.7
+    wait(0.1)
+    blur.Size = 12
+TextLabel_2.TextStrokeTransparency = 0.6
+TextLabel.TextTransparency = 0.6
+TextLabel_2.TextTransparency = 0.6
+TextLabel.TextStrokeTransparency = 0.6
+ImageLabel.ImageTransparency = 0.6
+    wait(0.1)
+    blur.Size = 14
+    TextLabel_2.TextStrokeTransparency = 0.5
+TextLabel.TextTransparency = 0.5
+TextLabel_2.TextTransparency = 0.5
+TextLabel.TextStrokeTransparency = 0.5
+ImageLabel.ImageTransparency = 0.5
+    wait(0.1)
+    blur.Size = 15
+TextLabel_2.TextStrokeTransparency = 0.4
+TextLabel.TextTransparency = 0.4
+TextLabel_2.TextTransparency = 0.4
+TextLabel.TextStrokeTransparency = 0.4
+ImageLabel.ImageTransparency = 0.4
+    wait(0.1)
+    blur.Size = 16
+ TextLabel_2.TextStrokeTransparency = 0
+TextLabel.TextTransparency = 0
+TextLabel_2.TextTransparency = 0
+TextLabel.TextStrokeTransparency = 0
+ImageLabel.ImageTransparency = 0
+    wait(2.5)
+    game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 15
+     TextLabel_2.TextStrokeTransparency = 0.1
+TextLabel.TextTransparency = 0.1
+TextLabel_2.TextTransparency = 0.1
+TextLabel.TextStrokeTransparency = 0.1
+ImageLabel.ImageTransparency = 0.1
+    wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 14
+     TextLabel_2.TextStrokeTransparency = 0.2
+TextLabel.TextTransparency = 0.2
+TextLabel_2.TextTransparency = 0.2
+TextLabel.TextStrokeTransparency = 0.2
+ImageLabel.ImageTransparency = 0.2
+    wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 12
+     TextLabel_2.TextStrokeTransparency = 0.4
+TextLabel.TextTransparency = 0.4
+TextLabel_2.TextTransparency = 0.4
+TextLabel.TextStrokeTransparency = 0.4
+ImageLabel.ImageTransparency = 0.4
+    wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 10
+     TextLabel_2.TextStrokeTransparency = 0.5
+TextLabel.TextTransparency = 0.5
+TextLabel_2.TextTransparency = 0.5
+TextLabel.TextStrokeTransparency = 0.5
+ImageLabel.ImageTransparency = 0.5
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 8
+     TextLabel_2.TextStrokeTransparency = 0.7
+TextLabel.TextTransparency = 0.7
+TextLabel_2.TextTransparency = 0.7
+TextLabel.TextStrokeTransparency = 0.7
+ImageLabel.ImageTransparency = 0.7
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 6 
+     TextLabel_2.TextStrokeTransparency = 0.8
+TextLabel.TextTransparency = 0.8
+TextLabel_2.TextTransparency = 0.8
+TextLabel.TextStrokeTransparency = 0.8
+ImageLabel.ImageTransparency = 0.8
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 3
+     TextLabel_2.TextStrokeTransparency = 1
+TextLabel.TextTransparency = 1
+TextLabel_2.TextTransparency = 1
+TextLabel.TextStrokeTransparency = 1
+ImageLabel.ImageTransparency = 1
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+        wait(0.5)
+
+
+
+
+--
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local ClipsTxt = Instance.new("TextLabel")
+local BulletsTxt = Instance.new("TextLabel")
+ScreenGui.Parent = game.CoreGui
+ClipsTxt.Name = "ClipsTxt"
+ClipsTxt.Parent = ScreenGui
+ClipsTxt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClipsTxt.BackgroundTransparency = 1.000
+ClipsTxt.Position = UDim2.new(0.00594059424, 0, 0.14079608, 0)
+ClipsTxt.Size = UDim2.new(0, 75, 0, 26)
+ClipsTxt.Font = Enum.Font.Code
+ClipsTxt.Text = "Clips:"
+ClipsTxt.TextColor3 = Color3.fromRGB(255, 255, 255)
+ClipsTxt.TextSize = 24.000
+ClipsTxt.Visible = false
+
+BulletsTxt.Name = "BulletsTxt"
+BulletsTxt.Parent = ScreenGui
+BulletsTxt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BulletsTxt.BackgroundTransparency = 1.000
+BulletsTxt.Position = UDim2.new(0.012102765, 0, 0.175230563, 0)
+BulletsTxt.Size = UDim2.new(0, 80, 0, 26)
+BulletsTxt.Font = Enum.Font.Code
+BulletsTxt.Text = "Bullets:"
+BulletsTxt.TextColor3 = Color3.fromRGB(255, 255, 255)
+BulletsTxt.TextSize = 24.000
+BulletsTxt.Visible = false
+game.Players.LocalPlayer.PlayerGui.HUD:FindFirstChild("Ammo"):Destroy()
+
+function CustomAmmoUI()
+local gunequipped = false
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+	if v:IsA("Tool") then
+        if v ~= nil then	
+v.Equipped:Connect(function()
+if v:FindFirstChild("Clips") and v:FindFirstChild("Ammo") then		
+wait(.1)
+ClipsTxt.Text = "      Clips:"
+BulletsTxt.Text = "      Bullets:"		
+gunequipped = true	
+BulletsTxt.Visible = true
+ClipsTxt.Visible = true
+repeat	
+BulletsTxt.Text = "      Bullets: "..v:FindFirstChild("Ammo").Value..""
+ClipsTxt.Text = "      Clips: "..v:FindFirstChild("Clips").Value..""
+game:GetService("RunService").Heartbeat:Wait()	
+until gunequipped == false
+else
+return nil			
+end				
+end)
+v.Unequipped:Connect(function()
+ClipsTxt.Text = "      Clips:"
+BulletsTxt.Text = "      Bullets:"
+gunequipped = false	
+BulletsTxt.Visible = false
+ClipsTxt.Visible = false
+end)
+end			
+end	
+end	
+end
+CustomAmmoUI()
+game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+end)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()	
+local hud = game.Players.LocalPlayer.PlayerGui:WaitForChild("HUD")
+hud.Ammo:Destroy()
+wait(1)
+CustomAmmoUI()	
+end)
+
+
+--
+local LoadingTime = tick();
+local Commands, Prefix = {}, "";
+getgenv().StreetsID = 455366377;
+getgenv().PrisonID = 4669040;
+getgenv().GetInit = function(CName)
+    for _, v in next, Commands do 
+        if table.find(v.Aliases, CName) then 
+            return v.Function 
+        end 
+    end
+end
+
+local UserInputService = game:GetService('UserInputService')
+local GetFocusedTextBox = UserInputService.GetFocusedTextBox
+
+local Players = game:GetService('Players')
+local Mouse = Players.LocalPlayer:GetMouse()
+
+local Config = {
+    Aimlock = {
+        AimlockVelocity = 7;
+        AimlockPart = 'Torso';
+        AimlockTarget = Players.LocalPlayer;
+    };
+    Keys = {
+        CustomKey1 = Enum.KeyCode.Q;
+        CustomKey2 = Enum.KeyCode.E;
+    }
+}
+
+local Ol = false
+local OnInputStart = function(Input)
+    local Keys = Config.Keys
+    local Aimlock = Config.Aimlock
+
+    if Input.KeyCode == Keys.CustomKey1 and Mouse.Target.Parent:FindFirstChild("Humanoid") and not GetFocusedTextBox(UserInputService) then
+        Aimlock.AimlockTarget = Players:FindFirstChild(Mouse.Target.Parent.Name)
+             Notify("Mikoware", "Aimbot/Lock Target = "..tostring(Aimlock.AimlockTarget), "", 3)
+            elseif Input.KeyCode == Keys.CustomKey2 and not GetFocusedTextBox(UserInputService) then
+        Ol = not Ol
+     Notify("Mikoware", "Aimlock = "..tostring(Ol), "", 3)
+        end
+end
+
+local RunService = game:GetService('RunService')
+local LocalPlayer = Players.LocalPlayer
+
+
+
+UserInputService.InputBegan:Connect(OnInputStart)
+
+UserInputService.InputBegan:Connect(function(Input)
+    if Ol == true and Input.UserInputType == Enum.UserInputType.MouseButton1 then 
+        LocalPlayer.Backpack.Input:FireServer("ml",{['mousehit'] = Config.Aimlock.AimlockTarget.Character[Config.Aimlock.AimlockPart].CFrame, ['shift'] = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift),['velo'] = Config.Aimlock.AimlockTarget.Character[Config.Aimlock.AimlockPart].CFrame})
+        LocalPlayer.Backpack.Input:FireServer("moff1",{['mousehit'] = Config.Aimlock.AimlockTarget.Character[Config.Aimlock.AimlockPart].CFrame, ['shift'] = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift),['velo'] = Config.Aimlock.AimlockTarget.Character[Config.Aimlock.AimlockPart].CFrame})
+ end
+ end)
+
+hookfunction(LocalPlayer.Kick, newcclosure(function() end))
+
+for I, V in pairs(getconnections(game:GetService'ScriptContext'.Error)) do
+    V:Disable()
+end
+
+local UserInputService = game:GetService('UserInputService')
+local GetFocusedTextBox = UserInputService.GetFocusedTextBox
+
+local Players = game:GetService('Players')
+local Mouse = Players.LocalPlayer:GetMouse()
+
+local Config = {
+    Aimbot = {
+        AimbotVelocity = 7;
+        AimbotPart = 'Torso';
+        AimbotTarget = Players.LocalPlayer;
+    };
+    Keys = {
+        CustomKey1 = Enum.KeyCode.Q;
+        CustomKey2 = Enum.KeyCode.B;
+    }
+}
+
+local On = false
+local OnInputStart = function(Input)
+    local Keys = Config.Keys
+    local Aimbot = Config.Aimbot
+
+    if Input.KeyCode == Keys.CustomKey1 and Mouse.Target.Parent:FindFirstChild("Humanoid") and not GetFocusedTextBox(UserInputService) then
+        Aimbot.AimbotTarget = Players:FindFirstChild(Mouse.Target.Parent.Name)
+                        Notify("Mikoware", "Aimbot/Lock Target = "..tostring(Aimbot.AimbotTarget), "", 3)
+    elseif Input.KeyCode == Keys.CustomKey2 and not GetFocusedTextBox(UserInputService) then
+        On = not On
+                        Notify("Mikoware", "Aimbot = "..tostring(On), "", 3)
+    end
+end
+
+local RunService = game:GetService('RunService')
+local LocalPlayer = Players.LocalPlayer
+
+RunService.Heartbeat:Connect(function()
+    if Config.Aimbot.AimbotTarget.Character and On then
+        LocalPlayer.Backpack.Input:FireServer("ml",{['mousehit'] = Config.Aimbot.AimbotTarget.Character[Config.Aimbot.AimbotPart].CFrame, ['shift'] = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift),['velo'] = Config.Aimbot.AimbotTarget.Character[Config.Aimbot.AimbotPart].CFrame})
+        LocalPlayer.Backpack.Input:FireServer("moff1",{['mousehit'] = Config.Aimbot.AimbotTarget.Character[Config.Aimbot.AimbotPart].CFrame, ['shift'] = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift),['velo'] = Config.Aimbot.AimbotTarget.Character[Config.Aimbot.AimbotPart].CFrame})
+    end
+end)
+
+
+UserInputService.InputBegan:Connect(OnInputStart)
+
+hookfunction(LocalPlayer.Kick, newcclosure(function() end))
+
+for I, V in pairs(getconnections(game:GetService'ScriptContext'.Error)) do
+	V:Disable()
+end
+
+getgenv().RunCommand = function(Cmd)
+    Cmd = string.lower(Cmd)
+    pcall(function()
+        if Cmd:sub(1, #Prefix) == Prefix then 
+            local args = string.split(Cmd:sub(#Prefix + 1), " ")
+            local CmdName = GetInit(table.remove(args, 1))
+            if CmdName and args then
+                return CmdName(args)
+            end
+        end
+    end)
+end
+
+getgenv().Notify = function(title, text, icon, time)
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = title;
+        Text = text;
+        Icon = "";
+        Duration = time;
+    }) 
+end
+
+getgenv().psearch = function(Name)
+    local Inserted = {}
+        for _, p in pairs(game:GetService("Players"):GetPlayers()) do 
+        if string.lower(string.sub(p.Name, 1, string.len(Name))) == string.lower(Name) then 
+            table.insert(Inserted, p);return p
+        end
+    end
+end
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local Cmdbar = Instance.new("TextBox")
+local CmdbarARC = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+
+coroutine.resume(coroutine.create(function()
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Cmdbar.Name = "Cmdbar"
+Cmdbar.Parent = ScreenGui
+Cmdbar.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+Cmdbar.BorderSizePixel = 0
+Cmdbar.Position = UDim2.new(0.0209330097, 0, 0.633333333333, 0)
+Cmdbar.Size = UDim2.new(0, 260, 0, 32)
+Cmdbar.SizeConstraint = Enum.SizeConstraint.RelativeYY
+Cmdbar.Font = Enum.Font.Gotham
+Cmdbar.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+Cmdbar.Text = ""
+Cmdbar.TextColor3 = Color3.fromRGB(255, 255, 255)
+Cmdbar.TextSize = 14.000
+Cmdbar.TextWrapped = true
+Cmdbar.TextXAlignment = Enum.TextXAlignment.Left
+Cmdbar.Visible = false
+
+CmdbarARC.Name = "CmdbarARC"
+CmdbarARC.Parent = Cmdbar
+CmdbarARC.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+CmdbarARC.BorderSizePixel = 0
+CmdbarARC.Position = UDim2.new(-0.123076916, 0, 0, 0)
+CmdbarARC.Size = UDim2.new(0, 32, 0, 32)
+CmdbarARC.Font = Enum.Font.Code
+CmdbarARC.Text = ">"
+CmdbarARC.TextColor3 = Color3.fromRGB(255, 0, 0)
+CmdbarARC.TextSize = 19.000
+CmdbarARC.TextWrapped = true
+
+Frame.Parent = Cmdbar
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(-0.123076923, 0, 0.972426474, 0)
+Frame.Size = UDim2.new(0, 292, 0, 2)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(100,225,200)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(100,225,200)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(128,0,128))}
+UIGradient.Parent = Frame
+end))
+
+local Uis = game:GetService("UserInputService")
+Uis.InputBegan:Connect(function(Key, Typing)
+    if Typing then return end
+    if Key.KeyCode == Enum.KeyCode.Semicolon then
+        Cmdbar.Visible = true
+        Cmdbar.Text = ""
+        wait()
+        Cmdbar:CaptureFocus()
+        Cmdbar:TweenPosition(UDim2.new(0.75,0,1,-30),nil,"Quart",0.3,true)
+        Cmdbar:TweenSize(UDim2.new(0, 227,0, 27), "Out", "Quad", 0.3, true)
+    end
+end)
+Cmdbar.FocusLost:Connect(function(Foc)
+    if Foc == true then
+    Cmdbar:TweenSize(UDim2.new(0,0,0,0),"Out","Quad",0.5,false)
+    Cmdbar:TweenPosition(UDim2.new(0,0,0), "Out", "Quad", 0.3, false)
+wait()
+        Cmdbar.Visible = false
+            RunCommand(Cmdbar.Text)
+    end
+end)
+Uis.InputEnded:Connect(function(Key)
+    if Key.KeyCode.Name == "LeftAlt" then
+        Cmdbar.Visible = false
+    end
+end)
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = CmdbarARC
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+-- //locals
+local Players, RStorage, RService, TPService, TweenService, HttpService, SGui = game:GetService("Players"),game:GetService("ReplicatedStorage"),game:GetService("RunService"),game:GetService("TeleportService"), game:GetService("TweenService"), game:GetService("HttpService"), game:GetService("StarterGui")
+local Client, Mouse = Players.LocalPlayer, Players.LocalPlayer:GetMouse();local LocalP = function() return Client.Character or Client.CharacterAdded:Wait() end
+local Camera, CordCamera, CurCamera = workspace.CurrentCamera, workspace.CurrentCamera.CoordinateFrame, workspace.CurrentCamera;
+local CF, UD, UD2, INew, Vec3, NColor3 = CFrame.new, UDim.new, UDim2.new, Instance.new, Vector3.new, Color3.fromRGB;
+local ClickCheck, M1Held, Keyheld, BToggle, CanShoot, SelectingTarget, ColorGlock, ColorShotty = false, false, false, false, false, false, false, false
+local Blink, FirstFly, Flying, Animating, Visualizing, Teleporting, Equipped, debounce, JumpingStateDebounce, RunSpeeding, Spying, Spamming = false, false, false, false, false, false, false, false, false, false, false, false, false
+local Infjump, Noclip, ItemEsp, Airwalk, Aimbot, Aimlock, Camlock, GlockFollowing, ShottyFollow CashFarming, TPBypass, Feloop, Noslow, Attacked, Flinging, AntiFe, FeVan = false, false, false, false, false, false, nil, false, false, false, false, false, false, false, false, false, false
+local FSpeed, BSpeed, TPSpeed, XSet, YSet, ZSet, OSet, X,Y,Z, x,y,z, AV, SpamDelay = 7, 3, 2, 88,77,66,5, 0, 0, 0, 0, 0, 0, 10, 2;local Legitmode = false
+local FlyKey, NoClipKey, TrashTalkKey, ResetKey, AVUpKey, AVDownKey, BuyUziKey, BuyAmmoKey, BuyGlockKey, BuyFoodKey, LockOnKey, ShootLockedKey, AimPart, CamPart, BlinkKey, AimMode = "F","X","T","P","K","L","U","R","G","B","Q","E","Torso","Torso","LeftShift","New";
+local WSvalue, JPvalue, CSvalue = 16, 37.5, 8
+local Ping, PingCF = RStorage:WaitForChild("DefaultChatSystemChatEvents"):FindFirstChild("MutePlayerRequest"), 0.1;
+local UserTable, CyAdminUserTable, DrPoppaUserTable = {}, {}, {};
+Client.CameraMaxZoomDistance = math.huge;workspace.FallenPartsDestroyHeight = -math.huge 
+local AdminLoopKilling = false
+-- yes i know my locals are ugly shut up
+
+local VisTable1, VisTable2, RealTools = {}, {}, {}
+local Aimlocked_Gamers, Camlocked_Gamers = {}, {}
+local Seats, TrashTalk = {}, {"", "GO PLAY FREE FIRE UNKNOWN SKID", "NCA WYM UR SO GARBO OL", "LMFAO MY MOM IS BETTER AT HVH", "just quit ur assh", "CRY LOSER UR ADOPTED LOL"}
+local AdminCmdList = {
+    ["kick"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                Client:Kick(self)
+            end 
+        end;
+        ["Clearence"] = {[4] = true;[5] = true;};
+    }; 
+    ["kill"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                Client.Character.Humanoid:ChangeState(15) 
+            end 
+        end;
+        ["Clearence"] = {[3] = true;[4] = true;[5] = true;};
+    }; 
+    ["loopkill"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                AdminLoopKilling = true 
+                while AdminLoopKilling == true and RService.Heartbeat:Wait() do
+                    Client.Character.Humanoid:ChangeState(15) 
+                end
+            end 
+        end;
+        ["Clearence"] = {[4] = true;[5] = true;};
+    }; 
+    ["unloopkill"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                AdminLoopKilling = false 
+            end 
+        end;
+        ["Clearence"] = {[4] = true;[5] = true;};
+    }; 
+    ["chat"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                wait(0.4);ChatWord(self) 
+            end 
+        end;
+        ["Clearence"] = {[2] = true;[3] = true;[4] = true;[5] = true;};
+    }; 
+    ["freeze"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                Client.Character.Head.Anchored = true 
+            end 
+        end;
+        ["Clearence"] = {[3] = true;[4] = true;[5] = true;};
+    }; 
+    ["unfreeze"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                Client.Character.Head.Anchored = false 
+            end 
+        end;
+        ["Clearence"] = {[3] = true;[4] = true;[5] = true;};
+    }; 
+    ["nolimbs"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                Client.Character["Left Leg"]:Destroy()
+                Client.Character["Left Arm"]:Destroy() 
+                Client.Character["Right Leg"]:Destroy() 
+                Client.Character["Right Arm"]:Destroy() 
+            end 
+        end;
+        ["Clearence"] = {[2] = true;[3] = true;[4] = true;[5] = true;};
+    }; 
+    ["bring"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer) 
+            if Player == Client or Player == "all" then 
+                Teleport(CmdPlayer.Character.Head.CFrame)
+            end 
+        end;
+        ["Clearence"] = {[2] = true;[3] = true;[4] = true;[5] = true;};
+    }; 
+    ["exe"] = {
+        ["CommandFunc"] = function(Player, self, CmdPlayer)
+            if Player == Client or Player == "all" then 
+                RunCommand(self)
+            end
+        end;
+        ["Clearence"] = {[5] = true;};
+    };
+};
+local BackDoorUsersTable = {
+    [1475962902] = {["NAME"] = "CEO (yaknax)";["COLOUR"] = Color3.fromRGB(255,255,255);["Access"] = 5;};
+    [449639104] = {["NAME"] = "CEO (yaknax)";["COLOUR"] = Color3.fromRGB(255,255,255);["Access"] = 5;};
+    
+}
+local AVTable = {
+    [1] = true;[2] = true;
+    [3] = true;[4] = true;
+    [5] = true;[6] = true;
+    [7] = true;[8] = true;
+    [9] = true;[10] = true;
+}
+local TimeTable = {
+    ["day"] = 14;
+    ["night"] = 1;
+}
+local KeysTable = {
+    ["W"] = false;["A"] = false;
+    ["S"] = false;["D"] = false;
+    ["LShift"] = false;["LControl"] = false;
+}
+local GunTable = {
+    ["uzi"] = "Uzi | $150";["glock"] = "Glock | $200";
+    ["sawoff"] = "Sawed Off | $125";["burger"] = "Burger | $15";
+    ["pipe"] = "Pipe | $100";["chicken"] = "Chicken | $12"
+}
+local AimModesTable = {
+    ["old"] = "Old";
+    ["new"] = "New";
+}
+local AimPartsTable = {
+    ["head"] = "Head";["torso"] = "Torso";
+    ["root"] = "HumanoidRootPart";["toes"] = "Right Leg"
+}
+local CamTargetTable = {
+    ["head"] = "Head";
+    ["torso"] = "Torso";
+}
+local TPModesTable = {
+    ["tween"] = Tween;
+    ["cframe"] = Cframe1;
+}
+local VisToolTable = {
+    ["glock"] = "Glock";["shotty"] = "Shotty";
+    ["uzi"] = "Uzi";["sawoff"] = "Sawed Off";
+    ["pipe"] = "Pipe";["katana"] = "Katana";
+    ["spray"] = "Spray";["knife"] = "Knife";
+    ["golf"] = "Golf Club";["machete"] = "Machete";
+    ["radio"] = "BoomBox";
+}
+local ToolColorTable = {
+    ["white"] = "White";
+    ["blue"] = "Bright blue"; 
+    ["red"] = "Bright red";
+    ["yellow"] = "Bright yellow";
+    ["green"] = "Bright green";
+}
+local BoolSettings = {
+    NoClipKey = "X";
+    TrashTalkKey = "T";
+    ResetKey = "P";
+    BuyAmmoKey = "R";
+    BuyUziKey = "U";
+    BuyGlockKey = "G";
+}
+
+getgenv().BDCheck = function(Target, Chat)
+    if Chat:sub(1, 1) == "~" then 
+        local args = string.split(Chat:sub(2), " ")
+        local Command = AdminCmdList[table.remove(args, 1)]
+        local Target2 = psearch(table.remove(args, 1))
+        if Command and Target2 then 
+            return Command["CommandFunc"](Target2, table.concat(args, " "), Target)
+        end
+    end
+end
+
+getgenv().SetKeyBinds = function(ConfigToSave)
+    if writefile and readfile then
+        writefile(ConfigToSave, HttpService:JSONEncode(BoolSettings))
+        local Settings = HttpService:JSONDecode(readfile(ConfigToSave))
+        NoClipKey = Settings["NoClipKey"];
+        TrashTalkKey = Settings["TrashTalkKey"];
+        ResetKey = Settings["ResetKey"];
+        BuyAmmoKey = Settings["BuyAmmoKey"];
+        BuyUziKey = Settings["BuyUziKey"];
+        BuyGlockKey = Settings["BuyGlockKey"];
+    end
+end
+getgenv().UpdateKeyBinds = function(NewC)
+    if writefile and readfile then 
+        local NewSettings = {
+            NoClipKey = NoClipKey;
+            TrashTalkKey = TrashTalkKey;
+            ResetKey = ResetKey;
+            BuyAmmoKey = BuyAmmoKey;
+            BuyUziKey = BuyUziKey;
+            BuyGlockKey = BuyGlockKey;
+        }
+        writefile(NewC, HttpService:JSONEncode(NewSettings))
+    end
+end
+getgenv().RunKeyBinds = function(NewCPar)
+    if writefile and readfile then 
+        local SettingsToRun = HttpService:JSONDecode(readfile(NewCPar))
+        NoClipKey = SettingsToRun["NoClipKey"];
+        TrashTalkKey = SettingsToRun["TrashTalkKey"];
+        ResetKey = SettingsToRun["ResetKey"];
+        BuyAmmoKey = SettingsToRun["BuyAmmoKey"];
+        BuyUziKey = SettingsToRun["BuyUziKey"];
+        BuyGlockKey = SettingsToRun["BuyGlockKey"];
+    end
+end
+
+local FileName = "MikowareCfg.json"
+if writefile and readfile then 
+    local ExistingFile = pcall(readfile, FileName)
+    if not ExistingFile then 
+        SetKeyBinds(FileName)
+    else 
+        RunKeyBinds(FileName)
+    end
+end
+
+getgenv().ChatWord = function(string)
+    RStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(tostring(string), "All")
+end
+
+getgenv().ResetCharacter = function()
+    if Client and Client.Character and Client.Character:FindFirstChild("Humanoid") then 
+game.Players.LocalPlayer.Character["Torso"]:Remove()
+    end
+end
+
+
+getgenv().MBotPlayer = function(Player)
+    if Client and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then 
+        local TFound = Client.Character:FindFirstChildWhichIsA("Tool")
+        local ClientPF = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+        if Player and Player.Character and Player.Character:FindFirstChild(AimPart) and ClientPF and TFound then 
+            ClientPF.CFrame = Player.Character[AimPart].CFrame * CF(math.random(1, 7),5, math.random(-7, 1))
+        end
+    end
+end
+
+getgenv().Teleport = function(Thing)
+    if Client and Client.Character then 
+        local PFound = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+        if PFound and Thing then 
+            local TPAction = TweenService:Create(PFound, TweenInfo.new(
+                TPSpeed + .1, 
+                Enum.EasingStyle.Sine, 
+                Enum.EasingDirection.InOut), 
+                {CFrame = Thing}
+            )
+            TPAction:Play()
+        end
+    end
+end
+
+getgenv().togglefly = function()
+    Flying = not Flying
+    local T = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+    local BV, BG = INew("BodyVelocity", T), INew("BodyGyro", T)
+    BV.Velocity = Vec3(0, 0.1, 0);BV.MaxForce = Vec3(math.huge, math.huge, math.huge)
+    BG.CFrame = T.CFrame;BG.P = 9e9;BG.MaxTorque = Vec3(9e9, 9e9, 9e9)
+    local FlyPart = INew("Part", workspace)
+    FlyPart.Anchored = true;FlyPart.Size = Vec3(6, 1, 6);FlyPart.Transparency = 1 
+
+    while Flying == true and Client and Client.Character and Client.Character:FindFirstChild("Humanoid") and Client.Character.Humanoid.Health ~= 0 and RService.Heartbeat:Wait() and T do 
+        local Front, Back, Left, Right = 0, 0, 0, 0
+        if KeysTable["W"] then 
+            Front = FSpeed 
+        elseif not KeysTable["W"] then
+            Front = 0 
+        end
+        if KeysTable["A"] then 
+            Right = -FSpeed
+        elseif not KeysTable["A"] then 
+            Right = 0 
+        end
+        if KeysTable["S"] then 
+            Back = -FSpeed 
+        elseif not KeysTable["S"] then 
+            Back = 0
+        end
+        if KeysTable["D"] then 
+            Left = FSpeed
+        elseif not KeysTable["D"] then 
+            Left = 0
+        end
+        if tonumber(Front + Back) ~= 0 or tonumber(Left + Right) ~= 0 then 
+            BV.Velocity = ((Camera.CoordinateFrame.lookVector * (Front + Back)) + ((Camera.CoordinateFrame * CF(Left + Right, (Front + Back) * 0.2, 0).p) - Camera.CoordinateFrame.p)) * 50
+        else 
+            BV.Velocity = Vec3(0, 0.1, 0)
+        end
+        BG.CFrame = Camera.CoordinateFrame
+    end
+    FlyPart:Destroy();BG:Remove();BV:Remove()
+end
+
+getgenv().CreatePartEsp = function(Player)
+    if Player and Player.Character and Player.Character:FindFirstChild(AimPart) then 
+                -- Torso
+        local SBox1 = INew("SelectionBox", workspace)
+        SBox1.LineThickness = 0.02
+        SBox1.Transparency = 0
+        SBox1.Color3 = Color3.fromRGB(98, 37, 209)
+        SBox1.Adornee = Player.Character:FindFirstChild("Torso")
+        SBox1.Parent = Player.Character:FindFirstChild("Torso")
+    end
+end
+
+
+getgenv().EspCoolKid = function(COolPlayer)
+    local bgui = INew("BillboardGui", COolPlayer.Character:WaitForChild("Head", 10))
+    local tlab = INew("TextLabel", bgui)
+    bgui.Adornee = COolPlayer.Character.Head
+    bgui.Size = UD2(0,100,0,100)
+    bgui.StudsOffset = Vec3(0,1,0)
+    bgui.AlwaysOnTop = true 
+    tlab.BackgroundTransparency = 1
+    tlab.Position = UD2(0,0,0,1)
+    tlab.Size = UD2(1,0,0,10)
+    tlab.TextStrokeTransparency = 0.5
+    tlab.TextSize = 10
+    tlab.TextStrokeColor3 = BackDoorUsersTable[COolPlayer.UserId].COLOUR
+    tlab.TextColor3 = BackDoorUsersTable[COolPlayer.UserId].COLOUR
+    tlab.Text = BackDoorUsersTable[COolPlayer.UserId].NAME
+end
+
+getgenv().Esp = function(Dude)
+    local UserFound = UserTable[Dude] and "(Yes)" or "(No)"
+    local bgui = Instance.new("BillboardGui", Dude.Character.Head)
+    local tlabel = Instance.new("TextLabel", bgui)
+
+    bgui.Name = "ESP"
+    bgui.Adornee = part
+    bgui.AlwaysOnTop = true
+    bgui.ExtentsOffset = Vector3.new(0, 3, 0)
+    bgui.Size = UDim2.new(0, 5, 0, 5)
+
+    tlabel.Name = "espTarget"
+    tlabel.BackgroundColor3 = Color3.new(255, 255, 255)
+    tlabel.BackgroundTransparency = 1
+    tlabel.BorderSizePixel = 0
+    tlabel.Position = UDim2.new(0, 0, 0, -30)
+    tlabel.Size = UDim2.new(1, 0, 7, 0)
+    tlabel.Visible = true
+    tlabel.ZIndex = 10
+    tlabel.Font = "Code"
+    tlabel.FontSize = "Size14"
+    RService.RenderStepped:Connect(function()
+        if Dude and Dude.Character and Dude.Character:FindFirstChildOfClass("Humanoid") then 
+            tlabel.Text = Dude.Name.." | User: "..UserFound.." | Health: (".. math.floor((Dude.Character.Humanoid.Health))..")".." | ForceFielded: "..Values(Dude, "ForceField").." | Glock: "..Items(Dude,"Glock").." | Shotty: "..Items(Dude, "Shotty").." | Vest: "..Items(Dude, "BulletResist")
+        end
+    end)
+    tlabel.TextColor3 = Color3.fromRGB(243,243,243)
+    tlabel.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    tlabel.TextStrokeTransparency = 0
+    CreatePartEsp(Dude)
+
+    Dude.CharacterAdded:Connect(function()
+        wait(0.2)
+        local bgui = Instance.new("BillboardGui", Dude.Character.Head)
+        local tlabel = Instance.new("TextLabel", bgui)
+
+        bgui.Name = "ESP"
+        bgui.Adornee = part
+        bgui.AlwaysOnTop = true
+        bgui.ExtentsOffset = Vector3.new(0, 3, 0)
+        bgui.Size = UDim2.new(0, 5, 0, 5)
+
+        tlabel.Name = "espTarget"
+        tlabel.BackgroundColor3 = Color3.new(255, 255, 255)
+        tlabel.BackgroundTransparency = 1
+        tlabel.BorderSizePixel = 0
+        tlabel.Position = UDim2.new(0, 0, 0, -30)
+        tlabel.Size = UDim2.new(1, 0, 7, 0)
+        tlabel.Visible = true
+        tlabel.ZIndex = 10
+        tlabel.Font = "Code"
+        tlabel.FontSize = "Size14"
+        RService.RenderStepped:Connect(function()
+            if Dude and Dude.Character and Dude.Character:FindFirstChildOfClass("Humanoid") then 
+                tlabel.Text = Dude.Name.." | User: "..UserFound.." | Health: (".. math.floor((Dude.Character.Humanoid.Health))..")".." | ForceFielded: "..Values(Dude, "ForceField").." | Glock: "..Items(Dude,"Glock").." | Shotty: "..Items(Dude, "Shotty").." | Vest: "..Items(Dude, "BulletResist")
+            end
+        end)
+        tlabel.TextColor3 = Color3.fromRGB(243,243,243)
+        tlabel.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+        tlabel.TextStrokeTransparency = 0
+        CreatePartEsp(Dude)
+    end)
+end
+
+
+getgenv().UnEsp = function(Dude2)
+    for _, v in pairs(Dude2.Character:GetDescendants()) do 
+        if v:IsA("TextLabel") or v:IsA("BillboardGui") or v.Name == "SelectionBox" then 
+            v:Destroy()
+        end
+    end
+    Dude2.CharacterAdded:Connect(function()
+        for _, v in pairs(Dude2.Character:GetDescendants()) do 
+            if v:IsA("TextLabel") or v:IsA("BillboardGui") or v.Name == "SelectionBox" then 
+                v:Destroy()
+            end
+        end
+    end)
+end
+
+getgenv().PrintCommands = function()
+    print([[
+
+
+    (JUST A NOTE: DONT USE THE AIMBOT OR LOCK WITH THE MELE, IT CAN BROKE UR GUNS.)
+
+    campart (head,torso,toes) -- Changes camlocking part
+    walkspeed (ws) -- Example: ws (number)
+    jumppower (jp) -- Example: jp (number)
+    camlock (cl) -- Example: cl (user)
+    uncamlock (uncl) -- Uncamlock target camlocked
+    esp (find) -- Finds person on the map,Example: esp (user) -- ty xaxa <3
+    unesp (untrace, unfind, unlocate) -- Unesp player if esp'ed
+    goto (gto,to) -- Example: to (user)
+    flyspeed (fspeed,fs) -- Example: fs (number)
+    blinkspeed (bs number) -- Example: bs (number)
+    fieldofview (fov) -- Personalize ur fov
+    novan -- Deletes the Van 
+    antife -- Toggle antife (ty xaxa <3)
+    infinitejump (infjump) -- Toggle infjump
+    blink (b) -- Toggles Blink 
+    gotoprison (gtp) -- Goes to prison
+    serverhop (servhop,serverh,shop) -- Goes to other server from ts
+    getglockkey (glockkey) -- Personalize ur Get Glock Key
+    trashtalkingkey (trashtalkingkey,ttk) -- Perzonalize ur Key
+    prefix (whatever key u want as prefix.) -- Perzonalize ur Prefix 
+    getuzikey (uzikey) -- Personalize ur Get Uzi Key
+    noclipkey (noclipkey) -- Perzonalize ur Noclip Key
+    getammokey (ammokey) -- Personalize ur Get Ammo Key
+    spy (user) -- example: Spy (user)
+    buy (anything) -- Buys the thing u want
+    unspy -- Sex.
+    aimvelocity/av (number
+
+    ---------------------------------------------------
+
+    (B) Spams Shoots In The Aimbot/Aimlock Target 
+    (E) Shoots Aimbot/Aimlock Target 
+    (F) Toggles Fly
+    (Q) Selects Aimlock Target
+    (X) Toggles NoClip
+    (G) Gets glock
+    (P) Reset
+    (R) Gets Ammo
+    (U) Gets Uzi
+    (T) Trashtalking
+
+    The keybinds can change -- ty cyrus <3
+    ---------------------------------------
+
+    
+    --[ THANKS TO ICYTHUGS,XAXA/ZXCIAZ,CYRUS AND AIDEZ FOR THE SUPPORT AND THE CONTRIBUTIONS ON THIS SCRIPT. ]--
+    
+                   (This script is thanks to them since I did not do the whole script.)
+
+    
+    ]])
+end
+PrintCommands()
+
+local function ChatSpy()
+    local ChatSpyFrame = Client.PlayerGui.Chat.Frame
+    ChatSpyFrame.ChatChannelParentFrame.Visible = true
+    ChatSpyFrame.ChatBarParentFrame.Position = ChatSpyFrame.ChatChannelParentFrame.Position + UD2(UD(), ChatSpyFrame.ChatChannelParentFrame.Size.Y)
+    ChatSpyFrame.Position = UDim2.new(0, 0, 0.37211359, 0)   
+end
+ChatSpy()
+
+
+local function ConfirmCallbacks()
+    repeat wait() until SGui 
+    SGui:SetCore("ResetButtonCallback", true)
+end
+ConfirmCallbacks()
+
+
+getgenv().RemoveVan = function()
+    if FeVan == true and game.PlaceId == StreetsID and workspace["Armoured Truck"] then
+        workspace["Armoured Truck"]:Destroy()
+    else
+        for _, v in pairs(workspace:GetChildren()) do 
+            if v.Name == "TPer" then 
+                v:Destroy()
+            end 
+        end
+    end
+end
+
+getgenv().ShowHiddenMsg = function(T, C)
+    SGui:SetCore("ChatMakeSystemMessage", {
+        Text = T;
+        Color = C;
+    })
+end
+
+getgenv().Spy = function(Target)
+    Target.Chatted:Connect(function(Msg)
+        if string.find(Msg, "/e ") or string.find(Msg, "/w ") or string.find(Msg, "/whisper ") then
+            ShowHiddenMsg(
+                "(SPY) ".."["..tostring(Target).."]: "..Msg, NColor3(255,0,0)
+            )
+        end
+    end)
+end
+
+
+getgenv().Items = function(Target, Item)
+    if Target.Backpack:FindFirstChild(Item) or Target.Character:FindFirstChild(Item) then
+        return "(Yes)"
+    else
+        return "(No)"
+    end
+end
+
+if game.PlaceId == 4669040 or 455366377 then
+local mt = getrawmetatable(game)
+local backup
+backup = hookfunction(mt.__newindex, newcclosure(function(self, key, value)
+if key == "WalkSpeed" and value < 16 then
+value = 16
+end
+return backup(self, key, value)
+end))
+end
+
+getgenv().Values = function(Target)
+    if not Target.Character:FindFirstChild("ForceField") then 
+        return "(No)"
+    elseif Target.Character:FindFirstChild("ForceField") then 
+        return "(Yes)"
+    end
+end
+
+
+getgenv().UnVis = function()
+    Client.Character.Humanoid:UnequipTools()
+end
+
+
+
+-- [[ Ws/Jp Bypas ]] --
+local gamelememe = getrawmetatable(game)
+local Closure,Caller = hide_me or newcclosure,checkcaller or is_protosmasher_caller or Cer.isCerus
+local writeable = setreadonly(gamelememe,false) or make_writeable(gamelememe)
+local name,index,nindex = gamelememe.__namecall,gamelememe.__index,gamelememe.__newindex
+ 
+gamelememe.__newindex = Closure(function(self,Property,b)
+	if not Caller() then
+        if self:IsA'Humanoid' then 
+            game:GetService'StarterGui':SetCore('ResetButtonCallback',true)
+            if Property == "WalkSpeed" then 
+                return
+            end
+            if Property == "Health" or Property == "JumpPower" or Property == "HipHeight"  then 
+				return 
+			end
+		end
+	end
+	return nindex(self,Property,b)
+end)
+ 
+gamelememe.__namecall= Closure(function(self,...)
+    if not Caller() then
+        local Arguments = {...}
+       	if getnamecallmethod() == "Destroy" and tostring(self) == "BodyPosition" or getnamecallmethod() == "Destroy" and tostring(self) == "BodyVelocity" then
+            return invalidfunctiongang(self,...)
+        end
+        if getnamecallmethod() == "BreakJoints" and tostring(self) == game:GetService'Players'.LocalPlayer.Character.Name then
+            return invalidfunctiongang(self,...)
+        end
+        if getnamecallmethod() == "FireServer" then 
+            if self.Name == "lIII" or tostring(self.Parent) == "ReplicatedStorage" then 
+                return wait(9e9)
+            end
+            if Arguments[1] == "hey" then 
+                return wait(9e9)
+            end
+        end
+    end
+    return name(self,...)
+end)
+-- [[ Bypass ]] --
+local rm = getrawmetatable(game) or debug.getrawmetatable(game) or getmetatable(game)
+if setreadonly then setreadonly(rm, false) else make_writeable(rm, true) end
+local caller, cscript = checkcaller or is_protosmasher_caller, getcallingscript or get_calling_script;
+local rindex, nindex, ncall, closure = rm.__index, rm.__newindex, rm.__namecall, newcclosure or read_me;
+
+rm.__newindex = closure(function(self, Meme, Val)
+    if caller() then return nindex(self, Meme, Val) end 
+    if game.PlaceId ~= (StreetsID) then 
+        if Meme == "WalkSpeed" and Val == 0 and Noslow then 
+            return 
+        end
+        --[[if Meme == "JumpPower" then 
+            return 37.5 
+        end 
+        if Meme == "HipHeight" then 
+            return 0 
+        end]]--
+        if Meme == "Health" then 
+            return  
+        end
+    end
+    if self:IsDescendantOf(Client.Character) and self.Name == "HumanoidRootPart" or self.Name == "Torso" then 
+        if Meme == "CFrame" or Meme == "Position" or Meme == "Anchored" then 
+            return  
+        end
+    end
+    return nindex(self, Meme, Val) 
+end)
+rm.__namecall = closure(function(self, ...)
+    local Args, Method = {...}, getnamecallmethod() or get_namecall_method();
+    if Method == "BreakJoints" then 
+        return wait(9e9)
+    end
+    if game.PlaceId ~= (StreetsID) then
+        if Method == "FireServer" and not self.Name == "SayMessageRequest" then
+            if tostring(self.Parent) == "ReplicatedStorage" or self.Name == "lIII" then 
+                return wait(9e9) 
+            end
+            if Args[1] == "hey" then 
+                return wait(9e9) 
+            end
+        end
+        if Method == "FireServer" and self.Name == "Fire" and AimMode == "New" and AimlockTarget ~= nil and Aimlock == true then -- hi jeremy i see you looking at my aimlock i nerfed it
+            return ncall(self, CF(AimlockTarget.Character[AimPart].Position) + AimlockTarget.Character[AimPart].Velocity/AV + AimlockTarget.Character[AimPart].RotVelocity/math.huge + AimlockTarget.Character[AimPart].Velocity/math.huge + AimlockTarget.Character[AimPart].RotVelocity/AV)
+        end
+    end
+    if game.PlaceId == (StreetsID) then
+        if Method == "FireServer" and Args[1] == "WalkSpeed" or Args[1] == "JumpPower" or Args[1] == "HipHeight" then 
+            return nil 
+        end
+        if Method == "FireServer" and self.Name == "Input" then 
+            if Args[1] == "bv" or Args[1] == "hb" or Args[1] == "ws" then 
+                return wait(9e9)
+            end
+        end
+    end
+    return ncall(self, unpack(Args))
+end)
+if setreadonly then setreadonly(rm, true) else make_writeable(rm, false) end
+
+Uis.InputBegan:Connect(function(Key)
+    if not (Uis:GetFocusedTextBox()) then
+        if Key.KeyCode == Enum.KeyCode.W then 
+            KeysTable["W"] = true 
+        end
+        if Key.KeyCode == Enum.KeyCode.A then 
+            KeysTable["A"] = true 
+        end
+        if Key.KeyCode == Enum.KeyCode.S then 
+            KeysTable["S"] = true 
+        end
+        if Key.KeyCode == Enum.KeyCode.D then 
+            KeysTable["D"] = true 
+        end
+        if Key.KeyCode == Enum.KeyCode[FlyKey] and Legitmode == false then 
+            if FirstFly == true then 
+                Notify("Mikoware", "Fly = true", "", 3)
+                FirstFly = false 
+            end
+            togglefly()
+        end
+        if Key.KeyCode == Enum.KeyCode[NoClipKey] and Legitmode == false then 
+            Noclip = not Noclip
+            Notify("Mikoware", "Noclip = "..tostring(Noclip), "", 3)
+        end
+        if Key.KeyCode == Enum.KeyCode[ResetKey] and Legitmode == false then 
+            ResetCharacter()
+        end
+        if Key.KeyCode == Enum.KeyCode[TrashTalkKey] and Legitmode == false then 
+            ChatWord(TrashTalk[math.random(1, #TrashTalk)])
+        end
+        if Key.KeyCode == Enum.KeyCode.LeftShift and Legitmode == false then
+            KeysTable["LShift"] = true
+            while Blink == true and KeysTable["LShift"] and Client and Client.Character and RService.Heartbeat:Wait() do
+                local ClientRF = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+                local Hum = Client.Character:FindFirstChild("Humanoid")
+                ClientRF.CFrame = ClientRF.CFrame + Vec3(Hum.MoveDirection.X * BSpeed, Hum.MoveDirection.Y * BSpeed, Hum.MoveDirection.Z * BSpeed)
+            end 
+        end
+        if Key.KeyCode == Enum.KeyCode[BuyAmmoKey] and game.PlaceId == (StreetsID) and Legitmode == false then 
+            local Root = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+            local OldPos = Root.Position;Teleporting = true
+            local Ammo = "Buy Ammo | $25"
+            if workspace:FindFirstChild(Ammo) then 
+                repeat Root.CFrame = Root.CFrame * CF(math.random(0.1, 900),0, math.random(0.1, 900))
+                    while Uis:IsKeyDown(Enum.KeyCode[BuyAmmoKey]) and Teleporting == true and RService.Heartbeat:Wait() do 
+                        Root.CFrame = workspace[Ammo]:FindFirstChildOfClass("Part").CFrame + Vec3(0.1, 1.1, 0.1)
+                    end
+                until not Uis:IsKeyDown(Enum.KeyCode[BuyAmmoKey])
+            end
+                                        Root = OldPos;Teleporting = false 
+        end
+        if Key.KeyCode == Enum.KeyCode[BuyUziKey] and game.PlaceId == (StreetsID) and Legitmode == false then 
+            local Root = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+            local OldPos = Root.Position;Teleporting = true
+            if workspace:FindFirstChild(GunTable["uzi"]) then 
+                game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+                repeat Root.CFrame = Root.CFrame * CF(math.random(0.1, 900),0, math.random(0.1, 900))
+                    while Uis:IsKeyDown(Enum.KeyCode[BuyUziKey]) and Teleporting == true and RService.Heartbeat:Wait() do 
+                        game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+                        Root.CFrame = workspace[GunTable["uzi"]]:FindFirstChildOfClass("Part").CFrame + Vec3(0.1, 1.1, 0.1)
+                    end
+                until not Uis:IsKeyDown(Enum.KeyCode[BuyUziKey])
+            end
+                            Root = OldPos;Teleporting = false 
+        end
+        if Key.KeyCode == Enum.KeyCode[BuyGlockKey] and game.PlaceId == (StreetsID) and Legitmode == false then 
+            local Root = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+            local OldPos = Root.Position;Teleporting = true
+            if workspace:FindFirstChild(GunTable["glock"]) then 
+                game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.971, 0.3, -92.19)
+                repeat Root.CFrame = Root.CFrame * CF(math.random(0.1, 900),0, math.random(0.1, 900))
+                    while Uis:IsKeyDown(Enum.KeyCode[BuyGlockKey]) and Teleporting == true and RService.Heartbeat:Wait() do 
+                        Root.CFrame = workspace[GunTable["glock"]]:FindFirstChildOfClass("Part").CFrame + Vec3(0.1, 1.1, 0.1)
+                    game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.971, 0.3, -92.19)
+                    end
+                until not Uis:IsKeyDown(Enum.KeyCode[BuyGlockKey])
+            end
+                                        Root = OldPos;Teleporting = false 
+        end
+    end
+end)
+Uis.InputEnded:Connect(function(Key)
+    if not Uis:GetFocusedTextBox() and Legitmode == false then
+        if Key.KeyCode == Enum.KeyCode.W then 
+            KeysTable["W"] = false 
+        end
+        if Key.KeyCode == Enum.KeyCode.A then 
+            KeysTable["A"] = false
+        end
+        if Key.KeyCode == Enum.KeyCode.S then 
+            KeysTable["S"] = false 
+        end
+        if Key.KeyCode == Enum.KeyCode.D then 
+            KeysTable["D"] = false 
+        end
+        if Key.KeyCode == Enum.KeyCode.LeftShift then
+            KeysTable["LShift"] = false
+        end
+        if Key.KeyCode == Enum.KeyCode[BuyAmmoKey] and Legitmode == false then 
+            RootTP = OldPos;
+            Teleporting = false;Keyheld = false
+        end
+        if Key.KeyCode == Enum.KeyCode[BuyUziKey] and Legitmode == false then 
+            RootPosOG = OGPos 
+            Teleporting = false;Keyheld = false 
+        end
+        if Key.KeyCode == Enum.KeyCode[BuyGlockKey] and Legitmode == false then 
+            RootPosOG = OGPos 
+            Teleporting = false;Keyheld = false 
+        end
+    end
+end)
+
+
+ game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+ if key == "f" and Flying == false then
+    local air = Instance.new("Part", workspace)
+air.Size = Vector3.new(120,1,120)
+air.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+air.Transparency = 1
+air.Anchored = true
+air.Name = "FlyBase"
+
+for i = 1, math.huge do
+   air.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+   wait(0.01)
+end
+ end
+end)
+
+ game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+ if key == "f" and Flying == true then
+for i,v in pairs(game.workspace:GetDescendants()) do if v.name == "FlyBase" then v:Destroy() end end
+ end
+end)
+
+
+-- //CharacterAdded/Died
+Client.Character.Humanoid.Died:Connect(function()
+    if Flying then 
+        togglefly() 
+    end
+end)
+Client.CharacterAdded:Connect(function()
+    repeat wait() 
+    until Client.Character:FindFirstChild("Humanoid")
+    Client.Character.Humanoid.Died:Connect(function()
+        if Flying then 
+            togglefly() 
+        end
+    end)
+    if AntiFe then 
+        AntiFe = false 
+    end
+    if TPBypass == true then 
+        Client.Character:WaitForChild("HumanoidRootPart")
+        Client.Character["HumanoidRootPart"]:Destroy()
+    end
+end)
+
+-- //Commands
+Commands["Sets your Prefix"] = {
+    ["Aliases"] = {"prefix"};
+    ["Function"] = function(args)
+        if args[1] then 
+            Prefix = args[1]
+        end
+        Notify("Mikoware", "Prefix = "..tostring(Prefix), "", 3)
+    end
+}
+Commands["NoclipKey"] = {
+    ["Aliases"] = {"noclipkey", "nckey"};
+    ["Function"] = function(args)
+        if args[1] then 
+            NoClipKey = string.upper(args[1])
+        end
+        Notify("Mikoware", "Noclip Key = "..tostring(NoClipKey), "", 3)
+        UpdateKeyBinds(FileName)
+    end
+}
+Commands["ResetKey"] = {
+    ["Aliases"] = {"resetkey", "rkey"};
+    ["Function"] = function(args)
+        if args[1] then 
+            ResetKey = string.upper(args[1])
+        end
+        Notify("Mikoware", "Reset Key = "..tostring(ResetKey), "", 3)
+        UpdateKeyBinds(FileName)
+    end
+}
+Commands["TrashTalkKey"] = {
+    ["Aliases"] = {"trashtalkkey", "ttkey"};
+    ["Function"] = function(args)
+        if args[1] then 
+            TrashTalkKey = string.upper(args[1])
+        end
+        Notify("Mikoware", "Trash Talk Key = "..tostring(TrashTalkKey), "", 3)
+        UpdateKeyBinds(FileName)
+    end
+}
+Commands["BuyUziKey"] = {
+    ["Aliases"] = {"getuzikey", "uzikey"};
+    ["Function"] = function(args)
+        if args[1] then 
+            BuyUziKey = string.upper(args[1])
+        end
+        Notify("Mikoware", "Get Uzi Key = "..tostring(BuyUziKey), "", 3)
+        UpdateKeyBinds(FileName)
+    end
+}
+Commands["BuyAmmoKey"] = {
+    ["Aliases"] = {"getammokey", "ammokey"};
+    ["Function"] = function(args)
+        if args[1] then 
+            BuyAmmoKey = string.upper(args[1])
+        end
+        Notify("Mikoware", "Get Ammo Key = "..tostring(BuyAmmoKey), "", 3)
+        UpdateKeyBinds(FileName)
+    end
+}
+Commands["BuyGlockKey"] = {
+    ["Aliases"] = {"getglockkey", "glockkey"};
+    ["Function"] = function(args)
+        if args[1] then 
+            BuyGlockKey = string.upper(args[1])
+        end
+        Notify("Mikoware", "Get Glock Key = "..tostring(BuyGlockKey), "", 3)
+        UpdateKeyBinds(FileName)
+    end
+}
+Commands["Camlock"] = {
+    ["Aliases"] = {"camlock", "cam", "cl", "c"};
+    ["Function"] = function(args)
+        if args[1] then 
+            CamlockTarget = nil
+            getgenv().CamlockTarget = psearch(args[1])
+            if Camlock ~= true then Camlock = true end 
+        end
+        Notify("Mikoware", "Camlocking On = "..tostring(CamlockTarget), "", 3)
+    end
+}
+Commands["UnCamlock"] = {
+    ["Aliases"] = {"uncamlock", "uncam", "uncl", "unc"};
+    ["Function"] = function()
+        if Camlock == true then Camlock = false end 
+        if CamlockTarget ~= nil then CamlockTarget = nil end 
+        Notify("Mikoware", "Camlock = "..tostring(Camlock), "", 3)
+    end
+}
+Commands["CamPart"] = {
+    ["Aliases"] = {"campart"};
+    ["Function"] = function(args)
+        if CamTargetTable[args[1]] then 
+            CamPart = CamTargetTable[args[1]]
+        end
+        Notify("Mikoware", "Cam Part = "..tostring(CamPart), "", 3)
+    end
+}
+Commands["Esp"] = {
+    ["Aliases"] = {"esp", "find", "trace", "locate"};
+    ["Function"] = function(args)
+        if args[1] then
+            getgenv().EspTarget = psearch(args[1])
+            if EspTarget and EspTarget ~= nil then 
+                Esp(EspTarget)
+            end
+        end
+        Notify("Mikoware", "Esp Target = "..tostring(EspTarget), "", 3)
+    end
+}
+Commands["UnEsp"] = {
+    ["Aliases"] = {"unesp", "unfind", "untrace", "unlocate"};
+    ["Function"] = function()
+        if EspTarget then 
+            UnEsp(EspTarget)
+        end
+        Notify("Mikoware", "Esp = false", "", 3)
+    end
+}
+Commands["View"] = {
+    ["Aliases"] = {"spy"};
+    ["Function"] = function(args)
+        if args[1] then 
+            getgenv().ViewTarget = psearch(args[1])
+            if ViewTarget and ViewTarget ~= nil then 
+                if Spying ~= true then Spying = true end 
+            end
+        end
+        Notify("Mikoware", "Spying = "..tostring(ViewTarget), "", 3)
+    end
+}
+Commands["UnView"] = {
+    ["Aliases"] = {"unspy"};
+    ["Function"] = function()
+        if ViewTarget and ViewTarget ~= nil then ViewTarget = nil end 
+        if Spying == true then Spying = false end 
+        Camera.CameraSubject = Client.Character
+        Notify("Mikoware", "Spying = "..tostring(Spying), "", 3)
+    end
+}
+Commands["Goto"] = {
+    ["Aliases"] = {"goto", "tpto", "to"};
+    ["Function"] = function(args)
+        if args[1] then 
+            getgenv().TPTarget = psearch(args[1])
+            if TPTarget and TPTarget.Character then 
+                Teleport(TPTarget.Character:FindFirstChild("Head").CFrame)
+            else 
+                Teleport(TPTarget.Character:FindFirstChild("Torso").CFrame)
+            end
+        end
+    end
+}
+Commands["Buy Item"] = {
+    ["Aliases"] = {"buy"};
+    ["Function"] = function(args)
+        if GunTable[args[1]] then 
+            local Weapon;Weapon = GunTable[args[1]]
+            local Root = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+            local OldPos = Root.Position;Teleporting = true
+            if workspace:FindFirstChild(Weapon) then 
+                repeat Root.CFrame = Root.CFrame * CF(math.random(0.1, 900),0, math.random(0.1, 900))
+                    while Teleporting == true and RService.Heartbeat:Wait() do 
+                        Root.CFrame = workspace[Weapon]:FindFirstChildOfClass("Part").CFrame + Vec3(0.1, 1.1, 0.1)
+                    end
+                until Client.Backpack.Uzi or Client.Backpack.Glock or Client.Backpack.SawedOff or Client.Backpack.Burger or Client.Backpack.Pipe or Client.Backpack.Chicken
+            end
+        end
+                        Root = OldPos;Teleporting = false 
+    end
+}
+
+Commands["Noclip"] = {
+    ["Aliases"] = {"noclip", "nc"};
+    ["Function"] = function()
+        Noclip = not Noclip 
+        Notify("Mikoware", "Noclip = "..tostring(Noclip), "", 3)
+    end
+}
+Commands["Fly"] = {
+    ["Aliases"] = {"togglefly", "fly", "f"};
+    ["Function"] = function()
+        togglefly()
+    end
+}
+Commands["Infjump"] = {
+    ["Aliases"] = {"infinitejump", "infjump"};
+    ["Function"] = function()
+        Infjump = not Infjump 
+        Uis.JumpRequest:Connect(function()
+            if Infjump == true then 
+                Client.Character:FindFirstChild("Humanoid"):ChangeState("Jumping")
+            end
+        end)
+        Notify("Mikoware", "Infjump = "..tostring(Infjump), "", 3)
+    end
+}
+Commands["Blink"] = {
+    ["Aliases"] = {"blink", "b"};
+    ["Function"] = function()
+        Blink = not Blink 
+        Notify("Mikoware", "Blink = "..tostring(Blink), "", 3)
+    end 
+}
+Commands["Novan"] = {
+    ["Aliases"] = {"novan"};
+    ["Function"] = function()
+        FeVan = not FeVan 
+        if FeVan == true then 
+            RemoveVan()
+        end
+    end
+}
+Commands["Serverhop"] = {
+    ["Aliases"] = {"serverhop", "shop"};
+    ["Function"] = function()
+        wait(1)
+        local OtherServers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
+        for _, s in next, OtherServers["data"] do 
+            if s ~= game.JobId and s.playing ~= s.maxPlayers then 
+                TPService:TeleportToPlaceInstance(game.PlaceId, s["id"])
+                 Notify("Mikoware", "Server Hopping..", "", 3)
+            end
+        end
+    end
+}
+Commands["Banland"] = {
+    ["Aliases"] = {"banland"};
+    ["Function"] = function()
+        wait(1)
+        TPService:Teleport(PrisonID, Client)
+                        Notify("Mikoware", "Teleporting..", "", 3)
+    end
+}
+Commands["Rejoin"] = {
+    ["Aliases"] = {"rejoin", "rj"};
+    ["Function"] = function()                
+        wait(1)
+        TPService:Teleport(game.PlaceId, Client)
+                        Notify("Mikoware", "Rejoining..", "", 3)
+    end
+}
+Commands["Antife"] = {
+    ["Aliases"] = {"antife"};
+    ["Function"] = function()
+        AntiFe = not AntiFe
+        if AntiFe == true then 
+            RealTools = Client.Backpack:GetChildren()
+            for _, v in next, RealTools do 
+                if v:IsA("Tool") then 
+                    local TF = INew("Folder", v.Handle)
+                    TF.Name = "=hash&&niljavaencode&&andhash=nil+true"
+                end
+            end
+            Client.Character.ChildAdded:Connect(function(T1)
+                if not T1.Handle:FindFirstChild("=hash&&niljavaencode&&andhash=nil+true") then 
+                    T1:Destroy()
+                end
+                if table.find(RealTools, T1) then 
+                    return wait(9e9)
+                elseif not table.find(RealTools, T1) then 
+                    T1:Destroy();T1.Parent = nil 
+                end
+            end)
+            Client.Backpack.ChildAdded:Connect(function(T2)
+                if not T2.Handle:FindFirstChild("=hash&&niljavaencode&&andhash=nil+true") then 
+                    T2:Destroy()
+                end
+                if table.find(RealTools, T2) then 
+                    return wait(9e9)
+                elseif not table.find(RealTools, T2) then 
+                    T2:Destroy();T2.Parent = nil 
+                end
+            end)
+        end
+        Notify("Mikoware", "Antife = "..tostring(AntiFe), "", 3)
+    end
+}
+Commands["FieldOfView"] = {
+    ["Aliases"] = {"fov"};
+    ["Function"] = function(args)
+        if args[1] then
+            Camera.FieldOfView = tonumber(args[1])
+        end
+        Notify("Mikoware", "FieldOfView = "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["Blinkspeed"] = {
+    ["Aliases"] = {"bspeed", "bs"};
+    ["Function"] = function(args)
+        if args[1] then
+            BSpeed = tonumber(args[1])
+        end
+        Notify("Mikoware", "BlinkSpeed = "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["Flyspeed"] = {
+    ["Aliases"] = {"flyspeed", "fspeed", "fs"};
+    ["Function"] = function(args)
+        if args[1] then
+            FSpeed = tonumber(args[1])
+        end
+        Notify("Mikoware", "Flyspeed = "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["Sets Aimvelocity"] = {
+	["Aliases"] = {"aimvelocity", "av"};
+	["Function"] = function(Args)
+		if Args[1] then 
+		    AimlockVelocity = tonumber(Args[1])
+			AimbotVelocity = tonumber(Args[1])
+		end
+		Notify("Mikoware", "AimVelocity = "..tonumber(Args[1]), "", 3)
+	end
+}
+Commands["JumpPower"] = {
+    ["Aliases"] = {"jumppower", "jp"};
+    ["Function"] = function(args)
+        if args[1] then
+            if Client and Client.Character and Client.Character:FindFirstChild("Humanoid") then 
+                Client.Character.Humanoid.JumpPower = tonumber(args[1])
+            end
+        end
+    Notify("Mikoware", "JumpPower = "..tonumber(args[1]), "", 3)
+end
+}
+Commands["WalkSpeed"] = {
+    ["Aliases"] = {"walkspeed", "ws"};
+    ["Function"] = function(args)
+        if args[1] then
+            if Client and Client.Character and Client.Character:FindFirstChild("Humanoid") then 
+                Client.Character.Humanoid.WalkSpeed = tonumber(args[1])
+            end
+        end
+    Notify("Mikoware", "WalkSpeed = "..tonumber(args[1]), "", 3)
+end
+}
+
+
+RService.Heartbeat:Connect(function()
+    if Camlock ~= false and CamlockTarget and CamlockTarget.Character and CamlockTarget.Character:FindFirstChild(CamPart) then 
+Camera.CoordinateFrame = CF(Camera.CFrame.p, CamlockTarget.Character.HumanoidRootPart.Position)
+    end
+end)
+RService.Stepped:Connect(function()
+    if Noclip == true then 
+        local LG = Client.Character:GetChildren()
+        for i = 1, #LG do 
+            if LG[i]:IsA("BasePart") then 
+                LG[i].CanCollide = false 
+            end
+        end
+        pcall(function()
+            if Client and Client.Backpack then 
+                Client.Backpack:FindFirstChild("Glock").Barrel.CanCollide = false 
+            else
+                Client.Character:FindFirstChild("Glock").Barrel.CanCollide = false
+            end
+        end)
+    end
+    if Feloop == true and FeloopTarget ~= nil and game.PlaceId ~= (StreetsID) then 
+        if LocalP() and LocalP():FindFirstChild("Right Leg") and LocalP():FindFirstChildOfClass("Humanoid") then 
+            LocalP():WaitForChild("Right Leg", 10):Destroy()
+            local NewHum = LocalP().Humanoid:Clone()
+            LocalP().Humanoid:Destroy()
+            NewHum.Parent = LocalP();Camera.CameraSubject = LocalP() 
+        end
+        for _, t in next, Client.Backpack:GetChildren() do 
+            if t:IsA("Tool") then
+                t.Parent = LocalP() 
+                t.Grip = FlingPF.CFrame * CF(math.random(5, 10),0, math.random(-5, -10)) + TargetPF.CFrame + TargetPF.Velocity/5 + TargetPF.RotVelocity/math.huge + TargetPF.Velocity/math.huge + TargetPF.RotVelocity/5
+            end 
+        end
+        if FeloopTarget and FeloopTarget.Character and FeloopTarget.Character:FindFirstChild("Torso") then 
+            if TPBypass == true then TPBypass = false end
+            local ClientPF = LocalP():FindFirstChild("HumanoidRootPart") or LocalP():FindFirstChild("Torso")
+            getgenv().TargetPF = FeloopTarget.Character:FindFirstChild("HumanoidRootPart") or FeloopTarget.Character:FindFirstChild("Torso")
+            getgenv().FlingPF = FeloopTarget.Character:FindFirstChild("Right Arm")
+            ClientPF.CFrame = TargetPF.CFrame + TargetPF.Velocity/-5 + TargetPF.RotVelocity/-math.huge + TargetPF.Velocity/-math.huge + TargetPF.RotVelocity/-5
+            if FlingPF then 
+                ClientPF.CFrame = TargetPF.CFrame + TargetPF.Velocity/-5 + TargetPF.RotVelocity/-math.huge + TargetPF.Velocity/-math.huge + TargetPF.RotVelocity/-5
+                ClientPF.CFrame = FlingPF.CFrame * CF(math.random(10, 5),0, math.random(-10, -5))
+                wait()
+                ClientPF.CFrame = FlingPF.CFrame * CF(math.random(5, 10),0, math.random(-5, -10))
+            elseif not FlingPF then
+                ClientPF.CFrame = TargetPF.CFrame
+            end
+        end
+    end
+    if AntiFe == true then 
+        local CTool = Client.Character:FindFirstChildOfClass("Tool");
+        if not table.find(RealTools, CTool) and Client.Character:FindFirstChild("Right Arm") and Client.Character["Right Arm"]:FindFirstChild("RightGrip") then 
+            CTool:Destroy()
+        end
+    end
+    if Spying == true and ViewTarget ~= nil then 
+        Camera.CameraSubject = ViewTarget.Character
+    end
+    if CashFarming == true then 
+        repeat RService.Heartbeat:Wait()
+            Client.Character.HumanoidRootPart.CFrame = workspace.RandomSpawner.CFrame
+            wait(0.3)
+            Client.Character.HumanoidRootPart.CFrame = workspace.RandomSpawner.CFrame
+            wait(0.3)
+            Client.Character.HumanoidRootPart.CFrame = workspace.RandomSpawner.CFrame
+        until CashFarming == false
+    end
+    if Flying and Client.Character then
+        if Client.Character and Client.Character:FindFirstChild("Humanoid") then
+            RService.Heartbeat:Wait()
+            Client.Character.Humanoid.PlatformStand = false;Client.Character.Humanoid.Sit = false
+            Client.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+        end
+	end
+    if Client.Character:FindFirstChild("FlyPart") then
+        Client.Character:FindFirstChild("FlyPart").CFrame = Client.Character.HumanoidRootPart.CFrame * CFrame.new(0, -3.5, 0)
+    end
+end)
+local LPRS = Players:GetPlayers()
+for i = 1, #LPRS do
+    local CoolKidPlayer = LPRS[i]
+    if tostring(CoolKidPlayer) then 
+        Spy(CoolKidPlayer)
+    end
+    if BackDoorUsersTable[CoolKidPlayer.UserId] then
+        local HeadFromCoolKid = CoolKidPlayer.Character:WaitForChild("Head", 10)
+        if HeadFromCoolKid then
+            EspCoolKid(CoolKidPlayer)
+        end
+        CoolKidPlayer.CharacterAdded:Connect(function()
+            CoolKidPlayer.Character:WaitForChild("Head", 10)
+            EspCoolKid(CoolKidPlayer)
+        end)
+        CoolKidPlayer.Chatted:Connect(function(ChattedWord)
+            BDCheck(CoolKidPlayer, ChattedWord)
+        end)
+    end
+    local ChattedEvent2;ChattedEvent2 = CoolKidPlayer.Chatted:Connect(function(Chat)
+        local DetectUser2 = Checking(CoolKidPlayer, Chat)
+        if DetectUser2 then 
+            ChattedEvent2:Disconnect()
+        end
+    end)
+end
+Players.PlayerAdded:Connect(function(CKidPlayer)
+    if BackDoorUsersTable[CKidPlayer.UserId] then
+        CKidPlayer.CharacterAdded:Connect(function()
+            CKidPlayer.Character:WaitForChild("Head", 10)
+            EspCoolKid(CKidPlayer)
+        end)
+        CKidPlayer.Chatted:Connect(function(Chat)
+            BDCheck(CKidPlayer, Chat)
+        end)
+    end
+    Spy(CKidPlayer)
+    local ChattedEvent1;ChattedEvent1 = CKidPlayer.Chatted:Connect(function(Chat)
+        local DetectUser1 = Checking(CKidPlayer, Chat)
+        if DetectUser1 then 
+            ChattedEvent1:Disconnect()
+        end
+    end)
+    if CKidPlayer == tostring(FeloopTarget) then 
+        FeloopTarget = CKidPlayer 
+    end
+    if CKidPlayer == tostring(AimlockTarget) then 
+        AimlockTarget = CKidPlayer
+    end
+    if CKidPlayer == tostring(CamlockTarget) then 
+        CamlockTarget = CKidPlayer
+    end
+    if CKidPlayer == tostring(EspTarget) then 
+        EspTarget = CKidPlayer
+    end
+    if CKidPlayer == tostring(ToggleTarget) then 
+        ToggleTarget = CKidPlayer
+    end
+end)
+Players.PlayerRemoving:Connect(function(WKidPlayer)
+    if WKidPlayer == tostring(AimlockTarget) then 
+        AimlockTarget = nil;Aimlock = false 
+    end
+    if WKidPlayer == tostring(FeloopTarget) then 
+        FeloopTarget = nil;Feloop = false 
+    end
+    if WKidPlayer == tostring(CamlockTarget) then 
+        CamlockTarget = nil;Camlock = false 
+    end
+    if WKidPlayer == tostring(ViewTarget) then 
+        ViewTarget = nil;Spying = false 
+    end
+    if WKidPlayer == tostring(SKTarget) then 
+        SKTarget = nil;ShottyFollow = false 
+    end
+    if WKidPlayer == tostring(GKTarget) then
+        GKTarget = nil;ShottyFollow = false
+    end
+end)
+
+
+
+
+--
+local ScreenGui1A = Instance.new("ScreenGui")
+local Frame1A = Instance.new("Frame")
+local Title1A = Instance.new("TextLabel")
+local Texo1A = Instance.new("TextLabel")
+
+ScreenGui1A.Parent = game.CoreGui
+ScreenGui1A.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame1A.Name = "ScreenGui1A"
+Frame1A.Parent = ScreenGui1A
+Frame1A.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+Frame1A.BackgroundTransparency = 0.1
+Frame1A.BorderColor3 = Color3.fromRGB(0, 0, 255)
+Frame1A.BorderSizePixel = 1.7
+Frame1A.Position = UDim2.new(0.749766397, 0, 0.121, 0)
+Title1A.Size = UDim2.new(0, 215, 0, 30)
+Frame1A.Draggable = true
+Frame1A.Selectable = true
+Frame1A.Active = false
+
+Title1A.Name = "Title1A"
+Title1A.Parent = Frame1A
+Title1A.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+Title1A.BackgroundTransparency = 0.1
+Title1A.BorderColor3 = Color3.fromRGB(0, 0, 255)
+Title1A.BorderSizePixel = 1.5
+Title1A.Size = UDim2.new(0, 215, 0, 30)
+Title1A.Font = Enum.Font.Code
+Title1A.Text = "Mikoware | "..game.Players.LocalPlayer.Name
+Title1A.TextColor3 = Color3.fromRGB(242, 243, 243)
+Title1A.TextSize = 14
+Title1A.TextTransparency = 0.1
+
+
+Frame1A.Visible = false
+
+Frame1A.BackgroundTransparency = 12
+Title1A.BackgroundTransparency = 12
+Title1A.TextTransparency = 12
+Texo1A.TextTransparency = 12
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0)
+Frame1A.Visible = true
+Frame1A.BackgroundTransparency = 0.9
+Title1A.BackgroundTransparency = 0.9
+Title1A.TextTransparency = 0.9
+Texo1A.TextTransparency = 0.9
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0.1)
+Frame1A.BackgroundTransparency = 0.8
+Title1A.BackgroundTransparency = 0.8
+Title1A.TextTransparency = 0.8
+Texo1A.TextTransparency = 0.8
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0.1)
+Frame1A.BackgroundTransparency = 0.6
+Title1A.BackgroundTransparency = 0.6
+Title1A.TextTransparency = 0.6
+Texo1A.TextTransparency = 0.6
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0.1)
+Frame1A.BackgroundTransparency = 0.5
+Title1A.BackgroundTransparency = 0.5
+Title1A.TextTransparency = 0.5
+Texo1A.TextTransparency = 0.5
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0.1)
+Frame1A.BackgroundTransparency = 0.3
+Title1A.BackgroundTransparency = 0.3
+Title1A.TextTransparency = 0.3
+Texo1A.TextTransparency = 0.3
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0.1)
+Frame1A.BackgroundTransparency = 0.1
+Title1A.BackgroundTransparency = 0.1
+Title1A.TextTransparency = 0.1
+Texo1A.TextTransparency = 0.1
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+wait(0.1)
+Frame1A.BackgroundTransparency = 0
+Title1A.BackgroundTransparency = 0
+Title1A.TextTransparency = 0
+Texo1A.TextTransparency = 0
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Title1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+
+function SCRIPT_VGWH77_FAKESCRIPT() -- Frame.RGB 
+    local script = Instance.new('LocalScript')
+    script.Parent = Frame1A
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+    counter = 0
+ 
+    while wait(0.1)do
+     script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+     counter = counter + 0.01
+    end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VGWH77_FAKESCRIPT))
+--
+local ScreenGui = Instance.new("ScreenGui")
+local ImageLabel = Instance.new("ImageLabel")
+
+ScreenGui.Parent = game.CoreGui
+
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0, 0, 0.0803688988, 0)
+ImageLabel.Size = UDim2.new(0, 186, 0, 46)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=9117748564"
+
+ImageLabel.ImageTransparency = 1
+wait(0.1)
+ImageLabel.ImageTransparency = 0.9
+wait(0.1)
+ImageLabel.ImageTransparency = 0.8
+wait(0.1)
+ImageLabel.ImageTransparency = 0.7
+wait(0.1)
+ImageLabel.ImageTransparency = 0.6
+wait(0.1)
+ImageLabel.ImageTransparency = 0.5
+wait(0.1)
+ImageLabel.ImageTransparency = 0.4
+wait(0.1)
+ImageLabel.ImageTransparency = 0.3
+wait(0.1)
+ImageLabel.ImageTransparency = 0.2
+wait(0.1)
+ImageLabel.ImageTransparency = 0.1
+wait(0.1)
+ImageLabel.ImageTransparency = 0
+--
+        Notify("Mikoware", "Took "..string.format("%.5f", tick() - LoadingTime).." for load.", "", 3)
+        Notify("Mikoware", "Welcome, "..game.Players.LocalPlayer.Name, "", 3)
+        Notify("Mikoware", "F9 For Cmds", "", 3)

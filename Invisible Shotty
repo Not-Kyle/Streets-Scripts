@@ -1,0 +1,32 @@
+local function invis(instance) 
+    for i,v in pairs(instance:GetChildren()) do
+    if v.Name == "Weld" and v.Parent.Name ~= "Heh" and v.Parent.Name ~= "Barrel" then
+        v:Destroy()
+    end
+    invis(v)
+    end
+end
+ 
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Shotty") then
+     game.Players.LocalPlayer.Backpack:FindFirstChild("Shotty").Parent = game.Players.LocalPlayer.Character
+end
+wait(0.1)
+invis(game.Players.LocalPlayer.Character.Shotty)
+game.Players.LocalPlayer.Character.Shotty.Grip = CFrame.new(-0.2,0,-3)
+ 
+ 
+game.Players.LocalPlayer.Character.Shotty.Equipped:Connect(function()
+    wait()
+    local AnimationTracks = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+    for i, track in pairs (AnimationTracks) do
+        if track.Name == "Idle" then 
+            track:Stop()
+        end
+    end
+end)
+ 
+wait(1.5)
+if game.Players.LocalPlayer.Character:FindFirstChild("Shotty") then 
+    game.Players.LocalPlayer.Character.Shotty.Parent = game.Players.LocalPlayer.Backpack
+end
+ 

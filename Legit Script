@@ -1,0 +1,24 @@
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+    if KeyPressed == "r" then
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+end)
+local amount = fovamount
+
+game:GetService'Workspace'.Camera.FieldOfView = 100
+rpm = 1
+game:GetService('RunService').RenderStepped:connect(function()
+    for i=1,math.ceil((rpm/60)/60) do
+        game.Lighting.TimeOfDay = "14:00:00"
+    end
+end)
+function deseat(instance) 
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Seat") then
+        v.Parent = game.Lighting
+    end
+        deseat(v)
+    end
+end
+
+deseat(game.Workspace) 

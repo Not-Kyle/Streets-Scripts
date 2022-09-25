@@ -1,0 +1,77 @@
+--from aidez pastebin
+
+local function removeother(instance) 
+    for i,v in pairs(instance:GetChildren()) do
+	if v.Name == "ESP" then
+	    v:Destroy()
+	end
+	removeother(v)
+    end
+end
+ 
+function show(v)
+ 
+    local epic = Instance.new("Part")
+    epic.Parent = v
+    epic.Name = "parttrace"
+    epic.CFrame = v.CFrame
+    epic.Size = Vector3.new(0.2,0.2,0.2)
+    epic.Anchored = true
+    epic.Transparency = 1
+ 
+    local billgui = Instance.new('BillboardGui', epic)
+    local textlab = Instance.new('TextLabel', billgui)
+ 
+    billgui.Name = "ESP"
+    billgui.Adornee  = epic
+    billgui.AlwaysOnTop = true
+    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billgui.Size = UDim2.new(0, 5, 0, 5)
+ 
+    textlab.Name = 'CASH'
+    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+    textlab.BackgroundTransparency = 1
+    textlab.BorderSizePixel = 0
+    textlab.Position = UDim2.new(0, 0, 0, -40)
+    textlab.Size = UDim2.new(1, 0, 10, 0)
+    textlab.Visible = true
+    textlab.ZIndex = 10
+    textlab.Font = 'ArialBold'
+    textlab.FontSize = 'Size14'
+    textlab.Text = "CASH"
+    textlab.TextColor = BrickColor.new('Bright red')
+    textlab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    textlab.TextStrokeTransparency = 0.6
+end
+ 
+local function tracecash(instance) 
+    for i,v in pairs(instance:GetChildren()) do
+	if v:IsA("MeshPart") and v.MeshId == "rbxassetid://511726060" then
+	    removeother(v.Parent)
+	    show(v)
+        end
+	tracecash(v)
+    end
+end
+ 
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "RandomSpawner" then
+	if v:FindFirstChild("Model") then
+	    v.Model.ChildAdded:Connect(function(child)
+		tracecash(child)
+	    end)
+	end
+	v.ChildAdded:Connect(function(child)
+	    tracecash(child)
+	end)
+    end
+end
+ 
+game.Workspace.ChildAdded:Connect(function(child)
+    if child.Name == "RandomSpawner" then
+	repeat wait() until child.Model
+	tracecash(child)
+    end
+end)
+ 
+tracecash(game.Workspace)

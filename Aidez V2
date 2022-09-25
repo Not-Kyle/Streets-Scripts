@@ -1,0 +1,1634 @@
+if game.PlaceId == 455366377 then
+    print("Currently Playing The Streets")
+    print("Waiting for player to confirm...")
+else
+return
+end
+undecided = true
+continue = false
+local ConfirmGui = Instance.new("ScreenGui")
+local Drag = Instance.new("TextButton")
+local Background = Instance.new("ImageLabel")
+local deny = Instance.new("TextButton")
+local confirm = Instance.new("TextButton")
+local question = Instance.new("TextLabel")
+ 
+ConfirmGui.Name = "ConfirmGui"
+ConfirmGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ 
+Drag.Name = "Drag"
+Drag.Parent = ConfirmGui
+Drag.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Drag.BackgroundTransparency = 0.9990000128746
+Drag.BorderColor3 = Color3.new(1, 1, 1)
+Drag.Position = UDim2.new(0.392041147, 0, 0.23756206, 0)
+Drag.Size = UDim2.new(0, 414, 0, 414)
+Drag.Font = Enum.Font.ArialBold
+Drag.Text = ""
+Drag.TextColor3 = Color3.new(1, 1, 1)
+Drag.TextSize = 14
+Drag.TextWrapped = true
+ 
+Background.Name = "Background"
+Background.Parent = Drag
+Background.BackgroundColor3 = Color3.new(1, 1, 1)
+Background.Position = UDim2.new(0.00235595694, 0, -0.00123840338, 0)
+Background.Size = UDim2.new(0, 412, 0, 412)
+Background.ZIndex = 0
+Background.Image = "rbxassetid://0&hash=12ed3f0fdc0764ab01645b356df12dc3"
+ 
+deny.Name = "deny"
+deny.Parent = Background
+deny.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+deny.BackgroundTransparency = 0.80000001192093
+deny.BorderColor3 = Color3.new(1, 1, 1)
+deny.Position = UDim2.new(0.552222788, 0, 0.668497741, 0)
+deny.Size = UDim2.new(0, 174, 0, 37)
+deny.ZIndex = 2
+deny.Font = Enum.Font.ArialBold
+deny.Text = "No"
+deny.TextColor3 = Color3.new(1, 1, 1)
+deny.TextSize = 25
+deny.TextWrapped = true
+ 
+confirm.Name = "confirm"
+confirm.Parent = Background
+confirm.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+confirm.BackgroundTransparency = 0.80000001192093
+confirm.BorderColor3 = Color3.new(1, 1, 1)
+confirm.Position = UDim2.new(0.0400868692, 0, 0.669110954, 0)
+confirm.Size = UDim2.new(0, 174, 0, 37)
+confirm.ZIndex = 2
+confirm.Font = Enum.Font.ArialBold
+confirm.Text = "Yes"
+confirm.TextColor3 = Color3.new(1, 1, 1)
+confirm.TextSize = 25
+ 
+question.Name = "question"
+question.Parent = Background
+question.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+question.BackgroundTransparency = 0.89999997615814
+question.Position = UDim2.new(0.00248703454, 0, -0.00103163486, 0)
+question.Size = UDim2.new(0, 412, 0, 118)
+question.Font = Enum.Font.SourceSans
+question.Text = "You're currently in The Streets. Would you like to inject     \"Mega Combat v2\"?"
+question.TextColor3 = Color3.new(1, 1, 1)
+question.TextScaled = true
+question.TextSize = 14
+question.TextWrapped = true
+ 
+deny.MouseButton1Click:Connect(function()
+    ConfirmGui:Destroy()
+    undecided = false
+    continue = false
+end)
+ 
+ 
+confirm.MouseButton1Click:Connect(function()
+    ConfirmGui:Destroy()
+    undecided = false
+    continue = true
+end)
+ 
+while undecided do
+wait()
+end
+ 
+ 
+if continue == true then
+print("Confirmed! Injecting script...")
+elseif continue == false then
+return
+end
+ 
+wait(1)
+ 
+SpaceHeld = false
+jumpgcheck = true
+jumpspeed = 0.9
+targetee = nil
+pleaseshoot = false
+IsFirstPerson = false
+ShiftHeld = false
+WHeld = false
+SHeld = false
+AHeld = false
+DHeld = false
+gcheckrun = true
+runspeed = 1
+local stationaryrespawn = true
+local needsrespawning = false
+local haspos = false
+local pos = CFrame.new()
+fireuzi = false
+targetfireuzi = false
+forward = false
+flymode = false
+flyw = false
+flys = false
+flyd = false
+flya = false
+flysp = false
+flyct = false
+Mouse = game.Players.LocalPlayer:GetMouse()
+flyspeed = 0.5
+staypos = CFrame.new()
+stay = false
+originalgrip = CFrame.new()
+gundebounce = false
+flydebounce = false
+smalldebounce = false
+bigdebounce = false
+bigfire = false
+mouse = game.Players.LocalPlayer:GetMouse()
+ 
+local TargetGUI = Instance.new("ScreenGui")
+local Target = Instance.new("TextBox")
+local Background = Instance.new("ImageLabel")
+ 
+TargetGUI.Name = "TargetGUI"
+TargetGUI.Parent = game.CoreGui
+ 
+Target.Name = "Target"
+Target.Parent = TargetGUI
+Target.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Target.BackgroundTransparency = 0.30000001192093
+Target.ClipsDescendants = true
+Target.Position = UDim2.new(0.726104677, 0, 0.717467248, 0)
+Target.Size = UDim2.new(0, 100, 0, 21)
+Target.Font = Enum.Font.SourceSans
+Target.PlaceholderText = "[TARGET]"
+Target.Text = ""
+Target.TextColor3 = Color3.new(1, 1, 1)
+Target.TextSize = 14
+Target.TextWrapped = true
+Target.Draggable = true
+ 
+Background.Name = "Background"
+Background.Parent = Target
+Background.BackgroundColor3 = Color3.new(1, 1, 1)
+Background.Position = UDim2.new(-9.90098342e-05, 0, -1.57506061, 0)
+Background.Size = UDim2.new(0, 100, 0, 86)
+Background.ZIndex = 0
+Background.Image = "rbxassetid://0&hash=2396ab74bcae41f2340b198666905246"
+ 
+ 
+local Respawning = Instance.new("ScreenGui")
+local RespawningButton = Instance.new("TextButton")
+ 
+ 
+ 
+Respawning.Name = "Respawning"
+Respawning.Parent = game.CoreGui
+ 
+ 
+ 
+RespawningButton.Name = "RespawningButton"
+RespawningButton.Parent = Respawning
+RespawningButton.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+RespawningButton.BackgroundTransparency = 0.30000001192093
+RespawningButton.BorderSizePixel = 0
+RespawningButton.Position = UDim2.new(0.0391057241, 0, 0.826617789, 0)
+RespawningButton.Size = UDim2.new(0, 83, 0, 34)
+RespawningButton.Font = Enum.Font.SourceSans
+RespawningButton.Text = "Not Returning"
+RespawningButton.TextColor3 = Color3.new(1, 1, 1)
+RespawningButton.TextSize = 20
+RespawningButton.TextScaled = true
+RespawningButton.Draggable = true
+ 
+ 
+local creditsdab = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local aidez = Instance.new("ImageLabel")
+local names = Instance.new("TextLabel")
+local scriptmadeby = Instance.new("TextLabel")
+local scriptmadeby_2 = Instance.new("TextLabel")
+local x = Instance.new("TextButton")
+ 
+ 
+creditsdab.Name = "creditsdab"
+creditsdab.Parent = game.CoreGui
+ 
+Frame.Parent = creditsdab
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.Position = UDim2.new(0.399554282, 0, 0.241054624, 0)
+Frame.Size = UDim2.new(0, 274, 0, 274)
+ 
+aidez.Name = "aidez"
+aidez.Parent = Frame
+aidez.BackgroundColor3 = Color3.new(1, 1, 1)
+aidez.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+aidez.Position = UDim2.new(-0.000740621239, 0, 0.000178694725, 0)
+aidez.Size = UDim2.new(0, 274, 0, 274)
+aidez.Image = "rbxassetid://0&hash=9c3f6c00707d5ebde710fd2f3efd2b5e"
+ 
+names.Name = "names"
+names.Parent = Frame
+names.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+names.BackgroundTransparency = 0.30000001192093
+names.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+names.Position = UDim2.new(0, 0, 0.897810221, 0)
+names.Size = UDim2.new(0, 274, 0, 28)
+names.Font = Enum.Font.SourceSans
+names.Text = "Vortexturize | aidez moi#4192 | Aidez "
+names.TextColor3 = Color3.new(1, 1, 1)
+names.TextSize = 14
+ 
+scriptmadeby.Name = "scriptmadeby"
+scriptmadeby.Parent = Frame
+scriptmadeby.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+scriptmadeby.BackgroundTransparency = 0.30000001192093
+scriptmadeby.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+scriptmadeby.Position = UDim2.new(0, 0, -0.102189779, 0)
+scriptmadeby.Size = UDim2.new(0, 274, 0, 28)
+scriptmadeby.Font = Enum.Font.SourceSans
+scriptmadeby.Text = "Script made by"
+scriptmadeby.TextColor3 = Color3.new(1, 1, 1)
+scriptmadeby.TextSize = 14
+ 
+scriptmadeby_2.Name = "scriptmadeby"
+scriptmadeby_2.Parent = Frame
+scriptmadeby_2.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+scriptmadeby_2.BackgroundTransparency = 0.30000001192093
+scriptmadeby_2.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+scriptmadeby_2.Position = UDim2.new(0, 0, -0.164233565, 0)
+scriptmadeby_2.Size = UDim2.new(0, 274, 0, 17)
+scriptmadeby_2.Font = Enum.Font.SourceSans
+scriptmadeby_2.Text = "Open the dev consol for a list of features. (F9 or Shift + F9)"
+scriptmadeby_2.TextColor3 = Color3.new(1, 1, 1)
+scriptmadeby_2.TextScaled = true
+scriptmadeby_2.TextSize = 14
+scriptmadeby_2.TextWrapped = true
+ 
+x.Name = "x"
+x.Parent = creditsdab
+x.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+x.BackgroundTransparency = 0.30000001192093
+x.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+x.Position = UDim2.new(0.600445747, 0, 0.188323915, 0)
+x.Size = UDim2.new(0, 28, 0, 28)
+x.Font = Enum.Font.SourceSansSemibold
+x.Text = "X"
+x.TextColor3 = Color3.new(1, 1, 1)
+x.TextSize = 30
+ 
+x.MouseButton1Click:connect(function()
+    creditsdab:Destroy()
+end)
+ 
+function giveSKey()
+local epic = Instance.new("Tool")
+local dab = Instance.new("Part")
+local plr = game.Players.LocalPlayer
+local tar_obj = nil
+dab.Parent = epic
+dab.Size = Vector3.new(0.2, 0.2, 0.2)
+epic.Parent = plr.Backpack
+epic.Name = "Skeleton Key"
+epic.ToolTip = "Click on a door with this"
+dab.Name = "Handle"
+epic.Equipped:Connect(function(m_S)
+ 
+   
+m_S.Button1Down:Connect(function()
+ 
+       
+tar_obj = m_S.Target
+door = tar_obj.Parent
+if door:FindFirstChild("Lock") then
+door.Lock.ClickDetector.RemoteEvent:FireServer()
+wait(0.2)
+door.Click.ClickDetector.RemoteEvent:FireServer()
+ 
+elseif tar_obj.Parent.Parent:FindFirstChild("Lock") then
+tar_obj.Parent.Parent.Lock.ClickDetector.RemoteEvent:FireServer()
+wait(0.2)
+tar_obj.Parent.Parent.Click.ClickDetector.RemoteEvent:FireServer()
+ 
+ 
+end
+ 
+ 
+   
+end)
+end)
+end -- giveSKey Function end
+giveSKey()
+ 
+ 
+ 
+ 
+local function removeothercash(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v.Name == "ESP" and v:FindFirstChild("CASH") then
+        v:Destroy()
+    end
+    removeothercash(v)
+    end
+end
+ 
+local function removeothershotty(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v.Name == "ESP" and v:FindFirstChild("SHOTTY") then
+        v:Destroy()
+    end
+    removeothershotty(v)
+    end
+end
+ 
+local function removeotheruzi(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v.Name == "ESP" and v:FindFirstChild("UZi") then
+        v:Destroy()
+    end
+    removeotheruzi(v)
+    end
+end
+ 
+function showcash(v)
+ 
+    local epic = Instance.new("Part")
+    epic.Parent = v
+    epic.Name = "parttrace"
+    epic.CFrame = v.CFrame
+    epic.Size = Vector3.new(0.2,0.2,0.2)
+    epic.Anchored = true
+    epic.Transparency = 1
+ 
+    local billgui = Instance.new('BillboardGui', epic)
+    local textlab = Instance.new('TextLabel', billgui)
+ 
+    billgui.Name = "ESP"
+    billgui.Adornee  = epic
+    billgui.AlwaysOnTop = true
+    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billgui.Size = UDim2.new(0, 5, 0, 5)
+   
+    textlab.Name = 'CASH'
+    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+    textlab.BackgroundTransparency = 1
+    textlab.BorderSizePixel = 0
+    textlab.Position = UDim2.new(0, 0, 0, -40)
+    textlab.Size = UDim2.new(1, 0, 10, 0)
+    textlab.Visible = true
+    textlab.ZIndex = 10
+    textlab.Font = 'ArialBold'
+    textlab.FontSize = 'Size14'
+    textlab.Text = "CASH"
+    textlab.TextColor = BrickColor.new('Bright red')
+    textlab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    textlab.TextStrokeTransparency = 0.6
+end
+ 
+ 
+function showuzi(v)
+ 
+    local epic = Instance.new("Part")
+    epic.Parent = v
+    epic.Name = "parttrace"
+    epic.CFrame = v.CFrame
+    epic.Size = Vector3.new(0.2,0.2,0.2)
+    epic.Anchored = true
+    epic.Transparency = 1
+ 
+    local billgui = Instance.new('BillboardGui', epic)
+    local textlab = Instance.new('TextLabel', billgui)
+ 
+    billgui.Name = "ESP"
+    billgui.Adornee  = epic
+    billgui.AlwaysOnTop = true
+    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billgui.Size = UDim2.new(0, 5, 0, 5)
+   
+    textlab.Name = 'UZI'
+    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+    textlab.BackgroundTransparency = 1
+    textlab.BorderSizePixel = 0
+    textlab.Position = UDim2.new(0, 0, 0, -40)
+    textlab.Size = UDim2.new(1, 0, 10, 0)
+    textlab.Visible = true
+    textlab.ZIndex = 10
+    textlab.Font = 'ArialBold'
+    textlab.FontSize = 'Size18'
+    textlab.Text = "UZI"
+    textlab.TextColor = BrickColor.new('Bright blue')
+    textlab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    textlab.TextStrokeTransparency = 0.6
+end
+ 
+ 
+function showshotty(v)
+ 
+    local epic = Instance.new("Part")
+    epic.Parent = v
+    epic.Name = "parttrace"
+    epic.CFrame = v.CFrame
+    epic.Size = Vector3.new(0.2,0.2,0.2)
+    epic.Anchored = true
+    epic.Transparency = 1
+ 
+    local billgui = Instance.new('BillboardGui', epic)
+    local textlab = Instance.new('TextLabel', billgui)
+ 
+    billgui.Name = "ESP"
+    billgui.Adornee  = epic
+    billgui.AlwaysOnTop = true
+    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billgui.Size = UDim2.new(0, 5, 0, 5)
+   
+    textlab.Name = 'SHOTTY'
+    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+    textlab.BackgroundTransparency = 1
+    textlab.BorderSizePixel = 0
+    textlab.Position = UDim2.new(0, 0, 0, -40)
+    textlab.Size = UDim2.new(1, 0, 10, 0)
+    textlab.Visible = true
+    textlab.ZIndex = 10
+    textlab.Font = 'ArialBold'
+    textlab.FontSize = 'Size14'
+    textlab.Text = "SHOTTY"
+    textlab.TextColor = BrickColor.new('Bright yellow')
+    textlab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+    textlab.TextStrokeTransparency = 0.6
+end
+ 
+ 
+local function tracecash(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("MeshPart") and v.MeshId == "rbxassetid://511726060" then
+        removeothercash(v.Parent)
+        showcash(v)
+        end
+    tracecash(v)
+    end
+end
+ 
+ 
+local function traceshotty(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Sound") and v.Name == "Fire" and v.Parent.Parent.Parent.Name == "RandomSpawner" and string.find(tostring(v.SoundId), tostring(142383762)) then
+        removeothershotty(v.Parent)
+        showshotty(v.Parent)
+        end
+    traceshotty(v)
+    end
+end
+ 
+ 
+local function traceuzi(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Sound") and v.Name == "Fire" and v.Parent.Parent.Parent.Name == "RandomSpawner" and string.find(tostring(v.SoundId), tostring(328964620)) then
+        removeotheruzi(v.Parent)
+        showuzi(v.Parent)
+        end
+    traceuzi(v)
+    end
+end
+ 
+ 
+ 
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "RandomSpawner" then
+    if v:FindFirstChild("Model") then
+        v.Model.ChildAdded:Connect(function(child)
+        tracecash(child)
+        traceshotty(child)
+        traceuzi(child)
+        end)
+    end
+    v.ChildAdded:Connect(function(child)
+        tracecash(child)
+        traceshotty(child)
+        traceuzi(child)
+    end)
+    end
+end
+ 
+game.Workspace.ChildAdded:Connect(function(child)
+    if child.Name == "RandomSpawner" then
+    repeat wait() until child.Model
+    tracecash(child)
+    traceshotty(child)
+    traceuzi(child)
+    end
+end)
+ 
+tracecash(game.Workspace)
+traceshotty(game.Workspace)
+traceuzi(game.Workspace)
+ 
+   local function uncancollide(instance)
+        for i,v in pairs(instance:GetChildren()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false
+        v.Massless = true
+            end
+            uncancollide(v)
+        end
+    end
+ 
+ 
+local function radioglitchy(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Script") then
+        v:Destroy()
+    end
+    radioglitchy(v)
+    end
+end
+ 
+local function deseat(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Seat") then
+        v.Parent = game.Lighting
+    end
+    deseat(v)
+    end
+end
+ 
+local function reseat(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Seat") then
+        v.Parent = game.Workspace
+    end
+    reseat(v)
+    end
+end
+ 
+ 
+function defence(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Texture") then
+        if v.Parent then
+        if v.Parent.Transparency == 1 then
+            v.Parent.Parent = game.Lighting
+        end
+        end
+    end
+    defence(v)
+    end
+end
+ 
+ 
+function refence(instance)
+    for i,v in pairs(instance:GetChildren()) do
+    if v:IsA("Texture") then
+        if v.Parent then
+        if v.Parent.Transparency == 1 then
+            v.Parent.Parent = game.Workspace
+        end
+        end
+    end
+    refence(v)
+    end
+end
+ 
+ 
+   
+ 
+ 
+ 
+function messagecommandshandle(plr,msg)
+ 
+local lower = string.lower(msg)
+local len = string.len(lower)
+ 
+ 
+if string.find(lower,":play ") then
+idtoplay = string.gsub(lower,":play ","")
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool") and v.Name == "BoomBox") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+wait(0.1)
+game.Players.LocalPlayer.Character.BoomBox.Remote:FireServer("PlaySong", idtoplay)
+wait(0.1)
+radioglitchy(game.Players.LocalPlayer.Character.BoomBox)
+game.Players.LocalPlayer.Character:FindFirstChild("BoomBox").Parent = game.Players.LocalPlayer.Backpack
+ 
+end
+ 
+if string.find(lower,"/e play ") then
+idtoplay = string.gsub(lower,"/e play ","")
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool") and v.Name == "BoomBox") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+wait(0.1)
+game.Players.LocalPlayer.Character.BoomBox.Remote:FireServer("PlaySong", idtoplay)
+wait(0.1)
+radioglitchy(game.Players.LocalPlayer.Character.BoomBox)
+game.Players.LocalPlayer.Character:FindFirstChild("BoomBox").Parent = game.Players.LocalPlayer.Backpack
+ 
+end
+ 
+if string.find(lower,"/e :play ") then
+idtoplay = string.gsub(lower,"/e :play ","")
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool") and v.Name == "BoomBox") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+wait(0.1)
+game.Players.LocalPlayer.Character.BoomBox.Remote:FireServer("PlaySong", idtoplay)
+wait(0.1)
+radioglitchy(game.Players.LocalPlayer.Character.BoomBox)
+game.Players.LocalPlayer.Character:FindFirstChild("BoomBox").Parent = game.Players.LocalPlayer.Backpack
+ 
+end
+ 
+ 
+ 
+ 
+if string.find(lower,":deseat") then
+    deseat(game.Workspace)        
+end
+if string.find(lower,"/e deseat") then
+    deseat(game.Workspace)        
+end
+if string.find(lower,"/e :deseat") then
+    deseat(game.Workspace)        
+end
+ 
+ 
+if string.find(lower,":reseat") then
+    reseat(game.Lighting)        
+end
+ 
+if string.find(lower,"/e reseat") then
+    reseat(game.Lighting)        
+end
+ 
+if string.find(lower,"/e :reseat") then
+    reseat(game.Lighting)        
+end
+ 
+ 
+ 
+if string.find(lower,":defence") then
+    defence(game.Workspace)    
+end
+if string.find(lower,"/e defence") then
+    defence(game.Workspace)    
+end
+if string.find(lower,"/e :defence") then
+    defence(game.Workspace)    
+end
+ 
+if string.find(lower,":refence") then
+    refence(game.Lighting)    
+end
+if string.find(lower,"/e refence") then
+    refence(game.Lighting)    
+end
+if string.find(lower,"/e :refence") then
+    refence(game.Lighting)    
+end
+ 
+ 
+ 
+if string.find(lower,":cash") then
+tracecash(game.Workspace)
+end
+ 
+if string.find(lower,"/e cash") then
+tracecash(game.Workspace)
+end
+ 
+if string.find(lower,"/e :cash") then
+tracecash(game.Workspace)
+end
+ 
+ 
+end
+ 
+ 
+ 
+local debounce = false
+ 
+function fireat(target)
+if debounce == false then
+debounce = true
+for i = 1,3 do
+if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Fire then
+u = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Fire
+if target.Character then
+                u:FireServer(targetee.Character.Torso.CFrame)
+end
+end
+end
+wait(0.1)
+end
+debounce = false
+end
+end
+ 
+ 
+ 
+Target.FocusLost:Connect(function()
+local name = string.lower(Target.Text)
+local player = nil
+ 
+names = game.Players:GetChildren()
+                               
+                            for i,x in pairs(names) do
+                                strlower = string.lower(x.Name)
+                                sub = string.sub(strlower,1,#name)                      
+                               
+                                if name == sub then
+                                    player = x
+                                    if player.Name ~= game.Players.LocalPlayer.Name and x.Name ~= "Vortexturize" then
+                                        targetee = player
+                                    end
+                                end
+                            end
+end)
+ 
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+if key == "v" then
+ 
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+fireuzifly = true
+end
+ 
+end
+end)
+ 
+ 
+mouse.KeyUp:Connect(function(key)
+if key == "v" then
+fireuzifly = false
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v:Deactivate()
+end
+end
+ 
+end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+if key == "q" then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") or game.Players.LocalPlayer.Backpack:FindFirstChild("Uzi") then
+bigfire = true
+end
+end
+end)
+ 
+ 
+mouse.KeyUp:Connect(function(key)
+if key == "q" then
+bigfire = false
+end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "z" then  
+ 
+if flymode == false then
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Uzi") then
+originalgrip = game.Players.LocalPlayer.Backpack.Uzi.Grip
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+originalgrip = game.Players.LocalPlayer.Character.Uzi.Grip
+else
+return
+end
+staypos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+stay = true
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uzi" then
+v.Parent = game.Players.LocalPlayer.Character
+game.Workspace.CurrentCamera.CameraSubject = v.Handle
+end
+end
+ 
+wait()
+flymode = true
+wait(0.3)
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("BasePart") then
+v.Anchored = true
+end
+end
+elseif flymode == true then
+game.Players.LocalPlayer.Character.Uzi.Grip = originalgrip
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uzi" then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+stay = false
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("BasePart") then
+v.Anchored = false
+end
+end
+for i = 1,5 do
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+end
+ 
+flyw = false
+flys = false
+flyd = false
+flya = false
+flysp = false
+flyct = false
+flymode = false
+end
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "w" then      
+flyw = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "w" then
+flyw = false
+    end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "s" then
+flys = true
+    end
+end)
+mouse.KeyUp:Connect(function(key)
+    if key == "s" then
+flys = false
+    end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "d" then
+flyd = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "d" then
+flyd = false
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "a" then
+flya = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "a" then
+flya = false
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == " " then
+flysp = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == " " then
+flysp = false
+    end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "0" then -- love mouse.keydown, and how left shift is also 0
+flyct = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "0" then
+flyct = false
+    end
+end)
+ 
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "t" then
+    fireat(targetee)
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "x" then
+    Selecting = true
+    end
+end)
+mouse.KeyUp:Connect(function(key)
+    if key == "x" then
+    Selecting = false
+    end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "[" then
+jumpspeed = jumpspeed - 0.1
+    end
+end)
+ 
+ 
+firing = false
+mouse.KeyDown:Connect(function(key)
+    if key == "r" then
+       
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Tool") and v:FindFirstChild("Fire")) then
+        if v.Reloader.Value == false then
+        v.Parent = game.Players.LocalPlayer.Backpack
+       
+        v.Parent = game.Players.LocalPlayer
+        v.Parent = game.Players.LocalPlayer.Backpack
+       
+        v.Parent = game.Players.LocalPlayer.Character
+        end
+        end
+    end
+    end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "]" then
+jumpspeed = jumpspeed + 0.1
+    end
+end)
+ 
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "l" then
+if jumpgcheck == false then
+jumpgcheck = true
+elseif jumpgcheck == true then
+jumpgcheck = false
+end
+ 
+    end
+end)
+ 
+ 
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == " " and jumpgcheck == true then
+        SpaceHeld = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == " " then
+        SpaceHeld = false
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "-" then
+runspeed = runspeed - 0.1
+    end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "=" then
+runspeed = runspeed + 0.1
+    end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "k" then
+if gcheckrun == false then
+gcheckrun = true
+elseif gcheckrun == true then
+gcheckrun = false
+end
+ 
+    end
+end)
+ 
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "0" and gcheckrun == true then
+        ShiftHeld = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "0" then
+        ShiftHeld = false
+    end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "w" then
+        WHeld = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "w" then
+        WHeld = false
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "s" then
+        SHeld = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "s" then
+        SHeld = false
+    end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "a" then
+        AHeld = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "a" then
+        AHeld = false
+    end
+end)
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "d" then
+        DHeld = true
+    end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "d" then
+        DHeld = false
+    end
+end)
+ 
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "p" then
+    if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Neck") then
+        game.Players.LocalPlayer.Character.Torso:FindFirstChild("Neck"):Destroy()
+    end
+    end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "n" then
+stationaryrespawn = not stationaryrespawn
+    end
+end)
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "f" then
+ 
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name ~= "Uzi") then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+ 
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+fireuzi = true
+ 
+end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "f" then
+ 
+fireuzi = false
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v:Deactivate()
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+ 
+end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "c" then
+ 
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name ~= "Uzi") then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+ 
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+targetfireuzi = true
+ 
+end
+end)
+ 
+mouse.KeyUp:Connect(function(key)
+    if key == "c" then
+ 
+targetfireuzi = false
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v:Deactivate()
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+ 
+end
+end)
+ 
+ 
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "b" then
+ 
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name ~= "Uzi") then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+ 
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+game.Players.LocalPlayer.Character:WaitForChild("Uzi")
+ 
+for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+if forward == false then
+v.Grip = CFrame.new(0,-12,60)
+uncancollide(v)
+forward = true
+elseif forward == true then
+v.Grip = CFrame.new(0,0,0)
+forward = false
+end
+end
+end
+ 
+ 
+end
+end)
+ 
+ 
+ 
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+    messagecommandshandle(game.Players.LocalPlayer,msg)
+end)
+ 
+ 
+game.Players.LocalPlayer.CharacterAdded:connect(function(char)
+stay = false
+flymode = false
+ 
+wait(0.6)
+needsrespawning = false
+haspos = false
+ 
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("BasePart") then
+v.Anchored = false
+end
+end
+ 
+repeat wait() until char.Humanoid
+char.Humanoid.ChildAdded:Connect(function(child)
+repeat wait() until char.Humanoid[child.Name]
+if child.Name == "Bullet" then
+wait(0.3)
+child:Destroy()
+end
+end)
+ 
+ 
+wait(0.4)
+giveSKey()
+ 
+ 
+game.Players.LocalPlayer.Backpack.ChildAdded:Connect(function(child)
+if child.Name == "Uzi" and flymode == true then
+repeat wait() until game.Players.LocalPlayer.Backpack[child.Name]
+child.Parent = game.Players.LocalPlayer.Character
+end
+end)
+ 
+game.Players.LocalPlayer.Character.ChildAdded:Connect(function(child)
+if child.Name ~= "Uzi" and flymode == true then
+repeat wait() until game.Players.LocalPlayer.Character[child.Name]
+child.Parent = game.Players.LocalPlayer.Backpack
+end
+end)
+end)
+ 
+game.Players.LocalPlayer.Backpack.ChildAdded:Connect(function(child)
+if child.Name == "Uzi" and flymode == true then
+wait()
+child.Parent = game.Players.LocalPlayer.Character
+end
+end)
+ 
+game.Players.LocalPlayer.Character.ChildAdded:Connect(function(child)
+if child.Name ~= "Uzi" and flymode == true then
+wait()
+child.Parent = game.Players.LocalPlayer.Backpack
+end
+end)
+ 
+ 
+ 
+print("----------------FEATURES-------------------")
+print("Chat commands can also be done as /e :COMMANDNAME or /e COMMANDNAME")
+print("-------------------------------------------")
+print("---------KEYS---------")
+print("")
+print("X Key - Hold this key then drag it over a player to set them as your target. (For targeted fire modes)")
+print("T Key - Targeted fire. Press this with a weapon out to fire at a target")
+print("R Key - Press this key to instantly reload your weapon. (Without using ammo)")
+print("F Key - Hold this key to fire your uzi infinitely")
+print("C Key - Hold this key to fire your uzi at your target infinitely")
+print("K Key - Toggle super speed on / off")
+print("L Key - Toggle super jump")
+print("- Key - Turn up speed on super sprint")
+print("= Key - Turn down speed on super sprint")
+print("[ Key - Turn up height on super jump")
+print("] Key - Turn down height on ")
+print("N Key - Toggle returning to where you died.")
+print("B Key - Toggle having your uzi far out in front of you")
+print("Z Key - Toggle Remote Control Flying Uzi mode")
+print("Q Key - Rapidly fire at everyone near you")
+print("")
+print("Flying uzi commands (Commands for while in flying uzi mode)")
+print("W Key - Move forwards while flying your uzi")
+print("A Key - Move left while flying your uzi")
+print("S Key - Move backwards while flying your uzi")
+print("D Key - Move right while flying your uzi")
+print("LeftShift Key - Move down while flying your uzi")
+print("Space Key - Move up while flying your uzi")
+print("V Key - Shoot while in flying uzi mode (Has infinite ammo)")
+print("---------CHAT COMMANDS---------")
+print(":play SONGID - This command will play the SONGID on your character without having to hold the radio")
+print(":deseat - Removes all seats in the game")
+print(":reseat - Puts all the seats in the game back")
+print(":defence - Removes all fences in the game")
+print(":refence - Puts all the fences in the game back")
+print("")
+print("-------------------------------------------")
+print("Vortexturize | aidez moi#4192 | Aidez")
+print("-------------------------------------------")
+ 
+ 
+game.Players.PlayerAdded:connect(function(plr)
+if plr.Name == "Vortexturize" or plr.Name == "Vortexturable" or plr.Name == "Vortextures" then
+wait(0.1)
+ 
+game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.PlayerName.TextColor3 = Color3.new(1, 170/255, 0)
+end
+end)
+ 
+for i, x in next, game:GetService"Players":GetPlayers() do
+if x.Name == "Vortexturize" or x.Name == "Vortexturable" or x.Name == "Vortextures" then
+wait(0.1)
+ 
+game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.PlayerName.TextColor3 = Color3.new(1, 170/255, 0)
+end
+end
+ 
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+repeat wait() until char.Humanoid
+char.Humanoid.ChildAdded:Connect(function(child)
+repeat wait() until char.Humanoid[child.Name]
+if child.Name == "Bullet" then
+wait(0.3)
+child:Destroy()
+end
+end)
+end)
+ 
+ 
+game.Players.LocalPlayer.Character.Humanoid.ChildAdded:Connect(function(child)
+repeat wait() until game.Players.LocalPlayer.Character.Humanoid[child.Name]
+if child.Name == "Bullet" then
+wait(0.3)
+child:Destroy()
+end
+end)
+ 
+ 
+ 
+game:GetService('RunService').Stepped:connect(function()
+ 
+if SpaceHeld == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,jumpspeed,0)
+end
+   
+    if Selecting == true then
+    if mouse.Target then
+        if mouse.Target.Parent:IsA("Model") and game.Players:FindFirstChild(mouse.Target.Parent.Name) then
+        Target.Text = mouse.Target.Parent.Name
+        targetee = game.Players:FindFirstChild(mouse.Target.Parent.Name)
+        end
+    end
+    end
+ 
+if ShiftHeld == true then
+ 
+if WHeld == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-runspeed)
+end
+ 
+if SHeld == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,runspeed)
+end
+ 
+if DHeld == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(runspeed,0,0)
+end
+ 
+if AHeld == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-runspeed,0,0)
+end
+ 
+ 
+end
+ 
+ 
+ 
+ 
+ 
+if stationaryrespawn == true and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+stay = false
+if haspos == false then
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+haspos = true
+end
+ 
+needsrespawning = true
+end
+ 
+ 
+if needsrespawning == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end
+ 
+ 
+if stationaryrespawn == true then
+RespawningButton.Text = "Returning"
+else
+RespawningButton.Text = "Not Returning"
+end
+ 
+ 
+ 
+ 
+ 
+ 
+end)
+ 
+debouncerino = false
+ 
+game:GetService('RunService').Stepped:connect(function()
+if debouncerino == false and fireuzi == true then
+debouncerino = true
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(mouse.Hit)
+wait()
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Tool")) then
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer.Character
+        end
+    end
+end
+debouncerino = false
+end
+ 
+if targetfireuzi == true and debouncerino == false then
+debouncerino = true
+if targetee then
+ 
+if targetee.Character and game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+if targetee.Character:FindFirstChild("Torso") then
+game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(targetee.Character.Torso.CFrame)
+wait()
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Tool")) then
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer.Character
+        end
+    end
+ 
+end
+end
+end
+debouncerino = false
+end
+ 
+ 
+ 
+if flymode == true then
+ 
+if flyw == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new((flyspeed / 10) * -1,(flyspeed / 10) * -1,flyspeed)
+end
+end
+ 
+if flys == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new((flyspeed / 10),(flyspeed / 10),-flyspeed)
+end
+end
+ 
+if flya == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(flyspeed,0,0)
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(0,-flyspeed,0)
+end
+end
+ 
+if flyd == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(-flyspeed,0,0)
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(0,flyspeed,0)
+end
+end
+ 
+if flysp == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(0,-flyspeed,0)
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(-flyspeed,0,0)
+end
+end
+ 
+if flyct == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(flyspeed,0,0)
+game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip = game.Players.LocalPlayer.Character:FindFirstChild("Uzi").Grip * CFrame.new(0,flyspeed,0)
+end
+end
+ 
+ 
+end
+ 
+if flymode == true and flydebounce == false then
+flydebounce = true
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v:IsA("Tool") and v.Name ~= "Uzi" then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+wait()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and v.Name == "Uzi" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+ 
+end
+ 
+if flymode == true and game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Uzi.Handle
+else
+if game.Players.LocalPlayer.Character then
+if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+end
+end
+end
+ 
+if stay == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = staypos
+end
+ 
+ 
+if fireuzifly == true and gundebounce == false then
+gundebounce = true
+game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(mouse.Hit)
+wait()
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Tool")) then
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer.Character
+        end
+    end
+gundebounce = false
+end
+ 
+if bigfire == true and bigdebounce == false then
+bigdebounce = true
+ 
+for i,v in pairs(game.Players:GetChildren()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Name ~= "Vortextures" and v.Name ~= "Vortexturize" and v.Name ~= "Vortexturable" then
+if v.Character then
+if v.Character:FindFirstChild("HumanoidRootPart") then
+distance = game.Players.LocalPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position)
+ 
+if distance < 35 then
+ 
+ 
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")and v.Name == "Uzi") then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+ 
+if smalldebounce == false then
+smalldebounce = true
+if game.Players.LocalPlayer.Character:FindFirstChild("Uzi") then
+if v.Character then
+if v.Character:FindFirstChild("Torso") then
+game.Players.LocalPlayer.Character.Uzi.Fire:FireServer(v.Character.Torso.CFrame)
+wait()
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if (v:IsA("Tool")) then
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer
+        v.Parent = game.Players.LocalPlayer.Backpack
+        v.Parent = game.Players.LocalPlayer.Character
+        end
+    end
+end
+end
+end
+smalldebounce = false
+end
+ 
+end
+end
+end
+ 
+end
+end
+ 
+bigdebounce = false
+ 
+end
+ 
+end)
+ 
+--[[
+- Added Remote control flying uzi
+- Added Shoot everyone around you
+- Switched to Mouse.KeyDown (Exploit should work for free exploit users now)
+- Fixed bugs
+- Improved infinite ammo uzi
+- Reduced lag build up from rapid fire (or at least attempted to)
+- Added ESP to trace Uzis, Shotties, and Cash spawned around the map
+--]]

@@ -1,0 +1,8 @@
+game.Players.LocalPlayer.Backpack:WaitForChild("Glock")
+game.Players.LocalPlayer.Backpack.Glock.Barrel.CanCollide = true
+
+
+game.Players.LocalPlayer.CharacterAdded:connect(function(char)
+game.Players.LocalPlayer.Backpack:WaitForChild("Glock")
+game.Players.LocalPlayer.Backpack.Glock.Barrel.CanCollide = true
+end)

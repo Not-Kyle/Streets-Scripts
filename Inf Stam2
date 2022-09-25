@@ -1,0 +1,6 @@
+game:GetService 'RunService'.Stepped:Connect(
+   function()
+       game.Players.LocalPlayer.Character:WaitForChild 'Stam'.Value = 99e9
+       T:FireServer(A, A, true)
+   end
+)

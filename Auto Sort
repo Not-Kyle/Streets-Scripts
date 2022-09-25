@@ -1,0 +1,63 @@
+local services = {
+   ["Players"] = game:GetService("Players"),
+   ["RunService"] = game:GetService("RunService"),
+}
+
+local variables = {
+   ["LocalPlayer"] = services["Players"].LocalPlayer,
+   ["RenderStepped"] = services["RunService"].RenderStepped,
+}
+
+_G.Position = {"Glock","Shotty","Jutsu","Pipe","Punch","Knife"}
+
+local function get_instance(from,name)
+   if from ~= nil and name ~= nil then
+       local inst = from:FindFirstChildOfClass(name)
+       if not inst then
+           inst = from:FindFirstChild(name)
+       end
+       if inst then
+           return inst
+       end
+   end
+end
+
+local function update()
+   variables["RenderStepped"]:wait()
+   local temp = {}
+   for i=1,#variables["LocalPlayer"].Backpack:GetChildren() do
+       local tool = get_instance(variables["LocalPlayer"].Backpack,"Tool")
+       if tool then
+           table.insert(temp,tool)
+           tool.Parent = game
+       end
+   end
+   for x=1,#_G.Position do
+       for i=1,#temp do
+           if string.sub(string.lower(tostring(temp[i])),1,string.len(string.lower(_G.Position[x]))) == string.lower(_G.Position[x]) then
+               temp[i].Parent = variables["LocalPlayer"].Backpack
+           end
+       end
+   end
+   for i=1,#temp do
+       temp[i].Parent = variables["LocalPlayer"].Backpack
+   end
+end
+
+variables["LocalPlayer"].CharacterAdded:Connect(function(character)
+   update()
+   character.ChildAdded:Connect(function(child)
+       if child:IsA("Tool") then
+           update()
+       end
+   end)
+end)
+
+if variables["LocalPlayer"].Character ~= nil then
+   update()
+   variables["LocalPlayer"].Character.ChildAdded:Connect(function(child)
+       if child:IsA("Tool") then
+           update()
+       end
+   end)
+end

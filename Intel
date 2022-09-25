@@ -1,0 +1,238 @@
+--my first gui. its when i was new to coding so dont bully me :(
+
+
+  local function callback(Text)
+end
+ 
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+ 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Intel";
+    Text = "MORE SCRIPTS ON GITHUB.COM NOT-KYLE ";
+    Duration = "5";
+    Callback = NotificationBindable;
+})
+wait(3)
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Background = Instance.new("ImageLabel")
+local Insert = Instance.new("TextButton")
+local Login = Instance.new("TextButton")
+local CreditsText = Instance.new("TextButton")
+local Password = Instance.new("TextBox")
+local TextBox = Instance.new("TextButton")
+local whatever = Instance.new("TextButton")
+local TextBox1 = Instance.new("TextButton")
+local TextBox2 = Instance.new("TextButton")
+local TextBox3 = Instance.new("TextButton")
+local TextBox4 = Instance.new("TextButton")
+ScreenGui.Parent = game.CoreGui
+ 
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame.BorderColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.350, 100, 0.375, 0)
+Frame.Size = UDim2.new(0, 423, 0, 298)
+
+Background.Name = "Background"
+Background.Parent = Frame
+Background.Position = UDim2.new(0.095, 0.100, 0.375, 0)
+Background.Size = UDim2.new(0, 423, 0, 298)
+Background.ZIndex = 1
+Background.Image = "https://www.roblox.com/8012693343/THE-ROCK"
+
+Insert.Name = "Insert"
+Insert.Parent = Frame
+Insert.Active = false
+Insert.BackgroundColor3 = Color3.new(1, 1, 1)
+Insert.Position = UDim2.new(0.427, 0, 0.085, 0)
+Insert.Size = UDim2.new(0, 60, 0, 20)
+Insert.AutoButtonColor = false
+Insert.Style = Enum.ButtonStyle.RobloxRoundButton
+Insert.Font = Enum.Font.Code
+Insert.Text = "Intel"
+Insert.TextColor3 = Color3.new(0, 0, 0)
+Insert.TextSize = 16
+ 
+CreditsText.Name = "CreditsText"
+CreditsText.Parent = Frame
+CreditsText.Active = false
+CreditsText.BackgroundColor3 = Color3.new(1, 1, 1)
+CreditsText.Position = UDim2.new(0.100, 0, 0.900, 0)
+CreditsText.Size = UDim2.new(0, 350, 0, 20)
+CreditsText.AutoButtonColor = false
+CreditsText.Style = Enum.ButtonStyle.RobloxRoundButton
+CreditsText.Font = Enum.Font.Code
+CreditsText.Text = "USER 703OPPOSITION, DISCORD G33KEN 7093"
+CreditsText.TextColor3 = Color3.new(0, 0, 0)
+CreditsText.TextSize = 16
+ 
+Password.Name = "Password"
+Password.Parent = Frame
+Password.BackgroundColor3 = Color3.new(0.541176, 0.541176, 0.541176)
+Password.BorderColor3 = Color3.new(0, 0, 0)
+Password.BorderSizePixel = 3
+Password.Position = UDim2.new(0.278959811, 0, 0.322147667, 0)
+Password.Size = UDim2.new(0, 186, 0, 32)
+Password.Font = Enum.Font.Code
+Password.Text = "Enter Password" 
+Password.TextColor3 = Color3.new(0, 0, 0)
+Password.TextSize = 14
+
+Login.Name = "Login"
+Login.Parent = Frame
+Login.BackgroundColor3 = Color3.new(0.541176, 0.541176, 0.541176)
+Login.BorderColor3 = Color3.new(0, 0, 0)
+Login.BorderSizePixel = 3
+Login.Position = UDim2.new(0.238770694, 0, 0.530201316, 0)
+Login.Size = UDim2.new(0, 218, 0, 50)
+Login.Font = Enum.Font.Code
+Login.Text = "Login"
+Login.TextColor3 = Color3.new(0, 0, 0)
+Login.TextSize = 18
+Login.MouseButton1Down:connect(function()
+if Password.Text == "Z1LL4934" then
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Welcome to Intel.","All")
+Login.Visible = false
+Password.Visible = false
+CreditsText.Visible = false
+Insert.Visible = true
+
+local Exit = Instance.new("TextButton")
+
+Exit.Name = "Exit"
+Exit.Parent = Frame
+Exit.BackgroundColor3 = Color3.new(0, 0, 0)
+Exit.BackgroundTransparency = 1
+Exit.BorderColor3 = Color3.new(0.392157, 0, 0)
+Exit.Position = UDim2.new(0.001, 0, 0.011, 0.01)
+Exit.Size = UDim2.new(0, 29, 0, 26)
+Exit.Font = Enum.Font.SourceSansBold
+Exit.Text = "X"
+Exit.TextColor3 = Color3.new(255, 0, 0)
+Exit.TextScaled = true
+Exit.TextSize = 14
+Exit.TextStrokeColor3 = Color3.new(0, 0, 0)
+Exit.TextWrapped = true
+Exit.Visible = true
+
+Exit.MouseButton1Down:Connect(function()
+Frame:Destroy()
+end)
+
+
+TextBox.Name = "TextBox"
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox.Position = UDim2.new(0.10, 0, 0.15, 0)
+TextBox.Size = UDim2.new(0, 100, 0, 34)
+TextBox.Visible = true
+TextBox.Font = Enum.Font.Code
+TextBox.Text = "Fly"
+TextBox.TextColor3 = Color3.new(0, 0, 0)
+TextBox.TextSize = 14 
+TextBox.Active = true
+
+whatever.Name = "whatever"
+whatever.Active = false
+whatever.Parent = Frame
+whatever.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+whatever.Position = UDim2.new(0.40, 0, 0.15, 0)
+whatever.Size = UDim2.new(0, 100, 0, 34)
+whatever.Font = Enum.Font.Code
+whatever.Text = "Rejoin"
+whatever.TextColor3 = Color3.new(0, 0, 0)
+whatever.TextSize = 14 
+whatever.Visible = true
+
+TextBox1.Name = "TextBox1"
+TextBox1.Active = false
+TextBox1.Parent = Frame
+TextBox1.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox1.Position = UDim2.new(0.70, 0, 0.15, 0)
+TextBox1.Size = UDim2.new(0, 100, 0, 34)
+TextBox1.Font = Enum.Font.Code
+TextBox1.Text = "NoClip"  --THE NAME OF YOUR FUNCATION HERE
+TextBox1.TextColor3 = Color3.new(0, 0, 0)
+TextBox1.TextSize = 14 
+TextBox1.Visible = true
+
+TextBox2.Name = "TextBox2"
+TextBox2.Active = false
+TextBox2.Parent = Frame
+TextBox2.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox2.Position = UDim2.new(0.70, 0, 0.45, 0)
+TextBox2.Size = UDim2.new(0, 100, 0, 34)
+TextBox2.Font = Enum.Font.Code
+TextBox2.Text = "Airwalk"  
+TextBox2.TextColor3 = Color3.new(0, 0, 0)
+TextBox2.TextSize = 14 
+TextBox2.Visible = true
+
+TextBox3.Name = "TextBox3"
+TextBox3.Active = false
+TextBox3.Parent = Frame
+TextBox3.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox3.Position = UDim2.new(0.70, 0, 0.30, 0)
+TextBox3.Size = UDim2.new(0, 100, 0, 34)
+TextBox3.Font = Enum.Font.Code
+TextBox3.Text = "Aimbot"  
+TextBox3.TextColor3 = Color3.new(0, 0, 0)
+TextBox3.TextSize = 14 
+TextBox3.Visible = true
+
+TextBox4.Name = "TextBox4"
+TextBox4.Active = false
+TextBox4.Parent = Frame
+TextBox4.BackgroundColor3 = Color3.new(0.576471, 0.576471, 0.576471)
+TextBox4.Position = UDim2.new(0.70, 0, 0.15, 0)
+TextBox4.Size = UDim2.new(0, 100, 0, 34)
+TextBox4.Font = Enum.Font.Code
+TextBox4.Text = "Speed"  
+TextBox4.TextColor3 = Color3.new(0, 0, 0)
+TextBox4.TextSize = 14 
+TextBox4.Visible = true
+
+----------ELSE FACTOR---------------
+else 
+    local function callback(Text)
+end
+ 
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+ 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Intel";
+    Text = "Fuck you";
+    Duration = "5";
+    Callback = NotificationBindable;
+})
+wait(4)
+    local plr = game.Players.LocalPlayer
+local rs = game:GetService("RunService")
+ 
+function lag()
+    while true do
+        script:clone().Parent = plr.PlayerGui
+        print("Rest in peace.")
+    end
+end
+ 
+function memoryLeak()
+    for i = 1, 50000 do
+        coroutine.resume(coroutine.create(function()
+            for i = 1, 50000 do
+                spawn(lag)
+            end
+        end))
+    end
+end
+ 
+while true do
+    spawn(memoryLeak)
+end
+end
+end)

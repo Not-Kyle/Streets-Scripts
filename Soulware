@@ -1,0 +1,1345 @@
+-- me when source stored on site 😲😲😲😲
+
+-- Nils --
+
+local AimlockTarget = nil;
+local CamlockTarget = nil;
+local EspTarget = nil;
+
+-- Values --
+
+local Flyspeed = 8;
+local Blinkspeed = 4;
+local DelayTime = 2;
+local AimlockVelocity = 5;
+
+-- Locals --
+
+local Flying = false;
+local Esp = false;
+local Camlock = false;
+local Aimlock = false;
+local Blink = false;
+local Noclip = false;
+local AirWalk = false;
+local GetAmmo = false;
+local GetGlock = false;
+local GetUzi = false;
+local GetSawedOff = false;
+
+local CamPart = "Head";
+local AimPart = "Torso";
+
+------ Animations --
+
+local GlockAnimations1 = false;
+local GlockAnimations2 = false;
+
+local ShottyAnimations1 = false;
+local ShottyAnimations2 = false;
+
+------ End ------
+
+------
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+------
+
+-- Start of script --
+
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+
+local ChatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame 
+ChatFrame.ChatChannelParentFrame.Visible = true
+ChatFrame.ChatBarParentFrame.Position = ChatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), ChatFrame.ChatChannelParentFrame.Size.Y)
+
+local StarterGui = game:GetService("StarterGui")
+repeat wait() until StarterGui:GetCore("ChatWindowSize") ~= nil
+local chatWindowSize = StarterGui:GetCore("ChatWindowSize")
+StarterGui:SetCore("ChatWindowPosition", UDim2.new(0, 0, 0.214965988, 0))
+
+game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge	game:GetService("Workspace").FallenPartsDestroyHeight = -math.huge
+
+local LocalP = game.Players.LocalPlayer
+
+if game.PlaceId == 455366377 then
+    LocalP.Character.Stamina.Changed:Connect(function()
+        LocalP.Character:WaitForChild"Stamina"
+        LocalP.Character.Stamina.Value = 100
+    end)
+end
+
+if game.PlaceId == 455366377 then
+    LocalP.CharacterAdded:Connect(function()
+        LocalP.Character:WaitForChild"Stamina"
+        LocalP.Character.Stamina.Changed:Connect(function()
+            LocalP.Character.Stamina.Value = 100 
+        end)
+    end)
+end
+
+if game.PlaceId == 455366377 then
+    game:GetService("Workspace")["Armoured Truck"]:Destroy()
+end
+
+-- Functions for the command bar --
+
+local Commands, Prefix = {}, ""
+getgenv().Notify = function(title, text, icon, time)
+    game:GetService("StarterGui"):SetCore(
+        "SendNotification",
+        {
+            Title = title,
+            Text = text,
+            Icon = "rbxassetid://10749628024",
+            Duration = time
+        }
+    )
+end
+
+getgenv().SearchPlayers = function(Name)
+    local Inserted = {}
+    for _, p in pairs(game:GetService("Players"):GetPlayers()) do
+        if string.lower(string.sub(p.Name, 1, string.len(Name))) == string.lower(Name) then
+            table.insert(Inserted, p)
+            return p
+        end
+    end
+end
+
+getgenv().SearchDisplayNames = function(DisplayName)
+    local Inserted = {}
+    for _, p in pairs(game:GetService("Players"):GetPlayers()) do
+        if string.lower(string.sub(p.DisplayName, 1, string.len(DisplayName))) == string.lower(DisplayName) then
+            table.insert(Inserted, p)
+            return p
+        end
+    end
+end
+
+getgenv().GetInit = function(CName)
+    for _, v in next, Commands do
+        if v.Name == CName or table.find(v.Aliases, CName) then
+            return v.Function
+        end
+    end
+end
+
+getgenv().RunCommand = function(Cmd)
+    Cmd = string.lower(Cmd)
+    pcall(
+        function()
+            if Cmd:sub(1, #Prefix) == Prefix then
+                local Args = string.split(Cmd:sub(#Prefix + 1), " ")
+                local CmdName = GetInit(table.remove(Args, 1))
+                if CmdName and Args then
+                    return CmdName(Args)
+                end
+            end
+        end
+    )
+end
+
+-- End --
+
+-- Start of the command bar --
+
+local ScreenGui = Instance.new("ScreenGui")
+local Cmdbar = Instance.new("TextBox")
+
+local Frame = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ResetOnSpawn = false
+
+Cmdbar.Name = "Cmdbar"
+Cmdbar.Parent = ScreenGui
+Cmdbar.BorderColor3 = Color3.fromRGB(248,248,255)
+Cmdbar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Cmdbar.BackgroundTransparency = 0.3
+Cmdbar.BorderSizePixel = 1.5
+Cmdbar.Position = UDim2.new(0, 0, 0.603333333333, 0)
+Cmdbar.Size = UDim2.new(0, 0, 0, 40)
+Cmdbar.SizeConstraint = Enum.SizeConstraint.RelativeYY
+Cmdbar.Font = Enum.Font.GothamBlack
+Cmdbar.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+Cmdbar.Text = ""
+Cmdbar.TextColor3 = Color3.fromRGB(248,248,255)
+Cmdbar.TextSize = 16.000
+Cmdbar.Visible = false
+
+Frame.Parent = Cmdbar
+Frame.BackgroundTransparency = 1
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.005, 0, 0, 0)
+Frame.Size = UDim2.new(0, 91, 0, 100)
+local UIListLayout = Instance.new("UIListLayout", Frame)
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+local Uis = game:GetService("UserInputService")
+Uis.InputBegan:Connect(
+    function(Key, Typing)
+        if Typing then
+            return
+        end
+        if Key.KeyCode == Enum.KeyCode.Semicolon then
+            Cmdbar.Visible = true
+            Cmdbar.Text = ""
+            wait()
+            Cmdbar:CaptureFocus()
+            Cmdbar:TweenSize(UDim2.new(0, 320, 0.004, 20), "Out", "Quad", 0.1, true)
+
+        end
+    end
+)
+Cmdbar.FocusLost:Connect(
+    function(Foc)
+        if Foc == true then
+            Cmdbar.Visible = false
+            Cmdbar:TweenSize(UDim2.new(0, 0, 0, -40), "Out", "Quad", 0.5, true)
+            RunCommand(Cmdbar.Text)
+        end
+    end
+)
+Uis.InputEnded:Connect(
+    function(Key)
+        if Key.KeyCode.Name == "LeftAlt" then
+            Cmdbar.Visible = false
+        end
+    end
+)
+
+game.Players.LocalPlayer.Chatted:Connect(function(Msg)
+    RunCommand(Msg)
+end)
+
+-- End of cmd bar --
+
+local Players, RService, RStorage, VUser, SGui, TPService = game:GetService("Players"), game:GetService("RunService"), game:GetService("ReplicatedStorage"), game:GetService("VirtualUser"), game:GetService("StarterGui"), game:GetService("TeleportService")
+local Client, Mouse, Camera, CF, INew, Vec3, Vec2, UD2, UD = Players.LocalPlayer, Players.LocalPlayer:GetMouse(), workspace.CurrentCamera, CFrame.new, Instance.new, Vector3.new, Vector2.new, UDim2.new, UDim.new;
+
+local StreetsID, PrisonID = 455366377, 4669040;
+local RemakePrisonID = 10046946702;
+
+local CF = CFrame.new;
+
+local ScriptTime = os.clock()
+
+local PartsTable = {
+    ["torso"] = "Torso";
+    ["head"] = "Head";
+    ["hrp"] = "HumanoidRootPart";
+    ["rightarm"] = "Right Arm";
+    ["left arm"] = "Left Arm";
+	["rightleg"] = "Right Leg";
+	["leftleg"] = "Left Leg";
+}
+
+local KeysTable = { ["W"] = false;["A"] = false; ["S"] = false;["D"] = false; ["LeftControl"] = false;["LeftShift"] = false; }
+
+local function ConfirmCallbacks()
+	wait()
+	SGui:SetCore("ResetButtonCallback", true)
+end
+
+ConfirmCallbacks()
+
+getgenv().ResetCharacter = function()
+	if Client and Client.Character then
+		Client.Character["Torso"]:Remove()
+	end
+end
+
+getgenv().UserInput = game:GetService("UserInputService")
+
+local function Has(Dude,Item)
+	if Dude and Dude.Backpack then 
+		local Found = Dude.Character:FindFirstChild(Item,true) or Dude.Backpack:FindFirstChild(Item,true)
+		return Found and "Yes" or "No"
+	end 
+end
+
+local function ToolHas(Dude,Item)
+	if Dude and Dude.Backpack and Dude.Character then 
+	    local Found = Dude.Character:FindFirstChildWhichIsA("Tool",true) or Dude.Backpack:FindFirstChildWhichIsA("Tool",true)
+	    return Found.Name
+	end
+end
+
+getgenv().EspPlayer = function(Dude)
+    local bgui = Instance.new("BillboardGui", Dude.Character:WaitForChild("Head", 9e9))
+    local tlabel = Instance.new("TextLabel", bgui)
+    bgui.Name = "ESP"
+    bgui.Adornee = part
+    bgui.AlwaysOnTop = true
+    bgui.ExtentsOffset = Vector3.new(0, 3, 0)
+    bgui.Size = UDim2.new(0, 5, 0, 5)
+    bgui.ResetOnSpawn = false
+    
+    tlabel.Name = "espTarget"
+    tlabel.BackgroundColor3 = Color3.new(255, 255, 255)
+    tlabel.BackgroundTransparency = 1
+    tlabel.BorderSizePixel = 0
+    tlabel.Position = UDim2.new(0, 0, 0, -30)
+    tlabel.Size = UDim2.new(1, 0, 7, 0)
+    tlabel.Visible = true
+    tlabel.ZIndex = 10
+    tlabel.Font = "GothamBold"
+    tlabel.FontSize = "Size18"
+    RService.RenderStepped:Connect(function()
+        if Dude and Dude.Character and Dude.Character:FindFirstChild("Humanoid") and Dude.Backpack and Client and Client.Character and Client.Character:FindFirstChild("Head") then
+            tlabel.Text = Dude.Name
+            .." | Health: "..math.floor(Dude.Character:WaitForChild("Humanoid").Health).."/"..math.floor(Dude.Character:WaitForChild("Humanoid").MaxHealth).. " |"
+            .." Has: " .. ToolHas(Dude).." | Vest: " .. Has(Dude,"BulletResist") ..""
+            tlabel.TextColor3 = Color3.fromRGB(248,248,255)
+            tlabel.TextStrokeTransparency = 0.6
+        end
+    end)
+
+Dude.CharacterAdded:Connect(function()
+         local bgui = Instance.new("BillboardGui", Dude.Character:WaitForChild("Head", 9e9))
+         local tlabel = Instance.new("TextLabel", bgui)
+         bgui.Name = "ESP"
+         bgui.Adornee = part
+         bgui.AlwaysOnTop = true
+         bgui.ExtentsOffset = Vector3.new(0, 3, 0)
+         bgui.Size = UDim2.new(0, 5, 0, 5)
+         bgui.ResetOnSpawn = false
+         
+         tlabel.Name = "espTarget"
+         tlabel.BackgroundColor3 = Color3.new(255, 255, 255)
+         tlabel.BackgroundTransparency = 1
+         tlabel.BorderSizePixel = 0
+         tlabel.Position = UDim2.new(0, 0, 0, -30)
+         tlabel.Size = UDim2.new(1, 0, 7, 0)
+         tlabel.Visible = true
+         tlabel.ZIndex = 10
+         tlabel.Font = "GothamBold"
+         tlabel.FontSize = "Size18"
+         RService.RenderStepped:Connect(function()
+             if Dude and Dude.Character and Dude.Character:FindFirstChild("Humanoid") and Dude.Backpack and Client and Client.Character and Client.Character:FindFirstChild("Head") then
+                 tlabel.Text = Dude.Name
+                 .." | Health: "..math.floor(Dude.Character:WaitForChild("Humanoid").Health).."/"..math.floor(Dude.Character:WaitForChild("Humanoid").MaxHealth).. " |"
+                 .." Has: " .. ToolHas(Dude).." | Vest: " .. Has(Dude,"BulletResist") ..""
+                 tlabel.TextColor3 = Color3.fromRGB(248,248,255)
+                 tlabel.TextStrokeTransparency = 0.6
+             end
+         end)
+    end)
+end
+
+getgenv().togglefly = function()
+	Flying = not Flying
+	local T = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+	local BV, BG = INew("BodyVelocity", T), INew("BodyGyro", T)
+	BV.Velocity = Vec3(0, 0.1, 0);BV.MaxForce = Vec3(math.huge, math.huge, math.huge)
+	BG.CFrame = T.CFrame;BG.P = 9e9;BG.MaxTorque = Vec3(9e9, 9e9, 9e9)
+	local FlyPart = INew("Part", workspace)
+	FlyPart.Anchored = true;FlyPart.Size = Vec3(6, 1, 6);FlyPart.Transparency = 1 
+
+	while Flying == true and Client and Client.Character and Client.Character:FindFirstChild("Humanoid") and Client.Character.Humanoid.Health ~= 0 and RService.Heartbeat:Wait() and T do 
+		local Front, Back, Left, Right = 0, 0, 0, 0
+		if KeysTable["W"] == true then 
+			Front = Flyspeed
+		elseif not KeysTable["W"] == true then
+			Front = 0 
+		end
+		if KeysTable["A"] == true then 
+			Right = -Flyspeed
+		elseif not KeysTable["A"] == true then 
+			Right = 0 
+		end
+		if KeysTable["S"] == true then 
+			Back = -Flyspeed
+		elseif not KeysTable["S"] == true then 
+			Back = 0
+		end
+		if KeysTable["D"] == true then 
+			Left = Flyspeed
+		elseif not KeysTable["D"] == true then 
+			Left = 0
+		end
+		if tonumber(Front + Back) ~= 0 or tonumber(Left + Right) ~= 0 then 
+			BV.Velocity = ((Camera.CoordinateFrame.lookVector * (Front + Back)) + ((Camera.CoordinateFrame * CF(Left + Right, (Front + Back) * 0.2, 0).p) - Camera.CoordinateFrame.p)) * 50
+		else 
+			BV.Velocity = Vec3(0, 0.1, 0)
+		end
+		BG.CFrame = Camera.CoordinateFrame
+	end
+	FlyPart:Destroy();BG:Remove();BV:Remove()
+end
+
+Uis.InputBegan:Connect(function(Key)
+	if not (Uis:GetFocusedTextBox()) then
+		if Key.KeyCode == Enum.KeyCode.W then 
+			KeysTable["W"] = true 
+		end 
+		if Key.KeyCode == Enum.KeyCode.A then 
+			KeysTable["A"] = true 
+		end
+		if Key.KeyCode == Enum.KeyCode.S then 
+			KeysTable["S"] = true 
+		end
+		if Key.KeyCode == Enum.KeyCode.D then 
+			KeysTable["D"] = true 
+		end
+		if Key.KeyCode == Enum.KeyCode.F then 
+			if FirstFly == true then 
+				FirstFly = false 
+			end
+			togglefly()
+		end
+		if Key.KeyCode == Enum.KeyCode.LeftShift then
+			KeysTable["LeftShift"] = true
+			while Blink == true and KeysTable["LeftShift"] == true and Client and Client.Character and RService.Heartbeat:Wait() do
+				local ClientRF = Client.Character:FindFirstChild("HumanoidRootPart") or Client.Character:FindFirstChild("Torso")
+				local Hum = Client.Character:FindFirstChild("Humanoid")
+				ClientRF.CFrame = ClientRF.CFrame + Vec3(Hum.MoveDirection.X * Blinkspeed, Hum.MoveDirection.Y * Blinkspeed, Hum.MoveDirection.Z * Blinkspeed)
+			end 
+		end
+	end
+end)
+Uis.InputEnded:Connect(function(Key)
+	if not (Uis:GetFocusedTextBox()) then
+		if Key.KeyCode == Enum.KeyCode.W then 
+			KeysTable["W"] = false 
+		end
+		if Key.KeyCode == Enum.KeyCode.A then 
+			KeysTable["A"] = false 
+		end
+		if Key.KeyCode == Enum.KeyCode.S then 
+			KeysTable["S"] = false 
+		end
+		if Key.KeyCode == Enum.KeyCode.D then 
+			KeysTable["D"] = false
+		end
+		if Key.KeyCode == Enum.KeyCode.LeftShift then
+			KeysTable["LeftShift"] = false
+		end
+	end
+end)
+
+game.Players.LocalPlayer.Character.DescendantAdded:Connect(function(p)
+   if p:IsA("BodyGyro") or p:IsA("BodyAngularVelocity") or p:IsA("BodyVelocity") or p:IsA("BodyPosition") then
+       p.Name = "Temp"
+   end
+end)
+
+-- [[ Bypass1 ]] -- .
+
+local LP = game.Players.LocalPlayer
+local Character = LP.Character
+local NormalGravity = 196.2
+local Raw = getrawmetatable(game)
+setreadonly(Raw, false)
+
+local newcclosure, getnamecallmethod, checkcaller, getcaller = newcclosure, getnamecallmethod, checkcaller, getcallingscript
+local ACFlags, INFlags = {
+    'JumpPower', 'HipHeight', 'Health', 'BodyVelocity', 'WalkSpeed'
+}, {
+    'bv', 'hb', 'jp', 'hh', 'ws'
+}
+
+local NewIndex, NameCall; do
+    local IsA, IsDescendantOf = game.IsA, game.IsDescendantOf
+    local tfind = table.find
+
+    local unpack = unpack
+
+    local StarterGui = game:GetService'StarterGui'
+    local SetCore = StarterGui.SetCore
+
+    local NewIndexFunc = function(self, Key, Value)
+        if not checkcaller() then
+            if IsA(self, 'Humanoid') then
+                SetCore(StarterGui, 'ResetButtonCallback', true)
+
+            if tfind(ACFlags, Key) then
+                return nil
+            end
+        end
+        if self == workspace and Key == 'Gravity' then
+            return NormalGravity
+         end
+        if Key == 'CFrame' and IsDescendantOf(self, LP.Character) then
+            return 0,0,0
+        end
+    end
+    return NewIndex(self, Key, Value)
+end
+
+local NameCallFunc = function(self, ...)
+local Method = getnamecallmethod()
+local Args = {...}
+
+if (Method == 'Destroy' or Method == 'Kick') and (self == LP or IsA(self, 'BodyMover')) then
+    return wait(9e9)
+end
+if Method == 'BreakJoints' and self == LP.Character then
+    return wait(9e9)
+end
+if Method == 'FireServer' then
+    if tfind(ACFlags, Args[1]) then
+        return wait(9e9)
+end
+local Name = self.Name
+if Name == 'Input' then
+    if tfind(INFlags, Args[1]) then
+        return wait(9e9)
+            end
+        end
+        if self.Parent == game.ReplicatedStorage or Args[1] == 'hey' and Name ~= 'SayMessageRequest' then
+            return wait(9e9)
+        end
+        if Args[1] == 'play' then
+            PlayOnDeath = Args[2]
+            elseif Args[1] == 'stop' then
+                PlayOnDeath = nil
+            end
+        end
+        return NameCall(self, unpack(Args))
+    end
+
+    if syn then
+        NewIndex = hookmetamethod(game, '__newindex', newcclosure(NewIndexFunc))
+        NameCall = hookmetamethod(game, '__namecall', newcclosure(NameCallFunc))
+    else
+        NewIndex = hookfunction(Raw.__newindex, newcclosure(NewIndexFunc))
+        NameCall = hookfunction(Raw.__namecall, newcclosure(NameCallFunc))
+    end
+end
+setreadonly(Raw,true)
+
+-- [[ End1 ]] --
+
+-- [[  Bypass2 ]] --
+
+local rm = getrawmetatable(game) or debug.getrawmetatable(game) or getmetatable(game)
+if setreadonly then setreadonly(rm, false) else make_writeable(rm, true) end
+local caller, cscript = checkcaller or is_protosmasher_caller, getcallingscript or get_calling_script;
+local rindex, nindex, ncall, closure = rm.__index, rm.__newindex, rm.__namecall, newcclosure or read_me;
+
+rm.__newindex = closure(function(self, Meme, Val)
+	if caller() then return nindex(self, Meme, Val) end 
+	if game.PlaceId ~= (StreetsID) then 
+		if Meme == "WalkSpeed" then 
+			return 16
+		end
+		if Meme == "JumpPower" then 
+			return 37.5
+		end
+		if Meme == "HipHeight" then 
+			return 0 
+		end
+		if Meme == "Health" then 
+			return 100
+		end
+		if Meme == "BodyVelocity" then 
+			return 0,0,0
+		end
+	end
+	if self:IsDescendantOf(Client.Character) and self.Name == "HumanoidRootPart" or self.Name == "Torso" or self.Name == "Head" or self.Name == "RootJoint" then 
+		if Meme == "CFrame" or Meme == "Position" or Meme == "Anchored" or Meme == "Destroy" or Meme == "Remove" then 
+			return nil
+		end
+	end
+	return nindex(self, Meme, Val) 
+end)
+rm.__namecall = closure(function(self, ...)
+	local Args, Method = {...}, getnamecallmethod() or get_namecall_method();
+	if Method == "BreakJoints" then 
+		return wait(9e9)
+	end
+	if game.PlaceId ~= (StreetsID) then
+		if Method == "FireServer" and not self.Name == "SayMessageRequest" then
+			if tostring(self.Parent) == "ReplicatedStorage" or self.Name == "lIII" then 
+				return wait(9e9) 
+			end
+			if Args[1] == "hey" then 
+				return wait(9e9) 
+			end
+		end
+	end
+	if game.PlaceId == (StreetsID) then
+		if Method == "FireServer" and Args[1] == "WalkSpeed" or Args[1] == "JumpPower" or Args[1] == "HipHeight" or Args[1] == "Health" or Args[1] == "BodyVelocity" then 
+			return wait(9e9)
+		end
+		if Method == "FireServer" and self.Name == "Input" then 
+			if Args[1] == "bv" or Args[1] == "hb" or Args[1] == "hh" or Args[1] == "ws" or Args[1] == "jp" or Args[1] == "strafe" then 
+				return wait(9e9)
+			end
+		end
+	end
+	return ncall(self, unpack(Args))
+end)
+if setreadonly then setreadonly(rm, true) else make_writeable(rm, false) end
+
+-- [[  End2 ]] --
+
+-- [[ Bypass3 ]]
+
+local DetectedMethods = {
+   "BreakJoints";
+   'Destroy';
+   "Anchored";
+   "RootJoint";
+   "ClearAllChildren";
+}
+
+local oldnamecall; oldnamecall = hookmetamethod(game, "__namecall", function(self, ...)
+   local args = {...}
+   local method = getnamecallmethod()
+   
+   if method == "Kick" or method == "kick" and self == game.Players.LocalPlayer then
+       return wait(9e9)
+   end
+   
+   if self.Name == "lIIl" and game.IsA(self, "RemoteEvent") then
+       return wait(9e9)
+   end
+   
+   if DetectedMethods[method] and self == game.Players.LocalPlayer.Character then
+       return wait(9e9)
+   end
+   
+   return oldnamecall(self, unpack(args))
+end)
+
+local oldnewindex; oldnewindex = hookmetamethod(game, "__newindex", function(t,k,v)
+   if t == game.Players.LocalPlayer.Character.Humanoid and k == "Health" then
+       if v == 0 then
+           return wait(9e9)
+       end
+   end
+   return oldnewindex(t,k,v)
+end)
+
+local oldhook; oldhook = hookfunction(Instance.new'RemoteEvent'.FireServer, function(self, ...)
+   local args = {...}
+   
+   if self.Name == "lIIl" and self.Parent == game.ReplicatedStorage then
+       return wait(9e9)
+   end
+   return oldhook(self, unpack(args))
+end)
+
+-- [[  End3 ]]
+
+hookfunction(game:GetService("Players").LocalPlayer.Kick, function(...)
+   return wait(9e9)
+end)
+
+hookfunction((gcinfo or collectgarbage), function(...)
+   return math.random(200,350)
+end)
+
+-- walk shoot --
+
+if game.PlaceId == 4669040 or 455366377 then
+local mt = getrawmetatable(game)
+local backup
+backup = hookfunction(mt.__newindex, newcclosure(function(self, key, value)
+if key == "WalkSpeed" and value < 16 then
+value = 16
+end
+return backup(self, key, value)
+end))
+end
+
+-- end
+
+-- functions --
+
+Client.Character.Humanoid.Died:Connect(function()
+	if Flying then togglefly() end
+end)
+
+Client.CharacterAdded:Connect(function()
+	repeat wait() until Client.Character:FindFirstChild("Humanoid")
+	Client.Character.Humanoid.Died:Connect(function()
+		if Flying then togglefly() end
+	end)
+end)
+
+Client.Character.Humanoid.Died:Connect(function()
+    AirWalk = false
+end)
+
+Client.CharacterAdded:Connect(function()
+	repeat wait() until Client.Character:FindFirstChild("Humanoid")
+	Client.Character.Humanoid.Died:Connect(function()
+	    AirWalk = false
+	end)
+end)
+
+local function AimlockMethod()
+    local AimlockReturn;
+    if Aimlock and AimlockTarget and AimlockTarget.Character and AimlockTarget.Character[AimPart] then
+       AimlockReturn = (AimlockTarget.Character[AimPart].CFrame + AimlockTarget.Character[AimPart].Velocity/AimlockVelocity)
+    end
+    return AimlockReturn
+end
+
+local Mouse = Client:GetMouse()
+
+Mouse.Button1Down:Connect(function()
+        if StreetsID and Client and Client.Character and Client.Backpack and Client.Character:FindFirstChildOfClass'Tool' and Client.Character:FindFirstChildOfClass'Tool':FindFirstChild('Clips',true) then
+            if Aimlock and AimlockTarget and AimlockTarget.Character and AimlockTarget.Character:FindFirstChild(AimPart) and AimlockTarget ~= nil and AimlockTarget.Character ~= nil and AimlockTarget.Character:FindFirstChild(AimPart) ~= nil then
+                Client.Backpack.Input:FireServer("ml",{
+                    ["mousehit"] = AimlockMethod();
+                    ["velo"] = AimlockVelocity;
+                })
+            end
+        end
+end)
+
+local XDDDDDD = nil
+XDDDDDD = hookmetamethod(game, "__index", newcclosure(function(self, key)
+	if Aimlock == true and AimlockTarget ~= nil then
+		if not checkcaller() then
+			if key == "Hit" and AimlockTarget.Character and Client.Character and Client.Character:FindFirstChild("HumanoidRootPart") and Client.Character:FindFirstChild("Humanoid") and Client.Character:FindFirstChild("Humanoid").Health > 0 then
+				if self == Mouse then
+					return AimlockMethod()
+				end
+			end
+		end
+	end
+	return XDDDDDD(self, key)
+end))
+
+RService.Stepped:Connect(function()
+    if Client and Client.Character then
+        if Camlock and CamlockTarget and CamlockTarget.Character and CamlockTarget.Character:FindFirstChild(CamPart) and CamlockTarget ~= nil and CamlockTarget.Character ~= nil and CamlockTarget.Character:FindFirstChild(CamPart) ~= nil then
+            Camera.CoordinateFrame = CF(Camera.CoordinateFrame.p, CF(CamlockTarget.Character[CamPart].Position).p)
+        end
+    end
+end)
+
+RService.Stepped:Connect(function()
+	if Noclip and Client and Client.Character then
+		for i = 1, #Client.Character:GetChildren() do
+			local CG = Client.Character:GetChildren()[i]
+			if CG:IsA("BasePart") then
+				CG.CanCollide = false 
+			end
+		end
+	end
+	if Viewing == true and ViewTarget ~= nil then 
+		Camera.CameraSubject = ViewTarget.Character
+	end
+	if Flying and togglefly and Client.Character and Client.Character:FindFirstChild("Humanoid") then
+	    RService.Heartbeat:Wait()
+	    Client.Character.Humanoid.PlatformStand = false;Client.Character.Humanoid.Sit = false
+	    Client.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+	end
+	if Client.Character:FindFirstChild("FlyPart") then
+		Client.Character:FindFirstChild("FlyPart").CFrame = Client.Character.HumanoidRootPart.CFrame * CF(0, -3.5, 0)
+	end
+end)
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+    if key == "f" and Flying == false then
+        local air = Instance.new("Part", workspace)
+        air.Size = Vector3.new(120,1,120)
+        air.CFrame = Client.Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, -4, 0)
+        air.Transparency = 1
+        air.Anchored = true
+        air.Name = "FlyBase"
+        
+        for i = 1, math.huge do
+            air.CFrame = Client.Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, -4, 0)
+            wait(0.01)
+        end
+    end
+end)
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+    if key == "f" and Flying == true then
+        for i,v in pairs(game.workspace:GetDescendants()) do if v.Name == "FlyBase" then v:Destroy() end end
+    end
+end)
+
+mouse = game.Players.LocalPlayer:GetMouse()
+
+local air = Instance.new("Part", workspace)
+air.Size = Vector3.new(7, 2, 3)
+air.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+air.Transparency = 1
+air.Anchored = true
+air.Name = "Air"
+
+RService.Heartbeat:Connect(function()
+    if AirWalk == true and Client and Client.Character and Client.Character.HumanoidRootPart then
+        air.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+        wait(0.01)
+        if Client.Character and AirWalk == false then
+            air.CFrame = CFrame.new(0,0,0)
+        end
+    end
+end)
+
+example = game.Lighting.ClockTime
+
+game:GetService("Lighting").Changed:Connect(function()
+    game.Lighting.ClockTime = example
+end)
+
+function GlockLaunchs()
+    if GlockLaunch == true and not Noclip and Client.Backpack and Client.Backpack.Glock then
+        Client.Backpack.Glock.Barrel.CanCollide = true
+    elseif GlockLaunch == false and Client.Backpack then
+        Client.Backpack.Glock.Barrel.CanCollide = false
+    end
+end
+
+RService.Heartbeat:Connect(function()
+    if GetUzi == true then
+        if game.Workspace:FindFirstChild("Uzi | $150") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            game.Workspace["Uzi | $150"].Head.CFrame
+        end
+    end
+    
+    if GetSawedOff == true then
+        if game.Workspace:FindFirstChild("Sawed Off | $150") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            game.Workspace["Sawed Off | $150"].Head.CFrame
+        end
+    end
+    if GetGlock == true then
+        if game.Workspace:FindFirstChild("Glock | $200") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            game.Workspace["Glock | $200"].Head.CFrame
+        end
+    end
+    if GetAmmo == true then
+        if game.Workspace:FindFirstChild("Buy Ammo | $25") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            game.Workspace["Buy Ammo | $25"].Head.CFrame
+        end
+    end
+end)
+
+function ShottyAnim1()
+    local lplr = game:GetService("Players").LocalPlayer
+    local shotty = lplr.Backpack:FindFirstChild("Shotty")    
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://889968874" 
+    local plr = game:GetService('Players').LocalPlayer
+    local HUM = plr.Character.Humanoid:LoadAnimation(Animation) 
+    
+    shotty.Equipped:connect(function()
+        if ShottyAnimations1 and shotty then
+            wait(.1)
+            HUM:Play()
+            HUM:AdjustSpeed(0.0)
+            shotty.Unequipped:connect(function()
+                HUM:Stop()
+            end)
+        end
+    end)
+end
+
+function ShottyAnim2()
+    local lplr = game:GetService("Players").LocalPlayer
+    local shotty = lplr.Backpack:FindFirstChild("Shotty")    
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://229339207"
+    local plr = game:GetService('Players').LocalPlayer
+    local HUM = plr.Character.Humanoid:LoadAnimation(Animation) 
+    
+    shotty.Equipped:connect(function()
+        if ShottyAnimations2 and shotty then
+            wait(.1)
+            HUM:Play()
+            HUM:AdjustSpeed(0.0)
+            shotty.Unequipped:connect(function()
+                HUM:Stop()
+            end)
+        end
+    end)
+end
+
+function GlockAnim1()
+    local lplr = game:GetService("Players").LocalPlayer
+    local glock = lplr.Backpack:FindFirstChild("Glock")
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://889968874"
+    local plr = game:GetService('Players').LocalPlayer
+    local HUM = plr.Character.Humanoid:LoadAnimation(Animation)
+    
+    glock.Equipped:connect(function()
+        if GlockAnimations1 and glock then
+            wait(.1)
+            HUM:Play()
+            HUM:AdjustSpeed(0.0)
+            glock.Unequipped:connect(function()
+                HUM:Stop()
+            end)
+        end
+    end)
+end
+
+function GlockAnim2()
+    local lplr = game:GetService("Players").LocalPlayer
+    local glock = lplr.Backpack:FindFirstChild("Glock")
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://889994935"
+    local plr = game:GetService('Players').LocalPlayer
+    local HUM = plr.Character.Humanoid:LoadAnimation(Animation)
+    
+    glock.Equipped:connect(function()
+        if GlockAnimations2 and glock then
+            wait(.1)
+            HUM:Play()
+            HUM:AdjustSpeed(0.0)
+            glock.Unequipped:connect(function()
+                HUM:Stop()
+            end)
+        end
+    end)
+end
+
+-- end --
+
+-- Set Commands. --
+
+Commands["Sets Your Flyspeed"] = {
+	["Aliases"] = {"flyspeed", "fs"};
+	["Function"] = function(Args)
+		if Args[1] then 
+			Flyspeed = tonumber(Args[1])
+			Notify("Soul Ware", "FlySpeed: "..tonumber(Args[1]), "", 3)
+		end
+	end
+}
+
+Commands["Sets Blinkspeed"] = {
+	["Aliases"] = {"bs", "blinkspeed"};
+	["Function"] = function(Args)
+		if Args[1] then 
+			Blinkspeed = tonumber(Args[1])
+ 			Notify("Soul Ware", "Blinkspeed: "..tonumber(Args[1]), "", 3)
+		end		
+    end
+}
+
+Commands["Sets Camlock Target"] = {
+    ["Aliases"] = {"camlock", "cam", "cl", "cml", "c"};
+    ["Function"] = function(Args)
+        if Args[1] then 
+            CamlockTarget = SearchPlayers(Args[1]) or SearchDisplayNames(Args[1]);Camlock = true
+	    Notify("Soul Ware", "Camlock Target: "..tostring(CamlockTarget), "", 3)
+        end
+    end
+}
+
+Commands["Sets Aimlock Target"] = {
+    ["Aliases"] = {"aimlock", "aim", "al", "aml", "a", "s"};
+    ["Function"] = function(Args)
+        if Args[1] then 
+            AimlockTarget = SearchPlayers(Args[1]) or SearchDisplayNames(Args[1]);Aimlock = true
+	    Notify("Soul Ware", "Aimlock: "..tostring(AimlockTarget), "", 3)
+        end
+    end
+}
+
+Commands["Sets WalkSpeed"] = {
+    ["Aliases"] = {"walkspeed", "ws"};
+    ["Function"] = function(Args)
+        if Args[1] then 
+            Client.Character.Humanoid.WalkSpeed = tonumber(Args[1])
+            Notify("Soul Ware", "WalkSpeed: "..tonumber(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets JumpPower"] = {
+    ["Aliases"] = {"jumppower", "jp"};
+    ["Function"] = function(Args)
+        if Args[1] then 
+            Client.Character.Humanoid.JumpPower = tonumber(Args[1])
+            Notify("Soul Ware", "JumpPower: "..tonumber(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets Time"] = {
+    ["Aliases"] = {"time", "clock"},
+    ["Function"] = function(Args)
+        if Args[1] then
+            example = tonumber(Args[1])
+            Notify("Soul Ware", "Time: "..tonumber(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets Fov"] = {
+    ["Aliases"] = {"fov"},
+    ["Function"] = function(Args)
+        if Args[1] then
+            game:GetService("Workspace").Camera.FieldOfView = tonumber(Args[1])
+            Notify("Soul Ware", "Fov: "..tonumber(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets DelayTime"] = {
+    ["Aliases"] = {"delay"},
+    ["Function"] = function(Args)
+        if Args[1] then
+            DelayTime = tonumber(Args[1])
+            Notify("Soul Ware", "DelayTime: "..tonumber(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets CamlockPart"] = {
+    ["Aliases"] = {"camlockpart", "campart", "clpart", "cpart"},
+    ["Function"] = function(Args)
+        CamPart = Args[1]
+        if PartsTable[Args[1]] then
+            CamPart = PartsTable[Args[1]]
+            Notify("Soul Ware", "Camlock Part: "..tostring(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets AimlockPart"] = {
+    ["Aliases"] = {"aimlockpart", "aimpart", "alpart", "apart"},
+    ["Function"] = function(Args)
+        AimPart = Args[1]
+        if PartsTable[Args[1]] then
+            AimPart = PartsTable[Args[1]]
+            Notify("Soul Ware", "Aimlock Part: "..tostring(Args[1]), "", 3)
+        end
+    end
+}
+
+Commands["Sets AimlockVelocity"] = {
+    ["Aliases"] = {"aimvelocity", "av"};
+    ["Function"] = function(Args)
+        if Args[1] then 
+            AimlockVelocity = tonumber(Args[1])
+        end
+        Notify("Soul Ware", "AimlockVelocity: "..tonumber(Args[1]), "", 3)
+    end
+}
+
+-- End Of Set Commands. --
+
+-- Start Of End Commands. --
+
+Commands["UnEsp Esp'd Player"] = {
+	["Aliases"] = {"unesp", "unfind"};
+	["Function"] = function(Args)
+	if Args[1] then 
+	    Notify("Soul Ware", "Esp False", "", 3)
+			local UnEspPlayer;UnEspPlayer = SearchPlayers(Args[1]) or SearchDisplayNames(Args[1])
+			if UnEspPlayer then
+			    EspTarget = nil;
+			for _, v in next, UnEspPlayer.Character:GetDescendants() do 
+			if v:IsA("BillboardGui") or v:IsA("TextLabel") then
+			    v:Destroy()
+					end
+				end
+			end
+		end
+	end
+}
+
+Commands["UnCamlocks Camlocked Target"] = {
+    ["Aliases"] = {"uncamlock", "uncam", "uncl", "uncml", "unc"};
+    ["Function"] = function()
+        CamlockTarget = nil;Camlock = false   
+        Notify("Soul Ware", "Camlock: "..tostring(Camlock), "", 3)    
+    end
+}
+
+Commands["UnView Viewed Target"] = {
+	["Aliases"] = {"unspy", "unview"};
+	["Function"] = function()
+		ViewTarget = nil;View = false
+		Camera.CameraSubject = Client.Character
+		Notify("Soul Ware", "View: "..tostring(Viewing), "", 3)
+	end
+}
+
+Commands["Un Aimlock Target"] = {
+    ["Aliases"] = {"unaimlock", "unaim", "unal", "unaml", "una", "uns"};
+    ["Function"] = function(Args)
+        AimlockTarget = nil;Aimlock = false
+        Notify("Soul Ware", "Aimlock: "..tostring(Aimlock), "", 3)
+    end
+}
+
+-- End Of End Commands. --
+
+-- Toggle Commands. --
+
+Commands["Toggles Fly"] = {
+	["Aliases"] = {"fly", "togglefly"};
+	["Function"] = function(Args)
+		togglefly()
+		Notify("Soul Ware", "Flying: "..tostring(Flying), "", 3)
+	end
+}
+
+Commands["Toggles Blink"] = {
+	["Aliases"] = {"blink", "bl"};
+	["Function"] = function(Args)
+		Blink = not Blink 
+		Notify("Soul Ware", "Blink: "..tostring(Blink), "", 3)
+	end
+}
+
+Commands["Toggles Noclip"] = {
+	["Aliases"] = {"noclip", "nc", "nclip"};
+	["Function"] = function()
+		Noclip = not Noclip
+		Notify("Soul Ware", "Noclip: "..tostring(Noclip), "", 3)
+	end
+}
+
+Commands["Toggles AirWalk"] = {
+    ["Aliases"] = {"airwalk", "air"};
+    ["Function"] = function(Args)
+        AirWalk = not AirWalk
+        Notify("Soul Ware", "Airwalk: "..tostring(AirWalk), "", 3)
+    end
+}
+
+-- End. --
+
+-- Misc Commands. --
+
+Commands["Esp a Player"] = {
+	["Aliases"] = {"esp", "find"};
+	["Function"] = function(Args)
+		if Args[1] then
+			EspTarget = SearchPlayers(Args[1]) or SearchDisplayNames(Args[1])
+			if EspTarget then
+				EspPlayer(EspTarget)
+			end
+		end
+	Notify("Soul Ware", "Esp Target: "..tostring(EspTarget), "", 3)
+end
+}
+
+Commands["View a Player"] = {
+	["Aliases"] = {"spy", "view"};
+	["Function"] = function(Args)
+		if Args[1] then 
+		ViewTarget = SearchPlayers(Args[1]) or SearchDisplayNames(Args[1]);Viewing = true 
+		end
+		Notify("Soul Ware", "View: "..tostring(ViewTarget), "", 3)
+	end
+}
+
+Commands["Reset"] = {
+    ["Aliases"] = {"reset", "r"},
+    ["Function"] = function(Args)
+    game.Players.LocalPlayer.Character["Torso"]:Remove()
+    Notify("Soul Ware", "Reseted", "", 3)
+    end
+}
+
+Commands["Rejoin"] = {
+    ["Aliases"] = {"rejoin", "rj"},
+    ["Function"] = function(Args)
+Notify("Soul Ware", "Rejoining...", "", 3)
+        local ts = game:GetService("TeleportService")
+        local p = game:GetService("Players").LocalPlayer
+        ts:Teleport(game.PlaceId, p)
+    end
+}
+
+Commands["Server Hop"] = {
+    ["Aliases"] = {"serverhop", "hop"},
+    ["Function"] = function(Args)
+Notify("Soul Ware", "Hoping...", "", 3)
+local sl = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/".. game.PlaceId.. "/servers/Public?sortOrder=Asc&limit=100"))
+for i,v in pairs(sl.data) do
+   if v.playing ~= v.maxPlayers then
+       game:service'TeleportService':TeleportToPlaceInstance(game.PlaceId, v.id)
+   end
+end
+    end
+}
+
+Commands["Anti Feloop"] = {
+    ["Aliases"] = {"antife", "af"},
+    ["Function"] = function(Args)
+        game.Players.LocalPlayer.Character["Right Arm"]:Remove()
+        Notify("Soul Ware", "Anti Feloop True", "", 3)
+    end
+}
+
+Commands["Anti Afk"] = {
+    ["Aliases"] = {"antiafk", "afk"};
+    ["Function"] = function(Args)
+        Notify("Soul Ware", "Anti Afk True", "", 3)
+        local Player = game:GetService("Players").LocalPlayer
+        Player.CharacterAdded:Wait()
+        local vu = game:GetService('VirtualUser')
+        Player.Idled:connect(function()
+            vu:CaptureController()
+            vu:ClickButton2(Vector2.new())
+            for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+                v:Disable()
+            end
+            Notify("Soul Ware", "Anti Afk True", "", 3)
+        end)
+    end
+}
+
+Commands["No Seats"] = {
+    ["Aliases"] = {"nosit", "rc"},
+    ["Function"] = function(Args)
+        for _,a in pairs(workspace:GetDescendants()) do
+            if a:IsA("Seat") then
+                a:Remove()
+            end
+        end
+        Notify("Soul Ware", "NoSeats True", "", 3)
+    end
+}
+
+
+Commands["Get"] = {
+    ["Aliases"] = {"get"},
+    ["Function"] = function(Args)
+    if Args[1] == 'uzi' then
+        GetUzi = true
+        wait(DelayTime)
+        GetUzi = false
+        Notify("Soul Ware", "GetUzi:"..tostring(GetUzi), "", 3)
+    end
+
+    if Args[1] == 'sawedoff' then
+        GetSawedOff = true
+        wait(DelayTime)
+        GetSawedOff = false
+        Notify("Soul Ware", "GetSawedOff: "..tostring(GetSawedOff), "", 3)
+    end
+
+    if Args[1] == 'glock' then
+        GetGlock = true
+        wait(DelayTime)
+        GetGlock = false
+        Notify("Soul Ware", "GetGlock: "..tostring(GetGlock), "", 3)
+    end
+
+    if Args[1] == 'ammo' then
+        GetAmmo = true
+        wait(DelayTime)
+        GetAmmo = false
+        Notify("Soul Ware", "GetAmmo: "..tostring(GetAmmo), "", 3)
+    end
+end
+}
+
+Commands["GlockAnimations"] = {
+    ["Aliases"] = {"glockanim"},
+    ["Function"] = function(Args)
+    if Args[1] == '1' then
+        GlockAnimations1 = not GlockAnimations1
+        GlockAnim1()
+        Notify("Soul Ware", "Glock Animations1: "..tostring(GlockAnimations1), "", 3)
+    end
+
+    if Args[1] == '2' then
+        GlockAnimations2 = not GlockAnimations2
+        GlockAnim2()
+        Notify("Soul Ware", "Glock Animations2: "..tostring(GlockAnimations2), "", 3)
+    end
+end
+}
+
+Commands["ShottyAnimations"] = {
+    ["Aliases"] = {"shottyanim"},
+    ["Function"] = function(Args)
+    if Args[1] == '1' then
+        ShottyAnimations1 = not ShottyAnimations1
+        ShottyAnim1()
+        Notify("Soul Ware", "Shotty Animations1: "..tostring(ShottyAnimations1), "", 3)
+    end
+
+    if Args[1] == '2' then
+        ShottyAnimations2 = not ShottyAnimations2
+        ShottyAnim2()
+        Notify("Soul Ware", "Shotty Animations2: "..tostring(ShottyAnimations2), "", 3)
+    end
+end
+}
+
+-- End. --
+
+print([[
+
+====== SoulWare Commands ======
+
+1. Aimlock, aimlock, aim, al, aml, a, s
+
+2. Camlock, camlock, cam, cl, cml, c
+
+3. Esp, find, esp
+
+4. Flyspeed, fs
+
+5. Blinkspeed, bs
+
+6. Blink, blink, bl
+
+7. Noclip, noclip, nc
+
+8. AimlockVelocity, av
+
+====== Misc Commands ======
+
+9. WalkSpeed, ws
+
+10. JumpPower, jp
+
+11. Airwalk, airwalk, air
+
+12. Rejoin, rj
+
+13. Time, time
+
+14. Fov, fov
+
+15. Reset, reset, r
+
+16. No Seats, nosit, rc
+
+17. AntiAfk, antiafk, afk
+
+18. AntiFe, antife, af
+
+19. View, view, spy
+
+20. Server Hop, serverhop, hop
+
+21. DelayTime, delay
+
+22. AimlockPart, aimlockpart, aimpart, alpart, apart
+
+23. CamlockPart, camlockpart, campart, clpart, cpart
+
+24. Get, get (guns,ammo)
+
+25. ShottyAnims, shottyanims 1-2
+
+26. GlockAnims, glockanims 1-2
+
+====== End ======
+]])
+
+Notify("Soul Ware", "Loaded!", "", 3)
+
+Notify("Soul Ware", "Check F9 For Commands", "", 6)

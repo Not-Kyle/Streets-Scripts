@@ -1,0 +1,14 @@
+local LP = game.Players.LocalPlayer
+
+for i = 1,20 do
+    coroutine.wrap(function()
+        while wait() do 
+            for i,v in pairs(LP.PlayerGui.HUD.Clan.NoGroup.ScrollingFrame:GetChildren()) do
+                if v:IsA'Frame' then
+                    LP.Backpack.Stank:FireServer("pick",v)
+                    LP.Backpack.Stank:FireServer("leave")
+                end
+            end
+        end
+    end)()
+end

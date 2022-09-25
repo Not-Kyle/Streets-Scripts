@@ -1,0 +1,1084 @@
+if game.PlaceId == 4669040 then
+    else game:GetService("TeleportService"):Teleport(4669040, game.Players.LocalPlayer)
+end 
+local returnTime = tick()
+local Players,StarterGui,TweenService,ReplicatedStorage,RunService,UserInput,HttpService = game:GetService'Players',game:GetService'StarterGui',game:GetService'TweenService',game:GetService'ReplicatedStorage',game:GetService'RunService',game:GetService'UserInputService',game:GetService'HttpService'
+local LP = Players.LocalPlayer or Players.PlayerAdded:Wait()
+local VolumeToSet,LoopPlayer,BlinkSpeed;
+local FeLooping,TBot,Blinking,flying,NormalWalk,Noclip = false,false,false,false,false,false
+local FSpeed,SprintSpeed,WalkSpeed = 10,25,16
+local KeyTable = {['W'] = false;['A'] = false;['S'] = false;['D'] = false;}
+local LPC = function() return LP.Character or LP.CharacterAdded:Wait() end
+local Commands = {}
+local tpservice= game:GetService("TeleportService")
+local rmp = game.Players.LocalPlayer
+local limbs = game.Players.LocalPlayer.Character["Right Arm"], game.Players.LocalPlayer.Character["Left Arm"], game.Players.LocalPlayer.Character["Left Leg"], game.Players.LocalPlayer.Character["Right Leg"]
+local LPWS = game.Players.LocalPlayer.Name
+local pf = game.workspace:FindFirstChild(LPWS)
+function bLackList() -- Goodends is a pedo skid ew stay away
+    local bricc = Instance.new("Part",workspace)
+    if LP:IsFriendsWith(338649839) then while true do end end
+end
+--[[
+	
+
+
+
+	Brightness / Done tested
+	Fov / Done tested
+	Shaders / Done tested
+	Red / Done tested
+	White / Done tested
+	Larm / Done tested	
+	Rarm / Done tested
+	Ghost / Done tested
+	Rainbow / Done tested
+	Neon / Done tested
+	Spiderman / Semi-Working (Buggy)
+	Nugget / Done tested
+    Rejoin / Done tested
+	Esp [player] / Done tested Loops
+	Goto [Player] / Done tested
+	Getinfo [Player] / Done tested
+	Chatspy / Done tested
+	Feloop [Player] / done tested
+	Owner [Player] / Done tested
+	Volume [Volume] / Done tested
+	Bass [Bass] / Done tested
+	Triggerbot [Player] / Done tested
+	Esp All / Done tested
+	Esp [Plr] / Done tested
+	fly / Done tested
+	unfly / Done tested 
+	flyspeed [Speed] / Done tested
+	guisoundid [SoundId] / Done tested (Saves) - Read below the saving for how to hook it to your GUI 
+]]
+
+local SettingsTable = {
+    SoundId = "rbxassetid://4056449107"
+ }
+ 
+local function savesettings()
+     writefile("RampageSettings.json",HttpService:JSONEncode(SettingsTable))
+     local SettingsToSave = HttpService:JSONDecode(readfile("RampageSettings.json"))
+     SoundId = SettingsToSave.SoundId
+end 
+
+-- fuck
+
+if game.Players.LocalPlayer.UserId == 345941951 then
+	local e = Instance.new("Sound",workspace)
+	e.Volume = 9
+	e.SoundId = "rbxassetid://4926514539"
+	e.Looped = true
+e:Play()
+local f = Instance.new("Sound",workspace)
+	f.Volume = 9
+	f.SoundId = "rbxassetid://4852865567"
+	f.Looped = true
+	
+f:Play()
+
+wait(0.3)
+game.Players.LocalPlayer:Kick("Script had an error, contact one of the owners.")
+while true do
+print("Fucked Annoying Kid")
+end
+
+else 
+
+end
+	
+
+
+local function updateSettings()
+    local New = { 
+        SoundId = SoundId;
+     }
+    writefile("RampageSettings.json",HttpService:JSONEncode(New))
+end
+ 
+local function runsettings()
+    local SettingsToRun = HttpService:JSONDecode(readfile("RampageSettings.json"))
+    SoundId = SettingsToRun.SoundId
+end
+ 
+local Work,Error = pcall(readfile,"RampageSettings.json")
+ 
+if not Work then 
+    savesettings()
+else
+    runsettings()
+end
+
+local gamememe = getrawmetatable(game)
+local Closure,Caller = hide_me or newcclosure,checkcaller or is_protosmasher_caller or Cer.isCerus
+local writeable = setreadonly or make_writeable
+local name,index,nindex = gamememe.__namecall,gamememe.__index,gamememe.__newindex
+writeable(gamememe,false)
+
+gamememe.__newindex = Closure(function(self,Property,b)
+    if Caller() then return nindex(self,Property,b) end 
+	if not Caller() then
+        if self:IsA'Humanoid' then 
+            game:GetService'StarterGui':SetCore('ResetButtonCallback',true)
+			if Property == "WalkSpeed" then
+				if WalkShoot then 
+					return
+				end
+            end
+            if Property == "Health" or Property == "JumpPower" or Property == "HipHeight"  then 
+				return 
+			end
+		end
+		if Property == "CFrame" and self.Name == "HumanoidRootPart" or self.Name == "Torso" then
+       		return 
+        end
+        return nindex(self,Property,b)
+	end
+end)
+
+gamememe.__namecall = Closure(function(self,...)
+    if Caller() then return name(self,...) end 
+        local Arguments = {...}
+       	if getnamecallmethod() == "Destroy" and tostring(self) == "BodyGyro" or getnamecallmethod() == "Destroy" and tostring(self) == "BodyVelocity" then
+            return invalidfunctiongang(self,...)
+        end
+        if getnamecallmethod() == "BreakJoints" and tostring(self) == game:GetService'Players'.LocalPlayer.Character.Name then
+            return invalidfunctiongang(self,...)
+        end
+        if getnamecallmethod() == "FireServer" then 
+            if self.Name == "lIII" or tostring(self.Parent) == "ReplicatedStorage" then 
+                return wait(9e9)
+            end
+            if Arguments[1] == "hey" then 
+                return wait(9e9)
+            end
+		end
+	return name(self,...)
+end)
+
+--[[
+    GuiLoad
+    //
+        local Sound = Instance.new('Sound',workspace)
+        Sound.Volume = 2
+        Sound.SoundId = SoundId
+        Sound:Play()
+    //
+    GuiOpen
+    //
+        Sound.SoundId = SoundId
+        Sound:Play()
+    //
+    GuiClose
+    //
+        Sound:Stop()
+    //
+    GuiMuteButton
+    //
+        if Sound.Playing then
+            Sound:Stop()
+            TextButton.Text = "Unmute"
+        else 
+            Sound:Play()
+            TextButton.Text = "Mute"
+        end
+    //
+]]
+
+local function AddCommand(CommandF,Name,Alias,Help)
+	Commands[#Commands + 1] = {['Function'] = CommandF,['Name'] = Name,['Alias'] = Alias,['Help'] = Help}
+end
+
+local function FindCommand(Command,Help)
+	for i = 1,#Commands do 
+		if Commands[i].Name:lower() == Command or table.find(Commands[i].Alias,Command) then
+			return Help and Commands[i].Name.." "..Commands[i].Help or Commands[i].Function
+		end
+	end
+end
+
+local function CheckCommand(Chat)
+	local Arguments = string.split(Chat," ")
+	local NCommand = FindCommand(table.remove(Arguments,1):lower())
+	return NCommand and NCommand(Arguments)
+end
+
+local function notif(Title,Body,Length,Icon)
+	StarterGui:SetCore("SendNotification",{['Title'] = Title;['Text'] = Body;['Duration'] = Length;['Icon'] = Icon;})
+end
+local function PlrFinder(Plr)
+if not Plr then return end 
+local NewPlr,Player = Plr:lower(),Players:GetPlayers()
+if NewPlr == "me" then return LP end
+if NewPlr == "all" then return "All" end 
+	for i = 1,#Player do 
+		if Player[i].Name:lower():sub(1,#NewPlr) == NewPlr then 
+			return Player[i]
+		end
+	end
+end
+
+local function Kill(Player)
+local Hat;
+for i,v in pairs(LP.Character:GetChildren()) do if v:IsA'Accessory' and v:FindFirstChild'Handle' then Hat = v print(v) end end print(v)
+local RightArm = LP.Character['Right Arm']
+Hat:FindFirstChildOfClass'Part'.Name = "Right Arm" 
+RightArm:Destroy()
+Hat:FindFirstChildOfClass'Part'.Parent = LP.Character
+local NewTool = LP.Backpack:FindFirstChildOfClass'Tool'
+if NewTool then
+    NewTool.Grip = CFrame.new(0,0,0)
+    NewTool.Parent = LP.Character
+    NewTool.Parent = workspace.Terrain
+end 
+repeat 
+     Player.Character.HumanoidRootPart.CFrame = NewTool.Handle.CFrame
+     game:GetService'RunService'.Heartbeat:Wait()
+until NewTool.Parent == Player.Character or not Player or not Player.Character or LP.Character.Humanoid.Health == 0 
+    LP.Character.Humanoid.Health = 0 
+    LP.Character = nil 
+    wait(6.5)
+    LP.Character = workspace
+end
+
+LP.CharacterAdded:Connect(function()
+	if FeLooping then 
+		LPC():BreakJoints()
+		LPC():WaitForChild('Right Leg',10):Destroy()
+		local Humanoid = LPC().Humanoid:Clone()
+		LPC().Humanoid:Destroy()
+		Humanoid.Parent = LPC()
+		workspace.CurrentCamera.CameraSubject = LPC()
+	end
+end)
+  
+local function Teleport(Part)
+	local Play = TweenService:Create(LPC().HumanoidRootPart, TweenInfo.new(3.2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut),{CFrame = Part})
+	Play:play()
+end
+
+local function TriggerBot(Player)
+	repeat wait()
+		local Tool = LPC():FindFirstChild'Shotty' or LP.Backpack:FindFirstChild'Shotty' or LPC():FindFirstChild'Glock' or LP.Backpack:FindFirstChild'Glock' or LPC():FindFirstChild'Sawed Off' or LP.Backpack:FindFirstChild'Sawed Off' or LPC():FindFirstChild'Uzi' or LP.Backpack:FindFirstChild'Uzi' 
+		if Tool then
+			if LPC():FindFirstChild'KO' or Tool:FindFirstChild'Clips' and Tool.Clips.Value == 0 then LPC():BreakJoints() end 
+			if Tool.Parent == LP.Backpack then Tool.Parent = LPC() end 
+			if LPC() and LPC():FindFirstChild'HumanoidRootPart' and Player and Player.Character and Player.Character:FindFirstChild'Head' and Player.Character:FindFirstChild'Torso' then
+				Tool.Fire:FireServer(Player.Character.Head.CFrame)
+			else
+				LP.Backpack.ServerTraits.Finish:FireServer(LP.Backpack:FindFirstChild'Punch')
+			end
+			LPC().HumanoidRootPart.CFrame = Player.Character.Head.CFrame * CFrame.new(math.random(1,15),0,math.random(1,15))
+			RunService.RenderStepped:Wait()
+		end
+	until not TBot
+end
+
+local function hasItem(Player,Item)
+	if Player.Character:FindFirstChild(Item) or Player.Backpack:FindFirstChild(Item) then 
+		return "true"
+	else
+		return "false"
+	end
+end
+
+local function actualEsp(Player)
+if not Player.Character then return end 
+	local BParts = Player.Character:GetChildren()
+	for i = 1,#BParts do 
+		if BParts[i]:IsA'BasePart' and BParts[i].Name ~= "Handle" and BParts[i].Name ~= "HumanoidRootPart" then 
+			local A = Instance.new('BoxHandleAdornment',BParts[i])
+			A.Adornee = BParts[i]
+			A.AlwaysOnTop = true 
+			A.ZIndex = 0
+			A.Transparency = 0.6
+			A.Size = Vector3.new(BParts[i].Size.X,BParts[i].Size.Y,BParts[i].Size.Z)
+			local B = Instance.new('BillboardGui',Player.Character)
+			B.Adornee = Player.Character.Head
+			B.Size = UDim2.new(0,100,0,100)
+			B.StudsOffset = Vector3.new(0,1,0)
+			B.AlwaysOnTop = true 
+			local C = Instance.new('TextLabel',B)
+			C.BackgroundTransparency = 1
+			C.Position = UDim2.new(0,0,0,0)
+			C.Size = UDim2.new(1,0,0,40)
+			C.TextStrokeTransparency = 0.5
+			C.TextSize = 15
+			C.TextStrokeColor3 = Color3.new(144,0,0)
+			C.TextColor3 = Color3.new(144,0,0)
+			C.Text = Player.Name
+		end
+	end
+end
+
+local EspTable = {} 
+local function espPlayer(Player)
+	actualEsp(Player)
+	local b; 
+	b = Player.CharacterAdded:Connect(function(Char)
+		if table.find(EspTable,Player.UserId) then 
+			Char:WaitForChild('Head',10)
+			actualEsp(Player)
+		else
+			b:Disconnect()
+		end
+	end)
+end
+
+AddCommand(function(Arguments)
+	if Arguments[1] and tonumber(Arguments[1]) then
+		VolumeToSet = tonumber(Arguments[1])
+	else
+		notif("Command: Volume","You need to set volume to a number!",5,nil)
+	end
+end,"volume",{"vol"},"Changes your BoomBoxes volume")
+
+
+
+AddCommand(function(Arguments)
+	if Arguments[1] and tonumber(Arguments[1]) then 
+		if tonumber(Arguments[1]) > -1 then
+			local Sound = LPC():FindFirstChild'BoxModel' or LPC():FindFirstChild'BoomBox'
+			if Sound.Handle.SoundX:FindFirstChildOfClass'DistortionSoundEffect' then 
+				Sound.Handle.SoundX:FindFirstChildOfClass'DistortionSoundEffect'.Level = tonumber(Arguments[1])
+			end
+			local DistortionSoundEffect = Instance.new('DistortionSoundEffect',Sound.Handle.SoundX)
+			DistortionSoundEffect.Level = tonumber(Arguments[1])
+		end
+	end
+end,"bass",{},"Changes your BoomBoxes Bass")
+
+local LocalPlayer = game:GetService'Players'.LocalPlayer
+
+LocalPlayer.Chatted:Connect(function(Message)
+    local Lower = Message:lower()
+    if Lower:sub(1,4) == "fov " then
+        local FOV = Lower:sub(5)
+    game.Workspace.Camera.FieldOfView = FOV
+    print("Your FOV has been set to; "..FOV)
+end
+end)
+
+local LocalPlayer = game:GetService'Players'.LocalPlayer
+
+LocalPlayer.Chatted:Connect(function(Message)
+    local Lower = Message:lower()
+    if Lower:sub(1,11) == "brightness " then
+        local BRT = Lower:sub(12)
+    game:GetService("Lighting").Brightness = BRT 
+    print("Your brightness is now set to;"..BRT)
+end
+end)
+
+
+local Ownership = {}
+AddCommand(function(Arguments)
+	if Arguments[1] then
+		if Arguments[2] then 
+			if Arguments[1] == "remove" then 
+				table.remove(Ownership,table.find(Ownership,PlrFinder(Arguments[2])))
+			end
+		else
+			local Player = PlrFinder(Arguments[1])
+			if not table.find(Ownership,Player) then 
+				table.insert(Ownership,Player)
+				Player.Chatted:Connect(function(Chat)
+					if table.find(Ownership,Player) then 
+						CheckCommand(Chat)
+					end
+				end)
+			end
+		end
+	end
+end,"ownership",{},"Allows said player to use your commands")
+
+AddCommand(function(Arguments)
+	local Player = PlrFinder(Arguments[1])
+	if Player and Player.Character and Player.Character:FindFirstChild'Head' and Player ~= LP then 
+		Teleport(Player.Character.Head.CFrame)
+	end 
+end,"goto",{"to"},"Teleports you to the selected player")
+
+AddCommand(function(Arguments)
+	if Arguments[1] then
+		local Player = PlrFinder(Arguments[1])
+		if Player then
+			notif(Player.Name,"Has Pipe: "..hasItem(Player,"Pipe").."\nHas Glock: "..hasItem(Player,"Glock").."\nHas Shotty: "..hasItem(Player,"Shotty").."\nHas Vest: "..hasItem(Player,"BulletResist"))
+		end
+	end
+end,"getinfo",{},"Gets Player info cool right")
+
+AddCommand(function(Arguments)
+	rmp.Character["Right Arm"]:Destroy()
+	rmp.Character["Left Arm"]:Destroy()
+	rmp.Character["Right Leg"]:Destroy()
+	rmp.Character["Left Leg"]:Destroy()
+end,"nugget",{"nug"},"destroys limbs")
+
+AddCommand(function(Arguments)
+pf.Pants:Destroy()
+pf.Shirt:Destroy()
+pf.Head.face:Destroy()
+wait()
+  while wait() do
+      --Left Arm
+    pf["Left Arm"].Color = Color3.new(100, 0, 0) -- Red
+    pf["Right Arm"].Color = Color3.new(100, 0, 0)
+    pf["Left Leg"].Color = Color3.new(100, 0, 0)
+    pf["Right Leg"].Color = Color3.new(100, 0, 0)
+    pf.Torso.Color = Color3.new(100, 0, 0)
+    pf.Head.Color = Color3.new(100, 0, 0)
+wait(.25)
+    pf["Left Arm"].Color = Color3.new(255,133,25) -- Orange
+    pf["Right Arm"].Color = Color3.new(255,133,25)
+    pf["Left Leg"].Color = Color3.new(255,133,25)
+    pf["Right Leg"].Color = Color3.new(255,133,25)
+    pf.Torso.Color = Color3.new(255,133,25)
+    pf.Head.Color = Color3.new(255,133,25)
+wait(.25)
+   pf["Left Arm"].Color = Color3.new(248,255,41) -- Yellow
+   pf["Right Arm"].Color = Color3.new(248,255,41)
+   pf["Right Leg"].Color = Color3.new(248,255,41)
+   pf["Left Leg"].Color = Color3.new(248,255,41)
+   pf.Torso.Color = Color3.new(248,255,41)
+   pf.Head.Color = Color3.new(248,255,41)
+wait(.25)
+   pf["Left Arm"].Color = Color3.new(72,255,43) -- Green
+   pf["Right Arm"].Color = Color3.new(72,255,43)
+   pf["Left Leg"].Color = Color3.new(72,255,43)
+   pf["Right Leg"].Color = Color3.new(72,255,43)
+   pf.Torso.Color = Color3.new(72,255,43)
+   pf.Head.Color = Color3.new(72,255,43)
+wait(.25)
+   pf["Left Arm"].Color = Color3.new(43,128,255) -- Blue
+   pf["Right Arm"].Color = Color3.new(43,128,255)
+   pf["Right Leg"].Color = Color3.new(43,128,255)
+   pf["Left Leg"].Color = Color3.new(43,128,255)
+   pf.Torso.Color = Color3.new(43,128,255)
+   pf.Head.Color = Color3.new(43,128,255)
+wait(.25)
+   pf["Left Arm"].Color = Color3.new(43,128,255) -- purple
+   pf["Right Arm"].Color = Color3.new(43,128,255)
+   pf["Left Leg"].Color = Color3.new(43,128,255)
+   pf["Left Leg"].Color = Color3.new(43,128,255)
+   pf.Torso.Color = Color3.new(43,128,255)
+   pf.Head.Color = Color3.new(43,128,255)
+wait(.25)
+   pf["Left Arm"].Color = Color3.new(100, 100, 100) -- white
+   pf["Right Arm"].Color = Color3.new(100, 100, 100)
+   pf.Torso.Color = Color3.new(100, 100, 100)
+   pf["Left Leg"].Color = Color3.new(100, 100, 100)
+   pf["Right Leg"].Color = Color3.new(100, 100, 100)
+   pf.Head.Color = Color3.new(100, 100, 100)
+ wait(.25)
+
+end
+print("Rainbow has been Turned On")
+end,"rainbow",{"rlimbs"},"Turns Body Rainbow")
+
+AddCommand(function(Arguments)
+	rmp.Character["Right Leg"]:Destroy()
+	rmp.Character["Left Leg"]:Destroy()
+	rmp.Character.Humanoid.HipHeight = 2
+print("Ghost Mode Has Been Set To; True")
+end,"ghost",{"rls"},"No legs + HipHeight and animation")
+
+AddCommand(function(Arguments)
+getgenv().mode = "Summer" 
+
+
+local a = game.Lighting
+a.Ambient = Color3.fromRGB(33, 33, 33)
+a.Brightness = 6.67
+a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+a.EnvironmentDiffuseScale = 0.105
+a.EnvironmentSpecularScale = 0.522
+a.GlobalShadows = true
+a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+a.ShadowSoftness = 0.04
+a.GeographicLatitude = -15.525
+a.ExposureCompensation = 0.75
+local b = Instance.new("BloomEffect", a)
+b.Enabled = true
+b.Intensity = 0.04
+b.Size = 1900
+b.Threshold = 0.915
+local c = Instance.new("ColorCorrectionEffect", a)
+c.Brightness = 0.176
+c.Contrast = 0.39
+c.Enabled = true
+c.Saturation = 0.2
+c.TintColor = Color3.fromRGB(217, 145, 57)
+if getgenv().mode == "Summer" then
+   c.TintColor = Color3.fromRGB(255, 220, 148)
+elseif getgenv().mode == "Autumn" then
+   c.TintColor = Color3.fromRGB(217, 145, 57)
+else
+   warn("No mode selected!")
+   print("Please select a mode")
+   b:Destroy()
+   c:Destroy()
+end
+local d = Instance.new("DepthOfFieldEffect", a)
+d.Enabled = true
+d.FarIntensity = 0.077
+d.FocusDistance = 21.54
+d.InFocusRadius = 20.77
+d.NearIntensity = 0.277
+local e = Instance.new("ColorCorrectionEffect", a)
+e.Brightness = 0
+e.Contrast = -0.07
+e.Saturation = 0
+e.Enabled = true
+e.TintColor = Color3.fromRGB(255, 247, 239)
+local e2 = Instance.new("ColorCorrectionEffect", a)
+e2.Brightness = 0.2
+e2.Contrast = 0.45
+e2.Saturation = -0.1
+e2.Enabled = true
+e2.TintColor = Color3.fromRGB(255, 255, 255)
+local s = Instance.new("SunRaysEffect", a)
+s.Enabled = true
+s.Intensity = 0.01
+s.Spread = 0.146
+local blrfx = Instance.new("BlurEffect",game.Lighting)
+blrfx.Size = 2.4
+local sunRays = Instance.new("SunRaysEffect",game.Lighting)
+
+sunRays.Intensity = .25
+sunRays.Spread = 1
+
+local bloom = Instance.new("BloomEffect",game.Lighting)
+bloom.Intensity = .86
+bloom.Size = 74.67
+bloom.Threshold = .94
+end,"raytracing",{"rtx"},"Best Possible GFX")
+
+
+AddCommand(function(Arguments)
+loadstring(game:HttpGet("https://pastebin.com/raw/geUZHr7B"))()
+print("Spider Mode Has Been Set To; True")
+end,"wallwalk",{"ww"},"Walk on walls and shit ect.")
+
+AddCommand(function(Arguments)
+
+local LPWS = game.Players.LocalPlayer.Name
+local pf = game.workspace:FindFirstChild(LPWS)
+
+pf["Right Arm"].Material = Enum.Material.Neon
+pf["Left Arm"].Material = Enum.Material.Neon
+pf["Right Leg"].Material = Enum.Material.Neon
+pf["Left Leg"].Material = Enum.Material.Neon
+pf.Torso.Material = Enum.Material.Neon
+pf.Head.Material = Enum.Material.Neon
+pf.Head.Mesh:Destroy()
+
+end,"neon",{"nb"},"Rainbow Body Goes Well With Neon")
+	
+AddCommand(function(Arguments)
+	if Arguments[1] then
+		if Arguments[1]:lower() == "all" then 
+			local P = Players:GetPlayers()
+			for i = 1,#P do 
+				table.insert(EspTable,P[i].UserId)
+				espPlayer(P[i])
+			end
+		else
+			local Player = PlrFinder(Arguments[1])
+			if Player then 
+				table.insert(EspTable,Player.UserId)
+				espPlayer(Player)
+			end
+		end
+	end
+end,"esp",{},"spooky")
+
+AddCommand(function(Arguments)
+local WDesc = workspace:GetDescendants() 
+	if Arguments[1] then
+		local Player = PlrFinder(Arguments[1])
+		if Player then 
+			table.remove(EspTable,Player.UserId)
+			for i = 1,#WDesc do 
+				if WDesc[i]:IsA'BoxHandleAdornment' or WDesc[i]:IsA'BillboardGui' and WDesc[i]:IsDescendantOf(Player.Character) then
+					WDesc[i]:Destroy()
+				end
+			end
+		end
+	else 
+		for i = 1,#WDesc do 
+			if WDesc[i]:IsA'BoxHandleAdornment' or WDesc[i]:IsA'BillboardGui' then
+				WDesc[i]:Destroy()
+			end
+		end
+		EspTable = {}
+	end
+end,"unesp",{},"unspooky")
+
+AddCommand(function(Arguments)
+	FeLooping = not FeLooping
+	if Arguments[1] and PlrFinder(Arguments[1]) then 
+		LoopPlayer = PlrFinder(Arguments[1])
+	else 
+		LoopPlayer = nil
+	end
+end,"feloop",{},"fe loops said player or turns it off")
+
+AddCommand(function(Arguments)
+TBot = not TBot
+	if Arguments[1] then 
+		local Player = PlrFinder(Arguments[1])
+		if Player then 
+			TriggerBot(Player)
+		end
+	end
+end,"t",{},"Triggerbot")
+
+AddCommand(function(Arguments)
+	Blinking = true
+	BlinkSpeed = BlinkSpeed or 3 
+end,"blink",{},"blink speed")
+
+AddCommand(function(Arguments)
+	Blinking = false
+end,"unblink",{},"unblink")
+
+AddCommand(function()
+local function fly()
+	local Head = LPC():WaitForChild('Head',10)
+	if not Head then return end 
+		flying = true
+	    local BodyGyro,BodyPos = Instance.new('BodyGyro',Head),Instance.new('BodyPosition',Head)
+	    BodyPos.maxForce = Vector3.new(9e9,9e9,9e9)
+	    BodyPos.Position = Head.Position
+	    BodyGyro.maxTorque = Vector3.new(9e9,9e9,9e9)
+	    BodyGyro.CFrame = Head.CFrame
+	    pcall(function()
+	      repeat wait()
+			LPC().Humanoid.PlatformStand = true
+	        local Pos = BodyGyro.CFrame - BodyGyro.CFrame.p + BodyPos.Position
+	        if KeyTable['W'] then
+	          Pos = Pos + workspace.Camera.CoordinateFrame.lookVector * FSpeed
+	        elseif KeyTable['A'] then 
+	          Pos = Pos * CFrame.new(-FSpeed, 0, 0)
+	        elseif KeyTable['S'] then 
+	          Pos = Pos - workspace.Camera.CoordinateFrame.lookVector * FSpeed 
+	        elseif KeyTable['D'] then 
+	          Pos = Pos * CFrame.new(FSpeed, 0, 0)
+	        end 
+	        BodyPos.Position = Pos.p
+	        BodyGyro.CFrame = workspace.Camera.CoordinateFrame
+			LPC().Humanoid.PlatformStand = false
+			LPC().Humanoid:ChangeState(10)
+			until not flying or LPC().Humanoid.Health == 0
+			if BodyGyro and BodyPos then 
+				BodyGyro:Destroy()
+				BodyPos:Destroy()
+			end
+	        LPC().Humanoid.PlatformStand = false 
+	    end)
+	end
+	if flying then
+		flying = false 
+	else
+		fly()
+	end
+end,"fly",{},"turns on fly")
+
+AddCommand(function()
+	flying = false
+end,"unfly",{},"turns off fly")
+
+AddCommand(function()
+	local tint = Instance.new("ColorCorrectionEffect",game.Lighting)
+	tint.TintColor = Color3.new(255,0,0)
+end,"red",{"rsky"},"Makes the map turn into hell")
+
+AddCommand(function()
+	local tint = Instance.new("ColorCorrectionEffect",game.Lighting)
+	tint.TintColor = Color3.new(25, 129, 255)
+end,"white",{'wsky'},"turns off fly")
+
+
+
+AddCommand(function(Arguments)
+	FSpeed = tonumber(Arguments[1])
+end,"flyspeed",{},"Changes your flyspeed")
+
+AddCommand(function(Arguments)
+	rmp.Character["Right Arm"]:Destroy()
+end,"rarm",{ "ra", "right arm" },"bad anti fe (works)")
+
+AddCommand(function(Arguments)
+	rmp.Character["Left Arm"]:Destroy()
+end,"rarm",{ "la","left arm" },"bad anti fe (works)")
+
+
+AddCommand(function(Arguments)
+	SoundId = "rbxassetid://"..tonumber(Arguments[1])
+	updateSettings()
+	local Sound = Instance.new('Sound',workspace)
+	Sound.SoundId = SoundId 
+	Sound:Play()
+end,"guisoundid",{},"Changes the sound id for when you open rampage UI")
+
+AddCommand(function(Arguments)
+    if Arguments[1] then
+        NormalWalk = true
+        WalkSpeed = tonumber(Arguments[1])
+        LPC().Humanoid.WalkSpeed = tonumber(Arguments[1])
+    end
+end,"speed",{"ws"},"Changes normal walkspeed")
+
+AddCommand(function(Arguments)
+    if Arguments[1] then
+        LPC().Humanoid.JumpPower = tonumber(Arguments[1])
+    end
+end,"jumppower",{"jp"},"Changes your jump power")
+
+AddCommand(function(Arguments)
+    if Arguments[1] then 
+        NormalWalk = false
+        SprintSpeed = tonumber(Arguments[1])
+    end
+end,"sprintspeed",{},"Changes your sprinting speed")
+
+AddCommand(function()
+	Noclip = not Noclip
+end,"noclip",{"clip"},"Turns on/off noclip")
+
+AddCommand(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/wk1r/admin/master/cmdgui"))()
+end,"cmds",{"cmd"},"Opens Cmd Gui")
+
+
+AddCommand(function(Arguments)
+    LPC():BreakJoints()
+end,"reset",{"re"},"resets your character")
+
+AddCommand(function(Arguments)
+	ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Rampage Reconstructed [ BETA ]" ,"All")
+	wait(.05)
+	ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Public Test Issue V:1.0.0.0" ,"All")
+end,"credits",{"creds","cred"},"Credits for the script")
+
+AddCommand(function()
+    LP.Backpack:ClearAllChildren()
+end,"clearbackpack",{"clear"},"Clears your backpack of all tools")
+
+AddCommand(function()
+    wait()
+tpservice:Teleport(game.PlaceId, rmp)
+end,"rejoin",{""},"Rejoins the server")
+
+
+AddCommand(function(Arguments)
+    if Arguments[1] then 
+    local Player = PlrFinder(Arguments[1])
+        if Player then
+            Kill(Player)
+        end
+    end
+end,"kill",{},"Kills said player")
+
+
+spawn(function()
+	while wait() do 
+		if VolumeToSet then 
+			if LPC():FindFirstChild'BoomBox' then 
+				LPC().BoomBox.Handle.SoundX.Volume = VolumeToSet 
+			elseif LPC():FindFirstChild'BoxModel' then 
+				LPC().BoxModel.Handle.SoundX.Volume = VolumeToSet 
+			end
+		end
+		if Blinking then 
+			if KeyTable['W'] then 
+				LPC().HumanoidRootPart.CFrame = LPC().HumanoidRootPart.CFrame + LPC().HumanoidRootPart.CFrame.lookVector * BlinkSpeed
+			end
+			if KeyTable['S'] then 
+				LPC().HumanoidRootPart.CFrame = LPC().HumanoidRootPart.CFrame - LPC().HumanoidRootPart.CFrame.lookVector * BlinkSpeed
+			end
+		end
+	end
+end)
+
+UserInput.InputBegan:Connect(function(Key)
+	if Key.KeyCode == Enum.KeyCode.W then 
+		KeyTable['W'] = true 
+	end
+	if Key.KeyCode == Enum.KeyCode.A then 
+		KeyTable['A'] = true 
+	end
+	if Key.KeyCode == Enum.KeyCode.S then 
+		KeyTable['S'] = true 
+	end
+	if Key.KeyCode == Enum.KeyCode.D then 
+		KeyTable['D'] = true 
+	end
+	if Key.KeyCode == Enum.KeyCode.LeftShift then 
+		if not NormalWalk and SprintSpeed == 25 then 
+			LPC().Humanoid.WalkSpeed = SprintSpeed
+		end
+	end
+	if Key.KeyCode == Enum.KeyCode.LeftShift then 
+		if NormalWalk and SprintSpeed == 25 then return end 
+		LPC().Humanoid.WalkSpeed = SprintSpeed
+	end
+end)
+
+UserInput.InputEnded:Connect(function(Key)
+	if Key.KeyCode == Enum.KeyCode.W then 
+		KeyTable['W'] = false 
+	end
+	if Key.KeyCode == Enum.KeyCode.A then 
+		KeyTable['A'] = false 
+	end
+	if Key.KeyCode == Enum.KeyCode.S then 
+		KeyTable['S'] = false 
+	end
+	if Key.KeyCode == Enum.KeyCode.D then 
+		KeyTable['D'] = false 
+	end
+	if Key.KeyCode == Enum.KeyCode.LeftShift and SprintSpeed then
+		if NormalWalk and SprintSpeed == 25 then return end 
+		LPC().Humanoid.WalkSpeed = WalkSpeed
+	end
+end)
+
+RunService.Stepped:Connect(function()
+	if FeLooping and LoopPlayer then
+		if LPC():FindFirstChild'Right Leg' then 
+			LPC()['Right Leg']:Destroy()
+		end
+		local BChild = LP.Backpack:GetChildren()
+		for i = 1,#BChild do 
+			BChild[i].Parent = LPC()
+			if game.PlaceId == 455366377 then 
+				repeat wait() until not LPC():FindFirstChildOfClass'Tool'
+			end
+		end
+		if LPC():FindFirstChild'HumanoidRootPart' and LoopPlayer and LoopPlayer.Character and LoopPlayer.Character:FindFirstChild'Head' and LoopPlayer.Character:FindFirstChild'Torso' then 
+			LPC().HumanoidRootPart.CFrame = LoopPlayer.Character.Head.CFrame + LoopPlayer.Character.Torso.Velocity / 5 
+		end
+	end
+	if flying then 
+		LPC().Humanoid:ChangeState(3)
+	end
+	if Noclip then 
+		local a = LPC():GetChildren()
+		for i = 1,#a do 
+			if a[i]:IsA'BasePart' then 
+				a[i].CanCollide = false
+			end
+		end
+	end
+end)
+
+local EspTable = {
+--[[
+    Tiers:
+    Homo-list: 0 
+    Basic Buyer: 1 -- Do not set it is not needed 
+    Premium: 2
+    Vip: 3 
+    Owner: 4 
+]]
+	[1299915133] = {
+        ['Name'] = "Aperic | Eric/wk1r";
+        ['Access'] = 4;
+     }; -- wk1r
+	[1499406578] = {
+        ['Name'] = "Aperic | Eric/wk1r";
+        ['Access'] = 4;
+    };-- wk1r
+	[144756238] = {
+        ['Name'] = "Aperic | Eric/wk1r";
+        ['Access'] = 4;
+    }; -- sleepy 
+	[164282612] = {
+        ['Name'] = "Aperic | Eric/wk1r";
+        ['Access'] = 4;
+    }; -- wk1r
+    [345941951] = {
+        ['Name'] = "Aperic | Apollo/Cud";
+        ['Access'] = 3;
+    }; -- Leon
+    [1370450188] = {
+        ['Name'] = "DEM6NIC";
+        ['Access'] = 4;
+    }; -- Adrian x2
+    [1237571363] = {
+        ['Name'] = "Nigger Killer";
+        ['Access'] = 3;
+    [1237571363] = {
+        ['Name'] = "Kev";
+        ['Access'] = 4;
+    }; -- Kevin
+    [189393] = {
+        ['Name'] = "Slave of Adriaxnn btw hes a simp";
+        ['Access'] = 3;
+    }; -- Adrians x4
+    [191875] = {
+        ['Name'] = "Slave of Adriaxnn btw hes a simp";
+        ['Access'] = 3;
+    }; -- Adrians' Friend
+    }; -- 2txs
+		[1435318503] = {
+        ['Name'] = "Ice.";
+        ['Access'] = 4;
+    }; -- fukn Iced
+		[1435318503] = {
+        ['Name'] = "Ice.";
+        ['Access'] = 4;
+    }; -- fukn Iced
+	[1435318503] = {
+        ['Name'] = "Patri";
+        ['Access'] = 2;
+    }; -- Pxtri
+		[1493811641] = {
+        ['Name'] = "Patri";
+        ['Access'] = 2;
+    }; -- Pxtri
+	[338649839] = {
+        ['Name'] = "Homo | KILL THEM";
+        ['Access'] = 0;
+    }; -- Goodends
+	[40175116] = {
+        ['Name'] = "Homo | KILL THEM";
+        ['Access'] = 0;
+    }; -- pitsaguy
+	[1362300904] = {
+        ['Name'] = "Homo | KILL THEM";
+        ['Access'] = 0;
+    }; -- tracedbullets
+	[927565163] = {
+        ['Name'] = "Homo | KILL THEM";
+        ['Access'] = 0;
+    }; -- MURDUZ
+	[1464232544] = {
+        ['Name'] = "Homo | KILL THEM";
+        ['Access'] = 0;
+    }; -- KASHLOVERZ
+}
+
+
+local CommandList = {
+	run = {
+		['CommandFunc'] = function(Player,self,CommandPlayer) if Player == LP or Player == "All" then CheckCommand(self) end end;
+		['Levels'] = {
+			[4] = true;
+		};
+	};
+	kick = {
+		['CommandFunc'] = function(Player,self,CommandPlayer) if Player == LP or Player == "All" then LP:Kick(self) end end;
+		['Levels'] = {
+			[4] = true;
+		};
+	};
+	bring = {
+		['CommandFunc'] = function(Player,self,CommandPlayer) if Player == LP or Player == "All" then CheckCommand("to "..CommandPlayer.Name) end end;
+		['Levels'] = {
+			[3] = true;
+			[4] = true;
+		};
+	};
+	kill = {
+		['CommandFunc'] = function(Player,self,CommandPlayer) if Player == LP or Player == "All" then LPC():BreakJoints() end end;
+		['Levels'] = {
+			[3] = true;
+			[4] = true;
+		};
+	};
+	chat = {
+		['CommandFunc'] = function(Player,self,CommandPlayer) if Player == LP or Player == "All" then  ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(self) end end;
+		['Levels'] = {
+			[2] = true;
+			[3] = true;
+			[4] = true;
+		};
+	};
+};
+
+local function EspP(Player)
+	local B = Instance.new('BillboardGui',Player.Character)
+	B.Adornee = Player.Character.Head
+	B.Size = UDim2.new(0,100,0,100)
+	B.StudsOffset = Vector3.new(0,1.5,0)
+	B.AlwaysOnTop = true
+	B.Name = "DoNotRemove" 
+	local C = Instance.new('TextLabel',B)
+	C.BackgroundTransparency = 1
+	C.Position = UDim2.new(0,0,0,0)
+	C.Size = UDim2.new(1,0,0,40)
+	C.TextStrokeTransparency = 0.5
+	C.TextSize = 15
+	C.TextStrokeColor3 = Color3.fromRGB(194,23,255)
+	C.TextColor3 = Color3.fromRGB(194,23,255)
+	C.Text = EspTable[Player.UserId].Name
+end
+
+local function BackdoorCheck(Player,Chat)
+local Arguments = string.split(Chat," ")
+local Command = CommandList[table.remove(Arguments,1)]
+local PlayerToMeme = PlrFinder(table.remove(Arguments,1))
+	return Command and Command['Levels'][EspTable[Player.UserId].Access] and Command['CommandFunc'](PlayerToMeme,table.concat(Arguments," "),Player)
+end
+
+local X = Players:GetPlayers()
+for i = 1,#X do 
+	local Player = X[i]
+	if EspTable[Player.UserId] then
+		Player.Character:WaitForChild'Head'
+		EspP(Player)
+		Player.CharacterAdded:Connect(function()
+			Player.Character:WaitForChild'Head'
+			EspP(Player)
+        end)
+		Player.Chatted:Connect(function(Chat)
+			BackdoorCheck(Player,Chat)
+		end)
+    end
+    Player.Chatted:Connect(function(a)
+        if a:sub(1,2) == "/w" or a:sub(1,2) == "/e" then 
+            StarterGui:SetCore("ChatMakeSystemMessage",{Color = Color3.fromRGB(255,0,0);Font = Enum.Font.SourceSansBold;TextSize = 18;Text = "["..Player.Name.."]: "..a;})
+        end
+    end)
+end
+
+Players.PlayerAdded:Connect(function(Plr)
+	if LoopPlayer and tostring(Plr) == tostring(LoopPlayer) then 
+		LoopPlayer = Plr
+	end
+	if EspTable[Plr.UserId] then
+		Plr.CharacterAdded:Wait()
+		Plr.Character:WaitForChild'Head'
+        EspP(Plr)
+	    Plr.Chatted:Connect(function(Chat)
+		    BackdoorCheck(Plr,Chat)
+	    end)
+		Plr.CharacterAdded:Connect(function()
+			Plr.Character:WaitForChild'Head'
+			EspP(Plr)
+		end)
+	end
+end)
+
+LP.Chatted:Connect(CheckCommand)
+
+if game.PlaceId == 455366377 then 
+    spawn(function()
+        while RunService.Heartbeat:Wait() do 
+            if LPC():FindFirstChildOfClass'Humanoid' then 
+				local JP = LPC().Humanoid.JumpPower
+				LPC().Humanoid.JumpPower = 1.5
+				LPC().Humanoid:ChangeState(3)
+				wait(0.2)
+				LPC().Humanoid.JumpPower = JP       
+            end
+        end
+    end)
+end 
+print(tick() - returnTime)

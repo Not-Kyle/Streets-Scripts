@@ -1,0 +1,60 @@
+mouse = game.Players.LocalPlayer:GetMouse()
+voidtoggle = false
+voidprocessing = false
+ 
+mouse.KeyDown:Connect(function(key)
+    if key == "v" then
+        local hat = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Accessory")
+        if voidtoggle == false and voidprocessing == false then
+            voidprocessing = true
+            local handle = hat:FindFirstChild("Handle")
+            local Tool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+            if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                game.Players.LocalPlayer.Character.Torso.Anchored = true
+            elseif game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
+                game.Players.LocalPlayer.Character.UpperTorso.Anchored = true
+            end
+            handle.Parent = Tool
+            handle.Massless = true
+            Tool.GripPos = Vector3.new(0,tonumber(9e99),0)
+            Tool.Parent = game.Players.LocalPlayer.Character
+            repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Tool")~=nil
+            Tool.Grip = CFrame.new(Vector3.new(0,0,0))
+            if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                game.Players.LocalPlayer.Character.Torso.Anchored = false
+            elseif game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
+                game.Players.LocalPlayer.Character.UpperTorso.Anchored = false
+            end
+            Tool.Unequipped:Connect(function()
+                wait()
+                local Handle = Tool:FindFirstChild("Handle")
+                if Handle then
+                    Handle.Parent = hat
+                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+                    Handle.Massless = false
+                    Tool:Destroy()
+                end
+                voidtoggle = false
+            end)
+            voidtoggle = true
+            voidprocessing = false
+        elseif voidtoggle == true and voidprocessing == false then
+            voidprocessing = true
+            local Tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Tool") or game.Players.LocalPlayer.Character:FindFirstChild("Tool")
+            local Handle = Tool:FindFirstChild("Handle")
+            if Handle then
+                Handle.Parent = hat
+                game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+                Handle.Massless = false
+                Tool:Destroy()
+            end
+            voidtoggle = true
+            voidprocessing = false
+        end
+    end
+end)
+ 
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    voidtoggle = false
+    voidprocessing = false
+end)

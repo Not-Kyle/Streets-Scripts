@@ -1,0 +1,3379 @@
+---SCARRRRRRRRR
+
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("[Scarsploit]: Leaked By RoyaIScar Ur Welcome.  ","All")
+    wait(1)
+ 
+ 
+ 
+ 
+local ZET0XV9Screen = Instance.new("ScreenGui")
+local ZET0XV9Frame = Instance.new("Frame")
+local IgnoreTextzetox2 = Instance.new("TextLabel")
+local HomeOpen = Instance.new("TextButton")
+local TeleportsOpen = Instance.new("TextButton")
+local FightingOpen = Instance.new("TextButton")
+local OtherOpen = Instance.new("TextButton")
+local InfoOpen = Instance.new("TextButton")
+local IgnoreTextzetox = Instance.new("TextLabel")
+local Home2 = Instance.new("TextLabel")
+local Home1 = Instance.new("ImageLabel")
+local Home3 = Instance.new("TextLabel")
+local CarSetttingss = Instance.new("TextLabel")
+local CarTorque = Instance.new("TextBox")
+local CarMaxSpeed = Instance.new("TextBox")
+local Apply = Instance.new("TextButton")
+local Teleports1 = Instance.new("TextButton")
+local Teleports2 = Instance.new("TextButton")
+local Teleports3 = Instance.new("TextButton")
+local Teleports4 = Instance.new("TextButton")
+local teleports5 = Instance.new("TextButton")
+local Teleports6 = Instance.new("TextButton")
+local Fighting1 = Instance.new("TextButton")
+local Fighting2 = Instance.new("TextButton")
+local Fighting3 = Instance.new("TextButton")
+local Fighting4 = Instance.new("TextButton")
+local Fighting5 = Instance.new("TextButton")
+local Fighting6 = Instance.new("TextButton")
+local Other1 = Instance.new("TextButton")
+local Other2 = Instance.new("TextButton")
+local Other3 = Instance.new("TextButton")
+local Other4 = Instance.new("TextButton")
+local Other5 = Instance.new("TextButton")
+local Other6 = Instance.new("TextButton")
+local _4 = Instance.new("ImageLabel")
+local IntroText = Instance.new("TextLabel")
+local _3 = Instance.new("ImageLabel")
+local _2 = Instance.new("ImageLabel")
+local _1 = Instance.new("ImageLabel")
+local Animation1 = Instance.new("TextButton")
+local Animation2 = Instance.new("TextButton")
+local Animation6 = Instance.new("TextButton")
+local Animation5 = Instance.new("TextButton")
+local Animation4 = Instance.new("TextButton")
+local Animation3 = Instance.new("TextButton")
+ 
+local OPENZET0XV9 = Instance.new("TextButton")
+ 
+ 
+ZET0XV9Screen.Name = "ZET0XV9Screen"
+ZET0XV9Screen.Parent = game.CoreGui
+ 
+ZET0XV9Frame.Name = "ZET0XV9Frame"
+ZET0XV9Frame.Parent = ZET0XV9Screen
+ZET0XV9Frame.BackgroundColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+ZET0XV9Frame.BackgroundTransparency = 0.30000001192093
+ZET0XV9Frame.BorderSizePixel = 0
+ZET0XV9Frame.Position = UDim2.new(0.138999999, 1, 0.435000002, 0)
+ZET0XV9Frame.Size = UDim2.new(0, 374, 0, 246)
+ZET0XV9Frame.Visible = false
+ 
+_4.Name = "4"
+_4.Parent = ZET0XV9Screen
+_4.BackgroundColor3 = Color3.new(1, 1, 1)
+_4.BackgroundTransparency = 1
+_4.Position = UDim2.new(-0.0752630532, 0, 0.552182138, 0)
+_4.Size = UDim2.new(0, 197, 0, 172)
+_4.Visible = false
+_4.Image = "rbxassetid://912250758"
+ 
+ 
+CarSetttingss.Name = "CarSetttingss"
+CarSetttingss.Parent = ZET0XV9Screen
+CarSetttingss.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+CarSetttingss.BorderColor3 = Color3.new(0.654902, 0.466667, 0.835294)
+CarSetttingss.BorderSizePixel = 3
+CarSetttingss.Position = UDim2.new(0.481000006, 0, 0.441000015, 0)
+CarSetttingss.Size = UDim2.new(0, 87, 0, 240)
+CarSetttingss.Visible = false
+CarSetttingss.Font = Enum.Font.SourceSans
+CarSetttingss.Text = ""
+CarSetttingss.TextColor3 = Color3.new(0.67451, 0.47451, 0.854902)
+CarSetttingss.TextSize = 14
+ 
+CarTorque.Name = "CarTorque"
+CarTorque.Parent = CarSetttingss
+CarTorque.BackgroundColor3 = Color3.new(0.227451, 0.290196, 0.305882)
+CarTorque.BorderColor3 = Color3.new(0.556863, 0.419608, 0.72549)
+CarTorque.Position = UDim2.new(0.0574712828, 0, 0.425000012, 0)
+CarTorque.Size = UDim2.new(0, 77, 0, 34)
+CarTorque.Font = Enum.Font.Fantasy
+CarTorque.Text = "Car Torque"
+CarTorque.TextColor3 = Color3.new(0.682353, 0.478431, 0.866667)
+CarTorque.TextSize = 14
+ 
+CarMaxSpeed.Name = "CarMaxSpeed"
+CarMaxSpeed.Parent = CarSetttingss
+CarMaxSpeed.BackgroundColor3 = Color3.new(0.258824, 0.294118, 0.301961)
+CarMaxSpeed.BorderColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+CarMaxSpeed.Position = UDim2.new(0.0574712679, 0, 0.154166684, 0)
+CarMaxSpeed.Size = UDim2.new(0, 77, 0, 34)
+CarMaxSpeed.Font = Enum.Font.Fantasy
+CarMaxSpeed.Text = "Car MaxSpeed"
+CarMaxSpeed.TextColor3 = Color3.new(0.686275, 0.482353, 0.870588)
+CarMaxSpeed.TextSize = 14
+CarMaxSpeed.TextWrapped = true
+ 
+Apply.Name = "Apply"
+Apply.Parent = CarSetttingss
+Apply.BackgroundColor3 = Color3.new(0.227451, 0.290196, 0.305882)
+Apply.BorderColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+Apply.BorderSizePixel = 3
+Apply.Position = UDim2.new(0.0804597735, 0, 0.712499976, 0)
+Apply.Size = UDim2.new(0, 72, 0, 31)
+Apply.Font = Enum.Font.Fantasy
+Apply.Text = "APPLY"
+Apply.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+Apply.TextSize = 14
+Apply.MouseButton1Down:connect(function()
+for Num, Obj in pairs(game.Workspace:GetChildren()) do
+if Obj.Name == "Car" and Obj:FindFirstChild("Drive") ~= nil then
+Obj.Drive.MaxSpeed = CarMaxSpeed
+Obj.Drive.Torque = CarTorque
+end
+end
+end)
+ 
+IntroText.Name = "IntroText"
+IntroText.Parent = _4
+IntroText.BackgroundColor3 = Color3.new(1, 1, 1)
+IntroText.BackgroundTransparency = 1
+IntroText.Position = UDim2.new(0.675126851, 0, -0.279069752, 0)
+IntroText.Size = UDim2.new(0, 227, 0, 72)
+IntroText.Font = Enum.Font.Gotham
+IntroText.Text = ""
+IntroText.TextColor3 = Color3.new(255, 255, 255)
+IntroText.TextSize = 14
+ 
+_3.Name = "3"
+_3.Parent = ZET0XV9Screen
+_3.BackgroundColor3 = Color3.new(1, 1, 1)
+_3.BackgroundTransparency = 1
+_3.Position = UDim2.new(-0.101722926, 0, 0.552182138, 0)
+_3.Size = UDim2.new(0, 197, 0, 172)
+_3.Visible = false
+_3.Image = "rbxassetid://912250758"
+ 
+_2.Name = "2"
+_2.Parent = ZET0XV9Screen
+_2.BackgroundColor3 = Color3.new(1, 1, 1)
+_2.BackgroundTransparency = 1
+_2.Position = UDim2.new(-0.133657232, 0, 0.552182138, 0)
+_2.Size = UDim2.new(0, 197, 0, 172)
+_2.Visible = false
+_2.Image = "rbxassetid://912250758"
+ 
+_1.Name = "1"
+_1.Parent = ZET0XV9Screen
+_1.BackgroundColor3 = Color3.new(1, 1, 1)
+_1.BackgroundTransparency = 1
+_1.Position = UDim2.new(-0.161941901, 0, 0.552182138, 0)
+_1.Size = UDim2.new(0, 197, 0, 172)
+_1.Visible = false
+_1.Image = "rbxassetid://912250758"
+ 
+IgnoreTextzetox2.Name = "IgnoreTextzetox2"
+IgnoreTextzetox2.Parent = ZET0XV9Frame
+IgnoreTextzetox2.BackgroundColor3 = Color3.new(0.666667, 0, 1)
+IgnoreTextzetox2.BackgroundTransparency = 0.60000002384186
+IgnoreTextzetox2.BorderSizePixel = 0
+IgnoreTextzetox2.Position = UDim2.new(-0.0162351076, 0, 0, 0)
+IgnoreTextzetox2.Size = UDim2.new(0, 6, 0, 246)
+IgnoreTextzetox2.Font = Enum.Font.SourceSans
+IgnoreTextzetox2.Text = ""
+IgnoreTextzetox2.TextColor3 = Color3.new(0, 0, 0)
+IgnoreTextzetox2.TextSize = 14
+ 
+HomeOpen.Name = "HomeOpen"
+HomeOpen.Parent = ZET0XV9Frame
+HomeOpen.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+HomeOpen.BorderSizePixel = 0
+HomeOpen.Position = UDim2.new(-0.508000016, 37, 0, 0)
+HomeOpen.Size = UDim2.new(0, 148, 0, 50)
+HomeOpen.Font = Enum.Font.Arial
+HomeOpen.Text = "Home"
+HomeOpen.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+HomeOpen.TextSize = 14
+HomeOpen.MouseButton1Down:connect(function()
+  if Openn1 == true then
+                    Openn1 = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+                else
+                    Openn1 = true
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = true
+Home2.Visible = true
+Home3.Visible = true
+                end
+end)
+ 
+TeleportsOpen.Name = "TeleportsOpen"
+TeleportsOpen.Parent = ZET0XV9Frame
+TeleportsOpen.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+TeleportsOpen.BorderSizePixel = 0
+TeleportsOpen.Position = UDim2.new(-0.508000016, 37, 0.203252032, 0)
+TeleportsOpen.Size = UDim2.new(0, 148, 0, 50)
+TeleportsOpen.Font = Enum.Font.Arial
+TeleportsOpen.Text = "Teleports"
+TeleportsOpen.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+TeleportsOpen.TextSize = 14
+TeleportsOpen.MouseButton1Down:connect(function()
+if Openn2 == true then
+                    Openn2 = false
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+                else
+                    Openn2 = true
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = true
+Teleports2.Visible = true
+Teleports3.Visible = true
+Teleports4.Visible = true
+teleports5.Visible = true
+Teleports6.Visible = true
+                end
+end)
+ 
+FightingOpen.Name = "FightingOpen"
+FightingOpen.Parent = ZET0XV9Frame
+FightingOpen.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+FightingOpen.BorderSizePixel = 0
+FightingOpen.Position = UDim2.new(-0.508000016, 37, 0.398373961, 0)
+FightingOpen.Size = UDim2.new(0, 148, 0, 50)
+FightingOpen.Font = Enum.Font.Arial
+FightingOpen.Text = "Fighting"
+FightingOpen.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+FightingOpen.TextSize = 14
+FightingOpen.MouseButton1Down:connect(function()
+if Openn3 == true then
+                    Openn3 = false
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+                else
+                    Openn3 = true
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Fighting1.Visible = true
+Fighting2.Visible = true
+Fighting3.Visible = true
+Fighting4.Visible = true
+Fighting5.Visible = true
+Fighting6.Visible = true
+                end
+end)
+ 
+OtherOpen.Name = "OtherOpen"
+OtherOpen.Parent = ZET0XV9Frame
+OtherOpen.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+OtherOpen.BorderSizePixel = 0
+OtherOpen.Position = UDim2.new(-0.508000016, 37, 0.601625979, 0)
+OtherOpen.Size = UDim2.new(0, 148, 0, 50)
+OtherOpen.Font = Enum.Font.Arial
+OtherOpen.Text = "Other"
+OtherOpen.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+OtherOpen.TextSize = 14
+OtherOpen.MouseButton1Down:connect(function()
+if Openn4 == true then
+                    Openn4 = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+                else
+                    Openn4 = true
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Other1.Visible = true
+Other2.Visible = true
+Other3.Visible = true
+Other4.Visible = true
+Other5.Visible = true
+Other6.Visible = true
+                end
+end)
+ 
+InfoOpen.Name = "InfoOpen"
+InfoOpen.Parent = ZET0XV9Frame
+InfoOpen.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+InfoOpen.BorderSizePixel = 0
+InfoOpen.Position = UDim2.new(-0.508000016, 37, 0.804878056, 0)
+InfoOpen.Size = UDim2.new(0, 148, 0, 48)
+InfoOpen.Font = Enum.Font.Arial
+InfoOpen.Text = "Animations"
+InfoOpen.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+InfoOpen.TextSize = 14
+InfoOpen.MouseButton1Down:connect(function()
+if Openn5 == true then
+                    Openn5 = false
+Animation1.Visible = false
+Animation2.Visible = false
+Animation3.Visible = false
+Animation4.Visible = false
+Animation5.Visible = false
+Animation6.Visible = false
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+                else
+                    Openn5 = true
+Other1.Visible = false
+Other2.Visible = false
+Other3.Visible = false
+Other4.Visible = false
+Other5.Visible = false
+Other6.Visible = false
+Fighting1.Visible = false
+Fighting2.Visible = false
+Fighting3.Visible = false
+Fighting4.Visible = false
+Fighting5.Visible = false
+Fighting6.Visible = false
+Teleports1.Visible = false
+Teleports2.Visible = false
+Teleports3.Visible = false
+Teleports4.Visible = false
+teleports5.Visible = false
+Teleports6.Visible = false
+Home1.Visible = false
+Home2.Visible = false
+Home3.Visible = false
+Animation1.Visible = true
+Animation2.Visible = true
+Animation3.Visible = true
+Animation4.Visible = true
+Animation5.Visible = true
+Animation6.Visible = true
+                end
+end)
+ 
+IgnoreTextzetox.Name = "IgnoreTextzetox"
+IgnoreTextzetox.Parent = ZET0XV9Frame
+IgnoreTextzetox.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+IgnoreTextzetox.BorderSizePixel = 0
+IgnoreTextzetox.Size = UDim2.new(0, 374, 0, 50)
+IgnoreTextzetox.Font = Enum.Font.Gotham
+IgnoreTextzetox.Text = "Zetox V9"
+IgnoreTextzetox.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+IgnoreTextzetox.TextSize = 18
+ 
+Home2.Name = "Home2"
+Home2.Parent = ZET0XV9Frame
+Home2.BackgroundColor3 = Color3.new(1, 1, 1)
+Home2.BackgroundTransparency = 1
+Home2.Position = UDim2.new(-0.00267377496, 0, 0.203252032, 0)
+Home2.Size = UDim2.new(0, 374, 0, 196)
+Home2.Visible = false
+Home2.Font = Enum.Font.Fantasy
+Home2.Text = "Cracked By Scarsploit Gang Get Rekt Oskar Ima Advertise My Discord Too Scarrr#1337 inv code :aBxj3aQ"
+Home2.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+Home2.TextSize = 14
+Home2.TextWrapped = true
+Home2.TextYAlignment = Enum.TextYAlignment.Top
+ 
+Home1.Name = "Home1"
+Home1.Parent = ZET0XV9Frame
+Home1.BackgroundColor3 = Color3.new(1, 1, 1)
+Home1.BackgroundTransparency = 1
+Home1.Position = UDim2.new(-0.0053476342, 0, 0.573170722, 0)
+Home1.Size = UDim2.new(0, 127, 0, 111)
+Home1.Visible = false
+Home1.Image = "rbxassetid://295921091"
+ 
+Home3.Name = "Home3"
+Home3.Parent = ZET0XV9Frame
+Home3.BackgroundColor3 = Color3.new(1, 1, 1)
+Home3.BackgroundTransparency = 1
+Home3.Position = UDim2.new(0.510695159, 0, 0.735772312, 0)
+Home3.Size = UDim2.new(0, 200, 0, 50)
+Home3.Visible = false
+Home3.Font = Enum.Font.Fantasy
+Home3.Text = "Scarsploit = Skidded"
+Home3.TextColor3 = Color3.new(0.862745, 0, 0)
+Home3.TextSize = 14
+ 
+Teleports1.Name = "Teleports1"
+Teleports1.Parent = ZET0XV9Frame
+Teleports1.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Teleports1.BorderSizePixel = 3
+Teleports1.Position = UDim2.new(0.117647059, 0, 0.235772356, 0)
+Teleports1.Size = UDim2.new(0, 109, 0, 34)
+Teleports1.Visible = false
+Teleports1.Font = Enum.Font.Fantasy
+Teleports1.Text = "Bank"
+Teleports1.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Teleports1.TextSize = 14
+Teleports1.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (0.20)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-268,5,138)
+	local time = 0
+	local increment = 50
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false		
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-268,5,138))
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+ 
+Teleports2.Name = "Teleports2"
+Teleports2.Parent = ZET0XV9Frame
+Teleports2.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Teleports2.BorderSizePixel = 3
+Teleports2.Position = UDim2.new(0.117647059, 0, 0.491836399, 0)
+Teleports2.Size = UDim2.new(0, 109, 0, 34)
+Teleports2.Visible = false
+Teleports2.Font = Enum.Font.Fantasy
+Teleports2.Text = "Bar"
+Teleports2.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Teleports2.TextSize = 14
+Teleports2.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (0.20)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-962,4,-170)
+	local time = 0
+	local increment = 50
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-962,4,-170))
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+ 
+Teleports3.Name = "Teleports3"
+Teleports3.Parent = ZET0XV9Frame
+Teleports3.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Teleports3.BorderSizePixel = 3
+Teleports3.Position = UDim2.new(0.117647059, 0, 0.748497963, 0)
+Teleports3.Size = UDim2.new(0, 109, 0, 34)
+Teleports3.Visible = false
+Teleports3.Font = Enum.Font.Fantasy
+Teleports3.Text = "Gas Station "
+Teleports3.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Teleports3.TextSize = 14
+Teleports3.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 6
+wait (0.20)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(97,4,-89)
+	local time = 0
+	local increment = 50
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+wait (0.30)
+noclip = false
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(97,4,-89))
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+ 
+Teleports4.Name = "Teleports4"
+Teleports4.Parent = ZET0XV9Frame
+Teleports4.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Teleports4.BorderSizePixel = 3
+Teleports4.Position = UDim2.new(0.615493357, 0, 0.235772356, 0)
+Teleports4.Size = UDim2.new(0, 109, 0, 34)
+Teleports4.Visible = false
+Teleports4.Font = Enum.Font.Fantasy
+Teleports4.Text = "Sandpit"
+Teleports4.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Teleports4.TextSize = 14
+Teleports4.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (0.20)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-210,3,-114)
+	local time = 0
+	local increment = 50
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false	
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-210,3,-114))
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16	
+end)
+ 
+teleports5.Name = "teleports5"
+teleports5.Parent = ZET0XV9Frame
+teleports5.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+teleports5.BorderSizePixel = 3
+teleports5.Position = UDim2.new(0.615493357, 0, 0.491836399, 0)
+teleports5.Size = UDim2.new(0, 109, 0, 34)
+teleports5.Visible = false
+teleports5.Font = Enum.Font.Fantasy
+teleports5.Text = "Prison"
+teleports5.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+teleports5.TextSize = 14
+teleports5.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (0.20)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-972,3,-77)
+	local time = 0
+	local increment = 50
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false	
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-972,3,-77))
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16	
+end)
+ 
+Teleports6.Name = "Teleports6"
+Teleports6.Parent = ZET0XV9Frame
+Teleports6.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Teleports6.BorderSizePixel = 3
+Teleports6.Position = UDim2.new(0.615493357, 0, 0.748497963, 0)
+Teleports6.Size = UDim2.new(0, 109, 0, 34)
+Teleports6.Visible = false
+Teleports6.Font = Enum.Font.Fantasy
+Teleports6.Text = "Rape House"
+Teleports6.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Teleports6.TextSize = 14
+Teleports6.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (0.20)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(81,6,-511)
+	local time = 0
+	local increment = 50
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false	
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(81,6,-511))
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+ 
+Fighting1.Name = "Fighting1"
+Fighting1.Parent = ZET0XV9Frame
+Fighting1.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Fighting1.BorderSizePixel = 3
+Fighting1.Position = UDim2.new(0.117647059, 0, 0.235772356, 0)
+Fighting1.Size = UDim2.new(0, 109, 0, 34)
+Fighting1.Visible = false
+Fighting1.Font = Enum.Font.Fantasy
+Fighting1.Text = "Fast Attack"
+Fighting1.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Fighting1.TextSize = 14
+Fighting1.MouseButton1Down:connect(function()
+local player=game.Players.LocalPlayer
+player.Backpack:WaitForChild("Punch").Info.Cooldown.Value = 0.01
+player.Backpack.Punch.Info.AnimSpeed.Value = 5
+player.Backpack:WaitForChild("Knife").Info.Cooldown.Value = 0.01
+player.Backpack.Knife.Info.AnimSpeed.Value = 5
+if game:GetService("MarketplaceService"):PlayerOwnsAsset(player, 503266657) then
+player.Backpack:WaitForChild("Pipe").Info.Cooldown.Value = 0.01
+player.Backpack.Pipe.Info.AnimSpeed.Value = 5
+end
+player.Backpack.ChildAdded:connect(function(child)
+if child.Name == "Bat" or child.Name == "Bottle" then
+child:WaitForChild("Info").Cooldown.Value = 0.01
+child.Info.AnimSpeed.Value = 5
+end
+end)
+local player=game.Players.LocalPlayer
+player.Backpack.ServerTraits.Stam.Changed:connect(function()
+player.Backpack.ServerTraits.Stam.Value = 100
+end)
+end)
+Fighting2.Name = "Fighting2"
+Fighting2.Parent = ZET0XV9Frame
+Fighting2.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Fighting2.BorderSizePixel = 3
+Fighting2.Position = UDim2.new(0.117647059, 0, 0.491836399, 0)
+Fighting2.Size = UDim2.new(0, 109, 0, 34)
+Fighting2.Visible = false
+Fighting2.Font = Enum.Font.Fantasy
+Fighting2.Text = "Fast Stomp"
+Fighting2.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Fighting2.TextSize = 14
+Fighting2.MouseButton1Down:connect(function()
+Player = game.Players.LocalPlayer
+Mouse = Player:GetMouse()
+ 
+function PressY(key)
+    if (key == "e") then
+local tes = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.Players.LocalPlayer.Backpack.Punch.Finish)
+local plr = game.Players.LocalPlayer
+tes:Play()	
+    end
+end
+Mouse.KeyDown:connect(PressY)
+end)
+ 
+Fighting3.Name = "Fighting3"
+Fighting3.Parent = ZET0XV9Frame
+Fighting3.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Fighting3.BorderSizePixel = 3
+Fighting3.Position = UDim2.new(0.117647059, 0, 0.748497963, 0)
+Fighting3.Size = UDim2.new(0, 109, 0, 34)
+Fighting3.Visible = false
+Fighting3.Font = Enum.Font.Fantasy
+Fighting3.Text = "Spin Uzi"
+Fighting3.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Fighting3.TextSize = 14
+Fighting3.MouseButton1Down:connect(function()
+wait (0.30)
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+ 
+wait (0.30)
+ 
+ 
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.Name == "Uzi" then
+ 
+while true do
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(-0.001, -1, 0.005)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(-1.379, -1.538, -4.341)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(-1, 0.001, -0.014)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(-0.014, 0.005, 1)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(-0.003, -1, 0.004)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(-1.339, -1.538, -5.056)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(-0.871, 0.001, -0.491)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(-0.491, 0.005, 0.871)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(-0.005, -1, 0.002)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(-0.97, -1.538, -5.581)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(-0.522, 0.001, -0.853)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(-0.853, 0.005, 0.522)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(-0.005, -1, -0.001)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(0.003, -1.538, -5.755)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(0.026, 0.001, -1)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(-1, 0.005, -0.026)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(-0.004, -1, -0.003)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(0.503, -1.538, -5.655)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(0.49, 0.001, -0.872)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(-0.872, 0.005, -0.49)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(-0.002, -1, -0.005)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(1.132, -1.538, -5.18)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(0.867, 0.001, -0.499)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(-0.499, 0.005, -0.867)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(0.001, -1, -0.005)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(1.349, -1.538, -4.621)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(1, 0.001, 0.003)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(0.003, 0.005, -1)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(0.003, -1, -0.004)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(1.232, -1.538, -3.909)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(0.861, 0.001, 0.509)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(0.509, 0.005, -0.861)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(0.005, -1, -0.002)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(0.821, -1.538, -3.38)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(0.501, 0.001, 0.866)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(0.866, 0.005, -0.501)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(0.005, -1, 0.001)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(0.144, -1.538, -3.135)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(-0.005, 0.001, 1)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(1, 0.005, 0.005)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(0.004, -1, 0.003)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(-0.656, -1.538, -3.221)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(-0.481, 0.001, 0.877)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(0.877, 0.005, 0.481)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+ 
+ 
+wait(0.1)
+ 
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+game.Players.LocalPlayer.Backpack.Uzi.GripForward = Vector3.new(0.002, -1, 0.005)
+game.Players.LocalPlayer.Backpack.Uzi.GripPos     = Vector3.new(-1.131, -1.538, -3.591)
+game.Players.LocalPlayer.Backpack.Uzi.GripRight   = Vector3.new(-0.859, 0.001, 0.511)
+game.Players.LocalPlayer.Backpack.Uzi.GripUp      = Vector3.new(0.511, 0.005, 0.859)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+ 
+end
+end
+end
+end)
+ 
+Fighting4.Name = "Fighting4"
+Fighting4.Parent = ZET0XV9Frame
+Fighting4.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Fighting4.BorderSizePixel = 3
+Fighting4.Position = UDim2.new(0.615493357, 0, 0.235772356, 0)
+Fighting4.Size = UDim2.new(0, 109, 0, 34)
+Fighting4.Visible = false
+Fighting4.Font = Enum.Font.Fantasy
+Fighting4.Text = "Noclip (B)"
+Fighting4.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Fighting4.TextSize = 14
+Fighting4.MouseButton1Down:connect(function()
+local noclipplayer = game:GetService("Players").LocalPlayer
+	local noclipmouse = noclipplayer:GetMouse()
+ 
+	local donoclip = false
+	local noclip = false
+ 
+	function b_noclip(key)
+		if (key == "b") then
+			if noclip == false then
+				donoclip = true
+ 
+				noclip = true
+			elseif noclip == true then
+				donoclip = false
+ 
+				noclip = false
+			end
+		end
+	end
+ 
+	noclipmouse.KeyDown:connect(b_noclip)
+ 
+	game:GetService("Players").LocalPlayer.Character.Head.Touched:connect(function(obj)
+		if obj ~= workspace.Terrain then
+			if donoclip == true then
+				obj.CanCollide = false
+			else
+				obj.CanCollide = true
+			end
+		end
+	end)	
+end)
+ 
+Fighting5.Name = "Fighting5"
+Fighting5.Parent = ZET0XV9Frame
+Fighting5.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Fighting5.BorderSizePixel = 3
+Fighting5.Position = UDim2.new(0.615493357, 0, 0.748497963, 0)
+Fighting5.Size = UDim2.new(0, 109, 0, 34)
+Fighting5.Visible = false
+Fighting5.Font = Enum.Font.Fantasy
+Fighting5.Text = "Hide Glock"
+Fighting5.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Fighting5.TextSize = 14
+Fighting5.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Backpack.Glock.GripPos =  Vector3.new(-0.45,0,0)
+end)
+ 
+Fighting6.Name = "Fighting6"
+Fighting6.Parent = ZET0XV9Frame
+Fighting6.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Fighting6.BorderSizePixel = 3
+Fighting6.Position = UDim2.new(0.615493357, 0, 0.491836399, 0)
+Fighting6.Size = UDim2.new(0, 109, 0, 34)
+Fighting6.Visible = false
+Fighting6.Font = Enum.Font.Fantasy
+Fighting6.Text = "Hide BoomBox"
+Fighting6.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Fighting6.TextSize = 14
+Fighting6.MouseButton1Down:connect(function()
+game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Notification",
+                Text = "[Oskar] Play a code before using this, otherwise reset to change the code or redo this method!",
+                Duration = 15,
+            })	
+game.Players.LocalPlayer.Character.BoomBox.Server:Destroy()
+end)
+ 
+Other1.Name = "Other1"
+Other1.Parent = ZET0XV9Frame
+Other1.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Other1.BorderSizePixel = 3
+Other1.Position = UDim2.new(0.117647059, 0, 0.235772356, 0)
+Other1.Size = UDim2.new(0, 109, 0, 34)
+Other1.Visible = false
+Other1.Font = Enum.Font.Fantasy
+Other1.Text = "Zetox Admin V2"
+Other1.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Other1.TextSize = 14
+Other1.MouseButton1Down:connect(function()
+local ScreenGui = Instance.new("ScreenGui")
+local _1Admin = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+local _3Admin = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local _4Admin = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local _5Admin = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local _6Admin = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local _2Admin = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local _7Admin = Instance.new("TextLabel")
+local TextLabel_7 = Instance.new("TextLabel")
+local _8Admin = Instance.new("TextLabel")
+local TextLabel_8 = Instance.new("TextLabel")
+local _9Admin = Instance.new("TextLabel")
+local TextLabel_9 = Instance.new("TextLabel")
+local _10Admin = Instance.new("TextLabel")
+local TextLabel_10 = Instance.new("TextLabel")
+local _11Admin = Instance.new("TextLabel")
+local TextLabel_11 = Instance.new("TextLabel")
+local _12Admin = Instance.new("TextLabel")
+local TextLabel_12 = Instance.new("TextLabel")
+local _13Admin = Instance.new("TextLabel")
+local TextLabel_13 = Instance.new("TextLabel")
+local _14Admin = Instance.new("TextLabel")
+local TextLabel_14 = Instance.new("TextLabel")
+local _15Admin = Instance.new("TextLabel")
+local TextLabel_15 = Instance.new("TextLabel")
+ 
+ScreenGui.Parent = game.CoreGui
+ 
+_1Admin.Name = "1Admin"
+_1Admin.Parent = ScreenGui
+_1Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_1Admin.BorderSizePixel = 5
+_1Admin.Visible = false
+_1Admin.Position = UDim2.new(0, 0, 0.45161289, 0)
+_1Admin.Size = UDim2.new(0, 200, 0, 50)
+_1Admin.Font = Enum.Font.GothamSemibold
+_1Admin.Text = "Zetox Admin V2 Loaded!"
+_1Admin.TextColor3 = Color3.new(0, 0, 0)
+_1Admin.TextSize = 14
+ 
+TextLabel.Parent = _1Admin
+TextLabel.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 7)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.new(0, 0, 0)
+TextLabel.TextSize = 14
+ 
+_3Admin.Name = "3Admin"
+_3Admin.Parent = ScreenGui
+_3Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_3Admin.BorderSizePixel = 5
+_3Admin.Position = UDim2.new(0, 0, 0.531309307, 0)
+_3Admin.Size = UDim2.new(0, 200, 0, 50)
+_3Admin.Visible = false
+_3Admin.Font = Enum.Font.GothamSemibold
+_3Admin.Text = ""
+_3Admin.TextColor3 = Color3.new(0, 0, 0)
+_3Admin.TextSize = 14
+_3Admin.TextWrapped = true
+ 
+TextLabel_2.Parent = _3Admin
+TextLabel_2.BackgroundColor3 = Color3.new(0.666667, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = ""
+TextLabel_2.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_2.TextSize = 14
+ 
+_4Admin.Name = "4Admin"
+_4Admin.Parent = ScreenGui
+_4Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_4Admin.BorderSizePixel = 5
+_4Admin.Position = UDim2.new(0, 0, 0.571157515, 0)
+_4Admin.Size = UDim2.new(0, 200, 0, 50)
+_4Admin.Visible = false
+_4Admin.Font = Enum.Font.GothamSemibold
+_4Admin.Text = ""
+_4Admin.TextColor3 = Color3.new(0, 0, 0)
+_4Admin.TextSize = 14
+_4Admin.TextWrapped = true
+ 
+TextLabel_3.Parent = _4Admin
+TextLabel_3.BackgroundColor3 = Color3.new(0.666667, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = ""
+TextLabel_3.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_3.TextSize = 14
+ 
+_5Admin.Name = "5Admin"
+_5Admin.Parent = ScreenGui
+_5Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_5Admin.BorderSizePixel = 5
+_5Admin.Position = UDim2.new(0, 0, 0.611005723, 0)
+_5Admin.Size = UDim2.new(0, 200, 0, 50)
+_5Admin.Visible = false
+_5Admin.Font = Enum.Font.GothamSemibold
+_5Admin.Text = ""
+_5Admin.TextColor3 = Color3.new(0, 0, 0)
+_5Admin.TextSize = 14
+_5Admin.TextWrapped = true
+ 
+TextLabel_4.Parent = _5Admin
+TextLabel_4.BackgroundColor3 = Color3.new(0.666667, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_4.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = ""
+TextLabel_4.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_4.TextSize = 14
+ 
+_6Admin.Name = "6Admin"
+_6Admin.Parent = ScreenGui
+_6Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_6Admin.BorderSizePixel = 5
+_6Admin.Position = UDim2.new(0, 0, 0.650853932, 0)
+_6Admin.Size = UDim2.new(0, 200, 0, 50)
+_6Admin.Visible = false
+_6Admin.Font = Enum.Font.GothamSemibold
+_6Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_6Admin.TextColor3 = Color3.new(0, 0, 0)
+_6Admin.TextSize = 14
+_6Admin.TextWrapped = true
+ 
+TextLabel_5.Parent = _6Admin
+TextLabel_5.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_5.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = ""
+TextLabel_5.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_5.TextSize = 14
+ 
+_2Admin.Name = "2Admin"
+_2Admin.Parent = ScreenGui
+_2Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_2Admin.BorderSizePixel = 5
+_2Admin.Position = UDim2.new(0, 0, 0.491461098, 0)
+_2Admin.Size = UDim2.new(0, 200, 0, 50)
+_2Admin.Visible = false
+_2Admin.Font = Enum.Font.GothamSemibold
+_2Admin.Text = ""
+_2Admin.TextColor3 = Color3.new(0, 0, 0)
+_2Admin.TextSize = 14
+_2Admin.TextWrapped = true
+ 
+TextLabel_6.Parent = _2Admin
+TextLabel_6.BackgroundColor3 = Color3.new(0.666667, 0, 0)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_6.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = ""
+TextLabel_6.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_6.TextSize = 14
+ 
+_7Admin.Name = "7Admin"
+_7Admin.Parent = ScreenGui
+_7Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_7Admin.BorderSizePixel = 5
+_7Admin.Position = UDim2.new(-0.0228102189, 0, 0.650853932, 0)
+_7Admin.Size = UDim2.new(0, 200, 0, 50)
+_7Admin.Visible = false
+_7Admin.Font = Enum.Font.GothamSemibold
+_7Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_7Admin.TextColor3 = Color3.new(0, 0, 0)
+_7Admin.TextSize = 14
+_7Admin.TextWrapped = true
+ 
+TextLabel_7.Parent = _7Admin
+TextLabel_7.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_7.BorderSizePixel = 0
+TextLabel_7.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_7.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_7.Font = Enum.Font.SourceSans
+TextLabel_7.Text = ""
+TextLabel_7.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_7.TextSize = 14
+ 
+_8Admin.Name = "8Admin"
+_8Admin.Parent = ScreenGui
+_8Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_8Admin.BorderSizePixel = 5
+_8Admin.Position = UDim2.new(-0.0419708043, 0, 0.650853932, 0)
+_8Admin.Size = UDim2.new(0, 200, 0, 50)
+_8Admin.Visible = false
+_8Admin.Font = Enum.Font.GothamSemibold
+_8Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_8Admin.TextColor3 = Color3.new(0, 0, 0)
+_8Admin.TextSize = 14
+_8Admin.TextWrapped = true
+ 
+TextLabel_8.Parent = _8Admin
+TextLabel_8.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_8.BorderSizePixel = 0
+TextLabel_8.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_8.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_8.Font = Enum.Font.SourceSans
+TextLabel_8.Text = ""
+TextLabel_8.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_8.TextSize = 14
+ 
+_9Admin.Name = "9Admin"
+_9Admin.Parent = ScreenGui
+_9Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_9Admin.BorderSizePixel = 5
+_9Admin.Position = UDim2.new(-0.0611313879, 0, 0.650853932, 0)
+_9Admin.Size = UDim2.new(0, 200, 0, 50)
+_9Admin.Visible = false
+_9Admin.Font = Enum.Font.GothamSemibold
+_9Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_9Admin.TextColor3 = Color3.new(0, 0, 0)
+_9Admin.TextSize = 14
+_9Admin.TextWrapped = true
+ 
+TextLabel_9.Parent = _9Admin
+TextLabel_9.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_9.BorderSizePixel = 0
+TextLabel_9.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_9.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_9.Font = Enum.Font.SourceSans
+TextLabel_9.Text = ""
+TextLabel_9.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_9.TextSize = 14
+ 
+_10Admin.Name = "10Admin"
+_10Admin.Parent = ScreenGui
+_10Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_10Admin.BorderSizePixel = 5
+_10Admin.Position = UDim2.new(-0.0830291957, 0, 0.650853932, 0)
+_10Admin.Size = UDim2.new(0, 200, 0, 50)
+_10Admin.Visible = false
+_10Admin.Font = Enum.Font.GothamSemibold
+_10Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_10Admin.TextColor3 = Color3.new(0, 0, 0)
+_10Admin.TextSize = 14
+_10Admin.TextWrapped = true
+ 
+TextLabel_10.Parent = _10Admin
+TextLabel_10.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_10.BorderSizePixel = 0
+TextLabel_10.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_10.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_10.Font = Enum.Font.SourceSans
+TextLabel_10.Text = ""
+TextLabel_10.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_10.TextSize = 14
+ 
+_11Admin.Name = "11Admin"
+_11Admin.Parent = ScreenGui
+_11Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_11Admin.BorderSizePixel = 5
+_11Admin.Position = UDim2.new(-0.100364961, 0, 0.650853932, 0)
+_11Admin.Size = UDim2.new(0, 200, 0, 50)
+_11Admin.Visible = false
+_11Admin.Font = Enum.Font.GothamSemibold
+_11Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_11Admin.TextColor3 = Color3.new(0, 0, 0)
+_11Admin.TextSize = 14
+_11Admin.TextWrapped = true
+ 
+TextLabel_11.Parent = _11Admin
+TextLabel_11.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_11.BorderSizePixel = 0
+TextLabel_11.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_11.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_11.Font = Enum.Font.SourceSans
+TextLabel_11.Text = ""
+TextLabel_11.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_11.TextSize = 14
+ 
+_12Admin.Name = "12Admin"
+_12Admin.Parent = ScreenGui
+_12Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_12Admin.BorderSizePixel = 5
+_12Admin.Position = UDim2.new(-0.12043795, 0, 0.650853932, 0)
+_12Admin.Size = UDim2.new(0, 200, 0, 50)
+_12Admin.Visible = false
+_12Admin.Font = Enum.Font.GothamSemibold
+_12Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_12Admin.TextColor3 = Color3.new(0, 0, 0)
+_12Admin.TextSize = 14
+_12Admin.TextWrapped = true
+ 
+TextLabel_12.Parent = _12Admin
+TextLabel_12.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_12.BorderSizePixel = 0
+TextLabel_12.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_12.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_12.Font = Enum.Font.SourceSans
+TextLabel_12.Text = ""
+TextLabel_12.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_12.TextSize = 14
+ 
+_13Admin.Name = "13Admin"
+_13Admin.Parent = ScreenGui
+_13Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_13Admin.BorderSizePixel = 5
+_13Admin.Position = UDim2.new(-0.138686121, 0, 0.650853932, 0)
+_13Admin.Size = UDim2.new(0, 200, 0, 50)
+_13Admin.Visible = false
+_13Admin.Font = Enum.Font.GothamSemibold
+_13Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_13Admin.TextColor3 = Color3.new(0, 0, 0)
+_13Admin.TextSize = 14
+_13Admin.TextWrapped = true
+ 
+TextLabel_13.Parent = _13Admin
+TextLabel_13.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_13.BorderSizePixel = 0
+TextLabel_13.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_13.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_13.Font = Enum.Font.SourceSans
+TextLabel_13.Text = ""
+TextLabel_13.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_13.TextSize = 14
+ 
+_14Admin.Name = "14Admin"
+_14Admin.Parent = ScreenGui
+_14Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_14Admin.BorderSizePixel = 5
+_14Admin.Position = UDim2.new(-0.15510948, 0, 0.648956418, 0)
+_14Admin.Size = UDim2.new(0, 200, 0, 50)
+_14Admin.Visible = false
+_14Admin.Font = Enum.Font.GothamSemibold
+_14Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_14Admin.TextColor3 = Color3.new(0, 0, 0)
+_14Admin.TextSize = 14
+_14Admin.TextWrapped = true
+ 
+TextLabel_14.Parent = _14Admin
+TextLabel_14.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_14.BorderSizePixel = 0
+TextLabel_14.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_14.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_14.Font = Enum.Font.SourceSans
+TextLabel_14.Text = ""
+TextLabel_14.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_14.TextSize = 14
+ 
+_15Admin.Name = "15Admin"
+_15Admin.Parent = ScreenGui
+_15Admin.BackgroundColor3 = Color3.new(0.666667, 0, 0.498039)
+_15Admin.BorderSizePixel = 5
+_15Admin.Position = UDim2.new(-0.17153284, 0, 0.650853932, 0)
+_15Admin.Size = UDim2.new(0, 200, 0, 50)
+_15Admin.Visible = false
+_15Admin.Font = Enum.Font.GothamSemibold
+_15Admin.Text = "To View All Commands [F9] Prefix All Commands [ ; ] Sir!"
+_15Admin.TextColor3 = Color3.new(0, 0, 0)
+_15Admin.TextSize = 14
+_15Admin.TextWrapped = true
+ 
+TextLabel_15.Parent = _15Admin
+TextLabel_15.BackgroundColor3 = Color3.new(0, 1, 0)
+TextLabel_15.BorderSizePixel = 0
+TextLabel_15.Position = UDim2.new(0, 0, 0.853206813, 0)
+TextLabel_15.Size = UDim2.new(0, 200, 0, 7)
+TextLabel_15.Font = Enum.Font.SourceSans
+TextLabel_15.Text = ""
+TextLabel_15.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_15.TextSize = 14
+ 
+wait (0.30)
+_1Admin.Visible = true
+wait (2.50)
+_1Admin.Visible = false
+wait (0.0)
+_2Admin.Visible = true
+wait (0.0)
+_2Admin.Visible = false
+_3Admin.Visible = true
+wait (0.0)
+_3Admin.Visible = false
+_4Admin.Visible = true
+wait (0.0)
+_4Admin.Visible = false
+_5Admin.Visible = true
+wait (0.0)
+_5Admin.Visible = false
+_6Admin.Visible = true
+wait(2.50)
+_6Admin.Visible = false
+_7Admin.Visible = true
+wait (0.0)
+_7Admin.Visible = false
+_8Admin.Visible = true
+wait (0.0)
+_8Admin.Visible = false
+_9Admin.Visible = true
+wait (0.0)
+_9Admin.Visible = false
+_10Admin.Visible = true
+wait (0.0)
+_10Admin.Visible = false
+_11Admin.Visible = true
+wait (0.0)
+_11Admin.Visible = false
+_12Admin.Visible = true
+wait (0.0)
+_12Admin.Visible = false
+_13Admin.Visible = true
+wait (0.0)
+_13Admin.Visible = false
+_14Admin.Visible = true
+wait (0.0)
+_14Admin.Visible = false
+_15Admin.Visible = true
+wait (0.0)
+_15Admin.Visible = false
+------------------------
+ 
+warn ("[[[Zetox Admin V2]]]")
+warn ("Commands Prefix [;].")
+print("[[ Items Teleport ]]")
+print(";Uzi")
+print(";Glock")
+print(";Sawed -- Sawed Off.")
+print(";Pipe")
+print(";LockPick")
+print(";Machete")
+print(";Bat")
+print(";Golf")
+print(";Ammo")
+print(";Items -- Free Items.")
+print("[[ Bypass ]]")
+print(";Re -- Reset.")
+print(";Noclip -- KeyBind [ Q ].")
+print(";Speed -- Give You 100 Speed KeyBind [ Shift ].")
+print(";Ctp -- ClickTp KeyBind [ Y ].")
+print("[[ Teleport ]]")
+print(";Bank")
+print(";Prison")
+print(";Sand")
+print(";Bar")
+print(";Gas -- Gas station.")
+print("[[ Made By Oskar ]]")
+ 
+wait (0.30)
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";re") then
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+end)
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";items") then
+while true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.RandomSpawner.CFrame)
+wait(0.1)
+end	
+end
+end)
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";ammo") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890.943298, 5.40959072, -139.017715)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";golf") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.0678024, 5.97562265, -220.801666)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";bat") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.71843, 6.24983072, -60.3335457)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";machete") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-726.264832, 5.11446857, -79.6448364)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";lockpick") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";pipe") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-429.263245, 6.13032055, 236.12973)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";sawed") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";glock") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";uzi") then
+gsPlayers = game:GetService("Players")
+ 
+LP = gsPlayers.LocalPlayer    
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+SavedPosition = LP.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = - 2
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+wait (0.1)
+game:GetService
+'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+LP.Character.HumanoidRootPart.CFrame = SavedPosition
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";noclip") then
+oskar = false
+game:GetService('RunService').Stepped:connect(function()
+if oskar then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+ 
+if key == "q" then
+oskar = not oskar
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+ 
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";speed") then
+repeat wait() until game.Players.LocalPlayer
+m = game.Players.LocalPlayer:GetMouse()
+m.KeyDown:connect(function(key)
+ if key == "0" then
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+ end
+end)
+m.KeyUp:connect(function(key)
+ if key == "0" then
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+ end
+end)	
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";ctp") then
+plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "y" then
+if mouse.Target then
+hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+end
+end
+end)
+end
+end)
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";bank") then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (2.30)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-268,5,138)
+	local time = 0.1
+	local increment = 2
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false		
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";prison") then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (2.30)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-972,3,-77)
+	local time = 0.1
+	local increment = 2
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false	
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";sand") then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (2.30)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-210,3,-114)
+	local time = 0.1
+	local increment = 2
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false	
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";bar") then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+wait (2.30)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(-962,4,-170)
+	local time = 0.1
+	local increment = 2
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0	
+wait (0.30)
+noclip = false
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == ";gas") then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 6
+wait (2.30)
+local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local root = char.HumanoidRootPart
+	wait()
+	local pos = Vector3.new(97,4,-89)
+	local time = 0.1
+	local increment = 2
+	local debounce = false
+	local diff = pos-root.Position
+	local mag = diff.magnitude
+	local heading = CFrame.new(root.Position, pos).lookVector
+	local function movetolocation()
+		if debounce then return end
+		debounce = true
+		for a = 0, mag, increment do
+			if cancelmove then
+				print("Stopped moving to location")
+				break
+			end
+			root.Anchored = false
+			root.CFrame = root.CFrame + (heading * increment)
+			wait( (time/mag) * increment )
+		end
+		debounce = false
+		root.Anchored = true
+	end
+	wait()
+	movetolocation()
+	root.Anchored = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+wait (0.30)
+noclip = false
+end
+end)
+ 
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == "/noobasa") then
+wait (1.30)
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+end)
+------------------------------
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "FUCK UP NIGHHA" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+wait (0.1)
+game.Players:Chat("/noobasa")
+wait (0.1)	
+while true do
+game.ReplicatedStorage.Name = 'RepStorage'
+wait(0.5)
+end
+-----------------------------
+ 
+ 
+end)
+ 
+Other2.Name = "Other2"
+Other2.Parent = ZET0XV9Frame
+Other2.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Other2.BorderSizePixel = 3
+Other2.Position = UDim2.new(0.117647059, 0, 0.491836399, 0)
+Other2.Size = UDim2.new(0, 109, 0, 34)
+Other2.Visible = false
+Other2.Font = Enum.Font.Fantasy
+Other2.Text = "Auto Uzi"
+Other2.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Other2.TextSize = 14
+Other2.MouseButton1Down:connect(function()
+local Uzi = game.Players.LocalPlayer.Backpack.Uzi
+Uzi.Parent = game.Players.LocalPlayer.Character
+Uzi:Activate()
+end)
+ 
+Other3.Name = "Other3"
+Other3.Parent = ZET0XV9Frame
+Other3.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Other3.BorderSizePixel = 3
+Other3.Position = UDim2.new(0.117647059, 0, 0.748497963, 0)
+Other3.Size = UDim2.new(0, 109, 0, 34)
+Other3.Visible = false
+Other3.Font = Enum.Font.Fantasy
+Other3.Text = "Anti kick"
+Other3.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Other3.TextSize = 14
+Other3.MouseButton1Down:connect(function()
+ 
+local mt = getrawmetatable(game)
+local oldmt = mt.__index
+make_writeable(mt)
+ 
+mt.__index = function(t,i)
+    if i == "Kick" then
+        return nil
+    end
+    return oldmt(t,i)
+end
+ 
+end)
+ 
+Other4.Name = "Other4"
+Other4.Parent = ZET0XV9Frame
+Other4.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Other4.BorderSizePixel = 3
+Other4.Position = UDim2.new(0.615493357, 0, 0.235772356, 0)
+Other4.Size = UDim2.new(0, 109, 0, 34)
+Other4.Visible = false
+Other4.Font = Enum.Font.Fantasy
+Other4.Text = "Fast Kick (K)"
+Other4.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Other4.TextSize = 14
+Other4.MouseButton1Down:connect(function()
+Player = game.Players.LocalPlayer
+Mouse = Player:GetMouse()
+ 
+function PressY(key)
+    if (key == "k") then
+game.Players:Chat("/e kick")
+end
+end
+Mouse.KeyDown:connect(PressY)
+end)
+ 
+Other5.Name = "Other5"
+Other5.Parent = ZET0XV9Frame
+Other5.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Other5.BorderSizePixel = 3
+Other5.Position = UDim2.new(0.615493357, 0, 0.748497963, 0)
+Other5.Size = UDim2.new(0, 109, 0, 34)
+Other5.Visible = false
+Other5.Font = Enum.Font.Fantasy
+Other5.Text = "Auto Reset"
+Other5.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Other5.TextSize = 14
+Other5.MouseButton1Down:connect(function()
+while true do
+if game.Players.LocalPlayer.Character:FindFirstChild("KO") then
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+wait (0.1)
+end
+end)
+ 
+Other6.Name = "Other6"
+Other6.Parent = ZET0XV9Frame
+Other6.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Other6.BorderSizePixel = 3
+Other6.Position = UDim2.new(0.615493357, 0, 0.491836399, 0)
+Other6.Size = UDim2.new(0, 109, 0, 34)
+Other6.Visible = false
+Other6.Font = Enum.Font.Fantasy
+Other6.Text = "Car settings"
+Other6.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Other6.TextSize = 14
+Other6.MouseButton1Down:connect(function()
+if Openns == true then
+                    Openns = false
+CarSetttingss.Visible = false
+                else
+                    Openns = true
+CarSetttingss.Visible = true
+                end
+end)
+ 
+Animation1.Name = "Animation1"
+Animation1.Parent = ZET0XV9Frame
+Animation1.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Animation1.BorderSizePixel = 3
+Animation1.Position = UDim2.new(0.0614973269, 0, 0.260129094, 0)
+Animation1.Size = UDim2.new(0, 109, 0, 34)
+Animation1.Visible = false
+Animation1.Font = Enum.Font.Fantasy
+Animation1.Text = "Airwalk Animation ( 1 )"
+Animation1.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Animation1.TextSize = 14
+Animation1.TextWrapped = true
+Animation1.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://538889006'
+end
+end)
+Animation2.Name = "Animation2"
+Animation2.Parent = ZET0XV9Frame
+Animation2.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Animation2.BorderSizePixel = 3
+Animation2.Position = UDim2.new(0.64490515, 0, 0.260129094, 0)
+Animation2.Size = UDim2.new(0, 109, 0, 34)
+Animation2.Visible = false
+Animation2.Font = Enum.Font.Fantasy
+Animation2.Text = "Airwalk Animation ( 2 )"
+Animation2.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Animation2.TextSize = 14
+Animation2.TextWrapped = true
+Animation2.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://633572484'
+end
+end)
+ 
+Animation6.Name = "Animation6"
+Animation6.Parent = ZET0XV9Frame
+Animation6.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Animation6.BorderSizePixel = 3
+Animation6.Position = UDim2.new(0.540627122, 0, 0.463381171, 0)
+Animation6.Size = UDim2.new(0, 109, 0, 34)
+Animation6.Visible = false
+Animation6.Font = Enum.Font.Fantasy
+Animation6.Text = "Meme Animation"
+Animation6.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Animation6.TextSize = 14
+Animation6.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://440857566'
+end
+end)
+ 
+Animation5.Name = "Animation5"
+Animation5.Parent = ZET0XV9Frame
+Animation5.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Animation5.BorderSizePixel = 3
+Animation5.Position = UDim2.new(0.195707202, 0, 0.463381082, 0)
+Animation5.Size = UDim2.new(0, 109, 0, 34)
+Animation5.Visible = false
+Animation5.Font = Enum.Font.Fantasy
+Animation5.Text = "Guard Animation"
+Animation5.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Animation5.TextSize = 14
+Animation5.TextWrapped = true
+Animation5.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://633597788'
+end
+end)
+ 
+Animation4.Name = "Animation4"
+Animation4.Parent = ZET0XV9Frame
+Animation4.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Animation4.BorderSizePixel = 3
+Animation4.Position = UDim2.new(0.540627122, 0, 0.71541369, 0)
+Animation4.Size = UDim2.new(0, 109, 0, 34)
+Animation4.Visible = false
+Animation4.Font = Enum.Font.Fantasy
+Animation4.Text = "Zombie Animation"
+Animation4.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Animation4.TextSize = 14
+Animation4.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId="rbxassetid://529464809"
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.jump:GetChildren()) do
+    v.AnimationId = 'rbxassetid://144394872'
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://231310317'
+end
+end
+end)
+ 
+Animation3.Name = "Animation3"
+Animation3.Parent = ZET0XV9Frame
+Animation3.BackgroundColor3 = Color3.new(0.117647, 0.207843, 0.227451)
+Animation3.BorderSizePixel = 3
+Animation3.Position = UDim2.new(0.193033546, 0, 0.71541369, 0)
+Animation3.Size = UDim2.new(0, 109, 0, 34)
+Animation3.Visible = false
+Animation3.Font = Enum.Font.Fantasy
+Animation1.TextWrapped = true
+Animation3.Text = "Police Animation"
+Animation3.TextColor3 = Color3.new(0.658824, 0.466667, 0.839216)
+Animation3.TextSize = 14
+Animation3.MouseButton1Down:connect(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Animate.idle:GetChildren()) do
+    v.AnimationId = 'rbxassetid://259363289'
+end			
+end)
+ 
+OPENZET0XV9.Name = "OPENZET0XV9"
+OPENZET0XV9.Parent = ZET0XV9Screen
+OPENZET0XV9.BackgroundColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+OPENZET0XV9.BackgroundTransparency = 0.050000000745058
+OPENZET0XV9.BorderColor3 = Color3.new(0.333333, 0, 0.498039)
+OPENZET0XV9.BorderSizePixel = 3
+OPENZET0XV9.Position = UDim2.new(0, 0, 0.690702081, 0)
+OPENZET0XV9.Size = UDim2.new(0, 200, 0, 50)
+OPENZET0XV9.Visible = false
+OPENZET0XV9.Font = Enum.Font.Arial
+OPENZET0XV9.Text = "LOAD"
+OPENZET0XV9.TextColor3 = Color3.new(0.721569, 0.498039, 0.909804)
+OPENZET0XV9.TextSize = 14
+OPENZET0XV9.TextStrokeTransparency = 2
+OPENZET0XV9.TextTransparency = 0.10000000149012
+OPENZET0XV9.MouseButton1Down:connect(function()
+print ("You Wanna Crack Whitelist? Lmaooo!!")
+end)
+ 
+ 
+if game.Players.LocalPlayer.Name == "Hermaxs" then
+_1.Visible = true
+wait (0.0)
+_1.Visible = false
+_2.Visible = true
+wait (0.0)
+_2.Visible = false
+_3.Visible = true
+wait (0.0)
+_3.Visible = false
+_4.Visible = true
+wait (1.10)
+IntroText.Text = "H" -- [ Hi noob Welcome to Zetox! ]
+wait (0.10)
+IntroText.Text = "Hi"
+wait (0.10)
+IntroText.Text = "Hi N"
+wait (0.10)
+IntroText.Text = "Hi No"
+wait (0.10)
+IntroText.Text = "Hi Noo"
+wait (0.10)
+IntroText.Text = "Hi Noob"
+wait (0.10)
+IntroText.Text = "Hi Noob W"
+wait (0.10)
+IntroText.Text = "Hi Noob We"
+wait (0.10)
+IntroText.Text = "Hi noob Wel"
+wait (0.10)
+IntroText.Text = "Hi noob Welc"
+wait (0.10)
+IntroText.Text = "Hi noob Welco"
+wait (0.10)
+IntroText.Text = "Hi noob Welcom"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome t"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to Z"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to Ze"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to Zet"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to Zeto"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to Zetox"
+wait (0.10)
+IntroText.Text = "Hi noob Welcome to Zetox!"
+wait (2.30)
+_4.Visible = false
+wait (0.0)
+_3.Visible = true
+wait (0.0)
+_3.Visible = false
+_2.Visible = true
+wait (0.0)
+_2.Visible = false
+_1.Visible = true
+wait (0.0)
+_1.Visible = false
+wait (0.30)
+game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Notification",
+                Text = "Zetox V9 has been loaded, press [ G ] to Close/Open Gui.",
+                Duration = 15,
+            })
+wait (0.1)
+Player = game.Players.LocalPlayer
+Mouse = Player:GetMouse()
+gui = ZET0XV9Screen
+box = ZET0XV9Frame
+Open = false
+ 
+function PressY(key)
+    if (key == "g") then
+        if (Open == false) then
+        box.Visible = true
+        Open = true
+    elseif (Open == true) then
+        box.Visible = false
+        Open = false
+        end
+    end
+end
+ 
+Mouse.KeyDown:connect(PressY)
+end
+ 
+wait (0.0)
+ 
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) 
+if (string.lower(msg) == "/noobasa") then
+wait (1.30)
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+end)
+------------------------------
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "FUCK UP NIGHHA" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+wait (0.1)
+game.Players:Chat("/noobasa")
+wait (0.1)	
+while true do
+game.ReplicatedStorage.Name = 'RepStorage'
+wait(0.5)
+end
+-----------------------------

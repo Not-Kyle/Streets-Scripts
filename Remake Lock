@@ -1,0 +1,346 @@
+local rs = game:GetService("RunService")
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+ 
+	if (string.lower(msg) == "/e af") then
+game.Players.LocalPlayer.Character["Right Arm"]:Destroy()
+	end
+end)
+
+repeat
+    until
+game.Players.LocalPlayer.Backpack:WaitForChild("Glock")
+game.Players.LocalPlayer.Backpack.Glock.Barrel.CanCollide = false
+
+game.Players.LocalPlayer.CharacterAdded:connect(function(char)
+game.Players.LocalPlayer.Backpack:WaitForChild("Glock")
+game.Players.LocalPlayer.Backpack.Glock.Barrel.CanCollide = false
+end)
+
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v:IsA("Seat") then
+    v:Destroy()
+    end
+end
+
+game.Players.LocalPlayer.CameraMaxZoomDistance = 1000
+
+repeat wait() until game:IsLoaded() and game:WaitForChild"Players";
+
+-- By nobody gives a Fuck
+local Players, Uis, SGui = game:GetService"Players", game:GetService"UserInputService", game:GetService"StarterGui"; -- Services
+local Client, AntiGH = Players.LocalPlayer, true;
+
+function Notify(NTitle, NText, NIcon, NDuration)
+   SGui:SetCore("SendNotification", {
+       Title = NTitle;
+       Text = NText;
+       Icon = NIcon;
+       Duration = NDuration;
+   })
+end
+
+function StateChangedEvent(T, Changed)
+   if AntiGH == true then
+       if Client and Client.Character and Client.Character:FindFirstChildOfClass"Humanoid" then
+           if Changed == Enum.HumanoidStateType.FallingDown or Changed == Enum.HumanoidStateType.PlatformStanding then
+               Client.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running);Client.Character.Humanoid.PlatformStand = false -- Credits to Aidez for this part
+           end
+       end
+   end
+end
+Client.Character:WaitForChild"Humanoid".StateChanged:Connect(StateChangedEvent)
+
+function CharacterAddedEvent()
+   Client.Character:WaitForChild"Humanoid";
+   Client.Character.Humanoid.StateChanged:Connect(StateChangedEvent)
+end
+Client.CharacterAdded:Connect(CharacterAddedEvent)
+
+Uis.InputBegan:Connect(function(Key)
+   if not Uis:GetFocusedTextBox() then
+       if Key.KeyCode == Enum.KeyCode.RightAlt then
+           AntiGH = not AntiGH
+           Notify("xaxa", "Anti Ground-Hit: "..tostring(AntiGH), nil, 3)
+       end
+   end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+
+if (string.lower(msg) == "/e re") then
+local Tp = game:GetService("TeleportService")
+local placeID = 4669040
+
+Tp:Teleport(placeID,game.Players.LocalPlayer)
+end
+end)
+local NoclipKey = "x" -- Type a letter in the quotes to change the key that'll toggle noclip
+
+
+
+------------------------------------
+
+repeat wait() until game.Players ~= nil
+repeat wait() until game.Players.LocalPlayer ~= nil
+
+local LocalP = game.Players.LocalPlayer
+local Mouse = LocalP:GetMouse()
+local NoClip = false
+NoclipKey = string.lower(NoclipKey)
+local fakevalue = Instance.new("BoolValue")
+fakevalue.Value = false
+
+local meta = getrawmetatable(game)
+if PROTOSMASHER_LOADED then
+    make_writeable(meta)
+else
+    setreadonly(meta,false)
+end
+local index = meta.__index
+
+meta.__index=function(self,k)
+    if not checkcaller() or not is_protosmasher_caller() then
+        if tostring(self) == "Part" and tostring(k) == "Anchored" then
+            return index(fakevalue,"Value")
+        end
+    end
+    return index(self,k)
+end
+
+Mouse.KeyDown:Connect(function(key)
+    if key == NoclipKey then
+        NoClip = not NoClip
+        local currenttext = ""
+        if NoClip == true then
+            currenttext = "on"
+        else
+            currenttext = "off"
+        end
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "notification";
+            Text = currenttext;
+            Icon = "rbxassetid://2541869220";
+            Duration = 2;
+        })
+    end
+end)
+
+game:GetService('RunService').Stepped:connect(function()
+    if NoClip == true then
+        if LocalP.Character ~= nil then
+            if LocalP.Character:FindFirstChild("Head") and LocalP.Character:FindFirstChild("Torso") and LocalP.Character:FindFirstChild("Humanoid") then
+                LocalP.Character.Head.CanCollide = false
+                LocalP.Character.Torso.CanCollide = false
+                LocalP.Character.Humanoid.Sit = false
+            end
+        end
+    end
+end)
+
+print("")
+print(string.upper(NoclipKey).." Key - Toggle noclip")
+print("")
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+		    Title = "aimlock";
+		    Text = "mmwa mmmwa - doni";
+			})
+
+
+
+
+local RunService = game:GetService("RunService")
+
+RunService.RenderStepped:Connect(function()
+    if game.Players.LocalPlayer.Character.Humanoid then
+        --print("humanoid exists")
+        if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet") then
+            print("bullet exists")
+            if game.Players.LocalPlayer.Character.Humanoid.Bullet:findFirstChild("Trail") then
+                print("trail exists")
+                if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name == "BulletDone" then
+                    print("bullet done")
+                end
+                if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet"):findFirstChild("Trail").Lifetime < 0.21 then
+                    print("success!")
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Lifetime = 0.21
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Transparency = NumberSequence.new(0)
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255),Color3.fromRGB(255, 255, 255))
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name = "BulletDone"
+                end
+            end
+        end
+    end
+end)
+
+local lighting = game.Lighting
+        if lighting:FindFirstChild("ColorCorrection") then
+            lighting:FindFirstChild("ColorCorrection"):Remove()
+        end
+        if lighting:FindFirstChild("Correction") then
+            lighting:FindFirstChild("Correction"):Remove()
+        end
+
+        local sunray = Instance.new("SunRaysEffect", lighting)
+        local sky = lighting.Sky
+        sky.SkyboxBk = "http://www.roblox.com/asset/?id=185544271"
+        sky.SkyboxDn = "http://www.roblox.com/asset/?id=185544298"
+        sky.SkyboxFt = "http://www.roblox.com/asset/?id=185544329"
+        sky.SkyboxLf = "http://www.roblox.com/asset/?id=185544349"
+        sky.SkyboxRt = "http://www.roblox.com/asset/?id=185544367"
+        sky.SkyboxUp = "http://www.roblox.com/asset/?id=185544404"
+
+        sky.StarCount = 3000
+        sky.SunAngularSize = 21
+        sky.MoonAngularSize = 11
+
+        local correction = Instance.new("ColorCorrectionEffect", lighting)
+        correction.Name = "Correction"
+        correction.Saturation = -0.4
+        correction.TintColor = Color3.fromRGB(224, 241, 255)
+
+--This script reveals ALL hidden messages in the default chat
+ 
+enabled = true --chat "/spy" to toggle!
+spyOnMyself = true --if true will check your messages too
+public = false --if true will chat the logs publicly (fun, risky)
+publicItalics = true --if true will use /me to stand out
+privateProperties = { --customize private logs
+    Color = Color3.fromRGB(255, 255, 255);
+    Font = Enum.Font.SourceSansBold;
+    TextSize = 18;
+}
+ 
+ if game.PlaceId == 455366377 then
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if game.Players.LocalPlayer.Character:FindFirstChild("KO").Value <= 0.11 then
+            game.Players.LocalPlayer.Character:Destroy()
+        end
+    end)
+elseif game.PlaceId == 4669040 then
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if game.Players.LocalPlayer.Character:FindFirstChild("KO") then
+            game.Players.LocalPlayer.Character:Destroy()
+        end
+    end)
+end
+
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+ 
+local function onChatted(p,msg)
+    if _G.chatSpyInstance == instance then
+        if p==player and msg:lower():sub(1,4)=="/spy" then
+            enabled = not enabled
+            wait(0.3)
+            privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+            StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+        elseif enabled and (spyOnMyself==true or p~=player) then
+            msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+            local hidden = true
+            local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+                if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+                    hidden = false
+                end
+            end)
+            wait(1)
+            conn:Disconnect()
+            if hidden and enabled then
+                if public then
+                    saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+                else
+                    privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+                    StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+                end
+            end
+        end
+    end
+end
+ 
+for _,p in ipairs(Players:GetPlayers()) do
+    p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+    p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+
+local Aimbot = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+holdx = false
+
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Aimbot.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Aimbot.ResetOnSpawn = false
+
+TextLabel.Parent = Aimbot
+TextLabel.BackgroundColor3 = Color3.new(0.444511, 0.771695, 0.998947)
+TextLabel.BorderColor3 = Color3.new(0.39057, 0.39057, 0.39057)
+TextLabel.BorderSizePixel = 2
+TextLabel.Position = UDim2.new(0.75, 0, 0.75, 0)
+TextLabel.Size = UDim2.new(0, 132, 0, 50)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "Target: Nil"
+TextLabel.TextColor3 = Color3.new(0.19266, 0.192645, 0.192645)
+TextLabel.TextScaled = false
+TextLabel.TextSize = 15
+TextLabel.TextWrapped = true
+TextLabel.BackgroundTransparency = 1
+
+
+Mouse.KeyDown:Connect(function(key)
+    if key == "q" then
+        if Mouse.Target.Parent:FindFirstChild("Humanoid") then
+            TextLabel.Text = Mouse.Target.Parent.Name
+        end
+        if Mouse.Target.Parent:IsA("Accessory") then
+            TextLabel.Text = Mouse.Target.Parent.Parent.Name
+        end
+    end
+end)
+
+Mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        holdx = true
+        while holdx do
+            game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Shoot:FireServer(game.Players:FindFirstChild(TextLabel.Text).Character.Torso.CFrame+game.Players:FindFirstChild(TextLabel.Text).Character.Torso.Velocity/7)
+            wait(0.01)
+        end
+    end
+end)
+
+while wait(1)do
+local player=game.Players.LocalPlayer
+player.Backpack.ServerTraits.Stann.Changed:connect(function()
+player.Backpack.ServerTraits.Stann.Value = 100
+end)
+end
+
+if game.PlaceId == 455366377 then
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if game.Players.LocalPlayer.Character:FindFirstChild("KO").Value <= 0.11 then
+            game.Players.LocalPlayer.Character:Destroy()
+        end
+    end)
+elseif game.PlaceId == 4669040 then
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if game.Players.LocalPlayer.Character:FindFirstChild("KO") then
+            game.Players.LocalPlayer.Character:Destroy()
+        end
+    end)
+end
+

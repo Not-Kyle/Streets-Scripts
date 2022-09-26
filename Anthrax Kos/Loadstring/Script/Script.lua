@@ -209,7 +209,7 @@ local neutral = {   --THIS IS FOR THE MOST WANTED TARGETS
         ['Colour'] = Color3.fromRGB(0, 255, 0)
     };
 [531565889] = {
-        ['Name'] = "ACIDLEAKS";      --//Biggest Target        
+        ['Name'] = "ACIDLEAKS";      --//Biggest Target   says I duck vc but I dont have a mic and until I used my phone to talk in vc she was hushmode and couldn't pack me. these females claim that they dog people in gc's but can't dog me in a 1v5 LOL     
         ['Colour'] = Color3.fromRGB(255, 0, 0)
     };
 [374583115] = {

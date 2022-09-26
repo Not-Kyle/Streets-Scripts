@@ -300,6 +300,10 @@ local neutral = {   --THIS IS FOR THE MOST WANTED TARGETS
         ['Name'] = "boolean? lol?";      --//nasty female exploiter    
         ['Colour'] = Color3.fromRGB(255, 0, 0)
     };
+[128441102] = {
+        ['Name'] = "ary"; --dumb hoe who lost to me legit
+        ['Colour'] = Color3.fromRGB(255, 0, 0)
+   };     
 }
 
 local function neutralfunction(Plr)

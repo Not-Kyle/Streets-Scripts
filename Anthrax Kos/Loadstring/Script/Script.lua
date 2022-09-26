@@ -216,8 +216,12 @@ local neutral = {   --THIS IS FOR THE MOST WANTED TARGETS
         ['Name'] = "ACIDLEAKS";    --//Biggest Target
         ['Colour'] = Color3.fromRGB(255, 0, 0)
     };
-[76336513] = {
-        ['Name'] = "Regangel";   --//Biggest Target
+[1410220918] = {
+        ['Name'] = "lunaaccy";      --//failed to pack me, failed to 1v9 me, failed to hurt my feelings, claims she owns me but hasn't beat me in vc nor ts. says im 13 then gets scared of my voice when i join vc LOL
+        ['Colour'] = Color3.fromRGB(255, 0, 0)
+    };
+    [76336513] = {
+        ['Name'] = "Regangel";   --//Beam her before anyone under her name
         ['Colour'] = Color3.fromRGB(255, 0, 0)
     };
 [151164995] = {

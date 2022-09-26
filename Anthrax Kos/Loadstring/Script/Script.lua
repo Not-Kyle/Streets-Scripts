@@ -308,6 +308,10 @@ local neutral = {   --THIS IS FOR THE MOST WANTED TARGETS
         ['Name'] = "ran through"; --dumb slut who is ran through and is proud of it ("disgusting")
         ['Colour'] = Color3.fromRGB(255, 0, 0)
    };   
+[5419871] = {
+        ['Name'] = "ur so ugly";      --// one of the ugliest people ive seen and buys a 2009 acc just to look cool, cringe 
+        ['Colour'] = Color3.fromRGB(255, 0, 0)
+    };
 }
 
 local function neutralfunction(Plr)

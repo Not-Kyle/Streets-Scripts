@@ -1,0 +1,98 @@
+print("Welcome to Tezla V7")print"Made by T_SK#5799"
+print"PlayerAnims"print"cmds are"print"ninja"print"injured"
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Welcome to Tezla Press Y to open/close the GUI.","All")local d_a=Instance.new("ScreenGui")
+local _aa=Instance.new("Frame")local aaa=Instance.new("Frame")
+local baa=Instance.new("TextLabel")local caa=Instance.new("TextLabel")
+local daa=Instance.new("TextButton")local _ba=Instance.new("TextButton")
+local aba=Instance.new("TextButton")local bba=Instance.new("TextButton")
+local cba=Instance.new("TextButton")local dba=Instance.new("TextButton")
+local _ca=Instance.new("TextButton")d_a.Parent=game.CoreGui;_aa.Parent=d_a
+_aa.BackgroundColor3=Color3.new(0.784314,0,0.705882)_aa.Position=UDim2.new(0,0,0.340450764,0)
+_aa.Selectable=true;_aa.Size=UDim2.new(0,328,0,268)
+_aa.Style=Enum.FrameStyle.RobloxRound;aaa.Parent=_aa;aaa.BackgroundColor3=Color3.new(0,0,0)
+aaa.Position=UDim2.new(
+-0.0106707327,0,-0.0298507456,0)aaa.Size=UDim2.new(0,318,0,36)
+aaa.Style=Enum.FrameStyle.RobloxRound;baa.Name="Tezla V7"baa.Parent=aaa
+baa.BackgroundColor3=Color3.new(0.247059,0.247059,0.247059)baa.Position=UDim2.new(0.13144654,0,0.0128205121,0)
+baa.Size=UDim2.new(0,221,0,20)baa.Font=Enum.Font.Garamond;baa.Text="Tezla V7 (thx Zelucz)"
+baa.TextColor3=Color3.new(47,213,255)baa.TextSize=25;caa.Parent=_aa
+caa.BackgroundColor3=Color3.new(0.247059,0.247059,0.247059)caa.Position=UDim2.new(0.0137195121,0,0.910447776,0)
+caa.Size=UDim2.new(0,303,0,22)caa.SizeConstraint=Enum.SizeConstraint.RelativeXX
+caa.Font=Enum.Font.Fantasy;caa.Text="Made by T_SK#5799"
+caa.TextColor3=Color3.new(47,213,255)caa.TextSize=20;daa.Name="Animations"daa.Parent=_aa
+daa.BackgroundColor3=Color3.new(47,213,255)daa.Position=UDim2.new(0.0823171288,0,0.332089514,0)
+daa.Size=UDim2.new(0,92,0,32)daa.Font=Enum.Font.SourceSans;daa.Text="TezlaPack"daa.TextSize=20
+daa.MouseButton1Click:connect(function()
+loadstring(game:GetObjects("rbxassetid://01771155946")[1].Source)()end)_ba.Name="fightpack"_ba.Parent=_aa
+_ba.BackgroundColor3=Color3.new(47,213,255)_ba.Position=UDim2.new(0.61280483,0,0.332089514,0)
+_ba.Size=UDim2.new(0,92,0,32)_ba.Font=Enum.Font.SourceSans;_ba.Text="TezlaAdmin"_ba.TextSize=20
+_ba.MouseButton1Click:connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/K5zyqaWw'),true))()end)aba.Name="fe gui"aba.Parent=_aa
+aba.BackgroundColor3=Color3.new(47,213,255)aba.Position=UDim2.new(0.0823170319,0,0.507462621,0)
+aba.Size=UDim2.new(0,92,0,32)aba.Font=Enum.Font.SourceSans;aba.Text="GOD"aba.TextSize=20
+aba.MouseButton1Click:connect(function()
+loadstring(game:GetObjects("rbxassetid://1773300048")[1].Source)()end)bba.Name="items"bba.Parent=_aa
+bba.BackgroundColor3=Color3.new(47,213,255)bba.Position=UDim2.new(0.61280483,0,0.50746268,0)
+bba.Size=UDim2.new(0,92,0,32)bba.Font=Enum.Font.SourceSans;bba.Text="Items"bba.TextSize=20
+bba.MouseButton1Click:connect(function()
+while
+true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=(game.Workspace.RandomSpawner.CFrame)wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=(game.Workspace.RandomSpawner.CFrame)wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=(game.Workspace.RandomSpawner.CFrame)end end)cba.Name="bfg"cba.Parent=_aa
+cba.BackgroundColor3=Color3.new(47,213,255)
+cba.BorderColor3=Color3.new(0.207843,0.0627451,0.0392157)cba.Position=UDim2.new(0.61280483,0,0.160447732,0)
+cba.Size=UDim2.new(0,92,0,32)cba.Font=Enum.Font.SourceSans;cba.Text="PlayerAnims"
+cba.TextSize=20;cba.TextStrokeColor3=Color3.new(1,0.560784,0.870588)
+cba.MouseButton1Click:connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/Gk02tw6u'),true))()end)dba.Name="admin"dba.Parent=_aa
+dba.BackgroundColor3=Color3.new(47,213,255)dba.Position=UDim2.new(0.336890161,0,0.682835817,0)
+dba.Size=UDim2.new(0,92,0,32)dba.Font=Enum.Font.SourceSans;dba.Text="FE Admin"dba.TextSize=20
+dba.MouseButton1Click:connect(function()
+loadstring(game:GetObjects("rbxassetid://01773249472")[1].Source)()end)_ca.Name="bypass"_ca.Parent=_aa
+_ca.BackgroundColor3=Color3.new(47,213,255)_ca.Position=UDim2.new(0.0853658766,0,0.167910427,0)
+_ca.Size=UDim2.new(0,92,0,32)_ca.Font=Enum.Font.SourceSans;_ca.Text="ElektroV2"_ca.TextSize=20
+_ca.MouseButton1Click:connect(function()
+loadstring(game:GetObjects("rbxassetid://01754587436")[1].Source)()end)Player=game.Players.LocalPlayer;Mouse=Player:GetMouse()
+gui=d_a;box=_aa;Open=false;function PressY(aab)
+if(aab=="y")then if(Open==false)then box.Visible=true;Open=true elseif(Open==true)then
+box.Visible=false;Open=false end end end
+Mouse.KeyDown:connect(PressY)local aca=game.Players.LocalPlayer;local bca=aca:GetMouse()
+local cca=game:GetService("ContextActionService")local dca=false
+aca.CharacterAdded:connect(function()Speed()end)local _da=Instance.new("ScreenGui",game.CoreGui)
+_da.Name="Music"local ada=Instance.new("TextBox",_da)
+ada.Size=UDim2.new(0.07,0,0.03,0)ada.Position=UDim2.new(0.905,0,0.96,0)
+ada.BackgroundColor3=Color3.new(0,0,0)ada.BackgroundTransparency=0.5;ada.Text="Enter ID Here"
+ada.TextColor3=Color3.new(1,1,1)ada.Font="Code"ada.FontSize="Size14"ada.BorderSizePixel=0
+local bda=Instance.new("TextButton",_da)bda.Size=UDim2.new(0.02,0,0.03,0)
+bda.Position=UDim2.new(0.975,0,0.96,0)bda.BackgroundColor3=Color3.new(0,0,0)
+bda.BackgroundTransparency=0.5;bda.Text="Play"bda.TextColor3=Color3.new(1,1,1)bda.Font="Code"
+bda.FontSize="Size14"bda.BorderSizePixel=0
+bda.MouseButton1Click:connect(function()
+if
+aca.Character:FindFirstChild("BoomBox")~=nil then
+aca.Character.BoomBox.Remote:FireServer("PlaySong",ada.Text)else ada.Text="Equip Radio"end end)local cda=game.Players.LocalPlayer;local dda=cda:GetMouse()
+local __b=game:GetService("RunService").Heartbeat;local a_b=cda.Character.Humanoid;local b_b=""local c_b={}local d_b=false
+cda.Chatted:connect(function(aab)
+aab=aab:lower()if aab==b_b.."bfgaim"then d_b=not d_b end end)
+function addGuns()local aab=cda.Backpack:GetChildren()
+for bab,cab in ipairs(aab)do if
+ 
+cab.Name=="Uzi"or cab.Name=="Shotty"or cab.Name=="Glock"or cab.Name=="Sawed Off"then
+table.insert(c_b,cab)end end end;function removeGuns()a_b:UnequipTools()
+for aab,bab in ipairs(c_b)do table.remove(c_b,bab)end end;local _ab=false
+cda.Chatted:connect(function(aab)
+aab=aab:lower()
+if aab==b_b.."bfg"then if _ab==false then _ab=true;addGuns()elseif _ab==true then _ab=false
+removeGuns()end end end)
+dda.Button1Down:connect(function()if _ab==true then for aab,bab in ipairs(c_b)do
+bab.Fire:FireServer(dda.Hit)end end end)
+__b:connect(function()
+if d_b==true then
+for aab,bab in ipairs(c_b)do
+if bab and dda.Target then
+local cab=dda.Target.Parent:FindFirstChild("Humanoid")
+if cab then
+local dab=game.Players:FindFirstChild(cab.Parent.Name)if dab then bab.Fire:FireServer(dda.Hit)end end end end end end)
+while true do __b:wait()if _ab==true then
+for aab,bab in ipairs(c_b)do bab.Parent=cda.Character end end end

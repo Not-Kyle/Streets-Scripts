@@ -1,0 +1,22 @@
+ local lighting = game.Lighting
+
+ 
+    local skybox = Instance.new("Sky",lighting)
+    skybox.SkyboxBk = "rbxassetid://10037975499"
+    skybox.SkyboxDn = "rbxassetid://10037975499"
+    skybox.SkyboxFt = "rbxassetid://10037975499"
+    skybox.SkyboxLf = "rbxassetid://10037975499"
+    skybox.SkyboxRt = "rbxassetid://10037975499"
+    skybox.SkyboxUp = "rbxassetid://10037975499"
+    
+    local lighting = game.Lighting
+  if lighting:FindFirstChild("ColorCorrection") then
+   lighting:FindFirstChild("ColorCorrection"):Remove()
+  end
+  if lighting:FindFirstChild("Correction") then
+   lighting:FindFirstChild("Correction"):Remove()
+  end 
+  if lighting:FindFirstChildOfClass("SunRaysEffect") then
+   lighting:FindFirstChildOfClass("SunRaysEffect"):Remove()
+   end
+local lighting = game.Lighting if lighting:FindFirstChildOfClass("SunRaysEffect") then lighting:FindFirstChildOfClass("SunRaysEffect"):Remove() end

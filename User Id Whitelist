@@ -1,0 +1,9 @@
+local BL = game:GetService("Players").LocalPlayer
+local BlacklistTable = {
+	[1] = true; --[1] needs to be the user ID
+}
+
+if BlacklistTable[BL.UserId] then
+
+BL:Kick("You are blacklisted")
+end

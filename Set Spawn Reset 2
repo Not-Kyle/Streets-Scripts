@@ -1,0 +1,23 @@
+local p = game:GetService('Players')
+local pl = p.LocalPlayer
+local m = pl:GetMouse().KeyDown
+
+function getChar()
+    return pl.Character
+end
+
+function res()
+    getChar():FindFirstChild('Head'):Destroy()
+end
+
+m:Connect(function(t)
+    if t == "r" then
+        local DaTNiggaSinister = getChar()
+        local prev = DaTNiggaSinister:FindFirstChild('Torso').CFrame
+        res()
+        pl.CharacterAdded:Wait()
+        for i = 1,10 do
+            getChar():WaitForChild('HumanoidRootPart').CFrame = prev
+        end
+    end
+end)

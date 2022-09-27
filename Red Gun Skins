@@ -1,0 +1,44 @@
+local getc = game.Players.LocalPlayer.Backpack.Shotty:GetChildren()
+
+    for i,v in pairs (getc) do
+        if v.Name == "Union" then
+            v.UsePartColor = true 
+            wait()
+            v.Material = "Neon"
+            v.Color = Color3.fromRGB(200,0,0)
+            v.Transparency = 0.7
+        end
+    end
+local getc = game.Players.LocalPlayer.Backpack.Glock:GetChildren()
+
+    for i,v in pairs (getc) do
+        if v.Name == "Union" then
+            v.UsePartColor = true 
+            wait()
+            v.Material = "Neon"
+            v.Color = Color3.fromRGB(200,0,0)
+            v.Transparency = 0.7
+        end
+    end
+local getc = game.Players.LocalPlayer.Backpack.Glock:GetChildren()
+
+    for i,v in pairs (getc) do
+        if v.Name == "Handle" then
+            v.UsePartColor = true 
+            wait()
+            v.Material = "Neon"
+            v.Color = Color3.fromRGB(200,0,0)
+            v.Transparency = 0.7
+        end
+    end
+local getc = game.Players.LocalPlayer.Backpack.Glock:GetChildren()
+
+    for i,v in pairs (getc) do
+        if v.Name == "Heh" then
+            v.UsePartColor = true 
+            wait()
+            v.Material = "Neon"
+            v.Color = Color3.fromRGB(200,0,0)
+            v.Transparency = 0.7
+        end
+    end

@@ -1,0 +1,61 @@
+--WaterMark
+local timeRemaining = 5
+
+while timeRemaining > 0 do
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Frame2 = Instance.new("Frame")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Name = "Frame"
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.BorderColor3 = Color3.fromRGB(170, 0, 255)
+Frame.Position = UDim2.new(0.365910888, 0, 0.41615665, 0)
+Frame.Size = UDim2.new(0, 343, 0, 137)
+Frame.Image = "rbxassetid://3570695787"
+Frame.ImageColor3 = Color3.fromRGB(13, 13, 13)
+Frame.ScaleType = Enum.ScaleType.Slice
+Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+Frame.SliceScale = 0.040
+Frame.Draggable = true
+Frame.Selectable = true
+Frame.Active = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.206997082, 0, 0.0583941601, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.Ubuntu
+TextLabel.Text = "Aurora Loading.."
+TextLabel.TextColor3 = Color3.fromRGB(170, 0, 255)
+TextLabel.TextSize = 16.000
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.206997097, 0, 0.56934303, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.Ubuntu
+TextLabel_2.Text = "Waiting..."..timeRemaining
+TextLabel_2.TextColor3 = Color3.fromRGB(170, 0, 255)
+TextLabel_2.TextSize = 16.000
+
+Frame2.Name = "Frame2"
+Frame2.Parent = Frame
+Frame2.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+Frame2.Position = UDim2.new(0.0320699699, 0, 0.131386861, 0)
+Frame2.Size = UDim2.new(0, 1, 0, 100)
+
+wait(1)
+timeRemaining = timeRemaining - 1
+Frame.Visible = false
+end

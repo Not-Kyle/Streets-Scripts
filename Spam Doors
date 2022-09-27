@@ -1,0 +1,29 @@
+local FindFirstChild, GetChildren = game.FindFirstChild, game.GetChildren
+local wait = task.wait
+
+local Doors, Remotes = {}, {}
+
+for i, v in ipairs(GetChildren(workspace)) do
+    if tostring(v) == "Door" and FindFirstChild(v, "WoodPart") then
+        table.insert(Doors, v)
+    end
+end
+
+for i, v in ipairs(Doors) do
+    for i2, v2 in ipairs(GetChildren(v)) do
+        if FindFirstChild(v2, "RemoteEvent", true) and tostring(v2) == "Click" then
+            local Remote = FindFirstChild(v2, "RemoteEvent", true)
+            table.insert(Remotes, Remote)
+        end
+    end
+end
+
+while true do
+    for i, v in ipairs(Remotes) do
+        local Remote = v
+        local FireRemote = Remote.FireServer
+
+        FireRemote(Remote)
+        wait()
+    end
+end

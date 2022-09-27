@@ -1,0 +1,8 @@
+getgenv().SearchPlayers = function(Name)
+    local Inserted = {}
+        for _, p in pairs(game:GetService("Players"):GetPlayers()) do 
+        if string.lower(string.sub(p.DisplayName, 1, string.len(Name))) == string.lower(Name) then 
+            table.insert(Inserted, p);return p
+        end
+    end
+end

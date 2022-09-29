@@ -1,3 +1,5 @@
+--third leak
+
 local EnvBackup=getfenv()
 local Done = false
 local Env=setmetatable({},{__index=function(self,key)

@@ -1,0 +1,51 @@
+local char = game.Players.LocalPlayer.Character
+local torso = char.Torso
+
+torso_att = Instance.new("Attachment", torso)
+
+torso_att.Rotation = Vector3.new(1,0,0)
+torso_att.Position = Vector3.new(0,0,0)
+
+rarm = char["Right Arm"]
+rarm:BreakJoints()
+
+r = Instance.new("Attachment",rarm)
+r.Rotation = Vector3.new(-0, 0, 0) 
+r.Position = Vector3.new(-1.20007, 0.0255, -0.000333)
+
+t = Instance.new("Attachment",torso)
+
+rap = Instance.new("AlignPosition",rarm)
+rap.ApplyAtCenterOfMass = false
+rap.MaxVelocity = 0/0
+rap.ReactionForceEnabled = false
+rap.Attachment0 = r
+rap.Attachment1 = t
+rap.RigidityEnabled = true;
+rap.MaxForce = 0/0;
+rap.RigidityEnabled = true;
+rap.Responsiveness = 10000;
+rarm.CanCollide = false
+
+rao = Instance.new("AlignOrientation",rarm)
+rao.MaxAngularVelocity = 0/0
+rao.MaxTorque = 0/0
+rao.PrimaryAxisOnly = false
+rao.ReactionTorqueEnabled = false
+rao.Attachment0 = r
+rao.Attachment1 = t
+rao.RigidityEnabled = true
+
+game:GetService("RunService").Heartbeat:Connect(function()
+rarm.Velocity = Vector3.new(100,100,100)
+end)
+
+wait(2)
+print(rarm.Velocity)
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v.Name == "Right Arm" then 
+game:GetService("RunService").RenderStepped:connect(function()
+v.Velocity = Vector3.new(1e1,2e2,3e3)
+end)
+end
+end

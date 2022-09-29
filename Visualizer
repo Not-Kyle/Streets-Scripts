@@ -1,0 +1,139 @@
+local Players, RService = game:GetService"Players", game:GetService"RunService";
+local Client, CF = Players.LocalPlayer, CFrame.new;
+local XSet, YSet, ZSet, OSet, Sine,Rot,Mov = 88,77,66,-10, 0,0,0;
+local Visualizing, VisTool = false, "Spray";
+local Commands, Prefix, LoadingTime = {}, "-", tick();
+local VisToolTable = {
+    ["glock"] = "Glock";["shotty"] = "Shotty";
+    ["uzi"] = "Uzi";["sawoff"] = "Sawed Off";
+    ["pipe"] = "Pipe";["katana"] = "Katana";
+    ["spray"] = "Spray";["knife"] = "Knife";
+    ["golf"] = "Golf Club";["machete"] = "Machete";
+    ["greenbull"] = "Greenbull";["brick"] = "Brick";
+    ["stopsign"] = "Stop Sign";
+}
+
+getgenv().GetInit = function(CName)
+    for _, v in next, Commands do 
+        if table.find(v.Aliases, CName) then 
+            return v.Function 
+        end 
+    end
+end
+
+getgenv().RunCommand = function(Cmd)
+    Cmd = string.lower(Cmd)
+    pcall(function()
+        if Cmd:sub(1, #Prefix) == Prefix then 
+            local args = string.split(Cmd:sub(#Prefix + 1), " ")
+            local CmdName = GetInit(table.remove(args, 1))
+            if CmdName and args then
+                return CmdName(args)
+            end
+        end
+    end)
+end
+
+getgenv().Notify = function(title, text, icon, time)
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = title;
+        Text = text;
+        Icon = "rbxassetid://5793181157";
+        Duration = time;
+    }) 
+end
+
+getgenv().UnVis = function()
+    if Client and Client.Character and Client.Character:FindFirstChild("Humanoid") then 
+        Client.Character.Humanoid:UnequipTools()
+    end
+end
+
+Commands["VisTool"] = {
+    ["Aliases"] = {"vistool"};
+    ["Function"] = function(args)
+        if VisToolTable[args[1]] then 
+            VisTool = VisToolTable[args[1]]
+        end
+        Notify("zxciaz", "Vistool: "..tostring(VisTool), "", 3)
+    end
+}
+Commands["X-Offset"] = {
+    ["Aliases"] = {"xset"};
+    ["Function"] = function(args)
+        if tonumber(args[1]) then 
+            XSet = tonumber(args[1])
+        end
+        Notify("zxciaz", "X-Offset: "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["Y-Offset"] = {
+    ["Aliases"] = {"yset"};
+    ["Function"] = function(args)
+        if tonumber(args[1]) then 
+            YSet = tonumber(args[1])
+        end
+        Notify("zxciaz", "Y-Offset: "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["Z-Offset"] = {
+    ["Aliases"] = {"zset"};
+    ["Function"] = function(args)
+        if tonumber(args[1]) then 
+            ZSet = tonumber(args[1])
+        end
+        Notify("zxciaz", "Z-Offset: "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["O-Offset"] = {
+    ["Aliases"] = {"oset"};
+    ["Function"] = function(args)
+        if tonumber(args[1]) then 
+            OSet = tonumber(args[1])
+        end
+        Notify("zxciaz", "O-Offset: "..tonumber(args[1]), "", 3)
+    end
+}
+Commands["Visualize"] = {
+    ["Aliases"] = {"visualize", "vis"};
+    ["Function"] = function()
+        Visualizing = not Visualizing
+        Notify("zxciaz", "Visualizer: "..tostring(Visualizing), "", 3)
+    end
+}
+Client.Chatted:Connect(RunCommand)
+
+RService.Stepped:Connect(function()
+    if Visualizing == true then
+        local R1, R2 = Client.Backpack:FindFirstChild("BoomBox"), Client.Character:FindFirstChild("BoxModel")
+        getgenv().Song = R2.Handle["SoundX"] or R2.Handle["Sound"];UnVis()
+        for i = 1, #Client.Backpack:GetChildren() do 
+            local BP = Client.Backpack:GetChildren()[i]
+            if tostring(BP) == VisTool then 
+                Sine = Sine + XSet;Rot = Rot + YSet;Mov = Mov + ZSet -- You can play around with the PBL ill probably add a command for it
+                BP.Grip = CF(Song.PlaybackLoudness/-150, Song.PlaybackLoudness/-500, Song.PlaybackLoudness/-250) * CFrame.Angles(Sine, OSet, Rot)
+                BP.Parent = Client.Character
+            end
+        end
+    end
+end)
+
+print([[
+
+zxciaz/xaxa/fiviefourteen's The Streets Visualizer V1
+-----------------------------------------------------
+Commands: 
+
+-vistool <namehere>, Sets your Visualizer Tool
+-visualize [vis], Toggles the Visualizer on and Off
+
+-xset <numberhere>, Sets the X-Angle Offset
+-yset <numberhere>, Sets the Y-Angle Offset 
+-zset <numberhere>, Sets the Z-Angle Offset 
+-oset <numberhere>, Sets the Angle in Which Your Tools Tilt 
+
+]])
+Notify("zxciaz", "Welcome to my Tool/Audio Visualizer for The Streets/Prison!", "", 3)
+Notify("zxciaz", "Took "..tostring(tick() - LoadingTime):sub(1,5).." seconds to load", "", 3)
+wait(3)
+Notify("zxciaz", "Press F9 For Commands!", "", 3)

@@ -1,0 +1,64 @@
+if Loaded == true then
+    Notify("zxciaz", "Script Loaded More Then 1 Time, Please Rejoin The Game!", "", 3)
+end
+
+-- by zxciaz/xaxa
+local Players, RService, Uis = game:GetService("Players"), game:GetService("RunService"), game:GetService("UserInputService");
+local Client, Mouse, CF, Vec3, INew = Players.LocalPlayer, Players.LocalPlayer:GetMouse(), CFrame.new, Vector3.new, Instance.new;
+local RGShootKey, RG, AV = "E", false, 10;
+local RGTarget;
+
+getgenv().Loaded = true
+getgenv().Notify = function(title, text, icon, time)
+    game.StarterGui:SetCore("SendNotification",{
+        Title = title;
+        Text = text;
+        Icon = "rbxassetid://5793181157";
+        Duration = time;
+    }) 
+end
+Notify("zxciaz", "The Streets/Prison Remote Gun Loaded! Press F9 For Commands.", "", 3);
+
+getgenv().ShootPlayer = function(Target) 
+    local Tool = Client.Character:FindFirstChildWhichIsA("Tool");
+    if Target and Target.Character and Target.Character:FindFirstChild("Torso") and Tool and Tool:FindFirstChild("Fire") then
+        Tool.Fire:FireServer(Target.Character.Torso.CFrame + Target.Character.Torso.Velocity/AV)
+    else
+        Client.Backpack.Input:FireServer("m1", {
+            ["mousehit"] = Target.Character.Torso.CFrame + Target.Character.Torso.Velocity/AV;
+        })
+    end
+end
+
+Uis.InputBegan:Connect(function(Key, Typing)
+    if Typing then return end 
+    if Key.KeyCode == Enum.KeyCode[RGShootKey] then 
+        while Uis:IsKeyDown(Enum.KeyCode[RGShootKey]) and RService.Heartbeat:Wait() do 
+            ShootPlayer(RGTarget)
+        end
+    end
+end)
+
+Client.Chatted:Connect(function(Msg)
+    if string.find(Msg, "-rg ") then 
+        local Name = string.gsub(Msg, "-rg ", "") 
+        for _, p in pairs(Players:GetChildren()) do 
+            if string.sub(string.lower(p.Name),1, string.len(Name)) == string.lower(Name) then 
+                RGTarget = p;setsimulationradius(math.huge, math.huge)
+                Notify("zxciaz", "Remote Gun Target: "..tostring(RGTarget), "", 3)
+                local Tool = Client.Character:FindFirstChildWhichIsA("Tool")
+                if RGTarget and RGTarget.Character and RGTarget.Character:FindFirstChild("Head") and Client.Character:FindFirstChild("Right Arm") then 
+                    local RP = INew("RocketPropulsion", Tool.Handle) -- this may look ugly since its 10 am and i havent slept yet
+                    RP.ThrustP = 90000;RP.TurnP = 200;RP.MaxSpeed = 1000;RP.MaxThrust = 10000;RP:Fire()
+                    Client.Character["Right Arm"]:FindFirstChild("RightGrip"):Destroy()
+                    repeat RService.Heartbeat:Wait()
+                        RP.Target = RGTarget.Character.Head
+                    until RGTarget.Character:FindFirstChild("Bone", true) or RGTarget.Character:FindFirstChild("KO") or RGTarget.Character.Humanoid.Health == 0 or Client.Character.Humanoid.Health == 0 or not Tool
+                    if RGTarget.Character.Humanoid.Health == 0 or Client.Character.Humanoid.Health == 0 or not Tool then
+                        RGTarget = nil;RG = false;RP:Destroy()
+                    end
+                end
+            end
+        end
+    end
+end)

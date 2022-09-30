@@ -1,0 +1,9 @@
+{"AimlockMode":"LeftClick",
+"SprintSpeed":"25",
+"AimbotVelocity":5,
+"ClickTpKey":"",
+"CmdBarImage":"http://www.roblox.com/asset/?id=2812081613",
+"AimMode":"Prediction",
+"Keys":["fly||F","noclip||X","blink||B","aimlock||I","airwalk||Q","get uzi||U"],
+"CmdBarKey":"Quote",
+"CrouchSpeed":"8"}

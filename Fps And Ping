@@ -1,0 +1,65 @@
+repeat wait() until game:IsLoaded()
+local ScreenGui = Instance.new("ScreenGui")
+local Fps = Instance.new("TextLabel")
+local Ping = Instance.new("TextLabel")
+local Frame2 = Instance.new("Frame")
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame2.Parent = ScreenGui
+Frame2.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame2.BorderSizePixel = 2.3
+Frame2.Position = UDim2.new(0.9175, 0, 0.95, 0)
+Frame2.Size = UDim2.new(0, 152, 0, 45)
+Frame2.BackgroundTransparency = 0.8
+Frame2.ZIndex = 0
+
+
+Fps.Name = "Fps"
+Fps.Parent = Frame2
+Fps.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Fps.BackgroundTransparency = 1
+Fps.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Fps.BorderSizePixel = 0
+Fps.Position = UDim2.new(0, 0, 0, 0.3)
+Fps.Size = UDim2.new(-0.35, 125, 0, 25)
+Fps.Font = Enum.Font.Code
+Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fps.TextScaled = false
+Fps.TextSize = 16
+Fps.TextWrapped = false
+
+Ping.Name = "Ping"
+Ping.Parent = Frame2
+Ping.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+Ping.BackgroundTransparency = 1
+Ping.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Ping.BorderSizePixel = 0
+Ping.Position = UDim2.new(0.1, 0, 0.5, 0.3)
+Ping.Size = UDim2.new(0, 125, 0, 25)
+Ping.Font = Enum.Font.Code
+Ping.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ping.TextScaled = false
+Ping.TextSize = 13
+Ping.TextWrapped = false
+
+-- Scripts:
+
+local script = Instance.new('LocalScript', Fps)
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(fps) -- This will fire every time a frame is rendered
+	local fps = game.Workspace:GetRealPhysicsFPS()
+	script.Parent.Text = "Fps: "..math.floor(fps)..""
+    
+end)
+
+-- Little screen 	--script.Parent.Text = "             FPS: "..math.floor(fps).."   "
+
+local script = Instance.new('LocalScript', Ping)
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(ping) 
+script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
+end)

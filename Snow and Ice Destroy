@@ -1,0 +1,2 @@
+    for i,v in pairs(game.workspace:GetDescendants()) do if v.name == "ICEPATCH" then v:Destroy() end end
+    for i,v in pairs(game.workspace:GetDescendants()) do if v.name == "snow" then v:Destroy() end end

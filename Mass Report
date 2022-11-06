@@ -1,0 +1,45 @@
+-- auto report to be a dick and get people banned by scartesu
+
+local players = game.Players
+------------------------ you can edit or add to this to make it more effective yes ----------------------
+local funnywords = {"####","###","ahhs","ahz","black","bIackie","gger","######","dogsh","f","u","c","k","seed","##############","a","b","c","d","e","btc","bih","fhack","bi","######","as","cu","fu","tht","thit","tarde"}
+------------------------ you can edit or add to this to make it more effective yes ----------------------
+
+
+for _,v in pairs(players:GetPlayers()) do
+    v.Chatted:connect(function(swears)
+        if table.find(funnywords,swears:lower()) then
+            for i = 1,10 do
+            game.Players:ReportAbuse(v, "Swearing", "user is swearing and trying to bypass filter.")
+            end
+
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Auto Report";
+    Text = "sent a report to roblox. user breaking TOS is "..v.Name..", word used: "..swears.."";
+})
+       end
+   end)
+end
+
+-- going for individual new players cus yes
+players.PlayerAdded:connect(function(kid)
+
+    kid.Chatted:connect(function(swears)
+        if table.find(funnywords,swears:lower()) then
+            for i = 1,10 do
+            game.Players:ReportAbuse(kid, "Swearing", "user is swearing and trying to bypass filter.")
+            end
+
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Auto Report";
+    Text = "sent a report to roblox. user breaking TOS is "..kid.Name..", word used: "..swears.."";
+})
+       end
+   end)
+
+    end)
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Auto Report";
+    Text = "Auto Report Running. Made By Scartesu";
+})

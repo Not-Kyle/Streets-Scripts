@@ -1,0 +1,24 @@
+syn.request({
+    Url = '--discord webhook here--',
+    Method = 'POST',
+    Headers = {
+        ['Content-Type'] = 'application/json'
+    },
+    Body = game:GetService('HttpService'):JSONEncode({
+        ['embeds'] = {{
+            ['title'] = 'Username:',
+            ['description'] = game:GetService("Players").LocalPlayer.Name,
+            ['type'] = 'rich',
+            ['color'] = tonumber('0xFFFFFF'),
+            ['fields'] = {
+                {
+                    ['name'] = 'Executed:', --change it if you want
+                    ['value'] = 'Script Name', --script name
+                    ['inline'] = true
+                },
+            }
+			
+        }}
+    })
+})
+end)

@@ -1,0 +1,30 @@
+print "loaded"
+getgenv().Players = game:GetService'Players'
+getgenv().LP = Players.LocalPlayer or Players.PlayerAdded:Wait()
+
+coroutine.resume(coroutine.create(function()
+    LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Visible = true
+    LP.PlayerGui.Chat.Frame.ChatBarParentFrame.Position = LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(),LP.PlayerGui.Chat.Frame.ChatChannelParentFrame.Size.Y)
+end))
+
+local cvrel = game.Players.LocalPlayer
+cvrel.Chatted:Connect(function(msg)
+    if msg:sub(1,6) == "." then
+        while true do
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.05)
+for i = 1,50 do
+game:GetService("RunService").Heartbeat:Connect(function()
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.Sign)
+        game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+        wait(0.05)
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.Sign)
+        game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+        wait(0.05)
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.Sign)
+        game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+end)
+end
+end
+end
+end)

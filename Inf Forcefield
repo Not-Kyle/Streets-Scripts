@@ -1,0 +1,39 @@
+local l = game.Players.LocalPlayer
+local rs = game['RunService'].RenderStepped
+local storage = Instance.new('Folder', game);storage.Name = 'HumStorage'
+local cf = nil
+
+rs:connect(function()
+    if l.Character:FindFirstChild('HumanoidRootPart') then
+        l.Character.HumanoidRootPart.Parent = nil
+        l.Character.Humanoid.Parent = storage
+        storage.Humanoid.Parent = l.Character
+    end
+end)
+
+function GetChar()
+    return l.Character or l.CharactedAdded:wait()
+end
+
+function Respawn()
+    local a = Instance.new('Model')
+    local b = Instance.new('Humanoid',a)
+    local c = l.Character
+    l.Character = a
+    l.Character = c
+    wait(4.99)
+    cf = l.Character:WaitForChild('Torso').CFrame
+    l.Character:Remove()
+end
+
+l.CharacterAdded:connect(function()
+    Respawn()
+    repeat wait() until l.Character:FindFirstChild('Torso')
+    for i = 1, 8 do
+        l.Character.Torso.CFrame = cf
+        wait()
+    end
+    l.Character.Humanoid:ChangeState(3)
+    l.Character.Humanoid:ChangeState(2)
+end)
+GetChar():Remove()

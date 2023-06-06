@@ -518,9 +518,7 @@ warn("Green is allies, Red is enemies")
 warn("this esp is for the group Operation Anthrax")
 --females need to close their disgusting mouths
 --ANTHRAX LORE!!! ANTHRAX WAS STARTED BECAUSE FEMALES HAVE SUCH HIGH EGO --i dont kos the ones that aren't hoes/bitches/high egos
---I dont kos lexi tho. kos people like bigfacttsss, gutkiii, iuvrtz, fuck i dont even know any of these names because they are so
---irrelevant to me. females like acidleak, regangel both whores
-
+--thinking about coming back just to release the third verse of Reaver and dip
 
 --ANTHRAX LORE ^^^^
 

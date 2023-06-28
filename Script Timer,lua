@@ -62,6 +62,6 @@ function usenotifictions(title, text, time)
 
 usenotifictions("Reaver","took " .. string.format("%.3f",tick()-Tick) .. " seconds",3)  
 
-print([[
-reaver notifictions, cry about it. reaver is beautiful even after i left
-]])
+
+--reaver notifictions, cry about it. reaver is beautiful even after i left
+

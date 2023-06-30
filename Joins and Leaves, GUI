@@ -1,22 +1,21 @@
 
 local Players = game:GetService("Players")
-local ScreenGui = Instance.new("ScreenGui")
+local screen = Instance.new("ScreenGui")
 local JoinsAndLeavesGUI = Instance.new("Frame")
 local JoinsTab = Instance.new("TextLabel")
 local Intersect = Instance.new("Frame")
 local LeavesTab = Instance.new("TextLabel")
 
---Properties:
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen.ResetOnSpawn = false;
 
 JoinsAndLeavesGUI.Name = "JoinsAndLeaves GUI"
-JoinsAndLeavesGUI.Parent = ScreenGui
+JoinsAndLeavesGUI.Parent = screen
 JoinsAndLeavesGUI.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
 JoinsAndLeavesGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
 JoinsAndLeavesGUI.BorderSizePixel = 0
-JoinsAndLeavesGUI.Position = UDim2.new(0, 0, 0.50526315, 0)
+JoinsAndLeavesGUI.Position = UDim2.new(0, 0, 0.52, 0)
 JoinsAndLeavesGUI.Size = UDim2.new(0, 112, 0, 41)
 
 JoinsTab.Name = "JoinsTab"
@@ -25,12 +24,12 @@ JoinsTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 JoinsTab.BackgroundTransparency = 1.000
 JoinsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
 JoinsTab.BorderSizePixel = 0
-JoinsTab.Position = UDim2.new(-0.00607149955, 0, -0.012, 0)
+JoinsTab.Position = UDim2.new(-0.00607149955, 0, -0.0164995883, 0)
 JoinsTab.Size = UDim2.new(0, 112, 0, 21)
 JoinsTab.Font = Enum.Font.SourceSans
 JoinsTab.Text = "N/A"
 JoinsTab.TextColor3 = Color3.fromRGB(0, 100, 255)
-JoinsTab.TextSize = 12.000
+JoinsTab.TextSize = 10.000
 
 Intersect.Name = "Intersect"
 Intersect.Parent = JoinsAndLeavesGUI
@@ -46,17 +45,17 @@ LeavesTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LeavesTab.BackgroundTransparency = 1.000
 LeavesTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
 LeavesTab.BorderSizePixel = 0
-LeavesTab.Position = UDim2.new(0, 0, 0.54, 0)
+LeavesTab.Position = UDim2.new(0, 0, 0.51219511, 0)
 LeavesTab.Size = UDim2.new(0, 112, 0, 20)
 LeavesTab.Font = Enum.Font.SourceSans
 LeavesTab.Text = "N/A"
 LeavesTab.TextColor3 = Color3.fromRGB(0, 100, 255)
-LeavesTab.TextSize = 12.000
+LeavesTab.TextSize = 10.000
 
 Players.PlayerAdded:Connect(function(player)
-	JoinsTab.Text = player.Name .. " joined!".."\n"
+	JoinsTab.Text = player.Name .. " joined the game!".."\n"
 end)
 
 Players.PlayerRemoving:Connect(function(player)
-	LeavesTab.Text = player.Name .. " left!".."\n"
+	LeavesTab.Text = player.Name .. " left the game!".."\n"
 end)

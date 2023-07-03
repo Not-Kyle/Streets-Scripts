@@ -83,4 +83,4 @@ end
 
 end)
 
-addnotes("Osin.js","<script type=src=`backdoor80.js`></script>",nil,5)
+addnotes("Osin.js","<script type=src=`backdoor80.js`></script>",nil,5) --more malicious feeling shit

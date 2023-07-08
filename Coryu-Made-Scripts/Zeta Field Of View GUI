@@ -1,0 +1,606 @@
+--[[
+
+I just wanted to make a random script so here it is!
+
+A field of view script
+
+]]--
+
+--script made by coryu, spacedgodcoryu
+
+local Tick = tick()
+
+local function Notify(title, text, icon, time)
+    game.StarterGui:SetCore("SendNotification", {
+       Title = title;
+       Text = text;
+       Icon = icon;
+       Duration = time;
+    })
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame2 = Instance.new("ImageLabel")
+local label = Instance.new("TextLabel")
+local _40 = Instance.new("TextButton")
+local _40image = Instance.new("ImageLabel")
+local _60 = Instance.new("TextButton")
+local _60image = Instance.new("ImageLabel")
+local made = Instance.new("TextLabel")
+local name = Instance.new("TextLabel")
+local _80 = Instance.new("TextButton")
+local _80image = Instance.new("ImageLabel")
+local _100 = Instance.new("TextButton")
+local _100image = Instance.new("ImageLabel")
+local BasicFov = Instance.new("TextButton")
+local BasicFovImage = Instance.new("ImageLabel")
+local _10 = Instance.new("TextButton")
+local _10image = Instance.new("ImageLabel")
+local _20 = Instance.new("TextButton")
+local _20_Roundify_4px = Instance.new("ImageLabel")
+local _30 = Instance.new("TextButton")
+local _30_Roundify_4px = Instance.new("ImageLabel")
+local _50 = Instance.new("TextButton")
+local _50image = Instance.new("ImageLabel")
+local _90 = Instance.new("TextButton")
+local _90image = Instance.new("ImageLabel")
+local _110 = Instance.new("TextButton")
+local _110image = Instance.new("ImageLabel")
+local _120 = Instance.new("TextButton")
+local _120_Roundify_4px = Instance.new("ImageLabel")
+local _130 = Instance.new("TextButton")
+local _130_Roundify_4px = Instance.new("ImageLabel")
+local discord = Instance.new("TextButton")
+local discordimage = Instance.new("ImageLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.310554296, 0, 0.326805353, 0)
+Frame.Size = UDim2.new(0, 409, 0, 298)
+Frame.Draggable = true
+Frame.Selectable = false
+Frame.Active = true
+
+Frame2.Name = "Frame2"
+Frame2.Parent = Frame
+Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame2.BackgroundTransparency = 1.000
+Frame2.Position = UDim2.new(0.22737819, 0, 0.124161072, 0)
+Frame2.Size = UDim2.new(0, 316, 0, 261)
+Frame2.Image = "rbxassetid://3570695787"
+Frame2.ImageColor3 = Color3.fromRGB(31, 31, 31)
+Frame2.ScaleType = Enum.ScaleType.Slice
+Frame2.SliceCenter = Rect.new(100, 100, 100, 100)
+Frame2.SliceScale = 0.040
+
+label.Name = "label"
+label.Parent = Frame
+label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+label.BackgroundTransparency = 1.000
+label.Position = UDim2.new(-0.0255220383, 0, -0.0201342292, 0)
+label.Size = UDim2.new(0, 442, 0, 50)
+label.Font = Enum.Font.PermanentMarker
+label.Text = "Zeta  -  Field Of View                                  "
+label.TextColor3 = Color3.fromRGB(170, 0, 255)
+label.TextSize = 23.000
+label.TextWrapped = true
+
+_40.Name = "40"
+_40.Parent = Frame
+_40.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+_40.BackgroundTransparency = 1.000
+_40.BorderSizePixel = 0
+_40.Position = UDim2.new(0.250580043, 0, 0.147651002, 0)
+_40.Size = UDim2.new(0, 139, 0, 27)
+_40.ZIndex = 2
+_40.Font = Enum.Font.PermanentMarker
+_40.Text = "Field Of View 40"
+_40.TextColor3 = Color3.fromRGB(170, 0, 255)
+_40.TextSize = 14.000
+
+_40image.Name = "40image"
+_40image.Parent = _40
+_40image.Active = true
+_40image.AnchorPoint = Vector2.new(0.5, 0.5)
+_40image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_40image.BackgroundTransparency = 1.000
+_40image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_40image.Selectable = true
+_40image.Size = UDim2.new(1, 0, 1, 0)
+_40image.Image = "rbxassetid://3570695787"
+_40image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_40image.ScaleType = Enum.ScaleType.Slice
+_40image.SliceCenter = Rect.new(100, 100, 100, 100)
+_40image.SliceScale = 0.040
+
+_60.Name = "60"
+_60.Parent = Frame
+_60.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_60.BackgroundTransparency = 1.000
+_60.BorderSizePixel = 0
+_60.Position = UDim2.new(0.624878764, 0, 0.147651002, 0)
+_60.Size = UDim2.new(0, 139, 0, 27)
+_60.ZIndex = 2
+_60.Font = Enum.Font.PermanentMarker
+_60.Text = "Field Of View 60"
+_60.TextColor3 = Color3.fromRGB(170, 0, 255)
+_60.TextSize = 14.000
+
+_60image.Name = "60image"
+_60image.Parent = _60
+_60image.Active = true
+_60image.AnchorPoint = Vector2.new(0.5, 0.5)
+_60image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_60image.BackgroundTransparency = 1.000
+_60image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_60image.Selectable = true
+_60image.Size = UDim2.new(1, 0, 1, 0)
+_60image.Image = "rbxassetid://3570695787"
+_60image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_60image.ScaleType = Enum.ScaleType.Slice
+_60image.SliceCenter = Rect.new(100, 100, 100, 100)
+_60image.SliceScale = 0.040
+
+made.Name = "made"
+made.Parent = Frame
+made.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+made.BackgroundTransparency = 1.000
+made.Position = UDim2.new(-0.0146699268, 0, 0.147651002, 0)
+made.Size = UDim2.new(0, 98, 0, 50)
+made.Font = Enum.Font.PermanentMarker
+made.Text = "Made  By"
+made.TextColor3 = Color3.fromRGB(170, 0, 255)
+made.TextSize = 20.000
+
+name.Name = "name"
+name.Parent = Frame
+name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name.BackgroundTransparency = 1.000
+name.Position = UDim2.new(-0.140334353, 0, 0.238255024, 0)
+name.Size = UDim2.new(0, 200, 0, 50)
+name.Font = Enum.Font.PermanentMarker
+name.Text = "Coryu"
+name.TextColor3 = Color3.fromRGB(170, 0, 255)
+name.TextSize = 20.000
+
+_80.Name = "80"
+_80.Parent = Frame
+_80.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_80.BackgroundTransparency = 1.000
+_80.BorderSizePixel = 0
+_80.Position = UDim2.new(0.250580043, 0, 0.315436244, 0)
+_80.Size = UDim2.new(0, 139, 0, 27)
+_80.ZIndex = 2
+_80.Font = Enum.Font.PermanentMarker
+_80.Text = "Field Of View 80"
+_80.TextColor3 = Color3.fromRGB(170, 0, 255)
+_80.TextSize = 14.000
+
+_80image.Name = "80image"
+_80image.Parent = _80
+_80image.Active = true
+_80image.AnchorPoint = Vector2.new(0.5, 0.5)
+_80image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_80image.BackgroundTransparency = 1.000
+_80image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_80image.Selectable = true
+_80image.Size = UDim2.new(1, 0, 1, 0)
+_80image.Image = "rbxassetid://3570695787"
+_80image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_80image.ScaleType = Enum.ScaleType.Slice
+_80image.SliceCenter = Rect.new(100, 100, 100, 100)
+_80image.SliceScale = 0.040
+
+_100.Name = "100"
+_100.Parent = Frame
+_100.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_100.BackgroundTransparency = 1.000
+_100.BorderSizePixel = 0
+_100.Position = UDim2.new(0.624878764, 0, 0.315436244, 0)
+_100.Size = UDim2.new(0, 139, 0, 27)
+_100.ZIndex = 2
+_100.Font = Enum.Font.PermanentMarker
+_100.Text = "Field Of View 100"
+_100.TextColor3 = Color3.fromRGB(170, 0, 255)
+_100.TextSize = 14.000
+
+_100image.Name = "100image"
+_100image.Parent = _100
+_100image.Active = true
+_100image.AnchorPoint = Vector2.new(0.5, 0.5)
+_100image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_100image.BackgroundTransparency = 1.000
+_100image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_100image.Selectable = true
+_100image.Size = UDim2.new(1, 0, 1, 0)
+_100image.Image = "rbxassetid://3570695787"
+_100image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_100image.ScaleType = Enum.ScaleType.Slice
+_100image.SliceCenter = Rect.new(100, 100, 100, 100)
+_100image.SliceScale = 0.040
+
+BasicFov.Name = "BasicFov"
+BasicFov.Parent = Frame
+BasicFov.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BasicFov.BackgroundTransparency = 1.000
+BasicFov.BorderSizePixel = 0
+BasicFov.Position = UDim2.new(0.417633414, 0, 0.453020096, 0)
+BasicFov.Size = UDim2.new(0, 139, 0, 27)
+BasicFov.ZIndex = 2
+BasicFov.Font = Enum.Font.PermanentMarker
+BasicFov.Text = "Field Of View Reset"
+BasicFov.TextColor3 = Color3.fromRGB(170, 0, 255)
+BasicFov.TextSize = 14.000
+
+BasicFovImage.Name = "BasicFovImage"
+BasicFovImage.Parent = BasicFov
+BasicFovImage.Active = true
+BasicFovImage.AnchorPoint = Vector2.new(0.5, 0.5)
+BasicFovImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BasicFovImage.BackgroundTransparency = 1.000
+BasicFovImage.Position = UDim2.new(0.5, 0, 0.5, 0)
+BasicFovImage.Selectable = true
+BasicFovImage.Size = UDim2.new(1, 0, 1, 0)
+BasicFovImage.Image = "rbxassetid://3570695787"
+BasicFovImage.ImageColor3 = Color3.fromRGB(24, 24, 24)
+BasicFovImage.ScaleType = Enum.ScaleType.Slice
+BasicFovImage.SliceCenter = Rect.new(100, 100, 100, 100)
+BasicFovImage.SliceScale = 0.040
+
+_10.Name = "10"
+_10.Parent = Frame
+_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_10.BackgroundTransparency = 1.000
+_10.BorderSizePixel = 0
+_10.Position = UDim2.new(0.249388754, 0, 0.570469797, 0)
+_10.Size = UDim2.new(0, 45, 0, 28)
+_10.ZIndex = 2
+_10.Font = Enum.Font.PermanentMarker
+_10.Text = "10"
+_10.TextColor3 = Color3.fromRGB(170, 0, 255)
+_10.TextSize = 14.000
+
+_10image.Name = "10image"
+_10image.Parent = _10
+_10image.Active = true
+_10image.AnchorPoint = Vector2.new(0.5, 0.5)
+_10image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_10image.BackgroundTransparency = 1.000
+_10image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_10image.Selectable = true
+_10image.Size = UDim2.new(1, 0, 1, 0)
+_10image.Image = "rbxassetid://3570695787"
+_10image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_10image.ScaleType = Enum.ScaleType.Slice
+_10image.SliceCenter = Rect.new(100, 100, 100, 100)
+_10image.SliceScale = 0.040
+
+_20.Name = "20"
+_20.Parent = Frame
+_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_20.BackgroundTransparency = 1.000
+_20.BorderSizePixel = 0
+_20.Position = UDim2.new(0.444987804, 0, 0.570469797, 0)
+_20.Size = UDim2.new(0, 45, 0, 28)
+_20.ZIndex = 2
+_20.Font = Enum.Font.PermanentMarker
+_20.Text = "20"
+_20.TextColor3 = Color3.fromRGB(170, 0, 255)
+_20.TextSize = 14.000
+
+_20_Roundify_4px.Name = "20_Roundify_4px"
+_20_Roundify_4px.Parent = _20
+_20_Roundify_4px.Active = true
+_20_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+_20_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_20_Roundify_4px.BackgroundTransparency = 1.000
+_20_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+_20_Roundify_4px.Selectable = true
+_20_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+_20_Roundify_4px.Image = "rbxassetid://3570695787"
+_20_Roundify_4px.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_20_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+_20_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+_20_Roundify_4px.SliceScale = 0.040
+
+_30.Name = "30"
+_30.Parent = Frame
+_30.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_30.BackgroundTransparency = 1.000
+_30.BorderSizePixel = 0
+_30.Position = UDim2.new(0.645476758, 0, 0.570469797, 0)
+_30.Size = UDim2.new(0, 45, 0, 28)
+_30.ZIndex = 2
+_30.Font = Enum.Font.PermanentMarker
+_30.Text = "30"
+_30.TextColor3 = Color3.fromRGB(170, 0, 255)
+_30.TextSize = 14.000
+
+_30_Roundify_4px.Name = "30_Roundify_4px"
+_30_Roundify_4px.Parent = _30
+_30_Roundify_4px.Active = true
+_30_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+_30_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_30_Roundify_4px.BackgroundTransparency = 1.000
+_30_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+_30_Roundify_4px.Selectable = true
+_30_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+_30_Roundify_4px.Image = "rbxassetid://3570695787"
+_30_Roundify_4px.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_30_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+_30_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+_30_Roundify_4px.SliceScale = 0.040
+
+_50.Name = "50"
+_50.Parent = Frame
+_50.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_50.BackgroundTransparency = 1.000
+_50.BorderSizePixel = 0
+_50.Position = UDim2.new(0.85330075, 0, 0.570469797, 0)
+_50.Size = UDim2.new(0, 45, 0, 28)
+_50.ZIndex = 2
+_50.Font = Enum.Font.PermanentMarker
+_50.Text = "50"
+_50.TextColor3 = Color3.fromRGB(170, 0, 255)
+_50.TextSize = 14.000
+
+_50image.Name = "50image"
+_50image.Parent = _50
+_50image.Active = true
+_50image.AnchorPoint = Vector2.new(0.5, 0.5)
+_50image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_50image.BackgroundTransparency = 1.000
+_50image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_50image.Selectable = true
+_50image.Size = UDim2.new(1, 0, 1, 0)
+_50image.Image = "rbxassetid://3570695787"
+_50image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_50image.ScaleType = Enum.ScaleType.Slice
+_50image.SliceCenter = Rect.new(100, 100, 100, 100)
+_50image.SliceScale = 0.040
+
+_90.Name = "90"
+_90.Parent = Frame
+_90.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_90.BackgroundTransparency = 1.000
+_90.BorderSizePixel = 0
+_90.Position = UDim2.new(0.249388754, 0, 0.75167793, 0)
+_90.Size = UDim2.new(0, 45, 0, 28)
+_90.ZIndex = 2
+_90.Font = Enum.Font.PermanentMarker
+_90.Text = "90"
+_90.TextColor3 = Color3.fromRGB(170, 0, 255)
+_90.TextSize = 14.000
+
+_90image.Name = "90image"
+_90image.Parent = _90
+_90image.Active = true
+_90image.AnchorPoint = Vector2.new(0.5, 0.5)
+_90image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_90image.BackgroundTransparency = 1.000
+_90image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_90image.Selectable = true
+_90image.Size = UDim2.new(1, 0, 1, 0)
+_90image.Image = "rbxassetid://3570695787"
+_90image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_90image.ScaleType = Enum.ScaleType.Slice
+_90image.SliceCenter = Rect.new(100, 100, 100, 100)
+_90image.SliceScale = 0.040
+
+_110.Name = "110"
+_110.Parent = Frame
+_110.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_110.BackgroundTransparency = 1.000
+_110.BorderSizePixel = 0
+_110.Position = UDim2.new(0.444987774, 0, 0.75167793, 0)
+_110.Size = UDim2.new(0, 45, 0, 28)
+_110.ZIndex = 2
+_110.Font = Enum.Font.PermanentMarker
+_110.Text = "110"
+_110.TextColor3 = Color3.fromRGB(170, 0, 255)
+_110.TextSize = 14.000
+
+_110image.Name = "110image"
+_110image.Parent = _110
+_110image.Active = true
+_110image.AnchorPoint = Vector2.new(0.5, 0.5)
+_110image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_110image.BackgroundTransparency = 1.000
+_110image.Position = UDim2.new(0.5, 0, 0.5, 0)
+_110image.Selectable = true
+_110image.Size = UDim2.new(1, 0, 1, 0)
+_110image.Image = "rbxassetid://3570695787"
+_110image.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_110image.ScaleType = Enum.ScaleType.Slice
+_110image.SliceCenter = Rect.new(100, 100, 100, 100)
+_110image.SliceScale = 0.040
+
+_120.Name = "120"
+_120.Parent = Frame
+_120.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_120.BackgroundTransparency = 1.000
+_120.BorderSizePixel = 0
+_120.Position = UDim2.new(0.645476758, 0, 0.75167793, 0)
+_120.Size = UDim2.new(0, 45, 0, 28)
+_120.ZIndex = 2
+_120.Font = Enum.Font.PermanentMarker
+_120.Text = "120"
+_120.TextColor3 = Color3.fromRGB(170, 0, 255)
+_120.TextSize = 14.000
+
+_120_Roundify_4px.Name = "120_Roundify_4px"
+_120_Roundify_4px.Parent = _120
+_120_Roundify_4px.Active = true
+_120_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+_120_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_120_Roundify_4px.BackgroundTransparency = 1.000
+_120_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+_120_Roundify_4px.Selectable = true
+_120_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+_120_Roundify_4px.Image = "rbxassetid://3570695787"
+_120_Roundify_4px.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_120_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+_120_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+_120_Roundify_4px.SliceScale = 0.040
+
+_130.Name = "130"
+_130.Parent = Frame
+_130.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_130.BackgroundTransparency = 1.000
+_130.BorderSizePixel = 0
+_130.Position = UDim2.new(0.85330075, 0, 0.751677752, 0)
+_130.Size = UDim2.new(0, 45, 0, 28)
+_130.ZIndex = 2
+_130.Font = Enum.Font.PermanentMarker
+_130.Text = "130"
+_130.TextColor3 = Color3.fromRGB(170, 0, 255)
+_130.TextSize = 14.000
+
+_130_Roundify_4px.Name = "130_Roundify_4px"
+_130_Roundify_4px.Parent = _130
+_130_Roundify_4px.Active = true
+_130_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+_130_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_130_Roundify_4px.BackgroundTransparency = 1.000
+_130_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+_130_Roundify_4px.Selectable = true
+_130_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+_130_Roundify_4px.Image = "rbxassetid://3570695787"
+_130_Roundify_4px.ImageColor3 = Color3.fromRGB(24, 24, 24)
+_130_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+_130_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+_130_Roundify_4px.SliceScale = 0.040
+
+discord.Name = "discord"
+discord.Parent = Frame
+discord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+discord.BackgroundTransparency = 1.000
+discord.BorderSizePixel = 0
+discord.Position = UDim2.new(0.420537889, 0, 0.872483134, 0)
+discord.Size = UDim2.new(0, 139, 0, 27)
+discord.ZIndex = 2
+discord.Font = Enum.Font.PermanentMarker
+discord.Text = "Copy My Discord"
+discord.TextColor3 = Color3.fromRGB(170, 0, 255)
+discord.TextSize = 14.000
+
+discordimage.Name = "discordimage"
+discordimage.Parent = discord
+discordimage.Active = true
+discordimage.AnchorPoint = Vector2.new(0.5, 0.5)
+discordimage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+discordimage.BackgroundTransparency = 1.000
+discordimage.Position = UDim2.new(0.5, 0, 0.5, 0)
+discordimage.Selectable = true
+discordimage.Size = UDim2.new(1, 0, 1, 0)
+discordimage.Image = "rbxassetid://3570695787"
+discordimage.ImageColor3 = Color3.fromRGB(24, 24, 24)
+discordimage.ScaleType = Enum.ScaleType.Slice
+discordimage.SliceCenter = Rect.new(100, 100, 100, 100)
+discordimage.SliceScale = 0.040
+
+_10.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 10
+    Notify("Field Of View","Fov set to 10",nil,5)
+end)
+
+discord.MouseButton1Down:Connect(function()  --i love simplistic scripts like this
+    setclipboard("cory#9451")
+  Notify("Field Of View","Discord has been set to your clipboard",nil,5)
+end)
+
+_20.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 20
+    Notify("Field Of View","Fov set to 20",nil,5)
+end)
+
+_30.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 30
+    Notify("Field Of View","Fov set to 30",nil,5)
+end)
+
+_40.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 40
+    Notify("Field Of View","Fov set to 40",nil,5)
+end)
+
+_50.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 50
+    Notify("Field Of View","Fov set to 50",nil,5)
+end)
+
+_60.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 60
+    Notify("Field Of View","Fov set to 60",nil,5)
+end)
+
+_80.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 80
+    Notify("Field Of View","Fov set to 80",nil,5)
+end)
+
+_90.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 90
+    Notify("Field Of View","Fov set to 90",nil,5)
+end)
+
+_100.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 100
+    Notify("Field Of View","Fov set to 100",nil,5)
+end)
+
+_110.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 110
+    Notify("Field Of View","Fov set to 110",nil,5)
+end)
+
+_120.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 120
+    Notify("Field Of View","Fov set to 120",nil,5)
+end)
+
+_130.MouseButton1Down:Connect(function()
+    Workspace.CurrentCamera.FieldOfView = 130
+    Notify("Field Of View","Fov set to 130",nil,5)
+end)
+
+BasicFov.MouseButton1Down:Connect(function()  --default fov
+    Workspace.CurrentCamera.FieldOfView = 70
+    Notify("Field Of View","Fov set to 70",nil,5)
+end)
+
+local toggle = true
+
+function onKeyPress(actionName, userInputState, inputObject)
+    if userInputState == Enum.UserInputState.Begin then
+        if toggle == false then
+             toggle = true
+             Frame.Visible = true
+        else
+            toggle = false
+            Frame.Visible = false
+        end
+    end
+end
+
+game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.Z)
+
+Notify("Zeta Field Of View","took " .. string.format("%.6f",tick()-Tick) .. " seconds",10)
+
+print([[
+
+
+Zeta Field Of View - v0.3
+
+You can use the hotkey on the Gui to make it disappear
+
+Hotkey = Z
+
+]])

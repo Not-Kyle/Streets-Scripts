@@ -1,0 +1,591 @@
+local timeRemaining = 3
+
+while timeRemaining > 0 do
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Frame2 = Instance.new("Frame")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+Frame.Name = "Frame"
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.BorderColor3 = Color3.fromRGB(170, 0, 255)
+Frame.Position = UDim2.new(0.365910888, 0, 0.41615665, 0)
+Frame.Size = UDim2.new(0, 343, 0, 137)
+Frame.Image = "rbxassetid://3570695787"
+Frame.ImageColor3 = Color3.fromRGB(13, 13, 13)
+Frame.ScaleType = Enum.ScaleType.Slice
+Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+Frame.SliceScale = 0.040
+Frame.Draggable = true
+Frame.Selectable = true
+Frame.Active = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.206997082, 0, 0.0583941601, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.Ubuntu
+TextLabel.Text = "Zeta Loading.."
+TextLabel.TextColor3 = Color3.fromRGB(102, 0, 204)
+TextLabel.TextSize = 16.000
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.206997097, 0, 0.56934303, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.Ubuntu
+TextLabel_2.Text = "Waiting..."..timeRemaining
+TextLabel_2.TextColor3 = Color3.fromRGB(102, 0, 204)
+TextLabel_2.TextSize = 16.000
+
+Frame2.Name = "Frame2"
+Frame2.Parent = Frame
+Frame2.BackgroundColor3 = Color3.fromRGB(102, 0, 204)
+Frame2.Position = UDim2.new(0.0320699699, 0, 0.131386861, 0)
+Frame2.Size = UDim2.new(0, 1, 0, 100)
+Frame2.BorderSizePixel = 0
+
+wait(1)
+timeRemaining = timeRemaining - 1
+Frame.Visible = false
+end
+
+if wait() then
+
+local function Notify(title, text, time)
+    game.StarterGui:SetCore("SendNotification",{
+       Title = title;
+       Text = text;
+       Duration = time;
+})
+end
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cyrus0.5") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Cyrus%20v0.5.lua"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-ciazware") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Ciazware"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-aidezitems") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Aidez%20Itemesp"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-anthraxkos") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Anthrax%20Kos/Loadstring/loadstring"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-aidezv3") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Aidez%20Source.lua"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-aidezv2") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Aidez%20V2"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-aimcancelpaidscript") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Aimcancels%20Paid%20Script"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-airwalkprison") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Airwalk%20(Prison).lua"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-amnesia") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Amnesia"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-anthraxesp") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Anthrax%20Group%20Esp"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-antiknockdown") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Anti%20Knockdown"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-blink") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Blink.lua"))()
+Notify("Blink","Type Blink or Blinkspeed",5)
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-bulletdisplay") then
+loadstring(game:HttpGet("https://github.com/Not-Kyle/Streets-Scripts/blob/main/Bullet%20Display"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-infzoom") then
+        game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cashcolor") then
+
+        game:GetService("Players").LocalPlayer.PlayerGui.HUD.Cash.TextColor3 = Color3.fromRGB(170, 0, 255)
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cashesp") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Cash%20Esp"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cashposition") then
+
+        game:GetService("Players").LocalPlayer.PlayerGui.HUD.Cash.Position = UDim2.new(0, 0.1, 0.3, 0)
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-changingbulletcolors") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Changing%20Bullet%20Colors"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-citizenlegit") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Citizen%20Legit"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-citizenv3") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Citizen%20V3"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-groupguinomore") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Clan%20Gui"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-antiafk") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Colored%20ANTI%20AFK"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-crosshair") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Crosshair"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-covax") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Covax"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-semanland") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Cumland"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cyrusv1") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Cyrus%20V1"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cyrusv2") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Cyrus%20V2"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-cyrusv3") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Cyrus%20V3"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-detosware") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Detosware"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-dontcrynowkos") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/DontCryNow%20KOS"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-drpoppa") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/DrPoppa"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-earlydrpoppa") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Early%20Drpoppa"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-fov") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/FOV"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-fullbright") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Full%20Bright"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-genocide") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Genocide"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-glocklauncher") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Glock%20Launcher"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-knifeorbit") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Goodends%20Knife%20Orb%3F"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-ruthless") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Goodends%20Ruthless"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-infstam") then
+        if game.PlaceId == 455366377 then
+            local LocalP = game.Players.LocalPlayer
+            
+            LocalP.Character.Stamina.Changed:Connect(function()
+                LocalP.Character:WaitForChild"Stamina"
+                LocalP.Character.Stamina.Value = 100 
+            end)
+            LocalP.CharacterAdded:Connect(function()
+                LocalP.Character:WaitForChild"Stamina"
+                LocalP.Character.Stamina.Changed:Connect(function()
+                    LocalP.Character.Stamina.Value = 100 
+            end)
+            end)
+            end
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-hatorbit") then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Netless%20Bypass"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Hat%20Orbit"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-infstam2") then
+        game:GetService 'RunService'.Stepped:Connect(
+            function()
+                game.Players.LocalPlayer.Character:WaitForChild 'Stam'.Value = 99e9
+                T:FireServer(A, A, true)
+            end
+         )
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-infyield") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Inf%20Yield"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-invisshotty") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Invisible%20Shotty"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-korx") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/KorX%20v3"))()
+Notify("KorX V3","Key is keithiscool",5)
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-lectar") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Lectar"))()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-legitsense") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Legit%20Sense"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-mikoware") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Mikoware"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-nodoors") then
+        local doors = game.Workspace:GetChildren()
+        for i,v in pairs (doors)do 
+            if v.Name == "Door" then
+                v:Destroy()
+            end	
+            end
+        end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-regnoclip") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Noclip%20Hotkey"))()
+Notify("Noclip","Press X",5)
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-noslow") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Noslow"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-ogrun") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/OG%20RUN"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-pawelsgunanims") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Pawels%20Gun%20Anims"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-rampage") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Rampage"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-remakelock") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Remake%20Lock"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-remakelock2") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Remake%20Lock%202"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-resetkey") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Reset"))()
+Notify("Reset","Press C",5)
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-rollkey") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Roll%20Hotkey"))()
+Notify("Roll","Press R",5)
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-ryker") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Ryker%20V4"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-scartesucrash") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Scartesu%20Crash"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-reicon") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Reicon%20V7"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-setspawnreset") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Set%20Spawn%20Reset"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-soulware") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Soulware"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-sowbenclient") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Sowben%20Client"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-streamsniper") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Stream%20Sniper"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-tezlav8") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Tezla%20V8"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-tsbars") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/The%20Streets%20HUD%20Hp%2C%20Stam%2C%20KO%20bars"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-veganx") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Vegan%20X"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-vibing") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Vibing"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-xray") then
+        local getc = game.Workspace:GetChildren()
+    for i,v in pairs (getc)do
+        if v:IsA("Part")  then
+            v.Transparency = 1
+        end
+    end
+    end
+    end)
+    game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+        if (string.lower(msg) == "-noxray") then
+            local getc = game.Workspace:GetChildren()
+        for i,v in pairs (getc)do
+            if v:IsA("Part")  then
+                v.Transparency = 0
+            end
+        end
+        end
+        end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-zetafovgui") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Zeta%20Field%20Of%20View%20GUI"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-zetoxv8remake") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Zetox%20V8%20Remake"))()
+end
+end)
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    if (string.lower(msg) == "-zetoxv9") then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Streets-Scripts/main/Zetox%20V9"))()
+end
+end)
+
+print([[
+---
+
+NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK / NOT ALL SCRIPTS WORK 
+SOME SCRIPTS WILL GET YOU BANNED / SOME SCRIPTS WILL GET YOU BANNED / SOME SCRIPTS WILL GET YOU BANNED / SOME SCRIPTS WILL GET YOU BANNED / SOME SCRIPTS WILL GET YOU BANNED 
+
+
+Zeta v1.04
+
+-cyrusv0.5 // old cyrus
+-ciazware // ciazware script
+-aidezitems // itemesp
+-aidezv3 
+-aidezv2
+-anthraxkos
+-aimcancelpaidscript
+-airwalkprison
+-amnesa
+-antiknockdown
+-blink
+-bulletdisplay
+-cashcolor
+-infzoom
+-cashesp
+-cashposition
+-citizenlegit
+-changingbulletcolors
+-citizenv3
+-groupguinomore
+-crosshair
+-antiafk
+-covax
+-semanland
+-cyrusv1
+-cyrusv2
+-cyrusv3 // 2021 Cyrus
+-detosware
+-dontcrynowkos
+-drpoppa
+-earlydrpoppa
+-fov
+-fullbright
+-genocide
+-glocklauncher
+-knifeorbit
+-ruthless
+-infstam
+-hatorbit
+-infstam2
+-infyeild
+-invisshotty
+-korx
+-lectar
+-legitsense
+-mikoware
+-nodoors
+-regnoclip
+-noslow
+-pawelsgunanims
+-rampage
+-remakelock
+-remakelock2
+-resetkey
+-rollkey
+-ryker
+-scartesucrash
+-reicon
+-setspawnreset
+-soulware
+-sowbenclient
+-streamsniper
+-tezlav8
+-tsbar
+-veganx
+-vibing
+-xray
+-noxray
+-zetafovgui
+-zetoxv8remake
+-zetoxv9
+
+]])
+
+Notify("Zeta","Loaded",5)
+
+end

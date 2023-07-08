@@ -1,0 +1,17 @@
+
+function service()
+    return game:GetService('Players').LocalPlayer.Character
+end
+
+function die()
+    service():FindFirstChild('Head'):Destroy()
+end
+
+
+local infff = service()
+local setspawn = infff:FindFirstChild('Torso').CFrame
+die()
+game:GetService('Players').LocalPlayer.CharacterAdded:Wait()
+for i = 1,100000 do
+    service():WaitForChild('HumanoidRootPart').CFrame = setspawn
+end

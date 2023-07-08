@@ -1,0 +1,3 @@
+local LocalPlayer = game.Players.LocalPlayer
+
+LocalPlayer.CameraMaxZoomDistance = math.huge

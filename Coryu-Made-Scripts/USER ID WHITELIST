@@ -1,0 +1,10 @@
+local Player = game:GetService("Players").LocalPlayer
+local WhitelistedIds = {
+    1, 2, 3, 4, 5, 6    --1, 2, 3 etc is where the user id's should go. each one should end with , except the last user Id/// like 6
+}
+
+if table.find(WhitelistedIds, Player.UserId) then
+    -- Loadstring Here --
+else
+    Player:Kick("Kick Message")
+end

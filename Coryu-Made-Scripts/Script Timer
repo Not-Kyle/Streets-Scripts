@@ -1,0 +1,66 @@
+local Tick = tick()
+
+
+function usenotifictions(title, text, time)
+    local screen = Instance.new("ScreenGui")
+    local howmuchmoneyyougot = Instance.new("ImageLabel", screen)
+    local myname = Instance.new("TextLabel", howmuchmoneyyougot)
+    local imlisteningto21savage = Instance.new("TextLabel", howmuchmoneyyougot)
+    local Frame = Instance.new("ImageLabel", howmuchmoneyyougot)
+    screen.Name = "NotificationOof"
+    screen.Parent = game.CoreGui
+    --Properties:
+    screen.ResetOnSpawn = false
+    
+    howmuchmoneyyougot.Name = "howmuchmoneyyougot"
+    howmuchmoneyyougot.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    howmuchmoneyyougot.BackgroundTransparency = 1.000
+    howmuchmoneyyougot.Position = UDim2.new(1, 0, 0.8, 0)
+    howmuchmoneyyougot.Size = UDim2.new(0, 242, 0, 80)
+    howmuchmoneyyougot.Image = "rbxassetid://3570695787"
+    howmuchmoneyyougot.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    howmuchmoneyyougot.ScaleType = Enum.ScaleType.Slice
+    howmuchmoneyyougot.SliceCenter = Rect.new(100, 100, 100, 100)
+    howmuchmoneyyougot.SliceScale = 0.050
+    
+    myname.Name = "myname!"
+    myname.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    myname.BackgroundTransparency = 1.000
+    myname.Position = UDim2.new(-0.35, 0, -0.0918367356, 0)
+    myname.Size = UDim2.new(0, 242, 0, 50)
+    myname.Font = Enum.Font.Oswald
+    myname.Text = title
+    myname.TextColor3 = Color3.fromRGB(255, 0, 0)
+    myname.TextSize = 30.000
+    
+    imlisteningto21savage.Name = "imlisteningto21savage"
+    imlisteningto21savage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    imlisteningto21savage.BackgroundTransparency = 1.000
+    imlisteningto21savage.Position = UDim2.new(0, 0, 0.45, 0)
+    imlisteningto21savage.Size = UDim2.new(0, 242, 0, 50)
+    imlisteningto21savage.Font = Enum.Font.Oswald
+    imlisteningto21savage.Text = text
+    imlisteningto21savage.TextColor3 = Color3.fromRGB(255, 0, 0)
+    imlisteningto21savage.TextSize = 25.000
+    
+    Frame.Name = "Frame"
+    Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Frame.BackgroundTransparency = 1.000
+    Frame.Position = UDim2.new(0.95, 0, 0.102040812, 0)
+    Frame.Size = UDim2.new(0, 2, 0, 65)
+    Frame.Image = "rbxassetid://3570695787"
+    Frame.ImageColor3 = Color3.fromRGB(255, 0, 0)
+    Frame.ScaleType = Enum.ScaleType.Slice
+    Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+    Frame.SliceScale = 0.120
+    
+    wait(0.3)
+    howmuchmoneyyougot:TweenPosition(UDim2.new(0.87, 0, 0.8, 0), "Out", "Sine", 0.5)
+    wait(2.5)
+    screen:Destroy()
+    end
+
+usenotifictions("Reaver","took " .. string.format("%.3f",tick()-Tick) .. " seconds",3)  
+
+
+--reaver notifictions, cry about it. reaver is beautiful even after i left

@@ -1,0 +1,33 @@
+local LP = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local mousedown = mouse.KeyDown
+local xLPCHx = LP.Character.Humanoid
+local terrain = game.Workspace.Terrain
+local LPC = LP.Character
+
+local sets = {
+    ["Bools"] = {
+        local rolld = false
+    }
+}
+    
+mousedown:connect(function(rollkey)
+	if rollkey:lower() == "r"   then
+	    local animation = Instance.new("Animation")
+            animation.AnimationId = 'rbxassetid://3121033021'
+            local rolling = xLPCHx:LoadAnimation(animation)
+                rolling:Play(0)
+                rolling:AdjustSpeed(1)
+	                rolling.Stopped:Connect(function()
+                        if terrain:FindFirstChild("Left Leg") and terrain:FindFirstChild("Right Leg") and LPC ~= nil then
+                            terrain:FindFirstChild("Left Leg").Parent = LPC
+                                terrain:FindFirstChild("Right Leg").Parent = LPC
+                            end
+                        sets.["Bools"].rolld = false
+                    end)
+                repeat 
+            LPC.HumanoidRootPart.CFrame = LPC.HumanoidRootPart.CFrame * CFrame.new(0,0,-5)
+                wait()
+        until sets.["Bools"].rolld == false or xLPCHx.Health < 1
+    end
+end)

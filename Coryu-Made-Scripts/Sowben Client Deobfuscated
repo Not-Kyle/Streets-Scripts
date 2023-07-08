@@ -1,0 +1,816 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.CoreGui
+
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.32650274, 0, 0.4334650937, 0)
+ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=10642501593"
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.422131121, 0, 0.446640313, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "                                Sowben Client Loaded."
+TextLabel.TextColor3 = Color3.fromRGB(0, 170, 255)
+TextLabel.TextSize = 20.000
+
+
+TextLabel_2.Parent = ScreenGui
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.420765013, 0, 0.476943344, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.GothamBold
+TextLabel_2.Text = "                                     This is a public script, Welcome "..game.Players.LocalPlayer.Name
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 170, 255)
+TextLabel_2.TextSize = 20.000
+
+
+
+local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 3
+TextLabel_2.TextStrokeTransparency = 1
+TextLabel.TextTransparency = 1
+TextLabel_2.TextTransparency = 1
+TextLabel.TextStrokeTransparency = 1
+ImageLabel.ImageTransparency = 1
+    wait(0.1)
+    blur.Size = 6
+TextLabel_2.TextStrokeTransparency = 0.9
+TextLabel.TextTransparency = 0.9
+TextLabel_2.TextTransparency = 0.9
+TextLabel.TextStrokeTransparency = 0.9
+ImageLabel.ImageTransparency = 0.9
+    wait(0.1)
+    blur.Size = 8
+TextLabel_2.TextStrokeTransparency = 0.8
+TextLabel.TextTransparency = 0.8
+TextLabel_2.TextTransparency = 0.8
+TextLabel.TextStrokeTransparency = 0.8
+ImageLabel.ImageTransparency = 0.8
+    wait(0.1)
+    blur.Size = 10
+TextLabel_2.TextStrokeTransparency = 0.7
+TextLabel.TextTransparency = 0.7
+TextLabel_2.TextTransparency = 0.7
+TextLabel.TextStrokeTransparency = 0.7
+ImageLabel.ImageTransparency = 0.7
+    wait(0.1)
+    blur.Size = 12
+TextLabel_2.TextStrokeTransparency = 0.6
+TextLabel.TextTransparency = 0.6
+TextLabel_2.TextTransparency = 0.6
+TextLabel.TextStrokeTransparency = 0.6
+ImageLabel.ImageTransparency = 0.6
+    wait(0.1)
+    blur.Size = 14
+    TextLabel_2.TextStrokeTransparency = 0.5
+TextLabel.TextTransparency = 0.5
+TextLabel_2.TextTransparency = 0.5
+TextLabel.TextStrokeTransparency = 0.5
+ImageLabel.ImageTransparency = 0.5
+    wait(0.1)
+    blur.Size = 15
+TextLabel_2.TextStrokeTransparency = 0.4
+TextLabel.TextTransparency = 0.4
+TextLabel_2.TextTransparency = 0.4
+TextLabel.TextStrokeTransparency = 0.4
+ImageLabel.ImageTransparency = 0.4
+    wait(0.1)
+    blur.Size = 16
+ TextLabel_2.TextStrokeTransparency = 0
+TextLabel.TextTransparency = 0
+TextLabel_2.TextTransparency = 0
+TextLabel.TextStrokeTransparency = 0
+ImageLabel.ImageTransparency = 0
+    wait(2.5)
+    game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 15
+     TextLabel_2.TextStrokeTransparency = 0.1
+TextLabel.TextTransparency = 0.1
+TextLabel_2.TextTransparency = 0.1
+TextLabel.TextStrokeTransparency = 0.1
+ImageLabel.ImageTransparency = 0.1
+    wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 14
+     TextLabel_2.TextStrokeTransparency = 0.2
+TextLabel.TextTransparency = 0.2
+TextLabel_2.TextTransparency = 0.2
+TextLabel.TextStrokeTransparency = 0.2
+ImageLabel.ImageTransparency = 0.2
+    wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 12
+     TextLabel_2.TextStrokeTransparency = 0.4
+TextLabel.TextTransparency = 0.4
+TextLabel_2.TextTransparency = 0.4
+TextLabel.TextStrokeTransparency = 0.4
+ImageLabel.ImageTransparency = 0.4
+    wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 10
+     TextLabel_2.TextStrokeTransparency = 0.5
+TextLabel.TextTransparency = 0.5
+TextLabel_2.TextTransparency = 0.5
+TextLabel.TextStrokeTransparency = 0.5
+ImageLabel.ImageTransparency = 0.5
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 8
+     TextLabel_2.TextStrokeTransparency = 0.7
+TextLabel.TextTransparency = 0.7
+TextLabel_2.TextTransparency = 0.7
+TextLabel.TextStrokeTransparency = 0.7
+ImageLabel.ImageTransparency = 0.7
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 6 
+     TextLabel_2.TextStrokeTransparency = 0.8
+TextLabel.TextTransparency = 0.8
+TextLabel_2.TextTransparency = 0.8
+TextLabel.TextStrokeTransparency = 0.8
+ImageLabel.ImageTransparency = 0.8
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+    local blur = Instance.new('BlurEffect', game.Lighting)
+    blur.Size = 3
+     TextLabel_2.TextStrokeTransparency = 1
+TextLabel.TextTransparency = 1
+TextLabel_2.TextTransparency = 1
+TextLabel.TextStrokeTransparency = 1
+ImageLabel.ImageTransparency = 1
+        wait(0.1)
+        game.Lighting.Blur:Destroy()
+        wait(0.5)
+
+---------------------------------------------------------------------------------------------------------
+
+local Tick = tick()
+local ScreenGui = Instance.new("ScreenGui")
+local Frames00 = Instance.new("ImageLabel")
+local Itemesp = Instance.new("TextButton")
+local TextButton_Roundify_4px = Instance.new("ImageLabel")
+local Reset2 = Instance.new("TextButton")
+local TextButton_Roundify_4px_2 = Instance.new("ImageLabel")
+local Frame_2 = Instance.new("Frame")
+local Fov = Instance.new("TextButton")
+local TextButton_Roundify_4px_3 = Instance.new("ImageLabel")
+local GunSkinGui = Instance.new("TextButton")
+local TextButton_Roundify_4px_4 = Instance.new("ImageLabel")
+local ChatSpy = Instance.new("TextButton")
+local TextButton_Roundify_4px_5 = Instance.new("ImageLabel")
+local NameandWatermark = Instance.new("TextLabel")
+local ExitCloser = Instance.new("TextButton")
+local Cyrus = Instance.new("TextButton")
+local TextButton_Roundify_4px_6 = Instance.new("ImageLabel")
+local Ciazware = Instance.new("TextButton")
+local TextButton_Roundify_4px_7 = Instance.new("ImageLabel")
+local EspButton = Instance.new("TextButton")
+local EspButton_Roundify_4px = Instance.new("ImageLabel")
+local UnnamedEsp = Instance.new("TextButton")
+local TextButton_Roundify_4px_8 = Instance.new("ImageLabel")
+local AntiAfk = Instance.new("TextButton")
+local TextButton_Roundify_4px_9 = Instance.new("ImageLabel")
+
+
+ScreenGui.ResetOnSpawn = false
+local ItemEsp = false
+
+--Properties:
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local function Notify(title, text, icon, time)
+    game.StarterGui:SetCore("SendNotification",{
+        Title = title;
+        Text = text;
+        Icon = icon;
+        Duration = time;
+    })
+end
+
+
+Frames00.Name = "Frame"
+Frames00.Parent = ScreenGui
+Frames00.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frames00.BackgroundTransparency = 1.000
+Frames00.Position = UDim2.new(0.317109108, 0, 0.211072505, 0)
+Frames00.Size = UDim2.new(0, 426, 0, 263)
+Frames00.ZIndex = 0
+Frames00.Image = "rbxassetid://3570695787"
+Frames00.ImageColor3 = Color3.fromRGB(25, 25, 25)
+Frames00.ScaleType = Enum.ScaleType.Slice
+Frames00.SliceCenter = Rect.new(100, 100, 100, 100)
+Frames00.SliceScale = 0.040
+Frames00.Draggable = true
+Frames00.Selectable = true
+Frames00.Active = true
+
+Itemesp.Name = "Itemesp"
+Itemesp.Parent = Frames00
+Itemesp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Itemesp.BackgroundTransparency = 1.000
+Itemesp.BorderSizePixel = 0
+Itemesp.Position = UDim2.new(0.0632318482, 0, 0.821292758, 0)
+Itemesp.Size = UDim2.new(0, 120, 0, 23)
+Itemesp.Modal = true
+Itemesp.Font = Enum.Font.Ubuntu
+Itemesp.LineHeight = 1.010
+Itemesp.Text = "Item Esp"
+Itemesp.TextColor3 = Color3.fromRGB(25, 25, 25)
+Itemesp.TextSize = 14.000
+
+TextButton_Roundify_4px.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px.Parent = Itemesp
+TextButton_Roundify_4px.Active = true
+TextButton_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+TextButton_Roundify_4px.BackgroundTransparency = 1.000
+TextButton_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px.Selectable = true
+TextButton_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px.ZIndex = 0
+TextButton_Roundify_4px.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px.SliceScale = 0.040
+
+Reset2.Name = "Reset" --Was gonna be a reset button, added a reset key instead
+Reset2.Parent = Frames00
+Reset2.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
+Reset2.BackgroundTransparency = 1.000
+Reset2.BorderSizePixel = 0
+Reset2.Position = UDim2.new(0.0632318556, 0, 0.665399194, 0)
+Reset2.Size = UDim2.new(0, 120, 0, 23)
+Reset2.Font = Enum.Font.Ubuntu
+Reset2.Text = "Skybox"
+Reset2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Reset2.TextSize = 14.000
+
+TextButton_Roundify_4px_2.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_2.Parent = Reset2
+TextButton_Roundify_4px_2.Active = true
+TextButton_Roundify_4px_2.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_2.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_2.Selectable = true
+TextButton_Roundify_4px_2.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_2.ZIndex = 0
+TextButton_Roundify_4px_2.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_2.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_2.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_2.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_2.SliceScale = 0.040
+
+Frame_2.Parent = Frames00
+Frame_2.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+Frame_2.Position = UDim2.new(0, 0, 0.110266156, 0)
+Frame_2.Size = UDim2.new(0, 426, 0, 4)
+
+Fov.Name = "Fov"
+Fov.Parent = Frame_2
+Fov.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Fov.BackgroundTransparency = 1.000
+Fov.BorderSizePixel = 0
+Fov.Position = UDim2.new(0.0632318482, 0, 16, 0)
+Fov.Size = UDim2.new(0, 120, 0, 23)
+Fov.Font = Enum.Font.Ubuntu
+Fov.Text = "Field of View"
+Fov.TextColor3 = Color3.fromRGB(0, 0, 0)
+Fov.TextSize = 14.000
+
+TextButton_Roundify_4px_3.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_3.Parent = Fov
+TextButton_Roundify_4px_3.Active = true
+TextButton_Roundify_4px_3.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_3.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_3.Selectable = true
+TextButton_Roundify_4px_3.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_3.ZIndex = 0
+TextButton_Roundify_4px_3.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_3.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_3.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_3.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_3.SliceScale = 0.040
+
+GunSkinGui.Name = "Gun Skin Gui"
+GunSkinGui.Parent = Frame_2
+GunSkinGui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GunSkinGui.BackgroundTransparency = 1.000
+GunSkinGui.BorderSizePixel = 0
+GunSkinGui.Position = UDim2.new(0.0632318482, 0, 5.75, 0)
+GunSkinGui.Size = UDim2.new(0, 120, 0, 23)
+GunSkinGui.Font = Enum.Font.Ubuntu
+GunSkinGui.Text = "GunSkins"
+GunSkinGui.TextColor3 = Color3.fromRGB(0, 0, 0)
+GunSkinGui.TextSize = 14.000
+
+TextButton_Roundify_4px_4.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_4.Parent = GunSkinGui
+TextButton_Roundify_4px_4.Active = true
+TextButton_Roundify_4px_4.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_4.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_4.Selectable = true
+TextButton_Roundify_4px_4.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_4.ZIndex = 0
+TextButton_Roundify_4px_4.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_4.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_4.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_4.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_4.SliceScale = 0.040
+
+ChatSpy.Name = "ChatSpy"
+ChatSpy.Parent = Frames00
+ChatSpy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ChatSpy.BackgroundTransparency = 1.000
+ChatSpy.BorderSizePixel = 0
+ChatSpy.Position = UDim2.new(0.0632318482, 0, 0.50570339, 0)
+ChatSpy.Size = UDim2.new(0, 120, 0, 23)
+ChatSpy.Font = Enum.Font.Ubuntu
+ChatSpy.Text = "Chat Spy"
+ChatSpy.TextColor3 = Color3.fromRGB(0, 0, 0)
+ChatSpy.TextSize = 14.000
+
+TextButton_Roundify_4px_5.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_5.Parent = ChatSpy
+TextButton_Roundify_4px_5.Active = true
+TextButton_Roundify_4px_5.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_5.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
+TextButton_Roundify_4px_5.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_5.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_5.Selectable = true
+TextButton_Roundify_4px_5.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_5.ZIndex = 0
+TextButton_Roundify_4px_5.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_5.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_5.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_5.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_5.SliceScale = 0.040
+
+
+NameandWatermark.Name = "Name and Watermark"
+NameandWatermark.Parent = Frames00
+NameandWatermark.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+NameandWatermark.BorderSizePixel = 0
+NameandWatermark.Position = UDim2.new(0.023430191, 0, 0.022813689, 0)
+NameandWatermark.Size = UDim2.new(0, 192, 0, 17)
+NameandWatermark.ZIndex = 2
+NameandWatermark.Font = Enum.Font.Ubuntu
+NameandWatermark.Text = "   Sowben Client  -  By Coryu        "
+NameandWatermark.TextColor3 = Color3.fromRGB(0, 170, 255)
+NameandWatermark.TextScaled = true
+NameandWatermark.TextSize = 14.000
+NameandWatermark.TextWrapped = true
+
+ExitCloser.Name = "Exit/Closer"
+ExitCloser.Parent = Frames00
+ExitCloser.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+ExitCloser.BorderSizePixel = 0
+ExitCloser.Position = UDim2.new(0.941507101, 0, 0.022813689, 0)
+ExitCloser.Size = UDim2.new(0, 21, 0, 17)
+ExitCloser.Font = Enum.Font.SourceSans
+ExitCloser.Text = "X"
+ExitCloser.TextColor3 = Color3.fromRGB(0, 170, 255)
+ExitCloser.TextSize = 25.000
+
+Cyrus.Name = "Cyrus"
+Cyrus.Parent = Frames00
+Cyrus.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+Cyrus.BackgroundTransparency = 1.000
+Cyrus.BorderSizePixel = 0
+Cyrus.Position = UDim2.new(0.631232619, 0, 0.197718635, 0)
+Cyrus.Size = UDim2.new(0, 128, 0, 23)
+Cyrus.Font = Enum.Font.Ubuntu
+Cyrus.Text = "Cyrus"
+Cyrus.TextColor3 = Color3.fromRGB(0, 0, 0)
+Cyrus.TextSize = 14.000
+
+TextButton_Roundify_4px_6.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_6.Parent = Cyrus
+TextButton_Roundify_4px_6.Active = true
+TextButton_Roundify_4px_6.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_6.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_6.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_6.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_6.Selectable = true
+TextButton_Roundify_4px_6.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_6.ZIndex = 0
+TextButton_Roundify_4px_6.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_6.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_6.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_6.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_6.SliceScale = 0.040
+
+Ciazware.Name = "Ciazware" -- Was gonna be Ciazware, but I decided to change it
+Ciazware.Parent = Frames00
+Ciazware.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ciazware.BackgroundTransparency = 1.000
+Ciazware.BorderSizePixel = 0
+Ciazware.Position = UDim2.new(0.631232619, 0, 0.353612155, 0)
+Ciazware.Size = UDim2.new(0, 128, 0, 23)
+Ciazware.Font = Enum.Font.Ubuntu
+Ciazware.Text = "Crosshair"
+Ciazware.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ciazware.TextSize = 14.000
+
+TextButton_Roundify_4px_7.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_7.Parent = Ciazware
+TextButton_Roundify_4px_7.Active = true
+TextButton_Roundify_4px_7.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_7.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_7.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_7.Selectable = true
+TextButton_Roundify_4px_7.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_7.ZIndex = 0
+TextButton_Roundify_4px_7.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_7.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_7.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_7.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_7.SliceScale = 0.040
+
+EspButton.Name = "EspButton" --Was supposed to be a esp but Rejoin is better
+EspButton.Parent = Frames00
+EspButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EspButton.BackgroundTransparency = 1.000
+EspButton.BorderSizePixel = 0
+EspButton.Position = UDim2.new(0.631232619, 0, 0.505703449, 0)
+EspButton.Size = UDim2.new(0, 128, 0, 23)
+EspButton.Font = Enum.Font.Ubuntu
+EspButton.Text = "Rejoin"
+EspButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+EspButton.TextSize = 14.000
+
+EspButton_Roundify_4px.Name = "EspButton_Roundify_4px"
+EspButton_Roundify_4px.Parent = EspButton
+EspButton_Roundify_4px.Active = true
+EspButton_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+EspButton_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EspButton_Roundify_4px.BackgroundTransparency = 1.000
+EspButton_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+EspButton_Roundify_4px.Selectable = true
+EspButton_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+EspButton_Roundify_4px.ZIndex = 0
+EspButton_Roundify_4px.Image = "rbxassetid://3570695787"
+EspButton_Roundify_4px.ImageColor3 = Color3.fromRGB(0, 170, 255)
+EspButton_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+EspButton_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+EspButton_Roundify_4px.SliceScale = 0.040
+
+UnnamedEsp.Name = "Unnamed Esp"
+UnnamedEsp.Parent = Frames00
+UnnamedEsp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UnnamedEsp.BackgroundTransparency = 1.000
+UnnamedEsp.BorderSizePixel = 0
+UnnamedEsp.Position = UDim2.new(0.6312325, 0, 0.665399253, 0)
+UnnamedEsp.Size = UDim2.new(0, 128, 0, 23)
+UnnamedEsp.Font = Enum.Font.Ubuntu
+UnnamedEsp.Text = "Unnamed Esp"
+UnnamedEsp.TextColor3 = Color3.fromRGB(0, 0, 0)
+UnnamedEsp.TextSize = 14.000
+
+TextButton_Roundify_4px_8.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_8.Parent = UnnamedEsp
+TextButton_Roundify_4px_8.Active = true
+TextButton_Roundify_4px_8.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_8.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_8.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_8.Selectable = true
+TextButton_Roundify_4px_8.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_8.ZIndex = 0
+TextButton_Roundify_4px_8.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_8.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_8.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_8.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_8.SliceScale = 0.040
+
+AntiAfk.Name = "Anti-Afk"
+AntiAfk.Parent = Frames00
+AntiAfk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AntiAfk.BackgroundTransparency = 1.000
+AntiAfk.BorderSizePixel = 0
+AntiAfk.Position = UDim2.new(0.631232619, 0, 0.821292758, 0)
+AntiAfk.Size = UDim2.new(0, 128, 0, 23)
+AntiAfk.Font = Enum.Font.Ubuntu
+AntiAfk.Text = "Anti Afk"
+AntiAfk.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiAfk.TextSize = 14.000
+
+TextButton_Roundify_4px_9.Name = "TextButton_Roundify_4px"
+TextButton_Roundify_4px_9.Parent = AntiAfk
+TextButton_Roundify_4px_9.Active = true
+TextButton_Roundify_4px_9.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_Roundify_4px_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_Roundify_4px_9.BackgroundTransparency = 1.000
+TextButton_Roundify_4px_9.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_Roundify_4px_9.Selectable = true
+TextButton_Roundify_4px_9.Size = UDim2.new(1, 0, 1, 0)
+TextButton_Roundify_4px_9.ZIndex = 0
+TextButton_Roundify_4px_9.Image = "rbxassetid://3570695787"
+TextButton_Roundify_4px_9.ImageColor3 = Color3.fromRGB(0, 170, 255)
+TextButton_Roundify_4px_9.ScaleType = Enum.ScaleType.Slice
+TextButton_Roundify_4px_9.SliceCenter = Rect.new(100, 100, 100, 100)
+TextButton_Roundify_4px_9.SliceScale = 0.040
+
+Itemesp.MouseButton1Down:Connect(function() --Zetox Item Esp
+function esp(instance)
+    local types = ""
+    local EspText = ""
+    local EspFontSize = "Size14"
+    local EspColor = BrickColor.new("Bright green")
+    local EspPart = instance
+    for i,v in pairs(instance:GetDescendants()) do
+        if v:IsA("MeshPart") and v.Name == "Blade" and string.find(tostring(v.MeshId), tostring(12177251)) then
+            types = "katana"
+            EspText = "Katana"
+            EspColor = BrickColor.new("Bright blue")
+            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+        elseif v:IsA("MeshPart") and v.MeshId == "rbxassetid://511726060" then
+            types = "cash"
+            EspText = "Cash"
+            EspColor = BrickColor.new("Bright blue")
+            EspPart = v
+        elseif v:IsA("Sound") and v.Name == "Fire" and string.find(tostring(v.SoundId), tostring(328964620)) then
+            types = "uzi"
+            EspText = "Uzi"
+            EspFontSize = "Size18"
+            EspColor = BrickColor.new("Bright blue")
+            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+        elseif v:IsA("Sound") and v.Name == "Fire" and string.find(tostring(v.SoundId), tostring(142383762)) then
+            types = "shotty"
+            EspText = "Shotty"
+            EspColor = BrickColor.new("Bright blue")
+            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+        end
+    end
+
+
+    local TracerPart = Instance.new("Part")
+    TracerPart.Parent = EspPart
+    TracerPart.Name = "TracerPart"
+    TracerPart.CFrame = EspPart.CFrame
+    TracerPart.Size = Vector3.new(0.2,0.2,0.2)
+    TracerPart.Anchored = true
+    TracerPart.Transparency = 1
+
+    local billgui = Instance.new('BillboardGui', TracerPart)
+    local textlab = Instance.new('TextLabel', billgui)
+
+    billgui.Name = "ESPBillboard"
+    billgui.Adornee  = TracerPart
+    billgui.AlwaysOnTop = true
+    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+    billgui.Size = UDim2.new(0, 5, 0, 5)
+	
+    textlab.Name = "ESPLabel"
+    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+    textlab.BackgroundTransparency = 1
+    textlab.BorderSizePixel = 0
+    textlab.Position = UDim2.new(0, 0, 0, -40)
+    textlab.Size = UDim2.new(1, 0, 10, 0)
+    textlab.Visible = true
+    textlab.ZIndex = 10
+    textlab.Font = 'ArialBold'
+    textlab.FontSize = EspFontSize
+    textlab.Text = EspText
+    textlab.TextColor = EspColor
+    textlab.TextStrokeColor3 = Color3.fromRGB(0, 170, 255)
+end
+
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "RandomSpawner" then
+        esp(v)
+    end
+end
+
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "RandomSpawner" then
+        if v:FindFirstChild("Model") then
+            v.Model.ChildAdded:Connect(function(child)
+                esp(child)
+            end)
+        end
+        v.ChildAdded:Connect(function(child)
+            esp(child)
+        end)
+    end
+end
+
+game.Workspace.ChildAdded:Connect(function(child)
+    if child.Name == "RandomSpawner" then
+        repeat wait() until child.Model
+        esp(child)
+    end
+end)
+end)
+
+Reset2.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Reaver-Scripting-Parts/main/Skybox"))()
+end)
+
+ChatSpy.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LILPEEPFAN234/Chat-Spy/main/Spy"))()
+end)
+
+Fov.MouseButton1Down:Connect(function()
+workspace.CurrentCamera.FieldOfView = 100
+end)
+
+Cyrus.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LILPEEPFAN234/Cyrus/main/Cyrus"))()
+Frames00.Visible = false
+end)
+
+Ciazware.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Kyle/Script-parts/main/Crosshair"))()
+end)
+
+EspButton.MouseButton1Down:Connect(function()
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+ 
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+ 
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
+ 
+coroutine.resume(Rejoin)
+end)
+
+UnnamedEsp.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua"))()
+end)
+
+AntiAfk.MouseButton1Down:Connect(function()
+local AFK = Instance.new("ScreenGui")
+local AFKframe = Instance.new("Frame")
+local timebar = Instance.new("Frame")
+local timemeter = Instance.new("Frame")
+local header = Instance.new("TextLabel")
+local timer = Instance.new("TextButton")
+local green = Instance.new("TextLabel")
+local red = Instance.new("TextLabel")
+local destroy = Instance.new("TextButton")
+AFK.Parent = game.CoreGui
+AFK.Name = "AFK"
+AFK.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+AFKframe.Parent = AFK
+AFKframe.Name = "AFKframe"
+AFKframe.Active = true
+AFKframe.BackgroundColor3 = Color3.new(0.2,0.2,0.2)
+AFKframe.Draggable = true
+AFKframe.Position = UDim2.new(0.406,0,0.015,0)
+AFKframe.Size = UDim2.new(0,200,0,100)
+header.Parent = AFKframe
+header.BackgroundColor3 = Color3.new(0.1,0.1,0.1)
+header.Position = UDim2.new(0.035,0,0.06,0)
+header.Size = UDim2.new(0,186,0,40)
+header.Font = Enum.Font.SourceSansSemibold
+header.Text = "Anti-AFK"
+header.TextColor3 = Color3.new(.8,.8,.8)
+header.TextSize = 25
+header.Font = Enum.Font.SciFi
+timer.Parent = AFKframe
+timer.BackgroundColor3 = Color3.new(0.1,0.1,0.1)
+timer.Position = UDim2.new(0.035,0,0.53,0)
+timer.Size = UDim2.new(0,186,0,40)
+timer.Font = Enum.Font.ArialBold
+timer.Text = "      TIMER:"
+timer.TextColor3 = Color3.new(.8,.8,.8)
+timer.TextSize = 20
+timer.Font = Enum.Font.SciFi
+timer.TextXAlignment = Enum.TextXAlignment.Left
+green.Parent = AFKframe
+green.Name = "green"
+green.BackgroundColor3 = Color3.new(0,255,0)
+green.Position = UDim2.new(0.632,0,0.56,0)
+green.Size = UDim2.new(0,35,0,34)
+green.Text = " "
+green.Visible = false
+red.Parent = AFKframe
+red.Name = "red"
+red.BackgroundColor3 = Color3.new(255,0,0)
+red.Position = UDim2.new(0.632,0,0.56,0)
+red.Size = UDim2.new(0,35,0,34)
+red.Text = " "
+red.Visible = true
+timebar.Parent = AFKframe
+timebar.Name = "timebar"
+timebar.BackgroundColor3 = Color3.new(0,0,0)
+timebar.Position = UDim2.new(0,0,0.93,0)
+timebar.Size = UDim2.new(0,200,0,7)
+timemeter.Parent = timebar
+timemeter.Name = "timemeter"
+timemeter.BackgroundColor3 = Color3.new(0,255,0)
+timemeter.Position = UDim2.new(0,0,0,0)
+timemeter.Size = UDim2.new(0,0,1,0)
+destroy.Parent = AFKframe
+destroy.Name = "destroy"
+destroy.BackgroundColor3 = Color3.new(0.2,0.2,0.2)
+destroy.Position = UDim2.new(0,0,0,0)
+destroy.Size = UDim2.new(0,200,0,7)
+destroy.Text = "- "
+destroy.TextSize = 15
+destroy.TextXAlignment = Enum.TextXAlignment.Right
+destroy.Font = Enum.Font.SourceSansBold
+local TweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(1200, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+local frame = game.CoreGui.AFK.AFKframe.timebar.timemeter
+local tween = TweenService:Create(frame, tweenInfo, {Size = UDim2.new(1,0,1,0)})
+timer.MouseButton1Click:connect(function()
+	if game.CoreGui.AFK.AFKframe.green.Visible == true then
+			game.CoreGui.AFK.AFKframe.red.Visible = true
+		game.CoreGui.AFK.AFKframe.green.Visible = false
+	elseif game.CoreGui.AFK.AFKframe.green.Visible == false then
+			game.CoreGui.AFK.AFKframe.red.Visible = false
+		game.CoreGui.AFK.AFKframe.green.Visible = true
+    end
+	if game.CoreGui.AFK.AFKframe.green.Visible == true then
+	wait()
+		tween:Play()
+	elseif game.CoreGui.AFK.AFKframe.green.Visible == false then
+		wait()
+		tween:Cancel()
+		wait()
+		game.CoreGui.AFK.AFKframe.timebar.timemeter.Size = UDim2.new(0,0,1,0)
+	end
+end)
+local ss = game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+ss:CaptureController()
+ss:ClickButton2(Vector2.new())
+end)
+destroy.MouseButton1Click:connect(function()
+AFK:Destroy()
+end)
+end)
+
+ExitCloser.MouseButton1Down:Connect(function()
+Frames00:Destroy()
+end)
+
+GunSkinGui.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Wxste/Roblox-The-Streets-Scripts/main/TS%20Shotty%20Skins%20GUI"))()
+end)
+print([[
+    
+Skybox - Changes your sky
+Itemesp - Esp's items on the map
+Anti Afk - Make the button green to make it work, it wont kick you if you're in a outlast
+Ciazware - Xaxa Streets Script
+CyAdmin - Injects Cyrus - 2021 Version
+Gun Skins - Brings up the gun skins GUI
+Field of view - Makes camera further, if 100 isn't good enough for you, there is a very easy Field of View script in my github! https://github.com/Not-Kyle/Script-parts/blob/main/FOV
+Chat spy - Allows you to see chat also lets you see if you're enemy is talking in private chat
+Rejoin - Rejoins the game
+UnnamedEsp - This is a public esp made by ic3w0lfs. It will esp everyone with tracers and a corsshair etc.
+
+Reset key is C
+
+This is nothing special, it's just a script for legits. or you can use it as a hub
+
+Made by Coryu - Sevenspacedgods
+]])
+
+
+Notify("Sowben Client","Discord Server has been set to your clipboard","http://www.roblox.com/asset/?id=10642501593",5)
+
+setclipboard("https://discord.gg/326BE2xgkg")
+
+
+function onKeyPress(actionName, userInputState, inputObject)
+   if userInputState == Enum.UserInputState.Begin then
+       game.Players.LocalPlayer.Character:BreakJoints()
+   game.Players.LocalPlayer.Character["Torso"]:Remove()
+   end
+end
+game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.C)

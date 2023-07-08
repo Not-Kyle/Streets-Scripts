@@ -1,0 +1,61 @@
+
+local Players = game:GetService("Players")
+local screen = Instance.new("ScreenGui")
+local JoinsAndLeavesGUI = Instance.new("Frame")
+local JoinsTab = Instance.new("TextLabel")
+local Intersect = Instance.new("Frame")
+local LeavesTab = Instance.new("TextLabel")
+
+screen.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen.ResetOnSpawn = false;
+
+JoinsAndLeavesGUI.Name = "JoinsAndLeaves GUI"
+JoinsAndLeavesGUI.Parent = screen
+JoinsAndLeavesGUI.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+JoinsAndLeavesGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+JoinsAndLeavesGUI.BorderSizePixel = 0
+JoinsAndLeavesGUI.Position = UDim2.new(0, 0, 0.52, 0)
+JoinsAndLeavesGUI.Size = UDim2.new(0, 112, 0, 41)
+
+JoinsTab.Name = "JoinsTab"
+JoinsTab.Parent = JoinsAndLeavesGUI
+JoinsTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JoinsTab.BackgroundTransparency = 1.000
+JoinsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+JoinsTab.BorderSizePixel = 0
+JoinsTab.Position = UDim2.new(-0.00607149955, 0, -0.0164995883, 0)
+JoinsTab.Size = UDim2.new(0, 112, 0, 21)
+JoinsTab.Font = Enum.Font.SourceSans
+JoinsTab.Text = "N/A"
+JoinsTab.TextColor3 = Color3.fromRGB(0, 100, 255)
+JoinsTab.TextSize = 10.000
+
+Intersect.Name = "Intersect"
+Intersect.Parent = JoinsAndLeavesGUI
+Intersect.BackgroundColor3 = Color3.fromRGB(0, 100, 255)
+Intersect.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Intersect.BorderSizePixel = 0
+Intersect.Position = UDim2.new(-0.0178571437, 0, 0.48780489, 0)
+Intersect.Size = UDim2.new(0, 113, 0.0199999996, 0)
+
+LeavesTab.Name = "LeavesTab"
+LeavesTab.Parent = JoinsAndLeavesGUI
+LeavesTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LeavesTab.BackgroundTransparency = 1.000
+LeavesTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LeavesTab.BorderSizePixel = 0
+LeavesTab.Position = UDim2.new(0, 0, 0.51219511, 0)
+LeavesTab.Size = UDim2.new(0, 112, 0, 20)
+LeavesTab.Font = Enum.Font.SourceSans
+LeavesTab.Text = "N/A"
+LeavesTab.TextColor3 = Color3.fromRGB(0, 100, 255)
+LeavesTab.TextSize = 10.000
+
+Players.PlayerAdded:Connect(function(player)
+	JoinsTab.Text = player.Name .. " joined the game!".."\n"
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+	LeavesTab.Text = player.Name .. " left the game!".."\n"
+end)

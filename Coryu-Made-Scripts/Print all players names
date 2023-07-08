@@ -1,0 +1,4 @@
+Players = game:GetService("Players")
+for i, player in pairs(Players:GetPlayers()) do
+    print(player.Name)
+end

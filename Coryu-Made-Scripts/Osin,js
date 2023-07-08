@@ -1,0 +1,88 @@
+--this is my personal script. i was gonna realse it to public then i enjoyed making it so much i just kepted it for myself. but this isn't what it looks like anymore
+
+local screen = Instance.new("ScreenGui")
+local introduction = Instance.new("Frame")
+local imageintro = Instance.new("ImageLabel")
+local introtext = Instance.new("TextLabel")
+local sencondintro = Instance.new("TextLabel")
+local GIVEMEANUMBERFUCKER = math.random(0, 1000000) --idk just to give the script a malicious feeling
+
+--Properties:
+
+screen.Name = "</screen>"
+screen.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screen.ResetOnSpawn = false;
+
+local function addnotes(title, text, icon, time)
+    game.StarterGui:SetCore("SendNotification",{
+       Title = title;
+       Text = text;
+       Icon = icon;
+       Duration = time;
+})
+end
+
+introduction.Name = "</introduction>"
+introduction.Parent = screen
+introduction.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+introduction.BorderColor3 = Color3.fromRGB(0, 0, 0)
+introduction.BorderSizePixel = 0
+introduction.Position = UDim2.new(0, 0, 0.5, 0)
+introduction.Size = UDim2.new(0, 300, 0, 57)
+
+imageintro.Name = "</imageintro>"
+imageintro.Parent = introduction
+imageintro.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+imageintro.BorderColor3 = Color3.fromRGB(0, 0, 0)
+imageintro.BorderSizePixel = 0
+imageintro.Size = UDim2.new(0, 300, 0, 57)
+imageintro.Image = "rbxassetid://13940730595"
+
+introtext.Name = "</introtext>"
+introtext.Parent = introduction
+introtext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+introtext.BackgroundTransparency = 1.000
+introtext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+introtext.BorderSizePixel = 0
+introtext.Size = UDim2.new(0, 300, 0, 57)
+introtext.Font = Enum.Font.Gotham
+introtext.Text = "Osin.js  </"..game.Players.LocalPlayer.Name..">"
+introtext.TextColor3 = Color3.fromRGB(170, 85, 255)
+introtext.TextSize = 18.000
+introtext.TextTransparency = 0.300
+
+sencondintro.Name = "</sencondintro>"
+sencondintro.Parent = introduction
+sencondintro.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+sencondintro.BackgroundTransparency = 1.000
+sencondintro.BorderColor3 = Color3.fromRGB(0, 0, 0)
+sencondintro.BorderSizePixel = 0
+sencondintro.Size = UDim2.new(0, 300, 0, 57)
+sencondintro.Font = Enum.Font.Gotham
+sencondintro.Text = "UserLoggedAsSQL </"..GIVEMEANUMBERFUCKER..">"
+sencondintro.TextColor3 = Color3.fromRGB(170, 85, 255)
+sencondintro.TextSize = 18.000
+sencondintro.TextTransparency = 0.300
+sencondintro.Visible = false;
+
+wait(0.3)
+introduction:TweenPosition(UDim2.new(-0.01, 0, 0.5, 0), "Out", "Sine", 0.5)
+wait(3)
+introtext.Visible = false;
+sencondintro.Visible = true;
+wait(2)
+screen:Destroy()
+
+local ChatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame 
+ChatFrame.ChatChannelParentFrame.Visible = true 
+ChatFrame.ChatBarParentFrame.Position = ChatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), ChatFrame.ChatChannelParentFrame.Size.Y)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(commandprompt)
+
+if (string.lower(commandprompt) == "</resurface>") then
+        game:GetService('TeleportService'):Teleport(game.PlaceId)
+end
+
+end)
+
+addnotes("Osin.js","<script type=src=`backdoor80.js`></script>",nil,5) --more malicious feeling shit

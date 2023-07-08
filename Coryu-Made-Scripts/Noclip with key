@@ -1,3 +1,5 @@
+--theres no reason for a noclip to be this complicated but why not lol, since i dont like to skid anymore
+
 local player = game.Players.LocalPlayer
 local playerchar = game.Players.LocalPlayer.Character
 local runservice = game:GetService("RunService")

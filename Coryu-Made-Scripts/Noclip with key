@@ -1,0 +1,43 @@
+local player = game.Players.LocalPlayer
+local playerchar = game.Players.LocalPlayer.Character
+local runservice = game:GetService("RunService")
+local mou = game.Players.LocalPlayer:GetMouse()
+local step = runservice.Stepped
+local torso = LPC.Torso
+local head = LPC.Head
+local findhuman = LPC:FindFirstChild("Humanoid")
+local keydowning = mou.KeyDown
+
+local keybindstable = {
+                    
+    ["var"] = {
+        
+        noclipkey = "x"; --change hotkey here
+     
+    }
+    
+}
+
+local settings = {
+
+    ["boolconst"] = {
+
+        local nc = false;
+    
+    }
+}
+
+step:Connect(function()
+    if settings["boolconst"].nc == true and player and playerchar and findhuman then 
+        pcall(function()
+            head.CanCollide = false 
+            torso.CanCollide = false
+        end)
+    end
+end)
+
+keydowning:Connect(function(nokey)
+    if nokey == keybindstable["var"].noclipkey then 
+        settings["boolconst"].nc = not settings["boolconst"].nc
+    end
+end)

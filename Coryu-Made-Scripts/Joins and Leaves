@@ -1,1 +1,17 @@
+local function PrintCommands()
+    if rconsoleprint then 
+        rconsolename("Player Console")
 
+local Players = game:GetService("Players")
+
+Players.PlayerAdded:Connect(function(player)
+	rconsoleprint(player.Name .. " joined the game!".."\n")
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+	rconsoleprint(player.Name .. " left the game!".."\n")
+end)
+        
+end
+end
+PrintCommands()

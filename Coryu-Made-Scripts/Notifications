@@ -1,0 +1,11 @@
+local function Notify(title, text, icon, time)
+    game.StarterGui:SetCore("SendNotification",{
+       Title = title;
+       Text = text;
+       Icon = icon;
+       Duration = time;
+})
+end
+
+Notify("Title","Text",nil,5)
+-------Title---Text--Icon-Time

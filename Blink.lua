@@ -55,7 +55,7 @@ Commands["BlinkSpeed"] = {
         if tonumber(args[1]) then 
             BlinkSpeed = tonumber(args[1])
         else 
-            return Notify("We<3Lexi", "Type a number goober!", "", 3)
+            return Notify("Citizen", "Type a number", "", 3)
         end
         Notify("Citizen", "BlinkSpeed -  "..tonumber(BlinkSpeed), "", 3)
     end

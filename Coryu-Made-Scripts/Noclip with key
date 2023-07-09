@@ -1,16 +1,11 @@
 --[[
 theres no reason for a noclip to be this complicated but why not lol, since i dont like to skid anymore
-I MIGHT NOT WORK RN, IDK MY EXECUTER IS DOWN. UNTESTED.
 ]]--
 
 local player = game.Players.LocalPlayer
-local playerchar = game.Players.LocalPlayer.Character
 local runservice = game:GetService("RunService")
 local mou = game.Players.LocalPlayer:GetMouse()
 local step = runservice.Stepped
-local torso = LPC.Torso
-local head = LPC.Head
-local findhuman = LPC:FindFirstChild("Humanoid")
 local keydowning = mou.KeyDown
 
 local keybindstable = {
@@ -27,16 +22,16 @@ local settings = {
 
     ["boolconst"] = {
 
-        local nc = false;
+        nc = false;
     
     }
 }
 
 step:Connect(function()
-    if settings["boolconst"].nc == true and player and playerchar and findhuman then 
+    if settings["boolconst"].nc == true and player and player.Character and player.Character:FindFirstChild("Humanoid") then 
         pcall(function()
-            head.CanCollide = false 
-            torso.CanCollide = false
+            player.Character.Torso.CanCollide = false 
+            player.Character.Head.CanCollide = false
         end)
     end
 end)

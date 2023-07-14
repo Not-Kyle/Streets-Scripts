@@ -1,5 +1,7 @@
 --[[for legits only]]--
 
+--[[modified from osin.js]]--
+
 if game.PlaceId == 4669040 or 9083723645 then
 
 	local blud = {

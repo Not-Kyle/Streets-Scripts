@@ -1,1 +1,1 @@
-game.Lighting.FogEnd = 9999999999
+game:GetService('Lighting').FogEnd = 900000000

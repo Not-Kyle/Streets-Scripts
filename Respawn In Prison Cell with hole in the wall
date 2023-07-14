@@ -1,0 +1,28 @@
+--[[for legits only]]--
+
+if game.PlaceId == 4669040 or 9083723645 then
+
+	local blud = {
+	    ['XDDDDDLO'] = game.Players.LocalPlayer,
+	    ['MOUSX'] = game.Players.LocalPlayer:GetMouse(),
+	    ['terrain'] = workspace.Terrain,
+	}
+	local CFRAMES = {
+	    ['WHYAMISTILLINLA'] = CFrame.new(-326, 1.234919548034668, 120.43860626220703),
+	}
+	
+	function reset()
+	    blud['XDDDDDLO'].Character.Torso:Destroy()
+	end
+	
+	blud['MOUSX'].KeyDown:Connect(function(hotkey)
+		if hotkey == "r" then  --you can change the hotkey to whatever u want
+	        blud['XDDDDDLO'].Character.Parent = blud['terrain']
+	        reset()
+	        game:GetService('Workspace'):WaitForChild(blud['XDDDDDLO'].Name) 
+	        for i=1,1000 do
+	            blud['XDDDDDLO'].Character:WaitForChild('HumanoidRootPart').CFrame = CFRAMES['WHYAMISTILLINLA']
+	        end
+	    end
+	end)
+end

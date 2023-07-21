@@ -1,3 +1,5 @@
+--osin.js alpha 0.1
+
 local screen = Instance.new("ScreenGui")
 local introduction = Instance.new("Frame")
 local imageintro = Instance.new("ImageLabel")

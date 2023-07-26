@@ -4,6 +4,6 @@
 
 Message me if there is a script on here you want taken down
 
-cory#9451
+add backdoor.exe or killserver
 
 I just post the scripts, I don't have affiliation to them (only a couple)

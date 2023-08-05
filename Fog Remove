@@ -1,1 +1,1 @@
-game:GetService('Lighting').FogEnd = 900000000
+game:GetService('Lighting').FogEnd = 9e9

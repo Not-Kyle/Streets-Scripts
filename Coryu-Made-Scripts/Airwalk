@@ -1,0 +1,31 @@
+local coryu = {
+    ['LocalPlayer'] = game:GetService('Players').LocalPlayer;
+    ['RunService'] = game:GetService('RunService');
+    ['Mouse'] = game:GetService('Players').LocalPlayer:GetMouse();
+}
+local airwalk = false
+local partforstand = Instance.new('Part', coryu['LocalPlayer'].Character.HumanoidRootPart)
+local function airtowalk()
+    partforstand.Size = Vector3.new(5,2,5)
+    partforstand.Transparency = 1
+    partforstand.Anchored = true
+end
+
+coryu['RunService'].Stepped:connect(function()
+    if airwalk == true then
+        airtowalk()
+        partforstand.CFrame = coryu['LocalPlayer'].Character.HumanoidRootPart.CFrame + Vector3.new(0,-4,0)
+    end
+end)
+
+coryu['Mouse'].KeyDown:connect(function(upkey)
+    if upkey == 'z' then
+        airwalk = true
+    end
+end)
+
+coryu['Mouse'].KeyDown:connect(function(downkey)
+    if downkey == 'x' then
+        airwalk = false
+    end
+end)

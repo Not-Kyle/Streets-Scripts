@@ -1,0 +1,12 @@
+local w = game:GetService('Workspace'):GetDescendants()
+
+for v =1,#w do
+	if w[v].Name == 'Tree' then
+		for y =1,#w[v]:GetChildren() do
+			if w[v]:GetChildren()[y]:IsA'Part' and w[v]:GetChildren()[y].Material == Enum.Material.Grass then
+				w[v]:GetChildren()[y].Transparency = 0.5
+			end
+		end
+	end
+end
+		

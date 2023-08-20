@@ -3,7 +3,6 @@ local function PrintCommands()
         rconsolename("Title")
         wait(1.3)
         rconsoleprint("Hello uh "..game.Players.LocalPlayer.Name)
-        
-end
+    end
 end
 PrintCommands()

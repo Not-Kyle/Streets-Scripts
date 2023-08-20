@@ -1,4 +1,2202 @@
 local ChatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame 
 ChatFrame.ChatChannelParentFrame.Visible = true 
 ChatFrame.ChatBarParentFrame.Position = ChatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), ChatFrame.ChatChannelParentFrame.Size.Y)
-loadstring(game:HttpGet('https://pastebin.com/raw/tNLkfC07'),true)()
+getgenv().TRIG = tick()
+if not getgenv()['coryutrig'] then --stops double execution
+
+    getgenv()['coryutrig'] = true
+    local yaas = Instance.new("ScreenGui")
+    local BACKFRAMETOSTATUS = Instance.new("ImageLabel")
+    local statsframe = Instance.new("Frame")
+    local TRIGGERBOTTARGETTEXTSTAT = Instance.new("TextLabel")
+    local AIMLOCKTARGETSTAT = Instance.new("TextLabel")
+    local CAMLOCKTARGETSTAT = Instance.new("TextLabel")
+    local AIMLOCKONOROFFSTAT = Instance.new("TextLabel")
+    local BLINKSPEEDSTAT = Instance.new("TextLabel")
+    local NOCLIPONOROFFSTAT = Instance.new("TextLabel")
+    local BLINKONOROFFSTAT = Instance.new("TextLabel")
+    local CLICKTPONOROFF = Instance.new("TextLabel")
+    local UNUSEDSPOTSTAT = Instance.new("TextLabel")
+    local buttonsframe = Instance.new("Frame")
+    local TITLEFRAME = Instance.new("Frame")
+    local titletoscript = Instance.new("TextLabel")
+    local COMBATBUTTON = Instance.new("TextButton")
+    local littleframetocombat = Instance.new("Frame")
+    local COMBATFRAME = Instance.new("ImageLabel")
+    local triggerbottextlabel = Instance.new("TextLabel")
+    local triggerbottargetBOX = Instance.new("TextBox")
+    local triggerbottargetBOX_Roundify_4px = Instance.new("ImageLabel")
+    local aimlockTEXT = Instance.new("TextLabel")
+    local aimtargetBOX = Instance.new("TextBox")
+    local AUTOFIREAIMLOCKIMAGE = Instance.new("ImageLabel")
+    local camlocktext = Instance.new("TextLabel")
+    local camlockbox = Instance.new("TextBox")
+    local camlockIMAGE = Instance.new("ImageLabel")
+    local esptext = Instance.new("TextLabel")
+    local espbox = Instance.new("TextBox")
+    local espIMAGE = Instance.new("ImageLabel")
+    local CREDITSBUTTON = Instance.new("TextButton")
+    local littleframetocredits = Instance.new("Frame")
+    local CREDITSFRAME = Instance.new("ImageLabel")
+    local desc1 = Instance.new("TextLabel")
+    local desc2 = Instance.new("TextLabel")
+    local desc3 = Instance.new("TextLabel")
+    local verisontext = Instance.new("TextLabel")
+    local MovementBUTTON = Instance.new("TextButton")
+    local littleframetoMOVEMENT = Instance.new("Frame")
+    local MOVEMENTFRAME = Instance.new("ImageLabel")
+    local blinktext = Instance.new("TextLabel")
+    local blinkBUTTON = Instance.new("TextButton")
+    local blinkBUTTON_Roundify_4px = Instance.new("ImageLabel")
+    local blinkspeedtext = Instance.new("TextLabel")
+    local blinkspeedBOXS = Instance.new("TextBox")
+    local blinkspeedBOXS_Roundify_4px = Instance.new("ImageLabel")
+    local clickteleportTEXT = Instance.new("TextLabel")
+    local CLICKTELEPORTBUTTON = Instance.new("TextButton")
+    local clickTpBUTTON_Roundify_4px = Instance.new("ImageLabel")
+    local TeleportBUTTON = Instance.new("TextButton")
+    local littleframetoteleports = Instance.new("Frame")
+    local TELEPORTFRAME = Instance.new("ImageLabel")
+    local outspacetext = Instance.new("TextLabel")
+    local spacebutton = Instance.new("TextButton")
+    local spaceIGNORE = Instance.new("ImageLabel")
+    local GotoPlayerTEXT = Instance.new("TextLabel")
+    local gotoplyBOX = Instance.new("TextBox")
+    local IGNORETHISFRAMETPTOPLY = Instance.new("ImageLabel")
+    local rejoinTEXT = Instance.new("TextLabel")
+    local rejoinBUTTON = Instance.new("TextButton")
+    local rejoinIGNORE = Instance.new("ImageLabel")
+    local shutdownTEXT = Instance.new("TextLabel")
+    local shutbuttonBUTTON = Instance.new("TextButton")
+    local SHUTDOWNIGNORE = Instance.new("ImageLabel")
+    local SEPTITLEFRAME = Instance.new("Frame")
+    local IIllllIILL = Instance.new("TextLabel")
+    local YEPTEXTFPS = Instance.new("TextLabel")
+    local PINGTEXT = Instance.new("TextLabel")
+    local COMMANDBAR = Instance.new("Frame")
+    local gankngorframe = Instance.new("Frame")
+    local CMDBARRECEIVER = Instance.new("TextBox")
+    local CMDHELPREJOIN = Instance.new("TextLabel")
+    local cmdHELPER = Instance.new("Frame")
+    local cmdhelperEXIT = Instance.new("TextLabel")
+    local cmdhelperBLINK = Instance.new("TextLabel")
+    local cmdhelperBLINKSPEED = Instance.new("TextLabel")
+    local cmdhelperCLICKTP = Instance.new("TextLabel")
+    local cmdhelperNOCLIP = Instance.new("TextLabel")
+    local cmdhelperHIDEUI = Instance.new("TextLabel")
+    local cmdhelperGOTO = Instance.new("TextLabel")
+    local cmdhelperRESET = Instance.new("TextLabel")
+    local cmdhelperCAMLOCK = Instance.new("TextLabel")
+    local cmdhelperESP = Instance.new("TextLabel")
+    local cmdhelperUNCAMLOCK = Instance.new("TextLabel")
+    local cmdhelperUNAIMLOCK = Instance.new("TextLabel")
+    local cmdhelperFOVCIRCLE = Instance.new("TextLabel")
+    local cmdhelperUNTRIG = Instance.new("TextLabel")
+    local cmdhelperINFFF = Instance.new("TextLabel")
+
+    local var = {
+        ['LocalPlayer'] = game:GetService('Players').LocalPlayer,
+        ['Character'] = game.Players.LocalPlayer.Character,
+        ['RunService'] = game:GetService("RunService"),
+        ['Mouse'] = game:GetService("Players").LocalPlayer:GetMouse(),
+        ['ReplicatedStorage'] = game:GetService("ReplicatedStorage"),
+        ['UserInputService'] = game:GetService("UserInputService"),
+        ['GetSerPlayerLP'] = game:GetService("Players").LocalPlayer,
+        ['CoreGui'] = game:GetService("CoreGui"),
+        ['ADMINSYSTEM'] = game:GetService("CoreGui").PlayerList.PlayerListMaster.OffsetFrame,
+        ['Workspace'] = game:GetService("Workspace"),
+        ['StarterGui'] = game.StarterGui,
+        ['GetServicePlayers'] = game:GetService('Players'),
+        ['RandomNumber'] = math.random(0, 1000000),
+        ['Camera'] = game:GetService("Workspace").CurrentCamera,
+        ['get:Http1.1'] = game:GetService("HttpService"),
+        ['Jumprequest'] = game:GetService("UserInputService").JumpRequest,
+        ['WaitforCamera'] = workspace:WaitForChild("Camera"),
+        ['PlayerGui'] = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"),
+        ['LocalPlayerPing'] = game.Stats.PerformanceStats.Ping:GetValue(),
+        ['Size'] = 25,
+        ['TeleportService'] = game:GetService('TeleportService'),
+    }
+
+    local setting = {
+        ["BOOLEAN"] = {
+            ['BLINK'] = true;
+            ['BLINKING'] = false;
+            ['CLICKTP'] = false;
+            ['NOCLIP'] = true;
+            ['UIVISIBLE'] = true;
+            ['CAMLOCK'] = false;
+            ['AIMLOCKPREDICTION'] = false;
+            ['TRIGGERBOT'] = false;
+            ['INFFF'] = false;
+            ['ESPOFF'] = false;
+            ['AIMLOCKHIGHPING'] = false;
+        },
+        ["NUMBERS"] = {
+            ['BLINKSPEED'] = 8;
+            ['CIRCLESIZE'] = 100;
+            ['AIMVELOCITY'] = 6.3;
+        },
+        ["INTS"] = {
+        	['TPTOPLAYER'] = nil;
+            ['CAMLOCKTARGET'] = nil;
+            ['AIMLOCKTARGET'] = nil;
+            ['TRIGGERBOTTARGET'] = nil;
+            ['ESPTARGET'] = nil;
+        },
+    }
+    
+    getgenv().UserNotifications = function(title, text, time)
+        game.StarterGui:SetCore("SendNotification", {Title = title; Text = text; Icon = 'rbxassetid://13941412659'; Duration = time;})
+    end
+
+    local AIMLOCKPART = {
+        ["head"] = "Head";
+        ["torso"] = "Torso";
+        ["hum"] = "HumanoidRootPart";
+    }
+
+    local COLORCLASS = {
+        ['COLOR-A'] = Color3.fromRGB(255, 255, 255), --White
+        ['COLOR-B'] = Color3.fromRGB(255, 0, 0), -- Red
+        ['COLOR-C'] = Color3.fromRGB(0, 255, 0), -- Green
+        ['COLOR-D'] = Color3.fromRGB(0, 0, 255), -- Blue
+        ['COLOR-E'] = Color3.fromRGB(0, 0, 0), -- Black
+        ['COLOR-F'] = Color3.fromRGB(20, 20, 20), -- Light Black
+        ['COLOR-G'] = Color3.fromRGB(255, 255, 0), -- Yellow
+        ['COLOR-H'] = Color3.fromRGB(170, 0, 255),-- Purple (Ciazware)
+        ['COLOR-I'] = Color3.fromRGB(32, 32, 32), -- Darkest Grey
+        ['COLOR-J'] = Color3.fromRGB(64, 64, 64), -- Darker Grey
+        ['COLOR-K'] = Color3.fromRGB(96, 96, 96), -- Dark Grey
+        ['COLOR-L'] = Color3.fromRGB(128, 128, 128), -- Grey
+        ['COLOR-M'] = Color3.fromRGB(0, 204, 204), -- Teal
+        ['COLOR-N'] = Color3.fromRGB(0, 102, 204), -- Baby Blue
+        ['COLOR-O'] = Color3.fromRGB(204, 0, 204), -- Hot Pink
+        ['COLOR-P'] = Color3.fromRGB(255, 153, 255), -- Pastel Pink
+        ['COLOR-Q'] = Color3.fromRGB(204, 153, 255), -- Pastel Purple
+        ['COLOR-R'] = Color3.fromRGB(160, 160, 160), -- Light Grey
+        ['COLOR-S'] = Color3.fromRGB(192, 192, 192), -- Lightest Grey
+        ['COLOR-T'] = Color3.fromRGB(255, 85, 255), -- Pink
+        ['COLOR-U'] = Color3.fromRGB(170, 0, 0), -- Dark Red
+        ['COLOR-V'] = Color3.fromRGB(85, 255, 0), -- Bright Green
+        ['COLOR-W'] = Color3.fromRGB(85, 170, 127), -- Mint
+        ['COLOR-X'] = Color3.fromRGB(85, 85, 127), -- Olive Purple
+        ['COLOR-Y'] = Color3.fromRGB(0, 0, 128), -- Navel Blue
+        ['COLOR-Z'] = Color3.fromRGB(85, 0, 255),-- Indigo
+        ['MINECRAFTBLUETEXT'] = Color3.fromRGB(94, 189, 191)
+    }
+
+    local COLORPICK = COLORCLASS['COLOR-Z']
+    local TEXTSTROKECOLOR = COLORCLASS['COLOR-Z']
+    local TEXTCOLORAH = COLORCLASS['COLOR-B']
+    local MCTEXT = COLORCLASS['MINECRAFTBLUETEXT']
+    
+	local CoryuH = Drawing.new('Line')
+    local CoryuV = Drawing.new('Line')
+            
+    CoryuH.Visible = true
+    CoryuH.Size = var['Size']
+    CoryuH.Thickness = 2
+    CoryuH.Color = COLORPICK
+    CoryuH.Transparency = 1
+        
+    CoryuV.Visible = true
+    CoryuV.Size = var['Size']
+    CoryuV.Thickness = 2
+    CoryuV.Color = COLORPICK
+    CoryuV.Transparency = 1
+        
+    var['RunService'].RenderStepped:connect(function()
+        local divsize = var['Size'] / 2
+        var['UserInputService'].MouseIcon = 'rbxassetid://6839635919'
+        CoryuH.From = Vector2.new(var['UserInputService']:GetMouseLocation().X - divsize, var['UserInputService']:GetMouseLocation().Y)
+        CoryuH.To = Vector2.new(var['UserInputService']:GetMouseLocation().X + divsize, var['UserInputService']:GetMouseLocation().Y)
+        CoryuV.From = Vector2.new(var['UserInputService']:GetMouseLocation().X, var['UserInputService']:GetMouseLocation().Y - divsize)
+        CoryuV.To = Vector2.new(var['UserInputService']:GetMouseLocation().X, var['UserInputService']:GetMouseLocation().Y + divsize)
+    end)
+
+    local cir = Drawing.new('Circle')
+    cir.Visible = false
+    cir.Radius = setting["NUMBERS"]['CIRCLESIZE']
+    cir.Color = COLORPICK
+    cir.Thickness = 1
+    cir.Filled = false
+    cir.Transparency = 1
+
+    cir.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y /2)
+
+    var['Workspace'].TPer.Color = Color3.fromRGB(85,85,255)
+
+    delay(50, function(CHATTED)
+    	var['GetServicePlayers']:Chat("CORYU-TRIGGERBOT "..var['RandomNumber'], CHATTED)
+    end)
+
+    local function bulletcolor(b)
+        if b:IsA'Trail' then
+            b.TextureMode = 'Static'
+            b.TextureLength = 1
+            b.Lifetime = 0.9
+            b.Color = ColorSequence.new(COLORPICK)
+        end
+    end
+
+    local trailremix;trailremix = var['LocalPlayer'].Character.DescendantAdded:connect(bulletcolor)
+
+    var['LocalPlayer'].CharacterAdded:connect(function(plr)
+        trailremix = plr.DescendantAdded:connect(bulletcolor)
+    end)
+
+    local DUMMYNAME = {
+        'CORYU-TRIGGERBOT ON TOP';
+        'THANKS FOR USING CORYU`S - TRIGGERBOT';
+        'CORYU IS A TOP TIER CODER';
+        'CHECK OUT MY OTHER SCRIPTS (github.com/Not-Kyle)';
+        'SKIDS WILL PURISH';
+        ''..var['LocalPlayer'].DisplayName..' is a god for using CORYU scripts';
+        'FUCK YOU CHRIS';
+        'I love femboys';
+        ''..var['LocalPlayer'].DisplayName..' loves femboy cum';
+    }
+
+    var['Workspace']['Headless Dummy'].Humanoid.DisplayName = DUMMYNAME[math.random(1,#DUMMYNAME)]
+
+    yaas.Name = "yaas"
+    yaas.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    yaas.ResetOnSpawn = false
+
+    cmdHELPER.Name = "cmdHELPER"
+    cmdHELPER.Parent = yaas
+    cmdHELPER.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    cmdHELPER.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdHELPER.BorderSizePixel = 0
+    cmdHELPER.Position = UDim2.new(0.0953591838, 0, 0.153433472, 0)
+    cmdHELPER.Size = UDim2.new(0, 400, 0, 478)
+    cmdHELPER.Visible = false
+
+    CMDHELPREJOIN.Name = "CMDHELPREJOIN"
+    CMDHELPREJOIN.Parent = cmdHELPER
+    CMDHELPREJOIN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CMDHELPREJOIN.BackgroundTransparency = 1.000
+    CMDHELPREJOIN.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CMDHELPREJOIN.BorderSizePixel = 0
+    CMDHELPREJOIN.Position = UDim2.new(0.0391098037, 0, 0.0125523014, 0)
+    CMDHELPREJOIN.Size = UDim2.new(0, 369, 0, 21)
+    CMDHELPREJOIN.Font = Enum.Font.Code
+    CMDHELPREJOIN.Text = "Cmd[1] - rejoin / rj (Rejoins current game)"
+    CMDHELPREJOIN.TextColor3 = Color3.fromRGB(85, 0, 255)
+    CMDHELPREJOIN.TextSize = 16.000
+    CMDHELPREJOIN.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperEXIT.Name = "cmdhelperEXIT"
+    cmdhelperEXIT.Parent = cmdHELPER
+    cmdhelperEXIT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperEXIT.BackgroundTransparency = 1.000
+    cmdhelperEXIT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperEXIT.BorderSizePixel = 0
+    cmdhelperEXIT.Position = UDim2.new(0.0391098037, 0, 0.0690376535, 0)
+    cmdhelperEXIT.Size = UDim2.new(0, 369, 0, 21)
+    cmdhelperEXIT.Font = Enum.Font.Code
+    cmdhelperEXIT.Text = "Cmd[2] - exit / shutdown (Leaves your game)"
+    cmdhelperEXIT.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperEXIT.TextSize = 16.000
+    cmdhelperEXIT.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperBLINK.Name = "cmdhelperBLINK"
+    cmdhelperBLINK.Parent = cmdHELPER
+    cmdhelperBLINK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperBLINK.BackgroundTransparency = 1.000
+    cmdhelperBLINK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperBLINK.BorderSizePixel = 0
+    cmdhelperBLINK.Position = UDim2.new(0.0391098037, 0, 0.127615064, 0)
+    cmdhelperBLINK.Size = UDim2.new(0, 369, 0, 21)
+    cmdhelperBLINK.Font = Enum.Font.Code
+    cmdhelperBLINK.Text = "Cmd[3] - blink / bl (Run faster)"
+    cmdhelperBLINK.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperBLINK.TextSize = 16.000
+    cmdhelperBLINK.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperBLINKSPEED.Name = "cmdhelperBLINKSPEED"
+    cmdhelperBLINKSPEED.Parent = cmdHELPER
+    cmdhelperBLINKSPEED.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperBLINKSPEED.BackgroundTransparency = 1.000
+    cmdhelperBLINKSPEED.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperBLINKSPEED.BorderSizePixel = 0
+    cmdhelperBLINKSPEED.Position = UDim2.new(0.0391098037, 0, 0.186192468, 0)
+    cmdhelperBLINKSPEED.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperBLINKSPEED.Font = Enum.Font.Code
+    cmdhelperBLINKSPEED.Text = "Cmd[4] - blinkspeed / bs (Changes blink speed)"
+    cmdhelperBLINKSPEED.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperBLINKSPEED.TextSize = 16.000
+    cmdhelperBLINKSPEED.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperCLICKTP.Name = "cmdhelperCLICKTP"
+    cmdhelperCLICKTP.Parent = cmdHELPER
+    cmdhelperCLICKTP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperCLICKTP.BackgroundTransparency = 1.000
+    cmdhelperCLICKTP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperCLICKTP.BorderSizePixel = 0
+    cmdhelperCLICKTP.Position = UDim2.new(0.0391098037, 0, 0.244769871, 0)
+    cmdhelperCLICKTP.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperCLICKTP.Font = Enum.Font.Code
+    cmdhelperCLICKTP.Text = "Cmd[5] - clicktp (Press T to teleport around)"
+    cmdhelperCLICKTP.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperCLICKTP.TextSize = 16.000
+    cmdhelperCLICKTP.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperNOCLIP.Name = "cmdhelperNOCLIP"
+    cmdhelperNOCLIP.Parent = cmdHELPER
+    cmdhelperNOCLIP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperNOCLIP.BackgroundTransparency = 1.000
+    cmdhelperNOCLIP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperNOCLIP.BorderSizePixel = 0
+    cmdhelperNOCLIP.Position = UDim2.new(0.0391098037, 0, 0.301255226, 0)
+    cmdhelperNOCLIP.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperNOCLIP.Font = Enum.Font.Code
+    cmdhelperNOCLIP.Text = "Cmd[6] - noclip / nc (Walk through walls)"
+    cmdhelperNOCLIP.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperNOCLIP.TextSize = 16.000
+    cmdhelperNOCLIP.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperHIDEUI.Name = "cmdhelperHIDEUI"
+    cmdhelperHIDEUI.Parent = cmdHELPER
+    cmdhelperHIDEUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperHIDEUI.BackgroundTransparency = 1.000
+    cmdhelperHIDEUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperHIDEUI.BorderSizePixel = 0
+    cmdhelperHIDEUI.Position = UDim2.new(0.0391098037, 0, 0.357740581, 0)
+    cmdhelperHIDEUI.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperHIDEUI.Font = Enum.Font.Code
+    cmdhelperHIDEUI.Text = "Cmd[7] - hideui / hu (Hides the ugly buttons)"
+    cmdhelperHIDEUI.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperHIDEUI.TextSize = 16.000
+    cmdhelperHIDEUI.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperGOTO.Name = "cmdhelperGOTO"
+    cmdhelperGOTO.Parent = cmdHELPER
+    cmdhelperGOTO.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperGOTO.BackgroundTransparency = 1.000
+    cmdhelperGOTO.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperGOTO.BorderSizePixel = 0
+    cmdhelperGOTO.Position = UDim2.new(0.0391098037, 0, 0.418410033, 0)
+    cmdhelperGOTO.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperGOTO.Font = Enum.Font.Code
+    cmdhelperGOTO.Text = "Cmd[8] - goto / to (Teleports you to a player)"
+    cmdhelperGOTO.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperGOTO.TextSize = 16.000
+    cmdhelperGOTO.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperRESET.Name = "cmdhelperRESET"
+    cmdhelperRESET.Parent = cmdHELPER
+    cmdhelperRESET.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperRESET.BackgroundTransparency = 1.000
+    cmdhelperRESET.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperRESET.BorderSizePixel = 0
+    cmdhelperRESET.Position = UDim2.new(0.0391098037, 0, 0.476987451, 0)
+    cmdhelperRESET.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperRESET.Font = Enum.Font.Code
+    cmdhelperRESET.Text = "Cmd[9] - reset / re / r (Resets your player)"
+    cmdhelperRESET.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperRESET.TextSize = 16.000
+    cmdhelperRESET.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperCAMLOCK.Name = "cmdhelperCAMLOCK"
+    cmdhelperCAMLOCK.Parent = cmdHELPER
+    cmdhelperCAMLOCK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperCAMLOCK.BackgroundTransparency = 1.000
+    cmdhelperCAMLOCK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperCAMLOCK.BorderSizePixel = 0
+    cmdhelperCAMLOCK.Position = UDim2.new(0.0391098037, 0, 0.533472776, 0)
+    cmdhelperCAMLOCK.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperCAMLOCK.Font = Enum.Font.Code
+    cmdhelperCAMLOCK.Text = "Cmd[10] - camlock / cl (Locks camera to a player"
+    cmdhelperCAMLOCK.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperCAMLOCK.TextSize = 16.000
+    cmdhelperCAMLOCK.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperESP.Name = "cmdhelperESP"
+    cmdhelperESP.Parent = cmdHELPER
+    cmdhelperESP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperESP.BackgroundTransparency = 1.000
+    cmdhelperESP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperESP.BorderSizePixel = 0
+    cmdhelperESP.Position = UDim2.new(0.0391098037, 0, 0.589958131, 0)
+    cmdhelperESP.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperESP.Font = Enum.Font.Code
+    cmdhelperESP.Text = "Cmd[11] - esp (Traces a player)"
+    cmdhelperESP.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperESP.TextSize = 16.000
+    cmdhelperESP.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperUNCAMLOCK.Name = "cmdhelperUNCAMLOCK"
+    cmdhelperUNCAMLOCK.Parent = cmdHELPER
+    cmdhelperUNCAMLOCK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperUNCAMLOCK.BackgroundTransparency = 1.000
+    cmdhelperUNCAMLOCK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperUNCAMLOCK.BorderSizePixel = 0
+    cmdhelperUNCAMLOCK.Position = UDim2.new(0.0391098037, 0, 0.652719676, 0)
+    cmdhelperUNCAMLOCK.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperUNCAMLOCK.Font = Enum.Font.Code
+    cmdhelperUNCAMLOCK.Text = "Cmd[12] - uncamlock / uncl / uc (Turn off c-lock"
+    cmdhelperUNCAMLOCK.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperUNCAMLOCK.TextSize = 16.000
+    cmdhelperUNCAMLOCK.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperUNAIMLOCK.Name = "cmdhelperUNAIMLOCK"
+    cmdhelperUNAIMLOCK.Parent = cmdHELPER
+    cmdhelperUNAIMLOCK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperUNAIMLOCK.BackgroundTransparency = 1.000
+    cmdhelperUNAIMLOCK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperUNAIMLOCK.BorderSizePixel = 0
+    cmdhelperUNAIMLOCK.Position = UDim2.new(0.0391098037, 0, 0.711297095, 0)
+    cmdhelperUNAIMLOCK.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperUNAIMLOCK.Font = Enum.Font.Code
+    cmdhelperUNAIMLOCK.Text = "Cmd[13] - unaimlock / unanim / ua"
+    cmdhelperUNAIMLOCK.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperUNAIMLOCK.TextSize = 16.000
+    cmdhelperUNAIMLOCK.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperFOVCIRCLE.Name = "cmdhelperFOVCIRCLE"
+    cmdhelperFOVCIRCLE.Parent = cmdHELPER
+    cmdhelperFOVCIRCLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperFOVCIRCLE.BackgroundTransparency = 1.000
+    cmdhelperFOVCIRCLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperFOVCIRCLE.BorderSizePixel = 0
+    cmdhelperFOVCIRCLE.Position = UDim2.new(0.0391098037, 0, 0.76778245, 0)
+    cmdhelperFOVCIRCLE.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperFOVCIRCLE.Font = Enum.Font.Code
+    cmdhelperFOVCIRCLE.Text = "Cmd[14] - cirlce / aimbotcircle/ fovcircle"
+    cmdhelperFOVCIRCLE.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperFOVCIRCLE.TextSize = 16.000
+    cmdhelperFOVCIRCLE.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperUNTRIG.Name = "cmdhelperUNTRIG"
+    cmdhelperUNTRIG.Parent = cmdHELPER
+    cmdhelperUNTRIG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperUNTRIG.BackgroundTransparency = 1.000
+    cmdhelperUNTRIG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperUNTRIG.BorderSizePixel = 0
+    cmdhelperUNTRIG.Position = UDim2.new(0.0391098037, 0, 0.824267805, 0)
+    cmdhelperUNTRIG.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperUNTRIG.Font = Enum.Font.Code
+    cmdhelperUNTRIG.Text = "Cmd[15] - untriggerbot / untbot / untb"
+    cmdhelperUNTRIG.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperUNTRIG.TextSize = 16.000
+    cmdhelperUNTRIG.TextXAlignment = Enum.TextXAlignment.Left
+
+    cmdhelperINFFF.Name = "cmdhelperINFFF"
+    cmdhelperINFFF.Parent = cmdHELPER
+    cmdhelperINFFF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    cmdhelperINFFF.BackgroundTransparency = 1.000
+    cmdhelperINFFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    cmdhelperINFFF.BorderSizePixel = 0
+    cmdhelperINFFF.Position = UDim2.new(0.0391098037, 0, 0.88075316, 0)
+    cmdhelperINFFF.Size = UDim2.new(0, 377, 0, 21)
+    cmdhelperINFFF.Font = Enum.Font.Code
+    cmdhelperINFFF.Text = "Cmd[15] - infff (Godmode / Infinite Forcefield)"
+    cmdhelperINFFF.TextColor3 = Color3.fromRGB(85, 0, 255)
+    cmdhelperINFFF.TextSize = 16.000
+    cmdhelperINFFF.TextXAlignment = Enum.TextXAlignment.Left
+
+    BACKFRAMETOSTATUS.Name = "BACKFRAMETOSTATUS"
+    BACKFRAMETOSTATUS.Parent = yaas
+    BACKFRAMETOSTATUS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    BACKFRAMETOSTATUS.BackgroundTransparency = 1.000
+    BACKFRAMETOSTATUS.Position = UDim2.new(0.09, 0, 0.706198394, 0)
+    BACKFRAMETOSTATUS.Size = UDim2.new(0, 233, 0, 260)
+    BACKFRAMETOSTATUS.Image = "rbxassetid://3570695787"
+    BACKFRAMETOSTATUS.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    BACKFRAMETOSTATUS.ScaleType = Enum.ScaleType.Slice
+    BACKFRAMETOSTATUS.SliceCenter = Rect.new(100, 100, 100, 100)
+    BACKFRAMETOSTATUS.SliceScale = 0.040
+
+    statsframe.Name = "statsframe"
+    statsframe.Parent = BACKFRAMETOSTATUS
+    statsframe.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    statsframe.BorderColor3 = COLORPICK
+    statsframe.BorderSizePixel = 2
+    statsframe.Position = UDim2.new(0.0300429184, 0, 0.0282050502, 0)
+    statsframe.Size = UDim2.new(0, 218, 0, 245)
+
+    TRIGGERBOTTARGETTEXTSTAT.Name = "TRIGGERBOTTARGETTEXTSTAT"
+    TRIGGERBOTTARGETTEXTSTAT.Parent = statsframe
+    TRIGGERBOTTARGETTEXTSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TRIGGERBOTTARGETTEXTSTAT.BackgroundTransparency = 1.000
+    TRIGGERBOTTARGETTEXTSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TRIGGERBOTTARGETTEXTSTAT.BorderSizePixel = 0
+    TRIGGERBOTTARGETTEXTSTAT.Position = UDim2.new(0.0412844047, 0, 0.0367346928, 0)
+    TRIGGERBOTTARGETTEXTSTAT.Size = UDim2.new(0, 202, 0, 25)
+    TRIGGERBOTTARGETTEXTSTAT.Font = Enum.Font.Code
+    TRIGGERBOTTARGETTEXTSTAT.Text = "T-TARGET://"
+    TRIGGERBOTTARGETTEXTSTAT.TextColor3 = COLORPICK
+    TRIGGERBOTTARGETTEXTSTAT.TextSize = 16.000
+    TRIGGERBOTTARGETTEXTSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    AIMLOCKTARGETSTAT.Name = "AIMLOCKTARGETSTAT"
+    AIMLOCKTARGETSTAT.Parent = statsframe
+    AIMLOCKTARGETSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    AIMLOCKTARGETSTAT.BackgroundTransparency = 1.000
+    AIMLOCKTARGETSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    AIMLOCKTARGETSTAT.BorderSizePixel = 0
+    AIMLOCKTARGETSTAT.Position = UDim2.new(0.0412844047, 0, 0.138775513, 0)
+    AIMLOCKTARGETSTAT.Size = UDim2.new(0, 202, 0, 25)
+    AIMLOCKTARGETSTAT.Font = Enum.Font.Code
+    AIMLOCKTARGETSTAT.Text = "LOCKED://"
+    AIMLOCKTARGETSTAT.TextColor3 = COLORPICK
+    AIMLOCKTARGETSTAT.TextSize = 16.000
+    AIMLOCKTARGETSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    CAMLOCKTARGETSTAT.Name = "CAMLOCKTARGETSTAT"
+    CAMLOCKTARGETSTAT.Parent = statsframe
+    CAMLOCKTARGETSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CAMLOCKTARGETSTAT.BackgroundTransparency = 1.000
+    CAMLOCKTARGETSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CAMLOCKTARGETSTAT.BorderSizePixel = 0
+    CAMLOCKTARGETSTAT.Position = UDim2.new(0.0412844047, 0, 0.253061235, 0)
+    CAMLOCKTARGETSTAT.Size = UDim2.new(0, 202, 0, 25)
+    CAMLOCKTARGETSTAT.Font = Enum.Font.Code
+    CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+    CAMLOCKTARGETSTAT.TextColor3 = COLORPICK
+    CAMLOCKTARGETSTAT.TextSize = 16.000
+    CAMLOCKTARGETSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    AIMLOCKONOROFFSTAT.Name = "AIMLOCKONOROFFSTAT"
+    AIMLOCKONOROFFSTAT.Parent = statsframe
+    AIMLOCKONOROFFSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    AIMLOCKONOROFFSTAT.BackgroundTransparency = 1.000
+    AIMLOCKONOROFFSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    AIMLOCKONOROFFSTAT.BorderSizePixel = 0
+    AIMLOCKONOROFFSTAT.Position = UDim2.new(0.0412844047, 0, 0.367346942, 0)
+    AIMLOCKONOROFFSTAT.Size = UDim2.new(0, 202, 0, 25)
+    AIMLOCKONOROFFSTAT.Font = Enum.Font.Code
+    AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "
+    AIMLOCKONOROFFSTAT.TextColor3 = COLORPICK
+    AIMLOCKONOROFFSTAT.TextSize = 16.000
+    AIMLOCKONOROFFSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    BLINKSPEEDSTAT.Name = "BLINKSPEEDSTAT"
+    BLINKSPEEDSTAT.Parent = statsframe
+    BLINKSPEEDSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    BLINKSPEEDSTAT.BackgroundTransparency = 1.000
+    BLINKSPEEDSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BLINKSPEEDSTAT.BorderSizePixel = 0
+    BLINKSPEEDSTAT.Position = UDim2.new(0.0366972461, 0, 0.46938777, 0)
+    BLINKSPEEDSTAT.Size = UDim2.new(0, 202, 0, 25)
+    BLINKSPEEDSTAT.Font = Enum.Font.Code
+    BLINKSPEEDSTAT.Text = "BLINKSPEED:// "..tonumber(setting["NUMBERS"]['BLINKSPEED'])
+    BLINKSPEEDSTAT.TextColor3 = COLORPICK
+    BLINKSPEEDSTAT.TextSize = 16.000
+    BLINKSPEEDSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    NOCLIPONOROFFSTAT.Name = "NOCLIPONOROFFSTAT"
+    NOCLIPONOROFFSTAT.Parent = statsframe
+    NOCLIPONOROFFSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    NOCLIPONOROFFSTAT.BackgroundTransparency = 1.000
+    NOCLIPONOROFFSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    NOCLIPONOROFFSTAT.BorderSizePixel = 0
+    NOCLIPONOROFFSTAT.Position = UDim2.new(0.0366972461, 0, 0.571428597, 0)
+    NOCLIPONOROFFSTAT.Size = UDim2.new(0, 202, 0, 25)
+    NOCLIPONOROFFSTAT.Font = Enum.Font.Code
+    NOCLIPONOROFFSTAT.Text = "NOCLIP:// "..tostring(setting["BOOLEAN"]['NOCLIP'])
+    NOCLIPONOROFFSTAT.TextColor3 = COLORPICK
+    NOCLIPONOROFFSTAT.TextSize = 16.000
+    NOCLIPONOROFFSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    BLINKONOROFFSTAT.Name = "BLINKONOROFFSTAT"
+    BLINKONOROFFSTAT.Parent = statsframe
+    BLINKONOROFFSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    BLINKONOROFFSTAT.BackgroundTransparency = 1.000
+    BLINKONOROFFSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BLINKONOROFFSTAT.BorderSizePixel = 0
+    BLINKONOROFFSTAT.Position = UDim2.new(0.0412844047, 0, 0.673469365, 0)
+    BLINKONOROFFSTAT.Size = UDim2.new(0, 202, 0, 25)
+    BLINKONOROFFSTAT.Font = Enum.Font.Code
+    BLINKONOROFFSTAT.Text = "BLINK:// "
+    BLINKONOROFFSTAT.TextColor3 = COLORPICK
+    BLINKONOROFFSTAT.TextSize = 16.000
+    BLINKONOROFFSTAT.TextXAlignment = Enum.TextXAlignment.Left
+
+    CLICKTPONOROFF.Name = "CLICKTPONOROFF"
+    CLICKTPONOROFF.Parent = statsframe
+    CLICKTPONOROFF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CLICKTPONOROFF.BackgroundTransparency = 1.000
+    CLICKTPONOROFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CLICKTPONOROFF.BorderSizePixel = 0
+    CLICKTPONOROFF.Position = UDim2.new(0.0412844047, 0, 0.775510192, 0)
+    CLICKTPONOROFF.Size = UDim2.new(0, 202, 0, 25)
+    CLICKTPONOROFF.Font = Enum.Font.Code
+    CLICKTPONOROFF.Text = "CLICK-TP:// "
+    CLICKTPONOROFF.TextColor3 = COLORPICK
+    CLICKTPONOROFF.TextSize = 16.000
+    CLICKTPONOROFF.TextXAlignment = Enum.TextXAlignment.Left
+
+    var['RunService'].RenderStepped:connect(function()
+        UNUSEDSPOTSTAT.Name = "UNUSEDSPOTSTAT"
+        UNUSEDSPOTSTAT.Parent = statsframe
+        UNUSEDSPOTSTAT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        UNUSEDSPOTSTAT.BackgroundTransparency = 1.000
+        UNUSEDSPOTSTAT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        UNUSEDSPOTSTAT.BorderSizePixel = 0
+        UNUSEDSPOTSTAT.Position = UDim2.new(0.0366972461, 0, 0.877551019, 0)
+        UNUSEDSPOTSTAT.Size = UDim2.new(0, 202, 0, 25)
+        UNUSEDSPOTSTAT.Font = Enum.Font.Code
+        UNUSEDSPOTSTAT.Text = "Aimvelocity:// "..setting["NUMBERS"]['AIMVELOCITY']
+        UNUSEDSPOTSTAT.TextColor3 = COLORPICK
+        UNUSEDSPOTSTAT.TextSize = 16.000
+        UNUSEDSPOTSTAT.TextXAlignment = Enum.TextXAlignment.Left
+    end)
+
+    buttonsframe.Name = "buttonsframe"
+    buttonsframe.Parent = yaas
+    buttonsframe.Active = true
+    buttonsframe.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    buttonsframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    buttonsframe.BorderSizePixel = 0
+    buttonsframe.Position = UDim2.new(0.56, 0, 0.5, 0)
+    buttonsframe.Selectable = true
+    buttonsframe.Draggable = true
+    buttonsframe.Size = UDim2.new(0, 100, 0, 278)
+
+    TITLEFRAME.Name = "TITLEFRAME"
+    TITLEFRAME.Parent = buttonsframe
+    TITLEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    TITLEFRAME.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TITLEFRAME.BorderSizePixel = 0
+    TITLEFRAME.Position = UDim2.new(0, 0, -0.0609318987, 0)
+    TITLEFRAME.Size = UDim2.new(0, 590, 0, 18)
+    TITLEFRAME.ZIndex = 7
+
+    titletoscript.Name = "titletoscript"
+    titletoscript.Parent = TITLEFRAME
+    titletoscript.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    titletoscript.BackgroundTransparency = 1.000
+    titletoscript.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    titletoscript.BorderSizePixel = 0
+    titletoscript.Position = UDim2.new(0.105465233, 0, -0.0339728445, 0)
+    titletoscript.Size = UDim2.new(0, 478, 0, 22)
+    titletoscript.ZIndex = 1000
+    titletoscript.Font = Enum.Font.Code
+    titletoscript.Text = "CORYU - TRIGGERBOT (WANNACRY)"
+    titletoscript.TextColor3 = COLORPICK
+    titletoscript.TextSize = 17.000
+
+    COMBATBUTTON.Name = "COMBATBUTTON"
+    COMBATBUTTON.Parent = buttonsframe
+    COMBATBUTTON.Active = false
+    COMBATBUTTON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    COMBATBUTTON.BackgroundTransparency = 1.000
+    COMBATBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    COMBATBUTTON.BorderSizePixel = 0
+    COMBATBUTTON.Position = UDim2.new(0.0599999987, 0, 0.0358422957, 0)
+    COMBATBUTTON.Selectable = false
+    COMBATBUTTON.Size = UDim2.new(0, 88, 0, 28)
+    COMBATBUTTON.ZIndex = 2
+    COMBATBUTTON.Font = Enum.Font.Code
+    COMBATBUTTON.Text = "Combat"
+    COMBATBUTTON.TextColor3 = COLORPICK
+    COMBATBUTTON.TextSize = 17.000
+
+    littleframetocombat.Name = "littleframetocombat"
+    littleframetocombat.Parent = COMBATBUTTON
+    littleframetocombat.BackgroundColor3 = COLORPICK
+    littleframetocombat.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    littleframetocombat.BorderSizePixel = 0
+    littleframetocombat.Size = UDim2.new(0, 5, 0, 28)
+    littleframetocombat.Visible = false
+
+    COMBATFRAME.Name = "COMBATFRAME"
+    COMBATFRAME.Parent = COMBATBUTTON
+    COMBATFRAME.Active = true
+    COMBATFRAME.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    COMBATFRAME.BorderSizePixel = 0
+    COMBATFRAME.Position = UDim2.new(1.06547964, 0, -0.343806684, 0)
+    COMBATFRAME.Selectable = true
+    COMBATFRAME.Size = UDim2.new(0, 490, 0, 278)
+    COMBATFRAME.Visible = false
+    COMBATFRAME.Image = "rbxassetid://3570695787"
+    COMBATFRAME.ImageColor3 = Color3.fromRGB(10, 10, 10)
+    COMBATFRAME.ImageTransparency = 1.000
+    COMBATFRAME.ScaleType = Enum.ScaleType.Slice
+    COMBATFRAME.SliceCenter = Rect.new(100, 100, 100, 100)
+    COMBATFRAME.SliceScale = 0.040
+
+    triggerbottextlabel.Name = "triggerbottextlabel"
+    triggerbottextlabel.Parent = COMBATFRAME
+    triggerbottextlabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    triggerbottextlabel.BackgroundTransparency = 1.000
+    triggerbottextlabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    triggerbottextlabel.BorderSizePixel = 0
+    triggerbottextlabel.Position = UDim2.new(0.046938777, 0, 0.0575539581, 0)
+    triggerbottextlabel.Size = UDim2.new(0, 184, 0, 22)
+    triggerbottextlabel.ZIndex = 3
+    triggerbottextlabel.Font = Enum.Font.Code
+    triggerbottextlabel.Text = "Triggerbot Target"
+    triggerbottextlabel.TextColor3 = COLORPICK
+    triggerbottextlabel.TextSize = 15.000
+
+    triggerbottargetBOX.Name = "triggerbottargetBOX"
+    triggerbottargetBOX.Parent = triggerbottextlabel
+    triggerbottargetBOX.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    triggerbottargetBOX.BackgroundTransparency = 1.000
+    triggerbottargetBOX.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    triggerbottargetBOX.BorderSizePixel = 0
+    triggerbottargetBOX.Position = UDim2.new(0, 0, 1.27272725, 0)
+    triggerbottargetBOX.Size = UDim2.new(0, 184, 0, 50)
+    triggerbottargetBOX.ZIndex = 4
+    triggerbottargetBOX.Font = Enum.Font.Code
+    triggerbottargetBOX.PlaceholderColor3 = COLORPICK
+    triggerbottargetBOX.PlaceholderText = "Enter Player Name!"
+    triggerbottargetBOX.Text = ""
+    triggerbottargetBOX.TextColor3 = COLORPICK
+    triggerbottargetBOX.TextSize = 14.000
+
+    triggerbottargetBOX_Roundify_4px.Name = "triggerbottargetBOX_Roundify_4px"
+    triggerbottargetBOX_Roundify_4px.Parent = triggerbottargetBOX
+    triggerbottargetBOX_Roundify_4px.Active = true
+    triggerbottargetBOX_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+    triggerbottargetBOX_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    triggerbottargetBOX_Roundify_4px.BackgroundTransparency = 1.000
+    triggerbottargetBOX_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+    triggerbottargetBOX_Roundify_4px.Selectable = true
+    triggerbottargetBOX_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+    triggerbottargetBOX_Roundify_4px.ZIndex = 3
+    triggerbottargetBOX_Roundify_4px.Image = "rbxassetid://3570695787"
+    triggerbottargetBOX_Roundify_4px.ImageColor3 = Color3.fromRGB(20, 20, 20)
+    triggerbottargetBOX_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+    triggerbottargetBOX_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+    triggerbottargetBOX_Roundify_4px.SliceScale = 0.040
+
+    aimlockTEXT.Name = "aimlockTEXT"
+    aimlockTEXT.Parent = COMBATFRAME
+    aimlockTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    aimlockTEXT.BackgroundTransparency = 1.000
+    aimlockTEXT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    aimlockTEXT.BorderSizePixel = 0
+    aimlockTEXT.Position = UDim2.new(0.577551007, 0, 0.0575539581, 0)
+    aimlockTEXT.Size = UDim2.new(0, 184, 0, 22)
+    aimlockTEXT.ZIndex = 3
+    aimlockTEXT.Font = Enum.Font.Code
+    aimlockTEXT.Text = "Autofire Aimlock"
+    aimlockTEXT.TextColor3 = COLORPICK
+    aimlockTEXT.TextSize = 15.000
+
+    aimtargetBOX.Name = "aimtargetBOX"
+    aimtargetBOX.Parent = aimlockTEXT
+    aimtargetBOX.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    aimtargetBOX.BackgroundTransparency = 1.000
+    aimtargetBOX.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    aimtargetBOX.BorderSizePixel = 0
+    aimtargetBOX.Position = UDim2.new(0, 0, 1.27272725, 0)
+    aimtargetBOX.Size = UDim2.new(0, 184, 0, 50)
+    aimtargetBOX.ZIndex = 4
+    aimtargetBOX.Font = Enum.Font.Code
+    aimtargetBOX.PlaceholderColor3 = COLORPICK
+    aimtargetBOX.PlaceholderText = "Enter Player Name!"
+    aimtargetBOX.Text = ""
+    aimtargetBOX.TextColor3 = COLORPICK
+    aimtargetBOX.TextSize = 14.000
+
+    AUTOFIREAIMLOCKIMAGE.Name = "AUTOFIREAIMLOCKIMAGE"
+    AUTOFIREAIMLOCKIMAGE.Parent = aimtargetBOX
+    AUTOFIREAIMLOCKIMAGE.Active = true
+    AUTOFIREAIMLOCKIMAGE.AnchorPoint = Vector2.new(0.5, 0.5)
+    AUTOFIREAIMLOCKIMAGE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    AUTOFIREAIMLOCKIMAGE.BackgroundTransparency = 1.000
+    AUTOFIREAIMLOCKIMAGE.Position = UDim2.new(0.5, 0, 0.5, 0)
+    AUTOFIREAIMLOCKIMAGE.Selectable = true
+    AUTOFIREAIMLOCKIMAGE.Size = UDim2.new(1, 0, 1, 0)
+    AUTOFIREAIMLOCKIMAGE.ZIndex = 3
+    AUTOFIREAIMLOCKIMAGE.Image = "rbxassetid://3570695787"
+    AUTOFIREAIMLOCKIMAGE.ImageColor3 = Color3.fromRGB(20, 20, 20)
+    AUTOFIREAIMLOCKIMAGE.ScaleType = Enum.ScaleType.Slice
+    AUTOFIREAIMLOCKIMAGE.SliceCenter = Rect.new(100, 100, 100, 100)
+    AUTOFIREAIMLOCKIMAGE.SliceScale = 0.040
+
+    camlocktext.Name = "camlocktext"
+    camlocktext.Parent = COMBATFRAME
+    camlocktext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    camlocktext.BackgroundTransparency = 1.000
+    camlocktext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    camlocktext.BorderSizePixel = 0
+    camlocktext.Position = UDim2.new(0.046938777, 0, 0.492805749, 0)
+    camlocktext.Size = UDim2.new(0, 184, 0, 22)
+    camlocktext.ZIndex = 3
+    camlocktext.Font = Enum.Font.Code
+    camlocktext.Text = "Camlock Target"
+    camlocktext.TextColor3 = COLORPICK
+    camlocktext.TextSize = 15.000
+
+    camlockbox.Name = "camlockbox"
+    camlockbox.Parent = camlocktext
+    camlockbox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    camlockbox.BackgroundTransparency = 1.000
+    camlockbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    camlockbox.BorderSizePixel = 0
+    camlockbox.Position = UDim2.new(0, 0, 1.27272725, 0)
+    camlockbox.Size = UDim2.new(0, 184, 0, 50)
+    camlockbox.ZIndex = 4
+    camlockbox.Font = Enum.Font.Code
+    camlockbox.PlaceholderColor3 = COLORPICK
+    camlockbox.PlaceholderText = "Enter Player Name!"
+    camlockbox.Text = ""
+    camlockbox.TextColor3 = COLORPICK
+    camlockbox.TextSize = 14.000
+
+    camlockIMAGE.Name = "camlockIMAGE"
+    camlockIMAGE.Parent = camlockbox
+    camlockIMAGE.Active = true
+    camlockIMAGE.AnchorPoint = Vector2.new(0.5, 0.5)
+    camlockIMAGE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    camlockIMAGE.BackgroundTransparency = 1.000
+    camlockIMAGE.Position = UDim2.new(0.5, 0, 0.5, 0)
+    camlockIMAGE.Selectable = true
+    camlockIMAGE.Size = UDim2.new(1, 0, 1, 0)
+    camlockIMAGE.ZIndex = 3
+    camlockIMAGE.Image = "rbxassetid://3570695787"
+    camlockIMAGE.ImageColor3 = Color3.fromRGB(20, 20, 20)
+    camlockIMAGE.ScaleType = Enum.ScaleType.Slice
+    camlockIMAGE.SliceCenter = Rect.new(100, 100, 100, 100)
+    camlockIMAGE.SliceScale = 0.040
+
+    esptext.Name = "esptext"
+    esptext.Parent = COMBATFRAME
+    esptext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    esptext.BackgroundTransparency = 1.000
+    esptext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    esptext.BorderSizePixel = 0
+    esptext.Position = UDim2.new(0.577551007, 0, 0.492805749, 0)
+    esptext.Size = UDim2.new(0, 184, 0, 22)
+    esptext.ZIndex = 3
+    esptext.Font = Enum.Font.Code
+    esptext.Text = "Esp Target"
+    esptext.TextColor3 = COLORPICK
+    esptext.TextSize = 15.000
+
+    espbox.Name = "espbox"
+    espbox.Parent = esptext
+    espbox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    espbox.BackgroundTransparency = 1.000
+    espbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    espbox.BorderSizePixel = 0
+    espbox.Position = UDim2.new(0, 0, 1.27272725, 0)
+    espbox.Size = UDim2.new(0, 184, 0, 50)
+    espbox.ZIndex = 4
+    espbox.Font = Enum.Font.Code
+    espbox.PlaceholderColor3 = COLORPICK
+    espbox.PlaceholderText = "Enter Player Name!"
+    espbox.Text = ""
+    espbox.TextColor3 = COLORPICK
+    espbox.TextSize = 14.000
+
+    espIMAGE.Name = "espIMAGE"
+    espIMAGE.Parent = espbox
+    espIMAGE.Active = true
+    espIMAGE.AnchorPoint = Vector2.new(0.5, 0.5)
+    espIMAGE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    espIMAGE.BackgroundTransparency = 1.000
+    espIMAGE.Position = UDim2.new(0.5, 0, 0.5, 0)
+    espIMAGE.Selectable = true
+    espIMAGE.Size = UDim2.new(1, 0, 1, 0)
+    espIMAGE.ZIndex = 3
+    espIMAGE.Image = "rbxassetid://3570695787"
+    espIMAGE.ImageColor3 = Color3.fromRGB(20, 20, 20)
+    espIMAGE.ScaleType = Enum.ScaleType.Slice
+    espIMAGE.SliceCenter = Rect.new(100, 100, 100, 100)
+    espIMAGE.SliceScale = 0.040
+
+    CREDITSBUTTON.Name = "CREDITSBUTTON"
+    CREDITSBUTTON.Parent = buttonsframe
+    CREDITSBUTTON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CREDITSBUTTON.BackgroundTransparency = 1.000
+    CREDITSBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CREDITSBUTTON.BorderSizePixel = 0
+    CREDITSBUTTON.Position = UDim2.new(0.0599999987, 0, 0.449511409, 0)
+    CREDITSBUTTON.Size = UDim2.new(0, 88, 0, 28)
+    CREDITSBUTTON.ZIndex = 2
+    CREDITSBUTTON.Font = Enum.Font.Code
+    CREDITSBUTTON.Text = "Credits"
+    CREDITSBUTTON.TextColor3 = COLORPICK
+    CREDITSBUTTON.TextSize = 17.000
+
+    littleframetocredits.Name = "littleframetocredits"
+    littleframetocredits.Parent = CREDITSBUTTON
+    littleframetocredits.BackgroundColor3 = COLORPICK
+    littleframetocredits.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    littleframetocredits.BorderSizePixel = 0
+    littleframetocredits.Size = UDim2.new(0, 5, 0, 28)
+    littleframetocredits.Visible = true
+
+    CREDITSFRAME.Name = "CREDITSFRAME"
+    CREDITSFRAME.Parent = CREDITSBUTTON
+    CREDITSFRAME.Active = true
+    CREDITSFRAME.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    CREDITSFRAME.BorderSizePixel = 0
+    CREDITSFRAME.Position = UDim2.new(1.06547964, 0, -4.48666382, 0)
+    CREDITSFRAME.Selectable = true
+    CREDITSFRAME.Size = UDim2.new(0, 490, 0, 278)
+    CREDITSFRAME.Image = "rbxassetid://3570695787"
+    CREDITSFRAME.ImageColor3 = Color3.fromRGB(10, 10, 10)
+    CREDITSFRAME.ImageTransparency = 1.000
+    CREDITSFRAME.ScaleType = Enum.ScaleType.Slice
+    CREDITSFRAME.SliceCenter = Rect.new(100, 100, 100, 100)
+    CREDITSFRAME.SliceScale = 0.040
+    CREDITSFRAME.Visible = true
+
+    desc1.Name = "desc1"
+    desc1.Parent = CREDITSFRAME
+    desc1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    desc1.BackgroundTransparency = 1.000
+    desc1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    desc1.BorderSizePixel = 0
+    desc1.Position = UDim2.new(0.0115877111, 0, 0.0487609431, 0)
+    desc1.Size = UDim2.new(0, 478, 0, 22)
+    desc1.ZIndex = 1000
+    desc1.Font = Enum.Font.Code
+    desc1.Text = "Thanks to everyone who contributed to this script"
+    desc1.TextColor3 = COLORPICK
+    desc1.TextSize = 17.000
+
+    desc2.Name = "desc2"
+    desc2.Parent = CREDITSFRAME
+    desc2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    desc2.BackgroundTransparency = 1.000
+    desc2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    desc2.BorderSizePixel = 0
+    desc2.Position = UDim2.new(0.0115877111, 0, 0.185451597, 0)
+    desc2.Size = UDim2.new(0, 478, 0, 22)
+    desc2.ZIndex = 1000
+    desc2.Font = Enum.Font.Code
+    desc2.Text = "If you are having issues message me @killserver"
+    desc2.TextColor3 = COLORPICK
+    desc2.TextSize = 17.000
+
+    desc3.Name = "desc3"
+    desc3.Parent = CREDITSFRAME
+    desc3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    desc3.BackgroundTransparency = 1.000
+    desc3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    desc3.BorderSizePixel = 0
+    desc3.Position = UDim2.new(0.0115877111, 0, 0.340127856, 0)
+    desc3.Size = UDim2.new(0, 478, 0, 22)
+    desc3.ZIndex = 1000
+    desc3.Font = Enum.Font.Code
+    desc3.Text = "I love you all, add me if you want"
+    desc3.TextColor3 = COLORPICK
+    desc3.TextSize = 17.000
+
+    verisontext.Name = "verisontext"
+    verisontext.Parent = CREDITSFRAME
+    verisontext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    verisontext.BackgroundTransparency = 1.000
+    verisontext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    verisontext.BorderSizePixel = 0
+    verisontext.Position = UDim2.new(-0.000657186727, 0, 0.836530745, 0)
+    verisontext.Size = UDim2.new(0, 478, 0, 22)
+    verisontext.ZIndex = 1000
+    verisontext.Font = Enum.Font.Code
+    verisontext.Text = "Verison - 1.13.A"
+    verisontext.TextColor3 = COLORPICK
+    verisontext.TextSize = 17.000
+
+    MovementBUTTON.Name = "MovementBUTTON"
+    MovementBUTTON.Parent = buttonsframe
+    MovementBUTTON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    MovementBUTTON.BackgroundTransparency = 1.000
+    MovementBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    MovementBUTTON.BorderSizePixel = 0
+    MovementBUTTON.Position = UDim2.new(0.0599999987, 0, 0.172532991, 0)
+    MovementBUTTON.Size = UDim2.new(0, 88, 0, 28)
+    MovementBUTTON.ZIndex = 2
+    MovementBUTTON.Font = Enum.Font.Code
+    MovementBUTTON.Text = "Movement"
+    MovementBUTTON.TextColor3 = COLORPICK
+    MovementBUTTON.TextSize = 17.000
+
+    littleframetoMOVEMENT.Name = "littleframetoMOVEMENT"
+    littleframetoMOVEMENT.Parent = MovementBUTTON
+    littleframetoMOVEMENT.BackgroundColor3 = COLORPICK
+    littleframetoMOVEMENT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    littleframetoMOVEMENT.BorderSizePixel = 0
+    littleframetoMOVEMENT.Size = UDim2.new(0, 5, 0, 28)
+    littleframetoMOVEMENT.Visible = false
+
+    MOVEMENTFRAME.Name = "MOVEMENTFRAME"
+    MOVEMENTFRAME.Parent = MovementBUTTON
+    MOVEMENTFRAME.Active = true
+    MOVEMENTFRAME.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    MOVEMENTFRAME.BorderSizePixel = 0
+    MOVEMENTFRAME.Position = UDim2.new(1.06547964, 0, -1.73666382, 0)
+    MOVEMENTFRAME.Selectable = true
+    MOVEMENTFRAME.Size = UDim2.new(0, 490, 0, 278)
+    MOVEMENTFRAME.Visible = false
+    MOVEMENTFRAME.Image = "rbxassetid://3570695787"
+    MOVEMENTFRAME.ImageColor3 = Color3.fromRGB(10, 10, 10)
+    MOVEMENTFRAME.ImageTransparency = 1.000
+    MOVEMENTFRAME.ScaleType = Enum.ScaleType.Slice
+    MOVEMENTFRAME.SliceCenter = Rect.new(100, 100, 100, 100)
+    MOVEMENTFRAME.SliceScale = 0.040
+
+    blinktext.Name = "blinktext"
+    blinktext.Parent = MOVEMENTFRAME
+    blinktext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    blinktext.BackgroundTransparency = 1.000
+    blinktext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    blinktext.BorderSizePixel = 0
+    blinktext.Position = UDim2.new(0.046938777, 0, 0.0575539581, 0)
+    blinktext.Size = UDim2.new(0, 184, 0, 22)
+    blinktext.ZIndex = 3
+    blinktext.Font = Enum.Font.Code
+    blinktext.Text = "Blink / Velocity"
+    blinktext.TextColor3 = COLORPICK
+    blinktext.TextSize = 15.000
+
+    blinkBUTTON.Name = "blinkBUTTON"
+    blinkBUTTON.Parent = blinktext
+    blinkBUTTON.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    blinkBUTTON.BackgroundTransparency = 1.000
+    blinkBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    blinkBUTTON.BorderSizePixel = 0
+    blinkBUTTON.Position = UDim2.new(0.152173907, 0, 1.4545455, 0)
+    blinkBUTTON.Size = UDim2.new(0, 106, 0, 28)
+    blinkBUTTON.ZIndex = 2
+    blinkBUTTON.Font = Enum.Font.Code
+    blinkBUTTON.Text = "Blink On/Off"
+    blinkBUTTON.TextColor3 = COLORPICK
+    blinkBUTTON.TextSize = 14.000
+
+    blinkBUTTON_Roundify_4px.Name = "blinkBUTTON_Roundify_4px"
+    blinkBUTTON_Roundify_4px.Parent = blinkBUTTON
+    blinkBUTTON_Roundify_4px.Active = true
+    blinkBUTTON_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+    blinkBUTTON_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    blinkBUTTON_Roundify_4px.BackgroundTransparency = 1.000
+    blinkBUTTON_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+    blinkBUTTON_Roundify_4px.Selectable = true
+    blinkBUTTON_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+    blinkBUTTON_Roundify_4px.Image = "rbxassetid://3570695787"
+    blinkBUTTON_Roundify_4px.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    blinkBUTTON_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+    blinkBUTTON_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+    blinkBUTTON_Roundify_4px.SliceScale = 0.040
+
+    blinkspeedtext.Name = "blinkspeedtext"
+    blinkspeedtext.Parent = MOVEMENTFRAME
+    blinkspeedtext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    blinkspeedtext.BackgroundTransparency = 1.000
+    blinkspeedtext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    blinkspeedtext.BorderSizePixel = 0
+    blinkspeedtext.Position = UDim2.new(0.046938777, 0, 0.514388502, 0)
+    blinkspeedtext.Size = UDim2.new(0, 184, 0, 22)
+    blinkspeedtext.ZIndex = 3
+    blinkspeedtext.Font = Enum.Font.Code
+    blinkspeedtext.Text = "Blinkspeed / Velocityspeed"
+    blinkspeedtext.TextColor3 = COLORPICK
+    blinkspeedtext.TextSize = 15.000
+
+    blinkspeedBOXS.Name = "blinkspeedBOXS"
+    blinkspeedBOXS.Parent = blinkspeedtext
+    blinkspeedBOXS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    blinkspeedBOXS.BackgroundTransparency = 1.000
+    blinkspeedBOXS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    blinkspeedBOXS.BorderSizePixel = 0
+    blinkspeedBOXS.Position = UDim2.new(0.211956516, 0, 1.4545455, 0)
+    blinkspeedBOXS.Size = UDim2.new(0, 105, 0, 28)
+    blinkspeedBOXS.ZIndex = 2
+    blinkspeedBOXS.Font = Enum.Font.SourceSans
+    blinkspeedBOXS.PlaceholderColor3 = COLORPICK
+    blinkspeedBOXS.PlaceholderText = "Type a Number"
+    blinkspeedBOXS.Text = ""
+    blinkspeedBOXS.TextColor3 = Color3.fromRGB(0, 0, 0)
+    blinkspeedBOXS.TextSize = 14.000
+
+    blinkspeedBOXS_Roundify_4px.Name = "blinkspeedBOXS_Roundify_4px"
+    blinkspeedBOXS_Roundify_4px.Parent = blinkspeedBOXS
+    blinkspeedBOXS_Roundify_4px.Active = true
+    blinkspeedBOXS_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+    blinkspeedBOXS_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    blinkspeedBOXS_Roundify_4px.BackgroundTransparency = 1.000
+    blinkspeedBOXS_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+    blinkspeedBOXS_Roundify_4px.Selectable = true
+    blinkspeedBOXS_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+    blinkspeedBOXS_Roundify_4px.Image = "rbxassetid://3570695787"
+    blinkspeedBOXS_Roundify_4px.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    blinkspeedBOXS_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+    blinkspeedBOXS_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+    blinkspeedBOXS_Roundify_4px.SliceScale = 0.040
+
+    clickteleportTEXT.Name = "clickteleportTEXT"
+    clickteleportTEXT.Parent = MOVEMENTFRAME
+    clickteleportTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    clickteleportTEXT.BackgroundTransparency = 1.000
+    clickteleportTEXT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    clickteleportTEXT.BorderSizePixel = 0
+    clickteleportTEXT.Position = UDim2.new(0.571428597, 0, 0.0575539581, 0)
+    clickteleportTEXT.Size = UDim2.new(0, 184, 0, 22)
+    clickteleportTEXT.ZIndex = 3
+    clickteleportTEXT.Font = Enum.Font.Code
+    clickteleportTEXT.Text = "Click Teleport"
+    clickteleportTEXT.TextColor3 = COLORPICK
+    clickteleportTEXT.TextSize = 15.000
+
+    CLICKTELEPORTBUTTON.Name = "CLICKTELEPORTBUTTON"
+    CLICKTELEPORTBUTTON.Parent = clickteleportTEXT
+    CLICKTELEPORTBUTTON.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    CLICKTELEPORTBUTTON.BackgroundTransparency = 1.000
+    CLICKTELEPORTBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CLICKTELEPORTBUTTON.BorderSizePixel = 0
+    CLICKTELEPORTBUTTON.Position = UDim2.new(0.152173907, 0, 1.4545455, 0)
+    CLICKTELEPORTBUTTON.Size = UDim2.new(0, 106, 0, 28)
+    CLICKTELEPORTBUTTON.ZIndex = 2
+    CLICKTELEPORTBUTTON.Font = Enum.Font.Code
+    CLICKTELEPORTBUTTON.Text = "Click On/Off"
+    CLICKTELEPORTBUTTON.TextColor3 = COLORPICK
+    CLICKTELEPORTBUTTON.TextSize = 14.000
+
+    clickTpBUTTON_Roundify_4px.Name = "clickTpBUTTON_Roundify_4px"
+    clickTpBUTTON_Roundify_4px.Parent = CLICKTELEPORTBUTTON
+    clickTpBUTTON_Roundify_4px.Active = true
+    clickTpBUTTON_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+    clickTpBUTTON_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    clickTpBUTTON_Roundify_4px.BackgroundTransparency = 1.000
+    clickTpBUTTON_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+    clickTpBUTTON_Roundify_4px.Selectable = true
+    clickTpBUTTON_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+    clickTpBUTTON_Roundify_4px.Image = "rbxassetid://3570695787"
+    clickTpBUTTON_Roundify_4px.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    clickTpBUTTON_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+    clickTpBUTTON_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+    clickTpBUTTON_Roundify_4px.SliceScale = 0.040
+
+    TeleportBUTTON.Name = "TeleportBUTTON"
+    TeleportBUTTON.Parent = buttonsframe
+    TeleportBUTTON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TeleportBUTTON.BackgroundTransparency = 1.000
+    TeleportBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TeleportBUTTON.BorderSizePixel = 0
+    TeleportBUTTON.Position = UDim2.new(0.0599999987, 0, 0.316417873, 0)
+    TeleportBUTTON.Size = UDim2.new(0, 88, 0, 28)
+    TeleportBUTTON.ZIndex = 2
+    TeleportBUTTON.Font = Enum.Font.Code
+    TeleportBUTTON.Text = "Teleports"
+    TeleportBUTTON.TextColor3 = COLORPICK
+    TeleportBUTTON.TextSize = 17.000
+
+    littleframetoteleports.Name = "littleframetoteleports"
+    littleframetoteleports.Parent = TeleportBUTTON
+    littleframetoteleports.BackgroundColor3 = COLORPICK
+    littleframetoteleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    littleframetoteleports.BorderSizePixel = 0
+    littleframetoteleports.Size = UDim2.new(0, 5, 0, 28)
+    littleframetoteleports.Visible = false
+
+    TELEPORTFRAME.Name = "TELEPORTFRAME"
+    TELEPORTFRAME.Parent = TeleportBUTTON
+    TELEPORTFRAME.Active = true
+    TELEPORTFRAME.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    TELEPORTFRAME.BorderSizePixel = 0
+    TELEPORTFRAME.Position = UDim2.new(1.06547964, 0, -3.16523528, 0)
+    TELEPORTFRAME.Selectable = true
+    TELEPORTFRAME.Size = UDim2.new(0, 490, 0, 278)
+    TELEPORTFRAME.Visible = false
+    TELEPORTFRAME.Image = "rbxassetid://3570695787"
+    TELEPORTFRAME.ImageColor3 = Color3.fromRGB(10, 10, 10)
+    TELEPORTFRAME.ImageTransparency = 1.000
+    TELEPORTFRAME.ScaleType = Enum.ScaleType.Slice
+    TELEPORTFRAME.SliceCenter = Rect.new(100, 100, 100, 100)
+    TELEPORTFRAME.SliceScale = 0.040
+
+    outspacetext.Name = "outspacetext"
+    outspacetext.Parent = TELEPORTFRAME
+    outspacetext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    outspacetext.BackgroundTransparency = 1.000
+    outspacetext.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    outspacetext.BorderSizePixel = 0
+    outspacetext.Position = UDim2.new(0.0448979586, 0, 0.0575539581, 0)
+    outspacetext.Size = UDim2.new(0, 184, 0, 22)
+    outspacetext.ZIndex = 3
+    outspacetext.Font = Enum.Font.Code
+    outspacetext.Text = "Outerspace"
+    outspacetext.TextColor3 = COLORPICK
+    outspacetext.TextSize = 15.000
+
+    spacebutton.Name = "spacebutton"
+    spacebutton.Parent = outspacetext
+    spacebutton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    spacebutton.BackgroundTransparency = 1.000
+    spacebutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    spacebutton.BorderSizePixel = 0
+    spacebutton.Position = UDim2.new(0.211956516, 0, 1.4545455, 0)
+    spacebutton.Size = UDim2.new(0, 106, 0, 28)
+    spacebutton.ZIndex = 2
+    spacebutton.Font = Enum.Font.Code
+    spacebutton.Text = "Teleport"
+    spacebutton.TextColor3 = COLORPICK
+    spacebutton.TextSize = 14.000
+
+    spaceIGNORE.Name = "spaceIGNORE"
+    spaceIGNORE.Parent = spacebutton
+    spaceIGNORE.Active = true
+    spaceIGNORE.AnchorPoint = Vector2.new(0.5, 0.5)
+    spaceIGNORE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    spaceIGNORE.BackgroundTransparency = 1.000
+    spaceIGNORE.Position = UDim2.new(0.5, 0, 0.5, 0)
+    spaceIGNORE.Selectable = true
+    spaceIGNORE.Size = UDim2.new(1, 0, 1, 0)
+    spaceIGNORE.Image = "rbxassetid://3570695787"
+    spaceIGNORE.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    spaceIGNORE.ScaleType = Enum.ScaleType.Slice
+    spaceIGNORE.SliceCenter = Rect.new(100, 100, 100, 100)
+    spaceIGNORE.SliceScale = 0.040
+
+    GotoPlayerTEXT.Name = "GotoPlayerTEXT"
+    GotoPlayerTEXT.Parent = TELEPORTFRAME
+    GotoPlayerTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    GotoPlayerTEXT.BackgroundTransparency = 1.000
+    GotoPlayerTEXT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    GotoPlayerTEXT.BorderSizePixel = 0
+    GotoPlayerTEXT.Position = UDim2.new(0.046938777, 0, 0.514388502, 0)
+    GotoPlayerTEXT.Size = UDim2.new(0, 184, 0, 22)
+    GotoPlayerTEXT.ZIndex = 3
+    GotoPlayerTEXT.Font = Enum.Font.Code
+    GotoPlayerTEXT.Text = "Teleport to player"
+    GotoPlayerTEXT.TextColor3 = COLORPICK
+    GotoPlayerTEXT.TextSize = 15.000
+
+    gotoplyBOX.Name = "gotoplyBOX"
+    gotoplyBOX.Parent = GotoPlayerTEXT
+    gotoplyBOX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    gotoplyBOX.BackgroundTransparency = 1.000
+    gotoplyBOX.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    gotoplyBOX.BorderSizePixel = 0
+    gotoplyBOX.Position = UDim2.new(0.05, 0, 1.4545455, 0)
+    gotoplyBOX.Size = UDim2.new(0, 170, 0, 28)
+    gotoplyBOX.ZIndex = 2
+    gotoplyBOX.Font = Enum.Font.Code
+    gotoplyBOX.PlaceholderColor3 = COLORPICK
+    gotoplyBOX.PlaceholderText = "Press G, afterwards"
+    gotoplyBOX.Text = ""
+    gotoplyBOX.TextColor3 = COLORPICK
+    gotoplyBOX.TextSize = 14.000
+
+    IGNORETHISFRAMETPTOPLY.Name = "IGNORETHISFRAMETPTOPLY"
+    IGNORETHISFRAMETPTOPLY.Parent = gotoplyBOX
+    IGNORETHISFRAMETPTOPLY.Active = true
+    IGNORETHISFRAMETPTOPLY.AnchorPoint = Vector2.new(0.5, 0.5)
+    IGNORETHISFRAMETPTOPLY.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    IGNORETHISFRAMETPTOPLY.BackgroundTransparency = 1.000
+    IGNORETHISFRAMETPTOPLY.Position = UDim2.new(0.5, 0, 0.5, 0)
+    IGNORETHISFRAMETPTOPLY.Selectable = true
+    IGNORETHISFRAMETPTOPLY.Size = UDim2.new(1, 0, 1, 0)
+    IGNORETHISFRAMETPTOPLY.Image = "rbxassetid://3570695787"
+    IGNORETHISFRAMETPTOPLY.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    IGNORETHISFRAMETPTOPLY.ScaleType = Enum.ScaleType.Slice
+    IGNORETHISFRAMETPTOPLY.SliceCenter = Rect.new(100, 100, 100, 100)
+    IGNORETHISFRAMETPTOPLY.SliceScale = 0.040
+
+    rejoinTEXT.Name = "rejoinTEXT"
+    rejoinTEXT.Parent = TELEPORTFRAME
+    rejoinTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    rejoinTEXT.BackgroundTransparency = 1.000
+    rejoinTEXT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    rejoinTEXT.BorderSizePixel = 0
+    rejoinTEXT.Position = UDim2.new(0.571428597, 0, 0.0575539581, 0)
+    rejoinTEXT.Size = UDim2.new(0, 184, 0, 22)
+    rejoinTEXT.ZIndex = 3
+    rejoinTEXT.Font = Enum.Font.Code
+    rejoinTEXT.Text = "Rejoin"
+    rejoinTEXT.TextColor3 = COLORPICK
+    rejoinTEXT.TextSize = 15.000
+
+    rejoinBUTTON.Name = "rejoinBUTTON"
+    rejoinBUTTON.Parent = rejoinTEXT
+    rejoinBUTTON.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    rejoinBUTTON.BackgroundTransparency = 1.000
+    rejoinBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    rejoinBUTTON.BorderSizePixel = 0
+    rejoinBUTTON.Position = UDim2.new(0.211956516, 0, 1.4545455, 0)
+    rejoinBUTTON.Size = UDim2.new(0, 106, 0, 28)
+    rejoinBUTTON.ZIndex = 2
+    rejoinBUTTON.Font = Enum.Font.Code
+    rejoinBUTTON.Text = "Rejoin"
+    rejoinBUTTON.TextColor3 = COLORPICK
+    rejoinBUTTON.TextSize = 14.000
+
+    rejoinIGNORE.Name = "rejoinIGNORE"
+    rejoinIGNORE.Parent = rejoinBUTTON
+    rejoinIGNORE.Active = true
+    rejoinIGNORE.AnchorPoint = Vector2.new(0.5, 0.5)
+    rejoinIGNORE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    rejoinIGNORE.BackgroundTransparency = 1.000
+    rejoinIGNORE.Position = UDim2.new(0.5, 0, 0.5, 0)
+    rejoinIGNORE.Selectable = true
+    rejoinIGNORE.Size = UDim2.new(1, 0, 1, 0)
+    rejoinIGNORE.Image = "rbxassetid://3570695787"
+    rejoinIGNORE.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    rejoinIGNORE.ScaleType = Enum.ScaleType.Slice
+    rejoinIGNORE.SliceCenter = Rect.new(100, 100, 100, 100)
+    rejoinIGNORE.SliceScale = 0.040
+
+    shutdownTEXT.Name = "shutdownTEXT"
+    shutdownTEXT.Parent = TELEPORTFRAME
+    shutdownTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    shutdownTEXT.BackgroundTransparency = 1.000
+    shutdownTEXT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    shutdownTEXT.BorderSizePixel = 0
+    shutdownTEXT.Position = UDim2.new(0.571428597, 0, 0.514388502, 0)
+    shutdownTEXT.Size = UDim2.new(0, 184, 0, 22)
+    shutdownTEXT.ZIndex = 3
+    shutdownTEXT.Font = Enum.Font.Code
+    shutdownTEXT.Text = "Exit Game"
+    shutdownTEXT.TextColor3 = COLORPICK
+    shutdownTEXT.TextSize = 15.000
+
+    shutbuttonBUTTON.Name = "shutbuttonBUTTON"
+    shutbuttonBUTTON.Parent = shutdownTEXT
+    shutbuttonBUTTON.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    shutbuttonBUTTON.BackgroundTransparency = 1.000
+    shutbuttonBUTTON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    shutbuttonBUTTON.BorderSizePixel = 0
+    shutbuttonBUTTON.Position = UDim2.new(0.211956516, 0, 1.4545455, 0)
+    shutbuttonBUTTON.Size = UDim2.new(0, 106, 0, 28)
+    shutbuttonBUTTON.ZIndex = 2
+    shutbuttonBUTTON.Font = Enum.Font.Code
+    shutbuttonBUTTON.Text = "Shutdown"
+    shutbuttonBUTTON.TextColor3 = COLORPICK
+    shutbuttonBUTTON.TextSize = 14.000
+
+    SHUTDOWNIGNORE.Name = "SHUTDOWNIGNORE"
+    SHUTDOWNIGNORE.Parent = shutbuttonBUTTON
+    SHUTDOWNIGNORE.Active = true
+    SHUTDOWNIGNORE.AnchorPoint = Vector2.new(0.5, 0.5)
+    SHUTDOWNIGNORE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    SHUTDOWNIGNORE.BackgroundTransparency = 1.000
+    SHUTDOWNIGNORE.Position = UDim2.new(0.5, 0, 0.5, 0)
+    SHUTDOWNIGNORE.Selectable = true
+    SHUTDOWNIGNORE.Size = UDim2.new(1, 0, 1, 0)
+    SHUTDOWNIGNORE.Image = "rbxassetid://3570695787"
+    SHUTDOWNIGNORE.ImageColor3 = Color3.fromRGB(25, 25, 25)
+    SHUTDOWNIGNORE.ScaleType = Enum.ScaleType.Slice
+    SHUTDOWNIGNORE.SliceCenter = Rect.new(100, 100, 100, 100)
+    SHUTDOWNIGNORE.SliceScale = 0.040
+
+    SEPTITLEFRAME.Name = "SEPTITLEFRAME"
+    SEPTITLEFRAME.Parent = yaas
+    SEPTITLEFRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    SEPTITLEFRAME.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    SEPTITLEFRAME.BorderSizePixel = 0
+    SEPTITLEFRAME.Position = UDim2.new(0.567069292, 0, 0.0150214592, 0)
+    SEPTITLEFRAME.Size = UDim2.new(0, 546, 0, 28)
+
+    IIllllIILL.Name = "IIllllIILL"
+    IIllllIILL.Parent = SEPTITLEFRAME
+    IIllllIILL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    IIllllIILL.BackgroundTransparency = 1.000
+    IIllllIILL.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    IIllllIILL.BorderSizePixel = 0
+    IIllllIILL.Position = UDim2.new(-0.000655960233, 0, 0, 0)
+    IIllllIILL.Size = UDim2.new(0, 265, 0, 28)
+    IIllllIILL.Font = Enum.Font.Code
+    IIllllIILL.Text = "CORYU - TRIGGERBOT (WANNACRY) //"
+    IIllllIILL.TextColor3 = COLORPICK
+    IIllllIILL.TextSize = 18.000
+    IIllllIILL.TextXAlignment = Enum.TextXAlignment.Left
+
+    var['RunService'].RenderStepped:connect(function()
+        local variable = {
+            ['FramesPerSecond'] = game.Workspace:GetRealPhysicsFPS(), --from my other script Night-Rider..lol
+            ['NetworkProtoCall'] = game.Stats.PerformanceStats.Ping:GetValue(),
+        }
+        YEPTEXTFPS.Name = "YEPTEXTFPS"
+        YEPTEXTFPS.Parent = SEPTITLEFRAME
+        YEPTEXTFPS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        YEPTEXTFPS.BackgroundTransparency = 1.000
+        YEPTEXTFPS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        YEPTEXTFPS.BorderSizePixel = 0
+        YEPTEXTFPS.Position = UDim2.new(0.55107367, 0, 0, 0)
+        YEPTEXTFPS.Size = UDim2.new(0, 100, 0, 28)
+        YEPTEXTFPS.Font = Enum.Font.Code
+        YEPTEXTFPS.Text = "FPS:// "..math.floor(variable['FramesPerSecond']).." // "
+        YEPTEXTFPS.TextColor3 = COLORPICK
+        YEPTEXTFPS.TextSize = 18.000
+        YEPTEXTFPS.TextXAlignment = Enum.TextXAlignment.Left
+
+        PINGTEXT.Name = "PINGTEXT"
+        PINGTEXT.Parent = SEPTITLEFRAME
+        PINGTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        PINGTEXT.BackgroundTransparency = 1.000
+        PINGTEXT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        PINGTEXT.BorderSizePixel = 0
+        PINGTEXT.Position = UDim2.new(0.774687946, 0, 0, 0)
+        PINGTEXT.Size = UDim2.new(0, 123, 0, 28)
+        PINGTEXT.Font = Enum.Font.Code
+        PINGTEXT.Text = "PING:// "..math.round(variable['NetworkProtoCall'])..""
+        PINGTEXT.TextColor3 = COLORPICK
+        PINGTEXT.TextSize = 18.000
+        PINGTEXT.TextXAlignment = Enum.TextXAlignment.Left
+        
+        if game.Stats.PerformanceStats.Ping:GetValue() > 120 then
+            PINGTEXT.TextColor3 = Color3.fromRGB(255, 255, 0)
+        end
+        
+        if game.Stats.PerformanceStats.Ping:GetValue() > 230 then
+            PINGTEXT.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end)
+
+    COMMANDBAR.Name = "COMMANDBAR"
+    COMMANDBAR.Parent = yaas
+    COMMANDBAR.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    COMMANDBAR.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    COMMANDBAR.BorderSizePixel = 0
+    COMMANDBAR.Position = UDim2.new(0, 0, 0.578326166, 0)
+    COMMANDBAR.Size = UDim2.new(0, 310, 0, 35)
+    COMMANDBAR.Visible = false
+
+    gankngorframe.Name = "gankngorframe"
+    gankngorframe.Parent = COMMANDBAR
+    gankngorframe.BackgroundColor3 = COLORPICK
+    gankngorframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    gankngorframe.BorderSizePixel = 0
+    gankngorframe.Size = UDim2.new(0, 9, 0, 35)
+
+    CMDBARRECEIVER.Name = "CMDBARRECEIVER"
+    CMDBARRECEIVER.Parent = COMMANDBAR
+    CMDBARRECEIVER.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    CMDBARRECEIVER.BackgroundTransparency = 1.000
+    CMDBARRECEIVER.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CMDBARRECEIVER.BorderSizePixel = 0
+    CMDBARRECEIVER.Position = UDim2.new(0.0290322583, 0, 0, 0)
+    CMDBARRECEIVER.Size = UDim2.new(0, 301, 0, 35)
+    CMDBARRECEIVER.Font = Enum.Font.Code
+    CMDBARRECEIVER.PlaceholderColor3 = COLORPICK
+    CMDBARRECEIVER.PlaceholderText = "Enter a Command!"
+    CMDBARRECEIVER.Text = ""
+    CMDBARRECEIVER.TextColor3 = COLORPICK
+    CMDBARRECEIVER.TextSize = 17.000
+
+    COMBATBUTTON.MouseButton1Down:connect(function()
+        littleframetocombat.Visible = true
+        COMBATFRAME.Visible = true
+        littleframetocredits.Visible = false
+        CREDITSFRAME.Visible = false
+        littleframetoMOVEMENT.Visible = false
+        MOVEMENTFRAME.Visible = false
+        littleframetoteleports.Visible = false
+        TELEPORTFRAME.Visible = false
+    end)
+
+    CREDITSBUTTON.MouseButton1Down:connect(function()
+        littleframetocombat.Visible = false
+        COMBATFRAME.Visible = false
+        littleframetocredits.Visible = true
+        CREDITSFRAME.Visible = true
+        littleframetoMOVEMENT.Visible = false
+        MOVEMENTFRAME.Visible = false
+        littleframetoteleports.Visible = false
+        TELEPORTFRAME.Visible = false
+    end)
+
+    MovementBUTTON.MouseButton1Down:connect(function()
+        littleframetocombat.Visible = false
+        COMBATFRAME.Visible = false
+        littleframetocredits.Visible = false
+        CREDITSFRAME.Visible = false
+        littleframetoMOVEMENT.Visible = true
+        MOVEMENTFRAME.Visible = true
+        littleframetoteleports.Visible = false
+        TELEPORTFRAME.Visible = false
+    end)
+
+    TeleportBUTTON.MouseButton1Down:connect(function()
+        littleframetocombat.Visible = false
+        COMBATFRAME.Visible = false
+        littleframetocredits.Visible = false
+        CREDITSFRAME.Visible = false
+        littleframetoMOVEMENT.Visible = false
+        MOVEMENTFRAME.Visible = false
+        littleframetoteleports.Visible = true
+        TELEPORTFRAME.Visible = true
+    end)
+	
+	local function searchdata(ply : string)
+        for i,v in next, var['GetServicePlayers']:GetPlayers() do 
+              if string.sub(string.lower(v.DisplayName), 1, string.len(ply)) == string.lower(ply) then 
+                  return v
+              end
+          end
+        return nil
+    end
+	
+    rejoinBUTTON.MouseButton1Down:connect(function()
+        var['TeleportService']:Teleport(game.PlaceId)
+    end)
+
+    shutbuttonBUTTON.MouseButton1Down:connect(function()
+        game:shutdown()
+    end)
+
+    blinkBUTTON.MouseButton1Down:connect(function()
+        setting["BOOLEAN"]['BLINK'] = not setting["BOOLEAN"]['BLINK']
+    end)
+   
+    CLICKTELEPORTBUTTON.MouseButton1Down:connect(function()
+        setting["BOOLEAN"]['CLICKTP'] = not setting["BOOLEAN"]['CLICKTP']
+        UserNotifications("CORYU - TRIGGERBOT","Click TP is now "..tostring(setting["BOOLEAN"]['CLICKTP']).."",5)
+        if setting["BOOLEAN"]['CLICKTP'] == true then
+            UserNotifications("CORYU - TRIGGERBOT","Click TP - Press T",5)
+        end
+    end)
+
+    for i,a in next, var['Workspace']:GetDescendants() do
+        if a:IsA"Seat" then
+            a:Destroy()
+        end
+    end
+
+    getgenv().comedie = function()
+        var['LocalPlayer'].Character['Torso']:Destroy()
+        var['LocalPlayer'].Character['Head']:Destroy()
+    end
+
+    function localplayerPING()
+        return game.Stats.PerformanceStats.Ping:GetValue() / 100
+    end
+
+    var['RunService'].Stepped:connect(function()
+        pcall(function()
+            var['LocalPlayer'].Character.Action:Destroy()
+        end)
+        for i, c in pairs(game:GetService('CoreGui').RobloxGui.NotificationFrame:GetDescendants()) do
+            if tostring(c) == "Notification" then
+                    c.NotificationTitle.TextColor3 = COLORPICK
+                c.NotificationText.TextColor3 = COLORPICK
+            end
+        end
+        for i, v in pairs(game:GetService('CoreGui').RobloxGui.Backpack.Hotbar:GetDescendants()) do
+            if tostring(v) == "ToolName" or tostring(v) == "Number" then
+                    v.TextColor3 = COLORPICK
+                v.Font = 'Ubuntu'
+            end
+        end
+        if setting["BOOLEAN"]['BLINK'] == true then
+        	if setting["BOOLEAN"]['BLINKING'] == true then
+            	var['LocalPlayer'].Character.HumanoidRootPart.CFrame = var['LocalPlayer'].Character.HumanoidRootPart.CFrame + Vector3.new(var['LocalPlayer'].Character.Humanoid.MoveDirection.X * setting["NUMBERS"].BLINKSPEED/5,0, var['LocalPlayer'].Character.Humanoid.MoveDirection.Z * setting["NUMBERS"].BLINKSPEED/5)
+            end
+        end
+        pcall(function()
+        	if setting["BOOLEAN"]['NOCLIP'] == true then
+	            var['LocalPlayer'].Character.Torso.CanCollide = false
+	            var['LocalPlayer'].Character.Head.CanCollide = false
+	            var['LocalPlayer'].Backpack.Glock.Barrel.CanCollide = false
+	        elseif setting["BOOLEAN"]['NOCLIP'] == false then
+	        	var['LocalPlayer'].Character.Torso.CanCollide = true
+	            var['LocalPlayer'].Character.Head.CanCollide = true
+	            var['LocalPlayer'].Backpack.Glock.Barrel.CanCollide = true
+	       end
+        end)
+        if setting["BOOLEAN"]['UIVISIBLE'] == true then
+            var['GetSerPlayerLP'].PlayerGui.HUD.Mute.Visible = false
+            var['GetSerPlayerLP'].PlayerGui.HUD.Groups.Visible = false
+            var['GetSerPlayerLP'].PlayerGui.HUD.ImageButton.Visible = false
+        elseif setting["BOOLEAN"]['UIVISIBLE'] == false then
+            var['GetSerPlayerLP'].PlayerGui.HUD.Mute.Visible = true
+            var['GetSerPlayerLP'].PlayerGui.HUD.Groups.Visible = true
+            var['GetSerPlayerLP'].PlayerGui.HUD.ImageButton.Visible = true
+        end
+        if setting["BOOLEAN"]['CAMLOCK'] == true then
+            local CT = game.Players[setting["INTS"]['CAMLOCKTARGET'].Name]
+            pcall(function()
+                if game.Players[setting["INTS"]['CAMLOCKTARGET'].Name] ~= nil then
+                        var['Camera'].CFrame = CFrame.new(var['Camera'].CFrame.p, CT.Character:FindFirstChild("HumanoidRootPart").CFrame.p)
+                    end
+                end)
+            else
+                return nil
+        end
+        if setting["BOOLEAN"]['AIMLOCKPREDICTION'] == true then
+            if setting["INTS"]['AIMLOCKTARGET'] ~= nil then
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / (localplayerPING())))
+            end
+        end
+        if setting["BOOLEAN"]['AIMLOCKHIGHPING'] == true then
+            if setting["INTS"]['AIMLOCKTARGET'] ~= nil then
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / setting["NUMBERS"]['AIMVELOCITY'] + setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].RotVelocity))
+            end
+        end
+    end)
+   
+    local function ESP(plr)
+	    if setting["INTS"].ESPTARGET ~= nil then
+	    setting["BOOLEAN"].ESPOFF = false
+	        task.wait(0.1)
+	            local MAINTOESP = Instance.new("BillboardGui", plr.Character.Torso)
+	            local ESPLABEL = Instance.new("TextLabel", MAINTOESP)
+	            local TRACER = Drawing.new('Line')
+			    local BOX = Drawing.new('Square')
+	
+	            MAINTOESP.Name = "MAINTOESP"
+	            MAINTOESP.Adornee = part
+	            MAINTOESP.AlwaysOnTop = true
+	            MAINTOESP.ExtentsOffset = Vector3.new(0, 3, 0)
+	            MAINTOESP.Size = UDim2.new(0, 10, 0, 10)
+	            
+	            ESPLABEL.Name = "ESPLABEL"
+	            ESPLABEL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	            ESPLABEL.BackgroundTransparency = 1
+	            ESPLABEL.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	            ESPLABEL.BorderSizePixel = 0
+	            ESPLABEL.Position = UDim2.new(0, 0, 0, -40)
+	            ESPLABEL.Size = UDim2.new(1, 0, 7, 0)
+	            ESPLABEL.Font = Enum.Font.Code
+	            ESPLABEL.TextColor3 = COLORPICK
+	            ESPLABEL.TextSize = 13
+	            ESPLABEL.Visible = true
+	            ESPLABEL.ZIndex = 2
+	
+	            TRACER.Visible = true
+	            TRACER.Color = COLORPICK
+	            TRACER.Thickness = 1
+	            TRACER.Transparency = 1
+	
+	            BOX.Visible = true
+	            BOX.Color = COLORPICK
+	            BOX.Thickness = 1
+	            BOX.Transparency = 1
+	            BOX.Filled = false
+	            
+	           	if plr.Character.Humanoid.NameDisplayDistance > 20 then
+					plr.Character.Humanoid.DisplayDistanceType = 'None'
+				elseif plr.Character.Humanoid.NameDisplayDistance < 21 then
+					plr.Character.Humanoid.DisplayDistanceType = 'Viewer'
+				end
+	
+	            var['RunService'].Stepped:connect(function()
+	                if plr and plr.Character and plr.Character:FindFirstChild('Humanoid') then
+	                    local vec = Vector3.new(0,3,0)
+	                    local novec = Vector3.new(0, 0.5, 0)
+	                    local Hum, OnScreen = var['Camera']:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
+	                    local doxer = var['Camera']:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position - vec)
+	                    local GIVEMEHEAD = var['Camera']:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position + novec)
+	                    local dis = '0'
+	                    if OnScreen then
+		                    ESPLABEL.Text = 'Name - '..plr.DisplayName..'\n Health - '..math.round(plr.Character.Humanoid.Health)
+	                        TRACER.Visible = true
+	                    	BOX.Visible = true
+	                        BOX.Size = Vector2.new(3000 / Hum.Z, GIVEMEHEAD.Y - doxer.Y)
+	                        BOX.Position = Vector2.new(Hum.X - BOX.Size.X / 2, Hum.Y - BOX.Size.Y / 2)
+	                        TRACER.From = Vector2.new(var['Camera'].ViewportSize.X / 2, var['Camera'].ViewportSize.Y / 1)
+	                        TRACER.To = Vector2.new(Hum.X,Hum.Y)
+	                    else
+	                    	TRACER.Visible = false
+	                    	BOX.Visible = false
+	                    end
+	               	else
+	               		TRACER.Visible = false
+	                    BOX.Visible = false
+	                end
+	                 if setting["BOOLEAN"].ESPOFF == true then
+				       TRACER:Remove()
+				       BOX:Remove()
+				    end
+	            end)
+	        plr.CharacterAdded:connect(function()
+	            task.wait(0.1)
+	            local MAINTOESP = Instance.new("BillboardGui", plr.Character.Torso)
+	            local ESPLABEL = Instance.new("TextLabel", MAINTOESP)
+	            local TRACER = Drawing.new('Line')
+			    local BOX = Drawing.new('Square')
+	
+	            MAINTOESP.Name = "MAINTOESP"
+	            MAINTOESP.Adornee = part
+	            MAINTOESP.AlwaysOnTop = true
+	            MAINTOESP.ExtentsOffset = Vector3.new(0, 3, 0)
+	            MAINTOESP.Size = UDim2.new(0, 10, 0, 10)
+	            
+	            ESPLABEL.Name = "ESPLABEL"
+	            ESPLABEL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	            ESPLABEL.BackgroundTransparency = 1
+	            ESPLABEL.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	            ESPLABEL.BorderSizePixel = 0
+	            ESPLABEL.Position = UDim2.new(0, 0, 0, -40)
+	            ESPLABEL.Size = UDim2.new(1, 0, 7, 0)
+	            ESPLABEL.Font = Enum.Font.Code
+	            ESPLABEL.TextColor3 = COLORPICK
+	            ESPLABEL.TextSize = 13
+	            ESPLABEL.Visible = true
+	            ESPLABEL.ZIndex = 2
+	
+	            TRACER.Visible = true
+	            TRACER.Color = COLORPICK
+	            TRACER.Thickness = 1
+	            TRACER.Transparency = 1
+	
+	            BOX.Visible = true
+	            BOX.Color = COLORPICK
+	            BOX.Thickness = 1
+	            BOX.Transparency = 1
+	            BOX.Filled = false
+	            
+	            if plr.Character.Humanoid.NameDisplayDistance > 14 then
+					plr.Character.Humanoid.DisplayDistanceType = 'None'
+				elseif plr.Character.Humanoid.NameDisplayDistance < 15 then
+					plr.Character.Humanoid.DisplayDistanceType = 'Viewer'
+				end
+	
+	            var['RunService'].Stepped:connect(function()
+	                if plr and plr.Character and plr.Character:FindFirstChild('Humanoid') then
+	                    local vec = Vector3.new(0,3,0)
+	                    local novec = Vector3.new(0, 0.5, 0)
+	                    local Hum, OnScreen = var['Camera']:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
+	                    local doxer = var['Camera']:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position - vec)
+	                    local GIVEMEHEAD = var['Camera']:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position + novec)
+	                    local dis = '0'
+	                    if OnScreen then
+		                    ESPLABEL.Text = 'Name - '..plr.DisplayName..'\n Health - '..math.round(plr.Character.Humanoid.Health)
+	                        TRACER.Visible = true
+	                    	BOX.Visible = true
+	                        BOX.Size = Vector2.new(3000 / Hum.Z, GIVEMEHEAD.Y - doxer.Y)
+	                        BOX.Position = Vector2.new(Hum.X - BOX.Size.X / 2, Hum.Y - BOX.Size.Y / 2)
+	                        TRACER.From = Vector2.new(var['Camera'].ViewportSize.X / 2, var['Camera'].ViewportSize.Y / 1)
+	                        TRACER.To = Vector2.new(Hum.X,Hum.Y)
+	                    else
+	                    	TRACER.Visible = false
+	                    	BOX.Visible = false
+	                    end
+	               	else
+	               		TRACER.Visible = false
+	                    BOX.Visible = false
+	                end
+	                 if setting["BOOLEAN"].ESPOFF == true then
+				        TRACER:Remove()
+				        BOX:Remove()
+				    end
+	            end)
+	        end)
+	    end
+	end
+
+    --texts
+    var['RunService'].RenderStepped:connect(function()
+        CLICKTPONOROFF.Text = "CLICK-TP:// "..tostring(setting["BOOLEAN"]['CLICKTP'])
+        BLINKONOROFFSTAT.Text = "BLINK:// "..tostring(setting["BOOLEAN"]['BLINK'])
+        AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "..tostring(setting["BOOLEAN"]['AIMLOCK'])
+    end)
+
+    var['UserInputService'].InputBegan:connect(function(actionbegin, fuckchat)
+        if actionbegin.KeyCode == Enum.KeyCode.LeftShift then
+            setting["BOOLEAN"]['BLINKING'] = true
+        end
+        if fuckchat then
+            return nil
+        end
+        if actionbegin.KeyCode == Enum.KeyCode.Period then
+            COMMANDBAR.Visible = true
+            CMDBARRECEIVER.Text = ""
+            task.wait(0.1)
+            CMDBARRECEIVER:CaptureFocus()
+        end
+        if setting["BOOLEAN"]['CLICKTP'] == true then
+            if actionbegin.KeyCode == Enum.KeyCode.T then
+                var['LocalPlayer'].Character.HumanoidRootPart.CFrame = var['LocalPlayer'].Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-4)
+            end
+        end
+        if actionbegin.KeyCode == Enum.KeyCode.X then
+            setting["BOOLEAN"]['NOCLIP'] = not setting["BOOLEAN"]['NOCLIP']
+            UserNotifications('CORYU - TRIGGERBOT', 'Noclip is now '..tostring(setting["BOOLEAN"]['NOCLIP']))
+        end
+        if actionbegin.KeyCode == Enum.KeyCode.G then
+        	local tptoplr = searchdata(gotoplyBOX.Text:sub(1))
+        	var['LocalPlayer'].Character:MoveTo(tptoplr.Character.HumanoidRootPart.Position)
+        end	
+    end)
+    
+    var['UserInputService'].InputEnded:connect(function(actionend)
+        if actionend.KeyCode == Enum.KeyCode.LeftShift then
+            setting["BOOLEAN"]['BLINKING'] = false
+        end
+    end)
+    
+    camlockbox.FocusLost:connect(function()
+        if camlockbox.Text:sub(1,1) == '.' then
+            setting["INTS"]['CAMLOCKTARGET'] = searchdata(camlockbox.Text:sub(2))
+            setting["BOOLEAN"]['CAMLOCK'] = true
+            var['RunService'].RenderStepped:connect(function()
+            	var['Camera'].CFrame = CFrame.new(var['Camera'].CFrame.p, setting["INTS"]['CAMLOCKTARGET'].Character:FindFirstChild("HumanoidRootPart").CFrame.p)
+            end)
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "..setting["INTS"]['CAMLOCKTARGET'].DisplayName
+            UserNotifications('CORYU-TRIGGERBOT', 'Camlock target is now '..setting["INTS"]['CAMLOCKTARGET'].Name)
+        end
+    end)
+
+    espbox.FocusLost:connect(function()
+        if espbox.Text:sub(1,1) == '.' then
+            setting["INTS"]['ESPTARGET'] = searchdata(espbox.Text:sub(2))
+            if setting["INTS"]['ESPTARGET'] ~= nil then
+                ESP(setting["INTS"]['ESPTARGET'])
+                UserNotifications("CORYU - TRIGGERBOT","Esp-Target is now "..tostring(setting["INTS"]['ESPTARGET'].DisplayName).."",5)
+            else
+                UserNotifications("CORYU - TRIGGERBOT","If you are having issues message coryu ERROR-890",5)
+            end
+        end
+    end)
+            
+    aimtargetBOX.FocusLost:connect(function()
+        if aimtargetBOX.Text:sub(1,1) == '.' then
+        setting["INTS"]['AIMLOCKTARGET'] = searchdata(aimtargetBOX.Text:sub(2))
+        if game.Stats.PerformanceStats.Ping:GetValue() > 140 then
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = true
+            var['RunService'].RenderStepped:connect(function()
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / setting["NUMBERS"]['AIMVELOCITY'] + setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].RotVelocity))
+            end)
+        elseif game.Stats.PerformanceStats.Ping:GetValue() > 300 then
+            delay(60, function(NOTIFIYHIGHPING)
+            	UserNotifications('WARNING', 'Your ping is over the aimlock limit, you will not hit anything', NOTIFIYHIGHPING)
+            end)
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = true
+            var['RunService'].RenderStepped:connect(function()
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / setting["NUMBERS"]['AIMVELOCITY'] + setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].RotVelocity))
+            end)
+        elseif game.Stats.PerformanceStats.Ping:GetValue() < 139 then
+            setting["BOOLEAN"]['AIMLOCKPREDICTION'] = true
+            var['RunService'].RenderStepped:connect(function()
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / (localplayerPING())))
+            end)
+        end
+            AIMLOCKTARGETSTAT.Text = "LOCKED:// "..setting["INTS"]['AIMLOCKTARGET'].DisplayName
+            AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "..tostring(setting["BOOLEAN"]['AIMLOCK'])
+            UserNotifications('CORYU-TRIGGERBOT', 'Aimlock target is now '..setting["INTS"]['AIMLOCKTARGET'].Name)
+        end
+    end)
+
+     triggerbottargetBOX.FocusLost:connect(function()
+        if triggerbottargetBOX.Text:sub(1,1) == '.' then
+        setting["INTS"]['TRIGGERBOTTARGET'] = searchdata(triggerbottargetBOX.Text:sub(2))
+        setting["BOOLEAN"]['TRIGGERBOT'] = true
+        setting["BOOLEAN"]['CAMLOCK'] = true
+        setting["INTS"]['CAMLOCKTARGET'] = setting["INTS"]['TRIGGERBOTTARGET']
+        if game.Stats.PerformanceStats.Ping:GetValue() > 140 then
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = true
+            var['RunService'].RenderStepped:connect(function()
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / setting["NUMBERS"]['AIMVELOCITY'] + setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].RotVelocity))
+            end)
+        elseif game.Stats.PerformanceStats.Ping:GetValue() > 300 then
+        delay(60, function(NOTIFIYHIGHPING)
+            UserNotifications('WARNING', 'Your ping is over the aimlock limit, you will not hit anything', NOTIFIYHIGHPING)
+        end)
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = true
+            var['RunService'].RenderStepped:connect(function()
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / setting["NUMBERS"]['AIMVELOCITY'] + setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].RotVelocity))
+            end)
+        elseif game.Stats.PerformanceStats.Ping:GetValue() < 139 then
+            setting["BOOLEAN"]['AIMLOCKPREDICTION'] = true
+            var['RunService'].RenderStepped:connect(function()
+                var['LocalPlayer'].Character:FindFirstChildWhichIsA('Tool').Shoot:FireServer(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].CFrame + Vector3.new(setting["INTS"]['AIMLOCKTARGET'].Character[AIMLOCKPART["hum"]].Velocity / (localplayerPING())))
+            end)
+        end
+        setting["INTS"]['AIMLOCKTARGET'] = setting["INTS"]['TRIGGERBOTTARGET']
+        TRIGGERBOTTARGETTEXTSTAT.Text = "T-TARGET:// "..setting["INTS"]['TRIGGERBOTTARGET'].DisplayName
+        CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "..setting["INTS"]['CAMLOCKTARGET'].DisplayName
+            repeat
+            task.wait()
+                var['LocalPlayer'].Character.HumanoidRootPart.CFrame = setting["INTS"]['TRIGGERBOTTARGET'].Character.HumanoidRootPart.CFrame * CFrame.new(math.random(1,10),0,math.random(1,10))
+            until setting["BOOLEAN"]['TRIGGERBOT'] == false
+        end
+    end)
+    
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "rejoin" then
+            var['TeleportService']:Teleport(game.PlaceId)
+        elseif CMDBARRECEIVER.Text == "rj" then
+            var['TeleportService']:Teleport(game.PlaceId)
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "exit" then
+            game:shutdown()
+        elseif CMDBARRECEIVER.Text == "shutdown" then
+            game:shutdown()
+        end
+        COMMANDBAR.Visible = false
+    end)
+    
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "blink" then
+            setting["BOOLEAN"]['BLINK'] = not setting["BOOLEAN"]['BLINK']
+            UserNotifications("CORYU - TRIGGERBOT","Blink is now "..tostring(setting["BOOLEAN"]['BLINK']).."",5)
+        elseif CMDBARRECEIVER.Text == "bl" then
+            setting["BOOLEAN"]['BLINK'] = not setting["BOOLEAN"]['BLINK']
+            UserNotifications("CORYU - TRIGGERBOT","Blink is now "..tostring(setting["BOOLEAN"]['BLINK']).."",5)
+        end
+        COMMANDBAR.Visible = false
+    end)
+    
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text:sub(1,11) == "blinkspeed " then
+            setting["NUMBERS"]['BLINKSPEED'] = CMDBARRECEIVER.Text:sub(12)
+            UserNotifications("CORYU - TRIGGERBOT","Blinkspeed is now "..tonumber(setting["NUMBERS"]['BLINKSPEED']).."",5)
+        elseif CMDBARRECEIVER.Text:sub(1,3) == "bs " then
+            setting["NUMBERS"]['BLINKSPEED'] = CMDBARRECEIVER.Text:sub(4)
+            UserNotifications("CORYU - TRIGGERBOT","Blinkspeed is now "..tonumber(setting["NUMBERS"]['BLINKSPEED']).."",5)
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "clicktp" then
+            setting["BOOLEAN"]['CLICKTP'] = not setting["BOOLEAN"]['CLICKTP']
+            UserNotifications("CORYU - TRIGGERBOT","Click TP is now "..tostring(setting["BOOLEAN"]['CLICKTP']).."",5)
+            if setting["BOOLEAN"]['CLICKTP'] == true then
+                UserNotifications("CORYU - TRIGGERBOT","Click TP - Press T",5)
+            end
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "noclip" then
+            setting["BOOLEAN"]['NOCLIP'] = not setting["BOOLEAN"]['NOCLIP']
+            UserNotifications("CORYU - TRIGGERBOT","Noclip is now "..tostring(setting["BOOLEAN"]['NOCLIP']).."",5)
+        elseif CMDBARRECEIVER.Text == "nc" then
+            setting["BOOLEAN"]['NOCLIP'] = not setting["BOOLEAN"]['NOCLIP']
+            UserNotifications("CORYU - TRIGGERBOT","Noclip is now "..tostring(setting["BOOLEAN"]['NOCLIP']).."",5)
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "hideui" then
+            setting["BOOLEAN"]['UIVISIBLE'] = not setting["BOOLEAN"]['UIVISIBLE']
+        elseif CMDBARRECEIVER.Text == "hu" then
+            setting["BOOLEAN"]['UIVISIBLE'] = not setting["BOOLEAN"]['UIVISIBLE']
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text:sub(1,5) == "goto " then
+            setting["INTS"]['CAMLOCKTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(6))
+            var['LocalPlayer'].Character:MoveTo(setting["INTS"]['CAMLOCKTARGET'].Character.HumanoidRootPart.Position)
+        elseif CMDBARRECEIVER.Text:sub(1,3) == "to " then
+            setting["INTS"]['CAMLOCKTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(4))
+            var['LocalPlayer'].Character:MoveTo(setting["INTS"]['CAMLOCKTARGET'].Character.HumanoidRootPart.Position)
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "reset" then
+            comedie()
+        elseif CMDBARRECEIVER.Text == "re" then
+            comedie()
+        elseif CMDBARRECEIVER.Text == "r" then
+            comedie()
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text:sub(1,8) == "camlock " then
+            setting["INTS"]['CAMLOCKTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(9))
+            if setting["INTS"]['CAMLOCKTARGET'] ~= nil then
+                setting["BOOLEAN"]['CAMLOCK'] = true
+                CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "..setting["INTS"]['CAMLOCKTARGET'].DisplayName
+                UserNotifications("CORYU - TRIGGERBOT","Camlock target "..setting["INTS"]['CAMLOCKTARGET'].DisplayName.."",5)
+            else
+                UserNotifications("CORYU - TRIGGERBOT","If you are having issues message coryu ERROR-607",5)
+            end
+        elseif CMDBARRECEIVER.Text:sub(1,3) == "cl " then
+            setting["INTS"]['CAMLOCKTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(4))
+            if setting["INTS"]['CAMLOCKTARGET'] ~= nil then
+                setting["BOOLEAN"]['CAMLOCK'] = true
+                CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "..setting["INTS"]['CAMLOCKTARGET'].DisplayName
+                UserNotifications("CORYU - TRIGGERBOT","Camlock target "..setting["INTS"]['CAMLOCKTARGET'].DisplayName.."",5)
+            else
+                UserNotifications("CORYU - TRIGGERBOT","If you are having issues message coryu ERROR-607",5)
+            end
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text:sub(1,4) == "esp " then
+            setting["INTS"]['ESPTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(5))
+            if setting["INTS"]['ESPTARGET'] ~= nil then
+                ESP(setting["INTS"]['ESPTARGET'])
+                UserNotifications("CORYU - TRIGGERBOT","Esp-Target is now "..tostring(setting["INTS"]['ESPTARGET'].DisplayName).."",5)
+            else
+                UserNotifications("CORYU - TRIGGERBOT","If you are having issues message coryu ERROR-890",5)
+            end
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "uncamlock" then
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+            setting["INTS"]['CAMLOCKTARGET'] = nil
+            setting["BOOLEAN"]['CAMLOCK'] = false
+            UserNotifications("CORYU - TRIGGERBOT","No longer camlocking")
+        elseif CMDBARRECEIVER.Text == "uncl" then
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+            setting["INTS"]['CAMLOCKTARGET'] = nil
+            setting["BOOLEAN"]['CAMLOCK'] = false
+            UserNotifications("CORYU - TRIGGERBOT","No longer camlocking")
+        elseif CMDBARRECEIVER.Text == "uc" then
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+            setting["INTS"]['CAMLOCKTARGET'] = nil
+            setting["BOOLEAN"]['CAMLOCK'] = false
+            UserNotifications("CORYU - TRIGGERBOT","No longer camlocking")
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "unaimlock" then
+            AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "
+            IMLOCKTARGETSTAT.Text = "LOCKED:// "
+            setting["BOOLEAN"]['AIMLOCKPREDICT'] = false
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = false
+            setting["INTS"]['AIMLOCKTARGET'] = nil
+            UserNotifications("CORYU - TRIGGERBOT","No longer aimlocking")
+        elseif CMDBARRECEIVER.Text == "unaim" then
+            AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "
+            IMLOCKTARGETSTAT.Text = "LOCKED:// "
+            setting["BOOLEAN"]['AIMLOCKPREDICT'] = false
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = false
+            setting["INTS"]['AIMLOCKTARGET'] = nil
+            UserNotifications("CORYU - TRIGGERBOT","No longer aimlocking")
+        elseif CMDBARRECEIVER.Text == "ua" then
+            AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "
+            AIMLOCKTARGETSTAT.Text = "LOCKED:// "
+            setting["BOOLEAN"]['AIMLOCKPREDICT'] = false
+            setting["BOOLEAN"]['AIMLOCKHIGHPING'] = false
+            setting["INTS"]['AIMLOCKTARGET'] = nil
+            UserNotifications("CORYU - TRIGGERBOT","No longer aimlocking")
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+ --[[
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text:sub(1,8) == "aimlock " then
+            setting["INTS"]['AIMLOCKTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(9))
+            if setting["INTS"]['AIMLOCKTARGET'] ~= nil then
+                setting["BOOLEAN"]['AIMLOCK'] = true
+                AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "..tostring(setting["BOOLEAN"]['AIMLOCK'])
+                AIMLOCKTARGETSTAT.Text = "LOCKED:// "..setting["INTS"]['AIMLOCKTARGET'].DisplayName
+                UserNotifications("CORYU - TRIGGERBOT","Aimlock target "..setting["INTS"]['AIMLOCKTARGET'].DisplayName.."",5)    --Save it because you now people are gonna ask to put it in
+            else
+                UserNotifications("CORYU - TRIGGERBOT","If you are having issues message coryu ERROR-690",5)
+            end
+        elseif CMDBARRECEIVER.Text:sub(1,3) == "al " then
+            setting["INTS"]['AIMLOCKTARGET'] = searchdata(CMDBARRECEIVER.Text:sub(4))
+            if setting["INTS"]['AIMLOCKTARGET'] ~= nil then
+                setting["BOOLEAN"]['AIMLOCK'] = true
+                AIMLOCKONOROFFSTAT.Text = "AIMLOCK:// "..tostring(setting["BOOLEAN"]['AIMLOCK'])
+                AIMLOCKTARGETSTAT.Text = "LOCKED:// "..setting["INTS"]['AIMLOCKTARGET'].DisplayName
+                UserNotifications("CORYU - TRIGGERBOT","Aimlock target "..setting["INTS"]['AIMLOCKTARGET'].DisplayName.."",5)
+            else
+                UserNotifications("CORYU - TRIGGERBOT","If you are having issues message coryu ERROR-690",5)
+            end
+        end
+        COMMANDBAR.Visible = false
+    end)
+    ]]--
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "circle" then
+            cir.Visible = not cir.Visible
+        elseif CMDBARRECEIVER.Text == "fovcircle" then
+           	cir.Visible = not cir.Visible
+        elseif CMDBARRECEIVER.Text == "aimlockcircle" then
+            cir.Visible = not cir.Visible
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "untriggerbot" then
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+            setting["INTS"]['CAMLOCKTARGET'] = nil
+            setting["BOOLEAN"]['CAMLOCK'] = false
+            TRIGGERBOTTARGETTEXTSTAT.Text = "T-TARGET:// "
+            setting["INTS"]['TRIGGERBOTTARGET'] = nil
+            setting["BOOLEAN"]['TRIGGERBOT'] = false
+            UserNotifications("CORYU - TRIGGERBOT","No longer triggerbotting")
+        elseif CMDBARRECEIVER.Text == "untbot" then
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+            setting["INTS"]['CAMLOCKTARGET'] = nil
+            setting["BOOLEAN"]['CAMLOCK'] = false
+            TRIGGERBOTTARGETTEXTSTAT.Text = "T-TARGET:// "
+            setting["INTS"]['TRIGGERBOTTARGET'] = nil
+            setting["BOOLEAN"]['TRIGGERBOT'] = false
+            UserNotifications("CORYU - TRIGGERBOT","No longer triggerbotting")
+        elseif CMDBARRECEIVER.Text == "untb" then
+            CAMLOCKTARGETSTAT.Text = "CAMLOCKED:// "
+            setting["INTS"]['CAMLOCKTARGET'] = nil
+            setting["BOOLEAN"]['CAMLOCK'] = false
+            TRIGGERBOTTARGETTEXTSTAT.Text = "T-TARGET:// "
+            setting["INTS"]['TRIGGERBOTTARGET'] = nil
+            setting["BOOLEAN"]['TRIGGERBOT'] = false
+            UserNotifications("CORYU - TRIGGERBOT","No longer triggerbotting")
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "infiniteff" then
+            while true do
+                var['LocalPlayer'].Character.Humanoid.Health = 0
+            task.wait(4.9)
+            local prevspot = var['LocalPlayer'].Character:FindFirstChild('Torso').CFrame
+                comdie()
+                var['LP'].CharacterAdded:Wait()
+                for i = 1,100000 do
+                    var['LocalPlayer'].Character:WaitForChild('HumanoidRootPart').CFrame = prevspot
+                end
+            end
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text == "help" then
+            cmdHELPER.Visible = not cmdHELPER.Visible
+        elseif CMDBARRECEIVER.Text == "cmds" then
+            cmdHELPER.Visible = not cmdHELPER.Visible
+        end
+        COMMANDBAR.Visible = false
+    end)
+    
+    CMDBARRECEIVER.FocusLost:connect(function()
+        if CMDBARRECEIVER.Text:sub(1,12) == "aimvelocity " then
+            setting["NUMBERS"]['AIMVELOCITY'] = CMDBARRECEIVER.Text:sub(13)
+            UNUSEDSPOTSTAT.Text = "Aimvelocity:// "..setting["NUMBERS"]['AIMVELOCITY']
+            UserNotifications("CORYU - TRIGGERBOT","Aimvelocity is now "..tonumber(setting["NUMBERS"]['AIMVELOCITY']).."",5)
+        elseif CMDBARRECEIVER.Text:sub(1,3) == "av " then
+            setting["NUMBERS"]['AIMVELOCITY'] = CMDBARRECEIVER.Text:sub(4)
+            UNUSEDSPOTSTAT.Text = "Aimvelocity:// "..setting["NUMBERS"]['AIMVELOCITY']
+            UserNotifications("CORYU - TRIGGERBOT","Aimvelocity is now "..tonumber(setting["NUMBERS"]['AIMVELOCITY']).."",5)
+        end
+        COMMANDBAR.Visible = false
+    end)
+
+    print([[
+        
+    How to use triggerbot and all the others
+
+    type .playersname
+
+    so for example .coryu
+
+    press . for command bar
+    to use a command type cl coryu and visa versa
+    
+    type cmds in the command bar for help
+
+    ]])
+
+    UserNotifications("CORYU - TRIGGERBOT","Press F9 for help",5)
+    UserNotifications("CORYU - TRIGGERBOT","Took "..math.floor(tick() - TRIG).." seconds",5)
+end

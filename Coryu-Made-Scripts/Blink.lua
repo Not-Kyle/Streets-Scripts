@@ -21,7 +21,7 @@ if not getgenv()['CoryuBlink'] then
     
     local CoryuBlinkFile;
     makefolder('Coryu')
-    xpcall(function()
+    ypcall(function()
     	CoryuBlinkFile = readfile('Coryu/CoryuBlink.js')
     end)
     

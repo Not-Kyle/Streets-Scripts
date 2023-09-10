@@ -1,4 +1,4 @@
--- blink
+-- if taken please give credits
 if not getgenv()['CoryuBlink'] then
     
     getgenv()['CoryuBlink'] = true
@@ -10,6 +10,7 @@ if not getgenv()['CoryuBlink'] then
     getgenv().Vector = Vector3.new
     getgenv().UserInput = game:GetService'UserInputService'
     getgenv().Http = game:GetService'HttpService'
+    getgenv().Workspace = game:GetService'Workspace'
     getgenv().UserNotifications = function(title, text) game:GetService'StarterGui':SetCore("SendNotification", {Title = title; Text = text;}) end
 
     local File = {
@@ -19,6 +20,8 @@ if not getgenv()['CoryuBlink'] then
         ['Toggle'] = 'B';
     }
     
+    Workspace['Headless Dummy'].Humanoid.DisplayName = 'Coryu is top coder on prison'
+    Workspace.TPer.Color = Color3.fromRGB(255, 255, 0)
     local CoryuBlinkFile;
     makefolder('Coryu')
     ypcall(function()

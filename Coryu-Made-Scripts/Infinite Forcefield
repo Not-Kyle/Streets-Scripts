@@ -1,0 +1,12 @@
+getgenv().Players = game:GetService'Players'
+getgenv().LocalPlayer = Players.LocalPlayer
+getgenv().Die = function() if LocalPlayer and LocalPlayer.Character and LocalPlayer.Character:WaitForChild'Humanoid' then LocalPlayer.Character:FindFirstChild'Humanoid':ChangeState(15) end end
+getgenv().Coryu = true
+
+while Coryu do
+    task.wait(4.9)
+    getgenv().Prev = LocalPlayer.Character:FindFirstChild'HumanoidRootPart'.CFrame
+    Die()
+    LocalPlayer.CharacterAdded:Wait()
+    LocalPlayer.Character:WaitForChild'HumanoidRootPart'.CFrame = Prev
+end

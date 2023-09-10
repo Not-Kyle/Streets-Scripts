@@ -1,0 +1,122 @@
+Tool = script.Parent
+
+module = require(game.ServerScriptService.MainModule)
+function ray(startpos, endpos, dis,char)
+		test = Ray.new(startpos, CFrame.new(startpos,endpos).lookVector * dis) 
+		hit,pos,sf = game.Workspace:FindPartOnRay(test,char)
+		return hit,pos,sf
+end
+local ammo = 8
+local en = true 
+local canuse = true
+local reloads = Tool.Clips 
+Tool.Fire.OnServerEvent:connect(function(play,cf)
+	if canuse == false then return end
+	local num = 1 
+	if not en then return end 
+	if play.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.RunningNoPhysics and play.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Running   then return end 
+	if en == true then 
+	en = false  
+	if ammo == 0 then
+		if reloads.Value <= 0 then
+				local s = Tool.Handle.Click:clone()
+				s.Pitch = s.Pitch + (math.random(-10,10)/100)
+				s.Parent = Tool.Handle
+				s:Play()
+				wait(0.2)
+				en = true 
+			return
+		else
+		reloads.Value = reloads.Value - 1
+		end
+		Tool.Reloader.Value = true
+		local bz = Instance.new("BoolValue")
+		bz.Name = "Action"
+		bz.Parent = play.Character
+		game.Debris:AddItem(bz,2.3)
+		wait(0.3)
+		play.Character.Humanoid:LoadAnimation(Tool.Reloading):Play()	
+		Tool.Handle.Reload:Play(0.1,1,0.7)	
+		wait(2)
+		Tool.Reloader.Value = false
+		ammo = 8 
+		en = true
+		return 
+	end
+	if Tool.Parent ~= play.Character then en = true  return end 
+	local bz = Instance.new("BoolValue")
+		bz.Name = "Action"
+		bz.Parent = play.Character
+		game.Debris:AddItem(bz,0.2)
+	Tool.Barrel.ParticleEmitter:Emit(1)
+	Tool.Heh.Shell:Emit(1)
+	local s = Tool.Handle.Fire:clone()
+	s.Pitch = s.Pitch + (math.random(-10,10)/100)
+	s.Parent = Tool.Handle
+	s:Play()
+	local g = Instance.new("PointLight",Tool.Barrel)
+	game.Debris:AddItem(g,0.1)
+	game.Debris:AddItem(s,1)
+		local tpos = cf.p
+	if (cf.p - Tool.Barrel.Position).magnitude > 150 then
+		tpos = Tool.Barrel.Position + (CFrame.new(Tool.Barrel.Position,cf.p).lookVector*150)
+	end
+	local h,zp,s = ray(Tool.Barrel.Position,tpos,150,play.Character)
+		local point = nil
+		local dis = 150 
+		if zp == nil or (Tool.Barrel.Position - zp).magnitude > 150 then
+			point =Tool.Barrel.Position + cf.lookVector * 150
+		else
+			point = zp 
+			dis = (Tool.Barrel.Position - zp).magnitude
+		end
+	if h then	
+		if h.Anchored == true then
+			local p = Instance.new("Part")
+			p.Size = Vector3.new(0,0,0)
+			p.BrickColor = BrickColor.new("Really black")
+			p.Anchored = true 
+			p.CanCollide = false
+			p.Shape = 0 
+			p.CFrame = CFrame.new(zp)
+			script.Whizz.Pitch = math.random(90,110)/100
+			script.Whizz:clone().Parent = p
+			p.Parent = h
+			p.Whizz:Play()
+			game.Debris:AddItem(p,25)
+		elseif h.Parent:findFirstChild("Humanoid") or h.Parent.Parent:findFirstChild("Humanoid") then
+			local ehum =  h.Parent:findFirstChild("Humanoid") or h.Parent.Parent:findFirstChild("Humanoid")
+			local inf = Tool.Info:clone()
+			if (zp - ehum.Parent.Head.Position).magnitude < 1.5 then
+			inf.Damage.Value = 25
+			module.TagHumanoid(play.Character,ehum,inf)
+			else
+			inf.Damage.Value = 15
+			module.TagHumanoid(play.Character,ehum,inf)
+			end 
+			
+		end
+	end
+	--print(num,"  |  ",tick()-otime)	otime = tick() num = num +  1
+	ammo = ammo - 1 
+	
+	wait(0.25)
+	en = true
+	end	
+end)
+
+Tool.Equipped:connect(function()
+	if canuse == true then
+	canuse = false
+	wait(0.5)
+	canuse = true
+	end
+end)
+Tool.Click.OnServerEvent:connect(function()
+	if Tool.Reloader.Value then return end
+	local s = Tool.Handle.Click:clone()
+	s.Pitch = s.Pitch + (math.random(-10,10)/100)
+	s.Parent = Tool.Handle
+	s:Play()
+	game.Debris:AddItem(s,1)
+end)

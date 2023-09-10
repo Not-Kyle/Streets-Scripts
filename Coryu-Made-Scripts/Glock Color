@@ -1,0 +1,11 @@
+local wor = game:GetService('Workspace')
+
+local VAR = {
+    ['LP'] = game.Players.LocalPlayer
+}
+
+wor[VAR['LP'].Name].Glock.Handle.Material = 'CrackedLava'
+wor[VAR['LP'].Name].Glock.Handle.Reflectance = 0.4
+wor[VAR['LP'].Name].Glock.Handle.Color = Color3.fromRGB(170, 0, 255)
+wor[VAR['LP'].Name].Glock.Union.Material = 'CrackedLava'
+wor[VAR['LP'].Name].Glock.Heh.Material = 'CrackedLava'

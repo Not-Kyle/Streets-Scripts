@@ -1,0 +1,32 @@
+--very awesome grippos Penis made by p91q :3
+
+local num = 0
+local bp = game.Players.LocalPlayer.Backpack
+
+-- Renaming and reordering the tools in the backpack
+for i, v in pairs(bp:GetChildren()) do
+    if v:IsA("Tool") then
+        num = num + 1
+        v.Name = tostring(num)
+    end
+end
+
+wait(0.15)
+
+-- Create and set the Grip properties for all boomboxes
+for i = 1, num do
+    local pos = game.Players.LocalPlayer.Backpack[tostring(i)]
+    if pos then
+        pos.GripPos = Vector3.new((i - 1) * -2.2, 1.2, 1.5)
+        pos.GripRight = Vector3.new(0, 0, 1)
+        pos.GripUp = Vector3.new(0, 1, 0)
+        pos.GripForward = Vector3.new(1, 0, 0)
+    end
+end
+
+-- Moving tools to the character
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v:IsA("Tool") then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end

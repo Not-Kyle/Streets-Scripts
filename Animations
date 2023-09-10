@@ -1,0 +1,192 @@
+nm = Instance.new("BoolValue")
+nm.Name = "NoMove"
+
+function has_assets(player)
+	if player.UserId < 1 then return end
+	local bought_asset = game:GetService("MarketplaceService"):UserOwnsGamePassAsync(player.UserId, 0) -- animation gamepass here
+	local ranked
+	local groups = game:GetService('GroupService'):GetGroupsAsync(player.UserId)
+	for group = 1, #groups do
+		if groups[group].Id == 0 then -- change the group id
+			ranked = groups[group].Rank >= 13
+			break
+		end	
+	end
+	return bought_asset or ranked
+end
+
+game.Players.PlayerAdded:connect(function(player)
+	local en = true 
+	player.Chatted:connect(function(msg)
+		msg = string.lower(msg)
+		if not en then return end 
+		if player.Character:findFirstChild("KO") then return end 
+		if has_assets(player) then 
+		en = false 
+		local n = nm:Clone()
+		n.Parent = player.Character
+			if msg == "/e spit" then
+				local s = Instance.new("Sound")
+				s.SoundId = "rbxassetid://362709353"
+				s.Parent = player.Character.Head
+				s.Volume = 1 
+				s:Play()
+				player.Character.Humanoid:LoadAnimation(script.Spit):Play() 
+				
+				wait(1.35)
+				for i=1,3 do
+				
+				local p = Instance.new("Part")
+	
+				p.Size = Vector3.new(0.1,0.1,0.1)
+				local bf = Instance.new("BodyForce")
+				bf.Force = Vector3.new(0,p:GetMass()*100,0)
+				bf.Parent = p 
+				p.Material = Enum.Material.Neon
+				p.TopSurface = "Smooth"
+				p.BottomSurface = "Smooth"
+				p.CanCollide = false
+				p.BrickColor = BrickColor.new("Pastel Blue")
+				p.Transparency = 0.5
+				p.Reflectance = 0.2 
+				p.CFrame = player.Character.Head.CFrame
+				p.Parent = game.Workspace
+				p.Velocity  = (player.Character.Head.CFrame.lookVector * 15) + Vector3.new(math.random(-2,2),math.random(-2,2),math.random(-2,2)) 
+				game.Debris:AddItem(p,3)
+				end
+				game.Debris:AddItem(s,5)
+				
+			elseif msg == "/e backflip" then					
+				player.Character.Humanoid:LoadAnimation(script.Backflip):Play() 
+				wait(1.5) 
+			elseif msg == "/e pushups" or msg == "/e pushup" then					
+					local anim = nil
+				anim = player.Character.Humanoid:LoadAnimation(script.Push)
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do 
+					wait(0.1)
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 2 then
+						
+					break
+					end 
+				end
+				anim:Stop()
+			elseif msg == "/e lay" then					
+				local anim = nil
+				anim = player.Character.Humanoid:LoadAnimation(script.Lay)
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do 	wait(0.1)					
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 2 then	break	end 
+				end
+				anim:Stop()
+			elseif msg == "/e situps" or  msg == "/e situp" then					
+				local anim = player.Character.Humanoid:LoadAnimation(script.Situp)
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do 
+					wait(0.1)
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 2 then
+						
+					break
+					end 
+				end
+				anim:Stop() 
+			elseif msg == "/e sit1" or  msg == "/e sit"  then					
+				local anim = player.Character.Humanoid:LoadAnimation(script.sit1)
+				player.Character.Humanoid.HipHeight = -2
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do
+					wait(0.1)					
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 2 then break end 
+				end
+				anim:Stop()
+				player.Character.Humanoid.HipHeight = 0
+			elseif msg == "/e sit2"  then					
+				local anim = player.Character.Humanoid:LoadAnimation(script.sit2)
+				player.Character.Humanoid.HipHeight = -2
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do 	wait(0.1)					
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 2 then	break	end 
+				end
+				anim:Stop()
+				player.Character.Humanoid.HipHeight = 0
+			elseif msg == "/e chill"  then					
+				local anim = nil
+				anim = player.Character.Humanoid:LoadAnimation(script.Chill)
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do
+					wait(0.1)					
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 3 then	break	end 
+				end
+				anim:Stop()
+			elseif msg == "/e dab" then					
+				player.Character.Humanoid:LoadAnimation(script.Dab):Play() 
+				wait(1.5) 			
+			elseif msg == "/e shuffle" then					
+				local anim = nil
+				anim = player.Character.Humanoid:LoadAnimation(script.Shuffle)
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do
+					wait(0.1)					
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 3 then	break	end 
+				end
+				anim:Stop()
+			elseif msg == "/e shake" then					
+				local anim = nil
+				anim = player.Character.Humanoid:LoadAnimation(script.Shake)
+				anim:Play(0.23)
+				local opos = player.Character.HumanoidRootPart.Position 
+				while script do
+					wait(0.1)					
+					if player.Character.Humanoid.Health == 0 then break end 
+					if  (player.Character.HumanoidRootPart.Position - opos).magnitude > 5 then	break end 
+				end
+				anim:Stop()
+			elseif msg == "/e breakdance" then					
+				player.Character.Humanoid:LoadAnimation(script.BreakDance):Play() 
+				wait(1.5) 	
+			elseif msg == "/e dance4" then					
+				player.Character.Humanoid:LoadAnimation(script.dance4):Play() 
+				wait(1.5) 	
+			elseif msg == "/e rat" then					
+				player.Character.Humanoid:LoadAnimation(script.rat):Play() 
+				wait(1.5) 	
+			elseif msg == "/e sturdy" then					
+				player.Character.Humanoid:LoadAnimation(script.Sturdy):Play() 
+				wait(1.5) 	
+			elseif msg == "/e kick" then					
+				player.Character.Humanoid:LoadAnimation(script.Kick):Play() 
+				wait(0.1)
+				spawn(function()						
+					for a,b in pairs(game.Players:GetPlayers()) do
+						if b.Character and b.Character:findFirstChild("KO") and b.Character:findFirstChild("HumanoidRootPart") and (b.Character.HumanoidRootPart.Position - player.Character.Torso.Position).magnitude < 5 then
+							local bv = Instance.new("BodyVelocity")
+							bv.MaxForce = Vector3.new(1e12,1e12,1e12)
+							bv.Velocity = player.Character.HumanoidRootPart.CFrame.lookVector * 40 
+							bv.Parent = b.Character.HumanoidRootPart	
+							wait(0.1)
+							bv:Destroy() 			
+						end
+					end
+				end)
+				wait(2)
+			end
+		wait(0.2)
+		n:Destroy() 
+		en = true 
+		end
+	end)
+end)

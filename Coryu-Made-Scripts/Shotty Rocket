@@ -1,0 +1,2 @@
+getgenv().Coryu = game:GetService'Players'.LocalPlayer
+Coryu.Backpack.Shotty.GripPos =  Vector3.new(-0.1, -0.5, -2)

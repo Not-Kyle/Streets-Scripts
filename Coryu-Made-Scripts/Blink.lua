@@ -43,7 +43,7 @@ if not getgenv()['CoryuBlink'] then
     	for i,v in next, File do
     		File[i] = CoryuBlinkFile[i]
     	end
-    	writefile('Coryu/CoryuBlink.js', Http:JSONEncode(File)) -- makes a string when updating
+    	writefile('Coryu/CoryuBlink.js', Http:JSONEncode(File)) -- updates the tables strings (basically)
     else
     	CoryuBlinkFile = writefile('Coryu/CoryuBlink.js', Http:JSONEncode(File))
     end

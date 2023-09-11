@@ -19,9 +19,10 @@ if not getgenv()['CoryuBlink'] then
         ['BlinkSpeed'] = 8;
         ['Toggle'] = 'B';
     }
-    
-    Workspace['Headless Dummy'].Humanoid.DisplayName = 'Coryu is top coder on prison'
-    Workspace.TPer.Color = Color3.fromRGB(255, 255, 0)
+    if game.PlaceId == 4669040 or game.PlaceId == 9083723645 or game.PlaceId == 13266627425 then
+	    Workspace['Headless Dummy'].Humanoid.DisplayName = 'Coryu is top coder on prison'
+	    Workspace.TPer.Color = Color3.fromRGB(255, 255, 0)
+    end
     local CoryuBlinkFile;
     makefolder('Coryu')
     ypcall(function()

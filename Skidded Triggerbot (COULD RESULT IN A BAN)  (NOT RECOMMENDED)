@@ -12,7 +12,7 @@ end)
 
 -- mohie's quick triggerbot script frfr
 
-local Controller = "GymRatMohie"
+local Controller = "GymRatMohie"  -- Skid is still trying to make people think hes not a skid by making shit open source LMFAOO
 
 local Triggerbotting = false
 local TriggerbotTarget = nil
@@ -30,7 +30,7 @@ local function getplr(name)
 end
 
 if game:GetService("ReplicatedStorage"):FindFirstChild("lIIl") then
-    game:GetService("ReplicatedStorage"):FindFirstChild("lIIl"):Destroy()
+    game:GetService("ReplicatedStorage"):FindFirstChild("lIIl"):Destroy()  -- hey retard, theres a reason why we use metables and not Destroy()
 end
 
 task.spawn(function()

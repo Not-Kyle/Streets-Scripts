@@ -1,0 +1,75 @@
+game:GetService('RunService').RenderStepped:Connect(function()
+if game.Players.LocalPlayer.Character:FindFirstChild("Shotty").Clips.Value == 2 then
+ game.Players.LocalPlayer.Character.Humanoid.Health = 0 delay(0)
+ end
+end)
+  for i,v in next, workspace:GetDescendants() do
+		    if v:IsA'Seat' then
+			    v.Disabled = true
+		    end
+	    end
+
+
+-- mohie's quick triggerbot script frfr
+
+local Controller = "GymRatMohie"
+
+local Triggerbotting = false
+local TriggerbotTarget = nil
+
+local rejoin = true
+
+local function getplr(name)
+    for i,v in next, game.Players:GetPlayers() do
+        if v.Name:lower():sub(1, #name) == name:lower() then
+            return v
+        elseif v.DisplayName:lower():sub(1, #name) == name then
+            return v
+        end
+    end
+end
+
+if game:GetService("ReplicatedStorage"):FindFirstChild("lIIl") then
+    game:GetService("ReplicatedStorage"):FindFirstChild("lIIl"):Destroy()
+end
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+            if Triggerbotting then
+                if not game.Players.LocalPlayer.Character:FindFirstChild("Shotty") and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+                    game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):UnequipTools()
+                elseif not game.Players.LocalPlayer.Character:FindFirstChild("Shotty") and not game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+                    game.Players.LocalPlayer.Backpack:WaitForChild("Shotty").Parent = game.Players.LocalPlayer.Character
+                elseif game.Players.LocalPlayer.Character:FindFirstChild("Shotty") then
+                    game.Players.LocalPlayer.Character:WaitForChild("Shotty").Shoot:FireServer(TriggerbotTarget.Character.Torso.CFrame + TriggerbotTarget.Character.Torso.Velocity / 5)
+                elseif game.Players.LocalPlayer.Character:FindFirstChild("Shotty").Ammo.Value == 0 and game.Players.LocalPlayer.Character:FindFirstChild("Shotty").Clips.Value == 0 then
+                    game.Players.LocalPlayer.Character:Destroy()
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if Triggerbotting then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(TriggerbotTarget.Character.Torso.Position) * CFrame.new(math.random(-15,15), 0, math.random(-15,15))
+            end
+        end)
+    end)
+end)
+
+
+game.Players[Controller].Chatted:Connect(function(msg)
+    local args = string.split(msg, " ")
+    if args[1] == "tb" then
+        if args[2] then
+            Triggerbotting = true
+            TriggerbotTarget = getplr(args[2])
+        elseif not args[2] then
+            Triggerbotting = false
+        end
+    end
+end)

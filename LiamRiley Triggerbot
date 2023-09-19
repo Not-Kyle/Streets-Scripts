@@ -1,0 +1,834 @@
+  local Camera = game.Workspace.CurrentCamera
+local OriginalCameraType = Camera.CameraType
+local OriginalCameraCFrame = Camera.CFrame
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+local CoreGui = game:GetService("CoreGui")
+local StarterGui = game:GetService("StarterGui")
+local RunService = game:GetService("RunService")
+local GuiService = game:GetService("GuiService")
+local PlayerGui = Player:WaitForChild("PlayerGui")
+local HttpService = game:GetService("HttpService")
+local TweenService = game:GetService("TweenService")
+local TeleportService = game:GetService("TeleportService")
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local saymsg = ReplicatedStorage:WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = ReplicatedStorage:WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local GunAnimation = Instance.new("Animation")
+local Frame = Instance.new("Frame")
+local ScreenGui = Instance.new("ScreenGui")
+local TextBox = Instance.new("TextBox")
+local Holder1 = Instance.new("TextLabel")
+local Holder2 = Instance.new("TextLabel")
+local Holder3 = Instance.new("TextLabel")
+local HotkeysFrame = Instance.new("Frame",ScreenGui)
+local HotkeysTextLabel = Instance.new("TextLabel",HotkeysFrame)
+local KeysFrame = Instance.new("Frame",ScreenGui)
+local AnyCmdButton = Instance.new("TextButton",KeysFrame)
+local KeysLabel = Instance.new("TextLabel",KeysFrame)
+local CmdBarKeyLabel = Instance.new("TextLabel",KeysFrame)
+local CmdBarKeyButton = Instance.new("TextButton",KeysFrame)
+local AnyCmdTextBox = Instance.new("TextBox",KeysFrame)
+local DamageIndicator = Instance.new("TextLabel",PlayerGui.Chat.Frame)
+local function notification(Title,Text)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = Title;
+		Text  = Text;
+	})
+end
+local function GetChar() return Player.Character or Player.CharacterAdded:Wait() end
+GetChar():WaitForChild("Humanoid",math.huge)
+-- \\ End // --
+
+
+
+-- // Tables \\ --
+local Air = {}
+local Keys = {}
+local WasActive = {} -- Last Active Options
+local Command = {
+	Commands = {}
+}
+local Control = {
+	F = 0,
+	B = 0,
+	L = 0,
+	R = 0
+}
+local LControl = {
+	F = 0,
+	B = 0,
+	L = 0,
+	R = 0
+
+}
+local SettingsTable = {
+	Keys = {};
+	CMDKey = "Minus",
+}
+-- \\ End // --
+
+
+
+-- // Rig \\ --
+local Backpack = Player.Backpack
+local Stank = Player.Backpack.Stank
+local Character = Player.Character
+local Humanoid = Character.Humanoid
+local Head = Character.Head
+local Torso = Character.Torso
+local LeftArm = Character["Left Arm"]
+local RightArm = Character["Right Arm"]
+local LeftLeg = Character["Left Leg"]
+local RightLeg = Character["Right Leg"]
+local HumanoidRootPart = Character.HumanoidRootPart
+-- \\ End // --
+
+-- // Settings \\ --
+local Settings = {
+	["Instances"] = {
+		AntiAimPart = Instance.new("Part",game.Workspace),
+		BuySeat = nil
+	},
+	["Ints"] = {
+		OriginalHP = Humanoid.Health,
+		Target = nil,
+		FlySpeed = 10,
+	},
+	["Bools"] = {
+		Resetted = false,
+		Flying = false,
+		Airwalk = false,
+		Camlock = false,
+		Respawn = false,
+		AutoEquip = false,
+		TriggerBot = false,
+		AutoReset = false,
+	},
+	["Variables"] = {
+		Prefix = "-",
+		CMDKey = "Minus",
+		FlyMode = "RenderStepped",
+		HotKeyFile = "FuneralHotKeys.json",
+	}
+}
+-- \\ End // --
+
+-- // Interface \\ --
+ScreenGui.Parent = Player:WaitForChild("PlayerGui",math.huge)
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Name = "FuneralHotKey"
+
+Frame.Parent = ScreenGui
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BackgroundTransparency = 1.000
+Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.498831838, 0, 0.571428597, 0)
+Frame.Size = UDim2.new(1, 0, 0.150000006, 0)
+Frame.Visible = false
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextBox.BorderColor3 = Color3.fromRGB(100, 0, 255)
+TextBox.Position = UDim2.new(0.000645757886, 0, -0.0146407336, 0)
+TextBox.Size = UDim2.new(1, 0, 0.400000006, 0)
+TextBox.Font = Enum.Font.SourceSansSemibold
+TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.PlaceholderText = "Enter Command"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextStrokeTransparency = 0.000
+TextBox.TextWrapped = true
+
+Holder1.Name = "Holder1"
+Holder1.Parent = Frame
+Holder1.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Holder1.BackgroundTransparency = 0.500
+Holder1.BorderSizePixel = 0
+Holder1.Position = UDim2.new(0.00116822124, 0, 0.397249371, 0)
+Holder1.Size = UDim2.new(1, 0, 0.200000003, 0)
+Holder1.Visible = false
+Holder1.Font = Enum.Font.SourceSansSemibold
+Holder1.Text = ""
+Holder1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Holder1.TextScaled = true
+Holder1.TextSize = 14.000
+Holder1.TextWrapped = true
+
+Holder2.Name = "Holder2"
+Holder2.Parent = Frame
+Holder2.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Holder2.BackgroundTransparency = 0.500
+Holder2.BorderSizePixel = 0
+Holder2.Position = UDim2.new(0, 0, 0.59671694, 0)
+Holder2.Size = UDim2.new(1, 0, 0.200000003, 0)
+Holder2.Visible = false
+Holder2.Font = Enum.Font.SourceSansSemibold
+Holder2.Text = ""
+Holder2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Holder2.TextScaled = true
+Holder2.TextSize = 14.000
+Holder2.TextWrapped = true
+
+Holder3.Name = "Holder3"
+Holder3.Parent = Frame
+Holder3.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Holder3.BackgroundTransparency = 0.500
+Holder3.BorderSizePixel = 0
+Holder3.Position = UDim2.new(-2.98023224e-08, 0, 0.792280376, 0)
+Holder3.Size = UDim2.new(1, 0, 0.200000003, 0)
+Holder3.Visible = false
+Holder3.Font = Enum.Font.SourceSansSemibold
+Holder3.Text = ""
+Holder3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Holder3.TextScaled = true
+Holder3.TextSize = 14.000
+Holder3.TextWrapped = true
+
+HotkeysFrame.BackgroundColor3 = Color3.fromRGB(255,255,255)
+HotkeysFrame.BackgroundTransparency = 1
+HotkeysFrame.Position = UDim2.new(0.55,0,0.145,0)
+HotkeysFrame.AnchorPoint = Vector2.new(1,1)
+HotkeysFrame.Size = UDim2.new(0,160,0,160)
+
+HotkeysTextLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
+HotkeysTextLabel.BackgroundTransparency = 0.6
+HotkeysTextLabel.BorderColor3 = Color3.fromRGB(100,0,255)
+HotkeysTextLabel.Position = UDim2.new(0,0,0,0)
+HotkeysTextLabel.Text = "Command Bar: "..Settings["Variables"].Prefix.."\nv HotKeys v"
+HotkeysTextLabel.Size = UDim2.new(0,160,0,160)
+HotkeysTextLabel.Font = Enum.Font.Code
+HotkeysTextLabel.TextColor3 = Color3.fromRGB(255,255,255)
+HotkeysTextLabel.TextSize = 14
+HotkeysTextLabel.TextWrapped = true
+HotkeysTextLabel.TextYAlignment = Enum.TextYAlignment.Top
+HotkeysTextLabel.TextScaled = true
+
+KeysFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+KeysFrame.BackgroundTransparency = 0.6
+KeysFrame.BorderColor3 = Color3.fromRGB(100,0,255)
+KeysFrame.BorderSizePixel = 0
+KeysFrame.Position = UDim2.new(0.5,0,0.5,0)
+KeysFrame.AnchorPoint = Vector2.new(0.5,0.5)
+KeysFrame.Size = UDim2.new(0,218,0,154)
+KeysFrame.Visible = false 
+
+AnyCmdButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
+AnyCmdButton.BackgroundTransparency = 0.7
+AnyCmdButton.BorderColor3 = Color3.fromRGB(100,0,255)
+AnyCmdButton.Position = UDim2.new(0.17,0,0.43,0)
+AnyCmdButton.Size = UDim2.new(0,49,0,49)
+AnyCmdButton.Font = Enum.Font.SourceSans
+AnyCmdButton.TextColor3 = Color3.fromRGB(255,255,255)
+AnyCmdButton.TextSize = 13
+AnyCmdButton.TextWrapped = true
+AnyCmdButton.Text = "Type A Command Then Click"
+
+KeysLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
+KeysLabel.BackgroundTransparency = 0.3
+KeysLabel.BorderColor3 = Color3.fromRGB(100,0,255)
+KeysLabel.Position = UDim2.new(0.004,0,-0.3,0)
+KeysLabel.Size = UDim2.new(0,217,0,50)
+KeysLabel.Font = Enum.Font.SciFi
+KeysLabel.Text = "Hotkeys"
+KeysLabel.TextColor3 = Color3.fromRGB(100,0,255)
+KeysLabel.TextSize = 50
+
+CmdBarKeyLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CmdBarKeyLabel.BackgroundTransparency = 0.6
+CmdBarKeyLabel.BorderColor3 = Color3.fromRGB(0,0,127)
+CmdBarKeyLabel.Position = UDim2.new(0.6,0,0.07,0)
+CmdBarKeyLabel.Size = UDim2.new(0,50,0,44)
+CmdBarKeyLabel.Font = Enum.Font.Fantasy
+CmdBarKeyLabel.Text = "CmdBar Key"
+CmdBarKeyLabel.TextColor3 = Color3.fromRGB(255,255,255)
+CmdBarKeyLabel.TextSize = 11
+CmdBarKeyLabel.TextWrapped = true
+
+CmdBarKeyButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CmdBarKeyButton.BackgroundTransparency = 0.7
+CmdBarKeyButton.BorderColor3 = Color3.fromRGB(100,0,255)
+CmdBarKeyButton.Position = UDim2.new(0.6,0,0.43,0)
+CmdBarKeyButton.Size = UDim2.new(0,49,0,49)
+CmdBarKeyButton.Font = Enum.Font.SourceSans
+CmdBarKeyButton.Text = "Click Then Press A Key"
+CmdBarKeyButton.TextColor3 = Color3.fromRGB(255,255,255)
+CmdBarKeyButton.TextSize = 13
+CmdBarKeyButton.TextWrapped = true
+
+AnyCmdTextBox.BackgroundColor3 = Color3.fromRGB(0,0,0)
+AnyCmdTextBox.BackgroundTransparency = 0.6
+AnyCmdTextBox.BorderColor3 = Color3.fromRGB(0,0,127)
+AnyCmdTextBox.Position = UDim2.new(0.17,0,0.07,0)
+AnyCmdTextBox.Size = UDim2.new(0,50,0,44)
+AnyCmdTextBox.Font = Enum.Font.Fantasy
+AnyCmdTextBox.PlaceholderColor3 = Color3.fromRGB(255,255,255)
+AnyCmdTextBox.PlaceholderText = "CmdToSet"
+AnyCmdTextBox.Text = ""
+AnyCmdTextBox.TextColor3 = Color3.fromRGB(255,255,255)
+AnyCmdTextBox.TextSize = 11
+AnyCmdTextBox.TextWrapped = true
+-- \\ End // --
+
+-- // Functions \\ --
+local function runHotkeys(ConfigToRun)
+	local RunSettings = HttpService:JSONDecode(readfile(ConfigToRun))
+	Keys = RunSettings.Keys
+	Settings["Variables"].CMDKey = RunSettings.CMDKey or "Minus"
+end
+local function updateHotkeys(ConfigToUpdateTo)
+	if not readfile or not writefile then return end
+	local SettingsToUpdate = {
+		Keys = Keys;
+		CMDKey = Settings["Variables"].CMDKey;
+	}
+	writefile(ConfigToUpdateTo,HttpService:JSONEncode(SettingsToUpdate))
+end
+local function initalizeHotkeys(ConfigToSaveTo)
+	writefile(ConfigToSaveTo,HttpService:JSONEncode(SettingsTable))
+	local Settings2 = HttpService:JSONDecode(readfile(ConfigToSaveTo))
+	Keys = Settings2.Keys 
+	Settings["Variables"].CMDKey = Settings2.CMDKey
+end
+function AddCommand(commandname,cmddesc,sc)
+	local cmdinformation = {}
+	cmdinformation.Name = commandname
+	if sc == nil then
+		cmdinformation.Function = cmddesc
+	else
+		cmdinformation.Function = sc
+		cmdinformation.Description = cmddesc
+	end
+	table.insert(Command.Commands,cmdinformation)
+end
+function ParseMessage(Message)
+	local Arguments = {}
+	Message = string.lower(Message)
+	local PrefixMatch = string.match(Message,"^"..Settings["Variables"].Prefix)
+	if PrefixMatch then
+		Message = string.gsub(Message,PrefixMatch,"",1)
+		for Argument in string.gmatch(Message,"[^%s]+") do
+			table.insert(Arguments,Argument)
+		end
+	end
+	return Arguments
+end
+function ExecuteCommand(args)
+	args = ParseMessage(args)
+	local isacmd = false
+	for i,v in pairs(Command.Commands) do
+		if type(v.Name) == "table" then
+			for i,x in pairs(v.Name) do
+				if x == args[1] then
+					table.remove(args,1)
+					local x,y = pcall(function()
+						isacmd = true
+						v.Function(args)
+					end)
+					if not x then
+						game.StarterGui:SetCore("SendNotification", {
+							Title = "Command Error";
+							Text  = "";
+						})
+					end
+				end
+			end
+		else
+			if v.Name == args[1] then
+				table.remove(args,1)
+				local x,y = pcall(function()
+					isacmd = true
+					v.Function(args)
+				end)
+				if not x then
+					game.StarterGui:SetCore("SendNotification", {
+						Title = "Command Error";
+						Text  = "";
+					})
+				end
+			end
+		end
+	end
+	if not isacmd then
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Failed To Find";
+			Text  = tostring(args[1]);
+		})
+	end   
+end
+function UpdateCmdBar()
+	local tble = {}
+	for i,v in pairs(Command.Commands) do
+		local cmd = {}
+		if type(v.Name) == "table" then
+			cmd.Name = v.Name[1]
+			cmd.Description = v.Description
+		else
+			cmd.Name = v.Name
+			cmd.Description = v.Description
+		end
+		if Frame.TextBox.Text:lower() == cmd.Name:sub(1,Frame.TextBox.Text:len()) then
+			table.insert(tble,cmd)
+		end
+	end
+	if tble[1] then
+		Frame.Holder1.Visible = true
+		if tble[1].Description then
+			Frame.Holder1.Text = tble[1].Name.." - "..tble[1].Description
+		else
+			Frame.Holder1.Text = tble[1].Name
+		end
+	else
+		Frame.Holder1.Visible = false
+	end
+	if tble[2] then
+		Frame.Holder2.Visible = true
+		if tble[2].Description then
+			Frame.Holder2.Text = tble[2].Name.." - "..tble[2].Description
+		else
+			Frame.Holder2.Text = tble[2].Name
+		end
+	else
+		Frame.Holder2.Visible = false
+	end
+	if tble[3] then
+		Frame.Holder3.Visible = true
+		if tble[3].Description then
+			Frame.Holder3.Text = tble[3].Name.." - "..tble[3].Description
+		else
+			Frame.Holder3.Text = tble[3].Name
+		end
+	else
+		Frame.Holder3.Visible = false
+	end
+end
+local function convertKeyCode(KeyCode)
+	local KeyCodeToSet;
+	local Work,Error = pcall(function()
+		KeyCodeToSet = Enum.KeyCode[KeyCode]
+	end)
+	if not Work then
+		KeyCodeToSet = Enum.KeyCode[KeyCode:upper()]
+	end
+	return KeyCodeToSet
+end
+
+function sFLY()
+	if Settings["Bools"].AntiAim then
+		return
+	end
+	repeat
+		wait()
+	until Character and Torso and Mouse
+	local Speed = 0
+	Settings["Bools"].Flying = true
+	Torso.Anchored = true
+	local BG = Instance.new("BodyGyro", Torso)
+	local BV = Instance.new("BodyVelocity", Torso)
+	BG.P = 9e4
+	BG.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+	BG.CFrame = Torso.CFrame
+	BV.Velocity = Vector3.new(0, 0.1, 0)
+	BV.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+	spawn(function()
+		repeat
+			if Humanoid.Sit == false then
+				Humanoid:ChangeState(Enum.HumanoidStateType.PlatformStanding)
+			end
+			if Control.L + Control.R ~= 0 or Control.F + Control.B ~= 0 then
+				Speed = 50
+			elseif not (Control.L + Control.R ~= 0 or Control.F + Control.B ~= 0) and Speed ~= 0 then
+				Speed = 0
+			end
+			if (Control.L + Control.R) ~= 0 or (Control.F + Control.B) ~= 0 then
+				BV.Velocity = ((Camera.CoordinateFrame.lookVector * (Control.F + Control.B)) + ((Camera.CoordinateFrame * CFrame.new(Control.L + Control.R, (Control.F + Control.B) * 0.2, 0).Position) - Camera.CoordinateFrame.p)) * Speed
+				LControl = {F = Control.F, B = Control.B, L = Control.L, R = Control.R}
+			elseif (Control.L + Control.R) == 0 and (Control.F + Control.B) == 0 and Speed ~= 0 then
+				BV.Velocity = ((Camera.CoordinateFrame.lookVector * (LControl.F + LControl.B)) + ((Camera.CoordinateFrame * CFrame.new(LControl.L + LControl.R, (LControl.F + LControl.B) * 0.2, 0).Position) - Camera.CoordinateFrame.p)) * Speed
+			else
+				BV.Velocity = Vector3.new(0, 0.1, 0)
+			end
+			BG.CFrame = Camera.CoordinateFrame
+			if Settings["Variables"].FlyMode == "Stepped" then
+				RunService.Stepped:Wait()
+			end
+			if Settings["Variables"].FlyMode == "Heartbeat" then
+				RunService.Heartbeat:Wait()
+			end
+			if Settings["Variables"].FlyMode == "RenderStepped" then
+				RunService.RenderStepped:Wait()
+			end
+		until not Settings["Bools"].Flying
+		-- Control = {F = 0, B = 0, L = 0, R = 0}
+		-- LControl = {F = 0, B = 0, L = 0, R = 0}
+		Speed = 0
+		BG:destroy()
+		BV:destroy()
+	end)
+	Torso.Anchored = false
+end
+function Fly()
+	pcall(function()
+		if PlayerGui:FindFirstChild("LocalScript") then
+			PlayerGui.LocalScript.Disabled = true
+		end
+		repeat
+			wait()
+		until PlayerGui.LocalScript.Disabled == true
+		sFLY()
+		repeat
+			wait()
+		until PlayerGui.LocalScript.Disabled == true
+		if PlayerGui:FindFirstChild("LocalScript") then
+			PlayerGui.LocalScript.Disabled = false
+		end
+	end)
+end
+-- \\ End // --
+
+-- // Interactions \\ --
+if readfile and writefile then 
+	local FileExists = pcall(readfile,Settings["Variables"].HotKeyFile)
+	if not FileExists then 
+		initalizeHotkeys(Settings["Variables"].HotKeyFile)
+	else
+		runHotkeys(Settings["Variables"].HotKeyFile)
+	end
+end
+
+UserInputService.InputBegan:Connect(function(Input,Typing)
+	if Typing then
+		wait()
+		UpdateCmdBar()
+		return
+	end
+	if Input.KeyCode == Enum.KeyCode[Settings["Variables"].CMDKey] then
+		wait()
+		Frame.Visible = true
+		Frame.TextBox:CaptureFocus()
+		Frame.TextBox.PlaceholderText = "Enter Command"
+	end
+end)
+Frame.TextBox.FocusLost:Connect(function(Focus)
+	if Focus then
+		local Text = Frame.TextBox.Text:lower()
+		if Text ~= "" or Text ~= " " or Text ~= nil then
+			Text = Settings["Variables"].Prefix..Text
+			ExecuteCommand(Text)
+		end
+	end
+	Frame.Visible = false
+end)
+Player.Chatted:Connect(function(msg)
+	if msg:sub(1,1) == Settings["Variables"].Prefix then
+		ExecuteCommand(msg)
+	end
+end)
+UserInputService.InputBegan:Connect(function(Key)
+	if UserInputService:GetFocusedTextBox() then return end
+	for i,v in pairs(Keys) do
+		local KeyCode = convertKeyCode(v:match"[%a%d]+$")
+		if KeyCode == Key.KeyCode then
+			ExecuteCommand(Settings["Variables"].Prefix..v:match"^[%w%s]+")
+		end
+	end 
+end)
+-- \\ End // --
+
+-- // Keys \\ --
+Keys[#Keys + 1] = "triggerbot".."||".."l"
+-- \\ End // --
+
+
+
+-- // Commands \\ --
+AddCommand({"flymode","fm"},"Set FlyMode [Heart/Stepped/Render]",function(args)
+	if args[1] then
+		if args[1] == "heart" then
+			Settings["Variables"].FlyMode = "Heartbeat"
+		elseif args[1] == "stepped" then
+			Settings["Variables"].FlyMode = "Stepped"
+		elseif args[1] == "render" then
+			Settings["Variables"].FlyMode = "RenderStepped"
+		end
+	end
+	notification("FlyMode: ",Settings["Variables"].FlyMode)
+end)
+AddCommand({"camlock","cl"},"Enable/Disable Camlock",function(args)
+	Settings["Bools"].Camlock = not Settings["Bools"].Camlock
+	notification("Camlock","Set To: "..tostring(Settings["Bools"].Camlock))
+end)
+AddCommand({"target","t"},"Set Target",function(args)
+	if args[1] then
+		for _,player in pairs(Players:GetChildren()) do
+			if (string.sub(player.Name:lower(),1,string.len(args[1]))) == string.lower(args[1]) or (string.sub(player.DisplayName:lower(),1,string.len(args[1]))) == string.lower(args[1]) then
+				Settings["Ints"].Target = player
+			end
+		end
+	end
+	if not args[1] then
+		Settings["Ints"].Target = nil
+	end
+	notification("Target","Set To: "..tostring(Settings["Ints"].Target))
+end)
+AddCommand({"triggerbot","tb"},"Set Target [NoArgs/Auto/blacklist]",function(args)
+	if args[1] then
+		ExecuteCommand(Settings["Variables"].Prefix.."target "..args[1])
+		if Settings["Ints"].Target then
+			Settings["Bools"].TriggerBot = true
+			if not Settings["Bools"].AutoEquip then
+				ExecuteCommand(Settings["Variables"].Prefix.."autoequip")
+			end
+			if not Settings["Bools"].AutoReset then
+				ExecuteCommand(Settings["Variables"].Prefix.."autoreset")
+			end
+		end
+	end
+	if not args[1] then
+		if Settings["Ints"].Target and not Settings["Bools"].TriggerBot then
+			Settings["Bools"].TriggerBot = true
+			return
+		end
+		if Settings["Bools"].TriggerBot then
+			Settings["Bools"].TriggerBot = false
+			if Settings["Bools"].AutoEquip then
+				ExecuteCommand(Settings["Variables"].Prefix.."autoequip")
+			end
+			if Settings["Bools"].AutoReset then
+				ExecuteCommand(Settings["Variables"].Prefix.."autoreset")
+			end
+			return
+		end
+	end
+	notification("Triggerbot","Set To: "..tostring(Settings["Bools"].TriggerBot))
+end)
+AddCommand({"autoequip","ae"},"Enable/Disable AutoEquip",function(args)
+	Settings["Bools"].AutoEquip = not Settings["Bools"].AutoEquip
+	notification("AutoEquip","Set To: "..tostring(Settings["Bools"].AutoEquip))
+end)
+AddCommand({"reset","r"},"Reset",function(args)
+	if Settings["Bools"].Resetted then
+		return
+	end
+	Character:BreakJoints() -- Ragdoll Reset
+	wait(0.1)
+	for i,v in pairs(Character:GetChildren()) do
+		if v:IsA("Part") then
+			v:Destroy() -- Crashes Most Exploiters
+		end
+	end
+	notification("Reset","Completed")
+end)
+AddCommand({"autoreset","ar"},"Reset",function(args)
+	Settings["Bools"].AutoReset = not Settings["Bools"].AutoReset
+	notification("AutoReset","Set To: "..tostring(Settings["Bools"].AutoReset))
+end)
+AddCommand({"airwalk","a"},"Enable/Disable Airwalk",function(args)
+	Settings["Bools"].Airwalk = not Settings["Bools"].Airwalk
+	if Settings["Bools"].Airwalk then
+		local air = Instance.new("Part", game.Workspace)
+		air.Size = Vector3.new(7, 2, 3)
+		air.Transparency = 1
+		air.Anchored = true
+		air.Name = "Airwalk"
+		Air[#Air + 1] = air
+		Mouse.KeyDown:Connect(function(key)
+			if key == "2" then
+				air.Size = Vector3.new(4, -0.8, 3)
+			end
+		end)
+		Mouse.KeyUp:Connect(function(key)
+			if key == "2" then
+				air.Size = Vector3.new(7, 2, 3)
+			end
+		end)
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if Settings["Bools"].Airwalk and Player and Character and HumanoidRootPart then
+				air.CFrame = HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+			end
+		end)
+	else
+		Settings["Bools"].Airwalk = false
+		if Air[1] then
+			for i,v in pairs(Air) do
+				v:Remove()
+			end
+		end
+	end
+	notification("Airwalk","Set To: "..tostring(Settings["Bools"].Airwalk))
+end)
+AddCommand({"fly","f"},"Enable/Disable Fly [NoArgs/Speed]",function(args)
+	if not args[1] then
+		Settings["Bools"].Flying = not Settings["Bools"].Flying
+		if Settings["Bools"].Flying then
+			Fly()
+		end
+	end
+	if args[1] then
+		if tonumber(args[1]) then
+			Settings["Ints"].FlySpeed = tonumber(args[1])
+			notification("FlySpeed","Set To: "..tostring(Settings["Ints"].FlySpeed))
+			return
+		end
+	end
+	notification("Fly","Set To: "..tostring(Settings["Bools"].Flying))
+end)
+-- \\ End // --
+
+-- // Loops \\ --
+Humanoid.Died:Connect(function()
+	Tools = {}
+	ExecuteCommand(Settings["Variables"].Prefix.."reset")
+	Settings["Bools"].Resetted = true
+	if Settings["Bools"].Flying then
+		table.insert(WasActive,"fly")
+		ExecuteCommand(Settings["Variables"].Prefix.."fly")
+	end
+	if Settings["Bools"].Airwalk then
+		ExecuteCommand(Settings["Variables"].Prefix.."airwalk")
+	end
+end)
+Player.CharacterAdded:Connect(function(character)
+	Character = character
+	repeat
+		RunService.RenderStepped:Wait()
+	until Character:FindFirstChildOfClass("Humanoid")
+	wait(1)
+	Settings["Bools"].Resetted = false
+	Head = Character.Head
+	Torso = Character.Torso
+	LeftArm = Character["Left Arm"]
+	RightArm = Character["Right Arm"]
+	LeftLeg = Character["Left Leg"]
+	RightLeg = Character["Right Leg"]
+	HumanoidRootPart = Character.HumanoidRootPart
+	Humanoid = Character.Humanoid
+	Backpack = Player.Backpack
+	for i,v in pairs(WasActive) do
+		ExecuteCommand(Settings["Variables"].Prefix..v)
+	end
+	WasActive = {}
+	Humanoid.Died:Connect(function()
+		Tools = {}
+		ExecuteCommand(Settings["Variables"].Prefix.."reset")
+		Settings["Bools"].Resetted = true
+		if Settings["Bools"].Flying then
+			table.insert(WasActive,"fly")
+			ExecuteCommand(Settings["Variables"].Prefix.."fly")
+		end
+		if Settings["Bools"].Airwalk then
+			ExecuteCommand(Settings["Variables"].Prefix.."airwalk")
+		end
+	end)
+end)
+
+RunService.RenderStepped:Connect(function()
+	if Settings["Bools"].Camlock then
+		if Settings["Ints"].Target and Settings["Ints"].Target.Character and Settings["Ints"].Target.Character:FindFirstChild("Torso") and not Settings["Bools"].Resetted then
+			Camera.CFrame = CFrame.new(Camera.CFrame.Position,Settings["Ints"].Target.Character.Torso.Position)
+		end
+	end
+	if Settings["Bools"].TriggerBot then
+		if Settings["Ints"].Target and not Settings["Bools"].Resetted then
+			if not Settings["Bools"].Flying then
+				ExecuteCommand(Settings["Variables"].Prefix.."fly")
+			end
+			if not Settings["Bools"].Airwalk then
+				ExecuteCommand(Settings["Variables"].Prefix.."airwalk")
+			end
+			if Character and Torso and Settings["Ints"].Target.Character then
+				if (Character.Torso.Position - Settings["Ints"].Target.Character.Torso.Position).Magnitude > 30 then
+					Control.F = Settings["Ints"].FlySpeed
+					Settings["Bools"].Camlock = true
+					return
+				else
+					Control.F = 0
+					Settings["Bools"].Camlock = false
+				end
+			end
+			if Settings["Ints"].Target and Settings["Ints"].Target.Character and Settings["Ints"].Target.Character:FindFirstChild("Torso") and Settings["Ints"].Target.Character:FindFirstChildOfClass("Humanoid") and Character and HumanoidRootPart and not Settings["Bools"].Buying and not Settings["Bools"].Resetted then
+				if not Settings["Bools"].Buying and HumanoidRootPart and Settings["Ints"].Target.Character:FindFirstChildOfClass("Humanoid") and Settings["Ints"].Target.Character.Humanoid.Health ~= 0 and Settings["Ints"].Target.Character:FindFirstChild("Bone",true) then 
+					HumanoidRootPart.CFrame = Settings["Ints"].Target.Character.Torso.CFrame
+					return
+				end
+				local Random = math.random(1,6)
+				if Random < 3 then 
+					HumanoidRootPart.CFrame = Settings["Ints"].Target.Character.Torso.CFrame * CFrame.new(math.random(1,10),0,math.random(1,10))
+				elseif Random > 3 then 
+					HumanoidRootPart.CFrame = Settings["Ints"].Target.Character.Torso.CFrame * CFrame.new(-math.random(1,10),0,-math.random(1,10))
+				end
+			end 
+		end
+	end
+	if Settings["Bools"].AutoEquip then
+		if Character and Humanoid and not Settings["Bools"].Resetted then
+			local Tools = {}
+			for i,v in pairs(Backpack:GetChildren()) do
+				if v:IsA("Tool") and v:FindFirstChild("Ammo") then
+					table.insert(Tools,v)
+				end
+			end
+			for i,v in pairs(Character:GetChildren()) do
+				if v:IsA("Tool") and v:FindFirstChild("Ammo") then
+					table.insert(Tools,v)
+				end
+			end
+			local CurrentTool = Character:FindFirstChildOfClass("Tool")
+			for i,v in pairs(Tools) do
+				if CurrentTool and v:FindFirstChild("Ammo") then
+					if v:FindFirstChild("Ammo").Value < 0 and v:FindFirstChild("Clips").Value < 0 then
+						if v:FindFirstChild("Ammo") and v:FindFirstChild("Ammo").Value ~= 0 and v:FindFirstChild("Clips").Value ~= 0 then
+							Humanoid:EquipTool(v)
+						end
+					end
+				end
+				if not CurrentTool and v:FindFirstChild("Ammo") or not CurrentTool:FindFirstChild("Ammo") then
+					if v:FindFirstChild("Ammo").Value ~= 0 and v:FindFirstChild("Clips").Value ~= 0 then
+						Humanoid:EquipTool(v)
+					end
+				end
+			end
+		end
+	end
+	if Settings["Bools"].AutoReset then
+		if Player and Character and Humanoid then
+			local Tools = {}
+			for i,v in pairs(Backpack:GetChildren()) do
+				if v:IsA("Tool") and v:FindFirstChild("Ammo") then
+					table.insert(Tools,v)
+				end
+			end
+			for i,v in pairs(Character:GetChildren()) do
+				if v:IsA("Tool") and v:FindFirstChild("Ammo") then
+					table.insert(Tools,v)
+				end
+			end
+			local CurrentTool = Character:FindFirstChildOfClass("Tool")
+			for i,v in pairs(Tools) do
+				if CurrentTool and v:FindFirstChild("Ammo") then
+					if v:FindFirstChild("Ammo").Value < 1 and v:FindFirstChild("Clips").Value < 1 then
+						if v:FindFirstChild("Ammo") and v:FindFirstChild("Ammo").Value < 1 and v:FindFirstChild("Clips").Value < 1 then
+							ExecuteCommand(Settings["Variables"].Prefix.."reset")
+						end
+					end
+				end
+				if not CurrentTool and v:FindFirstChild("Ammo") then
+					if v:FindFirstChild("Ammo").Value < 1 and v:FindFirstChild("Clips").Value < 1 then
+						ExecuteCommand(Settings["Variables"].Prefix.."reset")
+					end
+				end
+			end
+			if Character:FindFirstChild("Bone",true) then
+				ExecuteCommand(Settings["Variables"].Prefix.."reset")
+			end
+		end
+	end
+end)

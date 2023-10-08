@@ -1,20 +1,33 @@
-local METATABLE = {['LocalPlayer'] = game:GetService('Players').LocalPlayer; ['Run'] = game:GetService("RunService"); ['Mouse'] = game:GetService('Players').LocalPlayer:GetMouse(); ['Noclip'] = false;};
+local Command = {}
+local Hotkeys = {Noclip = 'X'}
 
-getgenv().UserNotifications = function(title, text, time)
-	game.StarterGui:SetCore("SendNotification", {Title = title; Text = text; Icon = 'rbxassetid://13941412659'; Duration = time;})
+getgenv().Players = game:GetService'Players'
+getgenv().Local = Players.LocalPlayer
+getgenv().UserInputService = game:GetService'UserInputService'
+getgenv().UserNotifications = function(title, text) game:GetService'StarterGui':SetCore("SendNotification", {Title = title; Text = text;}) end
+getgenv().Noclip = true
+
+function Command:Noclip()
+	if Noclip then
+	    if Local and Local.Character and Local.Character:FindFirstChild'Humanoid' then
+	        Local.Character:FindFirstChild'Head'.CanCollide = false
+	        Local.Character:FindFirstChild'Torso'.CanCollide = false
+	    end
+	elseif not Noclip then
+		if Local and Local.Character and Local.Character:FindFirstChild'Humanoid' then
+	        Local.Character:FindFirstChild'Head'.CanCollide = true
+	        Local.Character:FindFirstChild'Torso'.CanCollide = true
+	    end
+	end
 end
 
-METATABLE['Run'].RenderStepped:connect(function()
-    if METATABLE['Noclip'] == true then
-        METATABLE['LocalPlayer'].Character.Torso.CanCollide = false
-        METATABLE['LocalPlayer'].Character.Head.CanCollide = false
+UserInputService.InputBegan:Connect(function(Array, Kill)
+    if Kill then
+        return nil
+    end
+    if Array.KeyCode == Enum.KeyCode[Hotkeys.Noclip] then
+        Noclip = not Noclip
+        Command:Noclip()
+        UserNotifications('Noclip', 'Noclip is now '..tostring(Noclip))
     end
 end)
-
-METATABLE['Mouse'].KeyDown:connect(function(noclipkey)
-    if noclipkey:lower() == 'x' then
-        METATABLE['Noclip'] = not METATABLE['Noclip']
-        UserNotifications("Coryu", "Noclip is now "..tostring(METATABLE['Noclip']), 5)
-    end
-end)
-

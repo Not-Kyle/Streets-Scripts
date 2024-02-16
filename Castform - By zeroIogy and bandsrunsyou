@@ -1,0 +1,87 @@
+-- // Visual Command UI Library Example
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20Command%20UI%20Library/Source.lua', true))()
+
+local Window = Library:CreateWindow({
+    Name = 'Castform',
+    IntroText = 'Castform',
+    IntroIcon = 'rbxassetid://11957353076',
+    IntroBlur = false,
+    IntroBlurIntensity = 15,
+    Theme = Library.Themes.dark,
+    Position = 'bottom',
+    Draggable = true,
+    Prefix = ';'
+})
+
+-- // Commands
+Window:AddCommand('R', {}, 'Resets your character', function(Arguments, Speaker)
+game.Players.LocalPlayer.Character["Torso"]:Remove()
+end)
+
+Window:AddCommand('Fly', {}, 'It makes you fly', function(Arguments, Speaker)
+loadstring(game:HttpGet("https://pastebin.com/raw/v6cBQm0K", true))()
+end)
+
+Window:AddCommand('Iy', {}, 'loads infinite yield', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+Window:AddCommand('caa', {}, 'Loads calls antiaim gui', function(Arguments, Speaker)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/caIIings/Games/main/The%20Streets/Anti%20Aim%20Menu.lua', true))()
+end)
+
+Window:AddCommand('dce', {}, 'enables desync', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/desync.txt'),true))()
+end)
+
+Window:AddCommand('dcd', {}, 'disable desync', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/desyncd.txt'),true))()
+end)
+
+Window:AddCommand('rj', {}, 'rejoins a game', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/rj.txt'),true))()
+end)
+
+Window:AddCommand('mains', {}, 'cory main script', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/black%20pokemon.lua'),true))()
+end)
+
+Window:AddCommand('Invis', {}, 'loads invis script', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/invites.txt'),true))()
+end)
+
+Window:AddCommand('fc', {}, 'Loads megacombats fullhealkey', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/MegaCombat/master/Full%20Heal%20Key%20(Burger%20Store).txt'),true))()
+end)
+
+Window:AddCommand('wbt', {}, 'makes your bullets white', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/white%20trails.lua'),true))()
+end)
+
+Window:AddCommand('bypassp', {}, 'Bypass for Prison remake', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/bypass%20only.txt'),true))()
+end)
+
+Window:AddCommand('antir', {}, 'Destroys character when ragdolled', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/antiragdoll.lua'),true))()
+end)
+
+Window:AddCommand('spychat', {}, 'Lets you spy on chat', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/spy_chat.txt'),true))()
+end)
+
+Window:AddCommand('prisons', {}, 'Loads prison script', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/698493234/1294234791-asd021345i2u1-3489-7-23948/main/PrisonCyrus.lua'),true))()
+end)
+
+Window:AddCommand('rs', {}, 'removes all seats', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/anti%20sit.txt'),true))()
+end)
+
+Window:AddCommand('uar', {}, 'Underground antiaim resolver', function(Arguments, Speaker)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pmzi1849pianf7384/l-fgahpgba/main/UnderGroundResolver.lua'),true))()
+end)
+
+Window:AddCommand('antiafk', {}, 'stops you from being kicked from the game', function(Arguments, Speaker)
+loadstring(game:HttpGet("https://pastebin.com/raw/SZkHcmKR"))()
+end)

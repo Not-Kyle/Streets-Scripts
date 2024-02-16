@@ -1,3 +1,6 @@
+getgenv().UserInputService = game:GetService'UserInputService'
+getgenv().CoryuAddedHotkey = 'J'
+
 getgenv().demisethebest = true 
 
 game:GetService("RunService").heartbeat:Connect(function()
@@ -7,4 +10,12 @@ game:GetService("RunService").heartbeat:Connect(function()
     game:GetService("RunService").RenderStepped:Wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
     end 
+end)
+
+UserInputService.InputBegan:Connect(function(Args, Kill)
+    if Kill then
+        return nil
+    elseif Args.KeyCode = Enum.KeyCode[CoryuAddedHotkey] then
+        demisethebest = not demisethebest
+    end
 end)

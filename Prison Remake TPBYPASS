@@ -1,0 +1,11 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local BypassTable = {}
+if ReplicatedStorage:FindFirstChild("iiii") then
+    table.insert(BypassTable,ReplicatedStorage["iiii"])
+end
+if ReplicatedStorage:FindFirstChild("lIIl") then
+    table.insert(BypassTable,ReplicatedStorage["lIIl"])
+end
+for i,v in pairs(BypassTable) do
+    v.Parent = game:GetService("ReplicatedFirst")
+end

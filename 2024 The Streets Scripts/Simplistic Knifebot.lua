@@ -21,7 +21,7 @@ local Args = {
     [1] = Host.Character:FindFirstChildWhichIsA'Pipe';
     [2] = Host.Character.Pipe:FindFirstChild'Handle';
     [3] = false;
-    [4] = true
+    [4] = true;
 }
 
 RunService.RenderStepped:Connect(function()

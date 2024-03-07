@@ -26,7 +26,7 @@ end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
                     Title = "flowzy";
-                    Text = "HittingHeadshots - spacedgods Paid Script. (;";
+                    Text = "HittingHeadshots - Aimcancels Paid Script. (;";
                         })
 
 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)

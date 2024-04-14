@@ -18,7 +18,7 @@ getgenv().AddNotification = function(Title, Text)
 end
 
 local Args = {
-    [1] = Host.Character:FindFirstChildWhichIsA'Pipe';
+    [1] = Host.Character:FindFirstChildWhichIsA'Knife';
     [2] = Host.Character.Pipe:FindFirstChild'Handle';
     [3] = false;
     [4] = true;

@@ -14,7 +14,7 @@
  > Some Scripts may get you banned; **Use are your own risk**
 
 # Credits
- If you need me my discord is `killserver` or `backdoor.exe`, message me for anything! I'm usually down to talk coding~
+ If you need me my discord is `killserver` or `backdoor.exe`, message me for anything! I'm usually down to talk coding
   ```md
   killserver
   ```

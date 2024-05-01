@@ -8,9 +8,9 @@
 
 I just post the scripts, I don't have affiliation to them (only a couple)
 
-# This is the largest public *The Streets* script cache you will find on the internet! <br />
+# This is the largest public *The Streets* script cache you will find on the internet!
 
-> [!WARNING]\ 
+> [!WARNING]\ <br />
 > Some Scripts may get you banned <br />
 > Use are your own <br />
 

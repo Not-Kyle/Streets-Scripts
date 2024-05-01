@@ -10,8 +10,8 @@
 </p>
 
 #Warnings <br />
-    > [!WARNING]\
-    > Some Scripts may get you banned; **Use are your own risk**
+ > [!WARNING]\
+ > Some Scripts may get you banned; **Use are your own risk**
 
 
 

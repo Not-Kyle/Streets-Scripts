@@ -13,6 +13,9 @@
  > [!WARNING]\
  > Some Scripts may get you banned; **Use are your own risk**
 
-
+# Important Notices <br />
+ > [!IMPORTANT]\
+ > Most of these are taken from parts of scripts or broken; some of these scripts are personal scripts for my own use or random scipts I found or recieved
+ 
 
 

@@ -15,12 +15,10 @@
 
 # Credits
  If you need me my discord is `killserver` or `backdoor.exe`, message me for anything! I'm usually down to talk coding~
-```md
-killserver
-```
-     ```
-     backdoor.exe
-     ```
+  ```md
+  killserver
+  ```
+    backdoor.exe
 
 # Important Notices <br />
  > [!IMPORTANT]\

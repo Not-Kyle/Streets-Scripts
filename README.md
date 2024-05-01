@@ -12,5 +12,5 @@ I just post the scripts, I don't have affiliation to them (only a couple)
 
 > [!WARNING]\
 > Some Scripts may get you banned <br />
-> ** Use are your own risk **
+> **Use are your own risk**
 

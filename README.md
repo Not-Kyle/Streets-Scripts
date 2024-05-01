@@ -9,7 +9,7 @@
     </a>
 </p>
 
-# Warnings <br />
+# Warning Notices <br />
  > [!WARNING]\
  > Some Scripts may get you banned; **Use are your own risk**
 

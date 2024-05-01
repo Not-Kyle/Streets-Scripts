@@ -11,3 +11,7 @@ I just post the scripts, I don't have affiliation to them (only a couple)
 # This is the largest public *The Streets* script cache you will find on the internet!
 
 ## **Some Scripts may get you banned**
+ ### Use are your own 
+
+ > [!WARNING]\
+ > Yes

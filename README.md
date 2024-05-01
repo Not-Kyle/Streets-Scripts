@@ -23,7 +23,7 @@
 # Important Notices <br />
  > [!IMPORTANT]\
  > Most of these are taken from parts of scripts or broken; some of these scripts are personal scripts for my own use or random scipts I found or recieved
- > I've made my own scripts and added then to the Coryu Made Scripts tab [Coryu Scripts](https://github.com/Not-Kyle/Streets-Scripts/tree/main/Coryu-Made-Scripts)!
- > I also have my own admin script named Wannacry V2. This script functions exactly like Cyrus or Ciazware
+ > I've made my own scripts and added then to the Coryu Made Scripts tab! [Coryu Scripts](https://github.com/Not-Kyle/Streets-Scripts/tree/main/Coryu-Made-Scripts)
+ > I also have my own admin script named Wannacry V2. [WANNACRY V2](https://github.com/Not-Kyle/WANNACRY-V2.lua) This script functions exactly like Cyrus or Ciazware
 
 

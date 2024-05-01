@@ -1,4 +1,4 @@
---my first gui. its when i was new to coding so dont bully me :(
+--my first gui. its when i was new to coding so dont bully me
 
 
   local function callback(Text)

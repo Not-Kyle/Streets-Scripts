@@ -8,7 +8,6 @@
 
 I just post the scripts, I don't have affiliation to them (only a couple)
 
-</p>
  <p align="center">
   <img width="100px" src="https://github.com/Not-Kyle/Streets-Scripts/assets/77679412/ac1b70e1-b917-40c4-a2ba-9d1e681fff07" align="center" alt="The Streets Exploiting Cache" />
 </p>

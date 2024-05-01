@@ -27,3 +27,8 @@
  > I also have my own admin script named Wannacry V2. [WANNACRY V2](https://github.com/Not-Kyle/WANNACRY-V2.lua) This script functions exactly like Cyrus or Ciazware
 
 
+ > [!IMPORTANT]\
+ > Thank you all for contributing to this Github repositories! I've been thinking about retiring the Luau language entirely because of the executor shortage, as Krampus is 10 dollars a week (which is absurd)
+ > I'm still active on Discord and sometimes Roblox [My Roblox](https://www.roblox.com/users/5388525718/profile)
+
+

@@ -30,5 +30,6 @@
  > [!IMPORTANT]\
  > Thank you all for contributing to this Github repositories! I've been thinking about retiring the Luau language entirely because of the executor shortage, as Krampus is 10 dollars a week (which is absurd)
  > I'm still active on Discord and sometimes Roblox [My Roblox](https://www.roblox.com/users/5388525718/profile)
+ > If you have any questions or need help with Luau I can try to help, but I am not like the greatest Luau coder ever so do not expect me to know everything
 
 

@@ -20,7 +20,7 @@
  > Citizens V1, V2, and V3 Source Code <br />
 
 # Rare Scripts I own <br />
-[!TIP]
+[!TIPS]
  > Drpoppa Source Code <br />
  > Ciazware Source Code <br />
  > DranghetaLurks Dotconnections Source Code <br />

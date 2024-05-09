@@ -13,6 +13,18 @@
  > [!WARNING]\
  > Some Scripts may get you banned; **Use are your own risk**
 
+# Scripts I'm looking for `Rated from rarity to common` <br />
+ > [!IMPORTANT] 
+ > Necroki (Made in 2022) **Can be source or obfuscated** <br />
+ > Sleepware Source Code (Got offered once, but never commited) <br />
+ > Citizens V1, V2, and V3 Source Code <br />
+
+# Rare Scripts I own <br />
+ > Drpoppa Source Code <br />
+ > Ciazware Source Code <br />
+ > DranghetaLurks Dotconnections Source Code <br />
+ > Scarsploit Source Code (I don't know if this is rare anymore) <br />
+
 # Credits
  If you need me my discord is `killserver` or `backdoor.exe`, message me for anything! I'm usually down to talk coding
   ```md
@@ -20,7 +32,7 @@
   ```
     backdoor.exe
 
-# Important Notices <br />
+# Notices <br />
  > [!NOTE]\
  > Most of these are taken from parts of scripts or broken; some of these scripts are personal scripts for my own use or random scripts I found or recieved
  > I've made my own scripts and added them to the Coryu Made Scripts tab! [Coryu Scripts](https://github.com/Not-Kyle/Streets-Scripts/tree/main/Coryu-Made-Scripts)

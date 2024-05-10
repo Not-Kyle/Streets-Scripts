@@ -34,6 +34,8 @@
   > Pie.solutions bullet trails <br />
   > Pie.solutions partical source code <br />
   > DrPoppa V3 Source <br />
+  > Scarsploit <br />
+  > Wannacry V1 <br />
 
 # Credits
  If you need me my discord is `killserver` or `backdoor.exe`, message me for anything! I'm usually down to talk coding

@@ -26,6 +26,15 @@
  > DranghetaLurks Dotconnections Source Code <br />
  > Scarsploit Source Code (I don't know if this is rare anymore) <br />
 
+# Scripts I'm holding <br />
+ >[!TIP]\
+  > Aphxie Script <br />
+  > Lurks Dotconnections <br />
+  > CSU Paid Script <br />
+  > Pie.solutions bullet trails <br />
+  > Pie.solutions partical source code <br />
+  > DrPoppa V3 Source <br />
+
 # Credits
  If you need me my discord is `killserver` or `backdoor.exe`, message me for anything! I'm usually down to talk coding
   ```md

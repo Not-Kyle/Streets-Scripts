@@ -38,7 +38,7 @@
  > Most of these are taken from parts of scripts or broken; some of these scripts are personal scripts for my own use or random scripts I found or recieved
  > I've made my own scripts and added them to the Coryu Made Scripts tab! [Coryu Scripts](https://github.com/Not-Kyle/Streets-Scripts/tree/main/Coryu-Made-Scripts)
  > I also have my own admin script named Wannacry V2. [WANNACRY V2](https://github.com/Not-Kyle/WANNACRY-V2.lua) This script functions exactly like Cyrus or Ciazware
- > **Even thought streets exploiting is dead, I still collect scripts and post them for history of the good days**
+ > **Even thought streets exploiting is dead, I still collect scripts and post them for history of the good days. I do dig for scripts, so unless you do not want your script to show up here. Delete the entire repository**
 
 
  > [!NOTE]\

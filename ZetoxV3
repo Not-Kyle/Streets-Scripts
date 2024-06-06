@@ -1,0 +1,4570 @@
+game.Players.LocalPlayer.UserId = "1170265182"
+
+--- Local ---
+local gay = false 
+local hotkey = "#"
+local maxspeed = 120
+local flying = false
+local plr = game.Players.LocalPlayer
+local Stammmina = game:GetService"Players".LocalPlayer
+local bypass = false
+local lplayer = game:GetService("Players").LocalPlayer
+local annoy = false
+local shoot = false
+local scanpir = false
+local rape = true
+local stomp = false
+local Airwalk = false
+local autoreset = false
+local autotool = false 
+local Notificationtext = ""
+dupetable = {}
+_G.dupeweps = false
+_G.glock = false
+_G.shotty = false
+_G.knife = false
+_G.jutsu = false
+_G.spray = false
+_G.pipe = false
+_G.boombox = false
+_G.sign = false
+_G.lockpick = false 
+
+local function Notification1()
+
+local Notification = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+
+Notification.Name = "Notification"
+Notification.Parent = Game.CoreGui
+Frame.Parent = Notification
+Frame.BackgroundColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Frame.BackgroundTransparency = 0.20000000298023
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.2, 0)
+Frame.Size = UDim2.new(1, 0, 0, 30)
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSansLight
+TextLabel.Text = " " .. Notificationtext .. " "
+TextLabel.TextColor3 = Color3.new(0.905882, 0.905882, 0.905882)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+local Intro = Instance.new("ScreenGui")
+local Frame2 = Instance.new("Frame")
+Intro.Name = "Intro"
+Intro.Parent = Game.CoreGui
+Frame2.Parent = Intro
+Frame2.BackgroundTransparency = 1
+ Frame2.BorderSizePixel = 0
+ Frame2.Position = UDim2.new(0, 0, -0.2, 0)
+Frame2.Size = UDim2.new(1, 0, 0, 30)
+Frame2:TweenPosition(UDim2.new(0, 0, 0, 200), "Out", "Quad", 1.5)
+Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 1.5)
+ wait(length)
+pcall(function()
+     Frame:TweenPosition(UDim2.new(0, 0, -1.5, 0), "Out", "Quad", 3)
+     Frame2:TweenPosition(UDim2.new(0, 0, -1.5, 0), "Out", "Quad", 3)
+end)
+wait(3.01)
+Intro:Destroy()
+Notification:Destroy()
+
+end
+
+
+game:GetService('RunService').Stepped:connect(function()
+    if annoy then
+        lplayer.Character.HumanoidRootPart.CFrame = game:GetService("Players")[anplr.Name].Character.HumanoidRootPart.CFrame
+    end
+
+ if shoot then
+        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Fire:FireServer(game.Players[shplr.Name].Character.Torso.CFrame)	
+    end
+
+
+if stomp then
+	
+if game.Players[stp.Name].Character:FindFirstChild("KO") then
+	
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+game.Players.LocalPlayer.Backpack.Punch.Parent = game.Players.LocalPlayer.Character
+lplayer.Character.HumanoidRootPart.CFrame = game:GetService("Players")[stp.Name].Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Backpack.ServerTraits.Finish:FireServer(game.Players.LocalPlayer.Character.Punch)
+if   game.Players[stp.Name].Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+gay = false
+stomp = false
+end
+
+end
+
+end
+	
+if autotool == true and godmode == true and  game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for _,jebacpawla in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (jebacpawla:IsA("Tool")) then
+jebacpawla.Parent = game.Players.LocalPlayer
+   end
+end
+
+end
+
+
+ 
+	
+  if game.Players.LocalPlayer.Character:FindFirstChild("KO") and autoreset == true then
+	game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+  game.Players.LocalPlayer.Character.Humanoid.Health = 0
+  end	
+
+  
+
+   if godmode == true then
+        if game.Players.LocalPlayer.Character ~= nil then
+            if game.Players.LocalPlayer.Character:FindFirstChild("Right Leg") then
+                game.Players.LocalPlayer.Character:FindFirstChild("Right Leg"):Destroy()
+            end
+        end
+    end
+
+
+
+local Float = Instance.new('Part', game.Players.LocalPlayer.Character)
+Float.Name = 'Float'
+Float.Transparency = 1
+Float.Size = Vector3.new(6,1,6)
+Float.Anchored = true
+
+
+    if Airwalk then
+    if game.Players.LocalPlayer.Character then
+        if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+        game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
+        game.Players.LocalPlayer.Character.Humanoid.Sit = false
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+       end
+       if game.Players.LocalPlayer.Character:FindFirstChild("Float") then
+        game.Players.LocalPlayer.Character:FindFirstChild("Float").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3.5,0)
+       end
+    end
+    end
+
+ if Airwalk == false then
+ if game.Players.LocalPlayer.Character then
+        if game.Players.LocalPlayer.Character:FindFirstChild("Float") then
+            game.Players.LocalPlayer.Character:FindFirstChild("Float"):Destroy()
+        end
+        end
+end
+
+
+
+if rape then
+print("▓▓▓▓▓▓▀▀░░░░░░▀▀▓▓▓▓▓▓")
+print("▓▓▓▀░░░░░▄██▄░░░░░▀▓▓▓")
+print("▓▓░░░░░▄▄██▀░░░░░░░░▓▓")
+print("▓░░░░░▄██▀░░░▄█▄░░░░░▓") 
+print("▌░░░░░▀██▄▄▄█████▄░░░▐")
+print("░░▄▄▄░░░▀████▀░▀▀██▄░░")
+print("░░▀██▄░▄▄████▄░░░▀▀▀░░")
+print("▌░░░▀█████▀▀▀██▄░░░░░▐")
+print("▓░░░░░▀█▀░░░▄██▀░░░░░▓")
+print("▓▓░░░░░░░░▄██▀░░░░░░▓▓")
+print("▓▓▓▄░░░░░▀█▀▀░░░░░▄▓▓▓")
+print("▓▓▓▓▓▓▄▄░░░░░░▄▄▓▓▓▓▓▓")
+
+
+error("▓▓▓▓▓▓▀▀░░░░░░▀▀▓▓▓▓▓▓")
+error("▓▓▓▀░░░░░▄██▄░░░░░▀▓▓▓")
+error("▓▓░░░░░▄▄██▀░░░░░░░░▓▓")
+error("▓░░░░░▄██▀░░░▄█▄░░░░░▓") 
+error("▌░░░░░▀██▄▄▄█████▄░░░▐")
+error("░░▄▄▄░░░▀████▀░▀▀██▄░░")
+error("░░▀██▄░▄▄████▄░░░▀▀▀░░")
+error("▌░░░▀█████▀▀▀██▄░░░░░▐")
+error("▓░░░░░▀█▀░░░▄██▀░░░░░▓")
+error("▓▓░░░░░░░░▄██▀░░░░░░▓▓")
+error("▓▓▓▄░░░░░▀█▀▀░░░░░▄▓▓▓")
+error("▓▓▓▓▓▓▄▄░░░░░░▄▄▓▓▓▓▓▓")
+
+
+warn("▓▓▓▓▓▓▀▀░░░░░░▀▀▓▓▓▓▓▓")
+warn("▓▓▓▀░░░░░▄██▄░░░░░▀▓▓▓")
+warn("▓▓░░░░░▄▄██▀░░░░░░░░▓▓")
+warn("▓░░░░░▄██▀░░░▄█▄░░░░░▓") 
+warn("▌░░░░░▀██▄▄▄█████▄░░░▐")
+warn("░░▄▄▄░░░▀████▀░▀▀██▄░░")
+warn("░░▀██▄░▄▄████▄░░░▀▀▀░░")
+warn("▌░░░▀█████▀▀▀██▄░░░░░▐")
+warn("▓░░░░░▀█▀░░░▄██▀░░░░░▓")
+warn("▓▓░░░░░░░░▄██▀░░░░░░▓▓")
+warn("▓▓▓▄░░░░░▀█▀▀░░░░░▄▓▓▓")
+warn("▓▓▓▓▓▓▄▄░░░░░░▄▄▓▓▓▓▓▓")
+
+end
+
+if rape == false then
+	
+game.Players.LocalPlayer:Kick("Stop stealing stuff u asshole!.")  -- no u polish retard
+wait(1)
+game:Shutdown() 
+wait(0.3)
+while true do
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+
+end
+
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+function GetPlayer(String) -- Credit to Timeless/xFunnieuss
+    local Found = {}
+    local strl = String:lower()
+    if strl == "all" then
+        for i,v in pairs(game.Players:GetPlayers()) do
+            table.insert(Found,v)
+        end
+    elseif strl == "others" then
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                table.insert(Found,v)
+            end
+        end    
+    else
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1, #String) == String:lower() then
+                table.insert(Found,v)
+            end
+        end    
+    end
+    return Found    
+end
+
+--- Local --- 
+
+
+--- Bypass --- 
+
+game.Players.localPlayer.ChildAdded:connect(function(ADDED)
+wait()
+local mt = getrawmetatable(game)
+local index = mt.__index
+local newindex = mt.__newindex
+setreadonly(mt, false)
+
+mt.__index = newcclosure(function(self, arg)
+        if checkcaller() then
+            return index(self, arg)
+        end
+    if arg == "WalkSpeed" then
+        return game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+    end
+    if arg == "JumpPower" then
+        return game.Players.LocalPlayer.Character.Humanoid.JumpPower
+    end
+    if arg == "HipHeight" then
+        return game.Players.LocalPlayer.Character.Humanoid.HipHeight
+    end
+    if arg == "Gravity"  then
+        return game.Workspace.Gravity
+    end
+return index(self, arg)
+
+
+end)
+
+mt.__newindex = newcclosure(function(place, state, t)
+if checkcaller() then
+            return newindex(place, state, t)
+end
+
+if place == game.Players.LocalPlayer.Character.Humanoid then
+        if state == "WalkSpeed" or state == "JumpPower" or state == "HipHeight" then
+            return
+        end
+    end
+    if place == game.Workspace then
+        if state == "Gravity" then
+            return
+        end
+    end
+    if place == game.Players.LocalPlayer.Character.HumanoidRootPart then
+        if state == "CFrame" then
+            return
+        end
+    end
+    return newindex(place, state, t)
+
+end)
+game:GetService('RunService').Stepped:connect(function() wait()
+game.Players.LocalPlayer.Backpack.ServerTraits.Stann.Value =100 end)
+wait()
+bypass = true
+end)
+
+game.Players.LocalPlayer.Character:WaitForChild('Humanoid').Died:connect(function()
+bypass = false
+end)
+
+
+
+local megameme = 1
+local smolmeme = 0
+game:GetService("RunService").Heartbeat:Connect(function(step)
+    if smolmeme < megameme then
+        smolmeme = smolmeme + 1
+        local a
+        for b, c in pairs(getreg()) do
+            if type(c) == "function" and islclosure(c) then
+                local d = false
+                local e = false
+                for f, g in pairs(debug.getconstants(c)) do
+                    if g == "Dragging" then
+                        d = true
+                    elseif g == "a" then
+                        e = true
+                    end
+                end
+                if d and e then
+                    a=c
+                end
+            end
+        end
+        if not a then
+            
+        end
+        LocalPlayer = game:GetService("Players").LocalPlayer
+        Character = nil
+        Humanoid = nil
+        HumanoidRootPart = nil
+        LocalPlayer.CharacterAdded:connect(function(h)
+            Character = h
+            Humanoid = Character:WaitForChild("Humanoid")
+            HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+        end)
+        if LocalPlayer.Character then
+            Character = LocalPlayer.Character
+            Humanoid = Character:WaitForChild("Humanoid")
+            HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+        end
+        local i = debug.getconstants(a)[36]
+        local k = Enum.HumanoidStateType.StrafingNoPhysics
+        local l = game.Workspace
+        local m = getrawmetatable(game)
+        local n = m.__namecall
+        local o = m.__newindex
+        local p = table.remove
+        setreadonly(m, false)
+        m.__namecall = newcclosure(function(q, ...)
+            if checkcaller() then
+                return n(q, ...)
+            end
+            local r = {...}
+            local s = p(r)
+            if q == Character and s == "a" then
+                return
+            end
+            if q == Humanoid and s == "a" and r[1] == k then
+                return
+            end
+            return n(q,...)
+        end)
+        m.__newindex = newcclosure(function(q, t, c)
+            if checkcaller() then
+                return o(q, t, c)
+            end
+            if q == Humanoid then
+                if t == "a" then
+                    return
+                end
+                if t == "a" then
+                    return
+                end
+                if t == "a" then
+                    return
+                end
+            end
+            if q == HumanoidRootPart then
+                if t == "CFrame" then
+                    return
+                end
+            end
+            if q == l and t == "a" then
+                return
+            end
+            return o(q, t, c)
+        end)
+    end
+end)
+
+--- Bypass ---
+
+
+--- function ---
+
+game.Players.LocalPlayer.ChildAdded:connect(function(ADDED)
+wait(0.05)
+Stammmina.Backpack.ServerTraits.Stann.Changed:Connect(function()
+		Stammmina.Backpack.ServerTraits.Stann.Value = 100
+end)
+wait()
+end)
+
+
+game.Players.LocalPlayer.ChildAdded:connect(function(ADDED)
+wait(0.05)
+game:GetService("Players").LocalPlayer.Character.Head.Touched:connect(function(obj)
+if obj and gay == false ~= workspace.Terrain then
+obj.CanCollide = true
+if gay == true then 
+obj.CanCollide = false	
+end
+end
+end)  
+
+game:GetService("Players").LocalPlayer.Character.Torso.Touched:connect(function(obj)
+if obj and gay == false ~= workspace.Terrain then
+obj.CanCollide = true
+if gay == true then 
+obj.CanCollide = false	
+end
+end
+end)  
+
+
+
+game:GetService("Players").LocalPlayer.Character["Left Arm"].Touched:connect(function(obj)
+if obj and gay == false ~= workspace.Terrain then
+obj.CanCollide = true
+if gay == true then 
+obj.CanCollide = false	
+end
+end
+end)  
+
+
+game:GetService("Players").LocalPlayer.Character["Right Arm"].Touched:connect(function(obj)
+if obj and gay == false ~= workspace.Terrain then
+obj.CanCollide = true
+if gay == true then 
+obj.CanCollide = false	
+end
+end
+end)  
+wait()
+end)
+
+
+
+game.Players.localPlayer.ChildAdded:connect(function(ADDED)
+wait()
+repeat wait()
+    until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+local mouse = game.Players.LocalPlayer:GetMouse()
+repeat wait() until mouse
+local torso = plr.Character.Torso
+local deb = true
+local ctrl = {f = 0, b = 0, l = 0, r = 0}
+local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+local speed = 0
+ 
+function Fly()
+	   game.Players.LocalPlayer.PlayerGui.LocalScript.Disabled = true
+	   wait()
+	      game.Players.LocalPlayer.PlayerGui.LocalScript.Disabled = false
+local bg = Instance.new("BodyGyro", torso)
+bg.P = 9e4
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+bg.cframe = torso.CFrame
+local bv = Instance.new("BodyVelocity", torso)
+bv.velocity = Vector3.new(0,0.1,0)
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+repeat wait()
+plr.Character.Humanoid.PlatformStand = true
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+speed = speed+.5+(speed/maxspeed)
+if speed > maxspeed then
+speed = maxspeed
+end
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+speed = speed-1
+if speed < 0 then
+speed = 0
+end
+end
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+else
+bv.velocity = Vector3.new(0,0.1,0)
+end
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*10*speed/maxspeed),0,0)
+until not flying
+ctrl = {f = 0, b = 0, l = 0, r = 0}
+lastctrl = {f = 0, b = 0, l = 0, r = 0}
+speed = 0
+bg:Destroy()
+bv:Destroy()
+plr.Character.Humanoid.PlatformStand = false
+end
+mouse.KeyDown:connect(function(key)
+if key:lower() == "w" then
+ctrl.f = 1
+elseif key:lower() == "s" then
+ctrl.b = -1
+elseif key:lower() == "a" then
+ctrl.l = -1
+elseif key:lower() == "d" then
+ctrl.r = 1
+end
+end)
+mouse.KeyUp:connect(function(key)
+if key:lower() == "w" then
+ctrl.f = 0
+elseif key:lower() == "s" then
+ctrl.b = 0
+elseif key:lower() == "a" then
+ctrl.l = 0
+elseif key:lower() == "d" then
+ctrl.r = 0
+end
+end)
+wait()
+end)
+
+
+
+
+for _,a in pairs(workspace:GetDescendants()) do
+    if a:IsA("Seat") then
+        a:Remove()
+    end
+end
+	
+	
+--- function ---
+	
+
+
+--- Command ---
+
+
+
+
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "autosave tool") and godmode == true then
+autotool = true
+
+Notificationtext = "AutoSave tool has been: enabled, to disabled AutoSave tool say ( /UnAutoSave tool )."
+Notification1()
+end
+end)
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "unautosave tool") and godmode == true then
+autotool = false
+
+Notificationtext = "AutoSave tool has been: disabled."
+Notification1()
+end
+end)
+
+
+	
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "fly" then
+
+Fly()  
+flying = true
+
+
+    end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "unfly" then
+
+ flying = false
+ plr.Character.Humanoid.PlatformStand = false 
+
+
+
+    end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "fly" then
+Notificationtext = "Fly has been: enabled, to disabled Fly say ( #UnFly )."
+Notification1()
+
+
+    end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "unfly" then
+	Notificationtext = "Fly has been: disabled."
+Notification1()
+
+
+
+    end
+end)
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "cmds" then
+
+
+
+
+local CMDS_GUI_V2 = Instance.new("ScreenGui")
+local CMDSmain = Instance.new("Frame")
+local CMDSframemain = Instance.new("Frame")
+local cmdgui_topframe = Instance.new("Frame")
+local closecmdsgui = Instance.new("TextButton")
+local cmdgui_midframe = Instance.new("Frame")
+local cmdsgui_SearchFunction = Instance.new("TextBox")
+local cmdsgui_searchDETAILFRAME = Instance.new("Frame")
+local cmdsgui_searchDETAILTEXT = Instance.new("TextLabel")
+local ListofCMDS = Instance.new("ScrollingFrame")
+local cmdTutorial = Instance.new("TextLabel")
+local cmdTutorial_2 = Instance.new("TextLabel")
+local cmdTutorial_3 = Instance.new("TextLabel")
+
+local cmdTutorial_4 = Instance.new("TextLabel")
+local cmdTutorial_5 = Instance.new("TextLabel")
+local cmdTutorial_6 = Instance.new("TextLabel")
+local cmdTutorial_7 = Instance.new("TextLabel")
+local cmdTutorial_8 = Instance.new("TextLabel")
+local cmdTutorial_9 = Instance.new("TextLabel")
+local cmdTutorial_10 = Instance.new("TextLabel")
+local cmdTutorial_11 = Instance.new("TextLabel")
+local cmdTutorial_12 = Instance.new("TextLabel")
+local cmdTutorial_13 = Instance.new("TextLabel")
+local cmdTutorial_14 = Instance.new("TextLabel")
+local cmdTutorial_15 = Instance.new("TextLabel")
+local cmdTutorial_16 = Instance.new("TextLabel")
+local cmdTutorial_17 = Instance.new("TextLabel")
+local cmdTutorial_18 = Instance.new("TextLabel")
+local cmdTutorial_19 = Instance.new("TextLabel")
+local cmdTutorial_20 = Instance.new("TextLabel")
+local cmdTutorial_21 = Instance.new("TextLabel")
+local cmdTutorial_22 = Instance.new("TextLabel")
+local cmdTutorial_23 = Instance.new("TextLabel")
+local cmdTutorial_24 = Instance.new("TextLabel")
+local cmdTutorial_25 = Instance.new("TextLabel")
+local cmdTutorial_26 = Instance.new("TextLabel")
+local cmdTutorial_26 = Instance.new("TextLabel")
+local cmdTutorial_27 = Instance.new("TextLabel")
+local cmdTutorial_28 = Instance.new("TextLabel")
+local cmdTutorial_29 = Instance.new("TextLabel")
+local cmdTutorial_30 = Instance.new("TextLabel")
+local cmdTutorial_31 = Instance.new("TextLabel")
+local cmdTutorial_32 = Instance.new("TextLabel")
+local cmdTutorial_33 = Instance.new("TextLabel")
+local cmdTutorial_34 = Instance.new("TextLabel")
+local cmdTutorial_35 = Instance.new("TextLabel")
+local cmdTutorial_36 = Instance.new("TextLabel")
+local cmdTutorial_37 = Instance.new("TextLabel")
+local cmdTutorial_38 = Instance.new("TextLabel")
+local cmdTutorial_39 = Instance.new("TextLabel")
+local cmdTutorial_40 = Instance.new("TextLabel")
+local cmdTutorial_41 = Instance.new("TextLabel")
+local cmdTutorial_42 = Instance.new("TextLabel")
+local cmdTutorial_43 = Instance.new("TextLabel")
+local cmdTutorial_44 = Instance.new("TextLabel")
+local cmdTutorial_45 = Instance.new("TextLabel")
+local cmdTutorial_46 = Instance.new("TextLabel")
+local cmdTutorial_47 = Instance.new("TextLabel")
+local cmdTutorial_48 = Instance.new("TextLabel")
+local cmdTutorial_49 = Instance.new("TextLabel")
+local cmdTutorial_50 = Instance.new("TextLabel")
+local cmdTutorial_51 = Instance.new("TextLabel")
+local cmdTutorial_52 = Instance.new("TextLabel")
+local cmdTutorial_53 = Instance.new("TextLabel")
+local cmdTutorial_54 = Instance.new("TextLabel")
+local cmdTutorial_55 = Instance.new("TextLabel")
+local cmdTutorial_56 = Instance.new("TextLabel")
+local cmdTutorial_57 = Instance.new("TextLabel")
+local cmdTutorial_58 = Instance.new("TextLabel")
+local cmdTutorial_59 = Instance.new("TextLabel")
+local cmdTutorial_60 = Instance.new("TextLabel")
+local cmdTutorial_61 = Instance.new("TextLabel")
+local cmdTutorial_62 = Instance.new("TextLabel")
+local cmdTutorial_63 = Instance.new("TextLabel")
+local cmdTutorial_64 = Instance.new("TextLabel")
+local cmdTutorial_65 = Instance.new("TextLabel")
+local cmdTutorial_66 = Instance.new("TextLabel")
+local cmdTutorial_67 = Instance.new("TextLabel")
+
+
+
+local CMDS_Shadow = Instance.new("Frame")
+local CMDS_Shadow2 = Instance.new("Frame")
+CMDS_GUI_V2.Name = "CMDS_GUI_V2"
+CMDS_GUI_V2.Parent = game.CoreGui
+CMDS_GUI_V2.ResetOnSpawn = false
+CMDSmain.Name = "CMDSmain"
+CMDSmain.Parent = CMDS_GUI_V2
+CMDSmain.BackgroundColor3 = Color3.new(1, 1, 1)
+CMDSmain.BackgroundTransparency = 1
+CMDSmain.Position = UDim2.new(0, 695, 0, 297)
+CMDSmain.Size = UDim2.new(0, 440, 0, 367)
+CMDSmain.AnchorPoint = Vector2.new(0.5, 0.5)
+CMDSmain.Visible = true
+CMDSmain.ClipsDescendants = true
+CMDSframemain.Name = "CMDSframemain"
+CMDSframemain.Parent = CMDSmain
+CMDSframemain.BackgroundColor3 = Color3.new(0.309804, 0.309804, 0.309804)
+CMDSframemain.BorderSizePixel = 0
+CMDSframemain.Size = UDim2.new(0, 440, 0, 367)
+cmdgui_topframe.Name = "cmdgui_topframe"
+cmdgui_topframe.Parent = CMDSframemain
+cmdgui_topframe.BackgroundColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+cmdgui_topframe.BorderSizePixel = 0
+cmdgui_topframe.Size = UDim2.new(0, 440, 0, 15)
+closecmdsgui.Name = "closecmdsgui"
+closecmdsgui.Parent = cmdgui_topframe
+closecmdsgui.BackgroundColor3 = Color3.new(1, 1, 1)
+closecmdsgui.BackgroundTransparency = 1
+closecmdsgui.Position = UDim2.new(0, 410, 0, 0)
+closecmdsgui.Size = UDim2.new(0, 30, 0, 15)
+closecmdsgui.Font = Enum.Font.SourceSansBold
+closecmdsgui.Text = "X"
+closecmdsgui.TextColor3 = Color3.new(0.968628, 0.968628, 0.968628)
+closecmdsgui.TextSize = 20
+cmdgui_midframe.Name = "cmdgui_midframe"
+cmdgui_midframe.Parent = CMDSframemain
+cmdgui_midframe.BackgroundColor3 = Color3.new(0.14902, 0.14902, 0.14902)
+cmdgui_midframe.BorderSizePixel = 0
+cmdgui_midframe.Position = UDim2.new(0, 0, 0, 15)
+cmdgui_midframe.Size = UDim2.new(0, 440, 0, 45)
+cmdsgui_searchDETAILFRAME.Name = "cmdsgui_searchDETAILFRAME"
+cmdsgui_searchDETAILFRAME.Parent = cmdsgui_SearchFunction
+cmdsgui_searchDETAILFRAME.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+cmdsgui_searchDETAILFRAME.BorderSizePixel = 0
+cmdsgui_searchDETAILFRAME.Position = UDim2.new(0, 0, 0, 25)
+cmdsgui_searchDETAILFRAME.Size = UDim2.new(0, 200, 0, 2)
+cmdsgui_searchDETAILTEXT.Name = "cmdsgui_searchDETAILTEXT"
+cmdsgui_searchDETAILTEXT.Parent = cmdsgui_SearchFunction
+cmdsgui_searchDETAILTEXT.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+cmdsgui_searchDETAILTEXT.BackgroundTransparency = 1
+cmdsgui_searchDETAILTEXT.Size = UDim2.new(0, 200, 0, 25)
+cmdsgui_searchDETAILTEXT.Font = Enum.Font.SourceSansLight
+cmdsgui_searchDETAILTEXT.Text = "Search"
+cmdsgui_searchDETAILTEXT.TextColor3 = Color3.fromRGB(240, 240, 240)
+cmdsgui_searchDETAILTEXT.TextSize = 30
+ListofCMDS.Name = "ListofCMDS"
+ListofCMDS.Parent = CMDSframemain
+ListofCMDS.BackgroundColor3 = Color3.new(0.309804, 0.309804, 0.309804)
+ListofCMDS.BorderSizePixel = 0
+ListofCMDS.Position = UDim2.new(0, 0, 0, 60)
+ListofCMDS.Size = UDim2.new(0, 440, 0, 307)
+ListofCMDS.CanvasSize = UDim2.new(5, 0, 8, 0)
+ListofCMDS.ScrollingDirection = Enum.ScrollingDirection.XY
+cmdTutorial.Name = "cmdTutorial"
+cmdTutorial.Parent = ListofCMDS
+cmdTutorial.BackgroundColor3 = Color3.new(1, 1, 1)
+cmdTutorial.BackgroundTransparency = 1
+cmdTutorial.BorderSizePixel = 0
+cmdTutorial.Position = UDim2.new(0, 5, 0, 5)
+cmdTutorial.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial.Font = Enum.Font.SourceSansBold
+cmdTutorial.Text = "Discord : KnkT42Q"
+cmdTutorial.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial.TextScaled = true
+cmdTutorial.TextSize = 14
+cmdTutorial.TextWrapped = true
+cmdTutorial.TextXAlignment = Enum.TextXAlignment.Left
+cmdTutorial_2.Name = "cmdTutorial"
+cmdTutorial_2.Parent = ListofCMDS
+cmdTutorial_2.BackgroundColor3 = Color3.new(1, 1, 1)
+cmdTutorial_2.BackgroundTransparency = 1
+cmdTutorial_2.BorderSizePixel = 0
+cmdTutorial_2.Position = UDim2.new(0, 5, 0, 25)
+cmdTutorial_2.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_2.Font = Enum.Font.SourceSansBold
+cmdTutorial_2.Text = "Commands Prefix [" ..hotkey.. "]"
+cmdTutorial_2.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_2.TextScaled = true
+cmdTutorial_2.TextSize = 14
+cmdTutorial_2.TextWrapped = true
+cmdTutorial_2.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_3.Name = "cmdTutorial"
+cmdTutorial_3.Parent = ListofCMDS
+cmdTutorial_3.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_3.BackgroundTransparency = 1
+cmdTutorial_3.BorderSizePixel = 0
+cmdTutorial_3.Position = UDim2.new(0, 5, 0, 60)
+cmdTutorial_3.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_3.Font = Enum.Font.SourceSansBold
+cmdTutorial_3.Text = "-- teleports --"
+cmdTutorial_3.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_3.TextScaled = true
+cmdTutorial_3.TextSize = 20
+cmdTutorial_3.TextWrapped = false
+cmdTutorial_3.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_4.Name = "cmdTutorial"
+cmdTutorial_4.Parent = ListofCMDS
+cmdTutorial_4.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_4.BackgroundTransparency = 1
+cmdTutorial_4.BorderSizePixel = 0
+cmdTutorial_4.Position = UDim2.new(0, 5, 0, 80)
+cmdTutorial_4.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_4.Font = Enum.Font.SourceSansBold
+cmdTutorial_4.Text = "#tpa to bank"
+cmdTutorial_4.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_4.TextScaled = true
+cmdTutorial_4.TextSize = 18
+cmdTutorial_4.TextWrapped = false
+cmdTutorial_4.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_5.Name = "cmdTutorial"
+cmdTutorial_5.Parent = ListofCMDS
+cmdTutorial_5.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_5.BackgroundTransparency = 1
+cmdTutorial_5.BorderSizePixel = 0
+cmdTutorial_5.Position = UDim2.new(0, 5, 0, 100)
+cmdTutorial_5.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_5.Font = Enum.Font.SourceSansBold
+cmdTutorial_5.Text = "#tpa to prison"
+cmdTutorial_5.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_5.TextScaled = true
+cmdTutorial_5.TextSize = 18
+cmdTutorial_5.TextWrapped = false
+cmdTutorial_5.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_6.Name = "cmdTutorial"
+cmdTutorial_6.Parent = ListofCMDS
+cmdTutorial_6.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_6.BackgroundTransparency = 1
+cmdTutorial_6.BorderSizePixel = 0
+cmdTutorial_6.Position = UDim2.new(0, 5, 0, 120)
+cmdTutorial_6.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_6.Font = Enum.Font.SourceSansBold
+cmdTutorial_6.Text = "#tpa to bar"
+cmdTutorial_6.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_6.TextScaled = true
+cmdTutorial_6.TextSize = 18
+cmdTutorial_6.TextWrapped = false
+cmdTutorial_6.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_7.Name = "cmdTutorial"
+cmdTutorial_7.Parent = ListofCMDS
+cmdTutorial_7.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_7.BackgroundTransparency = 1
+cmdTutorial_7.BorderSizePixel = 0
+cmdTutorial_7.Position = UDim2.new(0, 5, 0, 140)
+cmdTutorial_7.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_7.Font = Enum.Font.SourceSansBold
+cmdTutorial_7.Text = "#tpa to gas station"
+cmdTutorial_7.TextColor3 = Color3.new(0.957873, 0.957873, 0.957873)
+cmdTutorial_7.TextScaled = true
+cmdTutorial_7.TextSize = 18
+cmdTutorial_7.TextWrapped = false
+cmdTutorial_7.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_8.Name = "cmdTutorial"
+cmdTutorial_8.Parent = ListofCMDS
+cmdTutorial_8.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_8.BackgroundTransparency = 1
+cmdTutorial_8.BorderSizePixel = 0
+cmdTutorial_8.Position = UDim2.new(0, 5, 0, 160)
+cmdTutorial_8.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_8.Font = Enum.Font.SourceSansBold
+cmdTutorial_8.Text = "#tpa to sandpit"
+cmdTutorial_8.TextColor3 = Color3.new(0.958883, 0.958883, 0.958883)
+cmdTutorial_8.TextScaled = true
+cmdTutorial_8.TextSize = 18
+cmdTutorial_8.TextWrapped = false
+cmdTutorial_8.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_9.Name = "cmdTutorial"
+cmdTutorial_9.Parent = ListofCMDS
+cmdTutorial_9.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_9.BackgroundTransparency = 1
+cmdTutorial_9.BorderSizePixel = 0
+cmdTutorial_9.Position = UDim2.new(0, 5, 0, 180)
+cmdTutorial_9.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_9.Font = Enum.Font.SourceSansBold
+cmdTutorial_9.Text = "#tpa to rape house"
+cmdTutorial_9.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_9.TextScaled = true
+cmdTutorial_9.TextSize = 18
+cmdTutorial_9.TextWrapped = false
+cmdTutorial_9.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_10.Name = "cmdTutorial"
+cmdTutorial_10.Parent = ListofCMDS
+cmdTutorial_10.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_10.BackgroundTransparency = 1
+cmdTutorial_10.BorderSizePixel = 0
+cmdTutorial_10.Position = UDim2.new(0, 5, 0, 200)
+cmdTutorial_10.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_10.Font = Enum.Font.SourceSansBold
+cmdTutorial_10.Text = "#tpa to mountains"
+cmdTutorial_10.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_10.TextScaled = true
+cmdTutorial_10.TextSize = 18
+cmdTutorial_10.TextWrapped = false
+cmdTutorial_10.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_11.Name = "cmdTutorial"
+cmdTutorial_11.Parent = ListofCMDS
+cmdTutorial_11.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_11.BackgroundTransparency = 1
+cmdTutorial_11.BorderSizePixel = 0
+cmdTutorial_11.Position = UDim2.new(0, 5, 0, 220)
+cmdTutorial_11.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_11.Font = Enum.Font.SourceSansBold
+cmdTutorial_11.Text = "#tpa to restaurant 1"
+cmdTutorial_11.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_11.TextScaled = true
+cmdTutorial_11.TextSize = 18
+cmdTutorial_11.TextWrapped = false
+cmdTutorial_11.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_12.Name = "cmdTutorial"
+cmdTutorial_12.Parent = ListofCMDS
+cmdTutorial_12.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_12.BackgroundTransparency = 1
+cmdTutorial_12.BorderSizePixel = 0
+cmdTutorial_12.Position = UDim2.new(0, 5, 0, 240)
+cmdTutorial_12.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_12.Font = Enum.Font.SourceSansBold
+cmdTutorial_12.Text = "#tpa to restaurant 2"
+cmdTutorial_12.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_12.TextScaled = true
+cmdTutorial_12.TextSize = 18
+cmdTutorial_12.TextWrapped = false
+cmdTutorial_12.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_13.Name = "cmdTutorial"
+cmdTutorial_13.Parent = ListofCMDS
+cmdTutorial_13.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_13.BackgroundTransparency = 1
+cmdTutorial_13.BorderSizePixel = 0
+cmdTutorial_13.Position = UDim2.new(0, 5, 0, 260)
+cmdTutorial_13.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_13.Font = Enum.Font.SourceSansBold
+cmdTutorial_13.Text = "-- teleports 2 --"
+cmdTutorial_13.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_13.TextScaled = true
+cmdTutorial_13.TextSize = 20
+cmdTutorial_13.TextWrapped = false
+cmdTutorial_13.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_14.Name = "cmdTutorial"
+cmdTutorial_14.Parent = ListofCMDS
+cmdTutorial_14.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_14.BackgroundTransparency = 1
+cmdTutorial_14.BorderSizePixel = 0
+cmdTutorial_14.Position = UDim2.new(0, 5, 0, 280)
+cmdTutorial_14.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_14.Font = Enum.Font.SourceSansBold
+cmdTutorial_14.Text = "#buy sawed off"
+cmdTutorial_14.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_14.TextScaled = true
+cmdTutorial_14.TextSize = 18
+cmdTutorial_14.TextWrapped = false
+cmdTutorial_14.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_15.Name = "cmdTutorial"
+cmdTutorial_15.Parent = ListofCMDS
+cmdTutorial_15.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_15.BackgroundTransparency = 1
+cmdTutorial_15.BorderSizePixel = 0
+cmdTutorial_15.Position = UDim2.new(0, 5, 0, 300)
+cmdTutorial_15.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_15.Font = Enum.Font.SourceSansBold
+cmdTutorial_15.Text = "#buy uzi"
+cmdTutorial_15.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_15.TextScaled = true
+cmdTutorial_15.TextSize = 18
+cmdTutorial_15.TextWrapped = false
+cmdTutorial_15.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+
+cmdTutorial_16.Name = "cmdTutorial"
+cmdTutorial_16.Parent = ListofCMDS
+cmdTutorial_16.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_16.BackgroundTransparency = 1
+cmdTutorial_16.BorderSizePixel = 0
+cmdTutorial_16.Position = UDim2.new(0, 5, 0, 320)
+cmdTutorial_16.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_16.Font = Enum.Font.SourceSansBold
+cmdTutorial_16.Text = "#buy glock"
+cmdTutorial_16.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_16.TextScaled = true
+cmdTutorial_16.TextSize = 18
+cmdTutorial_16.TextWrapped = false
+cmdTutorial_16.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_17.Name = "cmdTutorial"
+cmdTutorial_17.Parent = ListofCMDS
+cmdTutorial_17.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_17.BackgroundTransparency = 1
+cmdTutorial_17.BorderSizePixel = 0
+cmdTutorial_17.Position = UDim2.new(0, 5, 0, 340)
+cmdTutorial_17.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_17.Font = Enum.Font.SourceSansBold
+cmdTutorial_17.Text = "#buy lockpick ( amount )"
+cmdTutorial_17.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_17.TextScaled = true
+cmdTutorial_17.TextSize = 18
+cmdTutorial_17.TextWrapped = false
+cmdTutorial_17.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_18.Name = "cmdTutorial"
+cmdTutorial_18.Parent = ListofCMDS
+cmdTutorial_18.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_18.BackgroundTransparency = 1
+cmdTutorial_18.BorderSizePixel = 0
+cmdTutorial_18.Position = UDim2.new(0, 5, 0, 360)
+cmdTutorial_18.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_18.Font = Enum.Font.SourceSansBold
+cmdTutorial_18.Text = "#buy ammo ( amount )"
+cmdTutorial_18.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_18.TextScaled = true
+cmdTutorial_18.TextSize = 18
+cmdTutorial_18.TextWrapped = false
+cmdTutorial_18.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_19.Name = "cmdTutorial"
+cmdTutorial_19.Parent = ListofCMDS
+cmdTutorial_19.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_19.BackgroundTransparency = 1
+cmdTutorial_19.BorderSizePixel = 0
+cmdTutorial_19.Position = UDim2.new(0, 5, 0, 380)
+cmdTutorial_19.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_19.Font = Enum.Font.SourceSansBold
+cmdTutorial_19.Text = "--  Local stuff --"
+cmdTutorial_19.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_19.TextScaled = true
+cmdTutorial_19.TextSize = 20
+cmdTutorial_19.TextWrapped = false
+cmdTutorial_19.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_20.Name = "cmdTutorial"
+cmdTutorial_20.Parent = ListofCMDS
+cmdTutorial_20.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_20.BackgroundTransparency = 1
+cmdTutorial_20.BorderSizePixel = 0
+cmdTutorial_20.Position = UDim2.new(0, 5, 0, 400)
+cmdTutorial_20.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_20.Font = Enum.Font.SourceSansBold
+cmdTutorial_20.Text = "#fly ( else #unfly )"
+cmdTutorial_20.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_20.TextScaled = true
+cmdTutorial_20.TextSize = 18
+cmdTutorial_20.TextWrapped = false
+cmdTutorial_20.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_21.Name = "cmdTutorial"
+cmdTutorial_21.Parent = ListofCMDS
+cmdTutorial_21.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_21.BackgroundTransparency = 1
+cmdTutorial_21.BorderSizePixel = 0
+cmdTutorial_21.Position = UDim2.new(0, 5, 0, 420)
+cmdTutorial_21.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_21.Font = Enum.Font.SourceSansBold
+cmdTutorial_21.Text = "#hide boombox"
+cmdTutorial_21.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_21.TextScaled = true
+cmdTutorial_21.TextSize = 18
+cmdTutorial_21.TextWrapped = false
+cmdTutorial_21.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_22.Name = "cmdTutorial"
+cmdTutorial_22.Parent = ListofCMDS
+cmdTutorial_22.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_22.BackgroundTransparency = 1
+cmdTutorial_22.BorderSizePixel = 0
+cmdTutorial_22.Position = UDim2.new(0, 5, 0, 440)
+cmdTutorial_22.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_22.Font = Enum.Font.SourceSansBold
+cmdTutorial_22.Text = "#reset"
+cmdTutorial_22.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_22.TextScaled = true
+cmdTutorial_22.TextSize = 18
+cmdTutorial_22.TextWrapped = false
+cmdTutorial_22.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_23.Name = "cmdTutorial"
+cmdTutorial_23.Parent = ListofCMDS
+cmdTutorial_23.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_23.BackgroundTransparency = 1
+cmdTutorial_23.BorderSizePixel = 0
+cmdTutorial_23.Position = UDim2.new(0, 5, 0, 460)
+cmdTutorial_23.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_23.Font = Enum.Font.SourceSansBold
+cmdTutorial_23.Text = "#auto reset ( else #unauto reset ) "
+cmdTutorial_23.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_23.TextScaled = true
+cmdTutorial_23.TextSize = 18
+cmdTutorial_23.TextWrapped = false
+cmdTutorial_23.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_24.Name = "cmdTutorial"
+cmdTutorial_24.Parent = ListofCMDS
+cmdTutorial_24.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_24.BackgroundTransparency = 1
+cmdTutorial_24.BorderSizePixel = 0
+cmdTutorial_24.Position = UDim2.new(0, 5, 0, 480)
+cmdTutorial_24.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_24.Font = Enum.Font.SourceSansBold
+cmdTutorial_24.Text = "#auto position"
+cmdTutorial_24.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_24.TextScaled = true
+cmdTutorial_24.TextSize = 18
+cmdTutorial_24.TextWrapped = false
+cmdTutorial_24.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_25.Name = "cmdTutorial"
+cmdTutorial_25.Parent = ListofCMDS
+cmdTutorial_25.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_25.BackgroundTransparency = 1
+cmdTutorial_25.BorderSizePixel = 0
+cmdTutorial_25.Position = UDim2.new(0, 5, 0, 500)
+cmdTutorial_25.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_25.Font = Enum.Font.SourceSansBold
+cmdTutorial_25.Text = "#ws ( amount )"
+cmdTutorial_25.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_25.TextScaled = true
+cmdTutorial_25.TextSize = 18
+cmdTutorial_25.TextWrapped = false
+cmdTutorial_25.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_26.Name = "cmdTutorial"
+cmdTutorial_26.Parent = ListofCMDS
+cmdTutorial_26.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_26.BackgroundTransparency = 1
+cmdTutorial_26.BorderSizePixel = 0
+cmdTutorial_26.Position = UDim2.new(0, 5, 0, 520)
+cmdTutorial_26.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_26.Font = Enum.Font.SourceSansBold
+cmdTutorial_26.Text = "#hh ( amount )"
+cmdTutorial_26.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_26.TextScaled = true
+cmdTutorial_26.TextSize = 18
+cmdTutorial_26.TextWrapped = false
+cmdTutorial_26.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_27.Name = "cmdTutorial"
+cmdTutorial_27.Parent = ListofCMDS
+cmdTutorial_27.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_27.BackgroundTransparency = 1
+cmdTutorial_27.BorderSizePixel = 0
+cmdTutorial_27.Position = UDim2.new(0, 5, 0, 540)
+cmdTutorial_27.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_27.Font = Enum.Font.SourceSansBold
+cmdTutorial_27.Text = "#jp ( amount )"
+cmdTutorial_27.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_27.TextScaled = true
+cmdTutorial_27.TextSize = 18
+cmdTutorial_27.TextWrapped = false
+cmdTutorial_27.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_28.Name = "cmdTutorial"
+cmdTutorial_28.Parent = ListofCMDS
+cmdTutorial_28.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_28.BackgroundTransparency = 1
+cmdTutorial_28.BorderSizePixel = 0
+cmdTutorial_28.Position = UDim2.new(0, 5, 0, 560)
+cmdTutorial_28.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_28.Font = Enum.Font.SourceSansBold
+cmdTutorial_28.Text = "#fly max speed ( amount )"
+cmdTutorial_28.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_28.TextScaled = true
+cmdTutorial_28.TextSize = 18
+cmdTutorial_28.TextWrapped = false
+cmdTutorial_28.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_29.Name = "cmdTutorial"
+cmdTutorial_29.Parent = ListofCMDS
+cmdTutorial_29.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_29.BackgroundTransparency = 1
+cmdTutorial_29.BorderSizePixel = 0
+cmdTutorial_29.Position = UDim2.new(0, 5, 0, 580)
+cmdTutorial_29.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_29.Font = Enum.Font.SourceSansBold
+cmdTutorial_29.Text = "#noclip ( else #clip ) "
+cmdTutorial_29.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_29.TextScaled = true
+cmdTutorial_29.TextSize = 18
+cmdTutorial_29.TextWrapped = false
+cmdTutorial_29.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_30.Name = "cmdTutorial"
+cmdTutorial_30.Parent = ListofCMDS
+cmdTutorial_30.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_30.BackgroundTransparency = 1
+cmdTutorial_30.BorderSizePixel = 0
+cmdTutorial_30.Position = UDim2.new(0, 5, 0, 600)
+cmdTutorial_30.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_30.Font = Enum.Font.SourceSansBold
+cmdTutorial_30.Text = "#drop tool"
+cmdTutorial_30.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_30.TextScaled = true
+cmdTutorial_30.TextSize = 18
+cmdTutorial_30.TextWrapped = false
+cmdTutorial_30.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_31.Name = "cmdTutorial"
+cmdTutorial_31.Parent = ListofCMDS
+cmdTutorial_31.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_31.BackgroundTransparency = 1
+cmdTutorial_31.BorderSizePixel = 0
+cmdTutorial_31.Position = UDim2.new(0, 5, 0, 620)
+cmdTutorial_31.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_31.Font = Enum.Font.SourceSansBold
+cmdTutorial_31.Text = "#unmesh tool"
+cmdTutorial_31.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_31.TextScaled = true
+cmdTutorial_31.TextSize = 18
+cmdTutorial_31.TextWrapped = false
+cmdTutorial_31.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_32.Name = "cmdTutorial"
+cmdTutorial_32.Parent = ListofCMDS
+cmdTutorial_32.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_32.BackgroundTransparency = 1
+cmdTutorial_32.BorderSizePixel = 0
+cmdTutorial_32.Position = UDim2.new(0, 5, 0, 640)
+cmdTutorial_32.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_32.Font = Enum.Font.SourceSansBold
+cmdTutorial_32.Text = "-- Local stuff 2 --"
+cmdTutorial_32.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_32.TextScaled = true
+cmdTutorial_32.TextSize = 20
+cmdTutorial_32.TextWrapped = false
+cmdTutorial_32.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_33.Name = "cmdTutorial"
+cmdTutorial_33.Parent = ListofCMDS
+cmdTutorial_33.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_33.BackgroundTransparency = 1
+cmdTutorial_33.BorderSizePixel = 0
+cmdTutorial_33.Position = UDim2.new(0, 5, 0, 660)
+cmdTutorial_33.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_33.Font = Enum.Font.SourceSansBold
+cmdTutorial_33.Text = "#shoot ( player name ) else ( #unshoot ) "
+cmdTutorial_33.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_33.TextScaled = true
+cmdTutorial_33.TextSize = 18
+cmdTutorial_33.TextWrapped = false
+cmdTutorial_33.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_34.Name = "cmdTutorial"
+cmdTutorial_34.Parent = ListofCMDS
+cmdTutorial_34.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_34.BackgroundTransparency = 1
+cmdTutorial_34.BorderSizePixel = 0
+cmdTutorial_34.Position = UDim2.new(0, 5, 0, 680)
+cmdTutorial_34.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_34.Font = Enum.Font.SourceSansBold
+cmdTutorial_34.Text = "#stomp ( player name )"
+cmdTutorial_34.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_34.TextScaled = true
+cmdTutorial_34.TextSize = 18
+cmdTutorial_34.TextWrapped = false
+cmdTutorial_34.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_35.Name = "cmdTutorial"
+cmdTutorial_35.Parent = ListofCMDS
+cmdTutorial_35.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_35.BackgroundTransparency = 1
+cmdTutorial_35.BorderSizePixel = 0
+cmdTutorial_35.Position = UDim2.new(0, 5, 0, 700)
+cmdTutorial_35.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_35.Font = Enum.Font.SourceSansBold
+cmdTutorial_35.Text = "#annoy ( player name ) else ( #unannoy )"
+cmdTutorial_35.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_35.TextScaled = true
+cmdTutorial_35.TextSize = 18
+cmdTutorial_35.TextWrapped = false
+cmdTutorial_35.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_36.Name = "cmdTutorial"
+cmdTutorial_36.Parent = ListofCMDS
+cmdTutorial_36.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_36.BackgroundTransparency = 1
+cmdTutorial_36.BorderSizePixel = 0
+cmdTutorial_36.Position = UDim2.new(0, 5, 0, 720)
+cmdTutorial_36.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_36.Font = Enum.Font.SourceSansBold
+cmdTutorial_36.Text = "#rape ( player name ) else ( #unrape )"
+cmdTutorial_36.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_36.TextScaled = true
+cmdTutorial_36.TextSize = 18
+cmdTutorial_36.TextWrapped = false
+cmdTutorial_36.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_37.Name = "cmdTutorial"
+cmdTutorial_37.Parent = ListofCMDS
+cmdTutorial_37.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_37.BackgroundTransparency = 1
+cmdTutorial_37.BorderSizePixel = 0
+cmdTutorial_37.Position = UDim2.new(0, 5, 0, 740)
+cmdTutorial_37.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_37.Font = Enum.Font.SourceSansBold
+cmdTutorial_37.Text = "#goto ( player name )"
+cmdTutorial_37.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_37.TextScaled = true
+cmdTutorial_37.TextSize = 18
+cmdTutorial_37.TextWrapped = false
+cmdTutorial_37.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_38.Name = "cmdTutorial"
+cmdTutorial_38.Parent = ListofCMDS
+cmdTutorial_38.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_38.BackgroundTransparency = 1
+cmdTutorial_38.BorderSizePixel = 0
+cmdTutorial_38.Position = UDim2.new(0, 5, 0, 760)
+cmdTutorial_38.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_38.Font = Enum.Font.SourceSansBold
+cmdTutorial_38.Text = "#void ( player name )"
+cmdTutorial_38.TextColor3 = Color3.new(0.959993, 0.959993, 0.959993)
+cmdTutorial_38.TextScaled = true
+cmdTutorial_38.TextSize = 18
+cmdTutorial_38.TextWrapped = false
+cmdTutorial_38.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_39.Name = "cmdTutorial"
+cmdTutorial_39.Parent = ListofCMDS
+cmdTutorial_39.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_39.BackgroundTransparency = 1
+cmdTutorial_39.BorderSizePixel = 0
+cmdTutorial_39.Position = UDim2.new(0, 5, 0, 780)
+cmdTutorial_39.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_39.Font = Enum.Font.SourceSansBold
+cmdTutorial_39.Text = "-- grip stuff --"
+cmdTutorial_39.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_39.TextScaled = true
+cmdTutorial_39.TextSize = 20
+cmdTutorial_39.TextWrapped = false
+cmdTutorial_39.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_40.Name = "cmdTutorial"
+cmdTutorial_40.Parent = ListofCMDS
+cmdTutorial_40.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_40.BackgroundTransparency = 1
+cmdTutorial_40.BorderSizePixel = 0
+cmdTutorial_40.Position = UDim2.new(0, 5, 0, 800)
+cmdTutorial_40.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_40.Font = Enum.Font.SourceSansBold
+cmdTutorial_40.Text = "#bfg on ( else #bfg off ) [allows to all dupe/grip cmds]"
+cmdTutorial_40.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_40.TextScaled = true
+cmdTutorial_40.TextSize = 18
+cmdTutorial_40.TextWrapped = false
+cmdTutorial_40.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_41.Name = "cmdTutorial"
+cmdTutorial_41.Parent = ListofCMDS
+cmdTutorial_41.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_41.BackgroundTransparency = 1
+cmdTutorial_41.BorderSizePixel = 0
+cmdTutorial_41.Position = UDim2.new(0, 5, 0, 820)
+cmdTutorial_41.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_41.Font = Enum.Font.SourceSansBold
+cmdTutorial_41.Text = "#autosave tool ( else #unautosave tool )"
+cmdTutorial_41.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_41.TextScaled = true
+cmdTutorial_41.TextSize = 18
+cmdTutorial_41.TextWrapped = false
+cmdTutorial_41.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_42.Name = "cmdTutorial"
+cmdTutorial_42.Parent = ListofCMDS
+cmdTutorial_42.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_42.BackgroundTransparency = 1
+cmdTutorial_42.BorderSizePixel = 0
+cmdTutorial_42.Position = UDim2.new(0, 5, 0, 840)
+cmdTutorial_42.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_42.Font = Enum.Font.SourceSansBold
+cmdTutorial_42.Text = "#save tool ( else #load tool )"
+cmdTutorial_42.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_42.TextScaled = true
+cmdTutorial_42.TextSize = 18
+cmdTutorial_42.TextWrapped = false
+cmdTutorial_42.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_43.Name = "cmdTutorial"
+cmdTutorial_43.Parent = ListofCMDS
+cmdTutorial_43.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_43.BackgroundTransparency = 1
+cmdTutorial_43.BorderSizePixel = 0
+cmdTutorial_43.Position = UDim2.new(0, 5, 0, 860)
+cmdTutorial_43.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_43.Font = Enum.Font.SourceSansBold
+cmdTutorial_43.Text = "#duplicate on ( else #duplicate off )"
+cmdTutorial_43.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_43.TextScaled = true
+cmdTutorial_43.TextSize = 18
+cmdTutorial_43.TextWrapped = false
+cmdTutorial_43.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_44.Name = "cmdTutorial"
+cmdTutorial_44.Parent = ListofCMDS
+cmdTutorial_44.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_44.BackgroundTransparency = 1
+cmdTutorial_44.BorderSizePixel = 0
+cmdTutorial_44.Position = UDim2.new(0, 5, 0, 880)
+cmdTutorial_44.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_44.Font = Enum.Font.SourceSansBold
+cmdTutorial_44.Text = "#add ( tool name ) else ( #remove [tool name] )"
+cmdTutorial_44.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_44.TextScaled = true
+cmdTutorial_44.TextSize = 18
+cmdTutorial_44.TextWrapped = false
+cmdTutorial_44.TextXAlignment = Enum.TextXAlignment.Left
+
+cmdTutorial_45.Name = "cmdTutorial"
+cmdTutorial_45.Parent = ListofCMDS
+cmdTutorial_45.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_45.BackgroundTransparency = 1
+cmdTutorial_45.BorderSizePixel = 0
+cmdTutorial_45.Position = UDim2.new(0, 5, 0, 900)
+cmdTutorial_45.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_45.Font = Enum.Font.SourceSansBold
+cmdTutorial_45.Text = "#create epic symbol"
+cmdTutorial_45.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_45.TextScaled = true
+cmdTutorial_45.TextSize = 18
+cmdTutorial_45.TextWrapped = false
+cmdTutorial_45.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_46.Name = "cmdTutorial"
+cmdTutorial_46.Parent = ListofCMDS
+cmdTutorial_46.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_46.BackgroundTransparency = 1
+cmdTutorial_46.BorderSizePixel = 0
+cmdTutorial_46.Position = UDim2.new(0, 5, 0, 920)
+cmdTutorial_46.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_46.Font = Enum.Font.SourceSansBold
+cmdTutorial_46.Text = "#create uhoe symbol"
+cmdTutorial_46.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_46.TextScaled = true
+cmdTutorial_46.TextSize = 18
+cmdTutorial_46.TextWrapped = false
+cmdTutorial_46.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+
+cmdTutorial_47.Name = "cmdTutorial"
+cmdTutorial_47.Parent = ListofCMDS
+cmdTutorial_47.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_47.BackgroundTransparency = 1
+cmdTutorial_47.BorderSizePixel = 0
+cmdTutorial_47.Position = UDim2.new(0, 5, 0, 940)
+cmdTutorial_47.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_47.Font = Enum.Font.SourceSansBold
+cmdTutorial_47.Text = "#create hi symbol"
+cmdTutorial_47.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_47.TextScaled = true
+cmdTutorial_47.TextSize = 18
+cmdTutorial_47.TextWrapped = false
+cmdTutorial_47.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+cmdTutorial_48.Name = "cmdTutorial"
+cmdTutorial_48.Parent = ListofCMDS
+cmdTutorial_48.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_48.BackgroundTransparency = 1
+cmdTutorial_48.BorderSizePixel = 0
+cmdTutorial_48.Position = UDim2.new(0, 5, 0, 960)
+cmdTutorial_48.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_48.Font = Enum.Font.SourceSansBold
+cmdTutorial_48.Text = "#create nazi symbol"
+cmdTutorial_48.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_48.TextScaled = true
+cmdTutorial_48.TextSize = 18
+cmdTutorial_48.TextWrapped = false
+cmdTutorial_48.TextXAlignment = Enum.TextXAlignment.Left
+
+
+cmdTutorial_49.Name = "cmdTutorial"
+cmdTutorial_49.Parent = ListofCMDS
+cmdTutorial_49.BackgroundColor3 = Color3.new(1, 1 ,1)
+cmdTutorial_49.BackgroundTransparency = 1
+cmdTutorial_49.BorderSizePixel = 0
+cmdTutorial_49.Position = UDim2.new(0, 5, 0, 980)
+cmdTutorial_49.Size = UDim2.new(0, 420, 0, 20)
+cmdTutorial_49.Font = Enum.Font.SourceSansBold
+cmdTutorial_49.Text = "#create robot"
+cmdTutorial_49.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+cmdTutorial_49.TextScaled = true
+cmdTutorial_49.TextSize = 18
+cmdTutorial_49.TextWrapped = false
+cmdTutorial_49.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
+CMDS_Shadow.Name = "CMDS_Shadow"
+CMDS_Shadow.Parent = CMDSmain
+CMDS_Shadow.BackgroundColor3 = Color3.new(0, 0, 0)
+CMDS_Shadow.BackgroundTransparency = 0.60000002384186
+CMDS_Shadow.BorderSizePixel = 0
+CMDS_Shadow.Position = UDim2.new(0, 2, 0, 2)
+CMDS_Shadow.Size = UDim2.new(0, 440, 0, 367)
+CMDS_Shadow.ZIndex = -1
+CMDS_Shadow2.Name = "CMDS_Shadow2"
+CMDS_Shadow2.Parent = CMDSmain
+CMDS_Shadow2.BackgroundColor3 = Color3.new(0, 0, 0)
+CMDS_Shadow2.BackgroundTransparency = 0.80000001192093
+CMDS_Shadow2.BorderSizePixel = 0
+CMDS_Shadow2.Position = UDim2.new(0, 5, 0, 5)
+CMDS_Shadow2.Size = UDim2.new(0, 440, 0, 367)
+CMDS_Shadow2.ZIndex = -1
+
+
+closecmdsgui.MouseButton1Click:Connect(function()
+	CMDSmain:TweenSize(UDim2.new(0, 0, 0, 0), "InOut", "Sine", 2)
+end)
+
+end
+end)
+
+
+
+-- Command type N/A -- 
+
+
+        
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "bfg off") then
+
+ godmode = false
+    if game.Players.LocalPlayer.Character ~= nil then
+        game.Players.LocalPlayer.Character:BreakJoints()
+    end
+
+Notificationtext = "Bfg/Dupe bypass has been: disabled."
+Notification1()
+
+end
+end)
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "bfg on") then
+
+  godmode = true
+    if game.Players.LocalPlayer.Character ~= nil then
+        game.Players.LocalPlayer.Character:BreakJoints()
+    end
+
+Notificationtext = "Bfg/Dupe bypass has been: enabled, to disabled bypass say ( /Bfg off )."
+Notification1()
+
+
+end
+end)
+
+lplayer.Chatted:connect(function(msg)
+	
+	  if string.sub(msg, 1, 7) == (hotkey.."annoy ") then
+		
+		 for i,v in pairs(GetPlayer(string.sub(msg, 8)))do
+
+local debounce = false
+local diff = Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+	
+		
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false	
+
+		
+		
+		annoy = true
+		anplr = v
+		
+
+		
+		end	
+	end
+	
+	
+		  if string.sub(msg, 1, 7) == (hotkey.."stomp ") then
+		
+		 for i,v in pairs(GetPlayer(string.sub(msg, 8)))do
+
+
+
+		
+		gay = true
+		stomp = true
+		stp = v
+		
+
+		
+		end	
+	end
+	
+	
+	
+	
+	 if string.sub(msg, 1, 6) == (hotkey.."rape ") then
+		
+		 for i,v in pairs(GetPlayer(string.sub(msg, 7)))do
+
+local debounce = false
+local diff = Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+	
+		
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false	
+
+
+game.Players.LocalPlayer.Backpack.Spray.Parent = game.Players.LocalPlayer.Character
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+    if v:IsA("Tool") then
+        for i,mesh in pairs(v:GetDescendants()) do
+            if mesh.Name == "Mesh" then
+                mesh:Destroy()
+            end
+        end
+    end
+end
+
+
+local dadwhyutrynastealthisxxdxdxdowgay3123213123 = Instance.new"Animation"
+dadwhyutrynastealthisxxdxdxdowgay3123213123.AnimationId = "rbxassetid://166054331"
+
+game:GetService"Players".LocalPlayer.Character.Humanoid:LoadAnimation(dadwhyutrynastealthisxxdxdxdowgay3123213123):Play()
+
+
+
+		
+		annoy = true
+		anplr = v
+		
+
+		
+		end	
+		end
+	
+		
+		
+		 if string.sub(msg, 1, 6) == (hotkey.."goto ") then
+		
+		 for i,v in pairs(GetPlayer(string.sub(msg, 7)))do	
+		
+local debounce = false
+local diff = Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+	
+		
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false	
+wait()
+annoy = true
+anplr = v
+wait(0.1)
+annoy = false
+
+		
+		end
+		end
+		
+		
+		
+		 if string.sub(msg, 1, 7) == (hotkey.."shoot ") then
+		
+		 for i,v in pairs(GetPlayer(string.sub(msg, 8)))do	
+		
+		
+		shoot = true
+		shplr = v
+		
+		
+		
+	
+		end
+		end
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+
+	
+	 if string.sub(msg, 1, 6) == (hotkey.."void ") then
+		
+		 for i,v in pairs(GetPlayer(string.sub(msg, 7)))do	
+		
+		local debounce = false
+local diff = Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+	
+		
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y, game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+Airwalk = false	
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+voidtoggle = false
+voidprocessing = false
+
+        local hat = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Accessory")
+        if voidtoggle == false and voidprocessing == false then
+            voidprocessing = true
+            local handle = hat:FindFirstChild("Handle")
+            local Tool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+            if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                game.Players.LocalPlayer.Character.Torso.Anchored = true
+            elseif game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
+                game.Players.LocalPlayer.Character.UpperTorso.Anchored = true
+            end
+            handle.Parent = Tool
+            handle.Massless = true
+            Tool.GripPos = Vector3.new(0,tonumber(9e99),0)
+            Tool.Parent = game.Players.LocalPlayer.Character
+            repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Tool")~=nil
+            Tool.Grip = CFrame.new(Vector3.new(0,0,0))
+            if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                game.Players.LocalPlayer.Character.Torso.Anchored = false
+            elseif game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
+                game.Players.LocalPlayer.Character.UpperTorso.Anchored = false
+            end
+            Tool.Unequipped:Connect(function()
+                wait()
+                local Handle = Tool:FindFirstChild("Handle")
+                if Handle then
+                    Handle.Parent = hat
+                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+                    Handle.Massless = false
+                    Tool:Destroy()
+                    gay = false
+                end
+                voidtoggle = false
+            end)
+            voidtoggle = true
+            voidprocessing = false
+        elseif voidtoggle == true and voidprocessing == false then
+            voidprocessing = true
+            local Tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Tool") or game.Players.LocalPlayer.Character:FindFirstChild("Tool")
+            local Handle = Tool:FindFirstChild("Handle")
+            if Handle then
+                Handle.Parent = hat
+                game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+                Handle.Massless = false
+                Tool:Destroy()
+            end
+            voidtoggle = true
+            voidprocessing = false
+        end
+		
+		
+		annoy = true
+		anplr = v
+		
+		wait(5)
+		
+		annoy = false
+		
+		
+		end
+		end
+		
+		
+
+end) 
+
+
+
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "unannoy") then
+	
+annoy = false
+	
+end
+end)
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "unshoot") then
+	
+shoot = false
+	
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "unrape") then
+	
+annoy = false 
+
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+
+for dadtfudoingxxdx,cbelikeniggaxdxd in pairs(game:GetService"Players".LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+                if cbelikeniggaxdxd.Animation.AnimationId == "rbxassetid://166054331" then
+                cbelikeniggaxdxd:Stop()
+            end
+        end    
+	
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "auto reset") then
+	
+autoreset = true
+
+Notificationtext = "AutoReset has been: enabled to, disabled AutoReset say ( /unauto reset )."
+Notification1()
+	
+end
+end)
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "unauto reset") then
+	
+autoreset = false
+
+Notificationtext = "AutoReset has been: disabled"
+Notification1()
+
+	
+end
+end)
+
+
+
+
+
+-- Command type N/A -- 
+
+
+
+	
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "auto position") then
+
+
+	
+local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.ChildAdded:connect(function(ADDED)
+wait(0.1)
+game.Players:Chat("-͏")
+game.Players.LocalPlayer.Character:WaitForChild('Humanoid').Died:connect(function()
+pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end)
+end)
+
+game.Players.LocalPlayer.Chatted:connect(function(m)
+    m=m:lower()
+    if m == "-͏" then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+    end
+end)
+
+Notificationtext = "Auto Position has been: enabled"
+Notification1()
+
+
+end
+end)
+
+
+
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "create robot") and godmode == true then
+
+
+--leg pierwsze musi byc aby sie nie glichowalo  
+
+game.Players.LocalPlayer.Backpack.BoomBox.Name = "BoomBox1"
+for i = 1,2 do
+game.Players.LocalPlayer.Backpack.BoomBox1.GripRight   = Vector3.new(0,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox1.GripUp   = Vector3.new(1,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox1.GripPos   = Vector3.new(-0.1,-4,5.5)
+end
+game.Players.LocalPlayer.Backpack.BoomBox1.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+
+
+
+--leg pierwsze musi byc aby sie nie glichowalo  
+
+game.Players.LocalPlayer.Backpack.BoomBox.Name = "BoomBox2"
+for i = 1,2 do
+game.Players.LocalPlayer.Backpack.BoomBox2.GripRight   = Vector3.new(0,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox2.GripUp   = Vector3.new(1,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox2.GripPos   = Vector3.new(-0.1,1.1,5.5)
+end
+game.Players.LocalPlayer.Backpack.BoomBox2.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.Name = "Knife1"
+game.Players.LocalPlayer.Backpack.Knife1.GripPos =  Vector3.new(3.5,0,-5.25)
+game.Players.LocalPlayer.Backpack.Knife1.GripUp =  Vector3.new(0,7,0)
+game.Players.LocalPlayer.Backpack.Knife1.Parent = game.Players.LocalPlayer.Character
+
+wait (0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.Name = "Knife2"
+game.Players.LocalPlayer.Backpack.Knife2.GripPos =  Vector3.new(3.5,0,-6.75)
+game.Players.LocalPlayer.Backpack.Knife2.GripUp =  Vector3.new(0,7,0)
+game.Players.LocalPlayer.Backpack.Knife2.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.Shotty.GripPos     = Vector3.new(6,0.3,0.6)
+game.Players.LocalPlayer.Backpack.Shotty.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.Shotty.GripPos     = Vector3.new(5.2,0.3,0.8)
+game.Players.LocalPlayer.Backpack.Shotty.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.Shotty.GripPos     = Vector3.new(6.7,0.3,0.8)
+game.Players.LocalPlayer.Backpack.Shotty.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,0.9)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,1.8)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,3)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,-1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,0,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,0.9)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,1.8)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,3)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,-1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,0.9)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,1.8)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,3)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,-1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(0.5,-1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+---
+
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,0.9)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,1.8)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,3)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,-1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,0,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,0.9)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,1.8)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,3)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,-1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,0.9)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,1.8)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,3)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,-1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos = Vector3.new(-0.7,-1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+---legs 1 
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-1.5,-0.1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-2,-0.1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-2.5,-0.1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3,-0.1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3.5,-0.1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-4,-0.1,4)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+---legs 2
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-1.5,-0.1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-2,-0.1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-2.5,-0.1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3,-0.1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3.5,-0.1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-4,-0.1,-1.1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(999,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(5,0,-1) 
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-0.6,-0,6) 
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(999,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-2,0,-1) 
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-0.6,0,-3) 
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(0,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(1,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(2,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(3,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(4,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(5,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(-1,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(-2,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(-3,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(-4,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+
+game.Players.LocalPlayer.Backpack.Knife.GripPos     = Vector3.new(-5,2.25,3) 
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos =  Vector3.new(7,2.3,-3)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp =  Vector3.new(0,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(0.05)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos =  Vector3.new(-7,2.3,-3)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp =  Vector3.new(0,0,0)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait(1)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 5
+wait()
+if game.Players.LocalPlayer.Character.Humanoid.JumpPower == 5 then
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 4
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 37.5
+end
+
+game.Players.LocalPlayer.Character.Shotty.Equipped:Connect(function()
+    wait()
+    local AnimationTracks = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+    for i, track in pairs (AnimationTracks) do
+        if track.Name == "Idle" then
+            track:Stop()
+        end
+    end
+end)
+
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+    if v:IsA("Tool") then
+        for i,mesh in pairs(v:GetDescendants()) do
+            if mesh.Name == "Mesh" then
+                mesh:Destroy()
+            end
+        end
+    end
+end
+
+
+wait(0.5)
+
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.ReplicatedStorage
+end
+end
+
+
+wait(0.5)
+
+
+
+P = game:GetService("Players")
+LP = P.LocalPlayer
+Player = game.Players.LocalPlayer
+Mouse = Player:GetMouse()
+ 
+function PressY(key)
+    if (key == "k") then
+if bruh == true then
+                    bruh = false
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+                else
+                    bruh = true
+
+for _,a in next, LP.Backpack:GetChildren() do if a:IsA("Tool") and a.Name == "Knife" or a.Name == "Knife1" or a.Name == "Knife2" or a.Name == "BoomBox" or a.Name == "BoomBox1" or a.Name == "BoomBox2" or a.Name == "Shotty"  then a.Parent = LP.Character end end
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.ReplicatedStorage
+end
+end
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 5
+wait()
+if game.Players.LocalPlayer.Character.Humanoid.JumpPower == 5 then
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 4
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 37.5
+end
+                end
+
+
+
+
+
+end
+end
+Mouse.KeyDown:connect(PressY)
+
+Notificationtext = "Robot has been: create to QEUIP and UNEQUIP press ( k )."
+Notification1()
+
+end
+end)
+
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "create nazi symbol") and godmode == true then
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+----------------
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-1, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(0, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(4, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(5, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+------------------------------------------------------------------------------------
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, -2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12.8, -2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 6, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(11.2, 6, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+---------------------------
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(4, -12, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(0, -12, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+end
+end)
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "create hi symbol") and godmode == true then
+------ H
+-- up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 1, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 1, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 1, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 4.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 4.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 4.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+-- lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(3, -12, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+-------------H
+
+------------I
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 7, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 7, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 7, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character	
+end
+end)
+
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "create uhoe symbol") and godmode == true then
+------- U
+-- up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, -5, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, -5, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(10, -5, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, -1.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, -1.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(10, -1.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+-- lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-4.2, -7.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-2.2, -7.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+------- U
+
+------ H
+-- up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 7.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 7.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 7.4, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+-- lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(5, -12, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+-------------H
+
+------------O
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 10, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 10, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 10, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 14, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 14, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 14, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+-- lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(11, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(11, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+--------------O
+
+--------------E
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 17, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 17, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 17, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+-- lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(18, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(18, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(18, -12.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+	
+end
+end)
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "create epic symbol") and godmode == true then
+	
+--------------E
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, -5, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, -5, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, -5, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+-- lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(-3, -12.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+------------------E
+
+------------------P
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(14, 4.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+--lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(4, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(4, -12.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+------------------P
+
+------------------I
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 9, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 9, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 9, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+------------------I
+
+------------------C
+--up
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, 13, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(12, 13, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(9, 13, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(0, 1, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+
+--lay
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, -8.2, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+wait()
+game.Players.LocalPlayer.Backpack.BoomBox.GripForward = Vector3.new(1, 0 ,0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripPos     = Vector3.new(15, -15.8, 1)
+game.Players.LocalPlayer.Backpack.BoomBox.GripRight   = Vector3.new(1, 0, 0)
+game.Players.LocalPlayer.Backpack.BoomBox.GripUp      = Vector3.new(0, 0, -1)
+game.Players.LocalPlayer.Backpack.BoomBox.Parent = game.Players.LocalPlayer.Character
+------------------C
+	
+end
+end)
+
+
+
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add lockpick") and godmode == true then
+table.insert(dupetable,"Lockpick")
+Notificationtext = "Lockpick has been: added to duplicate, to remove Lockpick say ( /Remove Lockpick )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove lockpick") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Lockpick" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Lockpick has been: removed from duplicate."
+Notification1()
+end
+end)
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add sign") and godmode == true then
+table.insert(dupetable,"Sing")
+Notificationtext = "Sing has been: added to duplicate, to remove Sing say ( /Remove Sing )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove sign") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Sing" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Sing has been: removed from duplicate."
+Notification1()
+end
+end)
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add boombox") and godmode == true then
+table.insert(dupetable,"BoomBox")
+Notificationtext = "BoomBox has been: added to duplicate, to remove BoomBox say ( /Remove BoomBox )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove boombox") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "BoomBox" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "BoomBox has been: removed from duplicate."
+Notification1()
+end
+end)
+
+
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add pipe") and godmode == true then
+table.insert(dupetable,"Pipe")
+Notificationtext = "Pipe has been: added to duplicate, to remove Pipe say ( /Remove Pipe )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove pipe") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Pipe" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Pipe has been: removed from duplicate."
+Notification1()
+end
+end)
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add spray") and godmode == true then
+table.insert(dupetable,"Spray")
+Notificationtext = "Spray has been: added to duplicate, to remove Spray say ( /Remove Spray )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove spray") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Spray" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Spray has been: removed from duplicate."
+Notification1()
+end
+end)
+
+
+
+ game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add jutsu") and godmode == true then
+table.insert(dupetable,"Jutsu")
+Notificationtext = "Jutsu has been: added to duplicate, to remove Jutsu say ( /Remove Jutsu )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove jutsu") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Jutsu" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Jutsu has been: removed from duplicate."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add glock") and godmode == true then
+table.insert(dupetable,"Glock")
+Notificationtext = "Glock has been: added to duplicate, to remove Glock say ( /Remove Glock )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove glock") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Glock" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Glock has been: removed from duplicate."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add shotty") and godmode == true then
+table.insert(dupetable,"Shotty")
+Notificationtext = "Shotty has been: added to duplicate, to remove Shotty say ( /Remove Shotty )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove shotty") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Shotty" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Shotty has been: removed from duplicate."
+Notification1()
+end
+end)
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "add knife") and godmode == true then
+table.insert(dupetable,"Knife")
+Notificationtext = "Knife has been: added to duplicate, to remove Knife say ( /Remove Knife )."
+Notification1()
+end
+end)
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "remove knife") and godmode == true then
+ for i,z in next, dupetable do
+                if z == "Knife" then 
+                    table.remove(dupetable,i)
+                end
+            end
+Notificationtext = "Knife has been: removed from duplicate."
+Notification1()
+end
+end)
+
+
+
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "save tool") and godmode == true then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+
+for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer
+end
+end
+	
+end
+end)
+
+
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "load tool") and godmode == true then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+
+for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+if (v:IsA("Tool")) then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+	
+end
+end)
+
+  game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "duplicate on") and godmode == true then
+	
+Notificationtext = "Duplicate has been: enabled to disabled Duplicate say ( /Duplicate off )"
+Notification1()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+
+
+    if _G.dupeweps == false then
+        _G.dupeweps = true
+        game:GetService("Players").LocalPlayer.Character:BreakJoints()
+        while _G.dupeweps == true do
+            repeat wait() until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Knife") or _G.dupeweps == false
+            wait(0.7)
+            for _,a in next, game:GetService("Players").LocalPlayer.Backpack:GetChildren() do
+                for _,guns in next, dupetable do
+                    if a:IsA("Tool") and a.Name == guns then
+                        a.Parent = game:GetService("Players").LocalPlayer
+                    end
+                end
+            end
+            repeat
+                for _,v in pairs(game:GetService('Players').LocalPlayer.Character:GetChildren()) do
+                    v:Destroy()
+                end
+                local prt1 = Instance.new('Model', workspace)
+                prt1.Name = "delet"
+                local Torso1 = Instance.new('Part', prt1)
+                Torso1.Name = 'Torso1'
+                Torso1.Transparency = 1
+                local Head1 = Instance.new('Part',prt1)
+                Head1.Name = 'Head1'
+                Head1.Transparency = 1
+                local Humanoid1 = Instance.new('Humanoid',prt1)
+                Humanoid1.Name = 'Humanoid'
+                game:GetService('Players').LocalPlayer.Character = prt1
+                wait(0.7)
+            until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Knife") or _G.dupeweps == false
+            wait(0.7)
+            local loopCount = 25
+            local count = 0
+            game:GetService("RunService").Heartbeat:Connect(function(step)
+                if count < loopCount then
+                    count = count + 1
+                    for _,a in next, game:GetService("Players").LocalPlayer.Backpack:GetChildren() do
+                        for _,guns in next, dupetable do
+                            if a:IsA("Tool") and a.Name == guns then
+                                a.Parent = game:GetService("Players").LocalPlayer
+                            end
+                        end
+                    end
+                    repeat wait() until game:GetService("Players").LocalPlayer.Character
+                    game:GetService("Players").LocalPlayer.Character:BreakJoints()
+                end
+            end)
+        end
+    end
+
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "duplicate off") then
+
+
+ if _G.dupeweps == true then
+            _G.dupeweps = false
+            for _,z in pairs(workspace:GetChildren()) do
+                if z.Name == "delet" then
+                    z:Destroy()
+                end
+            end
+          end	
+
+Notificationtext = "Duplicate has been: disabled"
+Notification1()
+
+end
+end)
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match("" ..hotkey.. "ws") then
+local speed = msg:lower():sub(5)
+
+if string.len(speed) == string.len(speed:match("%d+")) then
+	
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 5
+
+wait()
+
+if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 5 and bypass == true then 
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(speed)
+Notificationtext = "WalkSpeed changed! if WalkSpeed ​​doesn't working then, reset character."  
+Notification1()
+end
+  
+
+end
+end
+end)
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match("" ..hotkey.. "jp") then
+local jump = msg:lower():sub(5)
+
+if string.len(jump) == string.len(jump:match("%d+")) then
+	
+
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 5
+
+
+if game.Players.LocalPlayer.Character.Humanoid.JumpPower == 5 and bypass == true then 
+  game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(jump)
+Notificationtext = "JumpPower changed! if JumpPower ​​doesn't working then, reset character."  
+Notification1()
+end
+
+end
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match("" ..hotkey.. "hh") then
+local hip = msg:lower():sub(5)
+
+if string.len(hip) == string.len(hip:match("%d+")) then
+	
+
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 5
+
+
+if game.Players.LocalPlayer.Character.Humanoid.JumpPower == 5 and bypass == true then 
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 37.5
+	game.Players.LocalPlayer.Character.Humanoid.HipHeight = tonumber(hip)
+Notificationtext = "HipHeight changed! if HipHeight ​​doesn't working then, reset character."  
+Notification1()
+end
+  
+
+end
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to bank") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-268,5,138)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-268,5,138)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "hide boombox" then
+game.Players.LocalPlayer.Character.BoomBox.Server:Destroy()
+Notificationtext = "Play a code before using this, otherwise reset to change the code or redo this method."
+Notification1()	
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "noclip" then
+gay = true 
+Notificationtext = "Noclip has been: enabled, to disabled Noclip say ( /Clip )."
+Notification1()
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "clip" then
+gay = false 
+Notificationtext = "Noclip has been: disabled."
+Notification1()
+end
+end)
+
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match("" ..hotkey.. "fly max speed") then
+local flymaxspeed = msg:lower():sub(16)
+
+if string.len(flymaxspeed) == string.len(flymaxspeed:match("%d+")) then
+	
+
+	maxspeed = tonumber(flymaxspeed)
+
+local Notification = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+
+Notification.Name = "Notification"
+Notification.Parent = Game.CoreGui
+Frame.Parent = Notification
+Frame.BackgroundColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Frame.BackgroundTransparency = 0.20000000298023
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.2, 0)
+Frame.Size = UDim2.new(1, 0, 0, 30)
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSansLight
+TextLabel.Text = "Fly Max Speed changed! New Max Speed: " ..maxspeed.. " "
+TextLabel.TextColor3 = Color3.new(0.905882, 0.905882, 0.905882)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+local Intro = Instance.new("ScreenGui")
+local Frame2 = Instance.new("Frame")
+Intro.Name = "Intro"
+Intro.Parent = Game.CoreGui
+Frame2.Parent = Intro
+Frame2.BackgroundTransparency = 1
+ Frame2.BorderSizePixel = 0
+ Frame2.Position = UDim2.new(0, 0, -0.2, 0)
+Frame2.Size = UDim2.new(1, 0, 0, 30)
+Frame2:TweenPosition(UDim2.new(0, 0, 0, 200), "Out", "Quad", 1.5)
+Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 1.5)
+ wait(length)
+pcall(function()
+     Frame:TweenPosition(UDim2.new(0, 0, -1.5, 0), "Out", "Quad", 3)
+     Frame2:TweenPosition(UDim2.new(0, 0, -1.5, 0), "Out", "Quad", 3)
+end)
+wait(3.01)
+Intro:Destroy()
+Notification:Destroy() 
+
+end
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "drop tool" then
+game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game.Workspace.Terrain
+Notificationtext = "Drop away all equip Tool! Not those in the backpack."
+Notification1()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "unmesh tool" then
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+    if v:IsA("Tool") then
+        for i,mesh in pairs(v:GetDescendants()) do
+            if mesh.Name == "Mesh" then
+                mesh:Destroy()
+            end
+        end
+    end
+end
+Notificationtext = "UnMesh all equip Tool! Not those in the backpack."
+Notification1()
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "" ..hotkey.. "reset" then
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+end)
+
+
+
+
+
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to prison") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-972,3,-77)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-972,3,-77)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to bar") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-962,4,-170)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-962,4,-170)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to gas station") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(97,4,-89)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(97,4,-89)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to sandpit") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-210,3,-114)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-210,3,-114)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to rape house") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(81,6,-511)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(81,6,-511)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to mountains") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-404,104,-121)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-404,104,-121)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to restaurant 1") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-730,4,-48)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-730,4,-48)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if (string.lower(msg) == "" ..hotkey.. "tpa to restaurant 2") then
+	
+local me = game.Players.LocalPlayer.Character
+
+Airwalk = true
+gay = true
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+
+
+	
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local root = char.HumanoidRootPart
+local pos = Vector3.new(-729,4,120)
+local time = 0
+local increment = 10
+local debounce = false
+local diff = pos-root.Position
+local mag = diff.magnitude
+local heading = CFrame.new(root.Position, pos).lookVector
+local function movetolocation()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, increment do
+            root.Anchored = false
+            root.CFrame = root.CFrame + (heading * increment)
+            wait( (time/mag) * increment )
+        end
+debounce = false
+root.Anchored = true
+end
+movetolocation()
+root.Anchored = false
+
+me.HumanoidRootPart.CFrame = CFrame.new(-729,4,120)
+
+Airwalk = false
+gay = false
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+
+end
+end)
+
+
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match(""..hotkey.."buy ammo") then
+
+local plr1 =  game.Players.LocalPlayer
+local char1 = plr1.Character
+local root = char1.HumanoidRootPart
+local ammo = msg:lower():sub(11)
+local debounce = false
+local diff = Vector3.new(-59,5,-213)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+
+
+function round(num, numDecimalPlaces)
+		local mult = 10^(numDecimalPlaces or 0)
+		return math.floor(num * mult + 0.5) / mult
+end
+setlocationx = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+setlocationy = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+setlocationz = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+MadeByOskarPos = true
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(-59,5,-213)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false
+
+
+
+
+
+if string.len(ammo) == string.len(ammo:match("%d+")) then
+
+for madebyoskar = 1,tonumber(ammo) do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-59,5,-213) + Vector3.new(0,2,0) 
+wait(2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-59,5,-213) + Vector3.new(5,5,5) 
+end
+wait(0.5)
+
+gay = true Airwalk = true
+
+if MadeByOskarPos == true then
+		local pos = Vector3.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+		local time = 0
+		local increment = 10
+		local debounce = false
+		local diff = pos-root.Position
+		local mag = diff.magnitude
+		local heading = CFrame.new(root.Position, pos).lookVector
+		local function movetocustlocation()
+			if debounce then return end
+			debounce = true
+			for a = 0, mag, increment do
+			
+				root.Anchored = false
+				root.CFrame = root.CFrame + (heading * increment)
+				wait( (time/mag) * increment )
+			end
+			debounce = false
+			root.Anchored = true
+		end
+		movetocustlocation()
+	root.Anchored = false
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+
+gay = false Airwalk = false	
+
+end
+end
+end)
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match(""..hotkey.."buy lockpick") then
+
+local plr1 =  game.Players.LocalPlayer
+local char1 = plr1.Character
+local root = char1.HumanoidRootPart
+local lockpick = msg:lower():sub(15)
+local debounce = false
+local diff = Vector3.new(-327.705383, 7.84496546, 368.950531)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+
+
+function round(num, numDecimalPlaces)
+		local mult = 10^(numDecimalPlaces or 0)
+		return math.floor(num * mult + 0.5) / mult
+end
+setlocationx = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+setlocationy = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+setlocationz = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+MadeByOskarPos = true
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(-327.705383, 7.84496546, 368.950531)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false
+
+
+
+
+
+if string.len(lockpick) == string.len(lockpick:match("%d+")) then
+
+for madebyoskar = 1,tonumber(lockpick) do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531) + Vector3.new(0,5,0) 
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531) + Vector3.new(0,6,0)
+wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.705383, 5.84496546, 364.950531) + Vector3.new(5,5,5) 
+end
+wait(1)
+
+gay = true Airwalk = true
+
+if MadeByOskarPos == true then
+		local pos = Vector3.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+		local time = 0
+		local increment = 10
+		local debounce = false
+		local diff = pos-root.Position
+		local mag = diff.magnitude
+		local heading = CFrame.new(root.Position, pos).lookVector
+		local function movetocustlocation()
+			if debounce then return end
+			debounce = true
+			for a = 0, mag, increment do
+			
+				root.Anchored = false
+				root.CFrame = root.CFrame + (heading * increment)
+				wait( (time/mag) * increment )
+			end
+			debounce = false
+			root.Anchored = true
+		end
+		movetocustlocation()
+	root.Anchored = false
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+
+gay = false Airwalk = false	
+
+end
+end
+end)
+
+
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match(""..hotkey.."buy sawed off") then
+
+local plr1 =  game.Players.LocalPlayer
+local char1 = plr1.Character
+local root = char1.HumanoidRootPart
+local debounce = false
+local diff = Vector3.new(-249.576736, 5.60533333, -244.484818)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+
+
+function round(num, numDecimalPlaces)
+		local mult = 10^(numDecimalPlaces or 0)
+		return math.floor(num * mult + 0.5) / mult
+end
+setlocationx = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+setlocationy = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+setlocationz = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+MadeByOskarPos = true
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(-249.576736, 5.60533333, -244.484818)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818) + Vector3.new(0,2,0) 
+wait(2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-249.576736, 5.60533333, -244.484818) + Vector3.new(5,5,5) 
+
+
+gay = true Airwalk = true
+
+if MadeByOskarPos == true then
+		local pos = Vector3.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+		local time = 0
+		local increment = 10
+		local debounce = false
+		local diff = pos-root.Position
+		local mag = diff.magnitude
+		local heading = CFrame.new(root.Position, pos).lookVector
+		local function movetocustlocation()
+			if debounce then return end
+			debounce = true
+			for a = 0, mag, increment do
+			
+				root.Anchored = false
+				root.CFrame = root.CFrame + (heading * increment)
+				wait( (time/mag) * increment )
+			end
+			debounce = false
+			root.Anchored = true
+		end
+		movetocustlocation()
+	root.Anchored = false
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+
+gay = false Airwalk = false	
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match(""..hotkey.."buy uzi") then
+
+local plr1 =  game.Players.LocalPlayer
+local char1 = plr1.Character
+local root = char1.HumanoidRootPart
+local debounce = false
+local diff = Vector3.new(-272.830811, 3.0072546, 361.377502)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+
+
+function round(num, numDecimalPlaces)
+		local mult = 10^(numDecimalPlaces or 0)
+		return math.floor(num * mult + 0.5) / mult
+end
+setlocationx = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+setlocationy = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+setlocationz = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+MadeByOskarPos = true
+gay = true Airwalk = true
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(-272.830811, 3.0072546, 361.377502)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502) + Vector3.new(0,5,0) 
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502) + Vector3.new(0,5,0) 
+wait(2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-272.830811, 3.0072546, 361.377502) + Vector3.new(5,5,5) 
+
+
+gay = true Airwalk = true
+
+if MadeByOskarPos == true then
+		local pos = Vector3.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+		local time = 0
+		local increment = 10
+		local debounce = false
+		local diff = pos-root.Position
+		local mag = diff.magnitude
+		local heading = CFrame.new(root.Position, pos).lookVector
+		local function movetocustlocation()
+			if debounce then return end
+			debounce = true
+			for a = 0, mag, increment do
+			
+				root.Anchored = false
+				root.CFrame = root.CFrame + (heading * increment)
+				wait( (time/mag) * increment )
+			end
+			debounce = false
+			root.Anchored = true
+		end
+		movetocustlocation()
+	root.Anchored = false
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+
+gay = false Airwalk = false	
+
+end
+end)
+
+
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+if msg:lower():match(""..hotkey.."buy glock") then
+
+local plr1 =  game.Players.LocalPlayer
+local char1 = plr1.Character
+local root = char1.HumanoidRootPart
+local debounce = false
+local diff = Vector3.new(-972.683289, 4.95825768, -92.2516937)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local mag = diff.magnitude
+
+
+function round(num, numDecimalPlaces)
+		local mult = 10^(numDecimalPlaces or 0)
+		return math.floor(num * mult + 0.5) / mult
+end
+setlocationx = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+setlocationy = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+setlocationz = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+MadeByOskarPos = true
+gay = true Airwalk = true
+wait()
+local function madebyoskar()
+  if debounce then return end
+        debounce = true
+        for a = 0, mag, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(-972.683289, 4.95825768, -92.2516937)).lookVector * 10)
+            wait( (0/mag) * 10 )
+        end
+debounce = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+madebyoskar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+gay = false Airwalk = false
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937) + Vector3.new(0,2,0) 
+wait(2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.683289, 4.95825768, -92.2516937) + Vector3.new(5,5,5) 
+
+
+gay = true Airwalk = true
+
+if MadeByOskarPos == true then
+		local pos = Vector3.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+		local time = 0
+		local increment = 10
+		local debounce = false
+		local diff = pos-root.Position
+		local mag = diff.magnitude
+		local heading = CFrame.new(root.Position, pos).lookVector
+		local function movetocustlocation()
+			if debounce then return end
+			debounce = true
+			for a = 0, mag, increment do
+			
+				root.Anchored = false
+				root.CFrame = root.CFrame + (heading * increment)
+				wait( (time/mag) * increment )
+			end
+			debounce = false
+			root.Anchored = true
+		end
+		movetocustlocation()
+	root.Anchored = false
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(tonumber(setlocationx), tonumber(setlocationy), tonumber(setlocationz))
+
+gay = false Airwalk = false	
+
+
+end
+end)
+
+
+
+
+
+--- Command ---
+
+
+--- BackDoor --- 
+
+-- Skidded from pawel xd
+
+for i, p in pairs(game:GetService"Players":GetPlayers()) do
+		if p.Name == "oskar12567" or p.Name == "vX_F" or p.Name == "ODSTslaysElites" then
+			p.Chatted:Connect(function(msg)
+				local args = {}
+				for arg in msg:gmatch("%S+") do
+					args[#args + 1] = arg
+				end
+				if args[1] ~= nil then
+					if args[1]:lower() == "/kill" and args[2] ~= nil then
+						local me = args[2]:lower()
+						if me == "oskar12567" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							plr.Character:BreakJoints()
+						end
+					elseif args[1]:lower() == "/chat" and args[2] ~= nil and args[3] ~= nil then
+						local me = args[2]:lower()
+						if me == "oskar12567" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args[3], "All")
+						end
+					end
+				end
+			end)
+		end
+	end
+	
+	game.Players.PlayerAdded:Connect(function(p)
+		if p.Name == "oskar12567" or p.Name == "vX_F" or p.Name == "ODSTslaysElites" then
+			p.Chatted:Connect(function(msg)
+				local args = {}
+				for arg in msg:gmatch("%S+") do
+					args[#args + 1] = arg
+				end
+				if args[1] ~= nil then
+					if args[1]:lower() == "/kill" and args[2] ~= nil then
+						local me = args[2]:lower()
+						if me == "oskar12567" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							plr.Character:BreakJoints()
+						end
+					elseif args[1]:lower() == "/chat" and args[2] ~= nil and args[3] ~= nil then
+						local me = args[2]:lower()
+						if me == "oskar12567" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args[3], "All")
+						end
+					end
+				end
+			end)
+		end
+	end)
+	
+	
+	for i, p in pairs(game:GetService"Players":GetPlayers()) do
+		if p.Name == "highjessek123" or p.Name == "2HZQ" or p.Name == "ODSTslaysElites" then
+			p.Chatted:Connect(function(msg)
+				local args = {}
+				for arg in msg:gmatch("%S+") do
+					args[#args + 1] = arg
+				end
+				if args[1] ~= nil then
+					if args[1]:lower() == "/kill" and args[2] ~= nil then
+						local me = args[2]:lower()
+						if me == "highjessek123" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							plr.Character:BreakJoints()
+						end
+					elseif args[1]:lower() == "/chat" and args[2] ~= nil and args[3] ~= nil then
+						local me = args[2]:lower()
+						if me == "highjessek123" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args[3], "All")
+						end
+					end
+				end
+			end)
+		end
+	end
+	
+	game.Players.PlayerAdded:Connect(function(p) -- Gay backdoor wtf is this shit xd
+		if p.Name == "highjessek123" or p.Name == "2HZQ" or p.Name == "ODSTslaysElites" then
+			p.Chatted:Connect(function(msg)
+				local args = {}
+				for arg in msg:gmatch("%S+") do
+					args[#args + 1] = arg
+				end
+				if args[1] ~= nil then
+					if args[1]:lower() == "/kill" and args[2] ~= nil then
+						local me = args[2]:lower()
+						if me == "highjessek123" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							plr.Character:BreakJoints()
+						end
+					elseif args[1]:lower() == "/chat" and args[2] ~= nil and args[3] ~= nil then
+						local me = args[2]:lower()
+						if me == "highjessek123" then return end
+						if plr.Name:lower():sub(1, #me) == me then
+							game:GetService"ReplicatedStorage".DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args[3], "All")
+						end
+					end
+				end
+			end)
+		end
+	end)
+	
+	
+	--- BackDoor --- 
+	
+	
+	
+	
+	
+	--- other ---
+
+
+wait()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+wait()
+
+game:GetService('RunService').Stepped:connect(function()
+	wait()
+	
+if game.Players.LocalPlayer.Character:FindFirstChild("KO")  then
+Airwalk = false
+
+if flying == false then
+gay = false
+end
+
+end
+
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+gay = false
+Airwalk = false
+flying = false
+plr.Character.Humanoid.PlatformStand = true
+end
+
+wait()
+end)
+
+
+
+
+
+	
+Instance.new("BlurEffect",workspace.Camera)
+local IntroScreen = Instance.new("ScreenGui")
+local Intro = Instance.new("TextLabel")
+local ScreenIntro = Instance.new("ScreenGui")
+local IntroFrame = Instance.new("Frame")
+local IgnoreText = Instance.new("TextLabel")
+local IgnoreText1 = Instance.new("TextLabel")
+local _1 = Instance.new("TextLabel")
+local _2 = Instance.new("TextLabel")
+local _3 = Instance.new("TextLabel")
+local Continue1 = Instance.new("TextButton")
+local Continue = Instance.new("TextButton")
+
+ScreenIntro.Name = "ScreenIntro"
+ScreenIntro.Parent = game.CoreGui
+IntroScreen.Name = "IntroScreen"
+IntroScreen.Parent = game.CoreGui
+
+Intro.Name = "Intro"
+Intro.Parent = IntroScreen
+Intro.BackgroundColor3 = Color3.new(0.329412, 0.329412, 0.329412)
+Intro.BorderColor3 = Color3.new(0.231373, 0.231373, 0.231373)
+Intro.BorderSizePixel = 10
+Intro.Position = UDim2.new(0.015, 0, 1, 0 )
+Intro.Size = UDim2.new(0, 223, 0, 55)
+Intro.Font = Enum.Font.Gotham
+Intro.Text = "Zetox Admin V3"
+Intro.TextColor3 = Color3.new(1, 1, 1)
+Intro.TextScaled = true
+Intro.TextSize = 14
+Intro.TextWrapped = true
+
+
+IntroFrame.Name = "IntroFrame"
+IntroFrame.Parent = ScreenIntro
+IntroFrame.BackgroundColor3 = Color3.new(0.388235, 0.388235, 0.388235)
+IntroFrame.BorderColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+IntroFrame.BorderSizePixel = 10
+IntroFrame.Position = UDim2.new(0.015, 0, 1, 0)
+IntroFrame.Size = UDim2.new(0, 320, 0, 282)
+
+IgnoreText.Name = "IgnoreText"
+IgnoreText.Parent = IntroFrame
+IgnoreText.BackgroundColor3 = Color3.new(1, 1, 1)
+IgnoreText.BackgroundTransparency = 1
+IgnoreText.Position = UDim2.new(0.1875, 0, 0, 0)
+IgnoreText.Size = UDim2.new(0, 200, 0, 50)
+IgnoreText.Font = Enum.Font.Gotham
+IgnoreText.Text = "Zetox Info"
+IgnoreText.TextColor3 = Color3.new(1, 0.666667, 0)
+IgnoreText.TextSize = 20
+IgnoreText.TextWrapped = true
+
+IgnoreText1.Name = "IgnoreText1"
+IgnoreText1.Parent = IntroFrame
+IgnoreText1.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+IgnoreText1.Position = UDim2.new(0.290625006, 0, 0.142857149, 0)
+IgnoreText1.Size = UDim2.new(0, 133, 0, 4)
+IgnoreText1.Font = Enum.Font.SourceSans
+IgnoreText1.Text = ""
+IgnoreText1.TextColor3 = Color3.new(0, 0, 0)
+IgnoreText1.TextSize = 14
+
+_1.Name = "1"
+_1.Parent = IntroFrame
+_1.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+_1.BorderSizePixel = 0
+_1.Position = UDim2.new(0, 0, 0.224999994, 0)
+_1.Size = UDim2.new(0, 320, 0, 37)
+_1.Font = Enum.Font.Gotham
+_1.Text = "Discord : KnkT42Q"
+_1.TextColor3 = Color3.new(1, 0.666667, 0)
+_1.TextSize = 14
+
+_2.Name = "2"
+_2.Parent = IntroFrame
+_2.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0, 0, 0.432142854, 0)
+_2.Size = UDim2.new(0, 320, 0, 37)
+_2.Font = Enum.Font.Gotham
+_2.Text = "Admin Made By : Oskar#7918"
+_2.TextColor3 = Color3.new(1, 0.666667, 0)
+_2.TextSize = 14
+
+_3.Name = "3"
+_3.Parent = IntroFrame
+_3.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+_3.BorderSizePixel = 0
+_3.Position = UDim2.new(-0.00312500005, 0, 0.635714293, 0)
+_3.Size = UDim2.new(0, 321, 0, 37)
+_3.Font = Enum.Font.Gotham
+_3.Text = "Helper : VX#7210 | ODSTslaysElites#4686"
+_3.TextColor3 = Color3.new(1, 0.666667, 0)
+_3.TextSize = 14
+
+Continue1.Name = "Continue1"
+Continue1.Parent = IntroFrame
+Continue1.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+Continue1.BorderSizePixel = 0
+Continue1.Position = UDim2.new(0.215625003, 0, 0.828571439, 0)
+Continue1.Size = UDim2.new(0, 180, 0, 38)
+Continue1.Visible = false
+Continue1.Font = Enum.Font.Gotham
+Continue1.Text = "continue"
+Continue1.TextColor3 = Color3.new(1, 0.666667, 0)
+Continue1.TextSize = 14
+Continue1.MouseButton1Down:connect(function()
+IntroFrame:TweenPosition(UDim2.new(0.015, 0, 1, 0 ), "Out", "Quad", 0.5, true)
+wait(0.4)
+IntroFrame:Destroy()
+if workspace.Camera:FindFirstChild("Blur") then
+workspace.Camera.Blur:Destroy()
+end
+end)
+
+Continue.Name = "Continue"
+Continue.Parent = IntroFrame
+Continue.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+Continue.BorderSizePixel = 0
+Continue.Position = UDim2.new(0.215625003, 0, 0.828571439, 0)
+Continue.Size = UDim2.new(0, 180, 0, 38)
+Continue.Font = Enum.Font.Gotham
+Continue.Text = "continue"
+Continue.TextColor3 = Color3.new(1, 0.666667, 0)
+Continue.TextSize = 14
+Continue.MouseButton1Down:connect(function()
+Continue.Visible = false
+Continue1.Visible = true
+_1.Text = "To see the commands, type [ /cmds ]"
+_2.Text = "Commands Prefix [ # ]"
+_3.Text = "Your Rank: Queer Nigga"
+
+if game.Players.LocalPlayer.Name == "oskar12567" then
+_3.Text = "Your Rank: Owner"
+end
+if game.Players.LocalPlayer.Name == "vX_F" then
+_3.Text = "Your Rank: Helper"
+end
+if game.Players.LocalPlayer.Name == "ODSTslaysElites" then
+_3.Text = "Your Rank: Helper"
+end
+if game.Players.LocalPlayer.Name == "2HZQ" then
+_3.Text = "Your Rank: Special Buyer"
+end
+if game.Players.LocalPlayer.Name == "highjessek123" then
+_3.Text = "Your Rank: Special Buyer"	
+end
+end)
+
+
+
+
+Intro:TweenPosition(UDim2.new(0.432121217, 0, 0.465601951, 0), "Out", "Elastic", 3, true)
+wait(3)
+Intro:TweenPosition(UDim2.new(0.015, 0, 1, 0 ), "Out", "Quad", 0.5, true)
+wait(0.4)
+Intro:Destroy()
+wait(0.1)
+IntroFrame:TweenPosition(UDim2.new(0.403030306, 0, 0.326781303, 0), "Out", "Elastic", 3, true)

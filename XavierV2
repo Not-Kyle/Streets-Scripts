@@ -1,0 +1,178 @@
+local Xavier2993 = Instance.new("ScreenGui")
+local XavierFrame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Speed = Instance.new("TextButton")
+local TextBox = Instance.new("TextBox")
+local AltDelete = Instance.new("TextButton")
+local ESP = Instance.new("TextButton")
+local Admin = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local OpenGui = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+--Properties:
+Xavier2993.Name = "Xavier#2993"
+Xavier2993.Parent = game.CoreGui
+Xavier2993.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ 
+XavierFrame.Name = "XavierFrame"
+XavierFrame.Parent = Xavier2993
+XavierFrame.BackgroundColor3 = Color3.new(0.333333, 1, 1)
+XavierFrame.Position = UDim2.new(0.35825181, 0, 0.257611245, 0)
+XavierFrame.Size = UDim2.new(0, 410, 0, 413)
+XavierFrame.Visible = false
+XavierFrame.Active = true
+XavierFrame.Draggable = true
+ 
+TextLabel.Parent = XavierFrame
+TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel.Size = UDim2.new(0, 410, 0, 57)
+TextLabel.Font = Enum.Font.Fantasy
+TextLabel.Text = "TheStreet's NightMare"
+TextLabel.TextColor3 = Color3.new(1, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+ 
+Speed.Name = "Speed"
+Speed.Parent = XavierFrame
+Speed.BackgroundColor3 = Color3.new(0, 0, 0)
+Speed.Position = UDim2.new(0, 0, 0.738498807, 0)
+Speed.Size = UDim2.new(0, 130, 0, 50)
+Speed.Font = Enum.Font.Fantasy
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.new(1, 0, 0)
+Speed.TextScaled = true
+Speed.TextSize = 14
+Speed.TextStrokeColor3 = Color3.new(1, 0, 0)
+Speed.TextWrapped = true
+local plr = game:GetService("Players").LocalPlayer
+local char = plr.Character
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local hum = char:FindFirstChild("HumanoidRootPart")
+--yeet
+Speed.MouseButton1Down:connect(function()
+    local plr = game:GetService("Players").LocalPlayer
+    local char = plr.Character
+    local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+    local hum = char:FindFirstChild("HumanoidRootPart")
+    mouse.KeyDown:connect(function(key)
+        if key == TextBox.Text then
+            loop = true
+            while loop do
+                hum.CFrame = hum.CFrame + hum.CFrame.lookVector * 3
+                wait()
+            end
+            end
+            end)
+    end)
+    
+    mouse.KeyUp:connect(function(key)
+        if key == TextBox.Text then
+            loop = false
+        end
+end)
+ 
+TextBox.Parent = XavierFrame
+TextBox.BackgroundColor3 = Color3.new(0, 0, 0)
+TextBox.Position = UDim2.new(0.343883634, 0, 0.738498807, 0)
+TextBox.Size = UDim2.new(0, 171, 0, 50)
+TextBox.Font = Enum.Font.GothamBlack
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.new(1, 0, 0)
+TextBox.TextScaled = true
+TextBox.TextSize = 14
+TextBox.TextWrapped = true
+ 
+AltDelete.Name = "Alt Delete'"
+AltDelete.Parent = XavierFrame
+AltDelete.BackgroundColor3 = Color3.new(0, 0, 0)
+AltDelete.Position = UDim2.new(0, 0, 0.559322059, 0)
+AltDelete.Size = UDim2.new(0, 130, 0, 50)
+AltDelete.Font = Enum.Font.Fantasy
+AltDelete.Text = "Alt Delete"
+AltDelete.TextColor3 = Color3.new(1, 0, 0)
+AltDelete.TextScaled = true
+AltDelete.TextSize = 14
+AltDelete.TextStrokeColor3 = Color3.new(1, 0, 0)
+AltDelete.TextWrapped = true
+--Hold CLTR and click to delete parts (you need to rejoin if you delete something wrong!! W/ <3 EramsorGR <3
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftAlt) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+ 
+ESP.Name = "ESP"
+ESP.Parent = XavierFrame
+ESP.BackgroundColor3 = Color3.new(0, 0, 0)
+ESP.Position = UDim2.new(0, 0, 0.210653752, 0)
+ESP.Size = UDim2.new(0, 130, 0, 50)
+ESP.Font = Enum.Font.Fantasy
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.new(1, 0, 0)
+ESP.TextScaled = true
+ESP.TextSize = 14
+ESP.TextStrokeColor3 = Color3.new(1, 0, 0)
+ESP.TextWrapped = true
+ESP.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/PrQrwBAR"))()
+end)
+ 
+Admin.Name = "Admin"
+Admin.Parent = XavierFrame
+Admin.BackgroundColor3 = Color3.new(0, 0, 0)
+Admin.Position = UDim2.new(0, 0, 0.384987891, 0)
+Admin.Size = UDim2.new(0, 130, 0, 50)
+Admin.Font = Enum.Font.Fantasy
+Admin.Text = "Admin"
+Admin.TextColor3 = Color3.new(1, 0, 0)
+Admin.TextScaled = true
+Admin.TextSize = 14
+Admin.TextStrokeColor3 = Color3.new(1, 0, 0)
+Admin.TextWrapped = true
+Admin.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/8zh7FiHv"))()
+end)
+ 
+Close.Name = "Close"
+Close.Parent = XavierFrame
+Close.BackgroundColor3 = Color3.new(0, 0, 0)
+Close.Position = UDim2.new(0.682926834, 0, 0.210653752, 0)
+Close.Size = UDim2.new(0, 130, 0, 50)
+Close.Font = Enum.Font.Fantasy
+Close.Text = "Close"
+Close.TextColor3 = Color3.new(1, 0, 0)
+Close.TextScaled = true
+Close.TextSize = 14
+Close.TextStrokeColor3 = Color3.new(1, 0, 0)
+Close.TextWrapped = true
+Close.MouseButton1Click:connect(function()
+    XavierFrame.Visible = false
+    OpenGui.Visible = true
+end)
+ 
+OpenGui.Name = "OpenGui"
+OpenGui.Parent = Xavier2993
+OpenGui.BackgroundColor3 = Color3.new(1, 1, 1)
+OpenGui.Position = UDim2.new(0, 0, 0.448477745, 0)
+OpenGui.Size = UDim2.new(0, 100, 0, 36)
+ 
+Open.Name = "Open"
+Open.Parent = OpenGui
+Open.BackgroundColor3 = Color3.new(0, 0, 0)
+Open.Position = UDim2.new(-0.156829238, 0, -0.197067529, 0)
+Open.Size = UDim2.new(0, 130, 0, 50)
+Open.Font = Enum.Font.Fantasy
+Open.Text = "Open"
+Open.TextColor3 = Color3.new(1, 0, 0)
+Open.TextScaled = true
+Open.TextSize = 14
+Open.TextStrokeColor3 = Color3.new(1, 0, 0)
+Open.TextWrapped = true
+Open.MouseButton1Click:connect(function()
+    XavierFrame.Visible = true
+    OpenGui.Visible = false
+end)

@@ -1,0 +1,692 @@
+print("Join the Team EXPO Discord for updates and other scripts for the streets and other games")
+print("credits to aidez for a couple of scripts in here")
+print("The speed is a chat function say, :speed or :unspeed to use it")
+print("For the aimbot click on a player with a gun out and it will begin to start firing to stop firing press ,")
+print("If that doenst work just put it away and then click another player when needed")
+ 
+local freeuservegan = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local discord = Instance.new("TextLabel")
+local exit = Instance.new("TextButton")
+local Aimbot = Instance.new("TextButton")
+local Music = Instance.new("TextButton")
+local Reset = Instance.new("TextButton")
+local AntiVoid = Instance.new("TextButton")
+local AudioLogger = Instance.new("TextButton")
+local Void = Instance.new("TextButton")
+--Properties:
+freeuservegan.Name = "freeuservegan"
+freeuservegan.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+freeuservegan.ResetOnSpawn = false
+ 
+Frame.Parent = freeuservegan
+Frame.Active = true
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame.BackgroundTransparency = 0.5
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.499584407, 0, 0.5, 0)
+Frame.Selectable = true
+Frame.Size = UDim2.new(0, 300, 0, 175)
+Frame.Draggable = true
+ 
+title.Name = "title"
+title.Parent = Frame
+title.BackgroundColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.BorderSizePixel = 0
+title.Size = UDim2.new(0, 270, 0, 30)
+title.Font = Enum.Font.SourceSans
+title.Text = "Degraded Vegan GUI"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextScaled = true
+title.TextSize = 14
+title.TextWrapped = true
+ 
+discord.Name = "discord"
+discord.Parent = Frame
+discord.BackgroundColor3 = Color3.new(1, 1, 1)
+discord.BackgroundTransparency = 1
+discord.BorderSizePixel = 0
+discord.Position = UDim2.new(0, 0, 0.171428576, 0)
+discord.Size = UDim2.new(0, 300, 0, 15)
+discord.Font = Enum.Font.SourceSans
+discord.Text = "Team Expo Discord INV: CtcNGuz"
+discord.TextColor3 = Color3.new(1, 1, 1)
+discord.TextSize = 14
+discord.TextWrapped = true
+ 
+exit.Name = "exit"
+exit.Parent = Frame
+exit.BackgroundColor3 = Color3.new(1, 0, 0)
+exit.BackgroundTransparency = 0.5
+exit.BorderSizePixel = 0
+exit.Position = UDim2.new(0.899999976, 0, 0, 0)
+exit.Rotation = 1
+exit.Size = UDim2.new(0, 30, 0, 30)
+exit.Font = Enum.Font.SourceSans
+exit.Text = "X"
+exit.TextColor3 = Color3.new(0, 0, 0)
+exit.TextScaled = true
+exit.TextSize = 14
+exit.TextWrapped = true
+ 
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = Frame
+Aimbot.BackgroundColor3 = Color3.new(1, 1, 1)
+Aimbot.BorderSizePixel = 0
+Aimbot.Position = UDim2.new(0.349999994, 0, 0.411428571, 0)
+Aimbot.Size = UDim2.new(0, 90, 0, 30)
+Aimbot.Font = Enum.Font.SourceSans
+Aimbot.Text = "Aimbot"
+Aimbot.TextColor3 = Color3.new(0, 0, 0)
+Aimbot.TextScaled = true
+Aimbot.TextSize = 14
+Aimbot.TextWrapped = true
+ 
+Music.Name = "Music"
+Music.Parent = Frame
+Music.BackgroundColor3 = Color3.new(1, 1, 1)
+Music.BorderSizePixel = 0
+Music.Position = UDim2.new(0.0266666673, 0, 0.411428571, 0)
+Music.Size = UDim2.new(0, 90, 0, 30)
+Music.Font = Enum.Font.SourceSans
+Music.Text = "MusicList"
+Music.TextColor3 = Color3.new(0, 0, 0)
+Music.TextScaled = true
+Music.TextSize = 14
+Music.TextWrapped = true
+ 
+Reset.Name = "Reset"
+Reset.Parent = Frame
+Reset.BackgroundColor3 = Color3.new(1, 1, 1)
+Reset.BorderSizePixel = 0
+Reset.Position = UDim2.new(0.670000017, 0, 0.411428571, 0)
+Reset.Size = UDim2.new(0, 90, 0, 30)
+Reset.Font = Enum.Font.SourceSans
+Reset.Text = "Reset"
+Reset.TextColor3 = Color3.new(0, 0, 0)
+Reset.TextScaled = true
+Reset.TextSize = 14
+Reset.TextWrapped = true
+ 
+AntiVoid.Name = "AntiVoid"
+AntiVoid.Parent = Frame
+AntiVoid.BackgroundColor3 = Color3.new(1, 1, 1)
+AntiVoid.BorderSizePixel = 0
+AntiVoid.Position = UDim2.new(0.670000017, 0, 0.668571413, 0)
+AntiVoid.Size = UDim2.new(0, 90, 0, 30)
+AntiVoid.Font = Enum.Font.SourceSans
+AntiVoid.Text = "Anti Void"
+AntiVoid.TextColor3 = Color3.new(0, 0, 0)
+AntiVoid.TextScaled = true
+AntiVoid.TextSize = 14
+AntiVoid.TextWrapped = true
+ 
+AudioLogger.Name = "AudioLogger"
+AudioLogger.Parent = Frame
+AudioLogger.BackgroundColor3 = Color3.new(1, 1, 1)
+AudioLogger.BorderSizePixel = 0
+AudioLogger.Position = UDim2.new(0.0266666673, 0, 0.668571413, 0)
+AudioLogger.Size = UDim2.new(0, 90, 0, 30)
+AudioLogger.Font = Enum.Font.SourceSans
+AudioLogger.Text = "Audio Logger"
+AudioLogger.TextColor3 = Color3.new(0, 0, 0)
+AudioLogger.TextScaled = true
+AudioLogger.TextSize = 14
+AudioLogger.TextWrapped = true
+ 
+Void.Name = "Void"
+Void.Parent = Frame
+Void.BackgroundColor3 = Color3.new(1, 1, 1)
+Void.BorderSizePixel = 0
+Void.Position = UDim2.new(0.349999994, 0, 0.668571413, 0)
+Void.Size = UDim2.new(0, 90, 0, 30)
+Void.Font = Enum.Font.SourceSans
+Void.Text = "Void"
+Void.TextColor3 = Color3.new(0, 0, 0)
+Void.TextScaled = true
+Void.TextSize = 14
+Void.TextWrapped = true
+ 
+function SCRIPT_CRRC71_FAKESCRIPT() -- exit.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = exit
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_CRRC71_FAKESCRIPT))
+function SCRIPT_XUCD69_FAKESCRIPT() -- Aimbot.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = Aimbot
+	script.Parent.MouseButton1Click:Connect(function()
+		print("How to use Team Expo Aimbot")
+		print("Click on your enemy with any weapon")
+		print("It will begin to automatically shoot your enemy")
+		print("To stop it please press   ,")
+		local allowed = true
+	script.Parent.MouseButton1Click:Connect(function()
+		mouse = game.Players.LocalPlayer:getMouse()
+	mouse.Button1Down:connect(function()
+	if game.Players:GetPlayerFromCharacter(mouse.Target.Parent) then
+	local selected = game.Players:GetPlayerFromCharacter(mouse.Target.Parent)
+	if game.Players.LocalPlayer.Character:findFirstChildOfClass("Tool") then
+	local tool = game.Players.LocalPlayer.Character:findFirstChildOfClass("Tool")
+	if tool:findFirstChild("Fire") then
+	if selected ~= nil then
+		allowed = true
+	repeat
+	tool.Fire:FireServer(selected.Character.Head.CFrame)
+	wait()
+	until allowed == false
+	end
+	end
+	end
+	end
+	mouse.KeyDown:Connect(function(key)
+	    if key == "," then
+		allowed = false
+	    end
+	end)
+	end)
+	end)
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_XUCD69_FAKESCRIPT))
+function SCRIPT_HGCO89_FAKESCRIPT() -- Music.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = Music
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/sN1wVbYX", true))()
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_HGCO89_FAKESCRIPT))
+function SCRIPT_IGPC87_FAKESCRIPT() -- Reset.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = Reset
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.Character.Head:Destroy()
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_IGPC87_FAKESCRIPT))
+function SCRIPT_VKZN86_FAKESCRIPT() -- AntiVoid.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = AntiVoid
+	script.Parent.MouseButton1Click:Connect(function()
+		for i,v in pairs(game.Players:GetChildren()) do
+	    if v.Character ~= nil and v ~= game.Players.LocalPlayer then
+	        if v.Character:FindFirstChild("Right Arm") then
+	            v.Character:FindFirstChild("Right Arm").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("Right Arm"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        elseif v.Character:FindFirstChild("RightHand") and v.Character:FindFirstChild("UpperTorso") then
+	            v.Character:FindFirstChild("RightHand").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("RightHand"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        end
+	    end
+	    v.CharacterAppearanceLoaded:Connect(function(char)
+	        if v.Character:FindFirstChild("Right Arm") then
+	            v.Character:FindFirstChild("Right Arm").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("Right Arm"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        elseif v.Character:FindFirstChild("RightHand") and v.Character:FindFirstChild("UpperTorso") then
+	            v.Character:FindFirstChild("RightHand").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("RightHand"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        end
+	    end)
+	end
+ 
+ 
+	game.Players.PlayerAdded:Connect(function(v)
+	wait()
+	    if v.Character ~= nil and v ~= game.Players.LocalPlayer then
+	        if v.Character:FindFirstChild("Right Arm") then
+	            v.Character:FindFirstChild("Right Arm").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("Right Arm"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        elseif v.Character:FindFirstChild("RightHand") and v.Character:FindFirstChild("UpperTorso") then
+	            v.Character:FindFirstChild("RightHand").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("RightHand"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        end
+	    end
+	    v.CharacterAppearanceLoaded:Connect(function(char)
+	        if v.Character:FindFirstChild("Right Arm") then
+	            v.Character:FindFirstChild("Right Arm").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("Right Arm"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        elseif v.Character:FindFirstChild("RightHand") and v.Character:FindFirstChild("UpperTorso") then
+	            v.Character:FindFirstChild("RightHand").ChildAdded:Connect(function(child)
+	                if child.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if child.Part1 ~= nil then
+	                        if child.Part1.Parent ~= nil then
+	                            if child.Part1.Parent:IsA("Accessory") then
+	                                child:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end)
+	            for i,v in pairs(v.Character:FindFirstChild("RightHand"):GetChildren()) do
+	                if v.Name == "RightGrip" then
+	                    wait(0.1)
+	                    if Part1 ~= nil then
+	                        if Part1.Parent ~= nil then
+	                            if v.Part1.Parent:IsA("Accessory") then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            end
+	        end
+	    end)
+	end)
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_VKZN86_FAKESCRIPT))
+function SCRIPT_DUFY79_FAKESCRIPT() -- AudioLogger.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = AudioLogger
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/Ykxr9B9n", true))()
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_DUFY79_FAKESCRIPT))
+function SCRIPT_LEQC69_FAKESCRIPT() -- Void.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = Void
+	script.Parent.MouseButton1Click:Connect(function()
+		game.StarterGui:SetCore("SendNotification", {
+	Title = "Void is enabled";
+	Text = "Press V to use - credits to aidez";
+	--Icon = "rbxassetid://1748020105";
+	Duration = 1;
+	})
+	mouse = game.Players.LocalPlayer:GetMouse()
+	voidtoggle = false
+	voidprocessing = false
+ 
+	mouse.KeyDown:Connect(function(key)
+	    if key == "v" then
+	        local hat = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Accessory")
+	        if voidtoggle == false and voidprocessing == false then
+	            voidprocessing = true
+	            local handle = hat:FindFirstChild("Handle")
+	            local Tool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+	            if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+	                game.Players.LocalPlayer.Character.Torso.Anchored = true
+	            elseif game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
+	                game.Players.LocalPlayer.Character.UpperTorso.Anchored = true
+	            end
+	            handle.Parent = Tool
+	            handle.Massless = true
+	            Tool.GripPos = Vector3.new(0,tonumber(9e99),0)
+	            Tool.Parent = game.Players.LocalPlayer.Character
+	            repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Tool")~=nil
+	            Tool.Grip = CFrame.new(Vector3.new(0,0,0))
+	            if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+	                game.Players.LocalPlayer.Character.Torso.Anchored = false
+	            elseif game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
+	                game.Players.LocalPlayer.Character.UpperTorso.Anchored = false
+	            end
+	            Tool.Unequipped:Connect(function()
+	                wait()
+	                local Handle = Tool:FindFirstChild("Handle")
+	                if Handle then
+	                    Handle.Parent = hat
+	                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+	                    Handle.Massless = false
+	                    Tool:Destroy()
+	                end
+	                voidtoggle = false
+	            end)
+	            voidtoggle = true
+	            voidprocessing = false
+	        elseif voidtoggle == true and voidprocessing == false then
+	            voidprocessing = true
+	            local Tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Tool") or game.Players.LocalPlayer.Character:FindFirstChild("Tool")
+	            local Handle = Tool:FindFirstChild("Handle")
+	            if Handle then
+	                Handle.Parent = hat
+	                game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+	                Handle.Massless = false
+	                Tool:Destroy()
+	            end
+	            voidtoggle = true
+	            voidprocessing = false
+	        end
+	    end
+	end)
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_LEQC69_FAKESCRIPT))
+function SCRIPT_GBOM72_FAKESCRIPT() -- freeuservegan.lighting 
+	local script = Instance.new('LocalScript')
+	script.Parent = freeuservegan
+	local lighting = game.Lighting
+	local SunRay = Instance.new("SunRaysEffect",lighting)
+ 
+	local skybox = Instance.new("Sky",lighting)
+	skybox.SkyboxBk = "rbxassetid://600830446"
+	skybox.SkyboxDn = "rbxassetid://600831635"
+	skybox.SkyboxFt = "rbxassetid://600832720"
+	skybox.SkyboxLf = "rbxassetid://600886090"
+	skybox.SkyboxRt = "rbxassetid://600833862"
+	skybox.SkyboxUp = "rbxassetid://600835177"
+ 
+	while true do
+	wait(0.05)
+	local ColorC = game.Lighting.ColorCorrection
+	ColorC.TintColor = Color3.fromRGB(235, 231, 255)
+	ColorC.Contrast = 0.1
+	ColorC.Saturation = 0.1
+	end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_GBOM72_FAKESCRIPT))
+function SCRIPT_CCAE84_FAKESCRIPT() -- freeuservegan.yuh 
+	local script = Instance.new('LocalScript')
+	script.Parent = freeuservegan
+	loadstring(game:HttpGet("https://pastebin.com/raw/gvvt8Ttr", true))()
+ 
+	game.Players.PlayerAdded:connect(function(plr)
+	wait(1)
+	    for i = 1,#mains do
+		if string.lower(plr.Name) == tostring(string.lower(mains[i])) then
+		    game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.PlayerName.TextColor3 = Color3.new(1, 170/255, 0)
+	            game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.MembershipIcon.Image = "rbxassetid://157449069"
+		end
+	    end
+	    for i = 1,#special do
+		if string.lower(plr.Name) == tostring(string.lower(special[i])) then
+	            game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.PlayerName.TextColor3 = Color3.new(0, 255, 255)
+	            game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[plr.Name].BGFrame.MembershipIcon.Image = "rbxassetid://279380243"
+		end
+	    end
+	end)
+	for i, x in next, game:GetService"Players":GetPlayers() do
+	    for i = 1,#mains do
+		if string.lower(x.Name) == tostring(string.lower(mains[i])) then
+		    game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.PlayerName.TextColor3 = Color3.new(1, 170/255, 0)
+	            game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.MembershipIcon.Image = "rbxassetid://157449069"
+		end
+	    end
+	    for i = 1,#special do
+		if string.lower(x.Name) == tostring(string.lower(special[i])) then
+		    game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.PlayerName.TextColor3 = Color3.new(0, 255, 255)
+	            game.CoreGui.RobloxGui.PlayerListContainer.ScrollList[x.Name].BGFrame.MembershipIcon.Image = "rbxassetid://279380243"
+		end
+	    end
+	end
+	-- remove this if u think ur gonna be on the blacklist
+	for i = 1,#blacklist do
+	    if string.lower(game.Players.LocalPlayer.Name) == string.lower(tostring(blacklist[i])) then
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('ez',"All")
+		game.Players.LocalPlayer:Kick("You are Blacklisted from Vegan GUI V5, probably for pissing us off")
+	    end
+	end
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_CCAE84_FAKESCRIPT))
+function SCRIPT_GHTA87_FAKESCRIPT() -- freeuservegan.LocalScript 
+	local script = Instance.new('LocalScript')
+	script.Parent = freeuservegan
+	local plr = game.Players.LocalPlayer
+	local r = game:GetService('RunService').Heartbeat
+	local input = game:GetService('UserInputService')
+ 
+	local speed = 1.5
+ 
+	local x,y,z = 0,0,0
+ 
+	local e = false
+ 
+	plr.Chatted:connect(function(cmd)
+		cmd=cmd:lower()
+		if cmd == ":speed" then
+			e = true
+		end
+	end)
+ 
+	plr.Chatted:connect(function(cmd)
+		cmd=cmd:lower()
+		if cmd == ":unspeed" then
+			e = false
+		end
+	end)
+ 
+	input.InputBegan:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.W then
+				z = -speed	
+			end
+		end
+	end)
+ 
+	input.InputBegan:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.S then
+				z = speed	
+			end
+		end
+	end)
+ 
+	input.InputBegan:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.A then
+				x = -speed	
+			end
+		end
+	end)
+ 
+	input.InputBegan:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.D then
+				x = speed	
+			end
+		end
+	end)
+ 
+	----------
+ 
+	input.InputEnded:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.W then
+				z = 0
+			end
+		end
+	end)
+ 
+	input.InputEnded:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.S then
+				z = 0
+			end
+		end
+	end)
+ 
+	input.InputEnded:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.A then
+				x = 0
+			end
+		end
+	end)
+ 
+	input.InputEnded:connect(function(k)
+		if k.UserInputType == Enum.UserInputType.Keyboard then
+			if k.KeyCode == Enum.KeyCode.D then
+				x = 0
+			end
+		end
+	end)
+ 
+ 
+	r:connect(function()
+		if e == true then
+		plr.Character.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame * CFrame.new(x,y,z)
+		end
+	end)
+ 
+end
+coroutine.resume(coroutine.create(SCRIPT_GHTA87_FAKESCRIPT))

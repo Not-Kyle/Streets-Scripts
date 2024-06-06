@@ -1,0 +1,674 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local CombatSystem = Instance.new("ScreenGui")
+local Mainframe = Instance.new("Frame")
+local Topbar = Instance.new("Frame")
+local Title = Instance.new("ImageLabel")
+local TextButton = Instance.new("TextButton")
+local Holder = Instance.new("Frame")
+local Holder2 = Instance.new("Frame")
+local Commands = Instance.new("TextButton")
+local Scripts = Instance.new("TextButton")
+local Teleports = Instance.new("TextButton")
+local Credits = Instance.new("TextButton")
+local Scripts_2 = Instance.new("Frame")
+local z2 = Instance.new("TextButton")
+local z1 = Instance.new("TextButton")
+local z4 = Instance.new("TextButton")
+local z3 = Instance.new("TextButton")
+local z5 = Instance.new("TextButton")
+local z6 = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local Credits_2 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local Teleports_2 = Instance.new("Frame")
+local z2_2 = Instance.new("TextButton")
+local z1_2 = Instance.new("TextButton")
+local z4_2 = Instance.new("TextButton")
+local z3_2 = Instance.new("TextButton")
+local z5_2 = Instance.new("TextButton")
+local z6_2 = Instance.new("TextButton")
+local Commands_2 = Instance.new("ScrollingFrame")
+local TextLabel_7 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+
+--Properties:
+
+CombatSystem.Name = "CombatSystem"
+CombatSystem.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CombatSystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+CombatSystem.ResetOnSpawn = false
+
+Mainframe.Name = "Mainframe"
+Mainframe.Parent = CombatSystem
+Mainframe.Active = true
+Mainframe.AnchorPoint = Vector2.new(0.5, 0.5)
+Mainframe.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+Mainframe.BackgroundTransparency = 0.300
+Mainframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Mainframe.BorderSizePixel = 0
+Mainframe.Position = UDim2.new(0.5, 0, 0.5, 0)
+Mainframe.Selectable = true
+Mainframe.Size = UDim2.new(0.25, 0, 0.25, 0)
+
+Topbar.Name = "Topbar"
+Topbar.Parent = Mainframe
+Topbar.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Topbar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Topbar.BorderSizePixel = 0
+Topbar.Size = UDim2.new(1, 0, 0.200000003, 0)
+
+Title.Name = "Title"
+Title.Parent = Topbar
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0276982281, 0, -0.521541893, 0)
+Title.Size = UDim2.new(0.800000012, 0, 2, 0)
+Title.Image = "http://www.roblox.com/asset/?id=5032037434"
+Title.ScaleType = Enum.ScaleType.Fit
+
+TextButton.Parent = Topbar
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Position = UDim2.new(0.831848323, 0, -0.0226757526, 0)
+TextButton.Size = UDim2.new(0.129999995, 0, 1, 0)
+TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 36.000
+TextButton.TextStrokeTransparency = 0.000
+TextButton.TextWrapped = true
+
+Holder.Name = "Holder"
+Holder.Parent = Mainframe
+Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Holder.BackgroundTransparency = 1.000
+Holder.Position = UDim2.new(0, 0, 0.199546486, 0)
+Holder.Size = UDim2.new(1, 0, 0.800000012, 0)
+
+Holder2.Name = "Holder2"
+Holder2.Parent = Holder
+Holder2.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Holder2.BorderSizePixel = 0
+Holder2.Position = UDim2.new(0.797999978, 0, 0, 0)
+Holder2.Size = UDim2.new(0.200000003, 0, 1, 0)
+
+Commands.Name = "Commands"
+Commands.Parent = Holder2
+Commands.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Commands.BackgroundTransparency = 0.700
+Commands.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Commands.BorderSizePixel = 0
+Commands.Position = UDim2.new(0.0438084081, 0, 0.017006807, 0)
+Commands.Size = UDim2.new(0.899999976, 0, 0.200000003, 0)
+Commands.Font = Enum.Font.SourceSansBold
+Commands.Text = "Commands"
+Commands.TextColor3 = Color3.fromRGB(255, 255, 255)
+Commands.TextSize = 14.000
+
+Scripts.Name = "Scripts"
+Scripts.Parent = Holder2
+Scripts.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Scripts.BackgroundTransparency = 0.700
+Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Scripts.BorderSizePixel = 0
+Scripts.Position = UDim2.new(0.0438084081, 0, 0.272108853, 0)
+Scripts.Size = UDim2.new(0.899999976, 0, 0.200000003, 0)
+Scripts.Font = Enum.Font.SourceSansBold
+Scripts.Text = "Scripts"
+Scripts.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scripts.TextSize = 14.000
+
+Teleports.Name = "Teleports"
+Teleports.Parent = Holder2
+Teleports.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Teleports.BackgroundTransparency = 0.700
+Teleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Teleports.BorderSizePixel = 0
+Teleports.Position = UDim2.new(0.0438084081, 0, 0.527979612, 0)
+Teleports.Size = UDim2.new(0.899999976, 0, 0.200000003, 0)
+Teleports.Font = Enum.Font.SourceSansBold
+Teleports.Text = "Teleports"
+Teleports.TextColor3 = Color3.fromRGB(255, 255, 255)
+Teleports.TextSize = 14.000
+
+Credits.Name = "Credits"
+Credits.Parent = Holder2
+Credits.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Credits.BackgroundTransparency = 0.700
+Credits.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.0439999998, 0, 0.779999971, 0)
+Credits.Size = UDim2.new(0.899999976, 0, 0.200000003, 0)
+Credits.Font = Enum.Font.SourceSansBold
+Credits.Text = "Credits"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextSize = 14.000
+
+Scripts_2.Name = "Scripts"
+Scripts_2.Parent = Holder
+Scripts_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Scripts_2.BackgroundTransparency = 1.000
+Scripts_2.Size = UDim2.new(0.800000012, 0, 1, 0)
+
+z2.Name = "z2"
+z2.Parent = Scripts_2
+z2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z2.BackgroundTransparency = 0.700
+z2.BorderSizePixel = 0
+z2.Position = UDim2.new(0.525700927, 0, 0.14172335, 0)
+z2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z2.Font = Enum.Font.SourceSansSemibold
+z2.Text = "Smooth FPS"
+z2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z2.TextSize = 14.000
+
+z1.Name = "z1"
+z1.Parent = Scripts_2
+z1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z1.BackgroundTransparency = 0.700
+z1.BorderSizePixel = 0
+z1.Position = UDim2.new(0.0730140284, 0, 0.14172335, 0)
+z1.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z1.Font = Enum.Font.SourceSansSemibold
+z1.Text = "Item ESP"
+z1.TextColor3 = Color3.fromRGB(255, 255, 255)
+z1.TextSize = 14.000
+
+z4.Name = "z4"
+z4.Parent = Scripts_2
+z4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z4.BackgroundTransparency = 0.700
+z4.BorderSizePixel = 0
+z4.Position = UDim2.new(0.525700927, 0, 0.396825403, 0)
+z4.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z4.Font = Enum.Font.SourceSansSemibold
+z4.Text = "Void"
+z4.TextColor3 = Color3.fromRGB(255, 255, 255)
+z4.TextSize = 14.000
+
+z3.Name = "z3"
+z3.Parent = Scripts_2
+z3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z3.BackgroundTransparency = 0.700
+z3.BorderSizePixel = 0
+z3.Position = UDim2.new(0.0730140209, 0, 0.396825403, 0)
+z3.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z3.Font = Enum.Font.SourceSansSemibold
+z3.Text = "Infinite Day"
+z3.TextColor3 = Color3.fromRGB(255, 255, 255)
+z3.TextSize = 14.000
+
+z5.Name = "z5"
+z5.Parent = Scripts_2
+z5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z5.BackgroundTransparency = 0.700
+z5.BorderSizePixel = 0
+z5.Position = UDim2.new(0.0730140209, 0, 0.651927412, 0)
+z5.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z5.Font = Enum.Font.SourceSansSemibold
+z5.Text = "Mega Combat"
+z5.TextColor3 = Color3.fromRGB(255, 255, 255)
+z5.TextSize = 14.000
+
+z6.Name = "z6"
+z6.Parent = Scripts_2
+z6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z6.BackgroundTransparency = 0.700
+z6.BorderSizePixel = 0
+z6.Position = UDim2.new(0.525700927, 0, 0.651927412, 0)
+z6.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z6.Font = Enum.Font.SourceSansSemibold
+z6.Text = "Audio Logger"
+z6.TextColor3 = Color3.fromRGB(255, 255, 255)
+z6.TextSize = 14.000
+
+TextLabel.Parent = Scripts_2
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 0.895691574, 0)
+TextLabel.Size = UDim2.new(1, 0, 0.100000001, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "discord.gg/CFnfgum"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+Credits_2.Name = "Credits"
+Credits_2.Parent = Holder
+Credits_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits_2.BackgroundTransparency = 1.000
+Credits_2.Size = UDim2.new(0.800000012, 0, 1, 0)
+Credits_2.Visible = false
+
+TextLabel_2.Parent = Credits_2
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.284754634, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0.5, 0, 0.25, 0)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Credits to:"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Credits_2
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.182535022, 0, 0.2494331, 0)
+TextLabel_3.Size = UDim2.new(0.699999988, 0, 0.200000003, 0)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "LoyaIty22, Vegan23"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+TextLabel_4.Parent = Credits_2
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.182535022, 0, 0.498866171, 0)
+TextLabel_4.Size = UDim2.new(0.699999988, 0, 0.150000006, 0)
+TextLabel_4.Font = Enum.Font.SourceSansSemibold
+TextLabel_4.Text = "Not possible without:"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+TextLabel_5.Parent = Credits_2
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.131425217, 0, 0.646258473, 0)
+TextLabel_5.Size = UDim2.new(0.800000012, 0, 0.150000006, 0)
+TextLabel_5.Font = Enum.Font.SourceSansBold
+TextLabel_5.Text = "Aidez, Cyrus, Oogabooga and Enu"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+
+TextLabel_6.Parent = Credits_2
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.Position = UDim2.new(0.153329417, 0, 0.793650746, 0)
+TextLabel_6.Size = UDim2.new(0.699999988, 0, 0.200000003, 0)
+TextLabel_6.Font = Enum.Font.SourceSansBold
+TextLabel_6.Text = "discord.gg/CFnfgum"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
+
+Teleports_2.Name = "Teleports"
+Teleports_2.Parent = Holder
+Teleports_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Teleports_2.BackgroundTransparency = 1.000
+Teleports_2.Size = UDim2.new(0.800000012, 0, 1, 0)
+Teleports_2.Visible = false
+
+z2_2.Name = "z2"
+z2_2.Parent = Teleports_2
+z2_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z2_2.BackgroundTransparency = 0.700
+z2_2.BorderSizePixel = 0
+z2_2.Position = UDim2.new(0.525700927, 0, 0.14172335, 0)
+z2_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z2_2.Font = Enum.Font.SourceSansSemibold
+z2_2.Text = "Prison"
+z2_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z2_2.TextSize = 14.000
+
+z1_2.Name = "z1"
+z1_2.Parent = Teleports_2
+z1_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z1_2.BackgroundTransparency = 0.700
+z1_2.BorderSizePixel = 0
+z1_2.Position = UDim2.new(0.0730140284, 0, 0.14172335, 0)
+z1_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z1_2.Font = Enum.Font.SourceSansSemibold
+z1_2.Text = "Bank"
+z1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z1_2.TextSize = 14.000
+
+z4_2.Name = "z4"
+z4_2.Parent = Teleports_2
+z4_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z4_2.BackgroundTransparency = 0.700
+z4_2.BorderSizePixel = 0
+z4_2.Position = UDim2.new(0.525700927, 0, 0.396825403, 0)
+z4_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z4_2.Font = Enum.Font.SourceSansSemibold
+z4_2.Text = "4 Corners"
+z4_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z4_2.TextSize = 14.000
+
+z3_2.Name = "z3"
+z3_2.Parent = Teleports_2
+z3_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z3_2.BackgroundTransparency = 0.700
+z3_2.BorderSizePixel = 0
+z3_2.Position = UDim2.new(0.0730140209, 0, 0.396825403, 0)
+z3_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z3_2.Font = Enum.Font.SourceSansSemibold
+z3_2.Text = "Sandbox"
+z3_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z3_2.TextSize = 14.000
+
+z5_2.Name = "z5"
+z5_2.Parent = Teleports_2
+z5_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z5_2.BackgroundTransparency = 0.700
+z5_2.BorderSizePixel = 0
+z5_2.Position = UDim2.new(0.0730140209, 0, 0.651927412, 0)
+z5_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z5_2.Font = Enum.Font.SourceSansSemibold
+z5_2.Text = "Gas Station"
+z5_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z5_2.TextSize = 14.000
+
+z6_2.Name = "z6"
+z6_2.Parent = Teleports_2
+z6_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+z6_2.BackgroundTransparency = 0.700
+z6_2.BorderSizePixel = 0
+z6_2.Position = UDim2.new(0.525700927, 0, 0.651927412, 0)
+z6_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+z6_2.Font = Enum.Font.SourceSansSemibold
+z6_2.Text = "Tunnel"
+z6_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+z6_2.TextSize = 14.000
+
+Commands_2.Name = "Commands"
+Commands_2.Parent = Holder
+Commands_2.Active = true
+Commands_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Commands_2.BackgroundTransparency = 1.000
+Commands_2.BorderSizePixel = 0
+Commands_2.Size = UDim2.new(0.790000021, 0, 1, 0)
+Commands_2.Visible = false
+
+TextLabel_7.Parent = Commands_2
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.Position = UDim2.new(0.0332722105, 0, 0, 0)
+TextLabel_7.Size = UDim2.new(0.899999976, 0, 0, 30)
+TextLabel_7.Font = Enum.Font.SourceSansSemibold
+TextLabel_7.Text = ""
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextWrapped = true
+TextLabel_7.TextXAlignment = Enum.TextXAlignment.Left
+
+ImageLabel.Parent = CombatSystem
+ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0.948834956, 0, 0.542857111, 0)
+ImageLabel.Size = UDim2.new(0.100000001, 0, 0.174999997, 0)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=4452245157"
+
+-- Scripts:
+
+local function JPPSWVK_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local mainframe = script.Parent.Parent.Parent
+	script.Parent.MouseButton1Click:Connect(function()
+		if mainframe.BackgroundTransparency == 1 then
+			mainframe.BackgroundTransparency = 0.3
+			mainframe.Holder.Visible = true
+		else
+			mainframe.BackgroundTransparency = 1
+			mainframe.Holder.Visible = false
+		end
+	end)
+end
+coroutine.wrap(JPPSWVK_fake_script)()
+local function XSSYUXC_fake_script() -- Holder2.LocalScript 
+	local script = Instance.new('LocalScript', Holder2)
+
+	local frame = script.Parent.Parent
+	
+	frame.Holder2.Commands.MouseButton1Click:Connect(function()
+		for i,v in pairs(frame:GetChildren()) do
+			if v.Name ~= "Holder2" then
+				v.Visible = false
+			end
+		end
+		frame.Commands.Visible = true
+	end)
+	frame.Holder2.Credits.MouseButton1Click:Connect(function()
+		for i,v in pairs(frame:GetChildren()) do
+			if v.Name ~= "Holder2" then
+				v.Visible = false
+			end
+		end
+		frame.Credits.Visible = true
+	end)
+	frame.Holder2.Scripts.MouseButton1Click:Connect(function()
+		for i,v in pairs(frame:GetChildren()) do
+			if v.Name ~= "Holder2" then
+				v.Visible = false
+			end
+		end
+		frame.Scripts.Visible = true
+	end)
+	frame.Holder2.Teleports.MouseButton1Click:Connect(function()
+		for i,v in pairs(frame:GetChildren()) do
+			if v.Name ~= "Holder2" then
+				v.Visible = false
+			end
+		end
+		frame.Teleports.Visible = true
+	end)
+end
+coroutine.wrap(XSSYUXC_fake_script)()
+local function TMOG_fake_script() -- Scripts_2.LocalScript 
+	local script = Instance.new('LocalScript', Scripts_2)
+
+	local GUI = script.Parent.Parent.Scripts
+	
+	GUI.z1.MouseButton1Click:Connect(function()
+	local function esp(instance)
+	    local types = ""
+	    local EspText = ""
+	    local EspFontSize = "Size14" 
+	    local EspColor = BrickColor.new("Bright green")
+	    local EspPart = instance
+	    for i,v in pairs(instance:GetDescendants()) do
+	        if v:IsA("MeshPart") and v.Name == "Blade" and string.find(tostring(v.MeshId), "12177251") then
+	            types = "katana"
+	            EspText = "KATANA"
+	            EspColor = BrickColor.new("Bright green")
+	            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+	        elseif v:IsA("MeshPart") and v.MeshId == "rbxassetid://511726060" then
+	            types = "cash"
+	            EspText = "CASH"
+	            EspColor = BrickColor.new("Bright red")
+	            EspPart = v
+	        elseif v:IsA("Sound") and v.Name == "Fire" and string.find(tostring(v.SoundId), tostring(328964620)) then
+	            types = "uzi"
+	            EspText = "UZI"
+	            EspFontSize = "Size18"
+	            EspColor = BrickColor.new("Bright blue")
+	            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+	        elseif v:IsA("Sound") and v.Name == "Fire" and string.find(tostring(v.SoundId), tostring(142383762)) then
+	            types = "shotty"
+	            EspText = "SHOTTY"
+	            EspColor = BrickColor.new("Bright yellow")
+	            EspPart = v:FindFirstAncestorWhichIsA("BasePart")
+	        end
+	    end
+	
+	    if EspText == "" then
+	        return
+	    end
+	
+	    local TracerPart = Instance.new("Part")
+	    TracerPart.Parent = EspPart
+	    TracerPart.Name = "TracerPart"
+	    TracerPart.CFrame = EspPart.CFrame
+	    TracerPart.Size = Vector3.new(0.2,0.2,0.2)
+	    TracerPart.Anchored = true
+	    TracerPart.Transparency = 1
+	
+	    local billgui = Instance.new('BillboardGui', TracerPart)
+	    local textlab = Instance.new('TextLabel', billgui)
+	
+	    billgui.Name = "ESPBillboard"
+	    billgui.Adornee  = TracerPart
+	    billgui.AlwaysOnTop = true
+	    billgui.ExtentsOffset = Vector3.new(0, 1, 0)
+	    billgui.Size = UDim2.new(0, 5, 0, 5)
+		
+	    textlab.Name = "ESPLabel"
+	    textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+	    textlab.BackgroundTransparency = 1
+	    textlab.BorderSizePixel = 0
+	    textlab.Position = UDim2.new(0, 0, 0, -40)
+	    textlab.Size = UDim2.new(1, 0, 10, 0)
+	    textlab.Visible = true
+	    textlab.ZIndex = 10
+	    textlab.Font = 'ArialBold'
+	    textlab.FontSize = EspFontSize
+	    textlab.Text = EspText
+	    textlab.TextColor = EspColor
+	    textlab.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+	    textlab.TextStrokeTransparency = 0.6
+	end
+	
+	
+	
+	
+	
+	for i,v in pairs(game.Workspace:GetChildren()) do
+	    if v.Name == "RandomSpawner" then
+	        esp(v)
+	    end
+	end
+	
+	for i,v in pairs(game.Workspace:GetChildren()) do
+	    if v.Name == "RandomSpawner" then
+	        if v:FindFirstChild("Model") then
+	            v.Model.ChildAdded:Connect(function(child)
+	                esp(child)
+	            end)
+	        end
+	        v.ChildAdded:Connect(function(child)
+	            esp(child)
+	        end)
+	    end
+	end
+	
+	end)
+	
+	local alreadyran2 = false
+	GUI.z2.MouseButton1Click:Connect(function()
+		if alreadyran2 then return end
+		alreadyran2 = true
+		local timeBegan = tick()
+		for i,v in ipairs(workspace:GetDescendants()) do
+			if v:IsA("BasePart") then 
+				v.Material = "SmoothPlastic"
+			end
+		end
+		for i,v in ipairs(game:GetService("Lighting"):GetChildren()) do
+			v:Destroy()
+		end
+		local timeEnd = tick() - timeBegan
+		local timeMS = math.floor(timeEnd*1000)
+	end)
+	
+	local alreadyran3 = false
+	GUI.z3.MouseButton1Click:Connect(function()
+		if alreadyran3 then return end
+		alreadyran3 = true
+		local rpm = 1
+		game:GetService('RunService').RenderStepped:connect(function()
+		    for i=1,math.ceil((rpm/60)/60) do
+		        game.Lighting.TimeOfDay = "14:00:00"
+		    end
+	    end)
+	end)
+	
+	
+	GUI.z4.MouseButton1Click:Connect(function()
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		local torsoname = "Torso"
+		if LocalPlayer.Character:FindFirstChild("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+		   torsoname = "UpperTorso"
+		end
+		LocalPlayer.Character:FindFirstChild("Animate").toolnone.ToolNoneAnim.AnimationId = math.huge
+		LocalPlayer.Character:FindFirstChild(torsoname).Anchored = true
+		local tool = Instance.new("Tool", LocalPlayer.Backpack)
+		LocalPlayer.Character:FindFirstChildOfClass("Accessory").Handle.Parent = tool
+		tool.Handle.Massless = true
+		tool.GripPos = Vector3.new(0, math.huge, 0)
+		tool.Parent = LocalPlayer.Character
+		wait()
+		tool.Grip = CFrame.new(Vector3.new(0, 0, 0))
+		LocalPlayer.Character:FindFirstChild(torsoname).Anchored = false
+	end)
+	
+	GUI.z5.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/MegaCombat/master/V3'),true))()
+	end)
+	local alreadyran6 = false
+	GUI.z6.MouseButton1Click:Connect(function()
+		if alreadyran6 then return end
+		alreadyran6 = true
+		loadstring(game:HttpGet(('https://pastebin.com/raw/GYnh44Cp'),true))()
+	end)
+end
+coroutine.wrap(TMOG_fake_script)()
+local function OMQJTW_fake_script() -- Commands_2.LocalScript 
+	local script = Instance.new('LocalScript', Commands_2)
+
+	local scrolling = script.Parent
+	local original = scrolling.TextLabel
+	local offset = 0
+	local scrollingoffset = original.Size.Y.Offset
+	wait(2)
+	for i,v in pairs(_G.combatsystem.Commands) do
+		if type(v[2]) == "string" then
+			local newcmd = original:Clone()
+			newcmd.Position = UDim2.fromOffset(10,offset)
+			newcmd.Text = "/"..v[1].." - "..v[2]
+			newcmd.Parent = scrolling
+			scrolling.CanvasSize = UDim2.fromOffset(0,scrollingoffset)
+			offset = offset + newcmd.Size.Y.Offset
+			scrollingoffset = scrollingoffset + newcmd.Size.Y.Offset
+		else
+			local newcmd = original:Clone()
+			newcmd.Position = UDim2.fromOffset(10,offset)
+			newcmd.Text = "/"..v[1]
+			newcmd.Parent = scrolling
+			scrolling.CanvasSize = UDim2.fromOffset(0,scrollingoffset)
+			offset = offset + newcmd.Size.Y.Offset
+			scrollingoffset = scrollingoffset + newcmd.Size.Y.Offset
+		end
+	end
+end
+coroutine.wrap(OMQJTW_fake_script)()
+local function DSLOWK_fake_script() -- CombatSystem.Automation 
+	local script = Instance.new('LocalScript', CombatSystem)
+
+	script.Parent.Mainframe.Draggable = true
+	
+	while wait() do
+		for i = 1, 360 do
+			script.Parent.ImageLabel.Rotation=i
+			wait()
+		end
+	end
+end
+coroutine.wrap(DSLOWK_fake_script)()

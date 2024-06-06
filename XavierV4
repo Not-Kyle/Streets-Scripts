@@ -1,0 +1,287 @@
+local TheStreetsFyckerV3 = Instance.new("ScreenGui")
+local Xavierv3 = Instance.new("Frame")
+local Speed = Instance.new("TextButton")
+local Admin = Instance.new("TextButton")
+local AltDelete = Instance.new("TextButton")
+local SpeedBind = Instance.new("TextBox")
+local Green = Instance.new("TextLabel")
+local Green_2 = Instance.new("TextLabel")
+local ESP = Instance.new("TextButton")
+local LoadGUI = Instance.new("TextButton")
+local LoadGUI2 = Instance.new("TextButton")
+local LabelTop = Instance.new("TextLabel")
+local AnimationGUI = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local AimBot = Instance.new("TextButton")
+local LabelTop_2 = Instance.new("TextLabel")
+local OpenGUI = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+--Properties:
+TheStreetsFyckerV3.Name = "TheStreetsFyckerV3"
+TheStreetsFyckerV3.Parent = game.CoreGui
+TheStreetsFyckerV3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ 
+Xavierv3.Name = "Xavierv3"
+Xavierv3.Parent = TheStreetsFyckerV3
+Xavierv3.BackgroundColor3 = Color3.new(0, 0, 0)
+Xavierv3.Position = UDim2.new(0.110268861, 0, 0.172131121, 0)
+Xavierv3.Size = UDim2.new(0, 755, 0, 489)
+Xavierv3.Visible = false
+Xavierv3.Active = true
+Xavierv3.Draggable = true
+ 
+Speed.Name = "Speed"
+Speed.Parent = Xavierv3
+Speed.BackgroundColor3 = Color3.new(1, 1, 1)
+Speed.Position = UDim2.new(0, 0, 0.744239569, 0)
+Speed.Size = UDim2.new(0, 177, 0, 43)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.new(0.333333, 1, 0)
+Speed.TextScaled = true
+Speed.TextSize = 14
+Speed.TextWrapped = true
+local plr = game:GetService("Players").LocalPlayer
+local char = plr.Character
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local hum = char:FindFirstChild("HumanoidRootPart")
+--yeet
+Speed.MouseButton1Down:connect(function()
+    local plr = game:GetService("Players").LocalPlayer
+    local char = plr.Character
+    local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+    local hum = char:FindFirstChild("HumanoidRootPart")
+    mouse.KeyDown:connect(function(key)
+        if key == SpeedBind.Text then
+            loop = true
+            while loop do
+                hum.CFrame = hum.CFrame + hum.CFrame.lookVector * 3
+                wait()
+            end
+            end
+            end)
+    end)
+    
+    mouse.KeyUp:connect(function(key)
+        if key == SpeedBind.Text then
+            loop = false
+        end
+end)
+ 
+Admin.Name = "Admin"
+Admin.Parent = Xavierv3
+Admin.BackgroundColor3 = Color3.new(1, 1, 1)
+Admin.Position = UDim2.new(0.243708611, 0, 0.296386838, 0)
+Admin.Size = UDim2.new(0, 177, 0, 43)
+Admin.Font = Enum.Font.SourceSans
+Admin.Text = "Admin"
+Admin.TextColor3 = Color3.new(0.333333, 1, 0)
+Admin.TextScaled = true
+Admin.TextSize = 14
+Admin.TextWrapped = true
+Admin.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/8zh7FiHv"))()
+end)
+ 
+AltDelete.Name = "Alt Delete"
+AltDelete.Parent = Xavierv3
+AltDelete.BackgroundColor3 = Color3.new(1, 1, 1)
+AltDelete.Position = UDim2.new(0, 0, 0.296386838, 0)
+AltDelete.Size = UDim2.new(0, 177, 0, 43)
+AltDelete.Font = Enum.Font.SourceSans
+AltDelete.Text = "Alt Delete"
+AltDelete.TextColor3 = Color3.new(0.333333, 1, 0)
+AltDelete.TextScaled = true
+AltDelete.TextSize = 14
+AltDelete.TextWrapped = true
+--Hold CLTR and click to delete parts (you need to rejoin if you delete something wrong!! W/ <3 EramsorGR <3
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftAlt) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+ 
+SpeedBind.Name = "SpeedBind"
+SpeedBind.Parent = Xavierv3
+SpeedBind.BackgroundColor3 = Color3.new(1, 1, 1)
+SpeedBind.Position = UDim2.new(0.243708611, 0, 0.744239509, 0)
+SpeedBind.Size = UDim2.new(0, 177, 0, 42)
+SpeedBind.Font = Enum.Font.SourceSans
+SpeedBind.Text = ""
+SpeedBind.TextColor3 = Color3.new(1, 0, 0)
+SpeedBind.TextScaled = true
+SpeedBind.TextSize = 14
+SpeedBind.TextWrapped = true
+ 
+Green.Name = "Green"
+Green.Parent = Xavierv3
+Green.BackgroundColor3 = Color3.new(0, 1, 0)
+Green.Position = UDim2.new(0.486092716, 0, 0.163599178, 0)
+Green.Size = UDim2.new(0, 21, 0, 409)
+Green.Font = Enum.Font.SourceSans
+Green.Text = ""
+Green.TextColor3 = Color3.new(0, 0, 0)
+Green.TextSize = 14
+ 
+Green_2.Name = "Green"
+Green_2.Parent = Xavierv3
+Green_2.BackgroundColor3 = Color3.new(0, 1, 0)
+Green_2.Position = UDim2.new(0, 0, 0.151329234, 0)
+Green_2.Size = UDim2.new(0, 755, 0, 21)
+Green_2.Font = Enum.Font.SourceSans
+Green_2.Text = ""
+Green_2.TextColor3 = Color3.new(0, 0, 0)
+Green_2.TextSize = 14
+ 
+ESP.Name = "ESP"
+ESP.Parent = Xavierv3
+ESP.BackgroundColor3 = Color3.new(1, 1, 1)
+ESP.Position = UDim2.new(0.531125844, 0, 0.437491149, 0)
+ESP.Size = UDim2.new(0, 177, 0, 43)
+ESP.Font = Enum.Font.SourceSans
+ESP.Text = "Gun Bypass"
+ESP.TextColor3 = Color3.new(0.333333, 1, 0)
+ESP.TextScaled = true
+ESP.TextSize = 14
+ESP.TextWrapped = true
+ESP.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/PrQrwBAR"))()
+end)
+ 
+LoadGUI.Name = "LoadGUI"
+LoadGUI.Parent = Xavierv3
+LoadGUI.BackgroundColor3 = Color3.new(1, 1, 1)
+LoadGUI.Position = UDim2.new(0.531125844, 0, 0.566325486, 0)
+LoadGUI.Size = UDim2.new(0, 177, 0, 43)
+LoadGUI.Font = Enum.Font.SourceSans
+LoadGUI.Text = "LoadGUI"
+LoadGUI.TextColor3 = Color3.new(0.333333, 1, 0)
+LoadGUI.TextScaled = true
+LoadGUI.TextSize = 14
+LoadGUI.TextWrapped = true
+LoadGUI.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/zks173hv"))()
+end)
+ 
+LoadGUI2.Name = "LoadGUI2"
+LoadGUI2.Parent = Xavierv3
+LoadGUI2.BackgroundColor3 = Color3.new(1, 1, 1)
+LoadGUI2.Position = UDim2.new(0.531125844, 0, 0.693114877, 0)
+LoadGUI2.Size = UDim2.new(0, 177, 0, 43)
+LoadGUI2.Font = Enum.Font.SourceSans
+LoadGUI2.Text = "LoadGUI2"
+LoadGUI2.TextColor3 = Color3.new(0.333333, 1, 0)
+LoadGUI2.TextScaled = true
+LoadGUI2.TextSize = 14
+LoadGUI2.TextWrapped = true
+LoadGUI2.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/RuZumBbM"))()
+end)
+ 
+LabelTop.Name = "LabelTop"
+LabelTop.Parent = Xavierv3
+LabelTop.BackgroundColor3 = Color3.new(1, 1, 1)
+LabelTop.BackgroundTransparency = 1
+LabelTop.Position = UDim2.new(0.196026489, 0, 0.0163599178, 0)
+LabelTop.Size = UDim2.new(0, 458, 0, 50)
+LabelTop.Font = Enum.Font.Fantasy
+LabelTop.Text = "Xavier Fucks Streets"
+LabelTop.TextColor3 = Color3.new(0, 1, 0)
+LabelTop.TextScaled = true
+LabelTop.TextSize = 14
+LabelTop.TextWrapped = true
+ 
+AnimationGUI.Name = "AnimationGUI"
+AnimationGUI.Parent = Xavierv3
+AnimationGUI.BackgroundColor3 = Color3.new(1, 1, 1)
+AnimationGUI.Position = UDim2.new(0.531125844, 0, 0.296386838, 0)
+AnimationGUI.Size = UDim2.new(0, 177, 0, 43)
+AnimationGUI.Font = Enum.Font.SourceSans
+AnimationGUI.Text = "AnimationGUI"
+AnimationGUI.TextColor3 = Color3.new(0.333333, 1, 0)
+AnimationGUI.TextScaled = true
+AnimationGUI.TextSize = 14
+AnimationGUI.TextWrapped = true
+AnimationGUI.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/jA9Ttktc"))()
+end)
+ 
+ 
+Close.Name = "Close"
+Close.Parent = Xavierv3
+Close.BackgroundColor3 = Color3.new(1, 1, 1)
+Close.BackgroundTransparency = 1
+Close.Position = UDim2.new(0.917880774, 0, -0.000136673814, 0)
+Close.Size = UDim2.new(0, 62, 0, 59)
+Close.Font = Enum.Font.Fantasy
+Close.Text = "X"
+Close.TextColor3 = Color3.new(0.333333, 1, 0)
+Close.TextScaled = true
+Close.TextSize = 14
+Close.TextWrapped = true
+Close.MouseButton1Click:connect(function()
+    Xavierv3.Visible = false
+    OpenGUI.Visible = true
+end)
+ 
+AimBot.Name = "AimBot"
+AimBot.Parent = Xavierv3
+AimBot.BackgroundColor3 = Color3.new(1, 1, 1)
+AimBot.Position = UDim2.new(0.531125844, 0, 0.844444096, 0)
+AimBot.Size = UDim2.new(0, 177, 0, 43)
+AimBot.Font = Enum.Font.SourceSans
+AimBot.Text = "AimBot"
+AimBot.TextColor3 = Color3.new(0.333333, 1, 0)
+AimBot.TextScaled = true
+AimBot.TextSize = 14
+AimBot.TextWrapped = true
+AimBot.MouseButton1Click:connect(function()
+    loadstring(game:GetObjects('rbxassetid://340856112')[1].Source)()
+ 
+wait()
+ 
+_G.FREE_FOR_ALL = true
+ 
+_G.BIND = 50 -- LEFT CTRL
+_G.ESP_BIND = 52 -- LEFT ALT
+end)
+ 
+LabelTop_2.Name = "LabelTop"
+LabelTop_2.Parent = Xavierv3
+LabelTop_2.BackgroundColor3 = Color3.new(1, 1, 1)
+LabelTop_2.BackgroundTransparency = 1
+LabelTop_2.Position = UDim2.new(0.802649021, 0, 0.826175869, 0)
+LabelTop_2.Size = UDim2.new(0, 144, 0, 59)
+LabelTop_2.Font = Enum.Font.Fantasy
+LabelTop_2.Text = "Hold CTRL to AimBot"
+LabelTop_2.TextColor3 = Color3.new(0, 1, 0)
+LabelTop_2.TextScaled = true
+LabelTop_2.TextSize = 14
+LabelTop_2.TextWrapped = true
+ 
+OpenGUI.Name = "OpenGUI"
+OpenGUI.Parent = TheStreetsFyckerV3
+OpenGUI.BackgroundColor3 = Color3.new(1, 1, 1)
+OpenGUI.BackgroundTransparency = 0.94999998807907
+OpenGUI.Position = UDim2.new(0.14305459, 0, 0.882903993, 0)
+OpenGUI.Size = UDim2.new(0, 100, 0, 100)
+ 
+Open.Name = "Open"
+Open.Parent = OpenGUI
+Open.BackgroundColor3 = Color3.new(1, 1, 1)
+Open.BackgroundTransparency = 1
+Open.Position = UDim2.new(0.185683057, 0, 0.206812859, 0)
+Open.Size = UDim2.new(0, 62, 0, 58)
+Open.Font = Enum.Font.Fantasy
+Open.Text = "{-}"
+Open.TextColor3 = Color3.new(0.333333, 1, 0)
+Open.TextScaled = true
+Open.TextSize = 14
+Open.TextWrapped = true
+Open.MouseButton1Click:connect(function()
+    Xavierv3.Visible = true
+    OpenGUI.Visible = false
+end)

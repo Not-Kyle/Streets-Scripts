@@ -1,0 +1,316 @@
+-- aidez on top
+-- i prob aint gonna update this at all
+
+local REBORN_SYSTEM = {Commands = {}}
+local PREFIX = "."
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/MegaCombat/master/V3'),true))() -- aidez on top
+function psearch(arg)
+    local plr
+    for i, v in pairs(game.Players:GetPlayers()) do 
+        if string.lower(string.sub(v.Name, 1, string.len(arg))) == string.lower(arg) then
+            plr = v
+        elseif arg == "me" then
+            plr = game.Players.LocalPlayer
+    	end
+	end
+    if plr then
+    return plr
+    else
+        notification("Player could not be found!")
+    end
+end
+function notification(text)
+	wait(1)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[GIDEON REBORN] -  "..text,"All")
+end
+function ParseMessage(Message)
+	local Arguments = {}
+	Message = string.lower(Message)
+	local PrefixMatch = string.match(Message,"^"..PREFIX)
+	if PrefixMatch then
+		Message = string.gsub(Message,PrefixMatch,"",1)
+		for Argument in string.gmatch(Message,"[^%s]+") do
+			table.insert(Arguments,Argument)
+		end
+	end
+	return Arguments
+end
+local parts = {}
+for i,v in pairs(workspace:GetDescendants()) do
+	if v:IsA("Part") and v.CanCollide == true then
+		table.insert(parts,v)
+	end
+end
+local noclip = false
+function teleport(position)
+	position = position + Vector3.new(0,3,0)
+    local BP = Instance.new("BodyPosition")
+    BP.MaxForce = Vector3.new(10000,10000,10000)
+    BP.Parent = game.Players.LocalPlayer.Character.Torso
+	BP.Position = position
+	for i,v in pairs(parts) do
+		v.CanCollide = false
+	end
+    repeat wait() until (game.Players.LocalPlayer.Character.Torso.Position - position).Magnitude <= 10
+	game.Players.LocalPlayer.Character.Torso.Velocity = Vector3.new(0,0,0)
+	game.Players.LocalPlayer.Character.Torso.CFrame = CFrame.new(position)
+    if BP then
+        BP:Destroy()
+    end
+	for i,v in pairs(parts) do
+		v.CanCollide = true
+	end
+end
+function REBORN_SYSTEM:AddCommand(commandname,cmddesc,sc)
+	local cmdinformation = {commandname}
+	if sc == nil then
+		sc = cmddesc
+		cmddesc = nil
+		table.insert(cmdinformation,sc)
+		else
+		table.insert(cmdinformation,cmddesc)
+		table.insert(cmdinformation,sc)
+	end
+	table.insert(REBORN_SYSTEM.Commands,cmdinformation)
+end
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+	local IsACmd = false
+	msg:lower()
+	if msg:sub(1,3) == "/e " then
+		msg = msg:sub(4)
+	end
+	if msg:sub(1,1) == PREFIX then
+		local args = ParseMessage(msg)
+		for i,cmd in pairs(REBORN_SYSTEM.Commands) do
+			if args[1] == cmd[1] then
+				IsACmd = true
+				table.remove(args,1)
+				if type(cmd[3]) == "function" then
+					cmd[3](args)
+					else
+					cmd[2](args)
+				end
+			end
+		end
+		if not IsACmd then
+			notification(args[1].." Is not a command!")
+		end
+	end
+end)
+-------------------------
+REBORN_SYSTEM:AddCommand("print","This is primarily used for testing",function(args)
+    local msg = table.concat(args," ")
+	print(msg)
+end)
+REBORN_SYSTEM:AddCommand("rejoin","Rejoins the game that you're in.",function(args)
+    local ts = game:GetService("TeleportService")
+    local p = game:GetService("Players").LocalPlayer
+    ts:Teleport(game.PlaceId, p)
+end)
+REBORN_SYSTEM:AddCommand("r","Reset",function(args)
+    game.Players.LocalPlayer.Character:BreakJoints()
+end)
+local crazydoor = false
+local doorevents = {}
+for i,v in pairs(workspace:GetDescendants()) do
+	if v:IsA("RemoteEvent") and v.Parent:IsA("ClickDetector") then
+		table.insert(doorevents,v)
+	end
+end
+REBORN_SYSTEM:AddCommand("crazydoors","Lags the streets",function(args) -- cant wait for snake to patch this
+    if not crazydoor then -- messy perhaps hard to understand code 101
+		crazydoor = true
+		notification("Starting Crazy Doors")
+		repeat 
+			wait(1)
+			for i,v in pairs(doorevents) do
+				v:FireServer()
+			end
+		until not crazydoor
+	else
+		crazydoor = false
+	end
+end)
+local bypass = false
+REBORN_SYSTEM:AddCommand("bypass","Gods you!",function(args)
+	notification("Reseting Char, Sir!")
+	game.Players.LocalPlayer.Character:BreakJoints()
+    bypass = true
+end)
+REBORN_SYSTEM:AddCommand("unbypass","Removes your Godmode!",function(args)
+	notification("Unbypassed, Sir!")
+	game.Players.LocalPlayer.Character:BreakJoints()
+    bypass = false
+end)
+local looptarget
+REBORN_SYSTEM:AddCommand("kill","Annoy/Loop somebody!",function(args)
+	if game.PlaceId == 4669040 then
+		notification("Starting..!")
+		game.Players.LocalPlayer.Character:BreakJoints()
+	    bypass = true
+		looptarget = psearch(args[1])
+	else
+		notification("Patched, Use in prison!")
+	end
+end)
+REBORN_SYSTEM:AddCommand("goto","Teleport to a player",function(args)
+	local target = psearch(args[1])
+	if target then
+		teleport(target.Character.Torso.Position)
+	end
+end)
+REBORN_SYSTEM:AddCommand("noclip","Noclip yourself",function(args)
+	notification("Granted Noclip, Sir!")
+	noclip = true
+end)
+REBORN_SYSTEM:AddCommand("unnoclip","UnNoclip yourself",function(args)
+	notification("Removed Noclip, Sir!")
+	noclip = false
+	game.Players.LocalPlayer.Character.Head.CanCollide = false
+	game.Players.LocalPlayer.Character.Torso.CanCollide = false
+	game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+	game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+end)
+REBORN_SYSTEM:AddCommand("ws","Set your walkspeed",function(args)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = args[1]
+end)
+REBORN_SYSTEM:AddCommand("jp","Set your JumpPower",function(args)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = args[1]
+end)
+REBORN_SYSTEM:AddCommand("hh","Set your HipHeight",function(args)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = args[1]
+end)
+REBORN_SYSTEM:AddCommand("stop","Stops all processes!",function(args)
+	notification("Stopping all processes, Sir.")
+	game.Players.LocalPlayer.Character:BreakJoints()
+	looptarget = nil
+    bypass = false
+	noclip = false
+end)
+
+------------ automation ------------
+local Watermark = Instance.new("ScreenGui")
+local ImageLabel = Instance.new("ImageLabel")
+Watermark.Name = "Watermark"
+Watermark.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Watermark.ResetOnSpawn = false
+ImageLabel.Parent = Watermark
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0, 100, 0, 50)
+ImageLabel.Size = UDim2.new(0, 500, 0, 400)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=4867361080"
+ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+ImageLabel.ImageColor3 = Color3.fromRGB(255,255,255)
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD") then -- this is like the only old code i reused except for noclip maybe
+	if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("HP") then
+		game.Players.LocalPlayer.PlayerGui.HUD.HP.Bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		game.Players.LocalPlayer.PlayerGui.HUD.HP.BackgroundTransparency = "1"
+		game.Players.LocalPlayer.PlayerGui.HUD.HP.Bar.BackgroundTransparency = "0.1"
+		game.Players.LocalPlayer.PlayerGui.HUD.HP.Position = UDim2.new(0, 3, 0, 600)
+	end
+	if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("KO") then
+		game.Players.LocalPlayer.PlayerGui.HUD.KO.Bar.BackgroundColor3 = Color3.fromRGB(0, 4, 255)
+		game.Players.LocalPlayer.PlayerGui.HUD.KO.BackgroundTransparency = "1"
+		game.Players.LocalPlayer.PlayerGui.HUD.KO.Bar.BackgroundTransparency = "0.1"
+		game.Players.LocalPlayer.PlayerGui.HUD.KO.Position = UDim2.new(0, 3, 0, 625)
+	end
+	if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("Stam") then
+		B = game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("Stam")
+		local c = (math.sin(workspace.DistributedGameTime / 2) / 2) + 0.5
+		local b = (math.sin(workspace.DistributedGameTime) / 2) + 0.5
+		local a = (math.sin(workspace.DistributedGameTime * 1.5) / 2) + 0.5
+		local a = Color3.new(c, b, a)
+		game.Players.LocalPlayer.PlayerGui.HUD.Stam.Bar.BackgroundColor3 = a
+		game.Players.LocalPlayer.PlayerGui.HUD.Stam.BackgroundTransparency = "1"
+		game.Players.LocalPlayer.PlayerGui.HUD.Stam.Bar.BackgroundTransparency = "0.1"
+		game.Players.LocalPlayer.PlayerGui.HUD.Stam.Position = UDim2.new(0, 3, 0, 650)
+	end
+end
+game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
+	wait()
+	repeat
+		wait()
+	until game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD")
+	repeat
+		wait()
+	until game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("HP")
+	repeat
+		wait()
+	until game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("KO")
+	repeat
+		wait()
+	until game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("Stam")
+	if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD") then
+		if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("HP") then
+			game.Players.LocalPlayer.PlayerGui.HUD.HP.Bar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			game.Players.LocalPlayer.PlayerGui.HUD.HP.BackgroundTransparency = "1"
+			game.Players.LocalPlayer.PlayerGui.HUD.HP.Bar.BackgroundTransparency = "0.1"
+			game.Players.LocalPlayer.PlayerGui.HUD.HP.Position = UDim2.new(0, 3, 0, 600)
+		end
+		if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("KO") then
+			game.Players.LocalPlayer.PlayerGui.HUD.KO.Bar.BackgroundColor3 = Color3.fromRGB(0, 4, 255)
+			game.Players.LocalPlayer.PlayerGui.HUD.KO.BackgroundTransparency = "1"
+			game.Players.LocalPlayer.PlayerGui.HUD.KO.Bar.BackgroundTransparency = "0.1"
+			game.Players.LocalPlayer.PlayerGui.HUD.KO.Position = UDim2.new(0, 3, 0, 625)
+		end
+		if game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("Stam") then
+			B = game.Players.LocalPlayer.PlayerGui:FindFirstChild("HUD"):FindFirstChild("Stam")
+			local c = (math.sin(workspace.DistributedGameTime / 2) / 2) + 0.5
+			local a = (math.sin(workspace.DistributedGameTime) / 2) + 0.5
+			local b = (math.sin(workspace.DistributedGameTime * 1.5) / 2) + 0.5
+			local a = Color3.new(c, a, b)
+			game.Players.LocalPlayer.PlayerGui.HUD.Stam.Bar.BackgroundColor3 = a
+			game.Players.LocalPlayer.PlayerGui.HUD.Stam.BackgroundTransparency = "1"
+			game.Players.LocalPlayer.PlayerGui.HUD.Stam.Bar.BackgroundTransparency = "0.1"
+			game.Players.LocalPlayer.PlayerGui.HUD.Stam.Position = UDim2.new(0, 3, 0, 650)
+		end
+	end
+end)
+notification("Hello, I am GIDEON, "..game.Players.LocalPlayer.Name, "All") -- this tags when i execute on my main :((
+wait(1)
+notification("I am an interactive artificial consciousness (A.I.)", "All")
+wait(1)
+notification("You need great power in order to manage my operating system.", "All")
+------------------------------------
+
+game:GetService("RunService").Stepped:Connect(function()
+	if bypass then
+		if game.PlaceId == 4669040 then
+			game.Players.LocalPlayer.Character["Humanoid"]:Remove()
+			Instance.new("Humanoid",game.Players.LocalPlayer.Character)
+		else
+			game.Players.LocalPlayer.Character["Right Leg"]:Remove()
+		end
+	end
+	if looptarget then -- loop the prison skids!
+		game.Players.LocalPlayer.Character.Humanoid:Remove()
+		Instance.new("Humanoid",game.Players.LocalPlayer.Character)
+		wait(0.1)
+		game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+		game.Players.LocalPlayer.Character.Animate.Disabled = true
+		wait(0.1)
+		game.Players.LocalPlayer.Character.Animate.Disabled = false
+		game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+		for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+			game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+		end
+		game.Players.LocalPlayer.Character.Torso.CFrame = looptarget.Character["Left Arm"].CFrame
+	end
+	if noclip then
+		game.Players.LocalPlayer.Character.Head.CanCollide = false
+		game.Players.LocalPlayer.Character.Torso.CanCollide = false
+		game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+		game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+	end
+end)
+
+for i,v in pairs(REBORN_SYSTEM.Commands) do
+	if type(v[2]) == "function" then
+		print(v[1])
+	else
+		print(v[1].." - "..v[2])
+	end
+end

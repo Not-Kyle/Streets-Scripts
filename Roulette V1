@@ -1,0 +1,423 @@
+local a = game.Players
+local c = a.LocalPlayer
+True = false
+faLse = false
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Welcome to Russian roulette ", "All")
+wait(1.5)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Failure to survive will result in ingame removal ", "All")
+wait(3)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Scanning for Glock please wait.. ", "All")
+wait(1)
+local a = nil
+local function a()
+	wait(2)
+	if game.Players.LocalPlayer.Backpack.Glock then
+		local a = game.Players.LocalPlayer
+		local a = a:FindFirstChild("Backpack")
+		if a ~= nil then
+			local a = a:GetChildren()
+			for a, a in pairs(a) do
+				print(a.Name)
+			end
+		end
+	end
+end
+local function b()
+	local a = math.random(7, 13)
+	if a == 7 then
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Wow you survived! Let's try 6 bullets :P ", "All")
+	else
+		if a == 8 then
+			game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - I don't like you, please add another bullet ", "All")
+		else
+			if a == 9 then
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Aren't you special :P Lets do it again ", "All")
+			else
+				if a == 10 then
+					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Sigh.. stuck with you again.. ", "All")
+				else
+					if a == 11 then
+						game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Again again again! ", "All")
+					else
+						if a == 12 then
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Wake me up when you stop being weak and add 6 more bullets.. ", "All")
+						else
+							if a == 13 then
+								game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - I heard a extra bullet could cure depression! (Do it) ", "All")
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+tools = {}
+function bullet1()
+	game.Players.LocalPlayer.Character.Glock.Grip = CFrame.new(0.6, -0.6, 0) * CFrame.Angles(math.rad(50), math.rad(300), math.rad(50))
+	wait(2)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *Randomizing the 7% chance to live* ", "All")
+	wait(5)
+	local a = math.random(1, 6)
+	if a == 1 then
+		wait(5)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+		wait(3)
+		b()
+	else
+		if a == 2 then
+			wait(5)
+			game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+			wait(3)
+			b()
+		else
+			if a == 3 then
+				wait(5)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+				wait(3)
+				b()
+			else
+				if a == 4 then
+					wait(5)
+					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+					wait(3)
+					b()
+				else
+					if a == 5 then
+						wait(5)
+						game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+						game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+                        wait(2)
+						game.Players.LocalPlayer:Kick("Lol you're trash")
+					else
+						if a == 6 then
+							wait(5)
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+							wait(3)
+							b()
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function bullet2()
+	game.Players.LocalPlayer.Character.Glock.Grip = CFrame.new(0.6, -0.6, 0) * CFrame.Angles(math.rad(50), math.rad(300), math.rad(50))
+	wait(2)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *Randomizing the 15% chance to live* ", "All")
+	wait(5)
+	local a = math.random(1, 6)
+	if a == 1 then
+		wait(5)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+		wait(3)
+		b()
+	else
+		if a == 2 then
+			wait(5)
+			game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+			game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+			game.Players.LocalPlayer:Kick("Get rekt - Russian roulette")
+		else
+			if a == 3 then
+				wait(5)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+				wait(3)
+				b()
+			else
+				if a == 4 then
+					wait(5)
+					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+					wait(3)
+					b()
+				else
+					if a == 5 then
+						wait(5)
+						game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+						game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+						game.Players.LocalPlayer:Kick("Lol you're trash")
+					else
+						if a == 6 then
+							wait(5)
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+							wait(3)
+							b()
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function bullet3()
+	game.Players.LocalPlayer.Character.Glock.Grip = CFrame.new(0.6, -0.6, 0) * CFrame.Angles(math.rad(50), math.rad(300), math.rad(50))
+	wait(2)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *Randomizing the 50% chance to live* ", "All")
+	wait(5)
+	local a = math.random(1, 6)
+	if a == 1 then
+		wait(5)
+		game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+		game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+        wait(2)
+		game.Players.LocalPlayer:Kick("Lol you're trash")
+	else
+		if a == 2 then
+			wait(5)
+			game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+			game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+			game.Players.LocalPlayer:Kick("Get rekt - Russian roulette")
+		else
+			if a == 3 then
+				wait(5)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+				wait(3)
+				b()
+			else
+				if a == 4 then
+					wait(5)
+					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+					wait(3)
+					b()
+				else
+					if a == 5 then
+						wait(5)
+						game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+						game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+						game.Players.LocalPlayer:Kick("Imagine dying, couldn't be me XD")
+					else
+						if a == 6 then
+							wait(5)
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+							wait(3)
+							b()
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function bullet4()
+	game.Players.LocalPlayer.Character.Glock.Grip = CFrame.new(0.6, -0.6, 0) * CFrame.Angles(math.rad(50), math.rad(300), math.rad(50))
+	wait(2)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *Randomizing the 25% chance to live* ", "All")
+	wait(5)
+	local a = math.random(1, 6)
+	if a == 1 then
+		wait(5)
+		game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+		game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+		game.Players.LocalPlayer:Kick("Get rekt - Russian roulette")
+	else
+		if a == 2 then
+			wait(5)
+			game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+			game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+			game.Players.LocalPlayer:Kick("Imagine dying, couldn't be me XD")
+		else
+			if a == 3 then
+				wait(5)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+				wait(3)
+				b()
+			else
+				if a == 4 then
+					wait(5)
+					game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+					game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+					game.Players.LocalPlayer:Kick("Lol you're trash")
+				else
+					if a == 5 then
+						wait(5)
+						game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+						game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+						game.Players.LocalPlayer:Kick("Don't join back")
+					else
+						if a == 6 then
+							wait(5)
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+							wait(3)
+							b()
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function bullet5()
+	game.Players.LocalPlayer.Character.Glock.Grip = CFrame.new(0.6, -0.6, 0) * CFrame.Angles(math.rad(50), math.rad(300), math.rad(50))
+	wait(2)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *Randomizing the 5% chance to live* ", "All")
+	wait(5)
+	local a = math.random(1, 6)
+	if a == 1 then
+		wait(5)
+		game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+		game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+		game.Players.LocalPlayer:Kick("Lol you're trash")
+	else
+		if a == 2 then
+			wait(5)
+			game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+			game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+			game.Players.LocalPlayer:Kick("Get rekt - RRB")
+		else
+			if a == 3 then
+				wait(5)
+				game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+				game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+				game.Players.LocalPlayer:Kick("Imagine dying, couldn't be me XD")
+			else
+				if a == 4 then
+					wait(5)
+					game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+					game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+					game.Players.LocalPlayer:Kick("Why do you even play this game lol")
+				else
+					if a == 5 then
+						wait(5)
+						game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+						game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+						game.Players.LocalPlayer:Kick("And i oop- skskskskskh")
+					else
+						if a == 6 then
+							wait(5)
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *clicks* ", "All")
+							wait(3)
+							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - ..... ", "All")
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function bullet6()
+	game.Players.LocalPlayer.Character.Glock.Grip = CFrame.new(0.6, -0.6, 0) * CFrame.Angles(math.rad(50), math.rad(300), math.rad(50))
+	wait(2)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - *Randomizing the 0% chance to live* ", "All")
+	wait(5)
+	local a = math.random(1, 6)
+	if a == 1 then
+		wait(5)
+		game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+		game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+		game.Players.LocalPlayer:Kick("Lol you're trash")
+	else
+		if a == 2 then
+			wait(5)
+			game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+			game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+			game.Players.LocalPlayer:Kick("Get rekt - RRB")
+		else
+			if a == 3 then
+				wait(5)
+				game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+				game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+				game.Players.LocalPlayer:Kick("Imagine dying, couldn't be me XD")
+			else
+				if a == 4 then
+					wait(5)
+					game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+					game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+					game.Players.LocalPlayer:Kick("Why do you even play this game lol")
+				else
+					if a == 5 then
+						wait(5)
+						game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+						game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+						game.Players.LocalPlayer:Kick("And i oop- skskskskskh")
+					else
+						if a == 6 then
+							wait(5)
+							game.Players.LocalPlayer.Character.Glock.Fire:FireServer(game.Players.LocalPlayer.Character.Head.CFrame)
+							game.Players.LocalPlayer.Character.Torso.Neck:Destroy()
+            wait(2)
+							game.Players.LocalPlayer:Kick("ez!")
+						end
+					end
+				end
+			end
+		end
+	end
+end
+local a, b = pcall(a)
+if a then
+	print("success")
+else
+	print("Error: "..b)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Glock not Detected! Please try again ", "All")
+	c:Kick("Are you broke lol buy a fucking Glock it's Russian roulette")
+end
+wait(6)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Glock Detected! Use /[1-6] to insert your bullets ", "All")
+local a = nil
+local b = "/"
+c.Chatted:Connect(function(a)
+	local a = a:lower()
+	if a:sub(1, 2) == (b.."1") then
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Amount of bullets detected (1) starting process ", "All")
+		bullet1()
+	end
+end)
+c.Chatted:Connect(function(a)
+	local a = a:lower()
+	if a:sub(1, 2) == (b.."2") then
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Amount of bullets detected (2) starting process ", "All")
+		bullet2()
+	end
+end)
+c.Chatted:Connect(function(a)
+	local a = a:lower()
+	if a:sub(1, 2) == (b.."3") then
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Amount of bullets detected (3) starting process ", "All")
+		bullet3()
+	end
+end)
+c.Chatted:Connect(function(a)
+	local a = a:lower()
+	if a:sub(1, 2) == (b.."4") then
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Amount of bullets detected (4) starting process ", "All")
+		bullet4()
+	end
+end)
+c.Chatted:Connect(function(a)
+	local a = a:lower()
+	if a:sub(1, 2) == (b.."5") then
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Amount of bullets detected (5) starting process ", "All")
+		bullet5()
+	end
+end)
+c.Chatted:Connect(function(a)
+	local a = a:lower()
+	if a:sub(1, 2) == (b.."6") then
+		wait(3)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("{Russian roulette} - Amount of bullets detected (6) LOL!! starting process ", "All")
+		bullet6()
+	end
+end)

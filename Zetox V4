@@ -1,0 +1,818 @@
+local mt = getrawmetatable(game)
+local index = mt.__index
+local newindex = mt.__newindex
+setreadonly(mt, false)
+
+mt.__index =
+    newcclosure(
+    function(self, arg)
+        if checkcaller() then
+            return index(self, arg)
+        end
+        if arg == "WalkSpeed" then
+            return game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+        end
+        if arg == "JumpPower" then
+            return game.Players.LocalPlayer.Character.Humanoid.JumpPower
+        end
+        if arg == "HipHeight" then
+            return game.Players.LocalPlayer.Character.Humanoid.HipHeight
+        end
+        if arg == "Gravity" then
+            return game.Workspace.Gravity
+        end
+        return index(self, arg)
+    end
+)
+
+mt.__newindex =
+    newcclosure(
+    function(place, state, t)
+        if checkcaller() then
+            return newindex(place, state, t)
+        end
+
+        if place == game.Players.LocalPlayer.Character.Humanoid then
+            if state == "WalkSpeed" or state == "JumpPower" or state == "HipHeight" then
+                return
+            end
+        end
+        if place == game.Workspace then
+            if state == "Gravity" then
+                return
+            end
+        end
+        if place == game.Players.LocalPlayer.Character.HumanoidRootPart then
+            if state == "CFrame" then
+                return
+            end
+        end
+        return newindex(place, state, t)
+    end
+)
+game:GetService("RunService").Stepped:connect(
+    function()
+        wait()
+        game.Players.LocalPlayer.Backpack.ServerTraits.Stann.Value = 100
+    end
+)
+
+function GetPlayer(String)
+    local Found = {}
+    local strl = String:lower()
+    if strl == "all" then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            table.insert(Found, v)
+        end
+    elseif strl == "others" then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                table.insert(Found, v)
+            end
+        end
+    else
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1, #String) == String:lower() then
+                table.insert(Found, v)
+            end
+        end
+    end
+    return Found
+end
+
+local Prefix = "/"
+local Flykey = "f"
+local Notificationtext = ""
+local posX = 0
+local posY = 0
+local posZ = 0
+local Noclip = false
+local TPpart = false
+local AirWalk = false
+local TPuzi = false
+local TPglock = false
+local TPammo = false
+local debounce = false
+local shoot = false
+local annoy = false
+
+for _, b in pairs(workspace:GetDescendants()) do
+    if b:IsA("Seat") then
+        b:Remove()
+    end
+end
+
+local function PressKey(key)
+    if (key == "q") then
+        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game.Workspace.Terrain
+    end
+end
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(PressKey)
+
+local function TP()
+    local diff = Vector3.new(posX, posY, posZ) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    local mag = diff.magnitude
+    if debounce then
+        return
+    end
+    debounce = true
+    for a = 0, mag, 15 do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame +
+            (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(posX, posY, posZ)).lookVector *
+                15)
+        wait((0 / mag) * 15)
+    end
+    debounce = false
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+
+function AirWalkPart()
+    local part = Instance.new("Part", workspace)
+    part.Size = Vector3.new(5, 1, 3)
+    part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+    part.Transparency = 1
+    part.Anchored = true
+    part.Name = "_Part"
+end
+
+game:GetService("RunService").Stepped:connect(
+    function()
+        game.Players.LocalPlayer.Backpack.ServerTraits.Stann.Value = 100
+
+        if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+            TPglock = false
+            TPuzi = false
+            TPammo = false
+            local SavePos3 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            game.Workspace[game.Players.LocalPlayer.Name]:Destroy()
+            game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+            for respawn = 1, 10 do
+                wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos3
+            end
+        end
+
+        if Noclip then
+            game.Players.LocalPlayer.Character.Head.CanCollide = false
+            game.Players.LocalPlayer.Character.Torso.CanCollide = false
+            game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+            game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+            game.Players.LocalPlayer.Character["Left Arm"].CanCollide = false
+            game.Players.LocalPlayer.Character["Right Arm"].CanCollide = false
+        end
+
+        if game.Players.LocalPlayer.Character:FindFirstChild("KO") then
+            game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+            game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        end
+
+        if shoot then
+            game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Fire:FireServer(
+                game.Players[ShootName.Name].Character.Torso.CFrame
+            )
+        end
+
+        if annoy then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                game:GetService("Players")[AnnoyName.Name].Character.HumanoidRootPart.CFrame
+            if game:GetService("Players")[AnnoyName.Name].Character.Humanoid.Health == 0 then
+                annoy = false
+                Noclip = false
+                TPpart = false
+                for _, a in pairs(workspace:GetChildren()) do
+                    if a.Name == "_Part" then
+                        a:Destroy()
+                    end
+                end
+            end
+        end
+
+        if AirWalk then
+            game.Workspace["_Part"].CFrame =
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+            wait()
+        end
+
+        if TPpart then
+            game.Workspace["_Part"].CFrame =
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+        end
+
+        if game.Workspace:FindFirstChild("Message") then
+            game.Workspace.Message:Destroy()
+        end
+
+        if game.Workspace[game.Players.LocalPlayer.Name]:FindFirstChild("Gun") then
+            game.Workspace[game.Players.LocalPlayer.Name].Gun.Parent = game.Players.LocalPlayer
+        end
+
+        if TPglock then
+            if game.Workspace:FindFirstChild("Glock | $200") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["Glock | $200"].Head.CFrame
+            end
+        end
+
+        if TPuzi then
+            if game.Workspace:FindFirstChild("Uzi | $150") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["Uzi | $150"].Head.CFrame
+            end
+        end
+
+        if TPammo then
+            if game.Workspace:FindFirstChild("Buy Ammo | $25") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    game.Workspace["Buy Ammo | $25"].Head.CFrame
+            end
+        end
+    end
+)
+
+game:GetService("Players").LocalPlayer.Chatted:Connect(
+    function(msg)
+        if msg:sub(1, 8) == "" .. Prefix .. "flykey " then
+            local hotkey = msg:sub(9 - 10)
+            Flykey = hotkey
+        end
+
+        if msg:sub(1, 9) == "" .. Prefix .. "dropkey " then
+            local hotkey = msg:sub(10 - 11)
+            Flykey = hotkey
+        end
+
+        if msg:sub(1, 11) == "" .. Prefix .. "walkspeed " then
+            local speed = msg:sub(12)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+        end
+
+        if msg:sub(1, 9) == "" .. Prefix .. "gravity " then
+            local grav = msg:sub(10)
+            game.Workspace.Gravity = grav
+        end
+
+        if msg:sub(1, 11) == "" .. Prefix .. "jumppower " then
+            local jump = msg:sub(12)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
+        end
+
+        if msg:sub(1, 11) == "" .. Prefix .. "hipheight " then
+            local hip = msg:sub(12)
+            game.Players.LocalPlayer.Character.Humanoid.HipHeight = hip
+        end
+
+        if msg == "" .. Prefix .. "noclip" then
+            Noclip = true
+        end
+
+        if msg == "" .. Prefix .. "clip" then
+            Noclip = false
+        end
+
+        if msg == "" .. Prefix .. "reset" then
+            game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        end
+
+        if msg == "" .. Prefix .. "bring car" then
+            for car = 1, 5 do
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (game.Workspace.Cars.Car.Seat.CFrame)
+                wait()
+            end
+        end
+
+        if msg == "" .. Prefix .. "tp bank" then
+            posX = -268
+            posY = 5
+            posZ = 138
+            local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+            AirWalkPart()
+            Noclip = true
+            TPpart = true
+            TP()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posX, posY, posZ)
+            Noclip = false
+            TPpart = false
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if msg == "" .. Prefix .. "tp sandpit" then
+            posX = -210
+            posY = 3
+            posZ = -114
+            local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+            AirWalkPart()
+            Noclip = true
+            TPpart = true
+            TP()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posX, posY, posZ)
+            Noclip = false
+            TPpart = false
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if msg == "" .. Prefix .. "tp gas station" then
+            posX = 97
+            posY = 4
+            posZ = -89
+            local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+            AirWalkPart()
+            Noclip = true
+            TPpart = true
+            TP()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posX, posY, posZ)
+            Noclip = false
+            TPpart = false
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if msg == "" .. Prefix .. "tp prison" then
+            posX = -972
+            posY = 3
+            posZ = -77
+            local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+            AirWalkPart()
+            Noclip = true
+            TPpart = true
+            TP()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posX, posY, posZ)
+            Noclip = false
+            TPpart = false
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if msg == "" .. Prefix .. "tp mountains" then
+            posX = -404
+            posY = 104
+            posZ = -121
+            local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+            AirWalkPart()
+            Noclip = true
+            TPpart = true
+            TP()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posX, posY, posZ)
+            Noclip = false
+            TPpart = false
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if string.sub(msg, 1, 6) == (Prefix .. "goto ") then
+            for i, v in pairs(GetPlayer(string.sub(msg, 7))) do
+                posX = game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X
+                posY = game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y
+                posZ = game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z
+                local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+                AirWalkPart()
+                Noclip = true
+                TPpart = true
+                TP()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    game.Players[v.Name].Character.HumanoidRootPart.CFrame
+                Noclip = false
+                TPpart = false
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+                for _, a in pairs(workspace:GetChildren()) do
+                    if a.Name == "_Part" then
+                        a:Destroy()
+                    end
+                end
+            end
+        end
+
+        if string.sub(msg, 1, 7) == (Prefix .. "annoy ") then
+            for i, v in pairs(GetPlayer(string.sub(msg, 8))) do
+                posX = game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.X
+                posY = game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Y
+                posZ = game.Players[v.Name].Character.HumanoidRootPart.CFrame.Position.Z
+                local SaveSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+                AirWalkPart()
+                Noclip = true
+                TPpart = true
+                TP()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SaveSpeed
+                annoy = true
+                AnnoyName = v
+            end
+        end
+
+        if string.sub(msg, 1, 7) == (Prefix .. "shoot ") then
+            for i, v in pairs(GetPlayer(string.sub(msg, 8))) do
+                shoot = true
+                ShootName = v
+            end
+        end
+
+        if msg == "" .. Prefix .. "unannoy" then
+            annoy = false
+            Noclip = false
+            TPpart = false
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if msg == "" .. Prefix .. "unshoot" then
+            shoot = false
+        end
+
+        if msg == "" .. Prefix .. "buy glock" then
+            local SavePos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            TPglock = true
+            game.Players.LocalPlayer.Backpack:WaitForChild("Glock")
+            TPglock = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos
+        end
+
+        if msg == "" .. Prefix .. "buy ammo" then
+            local SavePos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            TPammo = true
+            wait(5)
+            TPammo = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos
+        end
+
+        if msg == "" .. Prefix .. "airwalk off" then
+            AirWalk = false
+            for _, a in pairs(workspace:GetChildren()) do
+                if a.Name == "_Part" then
+                    a:Destroy()
+                end
+            end
+        end
+
+        if msg == "" .. Prefix .. "airwalk on" then
+            AirWalkPart()
+            AirWalk = true
+        end
+
+        if msg == "" .. Prefix .. "buy uzi" then
+            local SavePos1 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            TPuzi = true
+            game.Players.LocalPlayer.Backpack:WaitForChild("Uzi")
+            TPuzi = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos1
+        end
+
+        if msg == "" .. Prefix .. "get cash" then
+            function getCash()
+                local cash = {}
+                for i, v in next, workspace:GetDescendants() do
+                    if v:IsA "MeshPart" and v.MeshId == "rbxassetid://511726060" then
+                        table.insert(cash, v)
+                    end
+                end
+                return cash
+            end
+            for i, v in next, getCash() do
+                spawn(
+                    function()
+                        for i = 1, 200 do
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (v.CFrame)
+                            wait()
+                        end
+                    end
+                )
+            end
+        end
+    end
+)
+
+Instance.new("BlurEffect", workspace.Camera)
+local IntroScreen = Instance.new("ScreenGui")
+local Intro = Instance.new("TextLabel")
+local ScreenIntro = Instance.new("ScreenGui")
+local IntroFrame = Instance.new("Frame")
+local IgnoreText = Instance.new("TextLabel")
+local IgnoreText1 = Instance.new("TextLabel")
+local _1 = Instance.new("TextLabel")
+local _2 = Instance.new("TextLabel")
+local _3 = Instance.new("TextLabel")
+local Continue1 = Instance.new("TextButton")
+local Continue = Instance.new("TextButton")
+
+ScreenIntro.Name = "ScreenIntro"
+ScreenIntro.Parent = game.CoreGui
+IntroScreen.Name = "IntroScreen"
+IntroScreen.Parent = game.CoreGui
+
+Intro.Name = "Intro"
+Intro.Parent = IntroScreen
+Intro.BackgroundColor3 = Color3.new(0.329412, 0.329412, 0.329412)
+Intro.BorderColor3 = Color3.new(0.231373, 0.231373, 0.231373)
+Intro.BorderSizePixel = 10
+Intro.Position = UDim2.new(0.015, 0, 1, 0)
+Intro.Size = UDim2.new(0, 223, 0, 55)
+Intro.Font = Enum.Font.Gotham
+Intro.Text = "Zetox Admin V4"
+Intro.TextColor3 = Color3.new(1, 1, 1)
+Intro.TextScaled = true
+Intro.TextSize = 14
+Intro.TextWrapped = true
+
+IntroFrame.Name = "IntroFrame"
+IntroFrame.Parent = ScreenIntro
+IntroFrame.BackgroundColor3 = Color3.new(0.388235, 0.388235, 0.388235)
+IntroFrame.BorderColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+IntroFrame.BorderSizePixel = 10
+IntroFrame.Position = UDim2.new(0.015, 0, 1, 0)
+IntroFrame.Size = UDim2.new(0, 320, 0, 282)
+
+IgnoreText.Name = "IgnoreText"
+IgnoreText.Parent = IntroFrame
+IgnoreText.BackgroundColor3 = Color3.new(1, 1, 1)
+IgnoreText.BackgroundTransparency = 1
+IgnoreText.Position = UDim2.new(0.1875, 0, 0, 0)
+IgnoreText.Size = UDim2.new(0, 200, 0, 50)
+IgnoreText.Font = Enum.Font.Gotham
+IgnoreText.Text = "Zetox Info"
+IgnoreText.TextColor3 = Color3.new(1, 0.666667, 0)
+IgnoreText.TextSize = 20
+IgnoreText.TextWrapped = true
+
+IgnoreText1.Name = "IgnoreText1"
+IgnoreText1.Parent = IntroFrame
+IgnoreText1.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+IgnoreText1.Position = UDim2.new(0.290625006, 0, 0.142857149, 0)
+IgnoreText1.Size = UDim2.new(0, 133, 0, 4)
+IgnoreText1.Font = Enum.Font.SourceSans
+IgnoreText1.Text = ""
+IgnoreText1.TextColor3 = Color3.new(0, 0, 0)
+IgnoreText1.TextSize = 14
+
+_1.Name = "1"
+_1.Parent = IntroFrame
+_1.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+_1.BorderSizePixel = 0
+_1.Position = UDim2.new(0, 0, 0.224999994, 0)
+_1.Size = UDim2.new(0, 320, 0, 37)
+_1.Font = Enum.Font.Gotham
+_1.Text = "Discord : KnkT42Q"
+_1.TextColor3 = Color3.new(1, 0.666667, 0)
+_1.TextSize = 14
+
+_2.Name = "2"
+_2.Parent = IntroFrame
+_2.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0, 0, 0.432142854, 0)
+_2.Size = UDim2.new(0, 320, 0, 37)
+_2.Font = Enum.Font.Gotham
+_2.Text = "Admin Made By : Oskar#7918"
+_2.TextColor3 = Color3.new(1, 0.666667, 0)
+_2.TextSize = 14
+
+_3.Name = "3"
+_3.Parent = IntroFrame
+_3.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+_3.BorderSizePixel = 0
+_3.Position = UDim2.new(-0.00312500005, 0, 0.635714293, 0)
+_3.Size = UDim2.new(0, 321, 0, 37)
+_3.Font = Enum.Font.Gotham
+_3.Text = "Helper : VX#7210 | ODSTslaysElites#4686"
+_3.TextColor3 = Color3.new(1, 0.666667, 0)
+_3.TextSize = 14
+
+Continue1.Name = "Continue1"
+Continue1.Parent = IntroFrame
+Continue1.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+Continue1.BorderSizePixel = 0
+Continue1.Position = UDim2.new(0.215625003, 0, 0.828571439, 0)
+Continue1.Size = UDim2.new(0, 180, 0, 38)
+Continue1.Visible = false
+Continue1.Font = Enum.Font.Gotham
+Continue1.Text = "continue"
+Continue1.TextColor3 = Color3.new(1, 0.666667, 0)
+Continue1.TextSize = 14
+Continue1.MouseButton1Down:connect(
+    function()
+        IntroFrame:TweenPosition(UDim2.new(0.015, 0, 1, 0), "Out", "Quad", 0.5, true)
+        wait(0.4)
+        IntroFrame:Destroy()
+        if workspace.Camera:FindFirstChild("Blur") then
+            workspace.Camera.Blur:Destroy()
+        end
+    end
+)
+
+Continue.Name = "Continue"
+Continue.Parent = IntroFrame
+Continue.BackgroundColor3 = Color3.new(0.211765, 0.211765, 0.211765)
+Continue.BorderSizePixel = 0
+Continue.Position = UDim2.new(0.215625003, 0, 0.828571439, 0)
+Continue.Size = UDim2.new(0, 180, 0, 38)
+Continue.Font = Enum.Font.Gotham
+Continue.Text = "continue"
+Continue.TextColor3 = Color3.new(1, 0.666667, 0)
+Continue.TextSize = 14
+Continue.MouseButton1Down:connect(
+    function()
+        Continue.Visible = false
+        Continue1.Visible = true
+        _1.Text = "To see the commands, type [ /cmds ]"
+        _2.Text = "Commands Prefix [ / ], Commands Bar Hotkey [ ; ]"
+        _3.Text = "You Rank: User"
+        if game.Players.LocalPlayer.Name == "oskar12567" then
+            _3.Text = "You Rank: Owner"
+        end
+        if game.Players.LocalPlayer.Name == "vX_F" then
+            _3.Text = "You Rank: Helper"
+        end
+        if game.Players.LocalPlayer.Name == "ODSTslaysElites" then
+            _3.Text = "You Rank: Helper"
+        end
+    end
+)
+Intro:TweenPosition(UDim2.new(0.432121217, 0, 0.465601951, 0), "Out", "Elastic", 3, true)
+wait(3)
+Intro:TweenPosition(UDim2.new(0.015, 0, 1, 0), "Out", "Quad", 0.5, true)
+wait(0.4)
+Intro:Destroy()
+wait(0.1)
+IntroFrame:TweenPosition(UDim2.new(0.403030306, 0, 0.326781303, 0), "Out", "Elastic", 3, true)
+
+local CmdScreen__ = Instance.new("ScreenGui")
+local CmdText = Instance.new("TextBox")
+CmdScreen__.Name = "CmdScreen__"
+CmdScreen__.Parent = game.CoreGui
+CmdText.Name = "CmdText"
+CmdText.Parent = CmdScreen__
+CmdText.BackgroundColor3 = Color3.new(0, 1, 0)
+CmdText.BorderSizePixel = 0
+CmdText.Position = UDim2.new(0.015, 0, 1, 0)
+CmdText.Size = UDim2.new(0, 1918, 0, 30)
+CmdText.Font = Enum.Font.ArialBold
+CmdText.Text = ""
+CmdText.TextColor3 = Color3.new(0.301961, 0.301961, 0.301961)
+CmdText.TextScaled = true
+CmdText.TextSize = 14
+CmdText.TextWrapped = true
+CmdText.Visible = false
+
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(
+    function(Key)
+        if Key == string.lower(";") then
+            CmdText:CaptureFocus()
+            CmdText.Visible = true
+            CmdText:TweenPosition(UDim2.new(0, 0, 0.466368616, 0), "Out", "Elastic", 0.5, true)
+        end
+    end
+)
+CmdText.FocusLost:connect(
+    function(enterPressed)
+        CmdText:TweenPosition(UDim2.new(-2, 0, 0.819999993, 0), "Out", "Quad", 0.5, true)
+        wait(0.2)
+        CmdText.Visible = false
+        if enterPressed then
+            local cmdmsg = CmdText.Text
+            CmdText.Text = ""
+            game.Players:Chat(Prefix .. cmdmsg)
+        end
+    end
+)
+
+-- Yes he skidded this fly from DrPedo's (DrPoppa's) GUI
+local bcd = game:GetService("Players")
+local ccd = bcd.LocalPlayer
+local _dd = game:GetService("RunService")
+local add = ccd:GetMouse()
+ccd.Character:WaitForChild("HumanoidRootPart")
+local cdca = workspace.Camera
+local ddca = false
+local __da = 0
+local a_da = {a = false, d = false, w = false, s = false}
+local b_da
+local c_da
+local function d_da()
+    local cada = Instance.new("BodyPosition", ccd.Character.HumanoidRootPart)
+    local dada = Instance.new("BodyGyro", ccd.Character.HumanoidRootPart)
+    cada.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+    cada.position = ccd.Character.HumanoidRootPart.Position
+    dada.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+    dada.cframe = ccd.Character.HumanoidRootPart.CFrame
+    repeat
+        wait()
+        ccd.Character.Humanoid.PlatformStand = true
+        local _bda = dada.cframe - dada.cframe.p + cada.position
+        if not a_da.w and not a_da.s and not a_da.a and not a_da.d then
+            __da = 2
+        end
+        if a_da.w then
+            _bda = _bda + cdca.CoordinateFrame.lookVector * __da
+            __da = __da + 1
+        end
+        if a_da.s then
+            _bda = _bda - cdca.CoordinateFrame.lookVector * __da
+            __da = __da + 1
+        end
+        if a_da.d then
+            _bda = _bda * CFrame.new(__da, 0, 0)
+            __da = __da + 1
+        end
+        if a_da.a then
+            _bda = _bda * CFrame.new(-__da, 0, 0)
+            __da = __da + 1
+        end
+        if __da > 5 then
+            __da = 5
+        end
+        cada.position = _bda.p
+        if a_da.w then
+            dada.cframe = cdca.CoordinateFrame * CFrame.Angles(-math.rad(__da * 15), 0, 0)
+        elseif a_da.s then
+            dada.cframe = cdca.CoordinateFrame * CFrame.Angles(math.rad(__da * 15), 0, 0)
+        else
+            dada.cframe = cdca.CoordinateFrame
+        end
+    until ddca == false
+    if dada then
+        dada:Destroy()
+    end
+    if cada then
+        cada:Destroy()
+    end
+    ddca = false
+    ccd.Character.Humanoid.PlatformStand = false
+    __da = 0
+end
+b_da =
+    add.KeyDown:connect(
+    function(cada)
+        if not ccd.Character.HumanoidRootPart or not ccd.Character.HumanoidRootPart.Parent then
+            ddca = false
+            b_da:disconnect()
+            c_da:disconnect()
+            return
+        end
+        if cada == "w" then
+            a_da.w = true
+        elseif cada == "s" then
+            a_da.s = true
+        elseif cada == "a" then
+            a_da.a = true
+        elseif cada == "d" then
+            a_da.d = true
+        elseif cada == Flykey then
+            if ddca == true then
+                ddca = false
+            else
+                ddca = true
+                d_da()
+            end
+        end
+    end
+)
+c_da =
+    add.KeyUp:connect(
+    function(cada)
+        if cada == "w" then
+            a_da.w = false
+        elseif cada == "s" then
+            a_da.s = false
+        elseif cada == "a" then
+            a_da.a = false
+        elseif cada == "d" then
+            a_da.d = false
+        end
+    end
+)
+d_da()

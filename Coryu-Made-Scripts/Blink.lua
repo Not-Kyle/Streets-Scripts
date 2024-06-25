@@ -80,7 +80,7 @@ if not getgenv()['CoryuBlink'] then
                         debug.profileend()
                     elseif File.Method == 'lv' or File.Method == 'lookvector' then
                         debug.profilebegin('Coryu::Blink::LookVector')
-                            HumanoidRootPart.Velocity = HumanoidRootPart.CFrame.lookvector * File.BlinkSpeed * 25
+                            HumanoidRootPart.Velocity = HumanoidRootPart.CFrame.LookVector * File.BlinkSpeed * 25
                         debug.profileend()
                     elseif File.Method == 'ws' or File.Method == 'walkspeed' then
                         debug.profilebegin('Coryu::Blink::WalkSpeed')

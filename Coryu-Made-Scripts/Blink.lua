@@ -80,7 +80,7 @@ if not getgenv()['CoryuBlink'] then
                         debug.profileend()
                     elseif File.Method == 'lv' or File.Method == 'lookvector' then
                         debug.profilebegin('Coryu::Blink::LookVector')
-                            HumanoidRootPart.Velocity = HumanoidRootPart.CFrame.LookVector * File.BlinkSpeed * 25
+                            HumanoidRootPart.Velocity = HumanoidRootPart.CFrame.LookVector * File.BlinkSpeed * 30
                         debug.profileend()
                     elseif File.Method == 'ws' or File.Method == 'walkspeed' then
                         debug.profilebegin('Coryu::Blink::WalkSpeed')
@@ -92,7 +92,7 @@ if not getgenv()['CoryuBlink'] then
         end
     end)
 
-    Host.Chatted:Connect(function(UserCommand)
+    Host.Chatted:Connect(function(UserCommand:string)
         if string.sub(string.lower(UserCommand),1,4) == (File.Prefix..'bs ') then
             File.BlinkSpeed = string.sub(UserCommand,5,6)
             UserNotifications('Coryu Blink', 'BlinkSpeed is now '..tonumber(File.BlinkSpeed))
@@ -112,7 +112,7 @@ if not getgenv()['CoryuBlink'] then
         end
     end)
 
-    UserInput.InputBegan:Connect(function(Args, Chat)
+    UserInput.InputBegan:Connect(function(Args:EnumItem, Chat)
         if Args.KeyCode == Enum.KeyCode.LeftShift then
             File.Blinking = true
         elseif Chat then
@@ -131,7 +131,7 @@ if not getgenv()['CoryuBlink'] then
         end
     end)
 
-    UserInput.InputEnded:Connect(function(Args)
+    UserInput.InputEnded:Connect(function(Args:EnumItem)
         if Args.KeyCode == Enum.KeyCode.LeftShift then
             File.Blinking = false;
         elseif Args.KeyCode == Enum.KeyCode.W then

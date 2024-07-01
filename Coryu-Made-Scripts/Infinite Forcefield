@@ -5,8 +5,8 @@ getgenv().Coryu = true
 
 while Coryu do
     task.wait(4.9)
-    getgenv().Prev = LocalPlayer.Character:FindFirstChild'HumanoidRootPart'.CFrame
+    getgenv().Prev = LocalPlayer.Character:FindFirstChild'Torso'.CFrame
     Die()
     LocalPlayer.CharacterAdded:Wait()
-    LocalPlayer.Character:WaitForChild'HumanoidRootPart'.CFrame = Prev
+    LocalPlayer.Character:WaitForChild'Torso'.CFrame = Prev
 end

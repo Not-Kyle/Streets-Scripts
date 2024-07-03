@@ -15,7 +15,7 @@
 
 # Scripts I'm looking for `Rated from rarity to common` <br />
  > [!IMPORTANT]\
- > Necroki (Made in 2022) **Can be source or obfuscated** <br />
+ > Necroki (Made in 2021) **Can be source or obfuscated** <br />
  > Sleepware Source Code (I don't really care about this one but got offered once, but never commited) <br />
  > Citizens V1, V2, and V3 Source Code <br />
 

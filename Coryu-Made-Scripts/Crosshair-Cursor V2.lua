@@ -1,3 +1,4 @@
+--If Taken, Give Credits @hellokittysouljia or @killserver on discord or https://github.com/Not-Kyle
 local trace = setmetatable({}, {
     __index = function(self, args)
         return game.GetService(game, args);
